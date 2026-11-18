@@ -1,6 +1,7 @@
 # the Design runtime the boards load to preview locally (not part of this repository; see README)
 project/support.js
-# screenshots the render tools write
+# previews and screenshots the tools write
+tools/art/pics.html
 /render/
 /render2/
 # the sound tool's Python environment, model downloads and runs

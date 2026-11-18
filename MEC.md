@@ -122,15 +122,65 @@ gave a verdict on each statement, and a fourth agent challenged each verdict.
   - 3.º grado «Instrucciones: usar objetos y aparatos»
 - **Grownups.** Preescolar is «Sobre todo oral», no longer «Todo oral».
 
+## Added: asking for things in 1.º grado
+
+Unit 5 of 1.º grado, «Ikatúpa?» (Pedir con cortesía y agradecer), teaches two capacities of the Priorización's 1.º
+grado Guarani program:
+
+- **Item 16 (p. 28):** «Expresa sus necesidades tales como pedir ayuda, favor, permiso, préstamo de algún objeto o
+  material conforme a contextos comunicativos usuales.»
+- **Item 18 (p. 28):** «Utiliza expresiones de cortesía en sus diálogos.»
+
+The planning guide asks for the same in 1.º grado (week D, p. 51; week 15, p. 54). The unit comes after «Mi escuela»,
+because its situations are the classroom's: talking to the teacher (mbo'ehára) or a classmate (irũ).
+
+| Night | Cards | Dialogue (Say) |
+| --- | --- | --- |
+| Chepytyvõmína · Pedir ayuda y favores | mbo'ehára · Chepytyvõ · Eipe'amína ovetã · Aguyje | Mbo'ehára, chepytyvõmína. — Héẽ, roipytyvõta. — Aguyje! |
+| Ikatúpa aike? · Pedir permiso | Ikatúpa aike? · Ikatúpa aguapy? · Ikatúpa ahecha? · Ikatúpa añembosarái? | Ikatúpa aike? — Héẽ, eike. Eguapy. — Aguyje, mbo'ehára. |
+| Aguyjevete · Pedir prestado y dar las gracias | irũ · Ikatúpa aiporu nde haiha? · Eme'ẽmína chéve kuatia · Aguyjevete | Ikatúpa aiporu nde haiha? — Héẽ, ejapyhy. — Aguyjevete, che irũ! |
+
+Eichu, the grade's constellation, has an eighth star for the new unit; its Spanish label is now «las Cabrillas
+(Pléyades)», since «Siete Cabrillas» would not fit eight stars.
+
+**How the Guarani was checked.** No uploaded MEC document models these phrases, so they were drafted and checked like
+this (record in `docs/unit5-check.json`):
+
+1. Two independent drafts: one aimed at the MEC capacity, one at how a Paraguayan child says it.
+2. A merge of the two.
+3. Three independent checks of every string:
+   - spelling and syllables;
+   - meaning and grammar;
+   - usage and register, with a search for published uses.
+4. A settle step that applied the checks, and a re-check of what it changed.
+
+Found in published sources:
+
+- «¡Chepytyvõmína!» and «Chepytyvõ!»
+- the frame «Ikatúpa + verb?»; «Ikatúpa aipuru nde haiha?» is on Tatoeba
+- «roipytyvõta» (Guarani Bible, Éx 4:12)
+- «Eike, eguapy»
+- «Aguyjevete»
+- «Eme'ẽ chéve»
+- the accent of «-mína» (ABC Color: «ejumína»)
+
+One change came from the checks: «Reiporukápa chéve nde haiha?» (¿Me prestás tu lápiz?) became «Ikatúpa aiporu nde
+haiha?» (¿Puedo usar tu lápiz?). It is the attested form, and it repeats night 2's «Ikatúpa…?» frame.
+
+**Still open, for a Guarani teacher:**
+
+- «Héẽ» («sí»): the usual school spelling, but «hẽe» and «heẽ» are also seen.
+- «Héẽ, ejapyhy.» («Sí, tomá»): «eipyhy» and «Héẽ, eiporu.» («Sí, usalo») are also used.
+- «Ikatúpa ahecha?» is the least common of the four permission cards.
+- The synthetic voice: 17 of the unit's 18 clips passed the speech-recognition check and are on the listening page for a
+  person to confirm. «irũ» has had no clip since the first review.
+
 ## In the program, not in the app yet
 
-- **Asking for things, 1.º to 3.º grado.**
-  - 1.º grado, item 16 (p. 28): «Expresa sus necesidades tales como pedir ayuda, favor, permiso, préstamo de algún
-    objeto o material».
+- **Asking for things, 2.º and 3.º grado.** 1.º grado now has its own unit (see «Added»). Still missing:
   - 2.º grado, item 16 (p. 28): «Expresa necesidades básicas como: ir al baño, tomar agua, pedir alimentos, solicitar
     permiso y prestar algo».
-  - 3.º grado, planning guide week 16 (p. 68).
-  - This is the largest gap: no unit teaches it yet.
+  - 3.º grado, planning guide week 16 (p. 68): «Comunica sus deseos y necesidades en situaciones sociales cotidianas».
 - **Following short instructions** (item 3, p. 26): «manipular objetos y electrodomésticos, ubicarlos en un lugar
   determinado y trasladarse de un lugar a otro». Planned for 2.º and 3.º grado; not in 1.º grado.
 - **Short texts heard in 1.º grado** (item 7, p. 27): rhymes, tongue twisters, poems, songs, stories. 1.º grado has one

@@ -114,7 +114,7 @@ a{color:#2A1B3D;text-decoration:none}a:hover{color:#2A1B3D}
    syllables plus one that does not belong. Guarani syllables end in a vowel, and the digraphs (mb, nd, ch…) and the
    puso stay inside them as one letter: mba·ra·ka·ja, ma·ndi·'o. A wrong key shakes and nothing is lost. The extra
    keys are never a syllable of the word itself, whatever its capital letter. At the end, a star (a game played again
-   keeps the one it had). On its own: 1.º grado, a child with Guarani at home (L1), unit 5, night 1. */
+   keeps the one it had). On its own: 1.º grado, a child with Guarani at home (L1), unit 6 (the numbers), night 1. */
 class Component extends DCLogic {
 constructor(props) {
 super(props);
@@ -131,7 +131,7 @@ this.wasFinished = f;
 view() {
 const C = window.tpCourse;
 if (this.props.app) return this.props.app;
-if (!this.sample) { const st = C.sample('g1', 'L1', 16); st.cur = 'g1u05n1'; st.done.g1u05n1 = { meet: 1, read: 1 }; st.game = 'build'; this.sample = C.view(st); }
+if (!this.sample) { const st = C.sample('g1', 'L1', 20); st.cur = 'g1u06n1'; st.done.g1u06n1 = { meet: 1, read: 1 }; st.game = 'build'; this.sample = C.view(st); }
 return this.sample;
 }
 renderVals() {

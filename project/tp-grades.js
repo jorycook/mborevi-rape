@@ -26,7 +26,7 @@ window.__tpMeta = [
     can: 'Escucha, canta y dice saludos y palabras de todos los días, todo de oído.',
     mec: 'La ley pide enseñar desde el comienzo en la lengua materna del niño, y también desde el inicio la otra lengua oficial, como segunda lengua (Ley 1264/98, art. 31). En Preescolar o al empezar 1.º grado, la escuela puede aplicar el Test de Competencia Lingüística, oral, para saber qué lengua domina mejor cada niño.' },
   { code: 'g1', label: '1.º grado', gn: "Peteĩha mbo'esyry", cycle: '1.er ciclo', cycleShort: '1.er ciclo', age: '6 años', sky: 'eichu',
-    can: 'Saluda, dice su nombre y su edad, nombra su cuerpo, su familia, su casa y su escuela, cuenta hasta 10 y conoce las vocales. Si el guaraní es su lengua materna, empieza a leer y escribir.',
+    can: 'Saluda, dice su nombre y su edad, nombra su cuerpo, su familia, su casa y su escuela, pide ayuda y permiso, cuenta hasta 10 y conoce las vocales. Si el guaraní es su lengua materna, empieza a leer y escribir.',
     mec: '1.er ciclo. Como lengua materna, el guaraní se empieza a leer y escribir. Como segunda lengua, sobre todo se escucha y se habla, y se empiezan a escribir textos cortos; para pasar de grado cuenta lo oral. Temas: saludos, datos personales (nombre, edad, grado), su cuerpo, su familia, su casa, su escuela y su país, las actividades del día, las vocales, pedir ayuda o permiso.' },
   { code: 'g2', label: '2.º grado', gn: "Mokõiha mbo'esyry", cycle: '1.er ciclo', cycleShort: '1.er ciclo', age: '7 años', sky: 'nandupysa',
     can: 'Lee y escribe palabras y frases cortas de animales y comida, aprende las consonantes, sigue instrucciones para ubicar cosas e ir a un lugar, y aprende canciones, rimas y trabalenguas.',
@@ -102,7 +102,7 @@ window.__tpMeta = [
       ] }
     ] },
 
-    /* ---------- 1.º grado · Eichu: seven units, the MEC's first-grade contexts; reading and writing start here for L1 ---------- */
+    /* ---------- 1.º grado · Eichu: eight units, the MEC's first-grade contexts; reading and writing start here for L1 ---------- */
     g1: { units: [
       { n: 1, gn: 'Maitei', es: 'Saludar, presentarse y despedirse', nights: [
         { gn: 'Maitei', es: 'Saludar', words: [w('Maitei', '¡Hola! (un saludo)', 'maitei', ['Mai', 'tei']), w("Mba'éichapa?", '¿Cómo estás?', 'porandu', ['Mba', "'éi", 'cha', 'pa']), w('Iporã', 'Bien', 'iporã', ['I', 'po', 'rã']), w('Tereguahẽ porãite', '¡Bienvenida! ¡Bienvenido!', 'óga')],
@@ -127,13 +127,21 @@ window.__tpMeta = [
         { gn: 'Aranduka ha haiha', es: 'El libro y el lápiz', words: [w('aranduka', 'libro', 'aranduka', ['a', 'ra', 'ndu', 'ka']), w('haiha', 'lápiz', 'haiha', ['hai', 'ha']), w('kuatia', 'hoja de papel', 'kuatia')] },
         { gn: 'Okẽ ha ovetã', es: 'La puerta y la ventana', words: [w('okẽ', 'puerta', 'okẽ', ['o', 'kẽ']), w('ovetã', 'ventana', 'ovetã', ['o', 've', 'tã']), w('Ñañembosarái!', '¡Juguemos!', 'pelota')] }
       ] },
-      { n: 5, gn: 'Papapy', es: 'Los números del 1 al 10', nights: [
+      { n: 5, gn: 'Ikatúpa?', es: 'Pedir con cortesía y agradecer', nights: [
+        { gn: 'Chepytyvõmína', es: 'Pedir ayuda y favores', words: [w("mbo'ehára", 'maestra, maestro', "mbo'ehára", ['mbo', "'e", 'há', 'ra']), w('Chepytyvõ', 'Ayudame', 'pytyvõ', ['Che', 'py', 'ty', 'võ']), w("Eipe'amína ovetã", 'Abrí la ventana, por favor', 'ovetã'), w('Aguyje', 'Gracias', 'aguyje', ['A', 'guy', 'je'])],
+          say: [{ gn: "Mbo'ehára, chepytyvõmína.", es: 'Maestra, ayudame, por favor.' }, { gn: 'Héẽ, roipytyvõta.', es: 'Sí, te ayudo.' }, { gn: 'Aguyje!', es: '¡Gracias!' }] },
+        { gn: 'Ikatúpa aike?', es: 'Pedir permiso', words: [w('Ikatúpa aike?', '¿Puedo pasar?', 'okẽ'), w('Ikatúpa aguapy?', '¿Puedo sentarme?', 'apyka'), w('Ikatúpa ahecha?', '¿Puedo ver?', 'resa'), w('Ikatúpa añembosarái?', '¿Puedo jugar?', 'pelota')],
+          say: [{ gn: 'Ikatúpa aike?', es: '¿Puedo pasar?' }, { gn: 'Héẽ, eike. Eguapy.', es: 'Sí, pasá. Sentate.' }, { gn: "Aguyje, mbo'ehára.", es: 'Gracias, maestra.' }] },
+        { gn: 'Aguyjevete', es: 'Pedir prestado y dar las gracias', words: [w('irũ', 'amiga, amigo', 'irũ', ['i', 'rũ']), w('Ikatúpa aiporu nde haiha?', '¿Puedo usar tu lápiz?', 'haiha'), w("Eme'ẽmína chéve kuatia", 'Dame una hoja, por favor', 'kuatia'), w('Aguyjevete', 'Muchas gracias', 'aguyje', ['A', 'guy', 'je', 've', 'te'])],
+          say: [{ gn: 'Ikatúpa aiporu nde haiha?', es: '¿Puedo usar tu lápiz?' }, { gn: 'Héẽ, ejapyhy.', es: 'Sí, tomá.' }, { gn: 'Aguyjevete, che irũ!', es: '¡Muchas gracias, amiga!' }] }
+      ] },
+      { n: 6, gn: 'Papapy', es: 'Los números del 1 al 10', nights: [
         { gn: '1 – 5', es: 'Del uno al cinco', words: [w('peteĩ', 'uno', 'n1', ['pe', 'teĩ']), w('mokõi', 'dos', 'n2', ['mo', 'kõi']), w('mbohapy', 'tres', 'n3', ['mbo', 'ha', 'py']), w('irundy', 'cuatro', 'n4', ['i', 'ru', 'ndy']), w('po', 'cinco', 'n5')] },
         { gn: '6 – 10', es: 'Del seis al diez', words: [w('poteĩ', 'seis', 'n6', ['po', 'teĩ']), w('pokõi', 'siete', 'n7', ['po', 'kõi']), w('poapy', 'ocho', 'n8', ['po', 'a', 'py']), w('porundy', 'nueve', 'n9', ['po', 'ru', 'ndy']), w('pa', 'diez', 'n10')] },
         { gn: 'Mboy arýpa?', es: '¿Cuántos años?', words: [w('mbohapy', 'tres', 'n3', ['mbo', 'ha', 'py']), w('poteĩ', 'seis', 'n6', ['po', 'teĩ']), w('poapy', 'ocho', 'n8', ['po', 'a', 'py']), w('pa', 'diez', 'n10')],
           say: [{ gn: 'Mboy arýpa reguereko?', es: '¿Cuántos años tenés?' }, { gn: 'Aguereko … ary.', es: 'Tengo … años. (decí tu edad)' }] }
       ] },
-      { n: 6, gn: 'Achegety', es: 'El alfabeto: las vocales y el puso', nights: [
+      { n: 7, gn: 'Achegety', es: 'El alfabeto: las vocales y el puso', nights: [
         { gn: 'A, e, i, o, u, y', es: 'Las vocales orales', letters: 'first', words: [w('avati', 'maíz', 'avati', ['a', 'va', 'ti']), w('Eichu', 'las Siete Cabrillas', 'eichu', ['Ei', 'chu']), w('ita', 'piedra', 'ita', ['i', 'ta']), w('óga', 'casa', 'óga', ['ó', 'ga']), w("urukure'a", 'lechuza', "urukure'a", ['u', 'ru', 'ku', 're', "'a"]), w('y', 'agua', 'y')],
           games: { L1: ['meet', 'letters', 'build'], L2: ['meet', 'letters', 'say'], BI: ['meet', 'letters', 'build'] } },
         { gn: 'Ã, ẽ, ĩ, õ, ũ, ỹ', es: 'Las vocales nasales', letters: 'nasal', words: [w('pytã', 'rojo', 'c-pytã', ['py', 'tã']), w("ñe'ẽ", 'palabra, lengua', "ñe'ẽ", ['ñe', "'ẽ"]), w('tĩ', 'nariz', 'tĩ'), w('mokõi', 'dos', 'n2', ['mo', 'kõi']), w('pytũ', 'oscuro', 'pytũ', ['py', 'tũ']), w('tapỹi', 'rancho', 'tapỹi', ['ta', 'pỹi'])],
@@ -141,7 +149,7 @@ window.__tpMeta = [
         { gn: 'Puso', es: "El puso ( ' )", letters: 'puso', words: [w("ka'i", 'mono', "ka'i", ['ka', "'i"]), w("so'o", 'carne', "so'o", ['so', "'o"]), w("mandi'o", 'mandioca', "mandi'o", ['ma', 'ndi', "'o"])],
           games: { L1: ['meet', 'letters', 'build'], L2: ['meet', 'pick', 'say'], BI: ['meet', 'letters', 'build'] } }
       ] },
-      { n: 7, gn: 'Ñande yvága', es: 'Nuestro cielo, de la mañana a la noche', nights: [
+      { n: 8, gn: 'Ñande yvága', es: 'Nuestro cielo, de la mañana a la noche', nights: [
         { gn: 'Kuarahy ha jasy', es: 'El sol y la luna', words: [w('kuarahy', 'sol', 'kuarahy', ['kua', 'ra', 'hy']), w('jasy', 'luna', 'jasy', ['ja', 'sy']), w('mbyja', 'estrella', 'mbyja', ['mby', 'ja'])] },
         { gn: 'Pyhareve, ka\'aru, pyhare', es: 'La mañana, la tarde y la noche', words: [w('pyhareve', 'la mañana', "ko'ẽ", ['py', 'ha', 're', 've']), w("ka'aru", 'la tarde', "ka'aru", ['ka', "'a", 'ru']), w('pyhare', 'la noche', 'pyhare', ['py', 'ha', 're'])] },
         { gn: 'Mborevi Rape', es: 'El camino del tapir', story: 'rape', words: [w('Mborevi Rape', 'la Vía Láctea', 'mborevirape'), w('Eichu', 'las Siete Cabrillas', 'eichu', ['Ei', 'chu']), w('Ñandu Pysã', 'la Cruz del Sur', 'nandupysa')],

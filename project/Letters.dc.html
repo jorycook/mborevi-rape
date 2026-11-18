@@ -125,7 +125,7 @@ a{color:#2A1B3D;text-decoration:none}a:hover{color:#2A1B3D}
    vocal empieza?»), the six nasal vowels with their tilde («¿qué vocal falta?»), and the puso, the little catch in the
    voice («¿cuál está bien escrita?»). Letters are counted as a reader sees them: mb, nd, ch and the puso are one
    letter each. A screen reader hears the word spelled, with the empty space, and the keys say «con tilde» or «con
-   puso» out loud. On its own: 1.º grado, unit 6, night 2 (the nasal vowels), Guarani at home. */
+   puso» out loud. On its own: 1.º grado, unit 7, night 2 (the nasal vowels), Guarani at home. */
 const ORAL = ['a', 'e', 'i', 'o', 'u', 'y'];
 const NASAL = ['ã', 'ẽ', 'ĩ', 'õ', 'ũ', 'ỹ'];
 const BASE = { 'á': 'a', 'é': 'e', 'í': 'i', 'ó': 'o', 'ú': 'u', 'ý': 'y' };
@@ -146,7 +146,7 @@ this.wasFinished = f;
 view() {
 const C = window.tpCourse;
 if (this.props.app) return this.props.app;
-if (!this.sample) { const st = C.sample('g1', 'L1', 21); st.cur = 'g1u06n2'; st.done.g1u06n2 = { meet: 1 }; st.game = 'letters'; this.sample = C.view(st); }
+if (!this.sample) { const st = C.sample('g1', 'L1', 25); st.cur = 'g1u07n2'; st.done.g1u07n2 = { meet: 1 }; st.game = 'letters'; this.sample = C.view(st); }
 return this.sample;
 }
 renderVals() {

@@ -31,11 +31,11 @@ Both are private until you share them from claude.ai.
 | Grade | Units | Status |
 | --- | --- | --- |
 | Preescolar | 6 | All nights written, all oral |
-| 1.º grado | 7 | All nights written |
+| 1.º grado | 8 | All nights written |
 | 2.º grado | 5 | Units 1–2 written; 3–5 outlined |
 | 3.º–9.º grado | 5–6 each | Outlined: titles, «what the program asks» and «in the app» texts |
 
-There are 99 voice clips, made with a synthetic Guarani voice and each checked by speech recognition. 23 more are held
+There are 114 voice clips, made with a synthetic Guarani voice and each checked by speech recognition. 23 more are held
 back until a person approves them on the listening page.
 
 ## Layout
@@ -52,11 +52,13 @@ project/          the app as published on the canvas
 tests/            the app's logic run in Node, no browser
 tools/render/     screenshots and layout checks with Playwright
 tools/audio/      makes the voice clips
+tools/art/        draws the word pictures (writes project/tp-pics.js)
 voces/            the listening page and its clips
 docs/
   screens/        screenshots of the app
   mec-check.json  claim-by-claim check against the Priorización curricular 2021
   guarani-audit.json  review of every Guarani string in the app
+  unit5-check.json  how the Guarani of 1.º grado, unit 5 («Ikatúpa?») was drafted and checked
 ```
 
 ## Tests
@@ -123,6 +125,33 @@ python3 tools/audio/install.py tools/audio/out
 
 `build_review.py` makes the listening page's `voces/clips.json` from a run's `report.json` and the inventory with its
 Spanish glosses.
+
+For a new unit, voice only its own words and phrases, then add them without touching the clips already made:
+
+```bash
+node tools/audio/unit_keys.js project g1 5 tools/audio/unit.json
+```
+
+```bash
+tools/venv/bin/python tools/audio/make_sound.py tools/audio/unit.json tools/audio/out-unit
+```
+
+```bash
+python3 tools/audio/merge_clips.py tools/audio/out-unit project g1
+```
+
+```bash
+python3 tools/audio/merge_review.py tools/audio/out-unit/report.json tools/audio/unit.json voces/clips.json
+```
+
+## Pictures
+
+The word pictures are drawn in code, in `tools/art/pics.js`, as layers in a 100×100 box. After adding or changing
+one, write the app's file again:
+
+```bash
+node -e "require('./tools/art/pics.js').exportJs('project/tp-pics.js')"
+```
 
 ## Licences and credits
 

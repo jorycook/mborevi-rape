@@ -1,0 +1,1539 @@
+{
+ "about": "How the Guarani of 1.º grado, unit 5 («Ikatúpa?») was written: two independent drafts, a merge, three independent checks of every string (spelling and syllables; meaning and grammar; usage, register and attestation), and a settle step that applied them, with a re-check of what it changed.",
+ "drafts": [
+  {
+   "unit": {
+    "gn": "Ikatúpa?",
+    "es": "Pedir con cortesía y agradecer"
+   },
+   "nights": [
+    {
+     "gn": "Chepytyvõ",
+     "es": "Pedir ayuda y favores",
+     "words": [
+      {
+       "gn": "Ndaikatúi",
+       "es": "No puedo",
+       "pic": "new:ndaikatúi",
+       "newPic": "A small child on tiptoe stretching one arm up toward a red box on a high shelf that the hand cannot reach, with a worried little face.",
+       "syl": [
+        "Ndai",
+        "ka",
+        "túi"
+       ],
+       "note": "The negative of ikatu (nda- ... -i). It is how a child says why they need help, and it pairs with Ikatúpa? in night 2."
+      },
+      {
+       "gn": "Chepytyvõ",
+       "es": "Ayudame",
+       "pic": "new:pytyvõ",
+       "newPic": "A helping hand: a big grown-up hand with a green sleeve (like the teacher's top) reaches down from the top and grips a small child's hand reaching up from the bottom, with two little sparkles.",
+       "syl": [
+        "Che",
+        "py",
+        "ty",
+        "võ"
+       ],
+       "note": "Imperative with a 1st-person object: che- (me) + pytyvõ (ayudar), with no e-. The say line adds -mína (por favor)."
+      },
+      {
+       "gn": "Eipe'amína ovetã",
+       "es": "Abrí la ventana, por favor",
+       "pic": "ovetã",
+       "syl": [],
+       "note": "eipe'a 'abrí' + -mína, the Guarani 'por favor' (accent on mí because -na is atonic). This is the MEC's 'pedir un favor', in a hot Paraguayan classroom."
+      },
+      {
+       "gn": "Aguyje",
+       "es": "Gracias",
+       "pic": "aguyje",
+       "syl": [
+        "A",
+        "guy",
+        "je"
+       ],
+       "note": "Same word, gloss and picture as unit 1."
+      }
+     ],
+     "say": [
+      {
+       "gn": "Mbo'ehára, ndaikatúi.",
+       "es": "Maestra, no puedo."
+      },
+      {
+       "gn": "Chepytyvõmína.",
+       "es": "Ayudame, por favor."
+      },
+      {
+       "gn": "Aguyje, mbo'ehára!",
+       "es": "¡Gracias, maestra!"
+      }
+     ]
+    },
+    {
+     "gn": "Ikatúpa aike?",
+     "es": "Pedir permiso",
+     "words": [
+      {
+       "gn": "Ikatúpa aike?",
+       "es": "¿Puedo pasar?",
+       "pic": "okẽ",
+       "syl": [],
+       "note": "Ikatúpa = ¿se puede?, ¿puedo?; aike = entro. The classic knock at the classroom door."
+      },
+      {
+       "gn": "Ikatúpa aguapy?",
+       "es": "¿Me puedo sentar?",
+       "pic": "apyka",
+       "syl": [],
+       "note": "guapy 'sentarse', 1st person aguapy. Same frame: Ikatúpa + a-verb?"
+      },
+      {
+       "gn": "Ikatúpa añembosarái?",
+       "es": "¿Puedo jugar?",
+       "pic": "pelota",
+       "syl": [],
+       "note": "Same verb and picture as unit 4's Ñañembosarái! (¡Juguemos!), now in the 1st person."
+      }
+     ],
+     "say": [
+      {
+       "gn": "Ikatúpa aike?",
+       "es": "¿Puedo pasar?"
+      },
+      {
+       "gn": "Héẽ, eike.",
+       "es": "Sí, pasá."
+      },
+      {
+       "gn": "Aguyje.",
+       "es": "Gracias."
+      }
+     ]
+    },
+    {
+     "gn": "Aguyjevete",
+     "es": "Pedir prestado y dar las gracias",
+     "words": [
+      {
+       "gn": "irũ",
+       "es": "amiga, amigo",
+       "pic": "irũ",
+       "syl": [
+        "i",
+        "rũ"
+       ],
+       "note": "Same word, gloss and picture as unit 4: the classmate this night talks to."
+      },
+      {
+       "gn": "Reiporukápa chéve nde haiha?",
+       "es": "¿Me prestás tu lápiz?",
+       "pic": "haiha",
+       "syl": [],
+       "note": "poru 'usar' + -uka 'hacer' = poruka 'prestar'. The question marker -pa is atonic, so the accent is written on ká. This is the MEC's 'préstamo de algún objeto'."
+      },
+      {
+       "gn": "Eme'ẽmína chéve kuatia",
+       "es": "Dame una hoja, por favor",
+       "pic": "kuatia",
+       "syl": [],
+       "note": "eme'ẽ chéve 'dame' + -mína 'por favor'. This is the MEC's 'material'."
+      },
+      {
+       "gn": "Aguyjevete",
+       "es": "Muchas gracias",
+       "pic": "aguyje",
+       "syl": [
+        "A",
+        "guy",
+        "je",
+        "ve",
+        "te"
+       ],
+       "note": "aguyje + -vete 'mucho, de verdad'. It uses the aguyje heart, as in night 1."
+      }
+     ],
+     "say": [
+      {
+       "gn": "Reiporukápa chéve nde haiha?",
+       "es": "¿Me prestás tu lápiz?"
+      },
+      {
+       "gn": "Héẽ, eipyhy.",
+       "es": "Sí, agarrá."
+      },
+      {
+       "gn": "Aguyjevete, che irũ!",
+       "es": "¡Muchas gracias, amiga!"
+      }
+     ]
+    }
+   ],
+   "notes": "My angle was fidelity to the MEC. I checked the capacity in the uploaded Priorización curricular 2021 (Comunicación Guaraní, 1.º grado, item 16 «pedir ayuda, favor, permiso, préstamo de algún objeto o material» and item 18 «expresiones de cortesía en sus diálogos», p. 28). I also checked the 2021 planning guide (weeks C–D, pp. 50–51: «Vocabulario básico. Expresión de necesidades básicas», «Presentación de elementos de uso cotidiano en el aula»; week 15, p. 54: «pedir permiso, solicitar algún objeto y agradecer»). Neither document gives any Guarani wording, so the Guarani is mine.\n\nHow the unit maps to the MEC:\n- Night 1, with the teacher: pedir ayuda (Ndaikatúi says why, then Chepytyvõ / Chepytyvõmína) and pedir un favor (Eipe'amína ovetã).\n- Night 2, at the classroom door: pedir permiso with one reusable frame, Ikatúpa + a-verb? (aike, aguapy, añembosarái). The teacher answers Héẽ, eike, which also covers item 4, understanding courtesy words.\n- Night 3, with a classmate (irũ): préstamo of an object (Reiporukápa chéve nde haiha?) and of material (Eme'ẽmína chéve kuatia), then thanks (Aguyjevete).\n- Thanking comes up every night. Each night's say lines are a short polite exchange (request, answer, thanks), which is item 18.\n\nA 6-year-old leaves with three reusable tools: -mína = «por favor», Ikatúpa…? = «¿puedo…?», and Aguyje / Aguyjevete = «gracias». The 2.º grado needs (baño, tomar agua, pedir alimentos) are left out on purpose.\n\nReuse:\n- Words with unchanged meanings: Aguyje (gloss 'Gracias'), irũ ('amiga, amigo'), mbo'ehára (in the say lines), haiha and kuatia (inside phrases), and the verb of unit 4's Ñañembosarái.\n- Existing pictures, which give the MEC's «elementos de uso cotidiano en el aula»: okẽ, ovetã, apyka, pelota, haiha, kuatia, irũ, aguyje.\n- Only 2 new pictures: ndaikatúi and pytyvõ.\n- The aguyje heart serves both Aguyje (night 1) and Aguyjevete (night 3), in different nights.\n- In the guessing games the engine never puts a phrase next to a card for a word it contains, or two cards with the same picture. So «Reiporukápa chéve nde haiha?» never appears next to unit 4's «haiha», nor «…kuatia» next to «kuatia».\n\nGames per track:\n- L2: meet, pick, say every night.\n- BI: meet, then pick or read, then say.\n- L1, night 1: builds Ndaikatúi, Chepytyvõ and Aguyje (the first three items with syllables).\n- L1, night 2: plays pairs with the three Ikatúpa phrases (door, chair, ball).\n- L1, night 3: builds irũ and Aguyjevete.\n\nCard order follows a small story for the meet game. The existing clips for Aguyje and irũ can be reused; everything else needs new clips. Night 3's two request cards are about 10 syllables, a little longer than any card in the app now (the longest are about 9).",
+   "doubts": [
+    {
+     "gn": "Reiporukápa chéve nde haiha?",
+     "doubt": "poruka 'prestar' (poru 'usar' + -uka) is the dictionary and school form (Guasch & Ortiz; jeporuka 'préstamo'), but I found it in no MEC text. Everyday speech often uses the colloquial puru- (reipurukápa) or Spanish presta. I am fairly sure of the i- (reiporuka, like reiporu), and less sure it is the verb a Paraguayan teacher would pick first. If a speaker objects, this keeps the picture and repeats the night-2 frame: «Ikatúpa aiporu nde haiha?» (¿Puedo usar tu lápiz?)."
+    },
+    {
+     "gn": "Chepytyvõmína.",
+     "doubt": "-mína (-mi + -na) is the usual Guarani way to say 'por favor' in a request. I write it with the accent on mí because -na is atonic (as in ejumína). Some speakers would rather say «Chepytyvõmi» or «Eipytyvõmína chéve». Chepytyvõ as the imperative 'ayudame' (che- for the object, no e-) is standard."
+    },
+    {
+     "gn": "Héẽ, eike.",
+     "doubt": "«Héẽ» ('sí') is the spelling in most school and course material, but «Hẽe» is also seen. Please confirm the Academia's form, since this would be the first time the app writes it."
+    },
+    {
+     "gn": "Ndaikatúi",
+     "doubt": "I split it Ndai·ka·túi, keeping the diphthongs together as the app does (Mai·tei, hai·ha, 'éi). A teacher could split it Nda·i·ka·tú·i. The word means both 'no puedo' and 'no se puede'. The new picture (a child who cannot reach a shelf) shows only one case of it."
+    },
+    {
+     "gn": "Héẽ, eipyhy.",
+     "doubt": "I use eipyhy ('agarrá', from pyhy 'agarrar, tomar') as the answer when handing something over. Some speakers say «ejapyhy». If a reviewer finds it odd, «Héẽ.» alone or «Héẽ, eiporu.» (Sí, usalo) also works."
+    },
+    {
+     "gn": "Eme'ẽmína chéve kuatia",
+     "doubt": "Guarani has no article, so the gloss «una hoja» adds 'una' (kuatia = papel, hoja). At about 10 syllables, this card and «Reiporukápa chéve nde haiha?» are longer than any card in the app now. «Eme'ẽmi chéve kuatia» is one syllable shorter but less clearly 'por favor'."
+    },
+    {
+     "gn": "Ikatúpa aguapy?",
+     "doubt": "It is correct and natural, but asking to sit down happens less often in class than asking to come in or to play. An alternative with an existing picture is «Ikatúpa ahecha?» (¿Puedo ver?, picture resa). «Ikatúpa añembosarái?» is about 9 syllables long."
+    },
+    {
+     "gn": "Aguyjevete, che irũ!",
+     "doubt": "irũ and mbo'ehára have no gender. The say glosses use «amiga» and «maestra» and could just as well say «amigo» and «maestro». The cards keep the app's 'amiga, amigo' and 'maestra, maestro'."
+    }
+   ]
+  },
+  {
+   "unit": {
+    "gn": "Ikatúpa?",
+    "es": "Pedir y agradecer"
+   },
+   "nights": [
+    {
+     "gn": "Chepytyvõmína",
+     "es": "Pedir ayuda",
+     "words": [
+      {
+       "gn": "mbo'ehára",
+       "es": "maestra, maestro",
+       "pic": "mbo'ehára",
+       "syl": [
+        "mbo",
+        "'e",
+        "há",
+        "ra"
+       ],
+       "note": "From unit 4, with the same gloss, picture and syllables: the person the child asks for help."
+      },
+      {
+       "gn": "Chepytyvõ",
+       "es": "¡Ayudame!",
+       "pic": "new:pytyvõ",
+       "newPic": "Two hands: a big grown-up hand reaching down to hold a small child's hand and help it up, with two short curved lines showing the lift.",
+       "syl": [
+        "Che",
+        "py",
+        "ty",
+        "võ"
+       ],
+       "note": "che- (me) + pytyvõ (ayudar), written as one word. With the courtesy suffix it becomes chepytyvõmína, «ayudame, por favor»."
+      },
+      {
+       "gn": "Héẽ",
+       "es": "Sí",
+       "pic": "new:héẽ",
+       "newPic": "A big green check mark next to a small smiling child's face nodding yes, with two little curved motion lines above its head.",
+       "syl": [
+        "Hé",
+        "ẽ"
+       ],
+       "note": "New to the app. It opens every answer in this unit's dialogues."
+      },
+      {
+       "gn": "Aguyje",
+       "es": "Gracias",
+       "pic": "aguyje",
+       "syl": [
+        "A",
+        "guy",
+        "je"
+       ],
+       "note": "From unit 1, with the same gloss, picture and syllables."
+      }
+     ],
+     "say": [
+      {
+       "gn": "Mbo'ehára, chepytyvõmína.",
+       "es": "Profe, ayudame, por favor."
+      },
+      {
+       "gn": "Héẽ, roipytyvõta.",
+       "es": "Sí, te ayudo."
+      },
+      {
+       "gn": "Aguyje!",
+       "es": "¡Gracias!"
+      }
+     ]
+    },
+    {
+     "gn": "Ikatúpa aike?",
+     "es": "Pedir permiso",
+     "words": [
+      {
+       "gn": "Ikatúpa aike?",
+       "es": "¿Puedo pasar?",
+       "pic": "okẽ",
+       "syl": [],
+       "note": "ikatu (se puede) + -pa (question); aike (entro). The teacher answers Héẽ, eike."
+      },
+      {
+       "gn": "Ikatúpa aguapy?",
+       "es": "¿Puedo sentarme?",
+       "pic": "apyka",
+       "syl": [],
+       "note": "aguapy (me siento); the answer is Eguapy (sentate)."
+      },
+      {
+       "gn": "Ikatúpa ahecha?",
+       "es": "¿Puedo ver?",
+       "pic": "resa",
+       "syl": [],
+       "note": "ahecha (veo): the same verb as the Meet game's title, Ehecha ha ehendu."
+      },
+      {
+       "gn": "Ikatúpa añembosarái?",
+       "es": "¿Puedo jugar?",
+       "pic": "pelota",
+       "syl": [],
+       "note": "añembosarái (juego): the same verb and ball picture as Ñañembosarái! in unit 4."
+      }
+     ],
+     "say": [
+      {
+       "gn": "Ikatúpa aike?",
+       "es": "¿Puedo pasar?"
+      },
+      {
+       "gn": "Héẽ, eike. Eguapy.",
+       "es": "Sí, pasá. Sentate."
+      },
+      {
+       "gn": "Aguyje, mbo'ehára.",
+       "es": "Gracias, profe."
+      }
+     ]
+    },
+    {
+     "gn": "Eiporuka chéve",
+     "es": "Pedir prestado",
+     "words": [
+      {
+       "gn": "irũ",
+       "es": "amiga, amigo",
+       "pic": "irũ",
+       "syl": [
+        "i",
+        "rũ"
+       ],
+       "note": "From unit 4, with the same gloss, picture and syllables: the classmate the child asks."
+      },
+      {
+       "gn": "Eiporuka chéve nde haiha",
+       "es": "Prestame tu lápiz",
+       "pic": "haiha",
+       "syl": [],
+       "note": "poruka (prestar) = poru (usar) + -ka (hacer); chéve (a mí); haiha as in unit 4."
+      },
+      {
+       "gn": "Eme'ẽmína chéve kuatia",
+       "es": "Dame una hoja, por favor",
+       "pic": "kuatia",
+       "syl": [],
+       "note": "me'ẽ (dar) + -mína (por favor); kuatia as in unit 4."
+      },
+      {
+       "gn": "Aguyjevete",
+       "es": "¡Muchas gracias!",
+       "pic": "aguyje",
+       "syl": [
+        "A",
+        "guy",
+        "je",
+        "ve",
+        "te"
+       ],
+       "note": "Aguyje + -vete (mucho). It shares the aguyje picture with Aguyje of night 1; they are in different nights and the games never show them side by side."
+      }
+     ],
+     "say": [
+      {
+       "gn": "Eiporuka chéve nde haiha.",
+       "es": "Prestame tu lápiz."
+      },
+      {
+       "gn": "Héẽ, ejapyhy.",
+       "es": "Sí, tomá."
+      },
+      {
+       "gn": "Aguyjevete!",
+       "es": "¡Muchas gracias!"
+      }
+     ]
+    }
+   ],
+   "notes": "I built this unit for 1.º grado from the MEC's Priorización curricular 2021, Comunicación Guaraní (the L2 table): item 16 (ayuda, favor, permiso, préstamo) and item 18 (cortesía). It follows the situations in the 2021 planning guide.\n\nEach night is one classroom situation. Its «say» is a three-line mini dialogue, and the child says every line: the request, the answer (always starting with Héẽ), then the thanks.\n- Night 1, talking to the teacher (help): Mbo'ehára, chepytyvõmína → Héẽ, roipytyvõta → Aguyje!\n- Night 2, talking to the teacher (permission): one pattern, Ikatúpa + a verb in the first person (aike, aguapy, ahecha, añembosarái). Each uses an existing picture: door, chair, eye, ball. Dialogue: Ikatúpa aike? → Héẽ, eike. Eguapy → Aguyje, mbo'ehára.\n- Night 3, talking to a classmate (borrowing and asking for material, the guide's «solicitar algún objeto»): Eiporuka chéve nde haiha → Héẽ, ejapyhy → Aguyjevete!\n\nCourtesy forms taught: the request suffix -mína («por favor»), Ikatúpa? («¿puedo?», «¿se puede?»), Aguyje and Aguyjevete. Héẽ («sí») is new to the app and opens every answer.\n- I chose -mína over the school translations of «por favor», Nde py'aporãrõ and Ikatúrõ. Both are longer and seldom said to a 6-year-old.\n- I left out «de nada» because I am not sure which form is standard.\n\nReused with the same meaning, gloss, picture and syllables they have in the app: mbo'ehára and irũ (the two people the child talks to), Aguyje, haiha and kuatia. Two verbs are also reused: ñembosarái (as in Ñañembosarái!, with the same ball picture) and hecha (as in the Meet title Ehecha ha ehendu).\n\nLeft out on purpose: Spanish loanwords common in mixed Guarani-Spanish speech (embopresta, ajuga, por favor), and the needs 2.º grado adds (baño, agua, comida).\n\nPictures: 2 new ones, pytyvõ and héẽ. Both keys are free in project/tp-pics.js. All reused keys exist in the same Unicode form, and each syllable list joins back to its word.\n\nI ran the unit in memory through the real engine, project/tp-course.js, placed after unit 4. No file was written.\n- Pick and Check only drew distractors from this unit's 10 different pictures. So Aguyje and Aguyjevete never appear together, and héẽ never appears next to iporã's thumbs-up.\n- Games per night: L1 meet+read+build | meet+read+pairs | meet+read+build. L2 meet+pick+say on all three nights. BI meet+pick+say | meet+read+say | meet+pick+say.\n- Syllables are given for the 4 one-word items of night 1 and the 2 of night 3. Night 2 is all phrases and needs none.\n- The say lines «Aguyje!» and «Aguyjevete!» use the same sound keys as the word items, so those voice clips are shared.\n\nPlacement: the unit uses unit 4's school words, so it fits right after «Che mbo'ehao». One structural problem: 1.º grado has 7 units for Eichu's 7 stars. The header of project/tp-grades.js and project/tp-sky.js both say one star per unit. An 8th unit breaks that rule unless two units are merged or the figure changes.",
+   "doubts": [
+    {
+     "gn": "Eiporuka chéve nde haiha",
+     "doubt": "poruka («prestar», from poru «usar» + -ka) is the Guarani verb. The MEC's own Guarani text writes both oiporu and oipuru, so some children will hear «eipuruka». Many Guarani-speaking families actually say the Spanish-loan «Embopresta chéve…». A Guarani teacher should confirm that 1.º grado classes use «eiporuka». The fallback is «Eme'ẽmína chéve nde haiha» (pasame tu lápiz)."
+    },
+    {
+     "gn": "Chepytyvõmína",
+     "doubt": "I write the courtesy suffix joined to the verb and with an accent, as in chepytyvõmína and eme'ẽmína. Some materials write -mina. In everyday speech the shorter -mi (chepytyvõmi) is at least as common. The Academia spelling and which form teachers prefer still need to be confirmed. The same goes for writing chepytyvõ as one word, which I believe is standard but some write as «che pytyvõ»."
+    },
+    {
+     "gn": "Héẽ",
+     "doubt": "The Academia spelling is héẽ, two syllables (hé-ẽ); «hẽe» and «heẽ» are also seen. The synthetic voice may not pronounce the nasal second vowel well, so its clip needs checking. Its new picture (a check mark with a nodding face) must not look like iporã's thumbs-up. The games only ever compare it with this unit's pictures."
+    },
+    {
+     "gn": "Héẽ, ejapyhy.",
+     "doubt": "My best guess at the everyday word for «tomá» when handing something over is «Ejapyhy» (agarrá). Some speakers would just say «Ko'ápe» (acá está)."
+    },
+    {
+     "gn": "Héẽ, roipytyvõta.",
+     "doubt": "The ro- prefix (yo a vos) is new grammar for an L2 child. If it proves hard to repeat, «Héẽ, roipytyvõ» (no -ta) is shorter and still means «sí, te ayudo». I am not sure which reply teachers use most."
+    },
+    {
+     "gn": "Héẽ, eike. Eguapy.",
+     "doubt": "As far as I know, «Eike, eguapy» (pasá, sentate) is the usual welcome. It still needs a check that it sounds natural from a teacher to a pupil, not only from a host to a guest."
+    },
+    {
+     "gn": "Ikatúpa añembosarái?",
+     "doubt": "I kept the app's verb (Ñañembosarái!), but many children say «Ikatúpa ajuga?», with the Spanish loanword."
+    },
+    {
+     "gn": "Mbo'ehára, chepytyvõmína.",
+     "doubt": "I glossed the address as «Profe»: it is what Paraguayan children call a teacher, and it works for a man or a woman. If the app should stick to its own gloss of mbo'ehára, use «Maestra». Also, children often say «Profe» even when speaking Guarani, so «Mbo'ehára» as a form of address is the school way, not always the everyday one."
+    },
+    {
+     "gn": "Eme'ẽmína chéve kuatia",
+     "doubt": "Without «peteĩ» it means «dame papel» or «dame una hoja». «Eme'ẽmína chéve peteĩ kuatia» says «una hoja» exactly but is longer."
+    },
+    {
+     "gn": "Ikatúpa aike?",
+     "doubt": "The plain door picture (okẽ) stands for «¿Puedo pasar?». A new picture of a child at a half-open door would show it better, which would make it the third new picture."
+    }
+   ]
+  }
+ ],
+ "merged": {
+  "unit": {
+   "gn": "Ikatúpa?",
+   "es": "Pedir con cortesía y agradecer"
+  },
+  "nights": [
+   {
+    "gn": "Chepytyvõmína",
+    "es": "Pedir ayuda y favores",
+    "words": [
+     {
+      "gn": "mbo'ehára",
+      "es": "maestra, maestro",
+      "pic": "mbo'ehára",
+      "syl": [
+       "mbo",
+       "'e",
+       "há",
+       "ra"
+      ],
+      "note": "From unit 4, with the same gloss, picture and syllables. It is the person the child asks for help, as irũ is in night 3. Its approved clip can be reused."
+     },
+     {
+      "gn": "Chepytyvõ",
+      "es": "Ayudame",
+      "pic": "new:pytyvõ",
+      "newPic": "A helping hand: a big grown-up hand in a green sleeve (the teacher's top in the mbo'ehára picture) reaches down from the top and holds a small child's hand reaching up from the bottom, with two short curved lines showing the lift.",
+      "syl": [
+       "Che",
+       "py",
+       "ty",
+       "võ"
+      ],
+      "note": "che- 'me' + pytyvõ 'ayudar': with a first-person object, the imperative takes che- and no e-. The night's title and its say line add -mína, «por favor»."
+     },
+     {
+      "gn": "Eipe'amína ovetã",
+      "es": "Abrí la ventana, por favor",
+      "pic": "ovetã",
+      "syl": [],
+      "note": "eipe'a 'abrí' (pe'a 'abrir') + -mína 'por favor'. The accent goes on mí because -na is atonic. ovetã as in unit 4. This is the MEC's «pedir un favor», in a hot Paraguayan classroom."
+     },
+     {
+      "gn": "Aguyje",
+      "es": "Gracias",
+      "pic": "aguyje",
+      "syl": [
+       "A",
+       "guy",
+       "je"
+      ],
+      "note": "From unit 1, with the same gloss, picture and syllables. Its approved clip also serves the say line «Aguyje!»."
+     }
+    ],
+    "say": [
+     {
+      "gn": "Mbo'ehára, chepytyvõmína.",
+      "es": "Maestra, ayudame, por favor."
+     },
+     {
+      "gn": "Héẽ, roipytyvõta.",
+      "es": "Sí, te ayudo."
+     },
+     {
+      "gn": "Aguyje!",
+      "es": "¡Gracias!"
+     }
+    ]
+   },
+   {
+    "gn": "Ikatúpa aike?",
+    "es": "Pedir permiso",
+    "words": [
+     {
+      "gn": "Ikatúpa aike?",
+      "es": "¿Puedo pasar?",
+      "pic": "okẽ",
+      "syl": [],
+      "note": "ikatu 'se puede' + -pa (question marker; it is atonic, so the accent goes on tú) + aike 'entro'. The knock at the classroom door; the teacher answers Héẽ, eike. The say line shares this card's clip."
+     },
+     {
+      "gn": "Ikatúpa aguapy?",
+      "es": "¿Puedo sentarme?",
+      "pic": "apyka",
+      "syl": [],
+      "note": "aguapy 'me siento' (guapy). The teacher's answer in the say line is Eguapy, 'sentate'."
+     },
+     {
+      "gn": "Ikatúpa ahecha?",
+      "es": "¿Puedo ver?",
+      "pic": "resa",
+      "syl": [],
+      "note": "ahecha 'veo' (hecha), the verb in the Meet game's title, Ehecha ha ehendu. It reuses unit 3's eye picture (tesa); the games never show two cards with the same picture together."
+     },
+     {
+      "gn": "Ikatúpa añembosarái?",
+      "es": "¿Puedo jugar?",
+      "pic": "pelota",
+      "syl": [],
+      "note": "añembosarái 'juego': the same verb and ball picture as unit 4's Ñañembosarái! (¡Juguemos!), now in the first person singular."
+     }
+    ],
+    "say": [
+     {
+      "gn": "Ikatúpa aike?",
+      "es": "¿Puedo pasar?"
+     },
+     {
+      "gn": "Héẽ, eike. Eguapy.",
+      "es": "Sí, pasá. Sentate."
+     },
+     {
+      "gn": "Aguyje, mbo'ehára.",
+      "es": "Gracias, maestra."
+     }
+    ]
+   },
+   {
+    "gn": "Aguyjevete",
+    "es": "Pedir prestado y dar las gracias",
+    "words": [
+     {
+      "gn": "irũ",
+      "es": "amiga, amigo",
+      "pic": "irũ",
+      "syl": [
+       "i",
+       "rũ"
+      ],
+      "note": "From unit 4, with the same gloss, picture and syllables. It is the classmate this night talks to. Its clip is still held back, so it needs a new take."
+     },
+     {
+      "gn": "Reiporukápa chéve nde haiha?",
+      "es": "¿Me prestás tu lápiz?",
+      "pic": "haiha",
+      "syl": [],
+      "note": "re- 'vos' + i + poruka 'prestar' (poru 'usar' + -uka) + -pa (question marker; it is atonic, so the accent goes on ká). chéve 'a mí'; nde haiha 'tu lápiz', with haiha as in unit 4. This is the MEC's «préstamo de algún objeto». The say line shares this card's clip."
+     },
+     {
+      "gn": "Eme'ẽmína chéve kuatia",
+      "es": "Dame una hoja, por favor",
+      "pic": "kuatia",
+      "syl": [],
+      "note": "eme'ẽ 'da' + -mína 'por favor' + chéve 'a mí': 'dame, por favor'. kuatia as in unit 4. This is the MEC's «material»."
+     },
+     {
+      "gn": "Aguyjevete",
+      "es": "Muchas gracias",
+      "pic": "aguyje",
+      "syl": [
+       "A",
+       "guy",
+       "je",
+       "ve",
+       "te"
+      ],
+      "note": "aguyje + -vete 'mucho, de verdad'. It shares the aguyje heart with night 1's Aguyje. They are in different nights, and the games never show two cards with the same picture together."
+     }
+    ],
+    "say": [
+     {
+      "gn": "Reiporukápa chéve nde haiha?",
+      "es": "¿Me prestás tu lápiz?"
+     },
+     {
+      "gn": "Héẽ, ejapyhy.",
+      "es": "Sí, tomá."
+     },
+     {
+      "gn": "Aguyjevete, che irũ!",
+      "es": "¡Muchas gracias, amiga!"
+     }
+    ]
+   }
+  ],
+  "notes": "This unit merges the two drafts. Where both drafts agreed, their Guarani is kept unchanged.\n\nKept from both drafts:\n- the unit title Ikatúpa?\n- Chepytyvõ, with the new helping-hands picture, and Aguyje\n- the night-2 frame Ikatúpa + a-verb? (aike, aguapy, añembosarái)\n- irũ, the pencil request with poruka, Eme'ẽmína chéve kuatia, and Aguyjevete on the aguyje heart\n- Héẽ at the start of every answer\n\nWhere the drafts differed:\n- Night 1 takes mbo'ehára from Draft 2 (the person the child asks; it mirrors irũ in night 3). It takes Eipe'amína ovetã from Draft 1, the MEC's «favor», which Draft 2 did not cover.\n- Two cards are left out:\n  - Draft 1's Ndaikatúi: its picture, a child who cannot reach a shelf, would also read as «ayudame» next to the helping hands.\n  - Draft 2's Héẽ: its picture (a check mark and a nodding face) is abstract and close to the iporã thumbs-up. Also, the synthetic voice garbles short nasal words (irũ, okẽ and akã are held back). Héẽ is still said in all three dialogues.\n- Night 2 takes Draft 2's fourth card, Ikatúpa ahecha? (Draft 1 listed it as an alternative). It also takes Draft 2's dialogue: «Héẽ, eike. Eguapy.» links the answer to the aguapy card.\n- Night 3 keeps Draft 1's question «Reiporukápa chéve nde haiha?» rather than Draft 2's imperative «Eiporuka chéve nde haiha». The imperative has no -mína, so it is less polite, and «Héẽ» answers a question more naturally. The answer uses ejapyhy, which both drafts name. The closing line, «Aguyjevete, che irũ!», comes from Draft 1 and uses the night's irũ.\n- Glosses:\n  - «Maestra» (the app's gloss of mbo'ehára) is used rather than «Profe».\n  - All four night-2 glosses start with «¿Puedo…?», so the child maps Ikatúpa to one Spanish frame.\n\nFit with the MEC (Priorización curricular 2021, Comunicación Guaraní, 1.º grado, items 16 and 18; 2021 planning guide):\n- Night 1, with the teacher: pedir ayuda and pedir un favor.\n- Night 2, at the classroom door: pedir permiso.\n- Night 3, with a classmate: préstamo of an object (haiha) and of material (kuatia).\n- Every night ends with thanks, and each say set is a request, an answer and a thank-you («práctica oral simulada», item 18).\n- The courtesy tools taught are -mína, Ikatúpa…? and Aguyje / Aguyjevete.\n- The 2.º grado needs (baño, agua, comida) are left out.\n\nChecked in memory against project/tp-course.js, with the unit placed after unit 4:\n- Every syl list joins back to its word.\n- Every reused picture key exists, in the same Unicode form, and the pictures are distinct within each night. There is only one new picture, pytyvõ.\n- Games per track:\n  - L1: meet+read+build | meet+read+pairs | meet+read+build. Night 1 builds mbo'ehára, Chepytyvõ and Aguyje; night 3 builds irũ and Aguyjevete; night 2's pairs use aike, aguapy and ahecha.\n  - L2: meet+pick+say on all three nights.\n  - BI: meet+pick+say | meet+read+say | meet+pick+say.\n- All Pick and Check distractors come from this unit. Aguyje and Aguyjevete never appear together, and no phrase appears next to a word it contains.\n- A playthrough of the whole grade on L1, L2 and BI lights 8 of 8 units.\n- Clips: the unit needs 18 keys.\n  - «Aguyje!», «Ikatúpa aike?» and «Reiporukápa chéve nde haiha?» share their card's clip.\n  - Approved clips already exist for aguyje and mbo'ehára.\n  - irũ's clip is held back (the recognizer heard «evu»), so 16 new clips are needed.\n\nTo check before release:\n- Card length: «Reiporukápa chéve nde haiha?» (28 characters) and «Eme'ẽmína chéve kuatia» (22) are longer than any card now; the longest is «Mba'éichapa nde réra?» (21). Check the Tonight tile (three columns, sized for two lines) and Mborevi'i's one-line bubble with tools/render/overflow.js.\n- Stars (Draft 2's point, confirmed): 1.º grado has 7 units for Eichu's 7 stars. Both tp-sky.js and the header of tp-grades.js say one star per unit. With 8 units, tpCourse.figure shows Eichu complete after 7, and the 8th unit has no star. Two units must be merged, one replaced, or the figure changed.\n- Placement: right after unit 4 «Che mbo'ehao», whose school words this unit reuses.\n- Texts to update when the unit goes in: g1 «can» in tp-grades.js, the item-16 gap listed in MEC.md, and the README table that says 7 units.\n\nNo project file was touched. To look at the reused pictures, I wrote a temporary contact sheet and its two small scripts in pics.",
+  "doubts": [
+   {
+    "gn": "Reiporukápa chéve nde haiha?",
+    "doubt": "poruka 'prestar' (poru 'usar' + -uka) is the dictionary and school form (Guasch & Ortiz; jeporuka 'préstamo'), but it appears in no MEC text. The MEC's own Guarani writes both oiporu and oipuru, so some children will hear «reipurukápa», and many families say the Spanish loan «Embopresta chéve…». I am fairly sure of the i- (reiporuka, like reiporu). I am less sure it is the verb a Paraguayan teacher would pick first. Draft 2 had the imperative «Eiporuka chéve nde haiha» (Prestame tu lápiz); I kept the question because it is more polite and Héẽ answers it. Fallbacks with the same picture: «Ikatúpa aiporu nde haiha?» (¿Puedo usar tu lápiz?, the night-2 frame) or «Eme'ẽmína chéve nde haiha» (Pasame tu lápiz, por favor). At 28 characters and 10 syllables it is the longest card in the app; today's longest is «Mba'éichapa nde réra?» (21 characters, 7 syllables). «Reiporukápa nde haiha?» (22) is shorter but drops chéve."
+   },
+   {
+    "gn": "Chepytyvõmína",
+    "doubt": "-mína (-mi + -na) is the usual Guarani way to say «por favor» in a request. I write it joined to the verb, with the accent on mí because -na is atonic (as in ejumína). The same applies to Eipe'amína and Eme'ẽmína. Some materials write -mina. In speech the shorter -mi (chepytyvõmi) is at least as common, and some speakers would rather say «Eipytyvõmína chéve». Chepytyvõ as the imperative 'ayudame' (che- for the object, no e-) is standard. I believe one word is standard, though some write «che pytyvõ». Please confirm the Academia's spelling and which form teachers prefer."
+   },
+   {
+    "gn": "Héẽ",
+    "doubt": "Héẽ ('sí') starts all three answers and is new to the app. «Héẽ» is the spelling in most school and course material, but «hẽe» and «heẽ» are also seen, so please confirm the Academia's form. The synthetic voice may not pronounce the nasal second vowel well. Short nasal words such as irũ, okẽ and akã came back wrong and are held back. Check the three clips that begin with Héẽ."
+   },
+   {
+    "gn": "Héẽ, roipytyvõta.",
+    "doubt": "The ro- prefix (yo a vos) is new grammar for an L2 child. If it proves hard to repeat, «Héẽ, roipytyvõ» (no -ta) is shorter and still means «sí, te ayudo». I am not sure which reply teachers use most. The gloss «Sí, te ayudo.» is free: -ta marks the future («te voy a ayudar»)."
+   },
+   {
+    "gn": "Mbo'ehára, chepytyvõmína.",
+    "doubt": "The gloss «Maestra» follows the app's gloss of mbo'ehára. Paraguayan children say «Profe», which works for a man or a woman, often even when speaking Guarani. So «Mbo'ehára» as a form of address is the school way, not always the everyday one."
+   },
+   {
+    "gn": "Héẽ, eike. Eguapy.",
+    "doubt": "As far as I know, «Eike, eguapy» (pasá, sentate) is the usual welcome. It still needs a check that it sounds natural from a teacher to a pupil, not only from a host to a guest. Draft 1's «Héẽ, eike.» is the simpler fallback."
+   },
+   {
+    "gn": "Héẽ, ejapyhy.",
+    "doubt": "«Ejapyhy» ('agarrá') as «tomá» when handing something over is a best guess. Draft 1 used «eipyhy» (from pyhy), which some speakers say. Others would just say «Ko'ápe» (acá está), «Héẽ.» alone, or «Héẽ, eiporu.» (Sí, usalo)."
+   },
+   {
+    "gn": "Eme'ẽmína chéve kuatia",
+    "doubt": "Guarani has no article, so the gloss adds «una»; in the app, kuatia is 'hoja de papel'. «Eme'ẽmína chéve peteĩ kuatia» says «una hoja» exactly but is longer. «Eme'ẽmi chéve kuatia» is shorter but less clearly 'por favor'. At 22 characters it is also longer than any card the app has now."
+   },
+   {
+    "gn": "Eipe'amína ovetã",
+    "doubt": "pe'a is, as far as I know, the usual verb for opening a door or window (Eipe'a okẽ), but some speakers would use mbojuruja (Embojurujamína ovetã). In night 1 the child talks to the teacher. Asking her to open a high window in a hot room is plausible, but a reviewer may prefer a favor asked of a classmate."
+   },
+   {
+    "gn": "Ikatúpa aike?",
+    "doubt": "The plain closed door (okẽ) stands for «¿Puedo pasar?». A new picture of a child at a half-open door would show it better. It would be the unit's second new picture."
+   },
+   {
+    "gn": "Ikatúpa aguapy?",
+    "doubt": "It is correct and natural, but asking to sit down happens less often in class than asking to come in or to play. Night 2 now has four Ikatúpa cards: Draft 1 had three, and Draft 2 added Ikatúpa ahecha?. If four is too many for a 6-year-old, drop this card and answer with «Héẽ, eike.», or drop ahecha (Draft 2 only). L1 pairs uses the night's first three cards."
+   },
+   {
+    "gn": "Ikatúpa añembosarái?",
+    "doubt": "It keeps the app's verb (Ñañembosarái!), but many children say «Ikatúpa ajuga?», with the Spanish loanword."
+   },
+   {
+    "gn": "Aguyjevete, che irũ!",
+    "doubt": "irũ and mbo'ehára have no gender. The say glosses use «amiga» and «maestra» and could just as well say «amigo» and «maestro». The cards keep the app's 'amiga, amigo' and 'maestra, maestro'."
+   }
+  ]
+ },
+ "verdicts": [
+  {
+   "lens": "SPELLING AND SYLLABLES",
+   "items": [
+    {
+     "where": "unit title",
+     "gn": "Ikatúpa?",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "i- + katu 'se puede' + the question suffix -pa. -pa is atonic, so the stress stays on tú, which is no longer the last syllable: the acute is required. The app does the same with Mboýpa?, Mba'éichapa? and Mboy arýpa?. Capital I, «?» only, no «¿». NFC, ú = U+00FA.",
+     "evidence": "tp-grades.js: l.95 Mboýpa?, l.108 Mba'éichapa? (syl Mba·'éi·cha·pa), l.111/133 arýpa. docs/guarani-audit.json g93: -pa is unstressed, so arýpa."
+    },
+    {
+     "where": "night 1 title",
+     "gn": "Chepytyvõmína",
+     "verdict": "ok",
+     "confidence": "medium",
+     "reason": "One word. che- is the verb's object prefix here (someone acting on me), so it joins the verb; only the possessive che before a noun is written apart (che irũ). -mi (courtesy) is tonic and -na (request) is atonic, so the stress falls on mí, which is not the last syllable, and mína takes the acute. The tilde on õ stays because it marks nasality; the app already puts a tilde and an acute in one word (Mokõivéva, ñe'ẽtéva). Nasal harmony does not change che- (only nde- becomes ne- before a nasal root: nepytyvõ). The one open point is whether -mi is tonic. If a reviewer treats it as atonic, the form becomes chepytyvõmina with no acute, since the tilde would mark the stress. The forms ejumi (no accent), ejúna and e-ma'ẽ-mí-na all point to -mína. Whichever way it is settled, all four -mína strings in the unit must follow it.",
+     "evidence": "ABC Color, «Día del guaraní: particularidades de nuestro idioma» (25-08-2024), seen only through a search summary: eju + na gives «ejúna», eju + mi gives «ejumi» (https://www.abc.com.py/nacionales/2024/08/25/dia-del-guarani-particularidades-de-nuestro-idioma/). A glossed linguistics example «e-ma'ẽ-mí-na», also from a search summary; I did not open the page. JW.org Guarani writes chepytyvõ, nepytyvõ and nepytyvõta joined (https://www.jw.org/gug/biblia-omboeva/). App: tp-course.js l.240 Mokõivéva; tp-grades.js l.184 ñe'ẽtéva."
+    },
+    {
+     "where": "night 1 word",
+     "gn": "mbo'ehára",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Identical to unit 4: same gn, pic and syl. The agentive -hára carries its own stress on há, hence the acute. The syllables mbo·'e·há·ra join exactly, each ends in a vowel, mb stays whole and the puso begins its syllable.",
+     "evidence": "tp-grades.js l.126: w(\"mbo'ehára\", 'maestra, maestro', \"mbo'ehára\", ['mbo', \"'e\", 'há', 'ra'])."
+    },
+    {
+     "where": "night 1 word",
+     "gn": "Chepytyvõ",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Che·py·ty·võ joins exactly to Chepytyvõ. Every syllable ends in a vowel, ch is kept as one letter, and õ is NFC U+00F5. The stress is on the last syllable and marked by the tilde, so no acute. It is one word (object prefix + verb), and che- has no nasal variant. The capital follows the app's other single-word cards (Aguyje, Iporã, Maitei). A capital first key in Build is already used for A·guy·je, Mai·tei and Ei·chu.",
+     "evidence": "Mechanical check: join(syl) == gn without punctuation; syllables vowel-final; no ch/mb/nd/ng/nt/rr split. JW.org Guarani writes chepytyvõ joined."
+    },
+    {
+     "where": "night 1 word",
+     "gn": "Eipe'amína ovetã",
+     "verdict": "ok",
+     "confidence": "medium",
+     "reason": "e- (imperative), then the i of an «aireal» verb (aipe'a, oipe'a), then pe'a, then -mi (tonic) and -na (atonic), so the acute goes on mí. The puso in pe'a is right, and ovetã is written exactly as in unit 4. Capital E and no final period, like the app's other sentence cards (Che réra Mborevi'i, Tereguahẽ porãite). syl [] is right for a two-word item. The -mi caveat is the same as for Chepytyvõmína.",
+     "evidence": "tp-grades.js l.128 ovetã (U+00E3). l.71/108 sentence cards without a final period."
+    },
+    {
+     "where": "night 1 word",
+     "gn": "Aguyje",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Identical to unit 1, with syl A·guy·je. gu + vowel is one syllable, as in the app's ja·gua and ry·gua·su.",
+     "evidence": "tp-grades.js l.112: w('Aguyje', 'Gracias', 'aguyje', ['A', 'guy', 'je'])."
+    },
+    {
+     "where": "night 1 say",
+     "gn": "Mbo'ehára, chepytyvõmína.",
+     "verdict": "ok",
+     "confidence": "medium",
+     "reason": "A vocative with a comma, then chepytyvõmína in lower case, then a final period, as in the app's say lines (Kóva ha'e che sy.). Each word is spelled as on the cards above. Medium only because of the -mína accent question explained under the night 1 title.",
+     "evidence": "tp-grades.js l.116 say lines end with a period."
+    },
+    {
+     "where": "night 1 say",
+     "gn": "Héẽ, roipytyvõta.",
+     "verdict": "ok",
+     "confidence": "medium",
+     "reason": "roipytyvõta: ro- (I act on you) keeps the i of the aireal verb (aipytyvõ, so roipytyvõ), then the future -ta. -ta is atonic, but the stressed syllable võ is nasal and its tilde already marks the stress, so no acute (the app's Moõpa? is the same case). The oral case is Jajotopáta, where the acute is needed. Héẽ is the usual school and dictionary spelling of 'sí'. It is irregular under the strict rule that only the stressed nasal vowel takes the tilde, which would give hẽe or heẽ, and both of those are also seen. Keep Héẽ unless the Academia's dictionary entry says otherwise. Comma, capital H and final period are fine. The gloss «Sí, te ayudo.» freely renders the future -ta, which is acceptable in Paraguayan Spanish.",
+     "evidence": "tp-grades.js l.112 Jajotopáta; l.165 Moõpa? (stressed nasal + atonic -pa, no acute). Wikibooks Guarani/Orthography (https://en.wikibooks.org/wiki/Guarani/Orthography_and_pronunciation): the tilde goes only on the stressed nasal vowel, and the acute on a stressed oral vowel that is not last. Spelling of yes: héẽ in the Regensburg interview transcripts (https://epub.uni-regensburg.de/78400/8/Transkription%20Interview%20Nr.%202.pdf); «Hêe» on Omniglot (https://omniglot.com/language/phrases/guarani.htm)."
+    },
+    {
+     "where": "night 1 say",
+     "gn": "Aguyje!",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Aguyje with «!» only and no «¡», like the app's Ñañembosarái! and Akã, tesa, tĩ, juru!. C.fold strips the «!», so the line shares the card's clip key w:aguyje.",
+     "evidence": "tp-grades.js l.80, l.128. tp-course.js C.fold strips trailing .,;:!?"
+    },
+    {
+     "where": "night 2 title",
+     "gn": "Ikatúpa aike?",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Ikatúpa as in the unit title. aike is a- + ike 'entrar' (eike, oike): oral and stressed on the last syllable, so no accent. -pa is joined to ikatu and the verb is a separate word. Capital I, «?» only."
+    },
+    {
+     "where": "night 2 word",
+     "gn": "Ikatúpa aike?",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Same string as the night title, correctly spelled. syl [] is right for a two-word phrase."
+    },
+    {
+     "where": "night 2 word",
+     "gn": "Ikatúpa aguapy?",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "aguapy is a- + guapy 'sentarse', the same root as Eguapy in the say line. The stress is on py, so no accent. The gu + vowel spelling is the app's (guasu, jagua). syl [] is right."
+    },
+    {
+     "where": "night 2 word",
+     "gn": "Ikatúpa ahecha?",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "ahecha is a- + hecha 'ver', the verb the app already writes in Ehecha / Ehecha porã. The stress is on cha, so no accent, and ch is one letter. syl [] is right.",
+     "evidence": "docs/guarani-audit.json g313 Ehecha porã."
+    },
+    {
+     "where": "night 2 word",
+     "gn": "Ikatúpa añembosarái?",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "añembosarái is a- + ñembosarái, the same verb as unit 4's Ñañembosarái!. The reflexive is ñe- (not je-) before the nasal mb, and 1sg a- has no nasal form. The acute on rá is the app's spelling, because the stress is not on the last vowel (as in jarýi, ramói, Paraguái). There is no tilde: the nasality comes from ñ and mb, and the stressed á is oral. syl [] is right.",
+     "evidence": "tp-grades.js l.128 Ñañembosarái!; l.117 jarýi, ramói."
+    },
+    {
+     "where": "night 2 say",
+     "gn": "Ikatúpa aike?",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Same string as the card; it folds to the same clip key."
+    },
+    {
+     "where": "night 2 say",
+     "gn": "Héẽ, eike. Eguapy.",
+     "verdict": "ok",
+     "confidence": "medium",
+     "reason": "eike (e- + ike) and Eguapy (e- + guapy) are correctly spelled imperatives, both stressed on the last syllable with no accent. There is a comma after Héẽ and a capital E after the period. Medium only because of the Héẽ spelling note under «Héẽ, roipytyvõta.»."
+    },
+    {
+     "where": "night 2 say",
+     "gn": "Aguyje, mbo'ehára.",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Both words are spelled exactly as in the app, with mbo'ehára in lower case after the comma and a final period."
+    },
+    {
+     "where": "night 3 title",
+     "gn": "Aguyjevete",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "aguyje + -vete is written as one word. -vete is tonic and stressed on te, so there is no accent, just as the app writes porãite / Iporãite without one. Capital A matches Aguyje.",
+     "evidence": "tp-grades.js l.108 Tereguahẽ porãite; boards: Iporãite."
+    },
+    {
+     "where": "night 3 word",
+     "gn": "irũ",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Identical to unit 4: same gn, pic and syl i·rũ. ũ is U+0169, the same code point as the existing picture key irũ.",
+     "evidence": "tp-grades.js l.126: w('irũ', 'amiga, amigo', 'irũ', ['i', 'rũ']). The tp-pics.js key irũ exists."
+    },
+    {
+     "where": "night 3 word",
+     "gn": "Reiporukápa chéve nde haiha?",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "re- + i (poru is aireal: aiporu, reiporu, and the causative poruka keeps the i) + poruka + atonic -pa gives the acute on ká. chéve is che + the atonic dative -ve: one word, accented on ché. In nde haiha the possessive nde is written apart, and it stays nde because haiha is oral (before a nasal noun it would be ne). haiha is as in unit 4. «?» only. The variant reipurukápa is the colloquial puru, not a spelling fix; poru is the dictionary form (jeporu 'uso'). The choice of verb is a different lens.",
+     "evidence": "tp-grades.js l.127 haiha; l.71 nde réra (possessive written apart). The form chéve also appears in the Regensburg interview transcripts."
+    },
+    {
+     "where": "night 3 word",
+     "gn": "Eme'ẽmína chéve kuatia",
+     "verdict": "ok",
+     "confidence": "medium",
+     "reason": "eme'ẽ is e- + me'ẽ, not an aireal verb (ame'ẽ, ome'ẽ), so it has no i. Then -mi and -na give the acute on mí, and the tilde stays on ẽ, the same pattern as the app's ñe'ẽtéva. The puso is right. chéve is one word with its accent, and kuatia is as in unit 4. Capital E and no final period, like the app's sentence cards. syl [] is right. The -mi caveat is the same as for Chepytyvõmína.",
+     "evidence": "tp-grades.js l.127 kuatia; l.184 ñe'ẽtéva; tp-course.js l.240 Mokõivéva."
+    },
+    {
+     "where": "night 3 word",
+     "gn": "Aguyjevete",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "A·guy·je·ve·te joins exactly to Aguyjevete and every syllable ends in a vowel. The first three keys are the app's A·guy·je, so the two cards are built the same way. Build compares syllables case-insensitively, so night 1's Aguyje never gets an «A» or «guy» from this card as a wrong key.",
+     "evidence": "Mechanical join and vowel check passed. Build.dc.html l.148-151 filters distractors by lower case."
+    },
+    {
+     "where": "night 3 say",
+     "gn": "Reiporukápa chéve nde haiha?",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Same string as the card, correctly spelled; it folds to the same clip key."
+    },
+    {
+     "where": "night 3 say",
+     "gn": "Héẽ, ejapyhy.",
+     "verdict": "ok",
+     "confidence": "medium",
+     "reason": "ejapyhy is e- + japyhy 'agarrar, tomar' (ajapyhy, not aireal). It is stressed on the last hy, so no accent. Comma and final period are fine. Medium only because of the Héẽ spelling note under «Héẽ, roipytyvõta.»."
+    },
+    {
+     "where": "night 3 say",
+     "gn": "Aguyjevete, che irũ!",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "The possessive che is written apart from the noun, as in Che sy and Che réra. che has no nasal variant, so it stays che before the nasal irũ. A comma comes before the vocative, and the line ends in «!» only.",
+     "evidence": "tp-grades.js l.115 Che sy; l.110 Che réra."
+    }
+   ],
+   "general": "All 25 Guarani strings pass the spelling and syllable check, so this lens needs no fix and no drop. Nothing was edited.\n\nSYLLABLES: The five syl lists (mbo'ehára, Chepytyvõ, Aguyje, irũ, Aguyjevete) each join exactly to their gn. Every syllable ends in a vowel, ch and mb are kept whole, and the puso begins its syllable. All multi-word items have []. Every string is NFC with the ASCII puso. The shared words (mbo'ehára, Aguyje, irũ, haiha, kuatia, ovetã) match tp-grades.js code point for code point, and so do their picture keys. Build gets 3 words in night 1 and 2 in night 3. Night 2 has none, so the engine gives L1 Pairs there. The check script is sylcheck/check.js.\n\nACCENT RULE AS APPLIED:\n- Atonic suffixes in this unit: the question -pa (Ikatúpa, Reiporukápa), the future -ta (roipytyvõta), the request -na (-mína) and the dative -ve (chéve).\n- Tonic suffixes: the courtesy -mi (hence -mína), -vete (Aguyjevete, no accent, like the app's porãite), and the agentive -hára (accented on há).\n- An oral stressed vowel that is no longer last takes the acute: Ikatúpa, Reiporukápa, chéve, -mína.\n- A nasal stressed vowel takes no acute before an atonic suffix, because the tilde marks the stress: roipytyvõta, like the app's Moõpa?.\n- A root keeps its tilde when the stress moves to a tonic suffix: Chepytyvõmína, Eme'ẽmína, like the app's Mokõivéva and ñe'ẽtéva.\n\nWORD BOUNDARIES AND NASAL HARMONY: che- joins the verb when it is the object prefix (Chepytyvõ) and is written apart when it is a possessive (che irũ, nde haiha). chéve is one word. -pa, -ta, -mína and -vete are written joined. nde stays nde before oral haiha. The reflexive is ñe- before mb (añembosarái). che has no nasal form.\n\nDOUBTS (variants, not errors):\n- Héẽ, in all three answers: it is the common school and dictionary form, but it breaks the strict rule that only the stressed nasal vowel takes the tilde, and hẽe and heẽ are also seen. Confirm the Academia's dictionary entry before release.\n- -mína: the acute depends on -mi being tonic. ejumi (no accent) vs ejúna, and the glossed e-ma'ẽ-mí-na, support that. If a reviewer rules -mi atonic, all four strings change together: Chepytyvõmína (title and say line) to chepytyvõmina, Eipe'amína to Eipe'ámina, and Eme'ẽmína to Eme'ẽmina.\n- poru vs the colloquial puru: keep poru. Whether to use the verb at all belongs to another lens.\n\nSOURCES: The sources are partly secondary. discovery.ucl.ac.uk (Estigarribia, A Grammar of Paraguayan Guarani) and www.abc.com.py are outside this session's allowed network, so I saw them only through search summaries. To read them, those hosts must be allowed in the session's network settings. Other sources: https://en.wikibooks.org/wiki/Guarani/Orthography_and_pronunciation ; https://www.abc.com.py/nacionales/2024/08/25/dia-del-guarani-particularidades-de-nuestro-idioma/ ; https://www.jw.org/gug/biblia-omboeva/ ; https://omniglot.com/language/phrases/guarani.htm ; https://epub.uni-regensburg.de/78400/8/Transkription%20Interview%20Nr.%202.pdf . In the project: tp-grades.js, tp-course.js and docs/guarani-audit.json (g20, g93, g271)."
+  },
+  {
+   "lens": "MEANING AND GRAMMAR",
+   "items": [
+    {
+     "where": "unit title",
+     "gn": "Ikatúpa?",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "i- + katu 'be possible, can' + the question marker -pa gives «¿Se puede? / ¿Puedo?». -pa is atonic, so the stress stays on tu and must be written: Ikatúpa, as in Mba'éichapa. The Spanish line names the topic and does not translate the title. The app pairs every unit title this way, for example Maitei / «Saludar, presentarse y despedirse» and Moõpa? / «Instrucciones…», and the earlier audit accepted the pattern. Night 2 teaches Ikatúpa as «¿Puedo…?», so the title is grounded in the unit. ikatu appears nowhere else in the app, so nothing clashes.",
+     "evidence": "tp-grades.js:107 and :165; Main.dc.html:71-73 (gn as the heading, es as the subtitle); docs/guarani-audit.json, refuted g240 (Moõpa?), g29 (Che po) and g11 (Mba'éichapa?)"
+    },
+    {
+     "where": "night 1 title",
+     "gn": "Chepytyvõmína",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "che- (1sg object) + pytyvõ + -mi + -na means «ayudame, por favor». When the subject is 2nd person and the object is 1st person, the verb takes che- and no e-; the i- of oipytyvõ also drops. -mi is stressed and -na is atonic, so the accent goes on mí, as in ejumína. This che- is the verb's object prefix, so it is written joined, unlike the possessive che in Che po and Che resa. Keep this form rather than the doubts' alternative «Eipytyvõmína chéve»: with a 1st-person object, grammars teach che- + verb, and «eipytyvõ chéve» is a Spanish-style calque. The Spanish line names the topic, like Jajotopáta / «Despedirse».",
+     "evidence": "jw.org/gug text (search snippets) has «nepytyvõ» (an object prefix on pytyvõ, with no i-) and «Ehechamína» (-mína joined, accent on mí): https://www.jw.org/gug/biblia-omboeva/mitarusu-ha-mitakunanguera/ejeprepara-amo-gotyove-guara/ ; tp-grades.js:112"
+    },
+    {
+     "where": "night 1 word",
+     "gn": "mbo'ehára",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Same gn, gloss «maestra, maestro», picture and syllables as 1.º grado unit 4, so its meaning is unchanged. The syllables join back to the word.",
+     "evidence": "tp-grades.js:126"
+    },
+    {
+     "where": "night 1 word",
+     "gn": "Chepytyvõ",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "«Ayudame» is exact: the 2sg→1sg imperative is che- + pytyvõ, with no e- and no i-. Without context, Chepytyvõ can also mean «(él) me ayuda», but on a card glossed Ayudame, in a night about asking for help, the imperative reading is the natural one. «Ayudame» is correct voseo. Che-py-ty-võ joins back to the word.",
+     "evidence": "Same che-/ne- object pattern as «nepytyvõ» in jw.org/gug text"
+    },
+    {
+     "where": "night 1 word",
+     "gn": "Eipe'amína ovetã",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "pe'a is an i-verb (aipe'a, oipe'a), so its imperative is eipe'a. «Eipe'a okẽ / Emboty okẽ» (abrí / cerrá la puerta) is the classic textbook pair. -mína follows, with the accent on mí. ovetã keeps unit 4's meaning, 'ventana'. The gloss «Abrí la ventana, por favor» matches exactly, in voseo. mbojuruja is a correct but longer synonym; there is no reason to switch.",
+     "evidence": "tp-grades.js:128 (ovetã = ventana)"
+    },
+    {
+     "where": "night 1 word",
+     "gn": "Aguyje",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Same word, gloss «Gracias», picture and syllables as Preescolar unit 1 and 1.º grado unit 1.",
+     "evidence": "tp-grades.js:68, :112"
+    },
+    {
+     "where": "night 1 say",
+     "gn": "Mbo'ehára, chepytyvõmína.",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "A vocative followed by the polite che- imperative. It is correctly lower-case after the comma, and the gloss matches exactly in voseo. Using Mbo'ehára as a form of address is the school way. «Maestra» follows the app's gloss, though the Guarani has no gender.",
+     "evidence": "tp-grades.js:126"
+    },
+    {
+     "where": "night 1 say",
+     "gn": "Héẽ, roipytyvõta.",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "ro- is the portmanteau prefix «yo → vos», which is right for a teacher answering one child. pytyvõ is an i-verb, and the i- stays after ro-: roipytyvõ, like the everyday ndaroikuaái «no te conozco» and roipota. -ta marks intention or near future. The gloss «Sí, te ayudo.» uses a Spanish present with future sense, which is how the app already glosses -ta: Jajotopáta = «¡Nos vemos!». So no gloss change is needed. The answer fits the request. Héẽ 'sí' is spelled the way most school material spells it.",
+     "evidence": "jw.org/gug (search snippet): «…roipytyvõ hag̃ua umi héntepe». There ro- means 'nosotros (excl.)', but the i- behaves the same way after ro-. Héẽ / Nahániri as yes / no in the Regensburg Guarani interview transcripts: https://epub.uni-regensburg.de/78400/8/Transkription%20Interview%20Nr.%202.pdf ; tp-grades.js:112 (Jajotopáta / ¡Nos vemos!)"
+    },
+    {
+     "where": "night 1 say",
+     "gn": "Aguyje!",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "«¡Gracias!», with the app's punctuation (! only). It closes the request–answer–thanks sequence."
+    },
+    {
+     "where": "night 2 title",
+     "gn": "Ikatúpa aike?",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "The night's key phrase. Its Spanish line, «Pedir permiso», names the topic, the same pattern as Jajotopáta / «Despedirse».",
+     "evidence": "tp-grades.js:112; Tonight.dc.html:155"
+    },
+    {
+     "where": "night 2 word",
+     "gn": "Ikatúpa aike?",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "ikatu + -pa + aike (1sg of ike 'entrar') = «¿Puedo entrar?». In Paraguayan Spanish at a door, that is «¿Puedo pasar?», so the gloss is right. ike is the correct verb here, not hasa, which means 'pass by or through'. -pa sits on the first word, as Guarani requires."
+    },
+    {
+     "where": "night 2 word",
+     "gn": "Ikatúpa aguapy?",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "aguapy is the 1sg of guapy 'sentarse'. The verb is not reflexive in Guarani, so «¿Puedo sentarme?» is the exact equivalent. It is answered by «Eguapy» in the say line."
+    },
+    {
+     "where": "night 2 word",
+     "gn": "Ikatúpa ahecha?",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "ahecha is the 1sg of hecha 'ver, mirar', the same verb as the game titles «Ehecha ha ehendu» and «Ehecha porã» (Mirá), so the meaning does not clash. It has no object, but neither has the Spanish «¿Puedo ver?», so the two match. The eye picture (resa) is used for tesa / Che resa elsewhere. That is a picture being reused, not a word taking a new meaning.",
+     "evidence": "tp-course.js:221; tp-grades.js:121"
+    },
+    {
+     "where": "night 2 word",
+     "gn": "Ikatúpa añembosarái?",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "añembosarái is the 1sg of the verb the app already uses in Ñañembosarái! (¡Juguemos!), with the same accent on rá. «¿Puedo jugar?» is exact. The Spanish loan ajuga is rightly avoided.",
+     "evidence": "tp-grades.js:128"
+    },
+    {
+     "where": "night 2 say",
+     "gn": "Ikatúpa aike?",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Same string as the card. The next say line answers it with the matching imperative, eike."
+    },
+    {
+     "where": "night 2 say",
+     "gn": "Héẽ, eike. Eguapy.",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "These are the e- imperatives of the night's own verbs: aike → eike, aguapy → eguapy, both 2sg, for one child. So the line answers the question and ties back to the aguapy card. «Eike, eguapy» is the standard welcome and is natural from a teacher. The gloss «Sí, pasá. Sentate.» is exact voseo. Two sentences in one say line has a precedent: «Maitei! Mba'éichapa?».",
+     "evidence": "tp-grades.js:109"
+    },
+    {
+     "where": "night 2 say",
+     "gn": "Aguyje, mbo'ehára.",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Thanks followed by a vocative; the gloss «Gracias, maestra.» is exact. It fits the MEC's «agradecer por las atenciones recibidas»."
+    },
+    {
+     "where": "night 3 title",
+     "gn": "Aguyjevete",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "aguyje + the intensifier -vete gives «muchas gracias». It is one word, stressed on the last syllable, so it needs no accent. The Spanish line names the topic, as other night titles do."
+    },
+    {
+     "where": "night 3 word",
+     "gn": "irũ",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Same gn, gloss «amiga, amigo», picture and syllables as unit 4, so its meaning is unchanged.",
+     "evidence": "tp-grades.js:126"
+    },
+    {
+     "where": "night 3 word",
+     "gn": "Reiporukápa chéve nde haiha?",
+     "verdict": "ok",
+     "confidence": "medium",
+     "reason": "The grammar and meaning match «¿Me prestás tu lápiz?» exactly. re- is 'vos'; i- is needed because poru is an i-verb (aiporu, oiporu), just as eiporavo is in the app's «Ehendu ha eiporavo». poruka 'prestar' is poru 'usar' + causative -uka, literally 'hacer usar'. -pa is atonic, so the accent goes on ká. chéve correctly marks the person who receives (che- would be wrong, since haiha is the object). nde haiha means 'tu lápiz', with haiha as in unit 4. A yes/no question suits the «Héẽ» answer. My doubt is about word choice, not grammar: poruka is the dictionary and school verb, but many children say «Embopresta chéve…». No Guarani form is clearly better. «Ikatúpa aiporu nde haiha?» reuses night 2's frame, but it means «¿Puedo usar…?», not «prestar», so keep this form.",
+     "evidence": "tp-course.js:222 (eiporavo: e-i- with an i-verb); tp-grades.js:127 (haiha = lápiz). I found no web page with poruka; the dictionaries could not be reached from this session."
+    },
+    {
+     "where": "night 3 word",
+     "gn": "Eme'ẽmína chéve kuatia",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "me'ẽ is not an i-verb (ame'ẽ, ome'ẽ), so eme'ẽ is right. -mína follows with the accent on mí. chéve correctly marks the person who receives. Guarani has no article, so «una» in the gloss is ordinary translation, and kuatia keeps the app's meaning, 'hoja de papel'. The verb is «dar», not «prestar», which suits a sheet that gets used up.",
+     "evidence": "tp-grades.js:127 (kuatia = hoja de papel)"
+    },
+    {
+     "where": "night 3 word",
+     "gn": "Aguyjevete",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "«Muchas gracias» is exact. A-guy-je-ve-te joins back to the word. It shares the aguyje picture with night 1's Aguyje. The distractor code never offers a word with the same picture as the target, so the two never compete.",
+     "evidence": "tp-course.js:340-358 (distractors skip words with the same picture)"
+    },
+    {
+     "where": "night 3 say",
+     "gn": "Reiporukápa chéve nde haiha?",
+     "verdict": "ok",
+     "confidence": "medium",
+     "reason": "Same string as the card; see the card's reason. The next line, «Héẽ, ejapyhy.», answers it properly."
+    },
+    {
+     "where": "night 3 say",
+     "gn": "Héẽ, ejapyhy.",
+     "verdict": "ok",
+     "confidence": "medium",
+     "reason": "japyhy 'agarrar, tomar' is not an i-verb (ajapyhy, ojapyhy), so its 2sg imperative is ejapyhy, «agarrá / tomá». It is the usual word when handing something over; as I recall, the Guarani Mass says «Pejapyhy ha pe'u» ('tomad y comed'), though I could not verify that here. eipyhy (from pyhy) is also correct, and neither form is wrong. With Héẽ it answers a yes/no request. The gloss «Sí, tomá.» is exact voseo."
+    },
+    {
+     "where": "night 3 say",
+     "gn": "Aguyjevete, che irũ!",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Aguyjevete + the vocative che irũ, 'amiga mía'. A Spanish vocative naturally drops «mi», so «¡Muchas gracias, amiga!» means the same. irũ keeps unit 4's meaning. The exclamation uses ! only, as the app does."
+    }
+   ],
+   "general": "Result: all 25 Guarani strings are grammatical, and each means what its Spanish says. I found no fix or drop under this lens. Nothing in any project file was changed.\n\nWhat I checked:\n- Verb person: Chepytyvõ uses che- with no e- (2sg acting on 1sg). roipytyvõta uses ro- (yo → vos) and keeps the i- of an i-verb, as in ndaroikuaái. Every imperative is 2sg e- for one listener (eipe'a, eme'ẽ, eike, eguapy, ejapyhy). The permission frame is Ikatúpa + a 1sg a- verb (aike, aguapy, ahecha, añembosarái).\n- Recipient and possessives: chéve marks the receiver with me'ẽ and poruka; nde haiha and che irũ are right.\n- Suffixes: -mína is joined, with the accent on mí. -pa is atonic, which gives Ikatúpa and Reiporukápa. -ta is glossed with a Spanish present, as the app already does (Jajotopáta = «¡Nos vemos!»).\n- Negation: none is used, since Ndaikatúi was dropped.\n- Dialogues: each night's say set is a request, a fitting Héẽ answer, and thanks.\n- Meanings in the app: no reused word changes meaning (mbo'ehára, irũ, Aguyje, haiha, kuatia, ovetã, añembosarái). None of the new forms (Héẽ, pytyvõ, poruka, japyhy, ikatu, eike, guapy, pe'a, me'ẽ, -mína, chéve, Aguyjevete) appears anywhere else in the app's data or screens, so nothing clashes. No false friends.\n- Glosses: they are short and in voseo. The titles' Spanish lines name the topic rather than translate, which is the app's pattern and was accepted in the earlier audit.\n\nAdvice on the doubts:\n- Keep Chepytyvõmína. Don't switch to «Eipytyvõmína chéve», which is a Spanish-style calque.\n- Keep -ta in roipytyvõta, and keep the gloss «Sí, te ayudo.».\n\nWhat is left is word choice and spelling, not grammar:\n- poruka (school form) versus the everyday loan mbopresta.\n- japyhy versus pyhy for «tomá».\n- The spelling Héẽ (the usual school form).\n- che- written joined to verbs while possessive che stays separate (Che po). This is correct, but L1 readers will meet both.\n\nEvidence and limits:\n- The outside evidence is only search snippets. jw.org/gug pages have «roipytyvõ», «nepytyvõ» and «Ehechamína»; the Regensburg interview transcripts use «Héẽ» and «Nahániri».\n- WebFetch could not reach discovery.ucl.ac.uk (Estigarribia's open-access grammar) or en.wiktionary.org from this session. Both hosts would have to be allowed in the session's network settings to quote them directly.\n- I wrote one read-only check script, check-unit5.js. It confirms that the reused words keep their app meanings, every syllable list joins back to its word, every reused picture key exists, and the new forms appear nowhere else in the app."
+  },
+  {
+   "lens": "Usage, register and attestation",
+   "items": [
+    {
+     "where": "unit title",
+     "gn": "Ikatúpa?",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "The frame is attested; the bare title is plausible. «Ikatúpa…?» is how Paraguayan Guarani asks permission («¿Se puede? / ¿Puedo…?»). It is ikatu plus the atonic -pa, so the accent on tú is right (compare Mba'éichapa). It is short, current and not jopara, and it names the unit's main courtesy tool. The Spanish title describes the unit's function rather than translating it, as unit 1 does («Maitei» / «Saludar, presentarse y despedirse»).",
+     "evidence": "«Ikatúpa asẽ sapy'aite» (¿puedo salir un momento?) appears as a permission request in Guaraní Comunicativo en la Función Pública (https://dokumen.pub/guarani-comunicativo-en-la-funcion-publica-guarani-mboesyry-estado-rembiapope.html). Tatoeba pairs «May I use your pencil?» with «Ikatúpa aipuru nde haiha?» (lecslab/biling_grn, https://huggingface.co/datasets/lecslab/biling_grn/blob/main/grn.csv). The MEC corpus has ikatu only in other uses: «ikatúta» (Pages_from_4933 l.230) and «ikatúva» (MAGUA guides)."
+    },
+    {
+     "where": "night 1 title",
+     "gn": "Chepytyvõmína",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Attested exactly. It is che- (1st-person object in the imperative, with no e-) + pytyvõ + -mína «por favor». The accent on mí follows the usual written pattern: -mi is tonic and -na is atonic (ejúna, ejumi, ejúke, ejumína). It is polite, natural, and something a child says.",
+     "evidence": "«¡Chepytyvõmína!» = «Ayuda, por favor» in the booklet Guaraní para sobrevivir of the ASU2025 games (https://asu2025.org.py/wp-content/uploads/GUARANI-PARA-SOBREVIVIR.pdf). ABC Color gives eju → «ejúna», «ejumi», «ejúke», «ejumína», «ejumíkena» (https://www.abc.com.py/nacionales/2024/08/25/dia-del-guarani-particularidades-de-nuestro-idioma/) and lists «Ejumína ápe» among sample imperatives (https://www.abc.com.py/escolar/tercer-ciclo/guarani/2025/01/06/neejoaju-nemohenda-clasificacion-de-las-oraciones/). The Función Pública course has «chepytyvõmi». MEC: «tomoguahẽmi oréve» (a polite request with -mi), Pages_from_4933 l.229."
+    },
+    {
+     "where": "night 1 word",
+     "gn": "mbo'ehára",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Attested. It is the app's word from unit 4 and the ordinary school word for teacher, with the same meaning, picture and syllables.",
+     "evidence": "The MEC text corpus has «mbo’ehára.» and «mbo’eharakuéra»."
+    },
+    {
+     "where": "night 1 word",
+     "gn": "Chepytyvõ",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Attested. It is the standard imperative with a 1st-person object («ayudame»), written as one word because che- is a person prefix on the verb. On its own it is the plain form (phrasebooks list it under emergencies), so it is right that the night title and the say line add -mína for courtesy. The syllables Che-py-ty-võ are correct.",
+     "evidence": "«Chepytyvõ! (che-pi-ti-võ) — ¡Ayudame!» under «Emergencias y salud» on https://www.idiomas.com.ar/2026/05/guarani-paraguayo-para-hispanohablantes.html. Paraguayan Guarani texts on jw.org also use «chepytyvõ»."
+    },
+    {
+     "where": "night 1 word",
+     "gn": "Eipe'amína ovetã",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Plausible but unattested as a whole; each part is attested. pe'a is the everyday verb for opening doors, books and windows, and teachers use it in classroom instructions. -mína works as in ejumína, and ovetã is as in unit 4. It is natural school Guarani with no loanword. My only reservation is about the situation, not the language: a child more often asks a classmate, or asks permission to open the window («Ikatúpa aipe'a ovetã?»). As a «favor» request to the teacher it is still natural. (mbojuruja also exists, but pe'a is the verb children learn first.)",
+     "evidence": "Wiktionary pe'a: aipe'a, reipe'a, oipe'a; imperative eipe'a, peipe'a (mirror https://kaweah.freedombox.rocks/kiwix/wiktionary_en_all_maxi_2023-04/pe'a). A school exercise has «peipea pe kuatiariru» = «abran sus cuadernos» (https://es.scribd.com/document/471558241/VERBOS). For -mína, see the ABC Color links in the night 1 title item. Not found in the MEC corpus."
+    },
+    {
+     "where": "night 1 word",
+     "gn": "Aguyje",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Attested. It is the app's word from unit 1, the basic «gracias».",
+     "evidence": "Omniglot «Aguyje / Aguyjevete ndéve» (https://omniglot.com/language/phrases/guarani.htm)."
+    },
+    {
+     "where": "night 1 say",
+     "gn": "Mbo'ehára, chepytyvõmína.",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Attested core (¡Chepytyvõmína!) plus a vocative. It is exactly what a teacher would model. In real classrooms children often say «Profe» or «Seño» even in Guarani, but «Mbo'ehára» is the school form and right to teach. The lowercase c after the comma is correct.",
+     "evidence": "See the night 1 title item (ASU2025 booklet)."
+    },
+    {
+     "where": "night 1 say",
+     "gn": "Héẽ, roipytyvõta.",
+     "verdict": "ok",
+     "confidence": "medium",
+     "reason": "Attested. The ro- prefix (yo → vos) keeps the i- of aipytyvõ, giving roipytyvõ. -ta marks the near future. The stressed nasal võ carries the tilde, so no acute is needed. It is a natural, polite reply from a teacher, and -ta is what speakers use for an offer (roipytyvõ is also correct). Héẽ is the most common school spelling of «sí», but hẽe and heẽ also circulate, and I found no Academia page online to settle it; this is why confidence is medium. The gloss «Sí, te ayudo.» is good Paraguayan Spanish; «te voy a ayudar» would be more literal.",
+     "evidence": "Éxodo 4:12, Biblia GPC 2006: «Tereho katu. Che roipytyvõta reñe'ẽ haguã» (https://www.bible.com/bible/66/EXO.4.12.GPC2006). «Héẽ» is an affirmative reply in a Regensburg interview transcript (https://epub.uni-regensburg.de/78400/8/Transkription%20Interview%20Nr.%202.pdf). Omniglot gives «Hêe» / «Nahániri», a font-limited spelling (https://omniglot.com/language/phrases/guarani.htm)."
+    },
+    {
+     "where": "night 1 say",
+     "gn": "Aguyje!",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Attested and natural, the same word as the card.",
+     "evidence": "Omniglot (https://omniglot.com/language/phrases/guarani.htm)."
+    },
+    {
+     "where": "night 2 title",
+     "gn": "Ikatúpa aike?",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Natural Guarani for «¿Puedo pasar?». ike means 'entrar' (aike, reike, oike; imperative eike), which is the precise verb for coming into a room (ahasa 'paso' is the looser alternative). The Ikatúpa + a-verb frame is attested. One search summary said a phrase site (learnentry.com) lists «Ikatúpa aike?» = «May I come in?», but a second search could not confirm it, so I count the exact string as plausible.",
+     "evidence": "«Ikatúpa asẽ sapy'aite» (Función Pública course); «Ikatúpa aipuru nde haiha?» (Tatoeba, lecslab/biling_grn). The MEC 1.º grado guide (4453a06b l.1990-1993) expects «permiso, gracias, buenos días…»."
+    },
+    {
+     "where": "night 2 word",
+     "gn": "Ikatúpa aike?",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Same as the night title. It is the most typical classroom permission request and easy to say. The door picture fits.",
+     "evidence": "See the night 2 title item."
+    },
+    {
+     "where": "night 2 word",
+     "gn": "Ikatúpa aguapy?",
+     "verdict": "ok",
+     "confidence": "medium",
+     "reason": "Plausible but unattested; grammatical and natural (guapy: aguapy, reguapy, oguapy; imperative eguapy). A visitor or a child does say it, but asking to sit is less frequent in class than asking to come in, go out or play. Its value here is that it sets up the teacher's «Eguapy».",
+     "evidence": "«Eike, eguapy (Entra, siéntate)» in a vocabulary list (https://pdfcoffee.com/palabras-en-guarani-vocabulario-en-guarani-4-pdf-free.html). Guasch's dictionary gives «eguapymi: siéntate» (https://www.portalguarani.com/1688_antonio_guasch__/13583_diccionario_guarani__castellano_letra_m__por_antonio_guasch.html)."
+    },
+    {
+     "where": "night 2 word",
+     "gn": "Ikatúpa ahecha?",
+     "verdict": "ok",
+     "confidence": "medium",
+     "reason": "Plausible but unattested; correct and natural for «¿Puedo ver?» (a classmate's drawing or book). It uses the same verb as the game title «Ehecha ha ehendu». It is the least typical of the four requests, so on usage grounds it is the first card to cut if night 2 is trimmed to three. «Ehechaukamína chéve» (mostrame, por favor) is also idiomatic but harder.",
+     "evidence": "hecha: ahecha, rehecha, ohecha; the app already uses Ehecha. No exact match online or in the MEC corpus."
+    },
+    {
+     "where": "night 2 word",
+     "gn": "Ikatúpa añembosarái?",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Plausible but unattested as a whole. ñembosarái is the traditional Guarani verb for 'jugar', the one schools teach and the app already uses (Ñañembosarái!). Many children say «ajuga» at home (jopara), which the app is right to avoid. It is not a purist coinage. The spelling sarái matches the app.",
+     "evidence": "tp-grades.js unit 4: «Ñañembosarái!» / «¡Juguemos!»."
+    },
+    {
+     "where": "night 2 say",
+     "gn": "Ikatúpa aike?",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Same string as the card; natural opener of a door dialogue.",
+     "evidence": "See the night 2 title item."
+    },
+    {
+     "where": "night 2 say",
+     "gn": "Héẽ, eike. Eguapy.",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Attested pair. «Eike, eguapy» («pasá, sentate») is the usual way to invite someone in, and it is natural from a teacher to one pupil (singular e-). It is short, polite and easy to repeat, and it links back to the aguapy card. A teacher may soften it to «Eguapymi», but the plain form is better for 6-year-olds. For the Héẽ spelling, see the night 1 say item.",
+     "evidence": "«Eike, eguapy (Entra, siéntate)» (https://pdfcoffee.com/palabras-en-guarani-vocabulario-en-guarani-4-pdf-free.html). «Eguapy — Sentate» on idiomas.com.ar. Guasch «eguapymi: siéntate»."
+    },
+    {
+     "where": "night 2 say",
+     "gn": "Aguyje, mbo'ehára.",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Natural thanks with a vocative, built from two app words.",
+     "evidence": "Both words are attested (see above)."
+    },
+    {
+     "where": "night 3 title",
+     "gn": "Aguyjevete",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Attested; it is the standard «muchas gracias». The subtitle «Pedir prestado y dar las gracias» describes the night rather than translating the title, as «Jajotopáta» / «Despedirse» does in unit 1. This is acceptable, though a child may take Aguyjevete to mean the whole subtitle.",
+     "evidence": "Omniglot «Aguyjevete ndéve» = Thank you. Montoya's Tesoro (1639) entry discussed at http://guaranime.blogspot.com/2011/09/aguyjeve-aguyjevete-aguyjevee.html. idiomas.com.ar «aguijevete — Muchas gracias»."
+    },
+    {
+     "where": "night 3 word",
+     "gn": "irũ",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Attested; the app's word from unit 4 ('amiga, amigo'), and «che irũ» is the usual way children address a classmate.",
+     "evidence": "tp-grades.js unit 4. «Aguyjevete peẽme, che irũnguéra!» on a Paraguayan greeting page (https://www.staff.uni-mainz.de/lustig/pics/py/2001/welcome.html, seen in a search snippet only)."
+    },
+    {
+     "where": "night 3 word",
+     "gn": "Reiporukápa chéve nde haiha?",
+     "verdict": "fix",
+     "confidence": "medium",
+     "reason": "Doubtful for this audience, though it is grammatical (re-i-poru-uka, with the accent on ká before the atonic -pa). Problems: (1) the sentence is unattested. (2) poruka is a real dictionary verb (jeporuka 'préstamo'), but one dictionary glosses it as both 'dar préstamo' and 'recibir préstamo'. Many children and families say the loan «Embopresta chéve…», so poruka is a word most would meet only at school. (3) It brings three new pieces at once for an L2 6-year-old: re-, the causative -uka, and chéve. The near-identical «Ikatúpa aipuru nde haiha?» is attested for exactly this situation and reuses night 2's frame with one new verb. It is how children ask to borrow in class, and the MEC's «préstamo de algún objeto» is still met. I write poru rather than puru to match the MEC teacher guides (Eiporu, Eiporuporã). Priorización 2021 writes Oipuru and many children say aipuru, so either spelling is acceptable. It has the same 10 syllables and is 3 characters shorter (25). If the team wants the explicit verb 'prestar', keep the original: it is correct.",
+     "evidence": "Tatoeba (via lecslab/biling_grn): «May I use your pencil?» = «Ikatúpa aipuru nde haiha?» (https://huggingface.co/datasets/lecslab/biling_grn/blob/main/grn.csv). Dictionaries: «jeporuka. s. Préstamo.» (Avañe'ẽ dictionary, https://www.mec.gob.ar/descargas/Documentos/Educacion%20Intercultural%20Bilingue/GUARANI/avane-Diccionario-Guarani-Esp-Esp-Guarani.pdf). «Prestar v. Puruka, puru, poru.» and «Poruka: Dar préstamo o recibir préstamo» (Guarani–Spanish dictionaries on Scribd, e.g. https://es.scribd.com/document/742095431/Diccionario-Castellano-Guarani-Finalizado). Mbya «EIPORUKA | EMPRESTAR» (https://canionsdosul.org/wp-content/uploads/2022/07/GLOSSARIO-INDIGENA-3_compressed.pdf). MEC: «Eiporu» (5.º MAGUA guide l.4109), «Eiporuporã» (4.º and 6.º MAGUA guides), «Oipuru» (Priorización 2021, docs/mec-check.json).",
+     "fix": "Ikatúpa aiporu nde haiha?",
+     "esFix": "¿Puedo usar tu lápiz?",
+     "sylFix": []
+    },
+    {
+     "where": "night 3 word",
+     "gn": "Eme'ẽmína chéve kuatia",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Plausible but unattested as a whole. «Eme'ẽ chéve…» is the everyday 'dame…', and -mína is the same courtesy tool as in night 1. Bare kuatia is natural because Guarani has no article. «Eme'ẽmína chéve peteĩ kuatia» would match «una hoja» exactly but is longer. Two diacritics (ẽ and í) are right, by the same pattern as ejumína.",
+     "evidence": "Phrasebooks give «eme'ẽ chéve peteĩ…» = «dame un/una…» (idiomas.com.ar) and «¡Eme'ẽ chéve kóva!» = «¡Dame esto!» (https://www.learnentry.com/english-to-guarani/guarani-sentences-and-phrases/, via a search snippet). -mína: ABC Color links above."
+    },
+    {
+     "where": "night 3 word",
+     "gn": "Aguyjevete",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Attested and natural. The syllables A-guy-je-ve-te are correct and consistent with Aguyje.",
+     "evidence": "See the night 3 title item."
+    },
+    {
+     "where": "night 3 say",
+     "gn": "Reiporukápa chéve nde haiha?",
+     "verdict": "fix",
+     "confidence": "medium",
+     "reason": "Same as the card, whose clip this line shares; change both together. With the fix, the dialogue mirrors night 2: «Ikatúpa aike? → Héẽ, eike.» becomes «Ikatúpa aiporu nde haiha? → Héẽ, ejapyhy / Héẽ, eiporu.».",
+     "evidence": "See the night 3 word item.",
+     "fix": "Ikatúpa aiporu nde haiha?",
+     "esFix": "¿Puedo usar tu lápiz?"
+    },
+    {
+     "where": "night 3 say",
+     "gn": "Héẽ, ejapyhy.",
+     "verdict": "ok",
+     "confidence": "medium",
+     "reason": "Plausible but unattested in this exact use. japyhy ('agarrar, tomar') is common modern Guarani, and «Ejapyhy» while handing something over is as natural as «Agarrá / Tomá». It answers either version of the card. An equally good alternative is «Héẽ, eiporu.» (Sí, usalo): it mirrors «Héẽ, eike.» and MEC guides write «Eiporu». Choose it if the card becomes «Ikatúpa aiporu nde haiha?».",
+     "evidence": "A Guarani text by the Academia's Verón uses «ojapyhy» in the sense 'tomó / adoptó' (found in a search snippet, https://dialnet.unirioja.es/descarga/articulo/7337861.pdf). No dictionary entry was retrievable online. MEC «Eiporu», 5.º MAGUA guide l.4109."
+    },
+    {
+     "where": "night 3 say",
+     "gn": "Aguyjevete, che irũ!",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "The pattern is attested and the phrase is natural between classmates. The gendered gloss «amiga» is fine; «amigo» would be equally right.",
+     "evidence": "«Aguyjevete peẽme, che irũnguéra!» on a 2001 Paraguayan greeting page (https://www.staff.uni-mainz.de/lustig/pics/py/2001/welcome.html, search snippet only)."
+    }
+   ],
+   "general": "Overall the unit is natural, polite and current school Guarani that a Paraguayan teacher would model for 6-year-olds. It has no needless jopara (no «por favor», «presta», «juga» or «profe») and no invented words; every verb is traditional (pytyvõ, pe'a, me'ẽ, ike, guapy, hecha, ñembosarái, japyhy, poru/poruka).\n\nAttested online (some exactly, some as patterns):\n- «¡Chepytyvõmína!» and «Chepytyvõ!».\n- The frame «Ikatúpa + a-verb?» («Ikatúpa asẽ sapy'aite», «Ikatúpa aipuru nde haiha?»).\n- «roipytyvõta» (Biblia GPC 2006, Éx 4:12).\n- «Eike, eguapy», «Aguyjevete», «Eme'ẽ chéve…».\nThe rest are plausible but unattested combinations of attested parts; I found none doubtful except as noted below.\n\nSpelling of -mína: the accent on mí is confirmed by ABC Color (ejúna / ejumi / ejúke / ejumína), so Chepytyvõmína, Eipe'amína and Eme'ẽmína are right. Héẽ is the most common school spelling, but variants (hẽe, heẽ) exist and I found no Academia page online to settle it.\n\nOne change recommended: replace «Reiporukápa chéve nde haiha?» (card and say line) with «Ikatúpa aiporu nde haiha?» (¿Puedo usar tu lápiz?). It is attested near-verbatim on Tatoeba and reuses night 2's frame, which makes it easier for an L2 child. Keep the original only if the team wants the explicit verb 'prestar'; it is grammatical and its accent is right. Optionally answer «Héẽ, eiporu.» instead of «Héẽ, ejapyhy.» (both are fine). On usage grounds, «Ikatúpa ahecha?» is the least typical card in night 2.\n\nMEC corpus (scratchpad mec-text): none of the unit's Guarani phrases appear in it, because these texts contain little Guarani.\n- It confirms the capacities: Guía para la planificación 2021, 1.er ciclo, Comunicación Guaraní 1.º grado, p.50-51 and p.54 (25531b74 l.2385-2402 and 2543-2556).\n- It confirms the expected courtesy repertoire: 1.º grado guide «permiso, gracias, buenos días…» (4453a06b l.1990); 2.º grado guide «Con permiso», «Me permite», «¡Muchas gracias», «¡Por favor!» (8344c61a l.513).\n- It attests related forms: «Eiporu», «Eiporuporã», «ojeporu» (MAGUA teacher guides); «Oipuru» (Priorización 2021); «Echutána», «Emoingéke» (6.º grado guide, with the accent before atonic -na and -ke); «tomoguahẽmi oréve» (-mi as a polite softener, Pages_from_4933 l.229); «mbo’ehára»; «ikatúta».\n\nLimits:\n- WebFetch could not reach www.staff.uni-mainz.de or en.wikibooks.org: they are not in this session's allowed network domains and must be allowed before those pages can be read. All web evidence above therefore comes from search-result snippets I could not open to verify word by word.\n- I found no Paraguayan 1.º grado Guarani-L2 textbook online with these exact phrases.\n- Outside my lens, but worth checking: Héẽ opens three say clips, and the synthetic voice has already garbled short nasal words."
+  }
+ ],
+ "final": {
+  "unit": {
+   "gn": "Ikatúpa?",
+   "es": "Pedir con cortesía y agradecer"
+  },
+  "nights": [
+   {
+    "gn": "Chepytyvõmína",
+    "es": "Pedir ayuda y favores",
+    "words": [
+     {
+      "gn": "mbo'ehára",
+      "es": "maestra, maestro",
+      "pic": "mbo'ehára",
+      "syl": [
+       "mbo",
+       "'e",
+       "há",
+       "ra"
+      ],
+      "note": "From unit 4, with the same gloss, picture and syllables. It is the person the child asks for help, as irũ is in night 3. Its approved clip can be reused."
+     },
+     {
+      "gn": "Chepytyvõ",
+      "es": "Ayudame",
+      "pic": "new:pytyvõ",
+      "newPic": "A helping hand: a big grown-up hand in a green sleeve (the teacher's top in the mbo'ehára picture) reaches down from the top and holds a small child's hand reaching up from the bottom, with two short curved lines showing the lift.",
+      "syl": [
+       "Che",
+       "py",
+       "ty",
+       "võ"
+      ],
+      "note": "che- 'me' + pytyvõ 'ayudar': with a first-person object, the imperative takes che- and no e-. The night's title and its say line add -mína, «por favor»."
+     },
+     {
+      "gn": "Eipe'amína ovetã",
+      "es": "Abrí la ventana, por favor",
+      "pic": "ovetã",
+      "syl": [],
+      "note": "eipe'a 'abrí' (pe'a 'abrir') + -mína 'por favor'. The accent goes on mí because -na is atonic. ovetã as in unit 4. This is the MEC's «pedir un favor», in a hot Paraguayan classroom."
+     },
+     {
+      "gn": "Aguyje",
+      "es": "Gracias",
+      "pic": "aguyje",
+      "syl": [
+       "A",
+       "guy",
+       "je"
+      ],
+      "note": "From unit 1, with the same gloss, picture and syllables. Its approved clip also serves the say line «Aguyje!»."
+     }
+    ],
+    "say": [
+     {
+      "gn": "Mbo'ehára, chepytyvõmína.",
+      "es": "Maestra, ayudame, por favor."
+     },
+     {
+      "gn": "Héẽ, roipytyvõta.",
+      "es": "Sí, te ayudo."
+     },
+     {
+      "gn": "Aguyje!",
+      "es": "¡Gracias!"
+     }
+    ]
+   },
+   {
+    "gn": "Ikatúpa aike?",
+    "es": "Pedir permiso",
+    "words": [
+     {
+      "gn": "Ikatúpa aike?",
+      "es": "¿Puedo pasar?",
+      "pic": "okẽ",
+      "syl": [],
+      "note": "ikatu 'se puede' + -pa (question marker; it is atonic, so the accent goes on tú) + aike 'entro'. The knock at the classroom door; the teacher answers Héẽ, eike. The say line shares this card's clip."
+     },
+     {
+      "gn": "Ikatúpa aguapy?",
+      "es": "¿Puedo sentarme?",
+      "pic": "apyka",
+      "syl": [],
+      "note": "aguapy 'me siento' (guapy). The teacher's answer in the say line is Eguapy, 'sentate'."
+     },
+     {
+      "gn": "Ikatúpa ahecha?",
+      "es": "¿Puedo ver?",
+      "pic": "resa",
+      "syl": [],
+      "note": "ahecha 'veo' (hecha), the verb in the Meet game's title, Ehecha ha ehendu. It reuses unit 3's eye picture (tesa); the games never show two cards with the same picture together."
+     },
+     {
+      "gn": "Ikatúpa añembosarái?",
+      "es": "¿Puedo jugar?",
+      "pic": "pelota",
+      "syl": [],
+      "note": "añembosarái 'juego': the same verb and ball picture as unit 4's Ñañembosarái! (¡Juguemos!), now in the first person singular."
+     }
+    ],
+    "say": [
+     {
+      "gn": "Ikatúpa aike?",
+      "es": "¿Puedo pasar?"
+     },
+     {
+      "gn": "Héẽ, eike. Eguapy.",
+      "es": "Sí, pasá. Sentate."
+     },
+     {
+      "gn": "Aguyje, mbo'ehára.",
+      "es": "Gracias, maestra."
+     }
+    ]
+   },
+   {
+    "gn": "Aguyjevete",
+    "es": "Pedir prestado y dar las gracias",
+    "words": [
+     {
+      "gn": "irũ",
+      "es": "amiga, amigo",
+      "pic": "irũ",
+      "syl": [
+       "i",
+       "rũ"
+      ],
+      "note": "From unit 4, with the same gloss, picture and syllables. It is the classmate this night talks to. Its clip is still held back, so it needs a new take."
+     },
+     {
+      "gn": "Ikatúpa aiporu nde haiha?",
+      "es": "¿Puedo usar tu lápiz?",
+      "pic": "haiha",
+      "syl": [],
+      "note": "ikatu 'se puede' + -pa (atonic, so the accent goes on tú) + aiporu 'uso' (a- 'yo' + the i of poru 'usar', as in the MEC guides' Eiporu; stressed on its last syllable, so no accent) + nde haiha 'tu lápiz', with haiha as in unit 4. It is night 2's «¿Puedo…?» frame with one new verb: asking a classmate to use their pencil is the MEC's «préstamo de algún objeto». Tatoeba has it almost word for word: «Ikatúpa aipuru nde haiha?» (May I use your pencil?). The say line shares this card's clip."
+     },
+     {
+      "gn": "Eme'ẽmína chéve kuatia",
+      "es": "Dame una hoja, por favor",
+      "pic": "kuatia",
+      "syl": [],
+      "note": "eme'ẽ 'da' + -mína 'por favor' + chéve 'a mí': 'dame, por favor'. kuatia as in unit 4. This is the MEC's «material»."
+     },
+     {
+      "gn": "Aguyjevete",
+      "es": "Muchas gracias",
+      "pic": "aguyje",
+      "syl": [
+       "A",
+       "guy",
+       "je",
+       "ve",
+       "te"
+      ],
+      "note": "aguyje + -vete 'mucho, de verdad'. It shares the aguyje heart with night 1's Aguyje. They are in different nights, and the games never show two cards with the same picture together."
+     }
+    ],
+    "say": [
+     {
+      "gn": "Ikatúpa aiporu nde haiha?",
+      "es": "¿Puedo usar tu lápiz?"
+     },
+     {
+      "gn": "Héẽ, ejapyhy.",
+      "es": "Sí, tomá."
+     },
+     {
+      "gn": "Aguyjevete, che irũ!",
+      "es": "¡Muchas gracias, amiga!"
+     }
+    ]
+   }
+  ],
+  "notes": "VERIFICATION RESULT: one change, in night 3. Everything else is as merged.\n- Spelling and syllables lens: all 25 strings ok, no fix.\n- Meaning and grammar lens: all ok, no fix. It advised keeping «Reiporukápa chéve nde haiha?».\n- Usage lens: all ok except the night-3 loan request. There it proposed «Ikatúpa aiporu nde haiha?» (medium confidence), for the card and its say line.\n- That fix had one lens for it and one against. So I kept the form with the stronger evidence, the attested «Ikatúpa aiporu nde haiha?» (see changes), and recorded the meaning lens's objection in doubts.\n- No other fix had two lenses or high confidence behind it, and no lens asked to drop anything.\n- The usage lens's two optional suggestions are not applied; both are in doubts:\n  - «Héẽ, eiporu.» as the night-3 answer\n  - cutting «Ikatúpa ahecha?»\n\nTHE UNIT: «Ikatúpa?» · Pedir con cortesía y agradecer\n- Night 1, «Chepytyvõmína», with the teacher.\n  - Cards: mbo'ehára, Chepytyvõ, Eipe'amína ovetã, Aguyje.\n  - Say: Mbo'ehára, chepytyvõmína. / Héẽ, roipytyvõta. / Aguyje!\n- Night 2, «Ikatúpa aike?», at the classroom door.\n  - Cards: Ikatúpa + a-verb? with aike, aguapy, ahecha and añembosarái.\n  - Say: Ikatúpa aike? / Héẽ, eike. Eguapy. / Aguyje, mbo'ehára.\n- Night 3, «Aguyjevete», with a classmate.\n  - Cards: irũ, Ikatúpa aiporu nde haiha?, Eme'ẽmína chéve kuatia, Aguyjevete.\n  - Say: Ikatúpa aiporu nde haiha? / Héẽ, ejapyhy. / Aguyjevete, che irũ!\n- Two draft cards stay out:\n  - Ndaikatúi: its picture would read as «ayudame» next to the helping hands.\n  - A Héẽ card: its picture is abstract and close to iporã, and short nasal words are hard for the synthetic voice. Héẽ is still said in all three dialogues.\n\nFIT WITH THE MEC (Priorización curricular 2021, Comunicación Guaraní, 1.º grado; 2021 planning guide)\n- Item 16:\n  - Night 1: pedir ayuda, and pedir un favor (the window).\n  - Night 2: pedir permiso.\n  - Night 3: préstamo of an object (the pencil, asked with night 2's frame) and of material (the sheet, asked with Eme'ẽmína chéve).\n- Item 18: every say set is a request, an answer and a thank-you, the guide's «práctica oral simulada».\n- Courtesy tools taught: -mína, Ikatúpa…?, Héẽ, Aguyje / Aguyjevete.\n- The 2.º grado needs (baño, agua, comida) are left out.\n\nRE-CHECKED ON THE FINAL UNIT\nRun in memory with the real tp-course.js, with the unit placed after unit 4. The script came on stdin, so no file was written.\n- Syllables: every syl list joins back to its word, every syllable ends in a vowel, and no digraph is split. Multi-word items have [].\n- Pictures: every reused key exists, the pictures are distinct within each night, and pytyvõ is the only new picture.\n- Games per track:\n  - L1: meet+read+build | meet+read+pairs | meet+read+build.\n  - L2: meet+pick+say on all three nights.\n  - BI: meet+pick+say | meet+read+say | meet+pick+say.\n- Build uses mbo'ehára, Chepytyvõ and Aguyje in night 1, and irũ and Aguyjevete in night 3. L1 Pairs in night 2 uses aike, aguapy and ahecha.\n- Distractors, tested over 60 seeds per word: no Pick or Check option set holds two cards with the same picture, and Aguyje and Aguyjevete never appear together.\n- Clips: the unit needs 18 keys.\n  - «Aguyje!», «Ikatúpa aike?» and «Ikatúpa aiporu nde haiha?» share their card's clip.\n  - aguyje and mbo'ehára have approved clips. irũ's clip is held back (the recognizer heard «evu»).\n  - So 16 clips are new.\n\nTO SETTLE BEFORE RELEASE\n- Card length: «Ikatúpa aiporu nde haiha?» (25 characters) and «Eme'ẽmína chéve kuatia» (22) are longer than any card now. Today's longest is «Mba'éichapa nde réra?» (21, Preescolar); in 1.º grado it is «Aguereko poteĩ ary» (18). Check the Tonight tile and Mborevi'i's bubble with tools/render/overflow.js.\n- Stars: Eichu has 7 stars, one per unit (tp-sky.js). With this unit, 1.º grado has 8 units, so the eighth unit gets no star. Two units must be merged, one replaced, or the figure changed.\n- Placement: right after unit 4 «Che mbo'ehao», whose school words this unit reuses.\n- Texts to update:\n  - tp-grades.js: the g1 «can» text (its «mec» already names «pedir ayuda o permiso») and the «seven units» comment.\n  - MEC.md: the item-16 gap.\n  - README: the «1.º grado | 7» row.\n- Spellings to confirm with the Academia: Héẽ and -mína (see doubts).\n\nEVIDENCE ADDED IN THIS STEP\n- tatoeba.org is outside this session's network, so I checked the usage lens's Tatoeba sentences in the public HuggingFace copy (lecslab/biling_grn, grn.csv). It has:\n  - «Ikatúpa aipuru nde haiha?» (May I use your pencil?), «Ikatu piko ahecha?» (Can I see?) and «Che aiporu va'erã…»;\n  - both «Héẽ.» and «Hẽe.» for «Yes.»;\n  - the courtesy -mi with the accent before atonic endings: Eikemíkena, Eme'ẽmíkena chéve…, Eguahẽmíkena, ikatumína.\n- Web searches found no «reiporuka» or «eiporuka chéve» in Paraguayan Guarani.\n- The MEC texts have Eiporu, Eiporuporã, «Jaipuru guarani ñe'ẽ» and Oipuru, but no poruka.\n\nFILES: No project file was touched. The only file this step created is that dataset copy, dl-biling/grn.csv; it can be deleted.",
+  "doubts": [
+   {
+    "gn": "Ikatúpa aiporu nde haiha?",
+    "doubt": "The lenses disagreed on this card. The usage lens proposed it (medium confidence) in place of «Reiporukápa chéve nde haiha?» (¿Me prestás tu lápiz?). The meaning lens wanted to keep the original (medium), because aiporu means 'usar', not 'prestar'. The spelling lens passed both. I kept this form because its evidence is stronger: Tatoeba has «Ikatúpa aipuru nde haiha?» for «May I use your pencil?», while I found reiporuka or «eiporuka chéve» in no Paraguayan source, only poruka in dictionaries. Still open: (1) poru or puru. I write aiporu, as the MEC guides write Eiporu and Eiporuporã and Tatoeba writes «Che aiporu». But the Tatoeba pencil sentence, the MEC heading «Jaipuru guarani ñe'ẽ» and the Priorización's «Oipuru» use puru, and many children say aipuru. (2) If the team wants the child to learn the verb 'prestar' itself, the fallback is «Reiporukápa chéve nde haiha?», with the same picture and say slot. It is grammatical and correctly accented, but 28 characters long and unattested. (3) The unit now has five Ikatúpa cards. A big star may ask two in a row, and they differ only after Ikatúpa. (4) At 25 characters it is the longest card in the app."
+   },
+   {
+    "gn": "Chepytyvõmína",
+    "doubt": "-mína (-mi + -na) is the usual courtesy ending «por favor». The usage lens found «¡Chepytyvõmína!» = «Ayuda, por favor» in the ASU2025 Guarani booklet. Tatoeba writes the courtesy -mi with the accent before atonic endings (Eikemíkena, Eme'ẽmíkena, Eguahẽmíkena, ikatumína), so Chepytyvõmína, Eipe'amína and Eme'ẽmína follow one rule. Still to confirm: the Academia's spelling. Some materials write -mina, and if the acute were ruled out, all four -mína strings would change together. In speech, -mi alone (chepytyvõmi) and -míkena are also common. The meaning lens advises against «Eipytyvõmína chéve», a Spanish-style calque. The object prefix is written joined (Chepytyvõ), but the possessive che is written apart (che irũ), and L1 readers will meet both."
+   },
+   {
+    "gn": "Héẽ",
+    "doubt": "Héẽ ('sí') opens all three answers and is new to the app. Tatoeba has both «Héẽ.» and «Hẽe.» for «Yes.», and Omniglot has «Hêe». The strict rule (a tilde only on the stressed nasal vowel) would give hẽe or heẽ. I kept Héẽ, the spelling in most school material and in the Regensburg transcripts. Please confirm the Academia's dictionary entry. The synthetic voice has garbled short nasal words (irũ, okẽ and akã are held back), so check the three clips that begin with Héẽ."
+   },
+   {
+    "gn": "Héẽ, roipytyvõta.",
+    "doubt": "It is correct and attested: «Che roipytyvõta» (Biblia GPC 2006, Éx 4:12, found by the usage lens). But the ro- prefix (yo a vos) is new grammar for an L2 child. If it proves hard to repeat, «Héẽ, roipytyvõ» (no -ta) is shorter and still means «sí, te ayudo». The gloss «Sí, te ayudo.» renders the future -ta freely, as the app does with Jajotopáta (¡Nos vemos!)."
+   },
+   {
+    "gn": "Mbo'ehára, chepytyvõmína.",
+    "doubt": "The gloss «Maestra» follows the app's gloss of mbo'ehára. Paraguayan children say «Profe», which works for a man or a woman, often even when speaking Guarani. So «Mbo'ehára» as a form of address is the school way, not always the everyday one."
+   },
+   {
+    "gn": "Héẽ, eike. Eguapy.",
+    "doubt": "Two lenses found it natural. «Eike, eguapy» (pasá, sentate) is the usual welcome, attested in a vocabulary list, and it fits a teacher talking to one pupil. The only open point is whether a teacher would soften it to «Eguapymi». «Héẽ, eike.» alone is the simpler fallback."
+   },
+   {
+    "gn": "Héẽ, ejapyhy.",
+    "doubt": "All three lenses passed «Ejapyhy» ('agarrá, tomá') for handing something over, but no source I could reach shows it in this exact use. «Eipyhy» is also correct, and others would just say «Ko'ápe» or «Héẽ.». Now that the card is «Ikatúpa aiporu nde haiha?», «Héẽ, eiporu.» (Sí, usalo) would mirror it the way «Héẽ, eike.» mirrors «Ikatúpa aike?». The usage lens offers it as an option. It is not applied, because no lens marked ejapyhy wrong."
+   },
+   {
+    "gn": "Eme'ẽmína chéve kuatia",
+    "doubt": "Guarani has no article, so the gloss adds «una»; in the app, kuatia is 'hoja de papel'. «Eme'ẽmína chéve peteĩ kuatia» says «una hoja» exactly but is longer. Tatoeba's «Eme'ẽmíkena chéve…» (Please give me…) supports the pattern. At 22 characters it is also longer than any card the app has now."
+   },
+   {
+    "gn": "Eipe'amína ovetã",
+    "doubt": "pe'a is the verb children learn first for opening a door or window; mbojuruja also exists. A child more often asks a classmate, or asks permission to open the window («Ikatúpa aipe'a ovetã?», suggested by the usage lens). As a favour asked of the teacher it is natural, but a reviewer may prefer one of those."
+   },
+   {
+    "gn": "Ikatúpa aike?",
+    "doubt": "The plain closed door (okẽ) stands for «¿Puedo pasar?». A new picture of a child at a half-open door would show it better. It would be the unit's second new picture."
+   },
+   {
+    "gn": "Ikatúpa ahecha?",
+    "doubt": "The usage lens calls it the least typical request in class, and so the first card to cut if night 2 goes down to three. It is still natural Guarani: Tatoeba has «Ikatu piko ahecha?» (Can I see?) and «Ikatúpa rehecha?». It came from Draft 2 only."
+   },
+   {
+    "gn": "Ikatúpa aguapy?",
+    "doubt": "It is correct and natural, but asking to sit down happens less often in class than asking to come in or to play. Its value is that it sets up the teacher's «Eguapy». Night 2 has four Ikatúpa cards; if that is too many for a 6-year-old, cut ahecha or aguapy. If aguapy goes, the answer becomes «Héẽ, eike.». L1 Pairs uses the night's first three cards either way."
+   },
+   {
+    "gn": "Ikatúpa añembosarái?",
+    "doubt": "It keeps the app's verb (Ñañembosarái!), but many children say «Ikatúpa ajuga?», with the Spanish loanword."
+   },
+   {
+    "gn": "Aguyjevete, che irũ!",
+    "doubt": "irũ and mbo'ehára have no gender. The say glosses use «amiga» and «maestra» and could just as well say «amigo» and «maestro». The cards keep the app's 'amiga, amigo' and 'maestra, maestro'."
+   }
+  ],
+  "changes": [
+   {
+    "where": "night 3, word 2 (gn and es)",
+    "from": "Reiporukápa chéve nde haiha? · ¿Me prestás tu lápiz?",
+    "to": "Ikatúpa aiporu nde haiha? · ¿Puedo usar tu lápiz?",
+    "why": "The lenses disagreed. The usage lens proposed this fix (medium confidence) for three reasons. The original sentence is unattested. poruka is a word most children meet only at school, where families say «Embopresta». And it brings re-, the causative -uka and a second-person question all at once. The meaning lens kept the original (medium), because aiporu means 'usar', not 'prestar'. The spelling lens passed the original (high), and every part of the new form is one it passed elsewhere in the unit: Ikatúpa from the title, the i- of an aireal verb as in Eipe'amína, final stress with no accent, and nde written apart. The rule is to keep the form with the stronger evidence, and that is the new one. Tatoeba has «Ikatúpa aipuru nde haiha?» = «May I use your pencil?»; I checked it in the public lecslab/biling_grn copy, line 75. Its frame and verb are attested too: Tatoeba has «ikatúpa aporandu ndéve», «Ikatu piko ahecha?» and «Che aiporu va'erã…», and the MEC guides have «Eiporu» and «Eiporuporã». By contrast, I found reiporuka and «eiporuka chéve» in no Paraguayan source (web searches, the MEC text corpus), and poruka only in dictionaries. The new form also reuses night 2's frame, so it adds one new verb for an L2 6-year-old, and it is 3 characters shorter (25). It still meets the MEC's «préstamo de algún objeto». The picture (haiha) and syl [] are unchanged. The disagreement and the fallback are recorded in doubts."
+   },
+   {
+    "where": "night 3, word 2 (note)",
+    "from": "re- 'vos' + i + poruka 'prestar' (poru 'usar' + -uka) + -pa (accent on ká). chéve 'a mí'; nde haiha 'tu lápiz'. This is the MEC's «préstamo de algún objeto». The say line shares this card's clip.",
+    "to": "ikatu 'se puede' + -pa (accent on tú) + aiporu 'uso' (a- + the i of poru, as in the MEC's Eiporu) + nde haiha 'tu lápiz'. Night 2's «¿Puedo…?» frame with one new verb. Attested on Tatoeba as «Ikatúpa aipuru nde haiha?». The say line shares this card's clip.",
+    "why": "Follows the first change (the usage lens's fix, settled on evidence against the meaning lens's objection)."
+   },
+   {
+    "where": "night 3, say line 1",
+    "from": "Reiporukápa chéve nde haiha? · ¿Me prestás tu lápiz?",
+    "to": "Ikatúpa aiporu nde haiha? · ¿Puedo usar tu lápiz?",
+    "why": "Usage lens: change it together with the card, whose clip it shares. It still folds to the card's key (checked with C.fold), so the unit still needs 18 clip keys. The answer «Héẽ, ejapyhy.» (Sí, tomá) still fits «¿Puedo usar…?» and stays, because no lens marked it wrong; the usage lens's optional «Héẽ, eiporu.» is noted in doubts."
+   },
+   {
+    "where": "doubts",
+    "from": "13 doubts. The first was on poruka in «Reiporukápa chéve nde haiha?».",
+    "to": "14 doubts. The poruka doubt is replaced by one on «Ikatúpa aiporu nde haiha?» that records the usage/meaning disagreement, the poru/puru choice and the fallback. A new doubt gives the usage lens's point on «Ikatúpa ahecha?». The other 12 are kept, most of them updated with the lenses' evidence.",
+    "why": "The rules say to record lens disagreements in doubts and keep honest doubts. The updates use the usage lens's evidence: «¡Chepytyvõmína!», «Che roipytyvõta», «Eike, eguapy», and the «Héẽ, eiporu.» and «Ikatúpa aipe'a ovetã?» options. They also use the Tatoeba data checked in this step: the -míkena forms, «Héẽ.» and «Hẽe.», «Eme'ẽmíkena chéve» and «Ikatu piko ahecha?»."
+   },
+   {
+    "where": "notes",
+    "from": "The merge notes: what came from each draft, the poruka request «kept from Draft 1», and the checks run on the merged unit.",
+    "to": "Notes on the verification result, the final unit, its MEC fit, the engine checks re-run on the final unit, what to settle before release, and the evidence added in this step.",
+    "why": "The notes must describe the unit as returned. The night-3 card changed, so the checks were re-run with it in memory: format rules, picture keys, games per track, distractors and clip keys. The merge history is cut down to the two cards left out."
+   }
+  ]
+ },
+ "rechecks": []
+}

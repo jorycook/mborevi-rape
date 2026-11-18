@@ -124,7 +124,7 @@ a{color:#2A1B3D;text-decoration:none}a:hover{color:#2A1B3D}
    Nothing is recorded or graded: as in Epu'ã's prototype, the canvas grants no microphone and the app trusts the
    child; Mborevi'i listens and cheers. The phrases are the night's own (say) or else all its words. «Upéi» stays in
    place (dimmed until the phrase is said), so the focus never drops; after the last phrase it becomes «Jaha!».
-   On its own: 1.º grado, unit 1, night 1 (Maitei!). */
+   On its own: 1.º grado, unit 5, night 2: asking for permission, and the answer. */
 class Component extends DCLogic {
 constructor(props) {
 super(props);
@@ -140,7 +140,7 @@ this.wasFinished = f;
 view() {
 const C = window.tpCourse;
 if (this.props.app) return this.props.app;
-if (!this.sample) { const st = C.sample('g1', 'L2', 0); st.cur = 'g1u01n1'; st.done.g1u01n1 = { meet: 1, pick: 1 }; st.game = 'say'; this.sample = C.view(st); }
+if (!this.sample) { const st = C.sample('g1', 'L2', 17); st.cur = 'g1u05n2'; st.done.g1u05n2 = { meet: 1, pick: 1 }; st.game = 'say'; this.sample = C.view(st); }
 return this.sample;
 }
 renderVals() {

@@ -127,7 +127,7 @@ a{color:#2A1B3D;text-decoration:none}a:hover{color:#2A1B3D}
    unit first. Where a clip is missing or the voice is off, «Ehendu» shows the word in Mborevi'i's
    bubble instead. At the end, a star (a game
    played again keeps the one it had); the end is announced and the button to go on takes the focus.
-   On its own: listening, 1.º grado, unit 5, night 1. */
+   On its own: listening, 1.º grado, unit 6 (the numbers), night 1. */
 class Component extends DCLogic {
 constructor(props) {
 super(props);
@@ -144,7 +144,7 @@ this.wasFinished = f;
 view() {
 const C = window.tpCourse;
 if (this.props.app) return this.props.app;
-if (!this.sample) { const st = C.sample('g1', 'L2', 16); st.cur = 'g1u05n1'; st.done.g1u05n1 = { meet: 1 }; st.game = 'pick'; this.sample = C.view(st); }
+if (!this.sample) { const st = C.sample('g1', 'L2', 20); st.cur = 'g1u06n1'; st.done.g1u06n1 = { meet: 1 }; st.game = 'pick'; this.sample = C.view(st); }
 return this.sample;
 }
 renderVals() {

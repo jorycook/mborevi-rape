@@ -117,7 +117,7 @@ a{color:#2A1B3D;text-decoration:none}a:hover{color:#2A1B3D}
 /* Memory with three pairs of tonight's words, face down as stars. A child who reads Guarani matches a picture with
    its written word; while the grade is oral (Preescolar, and 1.º grado with Guarani as the second language) a pair is
    the same picture twice, and Mborevi'i says the word when the pair is found (the clip, once recorded). The line
-   under the cards names what each card shows, for a screen reader too. On its own: 1.º grado, unit 5, night 2. */
+   under the cards names what each card shows, for a screen reader too. On its own: 1.º grado, unit 6 (the numbers), night 2. */
 class Component extends DCLogic {
 constructor(props) {
 super(props);
@@ -134,7 +134,7 @@ this.wasFinished = f;
 view() {
 const C = window.tpCourse;
 if (this.props.app) return this.props.app;
-if (!this.sample) { const st = C.sample('g1', 'L2', 17); st.cur = 'g1u05n2'; st.done.g1u05n2 = { meet: 1, pick: 1 }; st.game = 'pairs'; this.sample = C.view(st); }
+if (!this.sample) { const st = C.sample('g1', 'L2', 21); st.cur = 'g1u06n2'; st.done.g1u06n2 = { meet: 1, pick: 1 }; st.game = 'pairs'; this.sample = C.view(st); }
 return this.sample;
 }
 renderVals() {
