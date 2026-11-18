@@ -440,15 +440,25 @@
   /* The child's progress kept on this device, when the page asks for it (the site sets window.__tpSite.key; the canvas
      does not): the grade, the language of home, the nights and big stars done, the voice switch. Never the screen in
      play: a child who comes back starts on the path. Nothing leaves the device.
-     Each step is kept with what it is (its unit's name, and the night's), so that a unit put in between later does
-     not move the stars onto other lessons: a step whose name is now somewhere else in the grade goes there (a step
-     whose name is nowhere, a lesson renamed, stays in its place). Progress is only ever added: what another copy of
-     the app kept in the meantime (another tab, the app on the home screen) is kept too. */
-  var KEEP = 1, kept = '';
+     - Each step is kept under its grade and its name (its unit's name, and the night's), never its number, so a unit
+       put in between, taken out or replaced later does not move the stars onto other lessons. A unit or a night
+       renamed, or moved to another grade, is written in window.__tpRenamed (tp-grades.js), old name → new;
+       tests/test-names.js fails when a name the site has used disappears without that.
+     - A step this copy of the app does not have stays in the record as it is, for a copy that has it (an older or a
+       newer version of the app open at the same time, in another tab or on the home screen).
+     - Progress is only ever added: what another copy kept in the meantime is kept too. The grade, the language of home
+       and the voice are written by the copy that last changed them, so a copy left open does not put its own back.
+     - «Empezar de cero» (the page offers it when the path keeps breaking on what was kept) sets the record aside, and
+       every copy open at the time starts over with it. The record comes back the first time the app opens after it
+       has changed (a new version, which may mend what broke); with the same app it stays aside. */
+  var KEEP = 2, kept = '', base = null, wipes = 0;
+  var FRESH = { grade: null, track: null, voice: true };
   function keyOf() { var site = window.__tpSite; return site && typeof site.key === 'string' && site.key ? site.key : ''; }
   /* does this page keep the progress? (the grown-ups' screen says where and how) */
   C.keeps = function () { return !!keyOf(); };
   function plain(x) { return !!x && typeof x === 'object' && !Array.isArray(x); }
+  function has(o, k) { return Object.prototype.hasOwnProperty.call(o, k); }
+  function get(k) { return window.localStorage.getItem(k); }
   /* what a step is, in words that stay when the steps are numbered again */
   function what(s) {
     if (!s) return '';
@@ -457,41 +467,161 @@
     if (!un) return '';
     return s.kind === 'check' ? un : s.gn ? un + ' / ' + s.gn : '';
   }
-  /* the step a kept id stands for now: the same id while it is still the same lesson, else the step of its grade that
-     has its name, else the same id */
-  function placeOf(id, name, kind) {
-    var s = C.session(id);
-    if (s && s.kind === kind && (!name || what(s) === name)) return id;
-    if (name) {
-      var list = C.sessions(C.gradeOf(id));
-      for (var i = 0; i < list.length; i++) if (list[i].kind === kind && what(list[i]) === name) return list[i].id;
+  /* the name a step is kept under: 'g1:Maitei' (a unit's big star), 'g1:Maitei / Che réra' (a night) */
+  C.keptName = function (s) { var w = what(s); return w ? s.grade + ':' + w : ''; };
+  /* one step of the renames: the new name, null for a step taken out on purpose, undefined when there is no entry (a
+     unit's entry renames its nights too) */
+  function renameOf(k) {
+    var renamed = plain(window.__tpRenamed) ? window.__tpRenamed : {};
+    if (has(renamed, k)) return typeof renamed[k] === 'string' ? renamed[k] : null;
+    var cut = k.indexOf(' / ');
+    if (cut > 0 && has(renamed, k.slice(0, cut))) {
+      var to = renamed[k.slice(0, cut)];
+      return typeof to === 'string' ? to + k.slice(cut) : null;
     }
-    return s && s.kind === kind ? id : null;
+    return undefined;
   }
-  function better(a, b) { return !a ? b : !b ? a : b.stars > a.stars || (b.stars === a.stars && b.score > a.score) ? b : a; }
-  /* the kept progress, checked against the lessons as they are now; null when nothing usable is kept */
-  function read(key) {
-    var o;
-    try { o = JSON.parse(window.localStorage.getItem(key) || 'null'); } catch (e) { return null; }
-    if (!plain(o) || o.v !== KEEP) return null;
+  /* the step of this copy's lessons a kept name stands for, through the renames: null when it was taken out on
+     purpose, undefined when this copy does not have it */
+  C.keptStep = function (name, kind) {
+    var k = String(name || '');
+    for (var n = 0; n < 9; n++) {
+      var to = renameOf(k);
+      if (to === undefined) break;
+      if (to === null) return null;
+      k = to;
+    }
     load();
-    var names = plain(o.what) ? o.what : {};
-    var nameOf = function (id) { return typeof names[id] === 'string' ? names[id] : ''; };
-    var out = { started: !!o.started, grade: null, track: null, done: {}, checks: {}, voice: o.voice !== false };
-    if (typeof o.grade === 'string' && ORDER.indexOf(o.grade) >= 0) out.grade = o.grade;
-    if (o.track === 'L1' || o.track === 'L2' || o.track === 'BI') out.track = o.track;
-    if (plain(o.done)) Object.keys(o.done).forEach(function (id) {
-      var had = o.done[id], to = placeOf(id, nameOf(id), 'night');
-      if (!to || !plain(had)) return;
-      var flags = out.done[to] || {};
-      Object.keys(had).forEach(function (k) { if (had[k] && (k === 'ok' || GAMES[k])) flags[k] = 1; });
-      if (Object.keys(flags).length) out.done[to] = flags;
+    var at = k.indexOf(':'), g = k.slice(0, at);
+    if (at < 1 || ORDER.indexOf(g) < 0) return undefined;
+    var list = C.sessions(g);
+    for (var i = 0; i < list.length; i++) if (list[i].kind === kind && C.keptName(list[i]) === k) return list[i];
+    return undefined;
+  };
+  function better(a, b) { return !a ? b : !b ? a : b.stars > a.stars || (b.stars === a.stars && b.score > a.score) ? b : a; }
+  function games(a, b) { return Object.assign({}, a || {}, b || {}); }
+  /* a night's games as kept (a game this copy does not know is kept too, for the copy that does) */
+  function flagsOf(x) {
+    var out = {}, any = false;
+    if (plain(x)) Object.keys(x).forEach(function (k) { if (x[k] && k !== '__proto__' && k.length <= 40) { out[k] = 1; any = true; } });
+    return any ? out : null;
+  }
+  function resultOf(c) {
+    if (!plain(c)) return null;
+    var n = function (x) { return typeof x === 'number' && isFinite(x) && x >= 0 ? x : 0; };
+    return { score: n(c.score), of: n(c.of), stars: Math.min(3, Math.max(1, Math.round(n(c.stars)) || 1)) };
+  }
+  function put(map, g, name, val, join) {
+    if (!val || !name || name === '__proto__' || name.length > 200) return;
+    var m = has(map, g) ? map[g] : (map[g] = {});
+    m[name] = join(has(m, name) ? m[name] : null, val);
+  }
+  /* a kept record, as this version writes it: { v, started, grade, track, voice, wipes, done: { grade: { name: games } },
+     checks: { grade: { name: result } } }. The first version (steps by number, their names beside them) is read too.
+     null when nothing usable is there; 'newer' for a record a newer version of the app wrote, which this one leaves be */
+  function recordOf(text) {
+    var o;
+    try { o = JSON.parse(text || 'null'); } catch (e) { return null; }
+    if (!plain(o)) return null;
+    if (typeof o.v === 'number' && o.v > KEEP) return 'newer';
+    if (o.v !== 1 && o.v !== KEEP) return null;
+    load();
+    var r = { v: KEEP, done: {}, checks: {} };
+    if (o.started === true) r.started = true;
+    if (typeof o.grade === 'string' && ORDER.indexOf(o.grade) >= 0) r.grade = o.grade;
+    if (o.track === 'L1' || o.track === 'L2' || o.track === 'BI') r.track = o.track;
+    if (o.voice === false) r.voice = false;
+    if (typeof o.wipes === 'number' && isFinite(o.wipes) && o.wipes >= 1) r.wipes = Math.floor(o.wipes);
+    [['done', 'night', flagsOf, games], ['checks', 'check', resultOf, better]].forEach(function (p) {
+      var src = o[p[0]];
+      if (!plain(src)) return;
+      if (o.v === 1) {
+        var names = plain(o.what) ? o.what : {};
+        Object.keys(src).forEach(function (id) {
+          var s = C.session(id);
+          var name = has(names, id) && typeof names[id] === 'string' && names[id] ? names[id] : s && s.kind === p[1] ? what(s) : '';
+          put(r[p[0]], C.gradeOf(id), name, p[2](src[id]), p[3]);
+        });
+      } else {
+        Object.keys(src).forEach(function (g) {
+          if (!/^[a-z0-9]{1,12}$/.test(g) || !plain(src[g])) return;
+          Object.keys(src[g]).forEach(function (name) { put(r[p[0]], g, name, p[2](src[g][name]), p[3]); });
+        });
+      }
     });
-    if (plain(o.checks)) Object.keys(o.checks).forEach(function (id) {
-      var c = o.checks[id], to = placeOf(id, nameOf(id), 'check');
-      if (!to || !plain(c)) return;
-      var n = function (x) { return typeof x === 'number' && isFinite(x) && x >= 0 ? x : 0; };
-      out.checks[to] = better(out.checks[to], { score: n(c.score), of: n(c.of), stars: Math.min(3, Math.max(1, Math.round(n(c.stars)) || 1)) });
+    return r;
+  }
+  /* a record as text, always in the same order (the same record is the same text) */
+  function textOf(r) {
+    var o = { v: KEEP };
+    if (r.started) o.started = true;
+    if (r.grade) o.grade = r.grade;
+    if (r.track) o.track = r.track;
+    if (r.voice === false) o.voice = false;
+    if (r.wipes) o.wipes = r.wipes;
+    if (r.made) o.made = r.made;
+    ['done', 'checks'].forEach(function (k) {
+      var by = {};
+      Object.keys(r[k] || {}).sort().forEach(function (g) {
+        var names = Object.keys(r[k][g]).sort(), m = {};
+        names.forEach(function (n) { m[n] = r[k][g][n]; });
+        if (names.length) by[g] = m;
+      });
+      o[k] = by;
+    });
+    return JSON.stringify(o);
+  }
+  /* the steps of one record added to another; the grade, the language of home and the voice stay the first one's
+     unless it has none */
+  function merge(into, from) {
+    ['done', 'checks'].forEach(function (k) {
+      Object.keys(from[k]).forEach(function (g) {
+        Object.keys(from[k][g]).forEach(function (n) { put(into[k], g, n, from[k][g][n], k === 'done' ? games : better); });
+      });
+    });
+    if (from.started) into.started = true;
+    if (!into.grade && from.grade) into.grade = from.grade;
+    if (!into.track && from.track) into.track = from.track;
+    if ((from.wipes || 0) > (into.wipes || 0)) into.wipes = from.wipes;
+    return into;
+  }
+  /* a renamed step's old name gives way to its new one, and a step taken out on purpose goes (by this copy's renames:
+     a copy that does not know them leaves the names as they are) */
+  function tidy(r) {
+    [['done', 'night', games], ['checks', 'check', better]].forEach(function (p) {
+      var map = r[p[0]];
+      Object.keys(map).forEach(function (g) {
+        Object.keys(map[g]).forEach(function (n) {
+          var s = C.keptStep(g + ':' + n, p[1]);
+          if (s === undefined || (s && C.keptName(s) === g + ':' + n)) return;
+          var val = map[g][n];
+          delete map[g][n];
+          if (s) put(map, s.grade, what(s), val, p[2]);
+        });
+        if (map[g] && !Object.keys(map[g]).length) delete map[g];
+      });
+    });
+  }
+  /* what a record means for this copy: the steps it has, by number (the others stay out of play) */
+  function read(key) {
+    var r = recordOf(get(key));
+    if (!r || r === 'newer') return null;
+    var out = { started: !!r.started, grade: r.grade || null, track: r.track || null, done: {}, checks: {},
+      voice: r.voice !== false, wipes: r.wipes || 0 };
+    Object.keys(r.done).forEach(function (g) {
+      Object.keys(r.done[g]).forEach(function (n) {
+        var s = C.keptStep(g + ':' + n, 'night');
+        if (!s) return;
+        var flags = {};
+        Object.keys(r.done[g][n]).forEach(function (k) { if (k === 'ok' || has(GAMES, k)) flags[k] = 1; });
+        if (Object.keys(flags).length) out.done[s.id] = games(out.done[s.id], flags);
+      });
+    });
+    Object.keys(r.checks).forEach(function (g) {
+      Object.keys(r.checks[g]).forEach(function (n) {
+        var s = C.keptStep(g + ':' + n, 'check');
+        if (s) out.checks[s.id] = better(out.checks[s.id], r.checks[g][n]);
+      });
     });
     return out;
   }
@@ -506,31 +636,72 @@
     });
     return { done: done, checks: checks };
   }
+  /* which version of the app this is (the site makes it from the files it loaded): '' when the page cannot tell */
+  function build() {
+    var site = window.__tpSite;
+    try { return site && typeof site.build === 'function' ? String(site.build() || '') : ''; } catch (e) { return ''; }
+  }
+  /* a record set aside by «Empezar de cero» comes back once the app has changed since; with the same app it stays
+     aside, so that it does not break the path again */
+  function bringBack(key) {
+    var text = get(key + '-aside');
+    if (text == null) return;
+    var made = build(), at = '';
+    try { at = String(JSON.parse(text).made || ''); } catch (e) {}
+    if (!made || made === at) return;
+    var aside = recordOf(text), now = recordOf(get(key));
+    if (aside === 'newer' || now === 'newer') return;
+    if (aside) window.localStorage.setItem(key, textOf(merge(now || { v: KEEP, done: {}, checks: {} }, aside)));
+    window.localStorage.removeItem(key + '-aside');
+  }
   C.store = function (state) {
     var key = keyOf();
     if (!key || !state) return;
-    var own = { started: !!state.started, grade: state.grade || null, track: state.track || null,
+    var mine = { started: !!state.started, grade: state.grade || null, track: state.track || null,
       done: state.done || {}, checks: state.checks || {}, voice: state.voice !== false };
     try {
-      var text = JSON.stringify(own);
+      var text = JSON.stringify(mine);
       if (text === kept) return;
-      var there = read(key);
-      var both = there ? union(there, own) : own;
-      var o = { v: KEEP, started: own.started || !!(there && there.started), grade: own.grade, track: own.track,
-        done: both.done, checks: both.checks, what: {} };
-      if (!own.voice) o.voice = false;
-      Object.keys(o.done).concat(Object.keys(o.checks)).forEach(function (id) { var nm = what(C.session(id)); if (nm) o.what[id] = nm; });
-      var out = JSON.stringify(o);
-      if (out !== window.localStorage.getItem(key)) window.localStorage.setItem(key, out);
+      var was = get(key), r = recordOf(was);
+      /* a record a newer version of the app wrote, or «Empezar de cero» used in another copy since this one started
+         (what this one holds is from before it, and the 'storage' event starts this copy over too): nothing is written */
+      if (r === 'newer' || (r && (r.wipes || 0) > wipes)) return;
+      var had = !!r;
+      if (!r) r = { v: KEEP, done: {}, checks: {} };
+      tidy(r);
+      Object.keys(mine.done).forEach(function (id) {
+        var s = C.session(id);
+        if (s && s.kind === 'night') put(r.done, s.grade, what(s), flagsOf(mine.done[id]), games);
+      });
+      Object.keys(mine.checks).forEach(function (id) {
+        var s = C.session(id);
+        if (s && s.kind === 'check') put(r.checks, s.grade, what(s), resultOf(mine.checks[id]), better);
+      });
+      if (mine.started) r.started = true;
+      if (wipes > (r.wipes || 0)) r.wipes = wipes;
+      /* the grade, the language of home and the voice: this copy's when it changed them since it last wrote (or when
+         nothing was kept), else what is kept */
+      var b = base || FRESH;
+      ['grade', 'track', 'voice'].forEach(function (f) { if (!had || mine[f] !== b[f]) r[f] = mine[f]; });
+      var out = textOf(r);
+      if (out !== was) window.localStorage.setItem(key, out);
       kept = text;
+      base = { grade: mine.grade, track: mine.track, voice: mine.voice };
     } catch (e) { /* storage full, blocked or private: the game goes on, unkept */ }
   };
   /* what was kept, as the state to start from (on the path); null when nothing usable was kept */
   C.restore = function () {
     var key = keyOf();
     if (!key) return null;
-    var o = read(key);
+    kept = '';
+    base = FRESH;
+    wipes = 0;
+    try { bringBack(key); } catch (e) {}
+    var o;
+    try { o = read(key); } catch (e) { o = null; }
     if (!o) return null;
+    wipes = o.wipes;
+    base = { grade: o.grade, track: o.track, voice: o.voice };
     var st = C.fresh();
     st.grade = o.grade;
     st.track = o.track;
@@ -539,24 +710,49 @@
     if (!o.voice) st.voice = false;
     st.started = o.started || !!st.grade;
     st.screen = st.grade && st.track ? 'Main' : 'Welcome';
-    kept = '';
     return st;
   };
   /* what another copy of the app has kept since (a 'storage' event), added to this one's progress: the change to make,
-     or null when there is nothing new */
+     or null when there is nothing new. When «Empezar de cero» was used in the other copy, this one starts over too,
+     rather than put back what was set aside */
   C.withKept = function (state) {
     var key = keyOf();
-    var o = key ? read(key) : null;
-    if (!o || !state) return null;
+    var o;
+    try { o = key && state ? read(key) : null; } catch (e) { o = null; }
+    if (!o) return null;
+    if (o.wipes > wipes) {
+      wipes = o.wipes;
+      kept = '';
+      base = { grade: null, track: null, voice: o.voice };
+      return Object.assign(C.fresh(), { voice: o.voice });
+    }
     var both = union(state, o);
     var same = JSON.stringify(both.done) === JSON.stringify(state.done || {}) && JSON.stringify(both.checks) === JSON.stringify(state.checks || {});
     return same ? null : { done: both.done, checks: both.checks };
   };
-  /* the kept progress is wiped (the page offers it when a screen keeps breaking on what was kept) */
+  /* «Empezar de cero»: the kept progress is set aside (see above), and the record says so, so that every copy of the
+     app starts over (the page offers it when a screen keeps breaking on what was kept) */
   C.forget = function () {
     var key = keyOf();
     kept = '';
-    try { if (key) window.localStorage.removeItem(key); } catch (e) {}
+    if (!key) return;
+    try {
+      var now = recordOf(get(key)), aside = recordOf(get(key + '-aside'));
+      if (now === 'newer') now = null;
+      if (now && (Object.keys(now.done).length || Object.keys(now.checks).length || now.grade)) {
+        var keep = aside && aside !== 'newer' ? merge(now, aside) : now;
+        keep.made = build();
+        window.localStorage.setItem(key + '-aside', textOf(keep));
+      }
+      wipes = Math.max(wipes, (now && now.wipes) || 0) + 1;
+      var mark = { v: KEEP, done: {}, checks: {}, wipes: wipes };
+      if (now && now.voice === false) mark.voice = false;
+      window.localStorage.setItem(key, textOf(mark));
+      base = { grade: null, track: null, voice: mark.voice !== false };
+    } catch (e) {
+      /* the device's storage is full: the record goes all the same (set aside first, if there was room for that) */
+      try { window.localStorage.removeItem(key); } catch (e2) {}
+    }
   };
   /* what every screen reads: the grade, the step in play, its games, the stars */
   /* Mborevi'i's own lines, spoken as well as written: the clips are in the shared sound file (tp-sound-ui.js, keyed
@@ -651,8 +847,11 @@
           return { cur: id, game: game || null, screen: screen, walk: null };
         });
       },
-      /* a game finished: its star; when it was the night's last game, back to the path and the tapir walks on */
+      /* a game finished: its star; when it was the night's last game, back to the path and the tapir walks on. The
+         next screen keeps its button where this one's was: the second tap of a double tap does not answer it too
+         (the guard is set, though the star itself is never held back by it) */
       finish: function (kind) {
+        if (!free) last = Date.now();
         set(function (st) {
           var id = st.cur || (C.next(st, st.grade || ORDER[0]) || {}).id;
           if (!id) return { screen: 'Main', cur: null, game: null };
@@ -672,8 +871,10 @@
           return { done: done, game: null, cur: null, screen: 'Main', walk: { from: id, to: nx ? nx.id : null, at: C.now() } };
         });
       },
-      /* the big star: one to three stars by the score; it always lights, a star is never taken away */
+      /* the big star: one to three stars by the score; it always lights, a star is never taken away (the guard is
+         set as for a game) */
       checked: function (score, of) {
+        if (!free) last = Date.now();
         set(function (st) {
           var id = st.cur || (C.next(st, st.grade || ORDER[0]) || {}).id;
           var checks = Object.assign({}, st.checks || {});

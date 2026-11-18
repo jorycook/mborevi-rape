@@ -70,28 +70,40 @@ a{color:#2A1B3D;text-decoration:none}a:hover{color:#2A1B3D}
    screen reader starts there and is not left on a button that is gone.
    On the public site (window.__tpSite):
    - the progress is kept on the device as it is made (tpCourse.store, from every change the screens ask for) and comes
-     back at the next visit, on the path; what another copy of the app keeps meanwhile (another tab) is added in;
+     back at the next visit, on the path; what another copy of the app keeps meanwhile (another tab) is added in, and
+     «Empezar de cero» used in another copy starts this one over too;
    - the phone's Back does what the screen's own back or close button does (tpCourse.UP; a game or the big star that
      is over keeps its star), and on the path and the first screen it leaves the site. The page keeps one history
-     entry for each step back the screen has (Main 0, Tonight 1, a game 2…), added by the tap that goes a step deeper:
-     nothing is ever added while Back is handled, because Chrome jumps over an entry a page adds without a tap, and
-     the next Back would leave the site;
+     entry for each step back the screen has (Main 0, Tonight 1, a game 2…; the big star 2, so that Back on its end
+     stops on Shine, as its close button does), added by the tap that goes a step deeper: nothing is ever added while
+     Back is handled, because Chrome jumps over an entry a page adds without a tap, and the next Back would leave the
+     site;
    - each new screen starts at its top, so that a window too short for the whole screen shows its heading first.
    On the canvas none of this happens. */
 const SCREENS = ['Welcome', 'Grade', 'Home', 'Ready', 'Main', 'Tonight', 'Sky', 'Grownups', 'Meet', 'Pick', 'Pairs', 'Build', 'Say', 'Letters', 'Story', 'Check', 'Shine'];
-/* how many steps back a screen has before the path or the first screen */
+/* how many steps back a screen has before the path or the first screen; the big star has one more, so that Back on its
+   end lights it and stops on Shine (as its close button does), not on the path */
 function depthOf(screen) {
 const up = window.tpCourse.UP;
 let n = 0;
 for (let s = screen; up[s] && n < 9; s = up[s]) n++;
-return n;
+return screen === 'Check' ? n + 1 : n;
 }
 /* which of those steps the page's history is on: the page's own entry is 0 */
 function depthNow() {
 const s = window.history.state;
 return s && typeof s.tpDepth === 'number' ? s.tpDepth : 0;
 }
-let travel = 0; /* when this board last asked the history to go back, until the browser has done it */
+/* where a board last asked the history to go back to, and when: until the browser is there. A board that went away
+   (a screen that broke) cannot hold up the next one: once the history is where it asked, nothing is pending */
+let travel = null;
+function pending() { return !!travel && Date.now() - travel.at < 1500 && depthNow() !== travel.to; }
+function goTo(to) {
+const have = depthNow();
+if (to >= have) return;
+travel = { at: Date.now(), to };
+try { window.history.go(to - have); } catch (e) { travel = null; }
+}
 class Component extends DCLogic {
 constructor(props) {
 super(props);
@@ -108,8 +120,8 @@ if (window.history && typeof window.history.pushState === 'function') {
 this.onPop = () => {
 /* the history went back by itself (the phone's Back, one step or more): so do the screens, without adding anything
    to the history; when it went back because the app asked, the screen is already there */
-const asked = travel && Date.now() - travel < 1500;
-travel = 0;
+const asked = !!travel && Date.now() - travel.at < 1500 && depthNow() === travel.to;
+travel = null;
 const want = depthNow();
 for (let k = 0; !asked && k < 9 && depthOf(this.state.screen) > want; k++) {
 const was = this.state.screen;
@@ -134,21 +146,20 @@ if (!this.onPop) return;
 window.removeEventListener('popstate', this.onPop);
 /* the page is giving up this board (a screen failed to draw): the steps back it added go, so that Back is not
    swallowed by an entry nobody answers */
-const have = depthNow();
-if (have > 0) { try { travel = Date.now(); window.history.go(-have); } catch (e) { travel = 0; } }
+goTo(0);
 }
 /* the history in step with the screen, after a change: an entry for each step deeper (the change comes from a tap,
    which lets the page add one), and back as many entries as the screen went back in the app, so that Back from
    there does not return to it */
 sync() {
 if (!this.onPop) return;
-if (travel && Date.now() - travel < 1500) return; /* the browser is still going back: the popstate will sync */
-travel = 0;
+if (pending()) return; /* the browser is still going back: the popstate will sync */
+travel = null;
 const want = depthOf(this.state.screen), have = depthNow();
 try {
 if (want > have) for (let d = have + 1; d <= want; d++) window.history.pushState({ tpDepth: d }, '');
-else if (want < have) { travel = Date.now(); window.history.go(want - have); }
-} catch (e) { travel = 0; }
+else if (want < have) goTo(want);
+} catch (e) { travel = null; }
 }
 componentDidUpdate() {
 const now = this.state.screen;

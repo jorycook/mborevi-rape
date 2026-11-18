@@ -20,9 +20,10 @@ Every claim the app makes about the MEC, with the document and page behind it, i
 **https://jorycook.github.io/mborevi-rape/** opens the whole app, on a phone or a computer. GitHub Pages serves the
 repository's `main` branch as it is, with no build step:
 
-- `index.html` starts the App board and scales it to fit the screen. A phone held sideways still shows the whole screen;
-  any other window too short to show it at a size that can still be read (a split screen, a big zoom) scrolls instead,
-  and each new screen starts at its top. The browser's zoom (Ctrl +) enlarges the app.
+- `index.html` starts the App board and scales it to fit the screen. A phone held sideways shows the whole screen,
+  smaller, with a note beside it to turn the phone. Any other window too short to show it at a size that can still be
+  read (a split screen, a big zoom) scrolls instead, and each new screen starts at its top. A zoom made with the
+  browser (Ctrl +) while the app is open enlarges it.
 - `runtime/dc.js` is this project's own runtime for the `.dc.html` boards, written from the format's specification.
 - React 18.3.1 runs it (`runtime/vendor/`, MIT licence in `LICENSE-react.txt`). The fonts are served by the site too
   (`runtime/fonts/`), so a visit asks nothing of any other server.
@@ -32,24 +33,33 @@ What the site adds to the boards:
 - **Progress is kept on the device.** The grade, the language of home, the nights and big stars done and the voice switch
   are saved in the browser (`localStorage`, under `mborevi-rape`) as they happen; a child who comes back starts on their
   path. Nothing is sent anywhere. Clearing the site's data in the browser starts again from the Moon.
-  - Each step is saved with the name of its lesson, so when a unit is put in the middle of a grade later, the stars stay
-    on their lessons. A step whose lesson was renamed stays in its place.
+  - Each step is saved under its grade and the name of its lesson, never its number, so a unit put in between, taken
+    out or replaced later does not move the stars onto other lessons. A lesson renamed, or moved to another grade, is
+    written in `window.__tpRenamed` (`project/tp-grades.js`); `tests/test-names.js` fails when a name the site has used
+    disappears without that.
   - Progress is only ever added: two copies of the app open at once (an old tab, the app on the home screen) do not wipe
-    what the other saved.
+    what the other saved, and a step one copy does not have (an older or newer version of the app) is kept as it is.
+    The grade, the language of home and the voice are saved by the copy that last changed them.
   - On iPhone and iPad, Safari erases a site's saved data after about 7 days of Safari use without opening it, and an app
     added to the home screen keeps its own data apart from Safari's. The grown-ups' screen tells parents to add the app
     to the home screen before the child starts, and to open it from there.
 - **The phone's Back does what the screen's own back or close button does**: a game → tonight's games → the path, and a
-  game or big star that is over keeps its star. On the path and the first screen it leaves the site. The page keeps one
-  browser history entry per step back, added only by a tap, because Chrome's Back skips entries a page adds without one.
+  game or big star that is over keeps its star (a big star lit for the first time shows Shine, its celebration, first).
+  On the path and the first screen it leaves the site. The page keeps one browser history entry per step back (the big
+  star has two, so that Back on its end stops on Shine), added only by a tap, because Chrome's Back skips entries a page
+  adds without one.
 - **When something fails**, the page says so in Spanish and offers to try again.
   - A screen that cannot load stops the start with «No se pudo abrir la app»: «Revisá la conexión a internet» when a
-    request did not come through, «Probá de nuevo en un rato» when the fault is the app's own.
+    request did not come through, «Probá de nuevo en un rato» when the fault is the app's own (a file the site answers
+    with an error, a mistake in the code).
   - A screen that breaks while playing shows «Algo no salió bien»; «Volver a empezar» draws the app again from what is
-    already loaded (offline too) and goes back to the path. If it breaks again at once, «Empezar de cero» is offered,
-    which erases the saved progress.
-  - A slow connection is told apart from a failure: a download is only given up after 15 s in which nothing arrives,
-    and after 25 s the page says it is still loading.
+    already loaded (offline too) and goes back to the path. If it breaks again at once, «Empezar de cero» is offered.
+    It does not erase the saved progress: it sets it aside (under `mborevi-rape-aside`) and the app starts from the
+    Moon. The progress comes back the first time the app opens after it has been updated, which may have mended what
+    broke; with the same version it stays aside. Any other copy of the app open at the time starts over too.
+  - A slow connection is told apart from a failure: a download is only given up after 15 s in which nothing arrives for
+    any of the page's downloads (on a slow line they come one after another), and after 25 s the page says it is still
+    loading.
 - **On iPhones the silent switch does not mute the voice**: the page says it plays media (`navigator.audioSession`, or a
   silent `<audio>` on older iPhones), only once a clip can actually be heard, since media playback stops other music.
 - **Sharing the link** shows a picture of the app (`site/og.png`), and the browser tab and the home screen get its icon
@@ -94,7 +104,7 @@ project/          the app as published on the canvas
   tp-pics.js      the drawings
   tp-sound*.js    the voice player and the clips (MP3, base64)
   canvas.json     where the boards sit on the canvas
-tests/            the app's logic run in Node, no browser
+tests/            the app's logic run in Node, no browser, and the lesson names the site has used
 index.html        the public site's start page (and manifest.webmanifest, for the home screen)
 runtime/          the runtime that plays the boards in any browser (dc.js, board.html, vendor/, fonts/)
 site/             the site's icons and share picture
@@ -129,6 +139,14 @@ language. Tracks: `L1`, `L2`, `BI`. Grades: `pre`, `g1`, `g2`. It prints `no pro
 node tests/runlogic.js project/Home.dc.html
 ```
 
+```bash
+node tests/test-names.js
+```
+
+`test-names.js` checks that every lesson name the site has used (`tests/lesson-names.json`) is still in the lessons, or
+written in `window.__tpRenamed`, since the progress a device keeps is filed under those names. After adding lessons,
+`node tests/test-names.js --write` adds their names to the list (it never takes any away).
+
 ## Previewing locally
 
 Serve the repository and open it in a browser:
@@ -147,10 +165,11 @@ The screenshot tools in `tools/render/` use Playwright, open the boards with thi
 - `node tools/render/overflow.js` reports anything a board clips.
 - `node tools/render/walk-app.js` plays a night of the App board like a child would. `SITE=1 node
   tools/render/walk-site.js` does the same through the site's start page.
-- `node tools/render/site-checks.js` checks what the site adds: progress kept (also across renumbered lessons and two
-  copies of the app), the phone's Back (also with Chrome's own Back button, through a small test extension), short
-  windows and phones held sideways, a screen that fails to load or breaks, a slow connection, no JavaScript, the
-  iPhone's silent switch (simulated), the share tags. It takes about four minutes.
+- `node tools/render/site-checks.js` checks what the site adds: progress kept (also across lessons put in, taken out
+  and renamed, and with two copies of the app open), the phone's Back (also with Chrome's own Back button, through a
+  small test extension), short windows and phones held sideways, a screen that fails to load or breaks, «Empezar de
+  cero», a slow connection (also one that sends the boards one after another, over HTTP/2), no JavaScript, the
+  iPhone's silent switch (simulated), the share tags. It takes about seven minutes.
 
 The tools expect the server on port 8766; `BASE=http://127.0.0.1:8768/` points them at another.
 

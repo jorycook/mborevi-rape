@@ -368,7 +368,7 @@
      which says so and offers to start again: the board is drawn anew from what is already loaded (no request, so it
      works offline too), and the site keeps the child's progress, so starting again goes back to the path. When the
      board fails again while it is being drawn anew, before anyone could tap anything, what the page keeps may be what
-     breaks it: then, if the page can wipe it (DC.configure({ startOver })), a second button offers to start from
+     breaks it: then, if the page can set it aside (DC.configure({ startOver })), a second button offers to start from
      scratch. A board inside another is not guarded on its own: a screen with a hole in it would leave a child with no
      way on. */
   class Guard extends React.Component {
@@ -397,7 +397,7 @@
           font: '700 17px/1.45 system-ui, sans-serif' } },
         h('p', { style: { margin: 0 } }, 'Algo no salió bien.'),
         offer ? h('p', { style: { margin: '12px 0 0', fontWeight: 600 } },
-          'Volvió a pasar. Podés empezar de cero: se borra lo jugado en este aparato.') : null,
+          'Volvió a pasar. Podés empezar de cero: lo jugado se guarda aparte, y vuelve cuando se actualice la app.') : null,
         button('Volver a empezar', false, true),
         offer ? button('Empezar de cero', true, false) : null);
     }
@@ -447,44 +447,94 @@
   function loadScripts(list) {
     var fresh = list.map(function (src) {
       if (scripts[src]) return null;
-      return freshness[src] || (freshness[src] = fetch(src, { cache: 'no-cache' }).catch(function () {}));
+      return freshness[src] || (freshness[src] = revalidate(src));
     });
     return Promise.all(fresh).then(function () { return Promise.all(list.map(runScript)); });
   }
-  /* one quiet retry: a phone on a weak connection drops a request now and then. A request is given up after 15 s in
-     which nothing arrives (before the answer, or in the middle of it); one that keeps coming, however slowly, is
-     waited for: on a slow link all the boards come at once and each takes long */
+  /* The revalidation reads the script as it comes (its bytes count for the clock below, its text for the version mark).
+     A script the site answers with an error (a deploy that left it out) fails the board, which is the site's fault,
+     not the connection's; a request that does not come through is left to the <script>, which asks again. */
+  function revalidate(src) {
+    var ctl = typeof AbortController === 'function' ? new AbortController() : null;
+    var stop = ctl ? watch(ctl) : function () {};
+    return fetch(src, { cache: 'no-cache', signal: ctl ? ctl.signal : undefined }).then(function (r) {
+      heard();
+      if (!r.ok) { var e = new Error(src + ' answered ' + r.status); e.answered = true; throw e; }
+      return readText(r).then(function (text) { marks[src] = hash(text); });
+    }).then(stop, function (e) {
+      stop();
+      if (e && e.answered) { delete freshness[src]; throw e; }
+    });
+  }
+  /* A download is given up when nothing has arrived for 15 s, counted for all of the page's downloads together (and at
+     least 15 s from its own start): on a slow line the boards come one after another (HTTP/2 sends them in turn), and
+     one at the back of the queue gets nothing for a long while though the line is busy with the others. One that keeps
+     coming, however slowly, is waited for. */
+  var lastByte = 0, waiting = [], dog = 0;
+  function heard() { lastByte = Date.now(); }
+  function watch(ctl) {
+    var d = { ctl: ctl, at: Date.now() };
+    waiting.push(d);
+    if (!dog) dog = setInterval(function () {
+      var now = Date.now();
+      waiting.slice().forEach(function (x) { if (now - Math.max(lastByte, x.at) >= 15000) x.ctl.abort(); });
+    }, 1000);
+    return function () {
+      var i = waiting.indexOf(d);
+      if (i >= 0) waiting.splice(i, 1);
+      if (!waiting.length && dog) { clearInterval(dog); dog = 0; }
+    };
+  }
+  /* a download's text, read as it comes: each piece counts for the clock above */
+  function readText(r) {
+    if (!r.body || typeof r.body.getReader !== 'function' || typeof TextDecoder !== 'function') {
+      return r.text().then(function (text) { heard(); return text; });
+    }
+    var reader = r.body.getReader(), dec = new TextDecoder('utf-8'), parts = [];
+    var pump = function () {
+      return reader.read().then(function (got) {
+        heard();
+        if (got.done) { parts.push(dec.decode()); return parts.join(''); }
+        parts.push(dec.decode(got.value, { stream: true }));
+        return pump();
+      });
+    };
+    return pump();
+  }
+  /* a board's text, with one quiet retry: a phone on a weak connection drops a request now and then */
   function fetchText(url, tries) {
     var ctl = typeof AbortController === 'function' ? new AbortController() : null;
-    var timer = 0;
-    var arm = function () { if (!ctl) return; clearTimeout(timer); timer = setTimeout(function () { ctl.abort(); }, 15000); };
-    arm();
+    var stop = ctl ? watch(ctl) : function () {};
     return fetch(url, { cache: 'no-cache', signal: ctl ? ctl.signal : undefined }).then(function (r) {
+      heard();
       if (!r.ok) throw new Error(url + ' answered ' + r.status);
-      if (!ctl || !r.body || typeof r.body.getReader !== 'function' || typeof TextDecoder !== 'function') {
-        clearTimeout(timer);
-        return r.text();
-      }
-      var reader = r.body.getReader(), dec = new TextDecoder('utf-8'), parts = [];
-      var pump = function () {
-        arm();
-        return reader.read().then(function (got) {
-          if (got.done) { parts.push(dec.decode()); return parts.join(''); }
-          parts.push(dec.decode(got.value, { stream: true }));
-          return pump();
-        });
-      };
-      return pump();
+      return readText(r);
     }).then(function (text) {
-      clearTimeout(timer);
+      stop();
+      marks[url] = hash(text);
       return text;
     }).catch(function (e) {
-      clearTimeout(timer);
+      stop();
       /* a request that did not come through (not one the site answered with an error): the connection */
       if (e && (e.name === 'TypeError' || e.name === 'AbortError')) e.network = true;
       if ((tries || 0) >= 1) throw e;
       return new Promise(function (ok) { setTimeout(ok, 800); }).then(function () { return fetchText(url, 1); });
     });
+  }
+  /* Which version of the app this is: a short mark made from the text of every board and script the page has loaded,
+     and of any text the page hands over (DC.configure({ also: [text] }), the runtime's own). The same files give the
+     same mark; a deploy that changed any of them gives another. */
+  var marks = {};
+  function hash(text) {
+    var h = 2166136261;
+    for (var i = 0; i < text.length; i++) { h ^= text.charCodeAt(i); h = Math.imul(h, 16777619); }
+    return h >>> 0;
+  }
+  function build() {
+    var sum = 0;
+    Object.keys(marks).forEach(function (u) { sum = (sum + marks[u]) >>> 0; });
+    (options.also || []).forEach(function (t) { sum = (sum + hash(String(t))) >>> 0; });
+    return sum ? sum.toString(16) : '';
   }
   function Missing() { return null; }
   function load(url, chain) {
@@ -571,5 +621,5 @@
     });
   }
   function configure(o) { Object.keys(o || {}).forEach(function (k) { options[k] = o[k]; }); }
-  window.DC = { mount: mount, load: load, configure: configure, DCLogic: DCLogic };
+  window.DC = { mount: mount, load: load, configure: configure, build: build, DCLogic: DCLogic };
 })();

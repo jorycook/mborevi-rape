@@ -54,6 +54,13 @@ window.__tpMeta = [
     mec: "3.er ciclo: Guarani Ñe'ẽ ha Iñe'ẽporãhaipyre. Cierra la Educación Escolar Básica." }
 ];
 
+/* Lessons renamed, or moved to another grade, once the site is public: the progress a device keeps under the old name
+   is found under the new one (tp-course.js keeps each step by its grade and its name, not its number). The names are
+   'grade:unit' for a unit and its big star (its nights follow it) and 'grade:unit / night' for one night, old → new;
+   null for one taken out on purpose. tests/test-names.js fails when a name the site has used disappears without an
+   entry here; a unit put in between the others needs none. */
+window.__tpRenamed = {};
+
 (function () {
   /* a word: gn as written, es as said in Spanish, the picture, its syllables (for armar la palabra) */
   function w(gn, es, pic, syl) { var o = { gn: gn, es: es, pic: pic || gn }; if (syl) o.syl = syl; return o; }
