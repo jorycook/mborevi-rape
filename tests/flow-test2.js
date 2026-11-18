@@ -18,7 +18,8 @@ function play(track, grade, id, game, check) {
   const c = new (load(scr))({ app, act });
   let v = c.renderVals();
   if (check) check(v, c);
-  for (let i = 0; i < 80 && !v.finished && !v.last; i++) {
+  /* to the end: the story to its end card when it has one (finished), else to its last page */
+  for (let i = 0; i < 80 && !v.finished && !(v.last && !('finished' in v)); i++) {
     now += 1000;
     if (scr === 'Meet') v.next();
     else if (scr === 'Pick' || scr === 'Check') v.options.forEach((o) => o.pick());
