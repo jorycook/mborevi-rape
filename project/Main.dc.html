@@ -19,11 +19,25 @@ a{color:#2A1B3D;text-decoration:none}a:hover{color:#2A1B3D}
 button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([aria-disabled='true']),a:active:not([aria-disabled='true']){transform:translateY(2px) scale(.98)}
 @keyframes tp-legA{0%,100%{transform:rotate(14deg)}50%{transform:rotate(-14deg)}}
 @keyframes tp-legB{0%,100%{transform:rotate(-14deg)}50%{transform:rotate(14deg)}}
+@keyframes tp-blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.12)}}
+@keyframes tp-talk-a{0%{opacity:1}50%{opacity:0}100%{opacity:0}}
+@keyframes tp-talk-b{0%{opacity:0}50%{opacity:1}100%{opacity:1}}
+@keyframes tp-hop-a{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}38%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}76%{transform:scale(1.06,.9)}88%{transform:scale(.98,1.03)}100%{transform:none}}
+@keyframes tp-hop-b{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}38%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}76%{transform:scale(1.06,.9)}88%{transform:scale(.98,1.03)}100%{transform:none}}
+@keyframes tp-hop2-a{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}22%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}44%{transform:scale(1.05,.92)}50%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}68%{transform:translateY(-9%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}86%{transform:scale(1.04,.94)}100%{transform:none}}
+@keyframes tp-hop2-b{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}22%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}44%{transform:scale(1.05,.92)}50%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}68%{transform:translateY(-9%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}86%{transform:scale(1.04,.94)}100%{transform:none}}
+@keyframes tp-recoil-a{0%,100%{transform:none}30%{transform:translateX(-4%) rotate(-5deg)}}
+@keyframes tp-recoil-b{0%,100%{transform:none}30%{transform:translateX(-4%) rotate(-5deg)}}
+@keyframes tp-perk-a{0%,100%{transform:none}40%{transform:translateY(-3%)}}
+@keyframes tp-perk-b{0%,100%{transform:none}40%{transform:translateY(-3%)}}
 @keyframes tp-tw{0%,100%{opacity:1}50%{opacity:.35}}
 @keyframes tp-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
-@keyframes tp-hop{0%,100%{transform:translateY(0)}40%{transform:translateY(-22px)}}
 @keyframes tp-ring{0%{transform:scale(.7);opacity:.9}100%{transform:scale(1.6);opacity:0}}
+@keyframes tp-ring-big{0%{transform:scale(.6);opacity:.95}100%{transform:scale(2.2);opacity:0}}
+@keyframes tp-yes-big{0%{transform:scale(1)}40%{transform:scale(1.35)}70%{transform:scale(.94)}100%{transform:scale(1)}}
 @keyframes tp-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes tp-in-a{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes tp-in-b{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
 </style>
 </helmet>
@@ -75,10 +89,10 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 </div>
 
 <sc-for list="{{ stops }}" as="s" hint-placeholder-count="6">
-<a href="{{ s.href }}" onClick="{{ s.open }}" aria-label="{{ s.aria }}" aria-disabled="{{ s.off }}" style="position: absolute; left: {{ s.left }}; top: {{ s.top }}; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center">
+<a href="{{ s.href }}" onClick="{{ s.open }}" aria-label="{{ s.aria }}" aria-disabled="{{ s.off }}" style="position: absolute; left: {{ s.left }}; top: {{ s.top }}; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; animation: {{ s.pop }}">
 <svg viewBox="-32 -32 64 64" width="64" height="64" aria-hidden="true" style="position: absolute; left: 0; top: 0; overflow: visible">
 <circle r="30" fill="{{ s.glow }}" opacity="{{ s.glowO }}"/>
-<g opacity="{{ s.ringO }}"><circle r="24" fill="none" stroke="#FFD34E" stroke-width="3" style="animation: tp-ring 1.8s ease-out infinite; transform-box: fill-box; transform-origin: center"/></g>
+<g opacity="{{ s.ringO }}"><circle r="24" fill="none" stroke="#FFD34E" stroke-width="3" style="animation: {{ s.ring }}; transform-box: fill-box; transform-origin: center"/></g>
 <ellipse cx="0" cy="{{ s.padY }}" rx="26" ry="8" fill="#FFD34E" opacity="{{ s.padO }}"/>
 <path d="{{ s.d }}" fill="{{ s.fill }}" stroke="{{ s.stroke }}" stroke-width="{{ s.sw }}" stroke-linejoin="round" stroke-dasharray="{{ s.dash }}"/>
 <path d="{{ s.face }}" fill="none" stroke="#3B2418" stroke-width="2.4" stroke-linecap="round"/>
@@ -88,18 +102,19 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 </g>
 </svg>
 <sc-if value="{{ s.hasNum }}" hint-placeholder-val="{{ true }}"><div style="position: relative; font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 15px; line-height: 1; margin-top: 3px; color: {{ s.numInk }}">{{ s.num }}</div></sc-if>
+<sc-if value="{{ s.lit }}" hint-placeholder-val="{{ false }}"><div aria-hidden="true" style="position: absolute; left: 2px; top: 2px; width: 60px; height: 60px; box-sizing: border-box; border-radius: 30px; border: 4px solid #FFD34E; opacity: 0; animation: tp-ring-big 700ms ease-out"></div></sc-if>
 </a>
 </sc-for>
 
-<button type="button" onClick="{{ hop }}" aria-label="{{ tap.aria }}" style="position: absolute; left: {{ tap.left }}; top: {{ tap.top }}; width: 104px; height: 84px; padding: 0; border: 0; background: none; transition: left 160ms linear, top 160ms linear">
+<button type="button" onClick="{{ hop }}" aria-label="{{ tap.aria }}" style="position: absolute; left: 0; top: 0; width: 104px; height: 84px; padding: 0; border: 0; background: none; transform: {{ tap.t }}; transition: transform 200ms linear">
 <div style="animation: {{ tap.anim }}">
-<dc-import name="Mborevi" pose="{{ tap.pose }}" size="104" flip="{{ tap.flip }}" hint-size="104px,84px"></dc-import>
+<dc-import name="Mborevi" pose="{{ tap.pose }}" size="104" flip="{{ tap.flip }}" talk="{{ talk }}" hint-size="104px,84px"></dc-import>
 </div>
 </button>
 
 
 
-<div style="position: absolute; left: 16px; right: 16px; bottom: 34px; box-sizing: border-box; padding: 14px 16px 16px; border-radius: 28px; background: #FFF7EC; color: #2A1B3D; border: 3px solid #3B2418; box-shadow: 0 5px 0 #3B2418; display: flex; flex-direction: column; gap: 10px; animation: tp-in 260ms ease-out">
+<div style="position: absolute; left: 16px; right: 16px; bottom: 34px; box-sizing: border-box; padding: 14px 16px 16px; border-radius: 28px; background: #FFF7EC; color: #2A1B3D; border: 3px solid #3B2418; box-shadow: 0 5px 0 #3B2418; display: flex; flex-direction: column; gap: 10px; animation: {{ cardIn }}">
 <div style="display: flex; flex-direction: column; gap: 2px">
 <div style="font-size: 12px; font-weight: 800; letter-spacing: 0.06em; color: {{ card.kickerInk }}">{{ card.kicker }}</div>
 <div lang="{{ card.lang }}" style="font-family: 'Andika', 'Nunito', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.15">{{ card.title }}</div>
@@ -124,8 +139,12 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 <script type="text/x-dc" data-dc-script data-props='{"app":{"editor":null},"act":{"editor":null},"$preview":{"width":390,"height":844}}'>
 /* The grade's path: six places on the Milky Way (where Mborevi'i comes from, the unit's three nights, its big star,
    and what comes after), the tapir standing on tonight's star, and tonight's card. When a night is finished the app
-   sends a walk (from, to) and the tapir walks along the band to the next star. On its own, this artboard shows
-   1.º grado with unit 1 lit and the first night of unit 2 done, and plays that walk once when it opens. */
+   sends a walk (from, to): the star of the night just finished pops with a ring and a chime (in the app), then the
+   tapir walks along the band to the next star, in steps whose movements overlap (a transform that a phone moves
+   without laying out the page), and when he gets there the card comes in again and the next star starts to ring.
+   With reduced motion he is simply on the next star. On its own, this artboard shows 1.º grado with unit 1 lit and
+   the first night of unit 2 done, and plays that walk once when it opens. */
+/* a step every 160 ms, each moving for 200 ms: the next one starts before he stops, so he never halts mid-walk */
 const STEP_MS = 160;
 const LOOK = {
   done: { fill: '#FFD34E', stroke: '#3B2418', sw: 2.6, dash: 'none', glow: '#FFD34E', glowO: 0.2, ringO: 0, numInk: '#3B2418' },
@@ -170,16 +189,18 @@ if (a < 0 || b < 0) { if (act) act.walked(); return; }
 const band = C.chain(C.MAIN_BAND);
 const f0 = C.MAIN_STOPS[a], f1 = C.MAIN_STOPS[b];
 const n = Math.max(6, Math.round(Math.abs(f1 - f0) * 90));
-this.setState({ f: f0, pose: 'walk', flip: false });
+if (this.still()) { this.setState({ f: null, pose: null, flip: false }); if (act) act.walked(); return; }
+/* he stands by the star that lights (it pops with its ring and the chime), then walks */
+this.setState({ f: f0, pose: null, flip: false });
+if (act) this.timers.push(setTimeout(() => { const S = window.tpSound; if (S && S.beep) S.beep('star'); }, 180));
 for (let k = 1; k <= n; k++) {
 this.timers.push(setTimeout(() => {
 const f = f0 + (f1 - f0) * (k / n);
 const p0 = band.at(f0 + (f1 - f0) * ((k - 1) / n)), p1 = band.at(f);
-this.setState({ f, flip: p1[0] < p0[0] - 0.5 });
+this.setState({ f, pose: 'walk', flip: p1[0] < p0[0] - 0.5 });
 }, 500 + k * STEP_MS));
 }
-const end = 500 + n * STEP_MS + 120;
-if (this.still()) { this.timers.forEach((t) => clearTimeout(t)); this.timers = []; this.setState({ f: null, pose: null, flip: false }); if (act) act.walked(); return; }
+const end = 500 + n * STEP_MS + 200;
 this.timers.push(setTimeout(() => { this.setState({ f: null, pose: 'happy', flip: false }); if (act) act.walked(); }, end));
 this.timers.push(setTimeout(() => this.setState({ pose: null }), end + 1300));
 }
@@ -199,6 +220,9 @@ const sky = C.figure(meta.sky, prog.lit);
 const next = C.nextGrade(g);
 const nextMeta = next ? C.meta(next) : null;
 const field = C.starfield('main-' + g, 390, 40, 640, 64, [[0, 112, 300, 216]]);
+/* a walk not started yet, or on its way: the star he comes from pops and rings once, the next star waits to ring */
+const pending = !!(app.walk && app.walk.to && this.walkAt !== app.walk.at);
+const moving = !!(app.walk && app.walk.to) && (pending || this.state.f != null);
 const dust = C.dust(band, 'dust-' + g, 170, 76);
 let nowIx = -1;
 const stops = path.stops.map((st, i) => {
@@ -238,10 +262,18 @@ open = (e) => { if (act) { e.preventDefault(); act.open(s.id); } };
 }
 }
 const L = LOOK[look];
+const ringOn = L.ringO && !moving;
+const lit = moving && !!s && s.id === app.walk.from;
 return Object.assign({}, L, {
 left: Math.round(p[0] - 32) + 'px', top: Math.round(p[1] - 32) + 'px',
 d, face, num, hasNum: !!num, aria, open, href, off,
 padO: isNow ? 0.35 : 0, padY: r * 0.55,
+/* the ring runs on tonight's star only (a hidden ring that runs costs the phone a style pass at each turn), once
+   the tapir is there */
+ringO: ringOn ? 1 : 0,
+ring: ringOn ? 'tp-ring 1.8s ease-out infinite' : 'none',
+lit,
+pop: lit ? 'tp-yes-big 520ms cubic-bezier(.2,.8,.2,1)' : 'none',
 gateO: st.role === 'gate' ? 1 : 0,
 fig: st.role === 'gate' && nextMeta ? C.figure(nextMeta.sky, 0) : { lines: 'M0 0', off: 'M0 0' }
 });
@@ -251,17 +283,16 @@ let at = nowIx;
 if (at < 0) { for (let i = stops.length - 1; i >= 0; i--) { const s = path.stops[i].s; if (s && C.complete(app, s)) { at = i; break; } } }
 if (at < 0) at = 0;
 /* a walk not started yet: the tapir waits on the star it comes from */
-const pending = !!(app.walk && app.walk.to && this.walkAt !== app.walk.at);
 if (pending) { for (let i = 0; i < path.stops.length; i++) { const s = path.stops[i].s; if (s && s.id === app.walk.from) { at = i; break; } } }
 const walking = this.state.f != null;
 const pt = band.at(walking ? this.state.f : C.MAIN_STOPS[at]);
-const pose = this.state.pose || (pending ? 'walk' : 'stand');
+const pose = this.state.pose || 'stand';
 const tap = {
-left: Math.round(pt[0] - 51) + 'px',
-top: Math.round(pt[1] - 96) + 'px',
+t: 'translate(' + Math.round(pt[0] - 51) + 'px, ' + Math.round(pt[1] - 96) + 'px)',
 pose,
 flip: this.state.flip,
-anim: pose === 'happy' ? 'tp-hop 600ms ease-out' : pose === 'stand' ? 'tp-bob 2.6s ease-in-out infinite' : 'none',
+/* he hops by himself when his pose turns happy; standing, he bobs */
+anim: pose === 'stand' ? 'tp-bob 2.6s ease-in-out infinite' : 'none',
 aria: "Mborevi'i. Tocalo y salta"
 };
 const hop = () => {
@@ -323,7 +354,10 @@ starsAria: (app.stars != null ? app.stars : C.stars(app)) + ' estrellas ganadas'
 starIcon: C.puffyD(10, 10.5, 8.6),
 unitKicker: 'UNIDAD ' + unit.n + ' DE ' + units + ' · ' + sky.gn.toUpperCase(),
 hasUnitGn: !!unit.gn, unitGn: C.norm(unit.gn || ''), unitEs: unit.es || '',
-toSky: nav('Sky'), toGrownups: nav('Grownups')
+toSky: nav('Sky'), toGrownups: nav('Grownups'),
+talk: !!(this.state.said && this.state.voiced),
+/* the card comes in when the path opens, and again when the tapir gets to the next star */
+cardIn: this.walkAt != null && !moving ? 'tp-in-' + (this.walkAt % 2 ? 'a' : 'b') + ' 320ms cubic-bezier(.2,.8,.2,1)' : 'tp-in 260ms ease-out'
 };
 }
 }

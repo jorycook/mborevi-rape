@@ -20,9 +20,23 @@ a{color:#2A1B3D;text-decoration:none}a:hover{color:#2A1B3D}
 button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([aria-disabled='true']),a:active:not([aria-disabled='true']){transform:translateY(2px) scale(.98)}
 @keyframes tp-legA{0%,100%{transform:rotate(14deg)}50%{transform:rotate(-14deg)}}
 @keyframes tp-legB{0%,100%{transform:rotate(-14deg)}50%{transform:rotate(14deg)}}
+@keyframes tp-blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.12)}}
+@keyframes tp-talk-a{0%{opacity:1}50%{opacity:0}100%{opacity:0}}
+@keyframes tp-talk-b{0%{opacity:0}50%{opacity:1}100%{opacity:1}}
+@keyframes tp-hop-a{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}38%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}76%{transform:scale(1.06,.9)}88%{transform:scale(.98,1.03)}100%{transform:none}}
+@keyframes tp-hop-b{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}38%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}76%{transform:scale(1.06,.9)}88%{transform:scale(.98,1.03)}100%{transform:none}}
+@keyframes tp-hop2-a{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}22%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}44%{transform:scale(1.05,.92)}50%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}68%{transform:translateY(-9%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}86%{transform:scale(1.04,.94)}100%{transform:none}}
+@keyframes tp-hop2-b{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}22%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}44%{transform:scale(1.05,.92)}50%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}68%{transform:translateY(-9%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}86%{transform:scale(1.04,.94)}100%{transform:none}}
+@keyframes tp-recoil-a{0%,100%{transform:none}30%{transform:translateX(-4%) rotate(-5deg)}}
+@keyframes tp-recoil-b{0%,100%{transform:none}30%{transform:translateX(-4%) rotate(-5deg)}}
+@keyframes tp-perk-a{0%,100%{transform:none}40%{transform:translateY(-3%)}}
+@keyframes tp-perk-b{0%,100%{transform:none}40%{transform:translateY(-3%)}}
 @keyframes tp-tw{0%,100%{opacity:1}50%{opacity:.35}}
 @keyframes tp-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
 @keyframes tp-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes tp-nudge-x{0%,100%{transform:none}50%{transform:translateX(6px)}}
+@keyframes tp-land-star{0%{transform:translateY(-90px) scale(1.8) rotate(-20deg);opacity:0}55%{transform:translateY(4px) scale(.92);opacity:1}75%{transform:translateY(-2px) scale(1.06)}100%{transform:none}}
+@keyframes tp-ring{0%{transform:scale(.7);opacity:.9}100%{transform:scale(1.6);opacity:0}}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
 </style>
 </helmet>
@@ -44,6 +58,25 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 
 <div style="position: relative; margin-top: 12px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; flex-shrink: 0">
 <sc-for list="{{ words }}" as="w" hint-placeholder-count="3">
+<sc-if value="{{ w.can }}" hint-placeholder-val="{{ true }}">
+<button type="button" onClick="{{ w.listen }}" aria-label="{{ w.aria }}" lang="gn" style="position: relative; min-width: 0; box-sizing: border-box; height: 92px; padding: 6px 4px; border-radius: 18px; background: {{ w.bg }}; color: #2A1B3D; border: 2px solid #3B2418; box-shadow: 0 3px 0 #3B2418; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px">
+<svg viewBox="0 0 100 100" width="{{ w.ps }}" height="{{ w.ps }}" aria-hidden="true">
+<path d="{{ w.pic.f0.d }}" fill="{{ w.pic.f0.fill }}" stroke="#2A1B3D" stroke-width="3" stroke-linejoin="round" fill-rule="{{ w.pic.rule }}"/>
+<path d="{{ w.pic.f1.d }}" fill="{{ w.pic.f1.fill }}" stroke="#2A1B3D" stroke-width="3" stroke-linejoin="round"/>
+<path d="{{ w.pic.f2.d }}" fill="{{ w.pic.f2.fill }}" stroke="#2A1B3D" stroke-width="3" stroke-linejoin="round"/>
+<path d="{{ w.pic.f3.d }}" fill="{{ w.pic.f3.fill }}" stroke="#2A1B3D" stroke-width="3" stroke-linejoin="round"/>
+<path d="{{ w.pic.f4.d }}" fill="{{ w.pic.f4.fill }}" stroke="#2A1B3D" stroke-width="3" stroke-linejoin="round"/>
+<path d="{{ w.pic.f5.d }}" fill="{{ w.pic.f5.fill }}" stroke="#2A1B3D" stroke-width="3" stroke-linejoin="round"/>
+<path d="{{ w.pic.pink }}" fill="#FF8FAB" opacity="0.75"/>
+<path d="{{ w.pic.white }}" fill="#FFFFFF"/>
+<path d="{{ w.pic.ink }}" fill="#2A1B3D"/>
+<path d="{{ w.pic.line }}" fill="none" stroke="#2A1B3D" stroke-width="{{ w.pic.lineW }}" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+<div style="max-width: 100%; font-family: 'Andika', 'Nunito', sans-serif; font-weight: 700; font-size: {{ w.fs }}; line-height: 1.1; text-align: center">{{ w.gn }}</div>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#4B32B8" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="position: absolute; right: 6px; top: 6px"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="#8EC5FF"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19 6a8.5 8.5 0 0 1 0 12"/></svg>
+</button>
+</sc-if>
+<sc-if value="{{ w.mute }}" hint-placeholder-val="{{ false }}">
 <div style="box-sizing: border-box; height: 92px; padding: 6px 4px; border-radius: 18px; background: #FFF7EC; color: #2A1B3D; border: 2px solid #3B2418; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px">
 <svg viewBox="0 0 100 100" width="{{ w.ps }}" height="{{ w.ps }}" aria-hidden="true">
 <path d="{{ w.pic.f0.d }}" fill="{{ w.pic.f0.fill }}" stroke="#2A1B3D" stroke-width="3" stroke-linejoin="round" fill-rule="{{ w.pic.rule }}"/>
@@ -59,17 +92,21 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 </svg>
 <div lang="gn" style="max-width: 100%; font-family: 'Andika', 'Nunito', sans-serif; font-weight: 700; font-size: {{ w.fs }}; line-height: 1.1; text-align: center">{{ w.gn }}</div>
 </div>
+</sc-if>
 </sc-for>
 </div>
 
 <div style="position: relative; margin-top: 16px; font-size: 12px; font-weight: 800; letter-spacing: 0.06em; color: #CFC6FF; flex-shrink: 0">TRES JUEGOS, TRES ESTRELLAS</div>
 <div style="position: relative; margin-top: 8px; display: flex; flex-direction: column; gap: 10px; flex-shrink: 0">
 <sc-for list="{{ games }}" as="g" hint-placeholder-count="3">
-<a href="{{ g.href }}" onClick="{{ g.open }}" aria-label="{{ g.aria }}" style="box-sizing: border-box; min-height: 74px; padding: 10px 12px; border-radius: 22px; display: flex; align-items: center; gap: 12px; border: {{ g.border }}; background: {{ g.bg }}; box-shadow: {{ g.shadow }}; color: {{ g.ink }}; animation: tp-in 300ms ease-out">
-<svg viewBox="0 0 44 44" width="44" height="44" aria-hidden="true" style="flex-shrink: 0">
+<a href="{{ g.href }}" onClick="{{ g.open }}" aria-label="{{ g.aria }}" style="box-sizing: border-box; min-height: 74px; padding: 10px 12px; border-radius: 22px; display: flex; align-items: center; gap: 12px; border: {{ g.border }}; background: {{ g.bg }}; box-shadow: {{ g.shadow }}; color: {{ g.ink }}; animation: {{ g.anim }}">
+<div style="position: relative; width: 44px; height: 44px; flex-shrink: 0">
+<svg viewBox="0 0 44 44" width="44" height="44" aria-hidden="true" style="display: block; animation: {{ g.land }}">
 <path d="{{ g.star }}" fill="{{ g.starFill }}" stroke="{{ g.starStroke }}" stroke-width="2.4" stroke-linejoin="round"/>
 <path d="{{ g.face }}" fill="none" stroke="#3B2418" stroke-width="2.2" stroke-linecap="round"/>
 </svg>
+<sc-if value="{{ g.landing }}" hint-placeholder-val="{{ false }}"><div aria-hidden="true" style="position: absolute; left: -8px; top: -8px; width: 60px; height: 60px; box-sizing: border-box; border-radius: 30px; border: 4px solid #FFD34E; opacity: 0; animation: tp-ring 700ms ease-out 460ms"></div></sc-if>
+</div>
 <div style="flex-grow: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px">
 <div lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.1">{{ g.gn }}</div>
 <div style="font-size: 13px; font-weight: 700; opacity: 0.85">{{ g.es }}</div>
@@ -82,7 +119,7 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 <div style="flex-grow: 1"></div>
 <div style="position: relative; display: flex; align-items: flex-end; gap: 8px; flex-shrink: 0">
 <div style="flex-shrink: 0; animation: tp-bob 2.6s ease-in-out infinite">
-<dc-import name="Mborevi" pose="{{ pose }}" size="96" hint-size="96px,78px"></dc-import>
+<dc-import name="Mborevi" pose="{{ pose }}" size="96" talk="{{ talk }}" hint-size="96px,78px"></dc-import>
 </div>
 <a href="{{ cta.href }}" onClick="{{ cta.go }}" style="flex-grow: 1; height: 60px; margin-bottom: 6px; border-radius: 30px; background: #FFD34E; border: 3px solid #3B2418; box-shadow: 0 5px 0 #3B2418; display: flex; align-items: center; justify-content: center; gap: 10px; color: #2A1B3D">
 <span lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 22px">{{ cta.gn }}</span>
@@ -94,9 +131,33 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"app":{"editor":null},"act":{"editor":null},"$preview":{"width":390,"height":844}}'>
 /* Tonight's spread: the night's words with their pictures, and its three games in order. A game played shows its
-   star (a game can be played again); the next one is lit and the button opens it. On its own the artboard shows
-   1.º grado, unit 2, night 2 for a child with Spanish at home: the first game done, «Ehendu ha eiporavo» next. */
+   star (a game can be played again); the next one is lit and the button opens it. A word that has a voice can be
+   tapped to hear it (its tile has a small speaker; Mborevi'i says it). Back from a game, its star drops into its row
+   with a ring and a chime (in the app), Mborevi'i hops, and the next game's row nudges: one done, the next one there.
+   The rows come in one after another. On its own the artboard shows 1.º grado, unit 2, night 2 for a child with
+   Spanish at home: the first game done, «Ehendu ha eiporavo» next. */
 class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { said: false, voiced: false, on: -1, joy: false };
+this.timers = [];
+}
+/* the star just earned (in the app): the chime when it lands, and Mborevi'i hops */
+componentDidMount() {
+const S = window.tpSound;
+if (!this.props.act || !this.landed(this.view())) return;
+this.timers.push(setTimeout(() => { if (S && S.beep) S.beep('star'); this.setState({ joy: true }); }, 500));
+this.timers.push(setTimeout(() => this.setState({ joy: false }), 1400));
+}
+componentWillUnmount() { this.timers.forEach((t) => clearTimeout(t)); }
+/* the game whose star was just earned: decided once for each star (a star earned over 3 s ago, or this screen drawn
+   again later, does not land again); never kept on the device */
+landed(app) {
+const e = app.earned;
+if (!e) return null;
+if (e.at !== this.earnedAt) { this.earnedAt = e.at; this.landing = window.tpCourse.now() - e.at < 3000 ? e.kind : null; }
+return this.landing;
+}
 view() {
 const C = window.tpCourse;
 if (this.props.app) return this.props.app;
@@ -115,9 +176,11 @@ const app = this.view();
 const nav = (to) => (e) => { if (act) { e.preventDefault(); act.go(to); } };
 const s = app.step || C.next(app, app.grade);
 const field = C.starfield('tonight', 390, 40, 760, 50);
+const talk = !!(this.state.said && this.state.voiced);
 if (!s || s.kind !== 'night') {
-return { field, kicker: '', title: 'Esta noche no hay juegos', sub: 'Volvé al camino.', words: [], games: [], pose: 'stand', cta: { gn: 'Jaha!', es: '¡Vamos!', href: 'Main.dc.html', go: nav('Main') }, toMain: nav('Main') };
+return { field, kicker: '', title: 'Esta noche no hay juegos', sub: 'Volvé al camino.', words: [], games: [], pose: 'stand', talk, cta: { gn: 'Jaha!', es: '¡Vamos!', href: 'Main.dc.html', go: nav('Main') }, toMain: nav('Main') };
 }
+const landing = this.landed(app);
 const unit = C.unit(s.grade, s.unit) || { gn: '', es: '', nights: [] };
 const keys = C.gamesFor(s, app.track || 'L2', (app.done || {})[s.id]);
 const had = (app.done || {})[s.id] || {};
@@ -141,13 +204,28 @@ ink: on || done ? '#2A1B3D' : '#E4DDFF',
 chipLine: on || done ? '#3B2418' : '#8F80E6',
 href: G.screen + '.dc.html',
 aria: G.gn + ', ' + G.es + (done ? ': hecho, jugar otra vez' : on ? ': el que sigue' : ''),
+/* the rows come in one after another; back from a game, the next one nudges (no fill after the entrance, so a row
+   still sinks under the finger) */
+anim: 'tp-in 320ms cubic-bezier(.2,.8,.2,1) ' + i * 60 + 'ms backwards' + (landing && on ? ', tp-nudge-x 480ms ease-in-out 800ms 2' : ''),
+landing: landing === k,
+land: landing === k ? 'tp-land-star 620ms cubic-bezier(.2,.8,.2,1) 120ms both' : 'none',
 open: (e) => { if (act) { e.preventDefault(); act.open(s.id, k); } }
 };
 });
-/* a phrase gets a smaller picture and type, so it fits on two lines in the same tile */
-const words = (s.data.words || []).map((w) => {
+/* a phrase gets a smaller picture and type, so it fits on two lines in the same tile; a word with a voice is a
+   button that says it */
+const words = (s.data.words || []).map((w, i) => {
 const long = Array.from(C.norm(w.gn)).length > 11;
-return Object.assign(C.word(w), { fs: long ? '13px' : '14px', ps: long ? 44 : 52 });
+const x = C.word(w);
+const can = C.voiced(x);
+const playing = this.state.said && this.state.on === i;
+return Object.assign(x, {
+fs: long ? '13px' : '14px', ps: long ? 44 : 52,
+can, mute: !can,
+aria: 'Ehendu: ' + x.gn,
+bg: playing ? '#CFE6FF' : '#FFF7EC',
+listen: () => { this.setState({ on: i }); C.listen(this, 'w:' + C.fold(x.gn)); }
+});
 });
 const nextG = nextKey ? C.GAMES[nextKey] : null;
 return {
@@ -155,7 +233,8 @@ field,
 kicker: ('Noche ' + s.night + ' de ' + unit.nights.length + ' · unidad ' + s.unit + (unit.gn ? ' · ' + unit.gn : '')).toUpperCase(),
 title: C.norm(s.gn), sub: s.es,
 words, games,
-pose: nextKey ? 'stand' : 'happy',
+pose: nextKey && !this.state.joy ? 'stand' : 'happy',
+talk,
 cta: nextG
 ? { gn: 'Jaha!', es: nextG.es, href: nextG.screen + '.dc.html', go: (e) => { if (act) { e.preventDefault(); act.open(s.id, nextKey); } } }
 : { gn: 'Jaguata!', es: '¡A caminar!', href: 'Main.dc.html', go: nav('Main') },
