@@ -74,6 +74,11 @@ The Priorización curricular 2021 agrees:
   for passing the grade. The one exception is the alphabet unit's letter game for the oral and nasal vowels. The 2021
   planning guide puts the vowels in 1.º grado: «Las vocales orales» (week 4, p. 52) and «Las vocales nasales» (week 12,
   p. 54). From 2.º grado the L2 track reads and writes too.
+- Every track trains all four abilities, as the Programa lists them for each proposal (pp. 28, 30, 31). In particular
+  the L1 track, which reads and writes from 1.º grado, also speaks: it says the dialogues of the units that have them
+  («Ikatúpa?» in 1.º grado, «Aikotevẽ» in 2.º grado). It listens in each night's first game and in the sky story;
+  the listening games for single words are left to the other tracks, since a child who speaks Guarani at home already
+  knows those words by ear.
 
 ### Who decides the track
 
