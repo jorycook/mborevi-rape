@@ -11,7 +11,7 @@ const OUT = require('path').resolve(__dirname, '..', '..') + '/render/walk-';
   const click = async (role, name, opts) => { const el = p.getByRole(role, { name }).first(); await el.click(opts); await wait(650); };
   const visible = async (role, name) => (await p.getByRole(role, { name }).count()) > 0 && p.getByRole(role, { name }).first().isVisible();
   try {
-    await p.goto('http://127.0.0.1:8766/project/App.dc.html', { waitUntil: 'networkidle' });
+    await p.goto(require('./url.js')('App.dc.html'), { waitUntil: 'networkidle' });
     await wait(1200);
     await click('link', /Epáy/); await wait(900);
     await shot('01-welcome-awake');

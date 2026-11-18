@@ -6,7 +6,7 @@ const { chromium } = require('playwright');
   const errors = [];
   p.on('pageerror', (e) => errors.push('pageerror: ' + String(e).slice(0, 300)));
   p.on('console', (m) => { if (m.type() === 'error' || m.type() === 'warning') errors.push(m.type() + ': ' + m.text().slice(0, 300)); });
-  await p.goto('http://127.0.0.1:8766/project/' + name, { waitUntil: 'networkidle' });
+  await p.goto(require('./url.js')(name), { waitUntil: 'networkidle' });
   await p.waitForTimeout(1500);
   await p.screenshot({ path: process.argv[5] || (require('path').resolve(__dirname, '..', '..') + '/render/' + name.replace('.dc.html', '') + '.png') });
   const info = await p.evaluate(() => ({ body: document.body.innerText.slice(0, 200).replace(/\s+/g, ' '), xdc: document.querySelectorAll('x-dc').length }));

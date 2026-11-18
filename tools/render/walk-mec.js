@@ -11,7 +11,7 @@ const OUT = require('path').resolve(__dirname, '..', '..') + '/render/mec-';
   const click = async (role, name) => { await p.getByRole(role, { name }).first().click(); await wait(650); };
   const scrollAll = async (to) => p.evaluate((to) => { document.querySelectorAll('*').forEach((el) => { const s = getComputedStyle(el); if (s.overflowY === 'auto' && el.scrollHeight > el.clientHeight) el.scrollTop = to === 'end' ? el.scrollHeight : to; }); }, to);
   try {
-    await p.goto('http://127.0.0.1:8766/project/App.dc.html', { waitUntil: 'networkidle' });
+    await p.goto(require('./url.js')('App.dc.html'), { waitUntil: 'networkidle' });
     await wait(1200);
     await click('link', /Epáy/); await wait(600);
     await click('link', /Jaha, vamos/);

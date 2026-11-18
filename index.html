@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; media-src 'self' data: blob:; font-src 'self'; connect-src 'self'; base-uri 'self'; form-action 'none'">
+<title>Mborevi Rape · guaraní para chicos</title>
+<meta name="description" content="Una app para aprender guaraní, de Preescolar a 9.º grado como los ordena el MEC del Paraguay: Mborevi'i, un tapir, camina por la Vía Láctea de lección en lección.">
+<meta property="og:title" content="Mborevi Rape · guaraní para chicos">
+<meta property="og:description" content="Aprender guaraní con Mborevi'i, un tapir que camina por la Vía Láctea, siguiendo los grados del MEC del Paraguay.">
+<meta name="theme-color" content="#1E1460">
+<style>
+  html, body { margin: 0; height: 100%; background: #140D45; }
+  body { display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  #frame { position: relative; width: 390px; height: 844px; flex: none; transform-origin: center center; }
+  .msg { color: #FFF7EC; font: 700 17px/1.45 system-ui, sans-serif; padding: 120px 28px; text-align: center; }
+  .msg button { margin-top: 18px; padding: 14px 26px; border-radius: 999px; border: 3px solid #3B2418;
+    background: #FFD34E; color: #3B2418; font: 800 17px system-ui, sans-serif; cursor: pointer; }
+</style>
+<script defer src="runtime/vendor/react.production.min.js"></script>
+<script defer src="runtime/vendor/react-dom.production.min.js"></script>
+<script defer src="runtime/dc.js"></script>
+</head>
+<body>
+<div id="frame"><div class="msg" role="status">Mborevi'i ojupi yvágape…<br>(cargando)</div></div>
+<noscript><p class="msg">Mborevi Rape necesita JavaScript.</p></noscript>
+<script>
+(function () {
+  /* the app is drawn for a 390×844 phone screen: it is scaled to fit the window, whatever its size */
+  var frame = document.getElementById('frame'), started = false;
+  function fit() {
+    var s = Math.min(window.innerWidth / 390, window.innerHeight / 844);
+    frame.style.transform = 'scale(' + Math.max(0.4, Math.min(s, 1.5)) + ')';
+  }
+  window.addEventListener('resize', fit);
+  fit();
+  /* something went wrong before the app could start: say so, and offer to try again */
+  function fail(e) {
+    if (started) return;
+    started = true;
+    if (e) console.error(e);
+    frame.textContent = '';
+    var box = document.createElement('div'), p = document.createElement('p'), b = document.createElement('button');
+    box.className = 'msg';
+    box.setAttribute('role', 'alert');
+    p.textContent = 'No se pudo abrir la app. Revisá la conexión a internet.';
+    b.type = 'button';
+    b.textContent = 'Probar de nuevo';
+    b.onclick = function () { location.reload(); };
+    box.appendChild(p);
+    box.appendChild(b);
+    frame.appendChild(box);
+  }
+  var watchdog = setTimeout(function () { fail(new Error('the app did not start within 25 s')); }, 25000);
+  document.addEventListener('DOMContentLoaded', function () {
+    if (!window.DC) { clearTimeout(watchdog); fail(new Error('runtime/dc.js or React did not load')); return; }
+    /* a link between boards opens the app again; the fonts come from this site, not from Google */
+    DC.configure({ boardLinks: 'app', fonts: { 'https://fonts.googleapis.com/css2': 'runtime/fonts/fonts.css' } });
+    DC.mount('project/App.dc.html', frame).then(function () {
+      started = true;
+      clearTimeout(watchdog);
+    }, function (e) { clearTimeout(watchdog); fail(e); });
+  });
+})();
+</script>
+</body>
+</html>

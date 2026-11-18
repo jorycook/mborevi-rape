@@ -15,9 +15,21 @@ constellation of the Guarani sky.
 
 Every claim the app makes about the MEC, with the document and page behind it, is in [MEC.md](MEC.md).
 
-## See it
+## Play it online
 
-The app lives on claude.ai as a Claude Design canvas, which keeps the published copy of everything in `project/`:
+**https://jorycook.github.io/mborevi-rape/** opens the whole app, on a phone or a computer. GitHub Pages serves the
+repository's `main` branch as it is, with no build step:
+
+- `index.html` starts the App board and scales it to fit the screen.
+- `runtime/dc.js` is this project's own runtime for the `.dc.html` boards, written from the format's specification.
+- React 18.3.1 runs it (`runtime/vendor/`, MIT licence in `LICENSE-react.txt`).
+
+Every push to `main` updates the site within a minute or two. To turn the site on, or back on: in the repository's
+Settings, open Pages, choose «Deploy from a branch», then the branch `main` and the folder `/ (root)`, and save.
+
+## See it on the canvas
+
+The app also lives on claude.ai as a Claude Design canvas, which keeps the published copy of everything in `project/`:
 
 - App: https://claude.ai/artifact/2gWEiYnoDjxVwaZC7dnMtx. The **App** board is the whole app, playable in place.
   The other boards show each screen on its own.
@@ -32,10 +44,10 @@ Both are private until you share them from claude.ai.
 | --- | --- | --- |
 | Preescolar | 6 | All nights written, all oral |
 | 1.º grado | 8 | All nights written |
-| 2.º grado | 5 | Units 1–2 written; 3–5 outlined |
+| 2.º grado | 6 | Units 1–3 written; 4–6 outlined |
 | 3.º–9.º grado | 5–6 each | Outlined: titles, «what the program asks» and «in the app» texts |
 
-There are 114 voice clips, made with a synthetic Guarani voice and each checked by speech recognition. 23 more are held
+There are 128 voice clips, made with a synthetic Guarani voice and each checked by speech recognition. 23 more are held
 back until a person approves them on the listening page.
 
 ## Layout
@@ -50,6 +62,8 @@ project/          the app as published on the canvas
   tp-sound*.js    the voice player and the clips (MP3, base64)
   canvas.json     where the boards sit on the canvas
 tests/            the app's logic run in Node, no browser
+index.html        the public site's start page
+runtime/          the runtime that plays the boards in any browser (dc.js, board.html, vendor/)
 tools/render/     screenshots and layout checks with Playwright
 tools/audio/      makes the voice clips
 tools/art/        draws the word pictures (writes project/tp-pics.js)
@@ -59,6 +73,7 @@ docs/
   mec-check.json  claim-by-claim check against the Priorización curricular 2021
   guarani-audit.json  review of every Guarani string in the app
   unit5-check.json  how the Guarani of 1.º grado, unit 5 («Ikatúpa?») was drafted and checked
+  g2-unit3-check.json  the same for 2.º grado, unit 3 («Aikotevẽ»)
 ```
 
 ## Tests
@@ -80,21 +95,28 @@ language. Tracks: `L1`, `L2`, `BI`. Grades: `pre`, `g1`, `g2`. It prints `no pro
 node tests/runlogic.js project/Home.dc.html
 ```
 
-## Previewing the boards locally
+## Previewing locally
 
-The boards load `project/support.js`, the Design canvas runtime. That file belongs to the canvas type and is not in
-this repository; a Claude session can fetch it from the canvas type when it is needed. With it in place:
+Serve the repository and open it in a browser:
 
 ```bash
 python3 -m http.server 8766
 ```
 
-```bash
-node tools/render/render-one.js Home.dc.html
-```
+- http://127.0.0.1:8766/ is the whole app, as on the public site.
+- http://127.0.0.1:8766/runtime/board.html?b=Meet.dc.html is one board on its own.
 
-Screenshots go to `render/`. `tools/render/overflow.js` reports anything a board clips, and `walk-app.js` drives the
-App board through a night like a child would. Playwright must be installed.
+The screenshot tools in `tools/render/` use Playwright, open the boards with this project's runtime, and write to
+`render/`:
+
+- `node tools/render/render-one.js Home.dc.html` takes a screenshot of one board.
+- `node tools/render/overflow.js` reports anything a board clips.
+- `node tools/render/walk-app.js` plays a night of the App board like a child would. `SITE=1 node
+  tools/render/walk-site.js` does the same through the site's start page.
+
+With `CANVAS=1`, the tools open the boards the way the design canvas does instead. That needs the canvas's own runtime
+saved locally as `project/support.js`, which is not in this repository; a Claude session can fetch it from the canvas
+type. `parity.js`, then `parity_diff.py`, use it to render every board on both runtimes and compare them pixel by pixel.
 
 ## Making the voice clips
 
@@ -157,5 +179,7 @@ node -e "require('./tools/art/pics.js').exportJs('project/tp-pics.js')"
 
 - **Voice:** the clips in `project/tp-sound-*.js` and `voces/clips.json` were made with MMS-TTS Guarani by Meta AI
   (Pratap et al., 2023). It is licensed **CC BY-NC 4.0**, so the clips are for **non-commercial use only**.
+- **React** 18.3.1 by Meta is included in `runtime/vendor/` under the MIT licence, which is in `LICENSE-react.txt` next to it.
+  The runtime that plays the boards (`runtime/dc.js`) is this project's own code.
 - **MEC documents:** they are not included. MEC.md cites them by title and page.
 - **App code and content:** no licence file has been chosen yet. Add one if others should be allowed to reuse it.

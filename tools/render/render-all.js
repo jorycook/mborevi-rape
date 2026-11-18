@@ -11,7 +11,7 @@ const canvas = JSON.parse(fs.readFileSync(S + '/project/canvas.json', 'utf8'));
     const errors = [];
     p.on('pageerror', (e) => errors.push(String(e).slice(0, 200)));
     p.on('console', (m) => { if (m.type() === 'error' && !/Expected (moveto|number)|attribute d:|attribute (viewBox|width|height|transform|cx|cy|r|opacity)/.test(m.text())) errors.push(m.text().slice(0, 200)); });
-    await p.goto('http://127.0.0.1:8766/project/' + name, { waitUntil: 'networkidle' });
+    await p.goto(require('./url.js')(name), { waitUntil: 'networkidle' });
     await p.waitForTimeout(1200);
     const m = await p.evaluate(() => {
       // text that overflows its box horizontally, and the document's own overflow

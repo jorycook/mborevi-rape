@@ -11,7 +11,7 @@ const only = process.argv.slice(2);
     if (only.length && !only.includes(name)) continue;
     const fr = canvas.boards[name];
     const p = await b.newPage({ viewport: { width: fr.w, height: fr.h }, deviceScaleFactor: 1 });
-    await p.goto('http://127.0.0.1:8766/project/' + name, { waitUntil: 'networkidle' });
+    await p.goto(require('./url.js')(name), { waitUntil: 'networkidle' });
     await p.waitForTimeout(1000);
     const r = await p.evaluate(() => {
       let root = null;

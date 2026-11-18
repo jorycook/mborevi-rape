@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Mborevi Rape · one board</title>
+<style>html, body { margin: 0; }</style>
+<script src="vendor/react.production.min.js"></script>
+<script src="vendor/react-dom.production.min.js"></script>
+<script src="dc.js"></script>
+</head>
+<body>
+<div id="board"></div>
+<script>
+/* Mounts one board of the app on its own, as the design canvas shows it: runtime/board.html?b=Meet.dc.html
+   (used by tools/render/parity.js to compare this runtime with the canvas). */
+(function () {
+  var name = new URLSearchParams(location.search).get('b') || 'Main.dc.html';
+  if (!/^[A-Za-z0-9_][A-Za-z0-9_.-]*\.dc\.html$/.test(name)) { document.body.setAttribute('data-error', 'bad name'); return; }
+  DC.mount('../project/' + name, document.getElementById('board')).then(function () {
+    document.body.setAttribute('data-ready', '1');
+  }, function (e) {
+    document.body.setAttribute('data-error', String((e && e.message) || e));
+    console.error(e);
+  });
+})();
+</script>
+</body>
+</html>

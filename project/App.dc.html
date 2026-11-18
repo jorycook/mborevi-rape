@@ -76,6 +76,10 @@ this.state = window.tpCourse.fresh();
 this.act = window.tpCourse.handlers(() => this.state, (fn) => this.setState(fn));
 this.screenRef = (el) => { if (el) this.screenEl = el; };
 }
+/* the first screen is the one shown: from the first change on, the focus follows the screen */
+componentDidMount() {
+this.shown = this.state.screen;
+}
 componentDidUpdate() {
 const now = this.state.screen;
 if (this.shown && now !== this.shown && this.screenEl) {
