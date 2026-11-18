@@ -29,6 +29,11 @@
 
 /* things that come in */
 @keyframes tp-screen{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+/* a new screen enters from the side the child is going (App): deeper from the right, back from the left, a night or
+   the big star grows from the middle */
+@keyframes tp-enter-fwd{from{transform:translateX(28px);opacity:.15}to{transform:none;opacity:1}}
+@keyframes tp-enter-back{from{transform:translateX(-28px);opacity:.15}to{transform:none;opacity:1}}
+@keyframes tp-enter-zoom{from{transform:scale(.94);opacity:.15}to{transform:none;opacity:1}}
 @keyframes tp-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 @keyframes tp-in-a{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 @keyframes tp-in-b{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}

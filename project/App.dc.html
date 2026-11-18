@@ -38,6 +38,9 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 @keyframes tp-perk-a{0%,100%{transform:none}40%{transform:translateY(-3%)}}
 @keyframes tp-perk-b{0%,100%{transform:none}40%{transform:translateY(-3%)}}
 @keyframes tp-screen{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes tp-enter-fwd{from{transform:translateX(28px);opacity:.15}to{transform:none;opacity:1}}
+@keyframes tp-enter-back{from{transform:translateX(-28px);opacity:.15}to{transform:none;opacity:1}}
+@keyframes tp-enter-zoom{from{transform:scale(.94);opacity:.15}to{transform:none;opacity:1}}
 @keyframes tp-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 @keyframes tp-in-a{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 @keyframes tp-in-b{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
@@ -78,25 +81,25 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 </style>
 </helmet>
 <div style="width: 390px; height: 844px; position: relative; overflow: hidden; background: #110A38; color: #FFF7EC; font-family: 'Nunito', 'Avenir Next', sans-serif">
-<sc-if value="{{ at.Welcome }}" hint-placeholder-val="{{ true }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: tp-screen 220ms ease-out"><dc-import name="Welcome" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
-<sc-if value="{{ at.Grade }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: tp-screen 220ms ease-out"><dc-import name="Grade" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
-<sc-if value="{{ at.Home }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: tp-screen 220ms ease-out"><dc-import name="Home" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
-<sc-if value="{{ at.Ready }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: tp-screen 220ms ease-out"><dc-import name="Ready" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
-<sc-if value="{{ at.Main }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: tp-screen 220ms ease-out"><dc-import name="Main" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
-<sc-if value="{{ at.Tonight }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: tp-screen 220ms ease-out"><dc-import name="Tonight" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
-<sc-if value="{{ at.Sky }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: tp-screen 220ms ease-out"><dc-import name="Sky" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
-<sc-if value="{{ at.Grownups }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: tp-screen 220ms ease-out"><dc-import name="Grownups" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
-<sc-if value="{{ at.Meet }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: tp-screen 220ms ease-out"><dc-import name="Meet" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
-<sc-if value="{{ at.Pick }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: tp-screen 220ms ease-out"><dc-import name="Pick" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
-<sc-if value="{{ at.Pairs }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: tp-screen 220ms ease-out"><dc-import name="Pairs" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
-<sc-if value="{{ at.Build }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: tp-screen 220ms ease-out"><dc-import name="Build" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
-<sc-if value="{{ at.Say }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: tp-screen 220ms ease-out"><dc-import name="Say" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
-<sc-if value="{{ at.Letters }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: tp-screen 220ms ease-out"><dc-import name="Letters" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
-<sc-if value="{{ at.Story }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: tp-screen 220ms ease-out"><dc-import name="Story" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
-<sc-if value="{{ at.YesNo }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: tp-screen 220ms ease-out"><dc-import name="YesNo" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
-<sc-if value="{{ at.Catch }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: tp-screen 220ms ease-out"><dc-import name="Catch" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
-<sc-if value="{{ at.Check }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: tp-screen 220ms ease-out"><dc-import name="Check" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
-<sc-if value="{{ at.Shine }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: tp-screen 220ms ease-out"><dc-import name="Shine" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
+<sc-if value="{{ at.Welcome }}" hint-placeholder-val="{{ true }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: {{ enter }}"><dc-import name="Welcome" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
+<sc-if value="{{ at.Grade }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: {{ enter }}"><dc-import name="Grade" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
+<sc-if value="{{ at.Home }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: {{ enter }}"><dc-import name="Home" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
+<sc-if value="{{ at.Ready }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: {{ enter }}"><dc-import name="Ready" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
+<sc-if value="{{ at.Main }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: {{ enter }}"><dc-import name="Main" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
+<sc-if value="{{ at.Tonight }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: {{ enter }}"><dc-import name="Tonight" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
+<sc-if value="{{ at.Sky }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: {{ enter }}"><dc-import name="Sky" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
+<sc-if value="{{ at.Grownups }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: {{ enter }}"><dc-import name="Grownups" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
+<sc-if value="{{ at.Meet }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: {{ enter }}"><dc-import name="Meet" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
+<sc-if value="{{ at.Pick }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: {{ enter }}"><dc-import name="Pick" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
+<sc-if value="{{ at.Pairs }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: {{ enter }}"><dc-import name="Pairs" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
+<sc-if value="{{ at.Build }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: {{ enter }}"><dc-import name="Build" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
+<sc-if value="{{ at.Say }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: {{ enter }}"><dc-import name="Say" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
+<sc-if value="{{ at.Letters }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: {{ enter }}"><dc-import name="Letters" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
+<sc-if value="{{ at.Story }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: {{ enter }}"><dc-import name="Story" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
+<sc-if value="{{ at.YesNo }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: {{ enter }}"><dc-import name="YesNo" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
+<sc-if value="{{ at.Catch }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: {{ enter }}"><dc-import name="Catch" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
+<sc-if value="{{ at.Check }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: {{ enter }}"><dc-import name="Check" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
+<sc-if value="{{ at.Shine }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: {{ enter }}"><dc-import name="Shine" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
@@ -217,11 +220,26 @@ this.shown = now;
 window.tpCourse.store(this.state);
 this.sync();
 }
+/* how the screen comes in: the first one fades up; then from the side the child is going (deeper from the right, back
+   from the left), and a night, the big star and its celebration grow from the middle. Chosen once per change of
+   screen, so that a screen drawn again does not start over */
+entrance(to) {
+if (this.enterFor === to) return this.enterAnim;
+const from = this.enterFor;
+this.enterFor = to;
+const ease = ' 260ms cubic-bezier(.2,.8,.2,1)';
+if (!from) this.enterAnim = 'tp-screen 220ms ease-out';
+else if (to === 'Shine' || (from === 'Main' && (to === 'Tonight' || to === 'Check'))) this.enterAnim = 'tp-enter-zoom' + ease;
+else if (depthOf(to) > depthOf(from)) this.enterAnim = 'tp-enter-fwd' + ease;
+else if (depthOf(to) < depthOf(from)) this.enterAnim = 'tp-enter-back' + ease;
+else this.enterAnim = 'tp-screen 220ms ease-out';
+return this.enterAnim;
+}
 renderVals() {
 const s = this.state;
 const at = {};
 SCREENS.forEach((n) => { at[n] = s.screen === n; });
-return { at, app: window.tpCourse.view(s), act: this.act, screenRef: this.screenRef };
+return { at, app: window.tpCourse.view(s), act: this.act, screenRef: this.screenRef, enter: this.entrance(s.screen) };
 }
 }
 </script>
