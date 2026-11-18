@@ -20,11 +20,25 @@ a{color:#2A1B3D;text-decoration:none}a:hover{color:#2A1B3D}
 button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([aria-disabled='true']),a:active:not([aria-disabled='true']){transform:translateY(2px) scale(.98)}
 @keyframes tp-legA{0%,100%{transform:rotate(14deg)}50%{transform:rotate(-14deg)}}
 @keyframes tp-legB{0%,100%{transform:rotate(-14deg)}50%{transform:rotate(14deg)}}
+@keyframes tp-blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.12)}}
+@keyframes tp-talk-a{0%{opacity:1}50%{opacity:0}100%{opacity:0}}
+@keyframes tp-talk-b{0%{opacity:0}50%{opacity:1}100%{opacity:1}}
+@keyframes tp-hop-a{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}38%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}76%{transform:scale(1.06,.9)}88%{transform:scale(.98,1.03)}100%{transform:none}}
+@keyframes tp-hop-b{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}38%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}76%{transform:scale(1.06,.9)}88%{transform:scale(.98,1.03)}100%{transform:none}}
+@keyframes tp-hop2-a{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}22%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}44%{transform:scale(1.05,.92)}50%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}68%{transform:translateY(-9%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}86%{transform:scale(1.04,.94)}100%{transform:none}}
+@keyframes tp-hop2-b{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}22%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}44%{transform:scale(1.05,.92)}50%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}68%{transform:translateY(-9%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}86%{transform:scale(1.04,.94)}100%{transform:none}}
+@keyframes tp-recoil-a{0%,100%{transform:none}30%{transform:translateX(-4%) rotate(-5deg)}}
+@keyframes tp-recoil-b{0%,100%{transform:none}30%{transform:translateX(-4%) rotate(-5deg)}}
+@keyframes tp-perk-a{0%,100%{transform:none}40%{transform:translateY(-3%)}}
+@keyframes tp-perk-b{0%,100%{transform:none}40%{transform:translateY(-3%)}}
 @keyframes tp-tw{0%,100%{opacity:1}50%{opacity:.35}}
 @keyframes tp-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
 @keyframes tp-pop{0%{transform:scale(.6);opacity:0}60%{transform:scale(1.06);opacity:1}100%{transform:scale(1);opacity:1}}
+@keyframes tp-slide-a{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
+@keyframes tp-slide-b{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
+@keyframes tp-dot{0%{transform:scale(1.7)}100%{transform:none}}
+@keyframes tp-nudge{0%,60%,100%{transform:none}30%{transform:scale(1.08)}}
 @keyframes tp-wave{0%,100%{transform:scaleY(.4)}50%{transform:scaleY(1)}}
-@keyframes tp-slide{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
 </style>
 </helmet>
@@ -36,20 +50,20 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 </svg>
 
 <div style="position: relative; display: flex; align-items: center; gap: 10px; height: 44px; flex-shrink: 0">
-<a href="Tonight.dc.html" onClick="{{ close }}" aria-label="Cerrar el juego" style="width: 44px; height: 44px; margin-left: -6px; border-radius: 22px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFF7EC" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+<a href="Tonight.dc.html" onClick="{{ close }}" aria-label="Cerrar el juego" style="width: 56px; height: 56px; margin: -6px -6px -6px -12px; border-radius: 28px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFF7EC" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
 <div style="flex-grow: 1; display: flex; flex-direction: column; min-width: 0">
 <div lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.05">Ehecha ha ehendu</div>
 <div style="font-size: 12px; font-weight: 700; color: #CFC6FF">Mirá y escuchá</div>
 </div>
 <div role="img" aria-label="{{ dotsAria }}" style="display: flex; gap: 5px; flex-shrink: 0">
 <sc-for list="{{ dots }}" as="d" hint-placeholder-count="4">
-<div style="width: 12px; height: 12px; border-radius: 6px; background: {{ d.bg }}; border: 2px solid #FFF7EC; box-sizing: border-box"></div>
+<div style="width: 12px; height: 12px; border-radius: 6px; background: {{ d.bg }}; border: 2px solid #FFF7EC; box-sizing: border-box; animation: {{ d.anim }}"></div>
 </sc-for>
 </div>
 </div>
 
 <sc-if value="{{ playing }}" hint-placeholder-val="{{ true }}">
-<div style="position: relative; margin-top: 14px; box-sizing: border-box; padding: 18px 16px 16px; border-radius: 30px; background: #FFF7EC; color: #2A1B3D; border: 3px solid #3B2418; box-shadow: 0 6px 0 #3B2418; display: flex; flex-direction: column; align-items: center; gap: 8px; flex-shrink: 0; animation: tp-slide 280ms ease-out">
+<div style="position: relative; margin-top: 14px; box-sizing: border-box; padding: 18px 16px 16px; border-radius: 30px; background: #FFF7EC; color: #2A1B3D; border: 3px solid #3B2418; box-shadow: 0 6px 0 #3B2418; display: flex; flex-direction: column; align-items: center; gap: 8px; flex-shrink: 0; animation: {{ card.anim }}">
 <svg viewBox="0 0 100 100" width="196" height="196" role="img" aria-label="{{ card.picAria }}">
 <path d="{{ card.pic.f0.d }}" fill="{{ card.pic.f0.fill }}" stroke="#2A1B3D" stroke-width="2.6" stroke-linejoin="round" fill-rule="{{ card.pic.rule }}"/>
 <path d="{{ card.pic.f1.d }}" fill="{{ card.pic.f1.fill }}" stroke="#2A1B3D" stroke-width="2.6" stroke-linejoin="round"/>
@@ -71,8 +85,8 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 </sc-for>
 </div>
 </sc-if>
-<button type="button" onClick="{{ listen }}" aria-label="{{ card.listenAria }}" style="margin-top: 4px; height: 48px; box-sizing: border-box; padding: 0 18px; border-radius: 24px; background: #8EC5FF; border: 3px solid #3B2418; display: flex; align-items: center; gap: 8px; color: #2A1B3D">
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2A1B3D" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19 6a8.5 8.5 0 0 1 0 12"/></svg>
+<button type="button" onClick="{{ listen }}" aria-label="{{ card.listenAria }}" style="margin-top: 2px; height: 56px; box-sizing: border-box; padding: 0 20px; border-radius: 28px; background: #8EC5FF; border: 3px solid #3B2418; display: flex; align-items: center; gap: 8px; color: #2A1B3D">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2A1B3D" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7" opacity="{{ wave.arcs }}"/><path d="M19 6a8.5 8.5 0 0 1 0 12" opacity="{{ wave.arcs }}"/><path d="M16.2 11v6" opacity="{{ wave.bars }}" style="transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(.7); animation: {{ wave.a0 }}"/><path d="M19.2 7v10" opacity="{{ wave.bars }}" style="transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(.7); animation: {{ wave.a1 }}"/><path d="M22.2 10v7" opacity="{{ wave.bars }}" style="transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(.7); animation: {{ wave.a2 }}"/></svg>
 <span lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 18px">Ehendu</span>
 <span style="font-size: 13px; font-weight: 800; color: #2A1B3D">Escuchá</span>
 </button>
@@ -97,11 +111,11 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 </sc-if>
 </div>
 <div style="animation: tp-bob 2.6s ease-in-out infinite">
-<dc-import name="Mborevi" pose="{{ pose }}" size="104" hint-size="104px,84px"></dc-import>
+<dc-import name="Mborevi" pose="{{ pose }}" talk="{{ talk }}" size="104" hint-size="104px,84px"></dc-import>
 </div>
 </div>
 <sc-if value="{{ playing }}" hint-placeholder-val="{{ true }}">
-<button type="button" onClick="{{ next }}" style="flex-grow: 1; height: 60px; margin-bottom: 8px; border-radius: 30px; background: #FFD34E; border: 3px solid #3B2418; box-shadow: 0 5px 0 #3B2418; display: flex; align-items: center; justify-content: center; gap: 10px; color: #2A1B3D">
+<button type="button" onClick="{{ next }}" style="flex-grow: 1; height: 60px; margin-bottom: 8px; border-radius: 30px; background: #FFD34E; border: 3px solid #3B2418; box-shadow: 0 5px 0 #3B2418; display: flex; align-items: center; justify-content: center; gap: 10px; color: #2A1B3D; animation: {{ nudge }}">
 <span lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 22px">Upéi</span>
 <span style="font-size: 15px; font-weight: 800; color: #5C4E86">Siguiente</span>
 </button>
@@ -120,28 +134,45 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 <script type="text/x-dc" data-dc-script data-props='{"app":{"editor":null},"act":{"editor":null},"$preview":{"width":390,"height":844}}'>
 /* Meet tonight's words, one card at a time: the picture, the word in Guarani, its meaning, its syllables (once the
    child reads Guarani: from 1.º grado with Guarani at home, from 2.º grado as a second language) and «Ehendu» to
-   hear it. The sound is a recorded clip, keyed «w:» + the word
-   (tp-sound.js, one file per grade); where a clip is missing or the voice is off, Mborevi'i says the word in a
-   bubble instead. After the last card, a
-   star (a game played again keeps the one it had), and the button to go on takes the focus. On its own: 1.º grado,
+   hear it again. In the app each card says its word by itself a moment after it comes in, and once that word has
+   been heard «Upéi» bounces once to say what comes next; while a word plays the speaker's bars move and Mborevi'i
+   talks. The sound is a recorded clip, keyed «w:» + the word (tp-sound.js, one file per grade); where a clip is
+   missing or the voice is off, Mborevi'i says the word in a bubble instead. After the last card, a star (a game
+   played again keeps the one it had), and the button to go on takes the focus. On its own (silent): 1.º grado,
    unit 5 (asking for help, permission and to borrow), night 1. */
 class Component extends DCLogic {
 constructor(props) {
 super(props);
-this.state = { i: 0, said: false, finished: false };
+this.state = { i: 0, said: false, voiced: false, finished: false, nudge: '' };
 this.timers = [];
 this.calm = 0;
+this.listens = 0;
 this.doneRef = (el) => { this.doneEl = el; };
 }
 componentWillUnmount() { this.timers.forEach((t) => clearTimeout(t)); this.offBack(); }
 /* the phone's Back on the site (App) asks this screen what its close button would do */
-componentDidMount() { this.onBack(); }
+componentDidMount() { this.onBack(); this.autoPlay(); }
 onBack() { const act = this.props.act; if (!act) return; const f = () => this.leave(); f.board = this; act.leave = f; }
 offBack() { const act = this.props.act; if (act && act.leave && act.leave.board === this) act.leave = null; }
 componentDidUpdate() {
 const f = !!this.state.finished;
-if (f && !this.wasFinished) { if (this.doneEl) this.doneEl.focus(); window.tpCourse.say(this.endLine); }
+if (f && !this.wasFinished) { if (this.doneEl) this.doneEl.focus(); this.beep('star'); window.tpCourse.say(this.endLine); }
 this.wasFinished = f;
+this.autoPlay();
+}
+/* a little sound that is not a voice (it answers with the voice off too), in the app only */
+beep(kind) { const S = window.tpSound; if (this.props.act && S && S.beep) S.beep(kind); }
+/* A card says its word by itself a moment after it comes in, in the app only (on its own the board stays silent),
+   unless the child was quicker on «Ehendu». */
+autoPlay() {
+const id = this.cardId;
+if (!this.props.act || id === undefined || id === this.spoken) return;
+this.spoken = id;
+if (!id || !this.listenNow) return;
+const listen = this.listenNow;
+this.timers.push(setTimeout(() => {
+if (this.spoken === id && this.cardId === id && this.heardIn !== id && !this.state.finished) listen();
+}, 450));
 }
 view() {
 const C = window.tpCourse;
@@ -155,38 +186,50 @@ const S = window.tpSound;
 const act = this.props.act;
 const app = this.view();
 const s = app.step;
+const st = this.state;
 const words = s && s.data && s.data.words ? s.data.words.map((w) => C.word(w)) : [];
 const n = words.length;
-const i = Math.min(this.state.i, Math.max(0, n - 1));
+const i = Math.min(st.i, Math.max(0, n - 1));
 const w = words[i] || C.word({ gn: '', es: '', pic: '' });
 const readers = !!s && !C.isOral(s, app.track || 'L2');
 const key = 'w:' + C.fold(w.gn);
-const listen = () => {
-if (S) S.unlock();
-const played = S && S.has(key) ? S.play(key) : false;
-this.setState({ said: true, voiced: !!played });
-clearTimeout(this.saidT);
-this.saidT = setTimeout(() => this.setState({ said: false }), played ? Math.max(900, S.ms(key) + 300) : 1800);
-this.timers.push(this.saidT);
+const finished = st.finished || n === 0;
+const id = finished ? '' : (s ? s.id : '') + ':' + i;
+/* the word, now: by itself (auto) once the card is in, or on «Ehendu»; a word said by itself that plays to its end
+   makes «Upéi» bounce once (not when the child played it again meanwhile, nor on the next card) */
+const hear = (auto) => {
+this.heardIn = id;
+const k = ++this.listens;
+const played = C.listen(this, key);
+if (auto && played && S && S.ms) this.timers.push(setTimeout(() => { if (this.listens === k && this.cardId === id && !this.state.finished) this.setState({ nudge: id }); }, Math.max(900, S.ms(key) + 300)));
 };
-/* a double tap is one tap: it must not skip a card */
+const listen = () => hear(false);
+this.cardId = id;
+this.listenNow = () => hear(true);
+/* a double tap is one tap: it must not skip a card; a word still playing stops, so the next picture never comes
+   with the last word */
 const next = () => {
 if (Date.now() < this.calm) return;
 this.calm = Date.now() + 400;
 this.timers.forEach((t) => clearTimeout(t));
 this.timers = [];
-if (i + 1 < n) this.setState({ i: i + 1, said: false });
-else this.setState({ finished: true, said: false });
+if (this.state.said && this.state.voiced && S && S.stop) S.stop();
+if (i + 1 < n) this.setState({ i: i + 1, said: false, voiced: false });
+else this.setState({ finished: true, said: false, voiced: false });
 };
 const len = C.chars(w.gn).length;
-const finished = this.state.finished || n === 0;
 const again = !!(s && ((app.done || {})[s.id] || {}).meet);
 this.endLine = again ? C.VOICE.good : C.VOICE.star;
+/* a word playing: the speaker's bars move (still under reduced motion) and Mborevi'i talks */
+const talk = !!(st.said && st.voiced) && !finished;
+const bar = (ms) => (talk ? 'tp-wave 520ms ease-in-out ' + ms + 'ms infinite' : 'none');
+/* the dot that has just filled */
+const filled = finished ? n - 1 : i - 1;
 /* what the close button does, which the phone's Back does too (a game that is over keeps its star) */
 this.leave = () => { if (finished) act.finish('meet'); else act.go('Tonight'); };
 return {
 field: C.starfield('meet', 390, 40, 760, 46),
-dots: words.map((x, k) => ({ bg: finished || k < i ? '#FFD34E' : k === i ? '#FFF7EC' : 'transparent' })),
+dots: words.map((x, k) => ({ bg: finished || k < i ? '#FFD34E' : k === i ? '#FFF7EC' : 'transparent', anim: k === filled ? 'tp-dot 300ms cubic-bezier(.2,.8,.2,1)' : 'none' })),
 dotsAria: 'Palabra ' + (Math.min(i + 1, n)) + ' de ' + n,
 playing: !finished,
 finished,
@@ -198,10 +241,15 @@ size: len > 16 ? '28px' : len > 10 ? '34px' : '42px',
 hasSyl: readers && w.syl && w.syl.length > 1,
 syl: (w.syl || []).map((t) => ({ t })),
 sylAria: 'Sílabas: ' + (w.syl || []).join(', '),
-listenAria: 'Ehendu, escuchá: ' + w.gn
+listenAria: 'Ehendu, escuchá: ' + w.gn,
+/* each card comes in the same way (a and b take turns, so that the motion starts again) */
+anim: 'tp-slide-' + (i % 2 ? 'b' : 'a') + ' 280ms cubic-bezier(.2,.8,.2,1)'
 },
-bubble: { on: this.state.said && !this.state.voiced && !finished, text: w.gn },
-pose: finished ? 'happy' : this.state.said ? 'listen' : 'stand',
+wave: { arcs: talk ? 0 : 1, bars: talk ? 1 : 0, a0: bar(0), a1: bar(130), a2: bar(260) },
+talk,
+nudge: !finished && st.nudge === id ? 'tp-nudge 1.6s ease-in-out' : 'none',
+bubble: { on: st.said && !st.voiced && !finished, text: w.gn },
+pose: finished ? 'happy' : st.said ? 'listen' : 'stand',
 listen, next,
 count: String(n),
 fresh: !again, again,

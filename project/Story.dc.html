@@ -20,23 +20,38 @@ a{color:#2A1B3D;text-decoration:none}a:hover{color:#2A1B3D}
 button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([aria-disabled='true']),a:active:not([aria-disabled='true']){transform:translateY(2px) scale(.98)}
 @keyframes tp-legA{0%,100%{transform:rotate(14deg)}50%{transform:rotate(-14deg)}}
 @keyframes tp-legB{0%,100%{transform:rotate(-14deg)}50%{transform:rotate(14deg)}}
+@keyframes tp-blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.12)}}
+@keyframes tp-talk-a{0%{opacity:1}50%{opacity:0}100%{opacity:0}}
+@keyframes tp-talk-b{0%{opacity:0}50%{opacity:1}100%{opacity:1}}
+@keyframes tp-hop-a{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}38%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}76%{transform:scale(1.06,.9)}88%{transform:scale(.98,1.03)}100%{transform:none}}
+@keyframes tp-hop-b{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}38%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}76%{transform:scale(1.06,.9)}88%{transform:scale(.98,1.03)}100%{transform:none}}
+@keyframes tp-hop2-a{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}22%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}44%{transform:scale(1.05,.92)}50%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}68%{transform:translateY(-9%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}86%{transform:scale(1.04,.94)}100%{transform:none}}
+@keyframes tp-hop2-b{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}22%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}44%{transform:scale(1.05,.92)}50%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}68%{transform:translateY(-9%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}86%{transform:scale(1.04,.94)}100%{transform:none}}
+@keyframes tp-recoil-a{0%,100%{transform:none}30%{transform:translateX(-4%) rotate(-5deg)}}
+@keyframes tp-recoil-b{0%,100%{transform:none}30%{transform:translateX(-4%) rotate(-5deg)}}
+@keyframes tp-perk-a{0%,100%{transform:none}40%{transform:translateY(-3%)}}
+@keyframes tp-perk-b{0%,100%{transform:none}40%{transform:translateY(-3%)}}
 @keyframes tp-tw{0%,100%{opacity:1}50%{opacity:.35}}
 @keyframes tp-pop{0%{transform:scale(.6);opacity:0}60%{transform:scale(1.06);opacity:1}100%{transform:scale(1);opacity:1}}
-@keyframes tp-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes tp-in-a{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes tp-in-b{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes tp-dot{0%{transform:scale(1.7)}100%{transform:none}}
+@keyframes tp-nudge{0%,60%,100%{transform:none}30%{transform:scale(1.08)}}
+@keyframes tp-wave{0%,100%{transform:scaleY(.4)}50%{transform:scaleY(1)}}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
 </style>
 </helmet>
 <div style="width: 390px; height: 844px; position: relative; overflow: hidden; box-sizing: border-box; padding: 50px 16px 34px; background: #FFF7EC; color: #2A1B3D; font-family: 'Nunito', 'Avenir Next', sans-serif; display: flex; flex-direction: column">
 
 <div style="display: flex; align-items: center; gap: 10px; height: 44px; flex-shrink: 0">
-<a href="Tonight.dc.html" onClick="{{ close }}" aria-label="Cerrar el cuento" style="width: 44px; height: 44px; margin-left: -6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2A1B3D" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+<a href="Tonight.dc.html" onClick="{{ close }}" aria-label="Cerrar el cuento" style="width: 56px; height: 56px; margin: -6px -6px -6px -12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2A1B3D" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
 <div style="flex-grow: 1; display: flex; flex-direction: column; min-width: 0">
 <div lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.05">Mombe'u: Mborevi Rape</div>
 <div style="font-size: 12px; font-weight: 700; color: #5C4E86">Cuento del cielo: el camino del tapir</div>
 </div>
 <div role="img" aria-label="{{ dotsAria }}" style="display: flex; gap: 4px; flex-shrink: 0">
 <sc-for list="{{ dots }}" as="d" hint-placeholder-count="7">
-<div style="width: 10px; height: 10px; border-radius: 5px; background: {{ d.bg }}; border: 2px solid #3B2418; box-sizing: border-box"></div>
+<div style="width: 10px; height: 10px; border-radius: 5px; background: {{ d.bg }}; border: 2px solid #3B2418; box-sizing: border-box; animation: {{ d.anim }}"></div>
 </sc-for>
 </div>
 </div>
@@ -83,114 +98,215 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 </g>
 </svg>
 <div style="position: absolute; left: {{ tap.left }}; top: {{ tap.top }}; transition: left 800ms ease-in-out, top 800ms ease-in-out">
-<dc-import name="Mborevi" pose="{{ tap.pose }}" size="{{ tap.size }}" flip="{{ tap.flip }}" hint-size="120px,97px"></dc-import>
+<dc-import name="Mborevi" pose="{{ tap.pose }}" size="{{ tap.size }}" flip="{{ tap.flip }}" talk="{{ talk }}" hint-size="120px,97px"></dc-import>
 </div>
 </div>
 
-<div style="position: relative; margin-top: 16px; display: flex; flex-direction: column; gap: 6px; min-height: 150px; flex-shrink: 0; animation: tp-in 320ms ease-out">
+<sc-if value="{{ reading }}" hint-placeholder-val="{{ true }}">
+<div style="position: relative; margin-top: 16px; display: flex; flex-direction: column; gap: 6px; min-height: 150px; flex-shrink: 0; animation: {{ textAnim }}">
 <div aria-live="polite" style="display: flex; flex-direction: column; gap: 6px">
 <div lang="gn" style="align-self: flex-start; margin: 0 -6px; padding: 0 6px; border-radius: 10px; background: {{ page.mark }}; font-family: 'Andika', 'Nunito', sans-serif; font-weight: 700; font-size: 27px; line-height: 1.2; transition: background 300ms ease">{{ page.gn }}</div>
 <div style="font-size: 16px; font-weight: 700; color: #4A3D72; line-height: 1.4">{{ page.es }}</div>
 </div>
-<button type="button" onClick="{{ listen }}" aria-label="Ehendu: escuchá esta página" style="align-self: flex-start; height: 44px; box-sizing: border-box; padding: 0 16px; border-radius: 22px; background: #8EC5FF; border: 3px solid #3B2418; display: flex; align-items: center; gap: 8px; color: #2A1B3D">
-<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2A1B3D" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19 6a8.5 8.5 0 0 1 0 12"/></svg>
-<span lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 16px">Ehendu</span>
+<button type="button" onClick="{{ listen }}" aria-label="Ehendu: escuchá esta página" style="align-self: flex-start; height: 56px; box-sizing: border-box; padding: 0 20px; border-radius: 28px; background: #8EC5FF; border: 3px solid #3B2418; display: flex; align-items: center; gap: 8px; color: #2A1B3D">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2A1B3D" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7" opacity="{{ wave.arcs }}"/><path d="M19 6a8.5 8.5 0 0 1 0 12" opacity="{{ wave.arcs }}"/><path d="M16.2 11v6" opacity="{{ wave.bars }}" style="transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(.7); animation: {{ wave.a0 }}"/><path d="M19.2 7v10" opacity="{{ wave.bars }}" style="transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(.7); animation: {{ wave.a1 }}"/><path d="M22.2 10v7" opacity="{{ wave.bars }}" style="transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(.7); animation: {{ wave.a2 }}"/></svg>
+<span lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 17px">Ehendu</span>
 </button>
-<sc-if value="{{ last }}" hint-placeholder-val="{{ false }}">
+<sc-if value="{{ opa }}" hint-placeholder-val="{{ false }}">
 <div style="margin-top: 4px; font-size: 12.5px; font-weight: 700; color: #5C4E86; line-height: 1.45">{{ credit }}</div>
 </sc-if>
 </div>
+</sc-if>
+
+<sc-if value="{{ finished }}" hint-placeholder-val="{{ false }}">
+<div style="position: relative; margin-top: 16px; box-sizing: border-box; padding: 20px 18px; border-radius: 30px; background: #FFFFFF; color: #2A1B3D; border: 3px solid #3B2418; box-shadow: 0 6px 0 #3B2418; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; flex-shrink: 0; animation: tp-pop 420ms ease-out">
+<svg viewBox="0 0 64 64" width="88" height="88" aria-hidden="true"><path d="{{ bigStar }}" fill="#FFD34E" stroke="#3B2418" stroke-width="3" stroke-linejoin="round"/><path d="M22 31q3.6-5 7.2 0M34.8 31q3.6-5 7.2 0M27 38q5 5 10 0" fill="none" stroke="#3B2418" stroke-width="2.8" stroke-linecap="round"/></svg>
+<div lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 30px; line-height: 1">Iporãite!</div>
+<sc-if value="{{ fresh }}" hint-placeholder-val="{{ true }}"><div lang="gn" style="font-family: 'Andika', 'Nunito', sans-serif; font-weight: 700; font-size: 18px">Rehupyty peteĩ mbyja.</div></sc-if>
+<div style="font-size: 14px; font-weight: 700; color: #5C4E86">Escuchaste el cuento del cielo.</div>
+</div>
+</sc-if>
 
 <div style="flex-grow: 1"></div>
 <div style="display: flex; align-items: center; gap: 10px; flex-shrink: 0">
+<sc-if value="{{ reading }}" hint-placeholder-val="{{ true }}">
 <button type="button" onClick="{{ prev }}" aria-label="Página anterior" aria-disabled="{{ firstOff }}" style="width: 60px; height: 60px; border-radius: 30px; background: #FFFFFF; border: 3px solid #3B2418; display: flex; align-items: center; justify-content: center; flex-shrink: 0; opacity: {{ prevO }}"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2A1B3D" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
-<a href="Tonight.dc.html" onClick="{{ forward }}" style="flex-grow: 1; height: 60px; border-radius: 30px; background: #FFD34E; border: 3px solid #3B2418; box-shadow: 0 5px 0 #3B2418; display: flex; align-items: center; justify-content: center; gap: 10px; color: #2A1B3D">
+</sc-if>
+<a href="Tonight.dc.html" onClick="{{ forward }}" ref="{{ doneRef }}" style="flex-grow: 1; height: 60px; border-radius: 30px; background: #FFD34E; border: 3px solid #3B2418; box-shadow: 0 5px 0 #3B2418; display: flex; align-items: center; justify-content: center; gap: 10px; color: #2A1B3D; animation: {{ nudge }}">
 <sc-if value="{{ more }}" hint-placeholder-val="{{ true }}">
 <span lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 22px">Upéi</span>
 <span style="font-size: 15px; font-weight: 800; color: #5C4E86">Siguiente</span>
 </sc-if>
-<sc-if value="{{ last }}" hint-placeholder-val="{{ false }}">
+<sc-if value="{{ opa }}" hint-placeholder-val="{{ false }}">
 <span lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 22px; animation: tp-pop 360ms ease-out">Opa!</span>
 <span style="font-size: 15px; font-weight: 800; color: #5C4E86"><sc-if value="{{ fresh }}" hint-placeholder-val="{{ true }}">¡Fin! Una estrella</sc-if><sc-if value="{{ again }}" hint-placeholder-val="{{ false }}">¡Fin!</sc-if></span>
+</sc-if>
+<sc-if value="{{ finished }}" hint-placeholder-val="{{ false }}">
+<span lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 22px">Jaha!</span>
+<span style="font-size: 15px; font-weight: 800; color: #5C4E86">Seguir</span>
 </sc-if>
 </a>
 </div>
 
+<div role="status" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">{{ announce }}</div>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"app":{"editor":null},"act":{"editor":null},"$preview":{"width":390,"height":844}}'>
 /* A sky story in seven pages, told in short Guarani with Spanish below: why the Milky Way is Mborevi Rape, the tapir's
    path. The tapir always walks the same trail between its home and the water; the dry leaves it treads shine in the
    moonlight; the grandparents saw that shining trail in the sky (as the Paraguayan astronomer Blas Servín explains it).
-   The scene changes with each page and Mborevi'i walks it. Clips per page are keyed «s:» + the story + «:» + the page
-   number (s:rape:1…); until they are recorded, «Ehendu» marks the Guarani line and Mborevi'i listens. «Upéi» and the
-   last page's «Opa!» are one button, so the focus stays on it; each new page is read out. */
+   The scene changes with each page and Mborevi'i walks it, facing the way he goes, and stands still once there. In
+   the app each page reads itself a moment after it opens (the clip keyed «s:» + the story + «:» + the page number,
+   s:rape:1…), the Guarani line marked while it plays; when that reading has ended «Upéi» bounces once. «Ehendu» reads
+   the page again; where a clip is missing or the voice is off, the line is only marked. «Opa!» on the last page
+   brings the end card of every game: the star (a story heard again keeps the one it had), said and announced, and
+   «Jaha!», which takes the focus. «Upéi», «Opa!» and «Jaha!» are one button, so the focus stays on it. The close
+   button, and the phone's Back, go back to tonight's games, keeping the star once the story is over. On its own: the
+   first page, silent. */
 const SCENES = {
-forest: { moon: 0, mw: 0, forest: 1, stream: 0, trail: 0, shine: 0, skyTrail: 0, tap: { left: 118, top: 168, pose: 'stand', flip: false, size: 120 } },
-night: { moon: 1, mw: 0, forest: 1, stream: 0, trail: 0, shine: 0, skyTrail: 0, tap: { left: 40, top: 170, pose: 'walk', flip: false, size: 120 } },
-stream: { moon: 1, mw: 0, forest: 1, stream: 1, trail: 0, shine: 0, skyTrail: 0, tap: { left: 150, top: 168, pose: 'walk', flip: false, size: 120 } },
-trail: { moon: 1, mw: 0, forest: 1, stream: 1, trail: 1, shine: 0, skyTrail: 0, tap: { left: 70, top: 170, pose: 'walk', flip: false, size: 120 } },
-shine: { moon: 1, mw: 0, forest: 1, stream: 1, trail: 1, shine: 1, skyTrail: 0, tap: { left: 132, top: 168, pose: 'listen', flip: false, size: 120 } },
-sky: { moon: 1, mw: 1, forest: 0.45, stream: 0.6, trail: 1, shine: 1, skyTrail: 1, tap: { left: 56, top: 170, pose: 'listen', flip: false, size: 120 } },
-together: { moon: 1, mw: 1, forest: 0, stream: 0, trail: 0, shine: 0, skyTrail: 0, tap: { left: 128, top: 46, pose: 'happy', flip: false, size: 110 } }
+forest: { moon: 0, mw: 0, forest: 1, stream: 0, trail: 0, shine: 0, skyTrail: 0, tap: { left: 118, top: 168, pose: 'stand', size: 120 } },
+night: { moon: 1, mw: 0, forest: 1, stream: 0, trail: 0, shine: 0, skyTrail: 0, tap: { left: 40, top: 170, pose: 'walk', size: 120 } },
+stream: { moon: 1, mw: 0, forest: 1, stream: 1, trail: 0, shine: 0, skyTrail: 0, tap: { left: 150, top: 168, pose: 'walk', size: 120 } },
+trail: { moon: 1, mw: 0, forest: 1, stream: 1, trail: 1, shine: 0, skyTrail: 0, tap: { left: 70, top: 170, pose: 'walk', size: 120 } },
+shine: { moon: 1, mw: 0, forest: 1, stream: 1, trail: 1, shine: 1, skyTrail: 0, tap: { left: 132, top: 168, pose: 'listen', size: 120 } },
+sky: { moon: 1, mw: 1, forest: 0.45, stream: 0.6, trail: 1, shine: 1, skyTrail: 1, tap: { left: 56, top: 170, pose: 'listen', size: 120 } },
+together: { moon: 1, mw: 1, forest: 0, stream: 0, trail: 0, shine: 0, skyTrail: 0, tap: { left: 128, top: 46, pose: 'happy', size: 110 } }
 };
+/* the walk from one place to the next takes as long as the move in the template (left and top, 800 ms) */
+const WALK_MS = 800;
 class Component extends DCLogic {
 constructor(props) {
 super(props);
-this.state = { p: 0, said: false };
+this.state = { p: 0, said: false, voiced: false, finished: false, moving: false, flip: false, fwd: false, nudge: '' };
 this.timers = [];
+this.calm = 0;
+this.turns = 0;
+this.listens = 0;
+this.doneRef = (el) => { this.doneEl = el; };
 }
-componentWillUnmount() { this.timers.forEach((t) => clearTimeout(t)); }
+componentWillUnmount() { this.timers.forEach((t) => clearTimeout(t)); this.offBack(); }
+/* the phone's Back on the site (App) asks this screen what its close button would do */
+componentDidMount() { this.onBack(); this.autoPlay(); }
+onBack() { const act = this.props.act; if (!act) return; const f = () => this.leave(); f.board = this; act.leave = f; }
+offBack() { const act = this.props.act; if (act && act.leave && act.leave.board === this) act.leave = null; }
+componentDidUpdate() {
+const f = !!this.state.finished;
+if (f && !this.wasFinished) { if (this.doneEl) this.doneEl.focus(); this.beep('star'); window.tpCourse.say(this.endLine); }
+this.wasFinished = f;
+this.autoPlay();
+}
+/* a little sound that is not a voice (it answers with the voice off too), in the app only */
+beep(kind) { const S = window.tpSound; if (this.props.act && S && S.beep) S.beep(kind); }
+/* with reduced motion Mborevi'i is put in his place at once: no walking on the spot */
+still() { try { return !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches); } catch (e) { return false; } }
+/* A page reads itself a moment after it opens, in the app only (on its own the board stays silent), unless the
+   child was quicker on «Ehendu». */
+autoPlay() {
+const id = this.pageId;
+if (!this.props.act || id === undefined || id === this.spoken) return;
+this.spoken = id;
+if (!id || !this.listenNow) return;
+const listen = this.listenNow;
+this.timers.push(setTimeout(() => {
+if (this.spoken === id && this.pageId === id && this.heardIn !== id && !this.state.finished) listen();
+}, 450));
+}
 renderVals() {
 const C = window.tpCourse;
 const S = window.tpSound;
 const act = this.props.act;
 const app = this.props.app || null;
 const step = app && app.step;
+const st = this.state;
 const storyId = (step && step.data && step.data.story) || 'rape';
 const story = (window.__tpStories || {})[storyId] || { pages: [], credit: '' };
 const again = !!(step && ((app.done || {})[step.id] || {}).story);
+this.endLine = again ? C.VOICE.good : C.VOICE.star;
 const pages = story.pages;
 const n = pages.length;
-const p = Math.min(this.state.p, Math.max(0, n - 1));
+const p = Math.min(st.p, Math.max(0, n - 1));
 const page = pages[p] || { gn: '', es: '', scene: 'forest' };
 const sc = SCENES[page.scene] || SCENES.forest;
+const finished = !!st.finished;
 const stars = C.starfield('story', 352, 0, 200, 46);
 const mw = C.chain([[[-20, 196], [60, 150], [120, 122], [190, 102]], [[190, 102], [260, 82], [320, 50], [380, 18]]]);
 const leaves = [[40, 266], [74, 262], [110, 266], [150, 264], [186, 260], [222, 257], [262, 260]].map((q) => C.sparkleD(q[0], q[1] - 6, 5)).join('');
-const said = this.state.said;
-const listen = () => {
+const id = finished || !n ? '' : storyId + ':' + p;
 const key = 's:' + storyId + ':' + (p + 1);
-if (S) S.unlock();
-const played = S && S.has(key) ? S.play(key) : false;
-clearTimeout(this.saidT);
-this.setState({ said: true });
-this.saidT = setTimeout(() => this.setState({ said: false }), played ? Math.max(1200, S.ms(key) + 300) : 2500);
-this.timers.push(this.saidT);
+/* the page read now: by itself (auto) once it is open, or on «Ehendu»; a reading by itself that plays to its end makes
+   «Upéi» bounce once (not when the child played it again meanwhile, nor on another page) */
+const hear = (auto) => {
+this.heardIn = id;
+const k = ++this.listens;
+const played = C.listen(this, key);
+if (auto && played && S && S.ms) this.timers.push(setTimeout(() => { if (this.listens === k && this.pageId === id && !this.state.finished) this.setState({ nudge: id }); }, Math.max(900, S.ms(key) + 300)));
 };
-const turn = (to) => { clearTimeout(this.saidT); this.setState({ p: to, said: false }); };
+const listen = () => hear(false);
+this.pageId = id;
+this.listenNow = () => hear(true);
+/* a page turn: the reading stops, Mborevi'i turns to face where he goes and walks there (WALK_MS), then stands */
+const turn = (to) => {
+if (to < 0 || to >= n || to === p) return;
+const from = sc.tap;
+const dest = (SCENES[(pages[to] || {}).scene] || SCENES.forest).tap;
+const dx = dest.left - from.left;
+const walks = (dx !== 0 || dest.top !== from.top) && !this.still();
+const k = ++this.turns;
+if (this.state.said && this.state.voiced && S && S.stop) S.stop();
+this.setState({ p: to, said: false, voiced: false, moving: walks, flip: dx < 0 ? true : dx > 0 ? false : this.state.flip, fwd: to > p, nudge: '' });
+if (walks) this.timers.push(setTimeout(() => { if (this.turns === k) this.setState({ moving: false }); }, WALK_MS));
+};
+/* a double tap is one tap: it must not skip a page, nor leave the end card as soon as it shows */
+const calm = () => { const t = Date.now(); if (t < this.calm) return false; this.calm = t + 400; return true; };
+/* the walk's own pose is only for walking: once there he stands */
+const rest = sc.tap.pose === 'walk' ? 'stand' : sc.tap.pose;
+/* a page being read: its line is marked, the speaker's bars move (still under reduced motion), Mborevi'i talks */
+const talk = !!(st.said && st.voiced) && !finished;
+const bar = (ms) => (talk ? 'tp-wave 520ms ease-in-out ' + ms + 'ms infinite' : 'none');
+/* the dot that has just filled: the page just reached going forward */
+const filled = st.fwd ? p : -1;
+/* what the close button does, which the phone's Back does too (a story that is over keeps its star) */
+this.leave = () => { if (this.state.finished) act.finish('story'); else act.go('Tonight'); };
 return {
-dots: pages.map((x, k) => ({ bg: k <= p ? '#FFD34E' : 'transparent' })),
+dots: pages.map((x, k) => ({ bg: k <= p ? '#FFD34E' : 'transparent', anim: k === filled ? 'tp-dot 300ms cubic-bezier(.2,.8,.2,1)' : 'none' })),
 dotsAria: 'Página ' + (p + 1) + ' de ' + n,
 stars,
 mwDust: C.dust(mw, 'story-mw', 90, 50).a,
 leaves,
 sc,
-tap: { left: sc.tap.left + 'px', top: sc.tap.top + 'px', pose: said ? 'listen' : sc.tap.pose, flip: sc.tap.flip, size: String(sc.tap.size) },
-page: { gn: C.norm(page.gn), es: page.es, mark: said ? '#FFE7A3' : 'transparent' },
+tap: { left: sc.tap.left + 'px', top: sc.tap.top + 'px', pose: finished ? 'happy' : st.moving ? 'walk' : st.said ? 'listen' : rest, flip: st.flip ? 'true' : 'false', size: String(sc.tap.size) },
+talk,
+page: { gn: C.norm(page.gn), es: page.es, mark: st.said && !finished ? '#FFE7A3' : 'transparent' },
+/* each page's text comes in the same way (a and b take turns, so that the motion starts again) */
+textAnim: 'tp-in-' + (p % 2 ? 'b' : 'a') + ' 320ms cubic-bezier(.2,.8,.2,1)',
+wave: { arcs: talk ? 0 : 1, bars: talk ? 1 : 0, a0: bar(0), a1: bar(130), a2: bar(260) },
+nudge: !finished && id && st.nudge === id ? 'tp-nudge 1.6s ease-in-out' : 'none',
 listen,
 credit: story.credit,
+reading: !finished,
+finished,
 last: p === n - 1,
-more: p < n - 1,
+more: p < n - 1 && !finished,
+opa: p === n - 1 && !finished,
 firstOff: p === 0 ? 'true' : 'false',
 prevO: p === 0 ? 0.4 : 1,
 fresh: !again, again,
-prev: () => { if (p > 0) turn(p - 1); },
+announce: finished ? 'Iporãite! ' + (again ? '' : 'Rehupyty peteĩ mbyja. ') + 'Escuchaste el cuento del cielo.' : '',
+bigStar: C.puffyD(32, 33.5, 28),
+doneRef: this.doneRef,
+prev: () => { if (p > 0 && !this.state.finished && calm()) turn(p - 1); },
 forward: (e) => {
-if (p < n - 1) { e.preventDefault(); turn(p + 1); return; }
-if (act) { e.preventDefault(); act.finish('story'); }
+if (Date.now() < this.calm) { e.preventDefault(); return; }
+if (this.state.finished) { if (act) { e.preventDefault(); act.finish('story'); } return; }
+e.preventDefault();
+calm();
+if (p < n - 1) { turn(p + 1); return; }
+/* «Opa!»: the end card, with its star */
+if (this.state.said && this.state.voiced && S && S.stop) S.stop();
+this.setState({ finished: true, said: false, voiced: false, moving: false, nudge: '' });
 },
-close: (e) => { if (act) { e.preventDefault(); act.go('Tonight'); } }
+close: (e) => { if (act) { e.preventDefault(); this.leave(); } },
+done: (e) => { if (act) { e.preventDefault(); act.finish('story'); } }
 };
 }
 }
