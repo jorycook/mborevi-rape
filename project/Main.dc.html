@@ -19,9 +19,19 @@ a{color:#2A1B3D;text-decoration:none}a:hover{color:#2A1B3D}
 button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([aria-disabled='true']),a:active:not([aria-disabled='true']){transform:translateY(2px) scale(.98)}
 @keyframes tp-legA{0%,100%{transform:rotate(14deg)}50%{transform:rotate(-14deg)}}
 @keyframes tp-legB{0%,100%{transform:rotate(-14deg)}50%{transform:rotate(14deg)}}
+@keyframes tp-blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.12)}}
+@keyframes tp-talk-a{0%{opacity:1}50%{opacity:0}100%{opacity:0}}
+@keyframes tp-talk-b{0%{opacity:0}50%{opacity:1}100%{opacity:1}}
+@keyframes tp-hop-a{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}38%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}76%{transform:scale(1.06,.9)}88%{transform:scale(.98,1.03)}100%{transform:none}}
+@keyframes tp-hop-b{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}38%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}76%{transform:scale(1.06,.9)}88%{transform:scale(.98,1.03)}100%{transform:none}}
+@keyframes tp-hop2-a{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}22%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}44%{transform:scale(1.05,.92)}50%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}68%{transform:translateY(-9%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}86%{transform:scale(1.04,.94)}100%{transform:none}}
+@keyframes tp-hop2-b{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}22%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}44%{transform:scale(1.05,.92)}50%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}68%{transform:translateY(-9%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}86%{transform:scale(1.04,.94)}100%{transform:none}}
+@keyframes tp-recoil-a{0%,100%{transform:none}30%{transform:translateX(-4%) rotate(-5deg)}}
+@keyframes tp-recoil-b{0%,100%{transform:none}30%{transform:translateX(-4%) rotate(-5deg)}}
+@keyframes tp-perk-a{0%,100%{transform:none}40%{transform:translateY(-3%)}}
+@keyframes tp-perk-b{0%,100%{transform:none}40%{transform:translateY(-3%)}}
 @keyframes tp-tw{0%,100%{opacity:1}50%{opacity:.35}}
 @keyframes tp-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
-@keyframes tp-hop{0%,100%{transform:translateY(0)}40%{transform:translateY(-22px)}}
 @keyframes tp-ring{0%{transform:scale(.7);opacity:.9}100%{transform:scale(1.6);opacity:0}}
 @keyframes tp-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
@@ -78,7 +88,7 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 <a href="{{ s.href }}" onClick="{{ s.open }}" aria-label="{{ s.aria }}" aria-disabled="{{ s.off }}" style="position: absolute; left: {{ s.left }}; top: {{ s.top }}; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center">
 <svg viewBox="-32 -32 64 64" width="64" height="64" aria-hidden="true" style="position: absolute; left: 0; top: 0; overflow: visible">
 <circle r="30" fill="{{ s.glow }}" opacity="{{ s.glowO }}"/>
-<g opacity="{{ s.ringO }}"><circle r="24" fill="none" stroke="#FFD34E" stroke-width="3" style="animation: tp-ring 1.8s ease-out infinite; transform-box: fill-box; transform-origin: center"/></g>
+<g opacity="{{ s.ringO }}"><circle r="24" fill="none" stroke="#FFD34E" stroke-width="3" style="animation: {{ s.ring }}; transform-box: fill-box; transform-origin: center"/></g>
 <ellipse cx="0" cy="{{ s.padY }}" rx="26" ry="8" fill="#FFD34E" opacity="{{ s.padO }}"/>
 <path d="{{ s.d }}" fill="{{ s.fill }}" stroke="{{ s.stroke }}" stroke-width="{{ s.sw }}" stroke-linejoin="round" stroke-dasharray="{{ s.dash }}"/>
 <path d="{{ s.face }}" fill="none" stroke="#3B2418" stroke-width="2.4" stroke-linecap="round"/>
@@ -93,7 +103,7 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 
 <button type="button" onClick="{{ hop }}" aria-label="{{ tap.aria }}" style="position: absolute; left: {{ tap.left }}; top: {{ tap.top }}; width: 104px; height: 84px; padding: 0; border: 0; background: none; transition: left 160ms linear, top 160ms linear">
 <div style="animation: {{ tap.anim }}">
-<dc-import name="Mborevi" pose="{{ tap.pose }}" size="104" flip="{{ tap.flip }}" hint-size="104px,84px"></dc-import>
+<dc-import name="Mborevi" pose="{{ tap.pose }}" size="104" flip="{{ tap.flip }}" talk="{{ talk }}" hint-size="104px,84px"></dc-import>
 </div>
 </button>
 
@@ -242,6 +252,8 @@ return Object.assign({}, L, {
 left: Math.round(p[0] - 32) + 'px', top: Math.round(p[1] - 32) + 'px',
 d, face, num, hasNum: !!num, aria, open, href, off,
 padO: isNow ? 0.35 : 0, padY: r * 0.55,
+/* the ring runs on tonight's star only: a hidden ring that runs costs the phone a style pass at each turn */
+ring: L.ringO ? 'tp-ring 1.8s ease-out infinite' : 'none',
 gateO: st.role === 'gate' ? 1 : 0,
 fig: st.role === 'gate' && nextMeta ? C.figure(nextMeta.sky, 0) : { lines: 'M0 0', off: 'M0 0' }
 });
@@ -261,7 +273,8 @@ left: Math.round(pt[0] - 51) + 'px',
 top: Math.round(pt[1] - 96) + 'px',
 pose,
 flip: this.state.flip,
-anim: pose === 'happy' ? 'tp-hop 600ms ease-out' : pose === 'stand' ? 'tp-bob 2.6s ease-in-out infinite' : 'none',
+/* he hops by himself when his pose turns happy; standing, he bobs */
+anim: pose === 'stand' ? 'tp-bob 2.6s ease-in-out infinite' : 'none',
 aria: "Mborevi'i. Tocalo y salta"
 };
 const hop = () => {
@@ -323,7 +336,8 @@ starsAria: (app.stars != null ? app.stars : C.stars(app)) + ' estrellas ganadas'
 starIcon: C.puffyD(10, 10.5, 8.6),
 unitKicker: 'UNIDAD ' + unit.n + ' DE ' + units + ' · ' + sky.gn.toUpperCase(),
 hasUnitGn: !!unit.gn, unitGn: C.norm(unit.gn || ''), unitEs: unit.es || '',
-toSky: nav('Sky'), toGrownups: nav('Grownups')
+toSky: nav('Sky'), toGrownups: nav('Grownups'),
+talk: !!(this.state.said && this.state.voiced)
 };
 }
 }

@@ -20,10 +20,23 @@ a{color:#2A1B3D;text-decoration:none}a:hover{color:#2A1B3D}
 button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([aria-disabled='true']),a:active:not([aria-disabled='true']){transform:translateY(2px) scale(.98)}
 @keyframes tp-legA{0%,100%{transform:rotate(14deg)}50%{transform:rotate(-14deg)}}
 @keyframes tp-legB{0%,100%{transform:rotate(-14deg)}50%{transform:rotate(14deg)}}
+@keyframes tp-blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.12)}}
+@keyframes tp-talk-a{0%{opacity:1}50%{opacity:0}100%{opacity:0}}
+@keyframes tp-talk-b{0%{opacity:0}50%{opacity:1}100%{opacity:1}}
+@keyframes tp-hop-a{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}38%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}76%{transform:scale(1.06,.9)}88%{transform:scale(.98,1.03)}100%{transform:none}}
+@keyframes tp-hop-b{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}38%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}76%{transform:scale(1.06,.9)}88%{transform:scale(.98,1.03)}100%{transform:none}}
+@keyframes tp-hop2-a{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}22%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}44%{transform:scale(1.05,.92)}50%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}68%{transform:translateY(-9%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}86%{transform:scale(1.04,.94)}100%{transform:none}}
+@keyframes tp-hop2-b{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}22%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}44%{transform:scale(1.05,.92)}50%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}68%{transform:translateY(-9%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}86%{transform:scale(1.04,.94)}100%{transform:none}}
+@keyframes tp-recoil-a{0%,100%{transform:none}30%{transform:translateX(-4%) rotate(-5deg)}}
+@keyframes tp-recoil-b{0%,100%{transform:none}30%{transform:translateX(-4%) rotate(-5deg)}}
+@keyframes tp-perk-a{0%,100%{transform:none}40%{transform:translateY(-3%)}}
+@keyframes tp-perk-b{0%,100%{transform:none}40%{transform:translateY(-3%)}}
 @keyframes tp-tw{0%,100%{opacity:1}50%{opacity:.35}}
 @keyframes tp-bob-big{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
 @keyframes tp-pop-big{0%{transform:scale(.4);opacity:0}60%{transform:scale(1.15);opacity:1}100%{transform:scale(1);opacity:1}}
 @keyframes tp-ring-big{0%{transform:scale(.6);opacity:.95}100%{transform:scale(2.2);opacity:0}}
+@keyframes tp-fade{from{opacity:0}to{opacity:1}}
+@keyframes tp-burst{0%{transform:translateY(0) scale(.4);opacity:0}20%{opacity:1}100%{transform:translateY(-38px) scale(1);opacity:0}}
 @keyframes tp-glow{0%,100%{opacity:.5}50%{opacity:1}}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
 </style>
@@ -44,15 +57,21 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 <svg viewBox="0 0 100 100" width="300" height="300" role="img" aria-label="{{ figAria }}" style="position: absolute; left: 0; top: 0; overflow: visible">
 <circle cx="50" cy="50" r="50" fill="#B9A6FF" opacity="0.08"/>
 <path d="{{ fig.outline }}" fill="#FFE7A3" fill-opacity="{{ fig.fillO }}" stroke="{{ outlineInk }}" stroke-width="0.9" stroke-dasharray="{{ dash }}" stroke-linejoin="round" stroke-linecap="round" opacity="{{ fig.outlineO }}" style="animation: {{ outlineAnim }}"/>
-<path d="{{ fig.lines }}" stroke="#6E5FD0" stroke-width="1" stroke-linecap="round" fill="none"/>
-<path d="{{ fig.linesOn }}" stroke="#FFE7A3" stroke-width="1.3" stroke-linecap="round" fill="none"/>
-<path d="{{ fig.off }}" fill="#4B3D9A" stroke="#B4A8F2" stroke-width="0.8" stroke-linejoin="round"/>
-<path d="{{ fig.on }}" fill="#FFD34E" stroke="#3B2418" stroke-width="0.9" stroke-linejoin="round"/>
+<path d="{{ lines.dim }}" stroke="#6E5FD0" stroke-width="1" stroke-linecap="round" fill="none"/>
+<path d="{{ lines.lit }}" stroke="#FFE7A3" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+<path d="{{ lines.fresh }}" stroke="#FFE7A3" stroke-width="1.3" stroke-linecap="round" fill="none" style="animation: tp-fade 420ms 760ms both"/>
+<path d="{{ stars.off }}" fill="#4B3D9A" stroke="#B4A8F2" stroke-width="0.8" stroke-linejoin="round"/>
+<path d="{{ stars.on }}" fill="#FFD34E" stroke="#3B2418" stroke-width="0.9" stroke-linejoin="round"/>
 </svg>
-<div aria-hidden="true" style="position: absolute; left: {{ fresh.left }}; top: {{ fresh.top }}; width: 40px; height: 40px; border-radius: 20px; border: 4px solid #FFD34E; box-sizing: border-box; animation: tp-ring-big 1.6s ease-out infinite"></div>
-<div aria-hidden="true" style="position: absolute; left: {{ fresh.left }}; top: {{ fresh.top }}; width: 40px; height: 40px; animation: tp-pop-big 700ms ease-out">
-<svg viewBox="0 0 40 40" width="40" height="40"><path d="{{ fresh.star }}" fill="#FFD34E" stroke="#3B2418" stroke-width="2.2" stroke-linejoin="round"/><path d="M13.5 19q2.4-3.4 4.8 0M21.7 19q2.4-3.4 4.8 0M17.2 23.6q2.8 2.8 5.6 0" fill="none" stroke="#3B2418" stroke-width="1.8" stroke-linecap="round"/></svg>
+<div aria-hidden="true" style="position: absolute; left: {{ fresh.left }}; top: {{ fresh.top }}; width: 40px; height: 40px; border-radius: 20px; border: 4px solid #FFD34E; box-sizing: border-box; opacity: {{ ring.o }}; animation: {{ ring.anim }}"></div>
+<div aria-hidden="true" style="position: absolute; left: {{ fresh.left }}; top: {{ fresh.top }}; width: 40px; height: 40px; transform: {{ fresh.t }}; transition: transform 760ms cubic-bezier(.2,.9,.3,1.15)">
+<svg viewBox="0 0 40 40" width="40" height="40" style="display: block"><path d="{{ fresh.star }}" fill="#FFD34E" stroke="#3B2418" stroke-width="2.2" stroke-linejoin="round"/><path d="M13.5 19q2.4-3.4 4.8 0M21.7 19q2.4-3.4 4.8 0M17.2 23.6q2.8 2.8 5.6 0" fill="none" stroke="#3B2418" stroke-width="1.8" stroke-linecap="round"/></svg>
 </div>
+<sc-for list="{{ sparks }}" as="k" hint-placeholder-count="8">
+<div aria-hidden="true" style="position: absolute; left: {{ k.left }}; top: {{ k.top }}; width: 0; height: 0; transform: {{ k.turn }}">
+<svg viewBox="0 0 20 20" width="18" height="18" style="position: absolute; left: -9px; top: -44px; opacity: 0; animation: tp-burst 650ms cubic-bezier(.2,.7,.3,1) 760ms both"><path d="{{ k.d }}" fill="{{ k.fill }}"/></svg>
+</div>
+</sc-for>
 </div>
 
 <div style="position: relative; margin-top: 6px; box-sizing: border-box; width: 100%; padding: 12px 14px; border-radius: 22px; background: #FFF7EC; color: #2A1B3D; border: 3px solid #3B2418; display: flex; flex-direction: column; gap: 3px; flex-shrink: 0">
@@ -63,7 +82,7 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 <div style="flex-grow: 1"></div>
 <div style="position: relative; width: 100%; display: flex; align-items: flex-end; gap: 10px; flex-shrink: 0">
 <div style="flex-shrink: 0; animation: tp-bob-big 1.4s ease-in-out infinite">
-<dc-import name="Mborevi" pose="cheer" size="104" hint-size="104px,84px"></dc-import>
+<dc-import name="Mborevi" pose="{{ pose }}" size="104" talk="{{ talk }}" hint-size="104px,84px"></dc-import>
 </div>
 <a href="{{ cta.href }}" onClick="{{ cta.go }}" style="flex-grow: 1; height: 60px; margin-bottom: 8px; border-radius: 30px; background: #FFD34E; border: 3px solid #3B2418; box-shadow: 0 5px 0 #3B2418; display: flex; align-items: center; justify-content: center; gap: 10px; color: #2A1B3D">
 <span lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 22px">{{ cta.gn }}</span>
@@ -74,12 +93,34 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"app":{"editor":null},"act":{"editor":null},"$preview":{"width":390,"height":844}}'>
-/* After the big star: one more star of the grade's figure lights (the newest one pops and rings). When the last
-   one lights, the figure's drawing appears around its stars and the whole figure shines: the grade is done, and the
-   sky of grades shows where Mborevi'i walks next. On its own: 1.º grado, unit 1 just finished: Eichu's first star. */
+/* After the big star: one more star of the grade's figure lights. The new star comes from the middle of the figure,
+   big, and flies into its place; when it lands its lines light up, sparkles burst, its ring starts, a chime sounds (in
+   the app) and Mborevi'i cheers. When the last one lights, the figure's drawing appears around its stars and the
+   whole figure shines: the grade is done, and the sky of grades shows where Mborevi'i walks next. With reduced
+   motion the star is in its place from the start. On its own: 1.º grado, unit 1 just finished: Eichu's first star. */
+const LAND_MS = 760;
 class Component extends DCLogic {
-/* the cheer is said in the app only (it comes from the tap that lit the star); a board on its own makes no sound */
-componentDidMount() { if (this.props.act) window.tpCourse.say(window.tpCourse.VOICE.joy); }
+constructor(props) {
+super(props);
+/* flown: the star has left the middle; landed: it is in its place (both at once with reduced motion, so the star
+   never shows in the middle) */
+const still = this.still();
+this.state = { flown: still, landed: still };
+this.timers = [];
+}
+/* the cheer is said and the chime sounds in the app only (they come from the tap that lit the star); a board on its
+   own makes no sound */
+componentDidMount() {
+const C = window.tpCourse;
+const act = this.props.act;
+const chime = () => { const S = window.tpSound; if (act && S && S.beep) S.beep('star'); };
+if (act) C.say(C.VOICE.joy);
+if (this.state.landed) { chime(); return; }
+this.timers.push(setTimeout(() => this.setState({ flown: true }), 40));
+this.timers.push(setTimeout(() => { this.setState({ landed: true }); chime(); }, LAND_MS));
+}
+componentWillUnmount() { this.timers.forEach((t) => clearTimeout(t)); }
+still() { try { return !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches); } catch (e) { return false; } }
 view() {
 const C = window.tpCourse;
 if (this.props.app) return this.props.app;
@@ -98,6 +139,19 @@ const fig = C.figure(meta.sky, lit);
 const sky = C.sky(meta.sky) || { stars: [[50, 50]] };
 const p = sky.stars[Math.max(0, lit - 1)] || [50, 50];
 const all = fig.all;
+/* until the new star lands, its place waits unlit; its lines are drawn apart, to fade in as it lands */
+const landed = this.state.landed;
+const before = C.figure(meta.sky, Math.max(0, lit - 1));
+const nu = lit - 1;
+let lit0 = '', fresh0 = '', dim = '';
+(sky.lines || []).forEach((l) => {
+const a = sky.stars[l[0]], b = sky.stars[l[1]];
+if (!a || !b) return;
+const seg = 'M' + a[0] + ' ' + a[1] + 'L' + b[0] + ' ' + b[1];
+if (l[0] < lit && l[1] < lit && (l[0] === nu || l[1] === nu)) { fresh0 += seg; dim += seg; } else if (l[0] < lit && l[1] < lit) lit0 += seg; else dim += seg;
+});
+const cx = p[0] * 3, cy = p[1] * 3;
+const SPARK = ['#FFD34E', '#FFC2D4', '#B8F0E0', '#FFF6DD'];
 const next = C.nextGrade(g);
 const nm = next ? C.meta(next) : null;
 return {
@@ -110,7 +164,20 @@ outlineInk: all ? '#FFE7A3' : '#B9A6FF',
 dash: all ? 'none' : '2.5 2.5',
 outlineAnim: all ? 'tp-glow 2s ease-in-out infinite' : 'none',
 figAria: fig.gn + ': ' + lit + ' de ' + fig.count + ' estrellas encendidas' + (all ? '. La figura brilla entera' : ''),
-fresh: { left: Math.round(p[0] * 3 - 20) + 'px', top: Math.round(p[1] * 3 - 20) + 'px', star: C.puffyD(20, 21, 17) },
+fresh: {
+left: Math.round(cx - 20) + 'px', top: Math.round(cy - 20) + 'px', star: C.puffyD(20, 21, 17),
+/* from the middle of the figure (150, 150), big, to its place */
+t: this.state.flown ? 'none' : 'translate(' + Math.round(150 - cx) + 'px, ' + Math.round(150 - cy) + 'px) scale(2.6)'
+},
+lines: { dim: dim || 'M0 0', lit: lit0 || 'M0 0', fresh: fresh0 || 'M0 0' },
+stars: landed ? { on: fig.on, off: fig.off } : { on: before.on, off: before.off },
+ring: landed ? { o: 1, anim: 'tp-ring-big 1.6s ease-out infinite' } : { o: 0, anim: 'none' },
+sparks: [0, 1, 2, 3, 4, 5, 6, 7].map((k) => ({
+left: Math.round(cx) + 'px', top: Math.round(cy) + 'px', turn: 'rotate(' + (k * 45 + 22) + 'deg)',
+d: C.sparkleD(10, 10, 9.5), fill: SPARK[k % 4]
+})),
+pose: landed ? 'cheer' : 'stand',
+talk: !!(this.state.said && this.state.voiced),
 countLine: (lit + ' DE ' + fig.count + ' ESTRELLAS · ' + fig.gn + ', ' + fig.es).toUpperCase(),
 cta: all
 ? { gn: 'Yvága', es: nm ? 'Hacia ' + nm.label : 'Ver el cielo', href: 'Sky.dc.html', go: (e) => { if (act) { e.preventDefault(); act.go('Sky'); } } }

@@ -80,6 +80,7 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2A1B3D" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="{{ voice.wave }}"/></svg>
 <span>Voz sintética: {{ voice.label }}</span>
 </button>
+<div style="font-size: 12.5px; font-weight: 700; color: #5C4E86; line-height: 1.4">Los juegos de escuchar necesitan la voz. Sin ella, Mborevi'i muestra la palabra escrita.</div>
 </section>
 <sc-if value="{{ kept }}" hint-placeholder-val="{{ false }}">
 <section style="box-sizing: border-box; padding: 12px 14px; border-radius: 20px; border: 2px solid #3B2418; display: flex; flex-direction: column; gap: 6px; flex-shrink: 0">
@@ -117,8 +118,9 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 <script type="text/x-dc" data-dc-script data-props='{"app":{"editor":null},"act":{"editor":null},"$preview":{"width":390,"height":844}}'>
 /* For parents and teachers: the grade as the MEC places it, what its program asks for, the four abilities the games
    train (a bar per ability, counting the games played in this grade; the story and the pairs count as listening while
-   the grade is oral), the home-language track, the voice (synthetic, with a switch), where the progress is kept (only
-   where the page keeps it: the public site; with what iPhones do to it), and the grades of the system.
+   the grade is oral), the home-language track, the voice (synthetic, with a switch, and what the listening games do
+   without it), where the progress is kept (only where the page keeps it: the public site; with what iPhones do to
+   it), and the grades of the system.
    On its own: 1.º grado, Spanish at home, unit 1 lit and one night of unit 2 played. */
 class Component extends DCLogic {
 view() {
