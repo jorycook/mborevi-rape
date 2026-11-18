@@ -1,5 +1,6 @@
 process.chdir(require('path').join(__dirname, '..')); // paths below are from the repository root
 global.window = global; global.document = { addEventListener() {} }; global.navigator = {};
+window.__tpSalt = ''; /* the same game at every play */
 ['tp-sound.js', 'tp-course.js', 'tp-grades.js', 'tp-pics.js', 'tp-sky.js'].forEach((f) => require('../project/' + f));
 const fs = require('fs'); const C = window.tpCourse;
 global.DCLogic = class { constructor(p) { this.props = p || {}; this.state = {}; } setState(x) { this.state = Object.assign({}, this.state, typeof x === 'function' ? x(this.state) : x); } };

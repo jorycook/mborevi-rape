@@ -225,7 +225,9 @@
     build: { gn: "Emopu'ã ñe'ẽ", es: 'Armá la palabra', screen: 'Build', skill: 'ahai' },
     say: { gn: "Ere Mborevi'i ndive", es: "Decilo con Mborevi'i", screen: 'Say', skill: "añe'ẽ" },
     letters: { gn: 'Achegety', es: 'Las letras', screen: 'Letters', skill: 'ahai' },
-    story: { gn: "Yvága mombe'u", es: 'Cuento del cielo', screen: 'Story', skill: "amoñe'ẽ" }
+    story: { gn: "Yvága mombe'u", es: 'Cuento del cielo', screen: 'Story', skill: "amoñe'ẽ" },
+    yesno: { gn: 'Ehendu porã', es: '¿Sí o no?', screen: 'YesNo', skill: 'ahendu' },
+    catch: { gn: 'Ejapyhy mbyja', es: 'Atrapá la estrella', screen: 'Catch', skill: 'ahendu' }
   };
   /* the four abilities of the MEC programs, said the way a child says them */
   C.SKILLS = {
@@ -246,25 +248,90 @@
     if (!s) return true;
     return s.grade === 'pre' || (s.grade === 'g1' && (track || 'L2') === 'L2');
   };
-  /* the ability a game trains: the story and the pairs are heard when the night is oral, read otherwise */
+  /* the ability a game trains: the story, the pairs and the catch are heard when the night is oral, read otherwise */
   C.skillOf = function (key, s, track) {
-    if ((key === 'story' || key === 'pairs') && C.isOral(s, track)) return 'ahendu';
+    if ((key === 'story' || key === 'pairs' || key === 'catch') && C.isOral(s, track)) return 'ahendu';
+    if (key === 'catch') return "amoñe'ẽ";
     return (GAMES[key] || {}).skill || 'ahendu';
   };
-  C.gamesFor = function (s, track) {
+  /* Can a word be heard? window.__tpVoiced is the index of the voice clips (tools/audio/voiced.js writes it into
+     tp-sound.js); a page without the sound engine takes every word as heard. The voice switch does not count here: a
+     night's games never depend on a setting, the switch only decides whether a clip plays. */
+  C.voiced = function (w) {
+    var v = window.__tpVoiced;
+    if (!v || typeof v !== 'object') return true;
+    return !!(w && w.gn && v['w:' + C.fold(w.gn)]);
+  };
+  /* how many different pictures there are among the words that can be heard */
+  C.heard = function (words) {
+    var seen = {}, n = 0;
+    (words || []).forEach(function (w) {
+      if (!C.voiced(w)) return;
+      var k = w.pic || w.gn;
+      if (!seen[k]) { seen[k] = 1; n++; }
+    });
+    return n;
+  };
+  /* A new game at every play, the same during it: each game board mixes this into its seeds when it is made. '' for a
+     board shown on its own (no act: the canvas, the screenshots), and what a test sets in window.__tpSalt. */
+  C.salt = function (props) {
+    if (typeof window.__tpSalt === 'string') return window.__tpSalt;
+    if (!props || !props.act) return '';
+    return Math.random().toString(36).slice(2, 8);
+  };
+  /* A word heard now (a listen button, or a word that plays as its card opens): the sound wakes; the board shows that
+     it is playing (said; voiced when a clip plays) until the clip has ended, or for a moment when there is none, while
+     the written stand-in shows. The timer goes in board.timers, which every game board clears when it goes. */
+  C.listen = function (board, key) {
+    var S = window.tpSound;
+    if (S && S.unlock) S.unlock();
+    var played = !!(S && S.has && S.has(key) && S.play(key));
+    board.setState({ said: true, voiced: played });
+    clearTimeout(board.saidT);
+    board.saidT = setTimeout(function () { board.setState({ said: false }); }, played && S.ms ? Math.max(900, S.ms(key) + 300) : 1800);
+    (board.timers = board.timers || []).push(board.saidT);
+    return played;
+  };
+  /* A night's three games: meet the words, then two that change with the night's place in its unit (k), so that no
+     two nights in a row are alike and every track trains the four abilities (L1 speaks on the nights with dialogues).
+     A listening game needs two words that can be heard (else pairs, or read on readers' nights); build needs two words
+     to build (else pairs); the second and third are never the same. had, the night's record: a game already played
+     there (under an earlier rotation, or on another track) keeps a place, so that a night half played is finished
+     with one more game and never asks again for one already played. */
+  C.gamesFor = function (s, track, had) {
     if (!s || s.kind !== 'night') return [];
     var n = s.data || {};
     var t = track || 'L2';
-    if (n.games) return n.games[t] || n.games.all || n.games.L2 || [];
-    var k = (s.night - 1) % 3;
-    var hasSay = !!(n.say && n.say.length);
-    var second, third;
-    if (C.isOral(s, t)) { second = 'pick'; third = hasSay ? 'say' : ['say', 'pairs', 'say'][k]; }
-    else if (t === 'L1') { second = 'read'; third = ['build', 'pairs', 'build'][k]; }
-    else if (t === 'BI') { second = ['pick', 'read', 'pick'][k]; third = hasSay ? 'say' : ['build', 'say', 'pairs'][k]; }
-    else { second = ['pick', 'read', 'pick'][k]; third = hasSay ? 'say' : ['say', 'build', 'pairs'][k]; }
-    if (third === 'build' && !(n.words || []).some(function (w) { return w.syl && w.syl.length > 1; })) third = 'pairs';
-    return ['meet', second, third];
+    var oral = C.isOral(s, t);
+    var list;
+    if (n.games) list = (n.games[t] || n.games.all || []).slice();
+    else {
+      var k = (s.night - 1) % 3;
+      var hasSay = !!(n.say && n.say.length);
+      var second, third;
+      if (oral) { second = ['pick', 'catch', 'yesno'][k]; third = hasSay ? 'say' : ['say', 'pairs', 'say'][k]; }
+      else if (t === 'L1') { second = k === 1 ? 'catch' : 'read'; third = hasSay ? 'say' : ['build', 'pairs', 'build'][k]; }
+      else if (t === 'BI') { second = ['pick', 'read', 'catch'][k]; third = hasSay ? 'say' : ['build', 'say', 'pairs'][k]; }
+      else { second = ['pick', 'read', 'catch'][k]; third = hasSay ? 'say' : ['build', 'say', 'build'][k]; }
+      list = ['meet', second, third];
+    }
+    var words = n.words || [];
+    var heard = C.heard(words);
+    var buildable = words.filter(function (w) { return w.syl && w.syl.length > 1; }).length;
+    for (var i = 1; i < list.length; i++) {
+      var g = list[i];
+      var listening = g === 'pick' || g === 'yesno' || (g === 'catch' && oral);
+      if (listening && heard < 2) list[i] = oral ? 'pairs' : 'read';
+      else if (g === 'build' && buildable < 2) list[i] = 'pairs';
+    }
+    if (list.length > 2 && list[2] === list[1]) list[2] = list[1] === 'say' ? 'pairs' : 'say';
+    if (had) {
+      Object.keys(had).forEach(function (g) {
+        if (!had[g] || g === 'meet' || g === 'ok' || !has(GAMES, g) || list.indexOf(g) >= 0) return;
+        for (var j = 1; j < list.length; j++) if (!had[list[j]]) { list[j] = g; return; }
+      });
+    }
+    return list;
   };
 
   /* ---------- progress ---------- */
@@ -274,7 +341,7 @@
     var had = (state.done || {})[s.id] || {};
     /* once all of a night's games were played it stays done, whatever track is chosen afterwards */
     if (had.ok) return true;
-    var gs = C.gamesFor(s, state.track || 'L2');
+    var gs = C.gamesFor(s, state.track || 'L2', had);
     return gs.length > 0 && gs.every(function (k) { return had[k]; });
   };
   C.progress = function (state, g) {
@@ -337,24 +404,47 @@
      nor one that holds the target or is held in it (po «cinco» and che po «mi mano» would both be right) */
   function bare(s) { return C.fold(s).replace(/[.,;:!?¿¡…"«»]/g, ' ').replace(/\s+/g, ' ').trim(); }
   function within(a, b) { return (' ' + a + ' ').indexOf(' ' + b + ' ') >= 0; }
-  C.distractors = function (word, g, unitN, n, seed) {
-    var near0 = C.unitWords(g, unitN);
-    var pool = near0.concat([].concat.apply([], C.units(g).map(function (u) { return u.n === unitN ? [] : C.unitWords(g, u.n); })));
-    var seen = {}, out = [];
-    var target = bare(word.gn);
-    seen['p:' + (word.picKey || word.gn)] = 1;
-    seen['w:' + target] = 1;
-    var near = [], far = [];
-    pool.forEach(function (w, i) {
-      var k = 'p:' + (w.pic || w.gn), t = bare(w.gn);
-      if (seen[k] || seen['w:' + t] || within(t, target) || within(target, t)) return;
-      seen[k] = 1; seen['w:' + t] = 1;
-      (i < near0.length ? near : far).push(w);
+  /* Pictures that look alike (by picture key): never two of one group side by side. */
+  C.LOOKALIKE = [['maitei', 'jajotopáta'], ['jasy', 'pyhare'], ['pyhare', 'pytũ', 'eichu', 'nandupysa', 'mborevirape'],
+    ['kuarahy', "ko'ẽ", "ka'aru"], ['sy', "mbo'ehára"], ['ru', 'ramói']];
+  function alike(a, b) {
+    if (a === b) return true;
+    for (var i = 0; i < C.LOOKALIKE.length; i++) if (C.LOOKALIKE[i].indexOf(a) >= 0 && C.LOOKALIKE[i].indexOf(b) >= 0) return true;
+    return false;
+  }
+  /* Taken in bands, each shuffled with the seed: the words met tonight (night: its number in the unit), then the
+     unit's earlier nights, then the grade's earlier units, and only if still short the nights and units to come, so
+     that a child is mostly asked to tell apart words already met. opts.voiced keeps only words that can be heard. */
+  C.distractors = function (word, g, unitN, n, seed, night, opts) {
+    opts = opts || {};
+    var bands = [[], [], [], []];
+    C.units(g).forEach(function (u) {
+      (u.nights || []).forEach(function (nt, k) {
+        var b = u.n === unitN ? (!night ? 1 : k + 1 === night ? 0 : k + 1 < night ? 1 : 3) : u.n < unitN ? 2 : 3;
+        (nt.words || []).forEach(function (w) { bands[b].push(w); });
+      });
     });
-    near = C.shuffle(near, seed + 'n');
-    far = C.shuffle(far, seed + 'f');
-    out = near.concat(far).slice(0, n);
-    return out.map(C.word);
+    var seen = {}, out = [];
+    var target = bare(word.gn), tpic = word.picKey || (typeof word.pic === 'string' ? word.pic : '') || word.gn;
+    seen['p:' + tpic] = 1;
+    seen['w:' + target] = 1;
+    bands.forEach(function (band, bi) {
+      var cands = [];
+      band.forEach(function (w) {
+        var k = 'p:' + (w.pic || w.gn), t = bare(w.gn);
+        if (seen[k] || seen['w:' + t] || within(t, target) || within(target, t)) return;
+        if (opts.voiced && !C.voiced(w)) return;
+        seen[k] = 1; seen['w:' + t] = 1;
+        cands.push(w);
+      });
+      C.shuffle(cands, seed + (bi ? 'b' + bi : 'n')).forEach(function (w) {
+        if (out.length >= n) return;
+        var p = w.pic || w.gn;
+        if (alike(p, tpic) || out.some(function (o) { return alike(p, o.pic || o.gn); })) return;
+        out.push(w);
+      });
+    });
+    return out.slice(0, n).map(C.word);
   };
 
   /* ---------- the Milky Way path of the grade screen (Main) ----------
@@ -436,7 +526,7 @@
      first screen have none: there Back leaves. */
   C.UP = { Grade: 'Welcome', Home: 'Grade', Ready: 'Home', Tonight: 'Main', Sky: 'Main', Grownups: 'Main', Check: 'Main',
     Shine: 'Main', Meet: 'Tonight', Pick: 'Tonight', Pairs: 'Tonight', Build: 'Tonight', Say: 'Tonight', Letters: 'Tonight',
-    Story: 'Tonight' };
+    Story: 'Tonight', YesNo: 'Tonight', Catch: 'Tonight' };
   /* The child's progress kept on this device, when the page asks for it (the site sets window.__tpSite.key; the canvas
      does not): the grade, the language of home, the nights and big stars done, the voice switch. Never the screen in
      play: a child who comes back starts on the path. Nothing leaves the device.
@@ -801,8 +891,8 @@
       if (typeof snd.synthetic === 'function') snd.synthetic(state.voice !== false);
     }
     var cur = (state.cur && C.session(state.cur)) || C.next(state, g);
-    var games = cur ? C.gamesFor(cur, state.track || 'L2') : [];
     var had = (cur && (state.done || {})[cur.id]) || {};
+    var games = cur ? C.gamesFor(cur, state.track || 'L2', had) : [];
     return Object.assign({}, state, {
       grade: g,
       gradeSet: !!state.grade,
@@ -821,15 +911,18 @@
     var last = 0, free = false;
     function guard() { if (free) return true; var t = Date.now(); if (t - last < 400) return false; last = t; return true; }
     function moveTo(st, to) {
-      var out = { screen: to, started: st.started || to !== 'Welcome' };
+      var out = { screen: to, started: st.started || to !== 'Welcome', earned: null };
       if (to === 'Main') { out.cur = null; out.game = null; } else out.walk = null;
       return out;
     }
+    /* each tap that moves on wakes the sound (iPhones let a page start it only inside a tap) */
+    function wake() { var S = window.tpSound; if (S && S.unlock) { try { S.unlock(); } catch (e) {} } }
     var api = {
       /* to the path: the step opened there is put down (a night played again is not tonight's); a walk only lives on
          the path */
       go: function (to) {
         if (!guard()) return;
+        wake();
         set(function (st) { return moveTo(st, to); });
       },
       /* the phone's Back (on the site): what the screen's own close button does, when the screen says so (act.leave,
@@ -854,10 +947,11 @@
       track: function (t) { if (!guard()) return; set(function () { return { track: t, screen: 'Ready' }; }); },
       open: function (id, game) {
         if (!guard()) return;
+        wake();
         set(function () {
           var s = C.session(id);
           var screen = s && s.kind === 'check' ? 'Check' : game ? (GAMES[game] || {}).screen || 'Tonight' : 'Tonight';
-          return { cur: id, game: game || null, screen: screen, walk: null };
+          return { cur: id, game: game || null, screen: screen, walk: null, earned: null };
         });
       },
       /* a game finished: its star; when it was the night's last game, back to the path and the tapir walks on. The
@@ -865,29 +959,33 @@
          (the guard is set, though the star itself is never held back by it) */
       finish: function (kind) {
         if (!free) last = Date.now();
+        wake();
         set(function (st) {
           var id = st.cur || (C.next(st, st.grade || ORDER[0]) || {}).id;
-          if (!id) return { screen: 'Main', cur: null, game: null };
+          if (!id) return { screen: 'Main', cur: null, game: null, earned: null };
           var s = C.session(id);
           var was = C.complete(st, s);
           var done = Object.assign({}, st.done || {});
           var had = Object.assign({}, done[id] || {});
           had[kind] = 1;
-          var gs = C.gamesFor(s, st.track || 'L2');
+          var gs = C.gamesFor(s, st.track || 'L2', had);
           var rest = gs.filter(function (k) { return !had[k]; });
           if (!rest.length || was) had.ok = 1;
           done[id] = had;
+          /* the star just earned lands on tonight's list (earned: never kept on the device) */
+          var earned = { kind: kind, at: C.now() };
           /* a night played again: back to its games; there is nowhere new to walk */
-          if (was) return { done: done, game: null, screen: 'Tonight' };
-          if (rest.length) return { done: done, game: rest[0], screen: 'Tonight' };
+          if (was) return { done: done, game: null, screen: 'Tonight', earned: earned };
+          if (rest.length) return { done: done, game: rest[0], screen: 'Tonight', earned: earned };
           var nx = C.after(id);
-          return { done: done, game: null, cur: null, screen: 'Main', walk: { from: id, to: nx ? nx.id : null, at: C.now() } };
+          return { done: done, game: null, cur: null, screen: 'Main', earned: null, walk: { from: id, to: nx ? nx.id : null, at: C.now() } };
         });
       },
       /* the big star: one to three stars by the score; it always lights, a star is never taken away (the guard is
          set as for a game) */
       checked: function (score, of) {
         if (!free) last = Date.now();
+        wake();
         set(function (st) {
           var id = st.cur || (C.next(st, st.grade || ORDER[0]) || {}).id;
           var checks = Object.assign({}, st.checks || {});

@@ -16,6 +16,7 @@
 body{margin:0}
 button{font:inherit;color:inherit;cursor:pointer}
 a{color:#2A1B3D;text-decoration:none}a:hover{color:#2A1B3D}
+button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([aria-disabled='true']),a:active:not([aria-disabled='true']){transform:translateY(2px) scale(.98)}
 @keyframes tp-legA{0%,100%{transform:rotate(14deg)}50%{transform:rotate(-14deg)}}
 @keyframes tp-legB{0%,100%{transform:rotate(-14deg)}50%{transform:rotate(14deg)}}
 @keyframes tp-tw{0%,100%{opacity:1}50%{opacity:.35}}
@@ -272,7 +273,7 @@ this.timers.push(setTimeout(() => this.setState({ pose: null }), 900));
 const units = C.units(g).length;
 let card;
 if (cur && cur.kind === 'night') {
-const games = C.gamesFor(cur, app.track || 'L2');
+const games = C.gamesFor(cur, app.track || 'L2', cur ? (app.done || {})[cur.id] : null);
 const had = (app.done || {})[cur.id] || {};
 const n = games.filter((k) => had[k]).length;
 card = {

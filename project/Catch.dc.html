@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Atrapá la estrella</title>
+<script src="./support.js"></script>
+<script src="./tp-sound.js"></script>
+<script src="./tp-course.js"></script>
+<script src="./tp-grades.js"></script>
+<script src="./tp-pics.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&amp;family=Baloo+2:wght@600;700;800&amp;family=Nunito:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:#2A1B3D;text-decoration:none}a:hover{color:#2A1B3D}
+button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([aria-disabled='true']),a:active:not([aria-disabled='true']){transform:translateY(2px) scale(.98)}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; position: relative; overflow: hidden; box-sizing: border-box; padding: 50px 16px 34px; background: linear-gradient(180deg, #1E1460 0%, #33207E 60%, #4A2A8F 100%); color: #FFF7EC; font-family: 'Nunito', 'Avenir Next', sans-serif; display: flex; flex-direction: column">
+<div style="position: relative; display: flex; align-items: center; gap: 10px; height: 44px; flex-shrink: 0">
+<a href="Tonight.dc.html" onClick="{{ close }}" aria-label="Cerrar el juego" style="width: 44px; height: 44px; margin-left: -6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFF7EC" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+<div style="flex-grow: 1; display: flex; flex-direction: column; min-width: 0">
+<div lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.05">{{ titleGn }}</div>
+<div style="font-size: 12px; font-weight: 700; color: #CFC6FF">{{ titleEs }}</div>
+</div>
+</div>
+<div style="flex-grow: 1"></div>
+<a href="Tonight.dc.html" onClick="{{ done }}" ref="{{ doneRef }}" style="height: 60px; border-radius: 30px; background: #FFD34E; border: 3px solid #3B2418; box-shadow: 0 5px 0 #3B2418; display: flex; align-items: center; justify-content: center; color: #2A1B3D; font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 22px" lang="gn">Jaha!</a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"app":{"editor":null},"act":{"editor":null},"$preview":{"width":390,"height":844}}'>
+/* A stand-in while the game is being built: it ends at once with its star. Replaced by the game itself. */
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.doneRef = (el) => { this.doneEl = el; };
+}
+componentDidMount() { this.onBack(); }
+componentWillUnmount() { this.offBack(); }
+onBack() { const act = this.props.act; if (!act) return; const f = () => this.leave(); f.board = this; act.leave = f; }
+offBack() { const act = this.props.act; if (act && act.leave && act.leave.board === this) act.leave = null; }
+renderVals() {
+const C = window.tpCourse;
+const act = this.props.act;
+const G = C.GAMES.catch;
+this.leave = () => { if (act) act.finish('catch'); };
+return {
+titleGn: G.gn, titleEs: G.es,
+finished: true, stars: [],
+doneRef: this.doneRef,
+close: (e) => { if (act) { e.preventDefault(); this.leave(); } },
+done: (e) => { if (act) { e.preventDefault(); act.finish('catch'); } }
+};
+}
+}
+</script>
+</body>
+</html>

@@ -25,3 +25,6 @@ if k != 1:
     sys.exit('header count not found')
 io.open(old_path, 'w', encoding='utf-8').write(merged)
 print(f'{name}: {len(old_keys)} clips kept, {len(added)} added, {total} now')
+# the index of the clips the screens can count on (window.__tpVoiced)
+import subprocess
+subprocess.run(['node', os.path.join(os.path.dirname(os.path.abspath(__file__)), 'voiced.js')], check=True)

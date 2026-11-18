@@ -62,7 +62,9 @@ window.__tpMeta = [
 window.__tpRenamed = {};
 
 (function () {
-  /* a word: gn as written, es as said in Spanish, the picture, its syllables (for armar la palabra) */
+  /* a word: gn as written, es as said in Spanish, the picture, its syllables (for armar la palabra). A night's say
+     lines are what the child practises aloud; in a dialogue, who says each line that is not the child's own:
+     'mborevi' (Mborevi'i), "mbo'ehára" (the teacher), 'irũ' (a friend) */
   function w(gn, es, pic, syl) { var o = { gn: gn, es: es, pic: pic || gn }; if (syl) o.syl = syl; return o; }
   /* a unit not written yet: its title and as many empty nights as it will have */
   function soon(n, gn, es) { return { n: n, gn: gn, es: es, nights: [{}, {}, {}] }; }
@@ -73,7 +75,7 @@ window.__tpRenamed = {};
       { n: 1, gn: 'Maitei', es: '¡Hola!', nights: [
         { gn: "Mba'éichapa?", es: '¡Hola! ¿Cómo estás?', words: [
           w("Mba'éichapa?", '¡Hola! ¿Cómo estás?', 'maitei'), w('Iporã', 'Bien', 'iporã'), w('Aguyje', 'Gracias', 'aguyje'), w('Jajotopáta', '¡Nos vemos!', 'jajotopáta')],
-          say: [{ gn: "Mba'éichapa?", es: '¿Cómo estás?' }, { gn: 'Iporã, ha nde?', es: 'Bien, ¿y vos?' }] },
+          say: [{ gn: "Mba'éichapa?", es: '¿Cómo estás?', who: 'mborevi' }, { gn: 'Iporã, ha nde?', es: 'Bien, ¿y vos?' }] },
         { gn: 'Che réra', es: 'Me llamo…', words: [
           w("Che réra Mborevi'i", "Me llamo Mborevi'i", 'réra'), w("Mba'éichapa nde réra?", '¿Cómo te llamás?', 'porandu'), w('Tereguahẽ porãite', '¡Bienvenida! ¡Bienvenido!', 'óga')],
           say: [{ gn: 'Che réra…', es: 'Me llamo… (decí tu nombre)' }, { gn: "Mba'éichapa nde réra?", es: '¿Cómo te llamás?' }] },
@@ -113,9 +115,9 @@ window.__tpRenamed = {};
     g1: { units: [
       { n: 1, gn: 'Maitei', es: 'Saludar, presentarse y despedirse', nights: [
         { gn: 'Maitei', es: 'Saludar', words: [w('Maitei', '¡Hola! (un saludo)', 'maitei', ['Mai', 'tei']), w("Mba'éichapa?", '¿Cómo estás?', 'porandu', ['Mba', "'éi", 'cha', 'pa']), w('Iporã', 'Bien', 'iporã', ['I', 'po', 'rã']), w('Tereguahẽ porãite', '¡Bienvenida! ¡Bienvenido!', 'óga')],
-          say: [{ gn: "Maitei! Mba'éichapa?", es: '¡Hola! ¿Cómo estás?' }, { gn: 'Iporã, ha nde?', es: 'Bien, ¿y vos?' }] },
+          say: [{ gn: "Maitei! Mba'éichapa?", es: '¡Hola! ¿Cómo estás?', who: 'mborevi' }, { gn: 'Iporã, ha nde?', es: 'Bien, ¿y vos?' }] },
         { gn: 'Che réra', es: 'Mi nombre', words: [w('Che réra…', 'Me llamo…', 'réra'), w('Aguereko poteĩ ary', 'Tengo seis años', 'n6'), w('Che paraguaigua', 'Soy de Paraguay', 'poyvi')],
-          say: [{ gn: 'Che réra…', es: 'Me llamo… (decí tu nombre)' }, { gn: 'Mboy arýpa reguereko?', es: '¿Cuántos años tenés?' }, { gn: 'Aguereko … ary.', es: 'Tengo … años. (decí tu edad)' }] },
+          say: [{ gn: 'Che réra…', es: 'Me llamo… (decí tu nombre)' }, { gn: 'Mboy arýpa reguereko?', es: '¿Cuántos años tenés?', who: 'mborevi' }, { gn: 'Aguereko … ary.', es: 'Tengo … años. (decí tu edad)' }] },
         { gn: 'Jajotopáta', es: 'Despedirse', words: [w('Aguyje', 'Gracias', 'aguyje', ['A', 'guy', 'je']), w('Jajotopáta', '¡Nos vemos!', 'jajotopáta', ['Ja', 'jo', 'to', 'pá', 'ta']), w('Pyhare porã', 'Buenas noches', 'pyhare')] }
       ] },
       { n: 2, gn: 'Che rogaygua', es: 'Mi familia y mi casa', nights: [
@@ -136,20 +138,20 @@ window.__tpRenamed = {};
       ] },
       { n: 5, gn: 'Ikatúpa?', es: 'Pedir con cortesía y agradecer', nights: [
         { gn: 'Chepytyvõmína', es: 'Pedir ayuda y favores', words: [w("mbo'ehára", 'maestra, maestro', "mbo'ehára", ['mbo', "'e", 'há', 'ra']), w('Chepytyvõ', 'Ayudame', 'pytyvõ', ['Che', 'py', 'ty', 'võ']), w("Eipe'amína ovetã", 'Abrí la ventana, por favor', 'ovetã'), w('Aguyje', 'Gracias', 'aguyje', ['A', 'guy', 'je'])],
-          say: [{ gn: "Mbo'ehára, chepytyvõmína.", es: 'Maestra, ayudame, por favor.' }, { gn: 'Héẽ, roipytyvõta.', es: 'Sí, te ayudo.' }, { gn: 'Aguyje!', es: '¡Gracias!' }] },
+          say: [{ gn: "Mbo'ehára, chepytyvõmína.", es: 'Maestra, ayudame, por favor.' }, { gn: 'Héẽ, roipytyvõta.', es: 'Sí, te ayudo.', who: "mbo'ehára" }, { gn: 'Aguyje!', es: '¡Gracias!' }] },
         { gn: 'Ikatúpa aike?', es: 'Pedir permiso', words: [w('Ikatúpa aike?', '¿Puedo pasar?', 'okẽ'), w('Ikatúpa aguapy?', '¿Puedo sentarme?', 'apyka'), w('Ikatúpa ahecha?', '¿Puedo ver?', 'resa'), w('Ikatúpa añembosarái?', '¿Puedo jugar?', 'pelota')],
-          say: [{ gn: 'Ikatúpa aike?', es: '¿Puedo pasar?' }, { gn: 'Héẽ, eike. Eguapy.', es: 'Sí, pasá. Sentate.' }, { gn: "Aguyje, mbo'ehára.", es: 'Gracias, maestra.' }] },
+          say: [{ gn: 'Ikatúpa aike?', es: '¿Puedo pasar?' }, { gn: 'Héẽ, eike. Eguapy.', es: 'Sí, pasá. Sentate.', who: "mbo'ehára" }, { gn: "Aguyje, mbo'ehára.", es: 'Gracias, maestra.' }] },
         { gn: 'Aguyjevete', es: 'Pedir prestado y dar las gracias', words: [w('irũ', 'amiga, amigo', 'irũ', ['i', 'rũ']), w('Ikatúpa aiporu nde haiha?', '¿Puedo usar tu lápiz?', 'haiha'), w("Eme'ẽmína chéve kuatia", 'Dame una hoja, por favor', 'kuatia'), w('Aguyjevete', 'Muchas gracias', 'aguyje', ['A', 'guy', 'je', 've', 'te'])],
-          say: [{ gn: 'Ikatúpa aiporu nde haiha?', es: '¿Puedo usar tu lápiz?' }, { gn: 'Héẽ, ejapyhy.', es: 'Sí, tomá.' }, { gn: 'Aguyjevete, che irũ!', es: '¡Muchas gracias, amiga!' }] }
+          say: [{ gn: 'Ikatúpa aiporu nde haiha?', es: '¿Puedo usar tu lápiz?' }, { gn: 'Héẽ, ejapyhy.', es: 'Sí, tomá.', who: 'irũ' }, { gn: 'Aguyjevete, che irũ!', es: '¡Muchas gracias, amiga!' }] }
       ] },
       { n: 6, gn: 'Papapy', es: 'Los números del 1 al 10', nights: [
         { gn: '1 – 5', es: 'Del uno al cinco', words: [w('peteĩ', 'uno', 'n1', ['pe', 'teĩ']), w('mokõi', 'dos', 'n2', ['mo', 'kõi']), w('mbohapy', 'tres', 'n3', ['mbo', 'ha', 'py']), w('irundy', 'cuatro', 'n4', ['i', 'ru', 'ndy']), w('po', 'cinco', 'n5')] },
         { gn: '6 – 10', es: 'Del seis al diez', words: [w('poteĩ', 'seis', 'n6', ['po', 'teĩ']), w('pokõi', 'siete', 'n7', ['po', 'kõi']), w('poapy', 'ocho', 'n8', ['po', 'a', 'py']), w('porundy', 'nueve', 'n9', ['po', 'ru', 'ndy']), w('pa', 'diez', 'n10')] },
         { gn: 'Mboy arýpa?', es: '¿Cuántos años?', words: [w('mbohapy', 'tres', 'n3', ['mbo', 'ha', 'py']), w('poteĩ', 'seis', 'n6', ['po', 'teĩ']), w('poapy', 'ocho', 'n8', ['po', 'a', 'py']), w('pa', 'diez', 'n10')],
-          say: [{ gn: 'Mboy arýpa reguereko?', es: '¿Cuántos años tenés?' }, { gn: 'Aguereko … ary.', es: 'Tengo … años. (decí tu edad)' }] }
+          say: [{ gn: 'Mboy arýpa reguereko?', es: '¿Cuántos años tenés?', who: 'mborevi' }, { gn: 'Aguereko … ary.', es: 'Tengo … años. (decí tu edad)' }] }
       ] },
       { n: 7, gn: 'Achegety', es: 'El alfabeto: las vocales y el puso', nights: [
-        { gn: 'A, e, i, o, u, y', es: 'Las vocales orales', letters: 'first', words: [w('avati', 'maíz', 'avati', ['a', 'va', 'ti']), w('Eichu', 'las Siete Cabrillas', 'eichu', ['Ei', 'chu']), w('ita', 'piedra', 'ita', ['i', 'ta']), w('óga', 'casa', 'óga', ['ó', 'ga']), w("urukure'a", 'lechuza', "urukure'a", ['u', 'ru', 'ku', 're', "'a"]), w('y', 'agua', 'y')],
+        { gn: 'A, e, i, o, u, y', es: 'Las vocales orales', letters: 'first', words: [w('avati', 'maíz', 'avati', ['a', 'va', 'ti']), w('Eichu', 'las Cabrillas (Pléyades)', 'eichu', ['Ei', 'chu']), w('ita', 'piedra', 'ita', ['i', 'ta']), w('óga', 'casa', 'óga', ['ó', 'ga']), w("urukure'a", 'lechuza', "urukure'a", ['u', 'ru', 'ku', 're', "'a"]), w('y', 'agua', 'y')],
           games: { L1: ['meet', 'letters', 'build'], L2: ['meet', 'letters', 'say'], BI: ['meet', 'letters', 'build'] } },
         { gn: 'Ã, ẽ, ĩ, õ, ũ, ỹ', es: 'Las vocales nasales', letters: 'nasal', words: [w('pytã', 'rojo', 'c-pytã', ['py', 'tã']), w("ñe'ẽ", 'palabra, lengua', "ñe'ẽ", ['ñe', "'ẽ"]), w('tĩ', 'nariz', 'tĩ'), w('mokõi', 'dos', 'n2', ['mo', 'kõi']), w('pytũ', 'oscuro', 'pytũ', ['py', 'tũ']), w('tapỹi', 'rancho', 'tapỹi', ['ta', 'pỹi'])],
           games: { L1: ['meet', 'letters', 'build'], L2: ['meet', 'letters', 'say'], BI: ['meet', 'letters', 'build'] } },
@@ -159,7 +161,7 @@ window.__tpRenamed = {};
       { n: 8, gn: 'Ñande yvága', es: 'Nuestro cielo, de la mañana a la noche', nights: [
         { gn: 'Kuarahy ha jasy', es: 'El sol y la luna', words: [w('kuarahy', 'sol', 'kuarahy', ['kua', 'ra', 'hy']), w('jasy', 'luna', 'jasy', ['ja', 'sy']), w('mbyja', 'estrella', 'mbyja', ['mby', 'ja'])] },
         { gn: 'Pyhareve, ka\'aru, pyhare', es: 'La mañana, la tarde y la noche', words: [w('pyhareve', 'la mañana', "ko'ẽ", ['py', 'ha', 're', 've']), w("ka'aru", 'la tarde', "ka'aru", ['ka', "'a", 'ru']), w('pyhare', 'la noche', 'pyhare', ['py', 'ha', 're'])] },
-        { gn: 'Mborevi Rape', es: 'El camino del tapir', story: 'rape', words: [w('Mborevi Rape', 'la Vía Láctea', 'mborevirape'), w('Eichu', 'las Siete Cabrillas', 'eichu', ['Ei', 'chu']), w('Ñandu Pysã', 'la Cruz del Sur', 'nandupysa')],
+        { gn: 'Mborevi Rape', es: 'El camino del tapir', story: 'rape', words: [w('Mborevi Rape', 'la Vía Láctea', 'mborevirape'), w('Eichu', 'las Cabrillas (Pléyades)', 'eichu', ['Ei', 'chu']), w('Ñandu Pysã', 'la Cruz del Sur', 'nandupysa')],
           games: { all: ['meet', 'story', 'pairs'] } }
       ] }
     ] },
@@ -178,11 +180,11 @@ window.__tpRenamed = {};
       ] },
       { n: 3, gn: 'Aikotevẽ', es: 'Pedir lo que necesito', nights: [
         { gn: "Hay'use, akaruse", es: 'Pedir agua y comida', words: [w("Hay'use", 'Quiero tomar agua', 'y', ['Ha', 'y', "'u", 'se']), w('Akaruse', 'Quiero comer', 'karu', ['A', 'ka', 'ru', 'se']), w("Eme'ẽmína chéve mbujape", 'Dame pan, por favor', 'mbujape')],
-          say: [{ gn: "Mbo'ehára, akaruse.", es: 'Maestra, quiero comer.' }, { gn: 'Ejapyhy ko mbujape.', es: 'Tomá este pan.' }, { gn: 'Aguyje!', es: '¡Gracias!' }] },
+          say: [{ gn: "Mbo'ehára, akaruse.", es: 'Maestra, quiero comer.' }, { gn: 'Ejapyhy ko mbujape.', es: 'Tomá este pan.', who: "mbo'ehára" }, { gn: 'Aguyje!', es: '¡Gracias!' }] },
         { gn: 'Ikatúpa asẽ?', es: 'Ir al baño y pedir permiso', words: [w("Ikatúpa asẽ sapy'aite?", '¿Puedo salir un ratito? (al baño)', 'baño'), w("Ikatúpa hay'u?", '¿Puedo tomar agua?', 'y'), w('Ikatúpa akaru?', '¿Puedo comer?', 'karu')],
-          say: [{ gn: "Ikatúpa asẽ sapy'aite?", es: '¿Puedo salir un ratito? (al baño)' }, { gn: 'Héẽ, ikatu.', es: 'Sí, podés.' }, { gn: "Aguyje, mbo'ehára.", es: 'Gracias, maestra.' }] },
+          say: [{ gn: "Ikatúpa asẽ sapy'aite?", es: '¿Puedo salir un ratito? (al baño)' }, { gn: 'Héẽ, ikatu.', es: 'Sí, podés.', who: "mbo'ehára" }, { gn: "Aguyje, mbo'ehára.", es: 'Gracias, maestra.' }] },
         { gn: 'Ejapyhy', es: 'Prestar algo', words: [w('mbogueha', 'borrador', 'mbogueha', ['mbo', 'gue', 'ha']), w('Ejapyhy', 'Tomá', 'ejapyhy', ['E', 'ja', 'py', 'hy']), w('Eiporu che haiha', 'Usá mi lápiz', 'haiha')],
-          say: [{ gn: 'Aikotevẽ mbogueha.', es: 'Necesito un borrador.' }, { gn: 'Ejapyhy che mbogueha.', es: 'Tomá mi borrador.' }, { gn: 'Aguyjevete, che irũ!', es: '¡Muchas gracias, amiga!' }] }
+          say: [{ gn: 'Aikotevẽ mbogueha.', es: 'Necesito un borrador.' }, { gn: 'Ejapyhy che mbogueha.', es: 'Tomá mi borrador.', who: 'irũ' }, { gn: 'Aguyjevete, che irũ!', es: '¡Muchas gracias, amiga!' }] }
       ] },
       soon(4, 'Pundie', 'Las consonantes: ch, mb, nd, ng, nt, rr, g̃'),
       soon(5, 'Moõpa?', 'Instrucciones: ubicar cosas e ir a un lugar'),

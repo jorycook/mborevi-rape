@@ -2,6 +2,8 @@ process.chdir(require('path').join(__dirname, '..')); // paths below are from th
 // Plays the App board's logic end to end in Node (no rendering): onboarding, then every step of a grade, game by game,
 // on one track. Usage: node flow-test.js [track] [grade]. Also checks replays and a change of home language.
 global.window = global; global.document = { addEventListener() {} }; global.navigator = {};
+/* the same game at every play, so that a run can be compared with the last (the site gives each play its own salt) */
+window.__tpSalt = '';
 ['tp-sound.js', 'tp-course.js', 'tp-grades.js', 'tp-pics.js', 'tp-sky.js'].forEach((f) => require('../project/' + f));
 const fs = require('fs');
 const C = window.tpCourse;
@@ -42,13 +44,23 @@ function playGame(scr) {
   let r = render(scr);
   for (let guard = 0; guard < 80; guard++) {
     r.v = r.c.renderVals();
-    if (scr === 'Story') { if (r.v.last) break; tick(); r.v.forward(E); continue; }
+    /* the story: page by page; its end card (finished) when it has one, else its last page */
+    if (scr === 'Story') { if (r.v.finished || (r.v.last && !('finished' in r.v))) break; tick(); r.v.forward(E); flush(); continue; }
     if (r.v.finished) break;
     if (scr === 'Meet') { tick(); r.v.next(); }
     else if (scr === 'Pick' || scr === 'Check') { r.v.options.forEach((o) => o.pick()); flush(); }
     else if (scr === 'Pairs') { const n = r.v.cards.length; for (let a = 0; a < n; a++) for (let b = a + 1; b < n; b++) { r.v = r.c.renderVals(); r.v.cards[a].flip(); r.v = r.c.renderVals(); r.v.cards[b].flip(); flush(); } }
     else if (scr === 'Build' || scr === 'Letters') { for (let t = 0; t < 12; t++) { r.v = r.c.renderVals(); r.v.keys.forEach((k) => k.tap()); flush(); } }
-    else if (scr === 'Say') { r.v.mic.tap(); r.v = r.c.renderVals(); r.v.mic.tap(); r.v = r.c.renderVals(); r.v.forward(E); }
+    /* Say: the model plays by itself and «Upéi» works once it has; while «Upéi» still waits, the microphone is used */
+    else if (scr === 'Say') {
+      flush(); r.v = r.c.renderVals();
+      if (r.v.fwdOff === 'true' && r.v.mic && r.v.mic.tap) { r.v.mic.tap(); r.v = r.c.renderVals(); if (r.v.mic && r.v.mic.tap) r.v.mic.tap(); flush(); r.v = r.c.renderVals(); }
+      r.v.forward(E);
+    }
+    /* the new games, as Pick: every answer of the round is tapped, then the round's timers run (a tap reads the
+       board's state when it comes, so the taps after the right one are ignored) */
+    else if (scr === 'YesNo') { (r.v.answers || []).forEach((o) => o.pick()); flush(); }
+    else if (scr === 'Catch') { (r.v.stars || []).forEach((o) => o.pick()); flush(); }
   }
   r.v = r.c.renderVals();
   if (scr !== 'Story' && !r.v.finished) problems.push('did not finish ' + scr + ' at ' + app.state.cur);

@@ -6,6 +6,7 @@
  * stand-in (Mborevi'i's bubble, a highlighted line). The voices of the files are listed in window.__tpSoundVoices. */
 window.__tpSoundFiles = window.__tpSoundFiles || ["tp-sound-g1.js", "tp-sound-g2.js", "tp-sound-pre.js", "tp-sound-ui.js"];
 window.__tpSoundVoices = window.__tpSoundVoices || {"grn": {"name": "MMS-TTS guaraní (Meta AI)", "kind": "synthetic", "licence": "CC BY-NC 4.0 (Meta MMS-TTS: non-commercial use only; Pratap et al. 2023)", "model": "facebook/mms-tts-grn", "checked": "each clip transcribed back with MMS speech recognition (facebook/mms-1b-all, Guarani adapter)"}};
+window.__tpVoiced = window.__tpVoiced || {"s:rape:1":1,"s:rape:2":1,"s:rape:3":1,"s:rape:4":1,"s:rape:5":1,"s:rape:6":1,"s:rape:7":1,"u:eha'ã jey":1,"u:iporãite":1,"u:maitei! che réra mborevi'i":1,"u:mbyja guasu omimbi":1,"u:rehupyty peteĩ mbyja":1,"w:aguereko poteĩ ary":1,"w:aguereko … ary":1,"w:aguyje":1,"w:aguyje, mbo'ehára":1,"w:aguyjevete":1,"w:aguyjevete, che irũ":1,"w:aikotevẽ mbogueha":1,"w:akaruse":1,"w:akã, tesa, tĩ, juru":1,"w:ama":1,"w:apyka":1,"w:arai":1,"w:aranduka":1,"w:avati":1,"w:che akã":1,"w:che jarýi":1,"w:che juru":1,"w:che nambi":1,"w:che paraguaigua":1,"w:che po":1,"w:che py":1,"w:che ramói":1,"w:che resa":1,"w:che ru":1,"w:che réra mborevi'i":1,"w:che réra…":1,"w:che sy":1,"w:che tĩ":1,"w:chepytyvõ":1,"w:eipe'amína ovetã":1,"w:eiporu che haiha":1,"w:ejapyhy":1,"w:ejapyhy che mbogueha":1,"w:ejapyhy ko mbujape":1,"w:eme'ẽmína chéve kuatia":1,"w:eme'ẽmína chéve mbujape":1,"w:guasu":1,"w:guyra":1,"w:haiha":1,"w:hay'use":1,"w:hovy":1,"w:héẽ, eike. eguapy":1,"w:héẽ, ejapyhy":1,"w:héẽ, ikatu":1,"w:héẽ, roipytyvõta":1,"w:ikatúpa aguapy":1,"w:ikatúpa ahecha":1,"w:ikatúpa aike":1,"w:ikatúpa aiporu nde haiha":1,"w:ikatúpa akaru":1,"w:ikatúpa asẽ sapy'aite":1,"w:ikatúpa añembosarái":1,"w:ikatúpa hay'u":1,"w:iporã":1,"w:iporã, ha nde":1,"w:irundy":1,"w:ita":1,"w:jagua":1,"w:jaguarete":1,"w:jajotopáta":1,"w:ka'aru porã":1,"w:kamby":1,"w:kavaju":1,"w:ko'ẽ porã":1,"w:kuarahy":1,"w:kuatia":1,"w:kóva ha'e che ru":1,"w:kóva ha'e che sy":1,"w:maitei":1,"w:maitei! mba'éichapa":1,"w:mandi'o":1,"w:mba'éichapa":1,"w:mba'éichapa nde réra":1,"w:mbarakaja":1,"w:mbeju":1,"w:mbo'ehao":1,"w:mbo'ehára":1,"w:mbo'ehára, akaruse":1,"w:mbo'ehára, chepytyvõmína":1,"w:mbogueha":1,"w:mbohapy":1,"w:mborevi":1,"w:mborevi rape":1,"w:mboy arýpa reguereko":1,"w:mbujape":1,"w:mbyja":1,"w:mbyja sa'yju":1,"w:mokõi":1,"w:morotĩ":1,"w:nambi":1,"w:ovetã":1,"w:pakova":1,"w:panambi":1,"w:peteĩ":1,"w:poapy":1,"w:pokõi":1,"w:porundy":1,"w:poteĩ":1,"w:pyhare":1,"w:pyhare porã":1,"w:pyhareve":1,"w:pytã":1,"w:pytũ":1,"w:ryguasu":1,"w:sa'yju":1,"w:tapỹi":1,"w:tereguahẽ porãite":1,"w:tupa":1,"w:urukure'a":1,"w:y":1,"w:ype":1,"w:ñandu guasu":1,"w:ñandu pysã":1,"w:ñañembosarái":1,"w:ñe'ẽ":1,"w:óga":1};
 (function () {
   var clips = window.__tpClips = window.__tpClips || {};
   var AC = window.AudioContext || window.webkitAudioContext;
@@ -271,6 +272,40 @@ window.__tpSoundVoices = window.__tpSoundVoices || {"grn": {"name": "MMS-TTS gua
     el.onload = function () { asked[f] = 'in'; try { document.dispatchEvent(new CustomEvent('tpsound', { detail: { file: f } })); } catch (e) {} };
     el.onerror = function () { delete asked[f]; try { if (el.parentNode) el.parentNode.removeChild(el); } catch (e) {} };
     (document.head || document.body || document.documentElement).appendChild(el);
+  };
+  /* A little sound that is not a voice: 'right' (two notes up), 'wrong' (one soft low note), 'pair' and 'star' (a
+     sparkle). It plays on the same output and never stops a word that is playing; it sounds with the synthetic voice
+     off too, so the games still answer a tap; nothing while the page is put aside or without an audio output. */
+  var TONES = {
+    right: [[660, 0], [990, 80]],
+    wrong: [[196, 0, 'triangle', 0.06]],
+    pair: [[784, 0], [1047, 80]],
+    star: [[523, 0], [659, 90], [784, 180], [1047, 270]]
+  };
+  api.beep = function (kind) {
+    var notes = TONES[kind];
+    if (!notes || !AC) return false;
+    if (typeof document !== 'undefined' && document.visibilityState === 'hidden') return false;
+    var c = context();
+    if (!c || c.state === 'closed' || typeof c.createOscillator !== 'function') return false;
+    try {
+      var t0 = c.currentTime + 0.01;
+      notes.forEach(function (n) {
+        var o = c.createOscillator(), g = c.createGain(), at = t0 + n[1] / 1000, peak = n[3] || 0.12;
+        o.type = n[2] || 'sine';
+        o.frequency.setValueAtTime(n[0], at);
+        g.gain.setValueAtTime(0.0001, at);
+        g.gain.linearRampToValueAtTime(peak, at + 0.01);
+        g.gain.exponentialRampToValueAtTime(0.0001, at + 0.13);
+        o.connect(g);
+        g.connect(c.destination);
+        o.start(at);
+        o.stop(at + 0.15);
+      });
+      return true;
+    } catch (e) {
+      return false;
+    }
   };
   /* Mborevi'i's lines are asked for as soon as both this file and the course have run, whichever runs second (the
      course asks too): on a slow phone they are then there for the first tap */

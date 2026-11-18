@@ -21,6 +21,8 @@
     "Say.dc.html": { "x": 1880, "y": 2568, "w": 390, "h": 844, "radius": 44, "title": "13 · Ere Mborevi'i ndive: decilo con Mborevi'i", "is_interactive": true },
     "Letters.dc.html": { "x": 2350, "y": 2568, "w": 390, "h": 844, "radius": 44, "title": "14 · Achegety: vocales, nasales y puso", "is_interactive": true },
     "Story.dc.html": { "x": 2820, "y": 2568, "w": 390, "h": 844, "radius": 44, "title": "15 · Mombe'u: por qué la Vía Láctea es el camino del tapir", "is_interactive": true },
+    "YesNo.dc.html": {"x": 3290, "y": 2568, "w": 390, "h": 844, "radius": 44, "title": "23 · Ehendu porã: ¿sí o no?", "is_interactive": true},
+    "Catch.dc.html": {"x": 3760, "y": 2568, "w": 390, "h": 844, "radius": 44, "title": "24 · Ejapyhy mbyja: atrapá la estrella", "is_interactive": true},
     "Check.dc.html": { "x": 0, "y": 3852, "w": 390, "h": 844, "radius": 44, "title": "16 · Mbyja guasu: la estrella grande de la unidad", "is_interactive": true },
     "Shine.dc.html": { "x": 470, "y": 3852, "w": 390, "h": 844, "radius": 44, "title": "17 · Se enciende una estrella de la figura", "is_interactive": true },
     "Mascot.dc.html": { "x": 0, "y": 5136, "w": 1440, "h": 480, "title": "18 · Los momentos de Mborevi'i" },
@@ -45,6 +47,8 @@
     "Say.dc.html",
     "Letters.dc.html",
     "Story.dc.html",
+    "YesNo.dc.html",
+    "Catch.dc.html",
     "Check.dc.html",
     "Shine.dc.html",
     "Mascot.dc.html",
@@ -57,7 +61,7 @@
   "notes": {
     "t1": { "x": 0, "y": -300, "text": "Ñepyrũ: Mborevi'i se despierta, el grado y la lengua de casa", "kind": "title1", "maxW": 1800 },
     "t2": { "x": 0, "y": 984, "text": "Cada noche: Mborevi'i camina por la Vía Láctea", "kind": "title1", "maxW": 1800 },
-    "t3": { "x": 0, "y": 2268, "text": "Jugar: mirar, escuchar, leer, armar y decir", "kind": "title1", "maxW": 3210 },
+    "t3": { "x": 0, "y": 2268, "text": "Jugar: mirar, escuchar, leer, armar, decir, ¿sí o no? y atrapar estrellas", "kind": "title1", "maxW": 4150 },
     "t4": { "x": 0, "y": 3552, "text": "La estrella grande enciende la figura del grado", "kind": "title1", "maxW": 860 },
     "t5": { "x": 0, "y": 4836, "text": "Mborevi'i, su componente y el ícono", "kind": "title1", "maxW": 3140 },
     "t6": { "x": 0, "y": 5916, "text": "El cielo guaraní y las reglas del diseño", "kind": "title1", "maxW": 2240 }

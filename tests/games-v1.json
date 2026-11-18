@@ -1,0 +1,869 @@
+{
+ "pre:Maitei / Mba'éichapa?": {
+  "L1": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "BI": [
+   "meet",
+   "pick",
+   "say"
+  ]
+ },
+ "pre:Maitei / Che réra": {
+  "L1": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "BI": [
+   "meet",
+   "pick",
+   "say"
+  ]
+ },
+ "pre:Maitei / Pyhare porã": {
+  "L1": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "BI": [
+   "meet",
+   "pick",
+   "say"
+  ]
+ },
+ "pre:Che rete / Che akã": {
+  "L1": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "BI": [
+   "meet",
+   "pick",
+   "say"
+  ]
+ },
+ "pre:Che rete / Che po": {
+  "L1": [
+   "meet",
+   "pick",
+   "pairs"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "pairs"
+  ],
+  "BI": [
+   "meet",
+   "pick",
+   "pairs"
+  ]
+ },
+ "pre:Che rete / Japurahéi": {
+  "L1": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "BI": [
+   "meet",
+   "pick",
+   "say"
+  ]
+ },
+ "pre:Mymba / Jagua ha mbarakaja": {
+  "L1": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "BI": [
+   "meet",
+   "pick",
+   "say"
+  ]
+ },
+ "pre:Mymba / Kavaju ha vaka": {
+  "L1": [
+   "meet",
+   "pick",
+   "pairs"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "pairs"
+  ],
+  "BI": [
+   "meet",
+   "pick",
+   "pairs"
+  ]
+ },
+ "pre:Mymba / Pira ha panambi": {
+  "L1": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "BI": [
+   "meet",
+   "pick",
+   "say"
+  ]
+ },
+ "pre:Sa'y / Pytã, sa'yju, hovy": {
+  "L1": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "BI": [
+   "meet",
+   "pick",
+   "say"
+  ]
+ },
+ "pre:Sa'y / Morotĩ ha hũ": {
+  "L1": [
+   "meet",
+   "pick",
+   "pairs"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "pairs"
+  ],
+  "BI": [
+   "meet",
+   "pick",
+   "pairs"
+  ]
+ },
+ "pre:Sa'y / Sa'ykuéra": {
+  "L1": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "BI": [
+   "meet",
+   "pick",
+   "say"
+  ]
+ },
+ "pre:Papapy / Peteĩ, mokõi, mbohapy": {
+  "L1": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "BI": [
+   "meet",
+   "pick",
+   "say"
+  ]
+ },
+ "pre:Papapy / Irundy ha po": {
+  "L1": [
+   "meet",
+   "pick",
+   "pairs"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "pairs"
+  ],
+  "BI": [
+   "meet",
+   "pick",
+   "pairs"
+  ]
+ },
+ "pre:Papapy / Mboýpa?": {
+  "L1": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "BI": [
+   "meet",
+   "pick",
+   "say"
+  ]
+ },
+ "pre:Jasy ha mbyja / Kuarahy ha jasy": {
+  "L1": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "BI": [
+   "meet",
+   "pick",
+   "say"
+  ]
+ },
+ "pre:Jasy ha mbyja / Arai ha ama": {
+  "L1": [
+   "meet",
+   "pick",
+   "pairs"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "pairs"
+  ],
+  "BI": [
+   "meet",
+   "pick",
+   "pairs"
+  ]
+ },
+ "pre:Jasy ha mbyja / Mborevi Rape": {
+  "L1": [
+   "meet",
+   "story",
+   "say"
+  ],
+  "L2": [
+   "meet",
+   "story",
+   "say"
+  ],
+  "BI": [
+   "meet",
+   "story",
+   "say"
+  ]
+ },
+ "g1:Maitei / Maitei": {
+  "L1": [
+   "meet",
+   "read",
+   "build"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "BI": [
+   "meet",
+   "pick",
+   "say"
+  ]
+ },
+ "g1:Maitei / Che réra": {
+  "L1": [
+   "meet",
+   "read",
+   "pairs"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "BI": [
+   "meet",
+   "read",
+   "say"
+  ]
+ },
+ "g1:Maitei / Jajotopáta": {
+  "L1": [
+   "meet",
+   "read",
+   "build"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "BI": [
+   "meet",
+   "pick",
+   "pairs"
+  ]
+ },
+ "g1:Che rogaygua / Che sy ha che ru": {
+  "L1": [
+   "meet",
+   "read",
+   "build"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "BI": [
+   "meet",
+   "pick",
+   "say"
+  ]
+ },
+ "g1:Che rogaygua / Che jarýi ha che ramói": {
+  "L1": [
+   "meet",
+   "read",
+   "pairs"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "pairs"
+  ],
+  "BI": [
+   "meet",
+   "read",
+   "say"
+  ]
+ },
+ "g1:Che rogaygua / Che róga": {
+  "L1": [
+   "meet",
+   "read",
+   "build"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "BI": [
+   "meet",
+   "pick",
+   "pairs"
+  ]
+ },
+ "g1:Che rete / Akã ha tesa": {
+  "L1": [
+   "meet",
+   "read",
+   "build"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "BI": [
+   "meet",
+   "pick",
+   "build"
+  ]
+ },
+ "g1:Che rete / Nambi, po ha py": {
+  "L1": [
+   "meet",
+   "read",
+   "pairs"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "pairs"
+  ],
+  "BI": [
+   "meet",
+   "read",
+   "say"
+  ]
+ },
+ "g1:Che rete / Che resa": {
+  "L1": [
+   "meet",
+   "read",
+   "pairs"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "BI": [
+   "meet",
+   "pick",
+   "pairs"
+  ]
+ },
+ "g1:Che mbo'ehao / Mbo'ehao": {
+  "L1": [
+   "meet",
+   "read",
+   "build"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "BI": [
+   "meet",
+   "pick",
+   "build"
+  ]
+ },
+ "g1:Che mbo'ehao / Aranduka ha haiha": {
+  "L1": [
+   "meet",
+   "read",
+   "pairs"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "pairs"
+  ],
+  "BI": [
+   "meet",
+   "read",
+   "say"
+  ]
+ },
+ "g1:Che mbo'ehao / Okẽ ha ovetã": {
+  "L1": [
+   "meet",
+   "read",
+   "build"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "BI": [
+   "meet",
+   "pick",
+   "pairs"
+  ]
+ },
+ "g1:Ikatúpa? / Chepytyvõmína": {
+  "L1": [
+   "meet",
+   "read",
+   "build"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "BI": [
+   "meet",
+   "pick",
+   "say"
+  ]
+ },
+ "g1:Ikatúpa? / Ikatúpa aike?": {
+  "L1": [
+   "meet",
+   "read",
+   "pairs"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "BI": [
+   "meet",
+   "read",
+   "say"
+  ]
+ },
+ "g1:Ikatúpa? / Aguyjevete": {
+  "L1": [
+   "meet",
+   "read",
+   "build"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "BI": [
+   "meet",
+   "pick",
+   "say"
+  ]
+ },
+ "g1:Papapy / 1 – 5": {
+  "L1": [
+   "meet",
+   "read",
+   "build"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "BI": [
+   "meet",
+   "pick",
+   "build"
+  ]
+ },
+ "g1:Papapy / 6 – 10": {
+  "L1": [
+   "meet",
+   "read",
+   "pairs"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "pairs"
+  ],
+  "BI": [
+   "meet",
+   "read",
+   "say"
+  ]
+ },
+ "g1:Papapy / Mboy arýpa?": {
+  "L1": [
+   "meet",
+   "read",
+   "build"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "BI": [
+   "meet",
+   "pick",
+   "say"
+  ]
+ },
+ "g1:Achegety / A, e, i, o, u, y": {
+  "L1": [
+   "meet",
+   "letters",
+   "build"
+  ],
+  "L2": [
+   "meet",
+   "letters",
+   "say"
+  ],
+  "BI": [
+   "meet",
+   "letters",
+   "build"
+  ]
+ },
+ "g1:Achegety / Ã, ẽ, ĩ, õ, ũ, ỹ": {
+  "L1": [
+   "meet",
+   "letters",
+   "build"
+  ],
+  "L2": [
+   "meet",
+   "letters",
+   "say"
+  ],
+  "BI": [
+   "meet",
+   "letters",
+   "build"
+  ]
+ },
+ "g1:Achegety / Puso": {
+  "L1": [
+   "meet",
+   "letters",
+   "build"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "BI": [
+   "meet",
+   "letters",
+   "build"
+  ]
+ },
+ "g1:Ñande yvága / Kuarahy ha jasy": {
+  "L1": [
+   "meet",
+   "read",
+   "build"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "BI": [
+   "meet",
+   "pick",
+   "build"
+  ]
+ },
+ "g1:Ñande yvága / Pyhareve, ka'aru, pyhare": {
+  "L1": [
+   "meet",
+   "read",
+   "pairs"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "pairs"
+  ],
+  "BI": [
+   "meet",
+   "read",
+   "say"
+  ]
+ },
+ "g1:Ñande yvága / Mborevi Rape": {
+  "L1": [
+   "meet",
+   "story",
+   "pairs"
+  ],
+  "L2": [
+   "meet",
+   "story",
+   "pairs"
+  ],
+  "BI": [
+   "meet",
+   "story",
+   "pairs"
+  ]
+ },
+ "g2:Mymbakuéra / Mymba ógape": {
+  "L1": [
+   "meet",
+   "read",
+   "build"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "BI": [
+   "meet",
+   "pick",
+   "build"
+  ]
+ },
+ "g2:Mymbakuéra / Mymba ka'aguýpe": {
+  "L1": [
+   "meet",
+   "read",
+   "pairs"
+  ],
+  "L2": [
+   "meet",
+   "read",
+   "build"
+  ],
+  "BI": [
+   "meet",
+   "read",
+   "say"
+  ]
+ },
+ "g2:Mymbakuéra / Mymba yvágape": {
+  "L1": [
+   "meet",
+   "read",
+   "build"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "pairs"
+  ],
+  "BI": [
+   "meet",
+   "pick",
+   "pairs"
+  ]
+ },
+ "g2:Tembi'u / Chipa ha mandi'o": {
+  "L1": [
+   "meet",
+   "read",
+   "build"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "BI": [
+   "meet",
+   "pick",
+   "build"
+  ]
+ },
+ "g2:Tembi'u / Y ha kamby": {
+  "L1": [
+   "meet",
+   "read",
+   "pairs"
+  ],
+  "L2": [
+   "meet",
+   "read",
+   "build"
+  ],
+  "BI": [
+   "meet",
+   "read",
+   "say"
+  ]
+ },
+ "g2:Tembi'u / Yva ha mbeju": {
+  "L1": [
+   "meet",
+   "read",
+   "build"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "pairs"
+  ],
+  "BI": [
+   "meet",
+   "pick",
+   "pairs"
+  ]
+ },
+ "g2:Aikotevẽ / Hay'use, akaruse": {
+  "L1": [
+   "meet",
+   "read",
+   "build"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "BI": [
+   "meet",
+   "pick",
+   "say"
+  ]
+ },
+ "g2:Aikotevẽ / Ikatúpa asẽ?": {
+  "L1": [
+   "meet",
+   "read",
+   "pairs"
+  ],
+  "L2": [
+   "meet",
+   "read",
+   "say"
+  ],
+  "BI": [
+   "meet",
+   "read",
+   "say"
+  ]
+ },
+ "g2:Aikotevẽ / Ejapyhy": {
+  "L1": [
+   "meet",
+   "read",
+   "build"
+  ],
+  "L2": [
+   "meet",
+   "pick",
+   "say"
+  ],
+  "BI": [
+   "meet",
+   "pick",
+   "say"
+  ]
+ }
+}
