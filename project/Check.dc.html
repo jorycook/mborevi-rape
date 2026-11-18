@@ -21,11 +21,32 @@ a{color:#2A1B3D;text-decoration:none}a:hover{color:#2A1B3D}
 button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([aria-disabled='true']),a:active:not([aria-disabled='true']){transform:translateY(2px) scale(.98)}
 @keyframes tp-legA{0%,100%{transform:rotate(14deg)}50%{transform:rotate(-14deg)}}
 @keyframes tp-legB{0%,100%{transform:rotate(-14deg)}50%{transform:rotate(14deg)}}
+@keyframes tp-blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.12)}}
+@keyframes tp-talk-a{0%{opacity:1}50%{opacity:0}100%{opacity:0}}
+@keyframes tp-talk-b{0%{opacity:0}50%{opacity:1}100%{opacity:1}}
+@keyframes tp-hop-a{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}38%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}76%{transform:scale(1.06,.9)}88%{transform:scale(.98,1.03)}100%{transform:none}}
+@keyframes tp-hop-b{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}38%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}76%{transform:scale(1.06,.9)}88%{transform:scale(.98,1.03)}100%{transform:none}}
+@keyframes tp-hop2-a{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}22%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}44%{transform:scale(1.05,.92)}50%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}68%{transform:translateY(-9%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}86%{transform:scale(1.04,.94)}100%{transform:none}}
+@keyframes tp-hop2-b{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}22%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}44%{transform:scale(1.05,.92)}50%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}68%{transform:translateY(-9%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}86%{transform:scale(1.04,.94)}100%{transform:none}}
+@keyframes tp-recoil-a{0%,100%{transform:none}30%{transform:translateX(-4%) rotate(-5deg)}}
+@keyframes tp-recoil-b{0%,100%{transform:none}30%{transform:translateX(-4%) rotate(-5deg)}}
+@keyframes tp-perk-a{0%,100%{transform:none}40%{transform:translateY(-3%)}}
+@keyframes tp-perk-b{0%,100%{transform:none}40%{transform:translateY(-3%)}}
 @keyframes tp-tw{0%,100%{opacity:1}50%{opacity:.35}}
 @keyframes tp-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
 @keyframes tp-pop{0%{transform:scale(.6);opacity:0}60%{transform:scale(1.06);opacity:1}100%{transform:scale(1);opacity:1}}
 @keyframes tp-shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
 @keyframes tp-spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes tp-yes{0%{transform:scale(1)}35%{transform:scale(1.1)}65%{transform:scale(.97)}100%{transform:scale(1)}}
+@keyframes tp-deal-a{0%{transform:translateY(14px) scale(.92);opacity:0}100%{transform:none;opacity:1}}
+@keyframes tp-deal-b{0%{transform:translateY(14px) scale(.92);opacity:0}100%{transform:none;opacity:1}}
+@keyframes tp-dot{0%{transform:scale(1.7)}100%{transform:none}}
+@keyframes tp-ring{0%{transform:scale(.7);opacity:.9}100%{transform:scale(1.6);opacity:0}}
+@keyframes tp-ring-mic{0%{transform:scale(.85);opacity:.9}100%{transform:scale(1.3);opacity:0}}
+@keyframes tp-wave{0%,100%{transform:scaleY(.4)}50%{transform:scaleY(1)}}
+@keyframes tp-pop-big{0%{transform:scale(.4);opacity:0}60%{transform:scale(1.15);opacity:1}100%{transform:scale(1);opacity:1}}
+@keyframes tp-ring-big{0%{transform:scale(.6);opacity:.95}100%{transform:scale(2.2);opacity:0}}
+@keyframes tp-fade{from{opacity:0}to{opacity:1}}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
 </style>
 </helmet>
@@ -37,14 +58,14 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 </svg>
 
 <div style="position: relative; display: flex; align-items: center; gap: 10px; height: 44px; flex-shrink: 0">
-<a href="Main.dc.html" onClick="{{ close }}" aria-label="Volver al camino" style="width: 44px; height: 44px; margin-left: -6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFF7EC" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+<a href="Main.dc.html" onClick="{{ close }}" aria-label="Volver al camino" style="width: 56px; height: 56px; margin: -6px -6px -6px -12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFF7EC" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
 <div style="flex-grow: 1; display: flex; flex-direction: column; min-width: 0">
 <div lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.05">Mbyja guasu</div>
 <div style="font-size: 12px; font-weight: 700; color: #E4DDFF; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{ unitLine }}</div>
 </div>
 <div role="img" aria-label="{{ dotsAria }}" style="display: flex; gap: 3px; flex-shrink: 0">
 <sc-for list="{{ dots }}" as="d" hint-placeholder-count="5">
-<svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="{{ d.star }}" fill="{{ d.fill }}" stroke="#FFF7EC" stroke-width="1.6" stroke-linejoin="round"/></svg>
+<svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" style="animation: {{ d.anim }}"><path d="{{ d.star }}" fill="{{ d.fill }}" stroke="#FFF7EC" stroke-width="1.6" stroke-linejoin="round"/></svg>
 </sc-for>
 </div>
 </div>
@@ -53,9 +74,12 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 <div style="position: relative; margin-top: 12px; box-sizing: border-box; min-height: 160px; padding: 14px 16px; border-radius: 30px; background: #FFF7EC; color: #2A1B3D; border: 3px solid #3B2418; box-shadow: 0 6px 0 #3B2418; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; flex-shrink: 0">
 <div style="font-size: 12px; font-weight: 800; letter-spacing: 0.06em; color: #B4235C">{{ qLine }}</div>
 <sc-if value="{{ listenMode }}" hint-placeholder-val="{{ true }}">
-<button type="button" onClick="{{ listen }}" aria-label="Escuchar la palabra" style="width: 84px; height: 84px; border-radius: 42px; background: #8EC5FF; border: 3px solid #3B2418; box-shadow: 0 5px 0 #3B2418; display: flex; align-items: center; justify-content: center">
-<svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#2A1B3D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19 6a8.5 8.5 0 0 1 0 12"/></svg>
+<div style="position: relative; width: 84px; height: 84px; flex-shrink: 0">
+<sc-if value="{{ wave.on }}" hint-placeholder-val="{{ false }}"><div aria-hidden="true" style="position: absolute; inset: -10px; border-radius: 52px; border: 4px solid #FFD34E; opacity: 0.6; pointer-events: none; animation: tp-ring-mic 1.4s ease-out infinite"></div></sc-if>
+<button type="button" onClick="{{ listen }}" aria-label="Escuchar la palabra" style="position: relative; width: 84px; height: 84px; border-radius: 42px; background: #8EC5FF; border: 3px solid #3B2418; box-shadow: 0 5px 0 #3B2418; display: flex; align-items: center; justify-content: center">
+<svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#2A1B3D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7" opacity="{{ wave.arcs }}"/><path d="M19 6a8.5 8.5 0 0 1 0 12" opacity="{{ wave.arcs }}"/><path d="M16.2 11v6" opacity="{{ wave.bars }}" style="transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(.7); animation: {{ wave.a0 }}"/><path d="M19.2 7v10" opacity="{{ wave.bars }}" style="transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(.7); animation: {{ wave.a1 }}"/><path d="M22.2 10v7" opacity="{{ wave.bars }}" style="transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(.7); animation: {{ wave.a2 }}"/></svg>
 </button>
+</div>
 </sc-if>
 <sc-if value="{{ readMode }}" hint-placeholder-val="{{ false }}">
 <div lang="gn" style="font-family: 'Andika', 'Nunito', sans-serif; font-weight: 700; font-size: {{ wordSize }}; line-height: 1.1; text-align: center">{{ target.gn }}</div>
@@ -65,7 +89,8 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 
 <div style="position: relative; margin-top: 16px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; flex-shrink: 0">
 <sc-for list="{{ options }}" as="o" hint-placeholder-count="3">
-<button type="button" onClick="{{ o.pick }}" aria-label="{{ o.aria }}" aria-disabled="{{ o.off }}" style="height: 128px; box-sizing: border-box; padding: 8px 4px; border-radius: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; border: 3px solid #3B2418; background: {{ o.bg }}; box-shadow: 0 3px 0 #3B2418; color: #2A1B3D; animation: {{ o.anim }}; opacity: {{ o.opacity }}">
+<button type="button" onClick="{{ o.pick }}" aria-label="{{ o.aria }}" aria-disabled="{{ o.off }}" style="position: relative; height: 128px; box-sizing: border-box; padding: 8px 4px; border-radius: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; border: 3px solid #3B2418; background: {{ o.bg }}; box-shadow: 0 3px 0 #3B2418; color: #2A1B3D; animation: {{ o.anim }}; opacity: {{ o.opacity }}">
+<sc-if value="{{ o.hint }}" hint-placeholder-val="{{ false }}"><div aria-hidden="true" style="position: absolute; inset: -6px; border-radius: 28px; border: 4px solid #FFD34E; pointer-events: none; animation: tp-ring 1.4s ease-out infinite"></div></sc-if>
 <svg viewBox="0 0 100 100" width="82" height="82" aria-hidden="true">
 <path d="{{ o.pic.f0.d }}" fill="{{ o.pic.f0.fill }}" stroke="#2A1B3D" stroke-width="3" stroke-linejoin="round" fill-rule="{{ o.pic.rule }}"/>
 <path d="{{ o.pic.f1.d }}" fill="{{ o.pic.f1.fill }}" stroke="#2A1B3D" stroke-width="3" stroke-linejoin="round"/>
@@ -87,7 +112,7 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 <sc-if value="{{ finished }}" hint-placeholder-val="{{ false }}">
 <div style="position: relative; margin-top: 18px; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; flex-shrink: 0; animation: tp-pop 480ms ease-out">
 <div style="position: relative; width: 190px; height: 190px">
-<svg viewBox="0 0 190 190" width="190" height="190" aria-hidden="true" style="position: absolute; left: 0; top: 0; animation: tp-spin 24s linear infinite">
+<svg viewBox="0 0 190 190" width="190" height="190" aria-hidden="true" style="position: absolute; left: 0; top: 0; animation: tp-fade 600ms ease-out 200ms both, tp-spin 24s linear infinite">
 <path d="{{ rays }}" fill="#FFE7A3" opacity="0.35"/>
 </svg>
 <svg viewBox="0 0 190 190" width="190" height="190" aria-hidden="true" style="position: absolute; left: 0; top: 0">
@@ -99,7 +124,10 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 <div style="font-size: 15px; font-weight: 700; color: #E4DDFF">¡La estrella grande brilla! {{ resultLine }}</div>
 <div role="img" aria-label="{{ earnedAria }}" style="display: flex; gap: 8px">
 <sc-for list="{{ earned }}" as="e" hint-placeholder-count="3">
-<svg viewBox="0 0 44 44" width="44" height="44" aria-hidden="true"><path d="{{ e.d }}" fill="{{ e.fill }}" stroke="#FFF7EC" stroke-width="2.4" stroke-linejoin="round"/></svg>
+<div style="position: relative; width: 44px; height: 44px">
+<div aria-hidden="true" style="position: absolute; inset: 0; box-sizing: border-box; border-radius: 22px; border: 3px solid #FFD34E; opacity: 0; pointer-events: none; animation: {{ e.ring }}"></div>
+<svg viewBox="0 0 44 44" width="44" height="44" aria-hidden="true" style="position: relative; display: block; animation: {{ e.anim }}"><path d="{{ e.d }}" fill="{{ e.fill }}" stroke="#FFF7EC" stroke-width="2.4" stroke-linejoin="round"/></svg>
+</div>
 </sc-for>
 </div>
 </div>
@@ -114,7 +142,7 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 </sc-if>
 </div>
 <div style="animation: tp-bob 2.6s ease-in-out infinite">
-<dc-import name="Mborevi" pose="{{ pose }}" size="104" hint-size="104px,84px"></dc-import>
+<dc-import name="Mborevi" pose="{{ pose }}" talk="{{ talk }}" size="104" hint-size="104px,84px"></dc-import>
 </div>
 </div>
 <sc-if value="{{ playing }}" hint-placeholder-val="{{ true }}">
@@ -136,27 +164,84 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"app":{"editor":null},"act":{"editor":null},"$preview":{"width":390,"height":844}}'>
 /* The big star at the end of a unit: five questions on the unit's words, heard or read as the child's track says
-   (while the grade is oral, Preescolar and 1.º grado with Guarani as a second language, they are all heard; a child
-   with Guarani at home reads them; otherwise heard and read take turns). It is a celebration, not an exam: the star
-   always lights, and one to three small stars say how it went at the first try. At the end the result is announced
-   and the button to light the star takes the focus. On its own: 1.º grado, unit 1 (Maitei), Spanish at home. */
+   (while the grade is oral, Preescolar and 1.º grado with Guarani as a second language, they are all heard, and only
+   words that can be heard are asked; a child with Guarani at home reads them; otherwise heard and read take turns,
+   and a word with no voice yet is read). Each attempt asks a new set: one word per picture, one from each night in
+   turn, in a new order. In the app a question to hear plays its word by itself as it opens; after a miss the word
+   comes back, and after two the right card glows. It is a celebration, not an exam: the star always lights, and one
+   to three small stars, counted out one by one, say how it went at the first try. At the end the result is
+   announced and the button to light the star takes the focus (it works at once, while the stars still come).
+   On its own (silent, the same questions every time): 1.º grado, unit 1 (Maitei), Spanish at home. */
 const ROUNDS = 5;
 class Component extends DCLogic {
 constructor(props) {
 super(props);
-this.state = { r: 0, wrong: [], right: false, said: false, first: 0, finished: false };
+this.state = { r: 0, wrong: [], right: false, said: false, voiced: false, oops: false, first: 0, finished: false };
 this.timers = [];
+/* mixed into every seed: a new attempt asks new questions, '' on its own and in the tests */
+this.salt = window.tpCourse.salt(props);
+this.misses = 0;
 this.doneRef = (el) => { this.doneEl = el; };
 }
 componentWillUnmount() { this.timers.forEach((t) => clearTimeout(t)); this.offBack(); }
 /* the phone's Back on the site (App) asks this screen what its close button would do */
-componentDidMount() { this.onBack(); }
+componentDidMount() { this.onBack(); this.autoPlay(); }
 onBack() { const act = this.props.act; if (!act) return; const f = () => this.leave(); f.board = this; act.leave = f; }
 offBack() { const act = this.props.act; if (act && act.leave && act.leave.board === this) act.leave = null; }
 componentDidUpdate() {
 const f = !!this.state.finished;
-if (f && !this.wasFinished) { if (this.doneEl) this.doneEl.focus(); window.tpCourse.say(this.endLine); }
+if (f && !this.wasFinished) { if (this.doneEl) this.doneEl.focus(); this.beep('star'); window.tpCourse.say(this.endLine); }
 this.wasFinished = f;
+this.autoPlay();
+}
+/* a little sound that is not a voice (it answers with the voice off too), in the app only */
+beep(kind) { const S = window.tpSound; if (this.props.act && S && S.beep) S.beep(kind); }
+/* A question to hear plays its word by itself a moment after it opens, in the app only (on its own the board stays
+   silent), unless the child was quicker: a tap on the speaker or on a picture. A question to read waits. */
+autoPlay() {
+const id = this.roundId;
+if (!this.props.act || id === undefined || id === this.spoken) return;
+this.spoken = id;
+if (!id || !this.roundHeard || !this.listenNow) return;
+const listen = this.listenNow;
+this.timers.push(setTimeout(() => {
+const st = this.state;
+if (this.spoken === id && this.roundId === id && this.heardIn !== id && !st.right && !st.wrong.length && !st.finished) listen();
+}, 450));
+}
+/* The questions of this attempt: each night's words in a new order (by ear only those that can be heard), then
+   one word from each night in turn (the first night a new one too) up to five, never a picture or a word already
+   asked (so a night whose pictures came earlier in the unit still gets its own turn: «Che akã» after «akã»), in a
+   new order. A new set at every attempt, the same during it. */
+questions(s, g, unitN, oral) {
+const C = window.tpCourse;
+const salt = this.salt || '';
+const key = g + '|' + unitN + '|' + oral + '|' + salt;
+if (this.qKey === key) return this.qList;
+const u = C.unit(g, unitN) || { nights: [] };
+const seed = (s ? s.id : C.checkId(g, unitN)) + 'check' + salt;
+const nights = (u.nights || []).map((nt, i) => C.shuffle((nt.words || []).map((w) => C.word(w)).filter((w) => !oral || C.voiced(w)), seed + 'n' + i));
+const from = nights.length ? Math.floor(C.rng(seed + 's')() * nights.length) : 0;
+const at = nights.map(() => 0);
+const seen = {};
+const out = [];
+for (let more = true; more && out.length < ROUNDS;) {
+more = false;
+for (let j = 0; j < nights.length && out.length < ROUNDS; j++) {
+const i = (from + j) % nights.length, l = nights[i];
+while (at[i] < l.length) {
+const w = l[at[i]++], p = 'p:' + w.picKey, t = 't:' + C.fold(w.gn);
+if (seen[p] || seen[t]) continue;
+seen[p] = 1; seen[t] = 1;
+out.push(w);
+more = true;
+break;
+}
+}
+}
+this.qKey = key;
+this.qList = C.shuffle(out, seed + 'o');
+return this.qList;
 }
 view() {
 const C = window.tpCourse;
@@ -170,66 +255,100 @@ const S = window.tpSound;
 const act = this.props.act;
 const app = this.view();
 const s = app.step;
+const st = this.state;
 const g = s ? s.grade : 'g1';
 const unitN = s ? s.unit : 1;
-const unit = C.unit(g, unitN) || { gn: '', es: '' };
-const seen = {};
-const all = C.unitWords(g, unitN).map((w) => C.word(w)).filter((w) => { if (seen[w.gn]) return false; seen[w.gn] = 1; return true; });
-const words = C.shuffle(all, (s ? s.id : '') + 'check').slice(0, ROUNDS);
-const n = words.length;
-const r = Math.min(this.state.r, Math.max(0, n - 1));
-const target = words[r] || C.word({ gn: '', es: '', pic: '' });
+const unit = C.unit(g, unitN) || { gn: '', es: '', nights: [] };
 const track = app.track || 'L2';
-const read = !!s && !C.isOral(s, track) && (track === 'L1' || r % 2 === 1);
+const oral = C.isOral(s, track);
+const salt = this.salt || '';
+const words = this.questions(s, g, unitN, oral);
+const n = words.length;
+const r = Math.min(st.r, Math.max(0, n - 1));
+const target = words[r] || C.word({ gn: '', es: '', pic: '' });
+const read = !!s && !oral && (track === 'L1' || r % 2 === 1 || !C.voiced(target));
 this.endLine = C.VOICE.big;
-const finished = this.state.finished || n === 0;
-const opts = n ? C.shuffle([target].concat(C.distractors(target, g, unitN, 2, (s ? s.id : '') + r)), (s ? s.id : '') + 'co' + r) : [];
+const finished = st.finished || n === 0;
+const sid = s ? s.id : '';
+/* the other pictures: the unit's last night first, then its earlier ones, never two that look alike */
+const opts = n ? C.shuffle([target].concat(C.distractors(target, g, unitN, 2, sid + r + salt, (unit.nights || []).length)), sid + 'co' + r + salt) : [];
 const key = 'w:' + C.fold(target.gn);
-const listen = () => {
-if (S) S.unlock();
-const played = S && S.has(key) ? S.play(key) : false;
-this.setState({ said: true, voiced: !!played });
-clearTimeout(this.saidT);
-this.saidT = setTimeout(() => this.setState({ said: false }), played ? Math.max(900, S.ms(key) + 300) : 1800);
-this.timers.push(this.saidT);
-};
-const wrong = this.state.wrong;
+const id = finished ? '' : sid + ':' + r;
+const listen = () => { this.heardIn = id; C.listen(this, key); };
+/* after a miss the word comes back; a word to read only when it has a voice (it is written on the card already) */
+const replay = () => { if (!read || (S && S.has(key))) listen(); };
+this.roundId = id;
+this.roundHeard = !read;
+this.listenNow = listen;
+const wrong = st.wrong;
+const hint = wrong.length >= 2 && !st.right && !finished;
+/* the cards come in one after another, the same motion again at each new question (a and b take turns) */
+const deal = 'tp-deal-' + (r % 2 ? 'b' : 'a') + ' 320ms cubic-bezier(.2,.8,.2,1) ';
 const options = opts.map((o, k) => {
 const isT = o.gn === target.gn;
 const bad = wrong.indexOf(k) >= 0;
-const good = this.state.right && isT;
+const good = st.right && isT;
 return {
 pic: o.pic, label: good || bad ? o.es : '', aria: 'Dibujo: ' + o.es,
 bg: good ? '#B8F0E0' : bad ? '#FFB98A' : '#FFF7EC',
-anim: bad ? 'tp-shake 420ms ease-out' : good ? 'tp-pop 380ms ease-out' : 'none',
-opacity: this.state.right && !isT ? 0.55 : 1,
-off: this.state.right || bad ? 'true' : 'false',
+anim: bad ? 'tp-shake 420ms ease-out' : good ? 'tp-yes 420ms cubic-bezier(.2,.8,.2,1)' : deal + k * 70 + 'ms backwards',
+hint: hint && isT,
+opacity: st.right && !isT ? 0.55 : 1,
+off: st.right || bad ? 'true' : 'false',
+/* a tap reads the question as it is when it comes: one after the right answer, or on a card already tried, does nothing */
 pick: () => {
-if (this.state.right || bad) return;
+const now = this.state;
+if (now.finished || now.right || now.r !== r || now.wrong.indexOf(k) >= 0) return;
 if (isT) {
+this.beep('right');
 C.say(C.VOICE.good);
-this.setState({ right: true, first: this.state.first + (wrong.length === 0 ? 1 : 0) });
+this.setState({ right: true, oops: false, first: now.first + (now.wrong.length ? 0 : 1) });
+/* the next question once «Iporãite!» is over: its word then plays by itself */
 this.timers.push(setTimeout(() => {
 clearTimeout(this.saidT);
-if (r + 1 < n) this.setState({ r: r + 1, wrong: [], right: false, said: false });
-else this.setState({ finished: true, right: false });
+if (r + 1 < n) this.setState({ r: r + 1, wrong: [], right: false, said: false, oops: false });
+else this.setState({ finished: true, right: false, said: false, oops: false });
 }, 1000));
-} else { C.say(C.VOICE.again); this.setState({ wrong: wrong.concat([k]) }); }
+} else {
+this.beep('wrong');
+C.say(C.VOICE.again);
+const m = ++this.misses;
+this.setState({ wrong: now.wrong.concat([k]), oops: true });
+/* surprised for a moment, then listening again; the word again once «Eha'ã jey» has been said */
+this.timers.push(setTimeout(() => { if (this.misses === m) this.setState({ oops: false }); }, 900));
+this.timers.push(setTimeout(() => {
+const later = this.state;
+if (this.misses === m && later.r === r && !later.right && !later.finished) replay();
+}, 1400));
+}
 }
 };
 });
-const first = this.state.first;
+const first = st.first;
 const stars = n ? (first / n >= 0.9 ? 3 : first / n >= 0.6 ? 2 : 1) : 1;
 const meta = C.meta(g);
 const fig = C.figure(meta.sky, 0);
 let rays = '';
 for (let k = 0; k < 12; k++) { const a = (k * Math.PI) / 6; rays += 'M95 95L' + (95 + Math.cos(a - 0.12) * 95).toFixed(1) + ' ' + (95 + Math.sin(a - 0.12) * 95).toFixed(1) + 'L' + (95 + Math.cos(a + 0.12) * 95).toFixed(1) + ' ' + (95 + Math.sin(a + 0.12) * 95).toFixed(1) + 'Z'; }
+/* The small stars are counted out one by one, each with a ring, a third of a second apart; the ones not earned
+   only fade in. All is in place within 1.6 s (three stars start a little sooner), and the button works from the
+   start. */
+const at = Math.min(650, 1590 - 520 - 320 * (stars - 1));
+const earned = [0, 1, 2].map((k) => (k < stars
+? { d: C.puffyD(22, 23, 19), fill: '#FFD34E', anim: 'tp-pop-big 520ms cubic-bezier(.2,.8,.2,1) ' + (at + 320 * k) + 'ms both', ring: 'tp-ring-big 700ms ease-out ' + (at + 320 * k) + 'ms' }
+: { d: C.puffyD(22, 23, 19), fill: 'transparent', anim: 'tp-fade 300ms ' + (at + 320 * stars) + 'ms both', ring: 'none' }));
+/* a word playing: the speaker rings and its bars move, and Mborevi'i talks */
+const talk = !!(st.said && st.voiced) && !finished;
+const wave = talk && !read;
+const bar = (ms) => (wave ? 'tp-wave 520ms ease-in-out ' + ms + 'ms infinite' : 'none');
+/* the star that has just filled */
+const filled = finished ? n - 1 : r - 1;
 /* what the close button does, which the phone's Back does too (a big star that is over stays lit) */
 this.leave = () => { if (finished) act.checked(first, n); else act.go('Main'); };
 return {
 field: C.starfield('check', 390, 40, 760, 60),
 unitLine: (unit.gn ? C.norm(unit.gn) : 'Unidad ' + unitN) + ' · ' + fig.gn,
-dots: words.map((x, k) => ({ star: C.puffyD(10, 10.5, 8.6), fill: finished || k < r ? '#FFD34E' : 'transparent' })),
+dots: words.map((x, k) => ({ star: C.puffyD(10, 10.5, 8.6), fill: finished || k < r ? '#FFD34E' : 'transparent', anim: k === filled ? 'tp-dot 300ms cubic-bezier(.2,.8,.2,1)' : 'none' })),
 dotsAria: 'Pregunta ' + Math.min(r + 1, n) + ' de ' + n,
 playing: !finished, finished,
 qLine: 'PREGUNTA ' + Math.min(r + 1, n) + ' DE ' + n,
@@ -237,13 +356,15 @@ listenMode: !read, readMode: read,
 target, wordSize: C.chars(target.gn).length > 14 ? '28px' : '40px',
 ask: read ? '¿Qué dibujo es?' : 'Escuchá y tocá el dibujo',
 options, listen,
-say: this.state.right ? { gn: 'Iporãite!', es: '«' + target.gn + '»: ' + (/[.!?…]$/.test(target.es) ? target.es : target.es + '.') } : wrong.length ? { gn: "Eha'ã jey", es: 'Probá otra vez.' } : { gn: 'Nde katupyry!', es: '¡Vos sabés!' },
-bubble: { on: this.state.said && !this.state.voiced && !finished && !this.state.right, text: target.gn },
-pose: finished ? 'cheer' : this.state.right ? 'happy' : wrong.length ? 'oops' : this.state.said ? 'listen' : 'stand',
+wave: { on: wave, arcs: wave ? 0 : 1, bars: wave ? 1 : 0, a0: bar(0), a1: bar(130), a2: bar(260) },
+talk,
+say: st.right ? { gn: 'Iporãite!', es: '«' + target.gn + '»: ' + (/[.!?…]$/.test(target.es) ? target.es : target.es + '.') } : wrong.length ? { gn: "Eha'ã jey", es: 'Probá otra vez.' } : { gn: 'Nde katupyry!', es: '¡Vos sabés!' },
+bubble: { on: st.said && !st.voiced && !finished && !st.right, text: target.gn },
+pose: finished ? 'cheer' : st.right ? 'happy' : st.oops ? 'oops' : wrong.length || st.said ? 'listen' : 'stand',
 bigStar: C.puffyD(95, 98, 78),
 rays,
 resultLine: first + ' de ' + n + ' a la primera.',
-earned: [0, 1, 2].map((k) => ({ d: C.puffyD(22, 23, 19), fill: k < stars ? '#FFD34E' : 'transparent' })),
+earned,
 earnedAria: stars + ' de 3 estrellas',
 announce: finished && n ? "Mbyja guasu omimbi! ¡La estrella grande brilla! " + first + ' de ' + n + ' a la primera: ' + stars + ' de 3 estrellas.' : '',
 doneRef: this.doneRef,
