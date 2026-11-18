@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>La estrella grande</title>
+<script src="./support.js"></script>
+<script src="./tp-sound.js"></script>
+<script src="./tp-course.js"></script>
+<script src="./tp-grades.js"></script>
+<script src="./tp-pics.js"></script>
+<script src="./tp-sky.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&amp;family=Baloo+2:wght@600;700;800&amp;family=Nunito:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:#2A1B3D;text-decoration:none}a:hover{color:#2A1B3D}
+@keyframes tp-legA{0%,100%{transform:rotate(14deg)}50%{transform:rotate(-14deg)}}
+@keyframes tp-legB{0%,100%{transform:rotate(-14deg)}50%{transform:rotate(14deg)}}
+@keyframes tp-tw{0%,100%{opacity:1}50%{opacity:.35}}
+@keyframes tp-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes tp-pop{0%{transform:scale(.6);opacity:0}60%{transform:scale(1.06);opacity:1}100%{transform:scale(1);opacity:1}}
+@keyframes tp-shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
+@keyframes tp-spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; position: relative; overflow: hidden; box-sizing: border-box; padding: 50px 16px 34px; background: radial-gradient(circle at 50% 18%, #6B4FD8 0%, #33207E 38%, #1E1460 75%, #110A38 100%); color: #FFF7EC; font-family: 'Nunito', 'Avenir Next', sans-serif; display: flex; flex-direction: column">
+
+<svg width="390" height="844" viewBox="0 0 390 844" style="position: absolute; left: 0; top: 0" aria-hidden="true">
+<path d="{{ field.dim }}" fill="#FFF6DD" opacity="0.35"/>
+<path d="{{ field.dots }}" fill="#FFF6DD" opacity="0.85" style="animation: tp-tw 3.6s ease-in-out infinite"/>
+</svg>
+
+<div style="position: relative; display: flex; align-items: center; gap: 10px; height: 44px; flex-shrink: 0">
+<a href="Main.dc.html" onClick="{{ close }}" aria-label="Volver al camino" style="width: 44px; height: 44px; margin-left: -6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFF7EC" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+<div style="flex-grow: 1; display: flex; flex-direction: column; min-width: 0">
+<div lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.05">Mbyja guasu</div>
+<div style="font-size: 12px; font-weight: 700; color: #E4DDFF; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{ unitLine }}</div>
+</div>
+<div role="img" aria-label="{{ dotsAria }}" style="display: flex; gap: 3px; flex-shrink: 0">
+<sc-for list="{{ dots }}" as="d" hint-placeholder-count="5">
+<svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="{{ d.star }}" fill="{{ d.fill }}" stroke="#FFF7EC" stroke-width="1.6" stroke-linejoin="round"/></svg>
+</sc-for>
+</div>
+</div>
+
+<sc-if value="{{ playing }}" hint-placeholder-val="{{ true }}">
+<div style="position: relative; margin-top: 12px; box-sizing: border-box; min-height: 160px; padding: 14px 16px; border-radius: 30px; background: #FFF7EC; color: #2A1B3D; border: 3px solid #3B2418; box-shadow: 0 6px 0 #3B2418; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; flex-shrink: 0">
+<div style="font-size: 12px; font-weight: 800; letter-spacing: 0.06em; color: #B4235C">{{ qLine }}</div>
+<sc-if value="{{ listenMode }}" hint-placeholder-val="{{ true }}">
+<button type="button" onClick="{{ listen }}" aria-label="Escuchar la palabra" style="width: 84px; height: 84px; border-radius: 42px; background: #8EC5FF; border: 3px solid #3B2418; box-shadow: 0 5px 0 #3B2418; display: flex; align-items: center; justify-content: center">
+<svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#2A1B3D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19 6a8.5 8.5 0 0 1 0 12"/></svg>
+</button>
+</sc-if>
+<sc-if value="{{ readMode }}" hint-placeholder-val="{{ false }}">
+<div lang="gn" style="font-family: 'Andika', 'Nunito', sans-serif; font-weight: 700; font-size: {{ wordSize }}; line-height: 1.1; text-align: center">{{ target.gn }}</div>
+</sc-if>
+<div style="font-size: 15px; font-weight: 800; text-align: center; color: #5C4E86">{{ ask }}</div>
+</div>
+
+<div style="position: relative; margin-top: 16px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; flex-shrink: 0">
+<sc-for list="{{ options }}" as="o" hint-placeholder-count="3">
+<button type="button" onClick="{{ o.pick }}" aria-label="{{ o.aria }}" aria-disabled="{{ o.off }}" style="height: 128px; box-sizing: border-box; padding: 8px 4px; border-radius: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; border: 3px solid #3B2418; background: {{ o.bg }}; box-shadow: 0 3px 0 #3B2418; color: #2A1B3D; animation: {{ o.anim }}; opacity: {{ o.opacity }}">
+<svg viewBox="0 0 100 100" width="82" height="82" aria-hidden="true">
+<path d="{{ o.pic.f0.d }}" fill="{{ o.pic.f0.fill }}" stroke="#2A1B3D" stroke-width="3" stroke-linejoin="round" fill-rule="{{ o.pic.rule }}"/>
+<path d="{{ o.pic.f1.d }}" fill="{{ o.pic.f1.fill }}" stroke="#2A1B3D" stroke-width="3" stroke-linejoin="round"/>
+<path d="{{ o.pic.f2.d }}" fill="{{ o.pic.f2.fill }}" stroke="#2A1B3D" stroke-width="3" stroke-linejoin="round"/>
+<path d="{{ o.pic.f3.d }}" fill="{{ o.pic.f3.fill }}" stroke="#2A1B3D" stroke-width="3" stroke-linejoin="round"/>
+<path d="{{ o.pic.f4.d }}" fill="{{ o.pic.f4.fill }}" stroke="#2A1B3D" stroke-width="3" stroke-linejoin="round"/>
+<path d="{{ o.pic.f5.d }}" fill="{{ o.pic.f5.fill }}" stroke="#2A1B3D" stroke-width="3" stroke-linejoin="round"/>
+<path d="{{ o.pic.pink }}" fill="#FF8FAB" opacity="0.75"/>
+<path d="{{ o.pic.white }}" fill="#FFFFFF"/>
+<path d="{{ o.pic.ink }}" fill="#2A1B3D"/>
+<path d="{{ o.pic.line }}" fill="none" stroke="#2A1B3D" stroke-width="{{ o.pic.lineW }}" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+<div style="font-size: 13px; font-weight: 800; line-height: 1.1; text-align: center; min-height: 15px">{{ o.label }}</div>
+</button>
+</sc-for>
+</div>
+</sc-if>
+
+<sc-if value="{{ finished }}" hint-placeholder-val="{{ false }}">
+<div style="position: relative; margin-top: 18px; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center; flex-shrink: 0; animation: tp-pop 480ms ease-out">
+<div style="position: relative; width: 190px; height: 190px">
+<svg viewBox="0 0 190 190" width="190" height="190" aria-hidden="true" style="position: absolute; left: 0; top: 0; animation: tp-spin 24s linear infinite">
+<path d="{{ rays }}" fill="#FFE7A3" opacity="0.35"/>
+</svg>
+<svg viewBox="0 0 190 190" width="190" height="190" aria-hidden="true" style="position: absolute; left: 0; top: 0">
+<path d="{{ bigStar }}" fill="#FFD34E" stroke="#3B2418" stroke-width="4" stroke-linejoin="round"/>
+<path d="M72 94q6.6-9 13.2 0M104.8 94q6.6-9 13.2 0M84 108q11 11 22 0" fill="none" stroke="#3B2418" stroke-width="4" stroke-linecap="round"/>
+</svg>
+</div>
+<div lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 32px; line-height: 1">Mbyja guasu omimbi!</div>
+<div style="font-size: 15px; font-weight: 700; color: #E4DDFF">¡La estrella grande brilla! {{ resultLine }}</div>
+<div role="img" aria-label="{{ earnedAria }}" style="display: flex; gap: 8px">
+<sc-for list="{{ earned }}" as="e" hint-placeholder-count="3">
+<svg viewBox="0 0 44 44" width="44" height="44" aria-hidden="true"><path d="{{ e.d }}" fill="{{ e.fill }}" stroke="#FFF7EC" stroke-width="2.4" stroke-linejoin="round"/></svg>
+</sc-for>
+</div>
+</div>
+</sc-if>
+
+<div style="flex-grow: 1"></div>
+<div style="position: relative; display: flex; align-items: flex-end; gap: 10px; flex-shrink: 0">
+<div style="position: relative; flex-shrink: 0">
+<div lang="gn" role="status" style="position: absolute; left: 70px; bottom: 70px">
+<sc-if value="{{ bubble.on }}" hint-placeholder-val="{{ false }}">
+<div style="padding: 6px 12px; border-radius: 16px; background: #FFF7EC; color: #2A1B3D; border: 2px solid #3B2418; font-family: 'Andika', 'Nunito', sans-serif; font-weight: 700; font-size: 18px; white-space: nowrap; animation: tp-pop 300ms ease-out">{{ bubble.text }}</div>
+</sc-if>
+</div>
+<div style="animation: tp-bob 2.6s ease-in-out infinite">
+<dc-import name="Mborevi" pose="{{ pose }}" size="104" hint-size="104px,84px"></dc-import>
+</div>
+</div>
+<sc-if value="{{ playing }}" hint-placeholder-val="{{ true }}">
+<div role="status" style="flex-grow: 1; margin-bottom: 14px; display: flex; flex-direction: column">
+<div lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 24px; line-height: 1.1">{{ say.gn }}</div>
+<div style="font-size: 14px; font-weight: 700; color: #CFC6FF">{{ say.es }}</div>
+</div>
+</sc-if>
+<sc-if value="{{ finished }}" hint-placeholder-val="{{ false }}">
+<a href="Shine.dc.html" onClick="{{ done }}" ref="{{ doneRef }}" style="flex-grow: 1; height: 60px; margin-bottom: 8px; border-radius: 30px; background: #FFD34E; border: 3px solid #3B2418; box-shadow: 0 5px 0 #3B2418; display: flex; align-items: center; justify-content: center; gap: 10px; color: #2A1B3D">
+<span lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 22px">Jaha!</span>
+<span style="font-size: 15px; font-weight: 800; color: #5C4E86">Encender la estrella</span>
+</a>
+</sc-if>
+</div>
+
+<div role="status" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">{{ announce }}</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"app":{"editor":null},"act":{"editor":null},"$preview":{"width":390,"height":844}}'>
+/* The big star at the end of a unit: five questions on the unit's words, heard or read as the child's track says
+   (while the grade is oral, Preescolar and 1.º grado with Guarani as a second language, they are all heard; a child
+   with Guarani at home reads them; otherwise heard and read take turns). It is a celebration, not an exam: the star
+   always lights, and one to three small stars say how it went at the first try. At the end the result is announced
+   and the button to light the star takes the focus. On its own: 1.º grado, unit 1 (Maitei), Spanish at home. */
+const ROUNDS = 5;
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { r: 0, wrong: [], right: false, said: false, first: 0, finished: false };
+this.timers = [];
+this.doneRef = (el) => { this.doneEl = el; };
+}
+componentWillUnmount() { this.timers.forEach((t) => clearTimeout(t)); }
+componentDidUpdate() {
+const f = !!this.state.finished;
+if (f && !this.wasFinished) { if (this.doneEl) this.doneEl.focus(); window.tpCourse.say(this.endLine); }
+this.wasFinished = f;
+}
+view() {
+const C = window.tpCourse;
+if (this.props.app) return this.props.app;
+if (!this.sample) { const st = C.sample('g1', 'L2', 3); st.cur = 'g1u01c'; this.sample = C.view(st); }
+return this.sample;
+}
+renderVals() {
+const C = window.tpCourse;
+const S = window.tpSound;
+const act = this.props.act;
+const app = this.view();
+const s = app.step;
+const g = s ? s.grade : 'g1';
+const unitN = s ? s.unit : 1;
+const unit = C.unit(g, unitN) || { gn: '', es: '' };
+const seen = {};
+const all = C.unitWords(g, unitN).map((w) => C.word(w)).filter((w) => { if (seen[w.gn]) return false; seen[w.gn] = 1; return true; });
+const words = C.shuffle(all, (s ? s.id : '') + 'check').slice(0, ROUNDS);
+const n = words.length;
+const r = Math.min(this.state.r, Math.max(0, n - 1));
+const target = words[r] || C.word({ gn: '', es: '', pic: '' });
+const track = app.track || 'L2';
+const read = !!s && !C.isOral(s, track) && (track === 'L1' || r % 2 === 1);
+this.endLine = C.VOICE.big;
+const finished = this.state.finished || n === 0;
+const opts = n ? C.shuffle([target].concat(C.distractors(target, g, unitN, 2, (s ? s.id : '') + r)), (s ? s.id : '') + 'co' + r) : [];
+const key = 'w:' + C.fold(target.gn);
+const listen = () => {
+if (S) S.unlock();
+const played = S && S.has(key) ? S.play(key) : false;
+this.setState({ said: true, voiced: !!played });
+clearTimeout(this.saidT);
+this.saidT = setTimeout(() => this.setState({ said: false }), played ? Math.max(900, S.ms(key) + 300) : 1800);
+this.timers.push(this.saidT);
+};
+const wrong = this.state.wrong;
+const options = opts.map((o, k) => {
+const isT = o.gn === target.gn;
+const bad = wrong.indexOf(k) >= 0;
+const good = this.state.right && isT;
+return {
+pic: o.pic, label: good || bad ? o.es : '', aria: 'Dibujo: ' + o.es,
+bg: good ? '#B8F0E0' : bad ? '#FFB98A' : '#FFF7EC',
+anim: bad ? 'tp-shake 420ms ease-out' : good ? 'tp-pop 380ms ease-out' : 'none',
+opacity: this.state.right && !isT ? 0.55 : 1,
+off: this.state.right || bad ? 'true' : 'false',
+pick: () => {
+if (this.state.right || bad) return;
+if (isT) {
+C.say(C.VOICE.good);
+this.setState({ right: true, first: this.state.first + (wrong.length === 0 ? 1 : 0) });
+this.timers.push(setTimeout(() => {
+clearTimeout(this.saidT);
+if (r + 1 < n) this.setState({ r: r + 1, wrong: [], right: false, said: false });
+else this.setState({ finished: true, right: false });
+}, 1000));
+} else { C.say(C.VOICE.again); this.setState({ wrong: wrong.concat([k]) }); }
+}
+};
+});
+const first = this.state.first;
+const stars = n ? (first / n >= 0.9 ? 3 : first / n >= 0.6 ? 2 : 1) : 1;
+const meta = C.meta(g);
+const fig = C.figure(meta.sky, 0);
+let rays = '';
+for (let k = 0; k < 12; k++) { const a = (k * Math.PI) / 6; rays += 'M95 95L' + (95 + Math.cos(a - 0.12) * 95).toFixed(1) + ' ' + (95 + Math.sin(a - 0.12) * 95).toFixed(1) + 'L' + (95 + Math.cos(a + 0.12) * 95).toFixed(1) + ' ' + (95 + Math.sin(a + 0.12) * 95).toFixed(1) + 'Z'; }
+return {
+field: C.starfield('check', 390, 40, 760, 60),
+unitLine: (unit.gn ? C.norm(unit.gn) : 'Unidad ' + unitN) + ' · ' + fig.gn,
+dots: words.map((x, k) => ({ star: C.puffyD(10, 10.5, 8.6), fill: finished || k < r ? '#FFD34E' : 'transparent' })),
+dotsAria: 'Pregunta ' + Math.min(r + 1, n) + ' de ' + n,
+playing: !finished, finished,
+qLine: 'PREGUNTA ' + Math.min(r + 1, n) + ' DE ' + n,
+listenMode: !read, readMode: read,
+target, wordSize: C.chars(target.gn).length > 14 ? '28px' : '40px',
+ask: read ? '¿Qué dibujo es?' : 'Escuchá y tocá el dibujo',
+options, listen,
+say: this.state.right ? { gn: 'Iporãite!', es: '«' + target.gn + '»: ' + (/[.!?…]$/.test(target.es) ? target.es : target.es + '.') } : wrong.length ? { gn: "Eha'ã jey", es: 'Probá otra vez.' } : { gn: 'Nde katupyry!', es: '¡Vos sabés!' },
+bubble: { on: this.state.said && !this.state.voiced && !finished && !this.state.right, text: target.gn },
+pose: finished ? 'cheer' : this.state.right ? 'happy' : wrong.length ? 'oops' : this.state.said ? 'listen' : 'stand',
+bigStar: C.puffyD(95, 98, 78),
+rays,
+resultLine: first + ' de ' + n + ' a la primera.',
+earned: [0, 1, 2].map((k) => ({ d: C.puffyD(22, 23, 19), fill: k < stars ? '#FFD34E' : 'transparent' })),
+earnedAria: stars + ' de 3 estrellas',
+announce: finished && n ? "Mbyja guasu omimbi! ¡La estrella grande brilla! " + first + ' de ' + n + ' a la primera: ' + stars + ' de 3 estrellas.' : '',
+doneRef: this.doneRef,
+close: (e) => { if (act) { e.preventDefault(); if (finished) act.checked(first, n); else act.go('Main'); } },
+done: (e) => { if (act) { e.preventDefault(); act.checked(first, n); } }
+};
+}
+}
+</script>
+</body>
+</html>

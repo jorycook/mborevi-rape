@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>El cielo de los grados</title>
+<script src="./support.js"></script>
+<script src="./tp-course.js"></script>
+<script src="./tp-grades.js"></script>
+<script src="./tp-sky.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&amp;family=Baloo+2:wght@600;700;800&amp;family=Nunito:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:#2A1B3D;text-decoration:none}a:hover{color:#2A1B3D}
+@keyframes tp-legA{0%,100%{transform:rotate(14deg)}50%{transform:rotate(-14deg)}}
+@keyframes tp-legB{0%,100%{transform:rotate(-14deg)}50%{transform:rotate(14deg)}}
+@keyframes tp-tw{0%,100%{opacity:1}50%{opacity:.35}}
+@keyframes tp-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; position: relative; overflow: hidden; background: linear-gradient(180deg, #F7A86E 0%, #B9619E 12%, #4A2A8F 26%, #1E1460 58%, #110A38 100%); color: #FFF7EC; font-family: 'Nunito', 'Avenir Next', sans-serif">
+
+<svg width="390" height="844" viewBox="0 0 390 844" style="position: absolute; left: 0; top: 0" aria-hidden="true">
+<defs>
+<filter id="tp-sky-blur" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="15"/></filter>
+<filter id="tp-sky-soft" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6"/></filter>
+</defs>
+<path d="{{ field.dim }}" fill="#FFF6DD" opacity="0.4"/>
+<path d="{{ field.dots }}" fill="#FFF6DD" style="animation: tp-tw 3.6s ease-in-out infinite"/>
+<path d="{{ field.sparks }}" fill="#FFF6DD" style="animation: tp-tw 2.6s 1s ease-in-out infinite"/>
+<path d="{{ band }}" fill="none" stroke="#A996FF" stroke-width="120" stroke-linecap="round" opacity="0.2" filter="url(#tp-sky-blur)"/>
+<path d="{{ band }}" fill="none" stroke="#FFC7DD" stroke-width="56" stroke-linecap="round" opacity="0.18" filter="url(#tp-sky-blur)"/>
+<path d="{{ band }}" fill="none" stroke="#FFF1D0" stroke-width="20" stroke-linecap="round" opacity="0.22" filter="url(#tp-sky-soft)"/>
+<path d="{{ dust.a }}" fill="#FFF3D6" opacity="0.7"/>
+<path d="{{ dust.b }}" fill="#FFF3D6" opacity="0.4"/>
+<path d="{{ band }}" fill="none" stroke="#FFE9A8" stroke-width="2.6" stroke-dasharray="1 10" stroke-linecap="round" opacity="0.7"/>
+</svg>
+
+<div style="position: absolute; left: 16px; right: 16px; top: 46px; box-sizing: border-box; padding: 6px 14px 8px 4px; border-radius: 22px; background: #FFF7EC; color: #2A1B3D; border: 3px solid #3B2418; display: flex; align-items: center; gap: 2px">
+<a href="Main.dc.html" onClick="{{ toMain }}" aria-label="Volver al camino" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2A1B3D" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></a>
+<div style="display: flex; flex-direction: column; min-width: 0">
+<h1 style="margin: 0; font-family: 'Baloo 2', 'Nunito', sans-serif; font-size: 22px; font-weight: 800; line-height: 1.1">El cielo de los grados</h1>
+<div style="font-size: 12.5px; font-weight: 700; color: #5C4E86; line-height: 1.3">De la Luna al Sol, Mborevi'i camina toda la noche.</div>
+</div>
+</div>
+
+<sc-for list="{{ stops }}" as="s" hint-placeholder-count="10">
+<button type="button" onClick="{{ s.pick }}" aria-label="{{ s.aria }}" aria-pressed="{{ s.pressed }}" style="position: absolute; left: {{ s.left }}; top: {{ s.top }}; width: 56px; height: 56px; padding: 0; border-radius: 28px; box-sizing: border-box; border: {{ s.ring }}; background: #1E1460; box-shadow: {{ s.shadow }}">
+<svg viewBox="0 0 100 100" width="50" height="50" aria-hidden="true" style="display: block; margin: 0 auto">
+<path d="{{ s.fig.outline }}" fill="#FFE7A3" fill-opacity="{{ s.fig.fillO }}" stroke="{{ s.outlineInk }}" stroke-width="3" stroke-dasharray="{{ s.dash }}" stroke-linejoin="round" opacity="{{ s.fig.outlineO }}"/>
+<path d="{{ s.fig.lines }}" stroke="#6E5FD0" stroke-width="3.4" stroke-linecap="round" fill="none"/>
+<path d="{{ s.fig.linesOn }}" stroke="#FFE7A3" stroke-width="3.6" stroke-linecap="round" fill="none"/>
+<path d="{{ s.fig.off }}" fill="#4B3D9A" stroke="#B4A8F2" stroke-width="2" stroke-linejoin="round"/>
+<path d="{{ s.fig.on }}" fill="#FFD34E" stroke="#3B2418" stroke-width="2.2" stroke-linejoin="round"/>
+</svg>
+</button>
+<div aria-hidden="true" style="position: absolute; left: {{ s.labelLeft }}; top: {{ s.labelTop }}; width: 112px; box-sizing: border-box; padding: 3px 7px; border-radius: 12px; background: rgba(17, 10, 56, 0.6); display: flex; flex-direction: column; align-items: {{ s.align }}; text-align: {{ s.textAlign }}; pointer-events: none">
+<div style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 15px; line-height: 1.1; color: #FFF7EC">{{ s.label }}</div>
+<div lang="gn" style="font-family: 'Andika', 'Nunito', sans-serif; font-weight: 700; font-size: 13px; line-height: 1.15; color: #D9D0FF">{{ s.figName }}</div>
+</div>
+</sc-for>
+
+<div style="position: absolute; left: {{ tap.left }}; top: {{ tap.top }}; transition: left 420ms ease-in-out, top 420ms ease-in-out; pointer-events: none">
+<div style="animation: {{ tap.anim }}">
+<dc-import name="Mborevi" pose="{{ tap.pose }}" size="70" flip="{{ tap.flip }}" hint-size="70px,57px"></dc-import>
+</div>
+</div>
+
+<div style="position: absolute; left: 16px; right: 16px; bottom: 34px; box-sizing: border-box; padding: 12px 12px 12px 16px; border-radius: 26px; background: #FFF7EC; color: #2A1B3D; border: 3px solid #3B2418; box-shadow: 0 5px 0 #3B2418; display: flex; align-items: center; gap: 12px">
+<div style="flex-grow: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px">
+<div style="font-size: 11px; font-weight: 800; letter-spacing: 0.06em; color: #6B4FD8">{{ sel.kicker }}</div>
+<div lang="gn" style="font-family: 'Andika', 'Nunito', sans-serif; font-weight: 700; font-size: 19px; line-height: 1.15">{{ sel.title }}</div>
+<div style="font-size: 12.5px; font-weight: 700; color: #5C4E86; line-height: 1.3">{{ sel.line }}</div>
+</div>
+<a href="Main.dc.html" onClick="{{ sel.go }}" aria-label="{{ sel.goAria }}" style="width: 64px; height: 64px; border-radius: 32px; background: #FFD34E; border: 3px solid #3B2418; box-shadow: 0 4px 0 #3B2418; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 17px; color: #2A1B3D"><span lang="gn">Jaha!</span></a>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"app":{"editor":null},"act":{"editor":null},"$preview":{"width":390,"height":844}}'>
+/* The ten grades, each a figure of the Guarani sky, along the Milky Way from the Moon (Preescolar) at the bottom to
+   the Sun (9.º grado) at dawn. A figure lights a star per unit finished and shines when all are lit. Mborevi'i stands
+   by the grade in play; picking another grade makes him walk there along the band, star by star, and then (in the app)
+   the path of that grade opens. When the grade in play shines, the next one is already picked. On its own: Preescolar
+   finished (the Moon shines) and 1.º grado with one star lit. */
+const N = 10;
+const XL = 104, XR = 286;
+const Y0 = 662, DY = 57;
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { at: null, pick: null, walking: false, flip: false, pose: null };
+this.timers = [];
+}
+componentWillUnmount() { this.timers.forEach((t) => clearTimeout(t)); }
+view() {
+const C = window.tpCourse;
+if (this.props.app) return this.props.app;
+if (!this.sample) {
+const a = C.sample('pre', 'L2', 999);
+const b = C.sample('g1', 'L2', 4);
+this.sample = C.view(Object.assign({}, b, { done: Object.assign({}, a.done, b.done), checks: Object.assign({}, a.checks, b.checks), grade: 'g1' }));
+}
+return this.sample;
+}
+renderVals() {
+const C = window.tpCourse;
+const act = this.props.act;
+const app = this.view();
+const nav = (to) => (e) => { if (act) { e.preventDefault(); act.go(to); } };
+const grades = C.grades();
+const pts = grades.map((g, i) => [i % 2 ? XR : XL, Y0 - i * DY]);
+const band = C.chain(C.smooth([[40, 860], [XL - 20, Y0 + 70]].concat(pts).concat([[XR + 30, 80], [360, 10]])));
+const home = Math.max(0, grades.findIndex((g) => g.code === app.grade));
+const at = this.state.at != null ? this.state.at : home;
+const homeDone = C.progress(app, grades[home].code).shines && home < grades.length - 1;
+const pickIx = this.state.pick != null ? this.state.pick : homeDone ? home + 1 : home;
+/* beside his medallion; at the Sun, kept clear of the header card */
+const tapAt = (i) => {
+const p = pts[i];
+const top = Math.max(p[1] - 52, 116) + 'px';
+return i % 2 ? { left: (p[0] + 26) + 'px', top } : { left: (p[0] - 96) + 'px', top };
+};
+/* the walk: medallion by medallion along the band, then the grade opens. While he walks the taps wait, so the card
+   always names where he is going */
+const go = (to) => {
+if (this.state.walking) return;
+if (to === at) { this.setState({ pick: to }); return; }
+this.timers.forEach((t) => clearTimeout(t));
+this.timers = [];
+const dir = to > at ? 1 : -1;
+let k = at;
+let step = 0;
+this.setState({ walking: true, pick: to, pose: 'walk', flip: ((at + dir) % 2 ? XR : XL) < (at % 2 ? XR : XL) });
+while (k !== to) {
+const from = k;
+k += dir;
+const here = k;
+step++;
+this.timers.push(setTimeout(() => this.setState({ at: here, flip: (here % 2 ? XR : XL) < (from % 2 ? XR : XL) }), step * 440));
+}
+const end = step * 440 + 300;
+this.timers.push(setTimeout(() => this.setState({ pose: 'happy' }), end));
+this.timers.push(setTimeout(() => {
+this.setState({ walking: false, pose: null });
+if (act) act.grade(grades[to].code);
+}, end + 900));
+};
+const stops = grades.map((g, i) => {
+const prog = C.progress(app, g.code);
+const fig = C.figure(g.sky, prog.lit);
+const p = pts[i];
+const on = i === pickIx;
+const right = i % 2 === 1;
+return {
+left: (p[0] - 28) + 'px', top: (p[1] - 28) + 'px',
+fig,
+ring: on ? '4px solid #FFD34E' : g.ready ? '3px solid #FFF7EC' : '2px dashed #8F80E6',
+shadow: on ? '0 0 0 6px rgba(255, 211, 78, 0.28)' : fig.all ? '0 0 18px rgba(255, 231, 163, 0.75)' : 'none',
+outlineInk: fig.all ? '#FFE7A3' : '#B9A6FF',
+dash: fig.all ? 'none' : '5 5',
+label: g.code === 'pre' ? 'Preescolar' : g.label,
+figName: fig.gn,
+labelLeft: right ? (p[0] - 34 - 112) + 'px' : (p[0] + 34) + 'px',
+labelTop: (p[1] - 18) + 'px',
+align: right ? 'flex-end' : 'flex-start',
+textAlign: right ? 'right' : 'left',
+pressed: on ? 'true' : 'false',
+aria: g.label + ', ' + fig.gn + ': ' + prog.lit + ' de ' + prog.total + ' estrellas' + (fig.all ? ', la figura brilla' : '') + (g.ready ? '' : ', en preparación'),
+pick: () => go(i)
+};
+});
+const pose = this.state.pose || 'stand';
+/* walking he faces the way he goes; standing, he faces the band */
+const tap = Object.assign(tapAt(at), { pose, flip: pose === 'walk' ? this.state.flip : at % 2 === 1, anim: pose === 'stand' ? 'tp-bob 2.6s ease-in-out infinite' : 'none' });
+const g = grades[pickIx];
+const pg = C.progress(app, g.code);
+const fig = C.figure(g.sky, pg.lit);
+const sel = {
+kicker: (g.label + ' · ' + g.cycle).toUpperCase(),
+title: g.gn ? fig.gn + ' · ' + g.gn : fig.gn,
+line: g.ready ? pg.lit + ' de ' + pg.total + ' estrellas encendidas.' : 'Sus noches se están escribiendo.',
+goAria: 'Jaha! Ir al camino de ' + g.label,
+go: (e) => { if (act) { e.preventDefault(); if (pickIx !== at) go(pickIx); else act.grade(g.code); } }
+};
+return {
+field: C.starfield('sky', 390, 120, 700, 80),
+dust: C.dust(band, 'sky-dust', 150, 60),
+band: band.d,
+stops, tap, sel,
+toMain: nav('Main')
+};
+}
+}
+</script>
+</body>
+</html>

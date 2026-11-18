@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Se enciende una estrella</title>
+<script src="./support.js"></script>
+<script src="./tp-course.js"></script>
+<script src="./tp-grades.js"></script>
+<script src="./tp-sky.js"></script>
+<script src="./tp-sound.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&amp;family=Baloo+2:wght@600;700;800&amp;family=Nunito:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:#2A1B3D;text-decoration:none}a:hover{color:#2A1B3D}
+@keyframes tp-legA{0%,100%{transform:rotate(14deg)}50%{transform:rotate(-14deg)}}
+@keyframes tp-legB{0%,100%{transform:rotate(-14deg)}50%{transform:rotate(14deg)}}
+@keyframes tp-tw{0%,100%{opacity:1}50%{opacity:.35}}
+@keyframes tp-bob-big{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes tp-pop-big{0%{transform:scale(.4);opacity:0}60%{transform:scale(1.15);opacity:1}100%{transform:scale(1);opacity:1}}
+@keyframes tp-ring-big{0%{transform:scale(.6);opacity:.95}100%{transform:scale(2.2);opacity:0}}
+@keyframes tp-glow{0%,100%{opacity:.5}50%{opacity:1}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; position: relative; overflow: hidden; box-sizing: border-box; padding: 50px 16px 34px; background: radial-gradient(circle at 50% 36%, #4A2A8F 0%, #1E1460 55%, #0E0832 100%); color: #FFF7EC; font-family: 'Nunito', 'Avenir Next', sans-serif; display: flex; flex-direction: column; align-items: center">
+
+<svg width="390" height="844" viewBox="0 0 390 844" style="position: absolute; left: 0; top: 0" aria-hidden="true">
+<path d="{{ field.dim }}" fill="#FFF6DD" opacity="0.4"/>
+<path d="{{ field.dots }}" fill="#FFF6DD" style="animation: tp-tw 3.2s ease-in-out infinite"/>
+<path d="{{ field.sparks }}" fill="#FFF6DD" style="animation: tp-tw 2.4s .8s ease-in-out infinite"/>
+</svg>
+
+<div style="position: relative; margin-top: 8px; font-size: 12px; font-weight: 800; letter-spacing: 0.08em; color: #CFC6FF; text-align: center">{{ kicker }}</div>
+<h1 lang="gn" style="margin: 0; position: relative; font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 34px; line-height: 1.05; text-align: center; animation: tp-pop-big 520ms ease-out">{{ title }}</h1>
+<div style="position: relative; margin-top: 2px; font-size: 15px; font-weight: 700; color: #E4DDFF; text-align: center; max-width: 320px; line-height: 1.4">{{ sub }}</div>
+
+<div style="position: relative; margin-top: 14px; width: 300px; height: 300px; flex-shrink: 0">
+<svg viewBox="0 0 100 100" width="300" height="300" role="img" aria-label="{{ figAria }}" style="position: absolute; left: 0; top: 0; overflow: visible">
+<circle cx="50" cy="50" r="50" fill="#B9A6FF" opacity="0.08"/>
+<path d="{{ fig.outline }}" fill="#FFE7A3" fill-opacity="{{ fig.fillO }}" stroke="{{ outlineInk }}" stroke-width="0.9" stroke-dasharray="{{ dash }}" stroke-linejoin="round" stroke-linecap="round" opacity="{{ fig.outlineO }}" style="animation: {{ outlineAnim }}"/>
+<path d="{{ fig.lines }}" stroke="#6E5FD0" stroke-width="1" stroke-linecap="round" fill="none"/>
+<path d="{{ fig.linesOn }}" stroke="#FFE7A3" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+<path d="{{ fig.off }}" fill="#4B3D9A" stroke="#B4A8F2" stroke-width="0.8" stroke-linejoin="round"/>
+<path d="{{ fig.on }}" fill="#FFD34E" stroke="#3B2418" stroke-width="0.9" stroke-linejoin="round"/>
+</svg>
+<div aria-hidden="true" style="position: absolute; left: {{ fresh.left }}; top: {{ fresh.top }}; width: 40px; height: 40px; border-radius: 20px; border: 4px solid #FFD34E; box-sizing: border-box; animation: tp-ring-big 1.6s ease-out infinite"></div>
+<div aria-hidden="true" style="position: absolute; left: {{ fresh.left }}; top: {{ fresh.top }}; width: 40px; height: 40px; animation: tp-pop-big 700ms ease-out">
+<svg viewBox="0 0 40 40" width="40" height="40"><path d="{{ fresh.star }}" fill="#FFD34E" stroke="#3B2418" stroke-width="2.2" stroke-linejoin="round"/><path d="M13.5 19q2.4-3.4 4.8 0M21.7 19q2.4-3.4 4.8 0M17.2 23.6q2.8 2.8 5.6 0" fill="none" stroke="#3B2418" stroke-width="1.8" stroke-linecap="round"/></svg>
+</div>
+</div>
+
+<div style="position: relative; margin-top: 6px; box-sizing: border-box; width: 100%; padding: 12px 14px; border-radius: 22px; background: #FFF7EC; color: #2A1B3D; border: 3px solid #3B2418; display: flex; flex-direction: column; gap: 3px; flex-shrink: 0">
+<div style="font-size: 12px; font-weight: 800; letter-spacing: 0.06em; color: #6B4FD8">{{ countLine }}</div>
+<div style="font-size: 14px; font-weight: 700; line-height: 1.4">{{ fig.note }}</div>
+</div>
+
+<div style="flex-grow: 1"></div>
+<div style="position: relative; width: 100%; display: flex; align-items: flex-end; gap: 10px; flex-shrink: 0">
+<div style="flex-shrink: 0; animation: tp-bob-big 1.4s ease-in-out infinite">
+<dc-import name="Mborevi" pose="cheer" size="104" hint-size="104px,84px"></dc-import>
+</div>
+<a href="{{ cta.href }}" onClick="{{ cta.go }}" style="flex-grow: 1; height: 60px; margin-bottom: 8px; border-radius: 30px; background: #FFD34E; border: 3px solid #3B2418; box-shadow: 0 5px 0 #3B2418; display: flex; align-items: center; justify-content: center; gap: 10px; color: #2A1B3D">
+<span lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 22px">{{ cta.gn }}</span>
+<span style="font-size: 15px; font-weight: 800; color: #5C4E86">{{ cta.es }}</span>
+</a>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"app":{"editor":null},"act":{"editor":null},"$preview":{"width":390,"height":844}}'>
+/* After the big star: one more star of the grade's figure lights (the newest one pops and rings). When the last
+   one lights, the figure's drawing appears around its stars and the whole figure shines: the grade is done, and the
+   sky of grades shows where Mborevi'i walks next. On its own: 1.º grado, unit 1 just finished: Eichu's first star. */
+class Component extends DCLogic {
+componentDidMount() { window.tpCourse.say(window.tpCourse.VOICE.joy); }
+view() {
+const C = window.tpCourse;
+if (this.props.app) return this.props.app;
+if (!this.sample) this.sample = C.view(C.sample('g1', 'L2', 4, { walk: { from: 'g1u01c', to: 'g1u02n1', at: 1 } }));
+return this.sample;
+}
+renderVals() {
+const C = window.tpCourse;
+const act = this.props.act;
+const app = this.view();
+const g = app.grade;
+const meta = C.meta(g);
+const prog = C.progress(app, g);
+const lit = prog.lit;
+const fig = C.figure(meta.sky, lit);
+const sky = C.sky(meta.sky) || { stars: [[50, 50]] };
+const p = sky.stars[Math.max(0, lit - 1)] || [50, 50];
+const all = fig.all;
+const next = C.nextGrade(g);
+const nm = next ? C.meta(next) : null;
+return {
+field: C.starfield('shine-' + g, 390, 30, 760, 80),
+kicker: (meta.gn ? meta.label + ' · ' + meta.gn : meta.label).toUpperCase(),
+title: all ? fig.gn + ' omimbi!' : "Vy'apavẽ!",
+sub: all ? '¡Encendiste todas las estrellas de ' + fig.gn + '! Terminaste ' + meta.label + '.' : '¡Felicitaciones! Se encendió una estrella de ' + fig.gn + '.',
+fig,
+outlineInk: all ? '#FFE7A3' : '#B9A6FF',
+dash: all ? 'none' : '2.5 2.5',
+outlineAnim: all ? 'tp-glow 2s ease-in-out infinite' : 'none',
+figAria: fig.gn + ': ' + lit + ' de ' + fig.count + ' estrellas encendidas' + (all ? '. La figura brilla entera' : ''),
+fresh: { left: Math.round(p[0] * 3 - 20) + 'px', top: Math.round(p[1] * 3 - 20) + 'px', star: C.puffyD(20, 21, 17) },
+countLine: (lit + ' DE ' + fig.count + ' ESTRELLAS · ' + fig.gn + ', ' + fig.es).toUpperCase(),
+cta: all
+? { gn: 'Yvága', es: nm ? 'Hacia ' + nm.label : 'Ver el cielo', href: 'Sky.dc.html', go: (e) => { if (act) { e.preventDefault(); act.go('Sky'); } } }
+: { gn: 'Jaguata!', es: '¡A caminar!', href: 'Main.dc.html', go: (e) => { if (act) { e.preventDefault(); act.go('Main'); } } }
+};
+}
+}
+</script>
+</body>
+</html>

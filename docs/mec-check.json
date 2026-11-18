@@ -1,0 +1,1585 @@
+{
+ "about": "Check of the app's MEC claims against the Priorización curricular 2021 (1.er y 2.º ciclo): three independent readings of the document, a verdict per claim, and a challenge of each verdict. Pages are PDF pages (printed page = PDF page - 6).",
+ "readings": [
+  {
+   "lens": "literal",
+   "answers": [
+    {
+     "q": "Q1. Is the 1st-cycle 'Comunicación Guaraní' table the program for Guarani as L2, L1, or both? What in the document says so?",
+     "answer": "The table never labels itself. Its heading is just \"Comunicación Guaraní\", with no L1, L2, \"lengua materna\" or \"segunda lengua\" label (p26). The only marker of the learner type inside the table is in the 3.º grado alcance, which speaks of \"imperfecciones propias del proceso de aprendizaje de la L2\" (p26). That frames the Guarani table as second-language learning. The table nowhere mentions L1 or lengua materna.\n\nThe term \"lengua materna\" appears instead in the 1st-cycle \"Comunicación Castellano\" table. All three of its alcances say the children express themselves \"utilizando su lengua materna\" (p23). That table also has Guarani-specific spelling rules: item 17 includes \"La tilde y la marca de nasalidad, en el caso del guaraní\" next to rules marked \"en el caso del castellano\" (p25). The document does not explicitly say that this Castellano table is the program for Guarani-L1 children. That reading is an inference, not something the text states.\n\nCuadro 4 (1st cycle) names the subjects \"Castellano\" and \"Guaraní\". Cuadro 5 (2nd cycle) names them \"Lengua Materna\" and \"Segunda Lengua\" and does not say which language is which (p21). Nothing in the document says the Guarani table serves both L1 and L2. Printed page numbers differ from PDF pages: PDF p26 is printed page 20. All citations here use PDF pages.",
+     "quotes": [
+      {
+       "page": 26,
+       "text": "Comunicación Guaraní"
+      },
+      {
+       "page": 26,
+       "text": "Podrían seguir apareciendo imperfecciones propias del proceso de aprendizaje de la L2, como parte del desarrollo de la competencia comunicativa."
+      },
+      {
+       "page": 23,
+       "text": "Al concluir el grado, se espera que los niños y las niñas desarrollen sus capacidades relacionadas con la lectoescritura para que empiecen a leer con cierta fluidez textos contextualizados breves con vocabulario sencillo; además, comprendan los mensajes cotidianos significativos que escuchan y leen, y se expresen en forma oral y escrita utilizando su lengua materna para comunicarse"
+      },
+      {
+       "page": 25,
+       "text": "17. Aplica en sus redacciones las reglas del uso de: • Las letras. • Las mayúsculas. • Los signos básicos de puntuación. • La tilde en palabras agudas, en el caso del castellano. • La tilde y la marca de nasalidad, en el caso del guaraní."
+      },
+      {
+       "page": 21,
+       "text": "Lengua Materna 5 3 / Segunda Lengua 4 3"
+      }
+     ]
+    },
+    {
+     "q": "Q2. In 1.º grado, does the Guarani program include reading and writing, or only listening and speaking? Compare the alcance with the capacities.",
+     "answer": "The two parts do not match. The 1.º grado alcance is oral only. It speaks of using \"vocabulario elemental\", keeping up \"conversaciones breves\" and asking and answering questions, and it never mentions reading or writing (p26).\n\nThe list of capacities does include reading and writing:\n- Its two blocks are headed \"Comprensión oral y escrita\" (p26) and \"Expresión oral y escrita\" (p27).\n- Item 1 refers to a text \"antes de escucharlo o leerlo\".\n- Item 2 predicts content \"a partir de láminas\".\n- Items 17, 19, 20 and 21 cover writing: writing cards, riddles, dialogues, descriptions and short narratives; spelling sounds; and applying rules for letters and basic punctuation (p28).\n\nIn short, the 1.º grado alcance is oral, but its capacity list has written items.",
+     "quotes": [
+      {
+       "page": 26,
+       "text": "Al culminar el grado, se espera que los estudiantes puedan utilizar vocabulario elemental relacionado con datos personales, del hogar y la escuela, mantener conversaciones breves aplicando funciones comunicativas básicas, con las cuales podrá formular y responder preguntas."
+      },
+      {
+       "page": 26,
+       "text": "Comprensión oral y escrita"
+      },
+      {
+       "page": 26,
+       "text": "1. Anticipa posibles informaciones contenidas en un texto antes de escucharlo o leerlo, a partir de imágenes u otros soportes paratextuales."
+      },
+      {
+       "page": 26,
+       "text": "2. Predice el contenido de los textos a partir de láminas."
+      },
+      {
+       "page": 27,
+       "text": "Expresión oral y escrita"
+      },
+      {
+       "page": 28,
+       "text": "17. Escribe tarjetas, adivinanzas, diálogos, descripciones (de personas, paisajes, animales, plantas y objetos) y narraciones breves."
+      },
+      {
+       "page": 28,
+       "text": "19.Utiliza la grafía correspondiente para representar sonidos."
+      },
+      {
+       "page": 28,
+       "text": "20. Aplica en sus redacciones las reglas de uso de: • Las letras. • Los signos básicos de puntuación."
+      },
+      {
+       "page": 28,
+       "text": "21. Utiliza la grafía correspondiente para representar sonidos."
+      }
+     ]
+    },
+    {
+     "q": "Q3. In which grade does written Guarani first appear in the alcance?",
+     "answer": "In 2.º grado. Its alcance is the first to say \"en forma oral y escrita\". The 3.º grado alcance repeats the phrase. The 1.º grado alcance has no written element (p26). In the 2nd cycle, the 4.º grado alcance says \"ojehai ha oñehendúva\" (written and heard) and \"oñe'ẽ ha ohaikuévo\" (speaking and writing) (p45).",
+     "quotes": [
+      {
+       "page": 26,
+       "text": "Al culminar el grado, se espera que los estudiantes puedan utilizar en forma oral y escrita, vocabulario básico que responda a situaciones comunicativas usuales. Comprendan la información básica de textos breves de uso frecuente procedentes de distintas fuentes (profesor, compañeros, radio, televisión, periódico, etc.). Además, sostengan conversaciones breves sobre temas cotidianos de su interés."
+      },
+      {
+       "page": 26,
+       "text": "Al culminar el grado, se espera que los estudiantes puedan utilizar en forma oral y escrita, vocabulario básico que responda a diversas situaciones comunicativas usuales."
+      }
+     ]
+    },
+    {
+     "q": "Q4. What does the document say about children whose mother tongue is Guarani: when do they read and write in Guarani?",
+     "answer": "Not in the document. No page I read (p18-28, p40-42, p45-47) and no text search of the whole PDF finds a statement about children whose mother tongue is Guarani, or about when they read and write in Guarani. The Guarani table mentions only \"L2\" (p26).\n\nThe closest passages are in the 1st-cycle Castellano table:\n- Its 1.º grado alcance speaks of \"lectoescritura\" and \"su lengua materna\" (p23).\n- Its writing-rule item names \"La tilde y la marca de nasalidad, en el caso del guaraní\" in 1.º, 2.º and 3.º grado (p25).\n\nThe document does not say these apply to Guarani-L1 children. The app's claim \"Con el guaraní como lengua materna, en 1.º grado se empieza a leer y escribir\" is not stated in the document.",
+     "quotes": [
+      {
+       "page": 23,
+       "text": "Al concluir el grado, se espera que los niños y las niñas desarrollen sus capacidades relacionadas con la lectoescritura para que empiecen a leer con cierta fluidez textos contextualizados breves con vocabulario sencillo; además, comprendan los mensajes cotidianos significativos que escuchan y leen, y se expresen en forma oral y escrita utilizando su lengua materna para comunicarse"
+      },
+      {
+       "page": 25,
+       "text": "La tilde y la marca de nasalidad, en el caso del guaraní."
+      },
+      {
+       "page": 26,
+       "text": "Podrían seguir apareciendo imperfecciones propias del proceso de aprendizaje de la L2"
+      }
+     ]
+    },
+    {
+     "q": "Q5. Topics named for 1.º, 2.º and 3.º grado in Guarani.",
+     "answer": "**1.º grado** (p26-28):\n- Greetings and courtesy (item 4).\n- Personal data: nombre, edad y grado (5).\n- Instructions: manipulating objects and appliances, placing them, moving from place to place (3).\n- Text types heard: trabalenguas, chistes, rimas, poesías, canciones, cuentos, descripciones, fábulas, leyendas, diálogos e instrucciones breves (7).\n- Words of the immediate context: \"mi cuerpo, mi familia, mi casa, mi escuela y mi país\"; words in short poems, songs, descriptions and riddles (10).\n- Greetings and introductions (12).\n- Dialogues on everyday topics (13).\n- Activities during the day: mañana, tarde y noche (14).\n- Agreement or disagreement (15).\n- Needs: asking for help, a favour, permission, the loan of an object (16).\n- Writing: tarjetas, adivinanzas, diálogos, descripciones (personas, paisajes, animales, plantas y objetos) y narraciones breves (17).\n- Courtesy expressions (18).\n- Spelling and rules for letters and basic punctuation (19-21).\n\n**2.º grado:** the same core, plus:\n- \"etiquetas\" among the texts (7).\n- Introducing classmates and family (12).\n- Basic needs: \"ir al baño, tomar agua, pedir alimentos, solicitar permiso y prestar algo\" (16).\n- Writing esquelas, poemas and acrósticos, \"teniendo en cuenta la estructura de cada tipo de texto\" (17).\n- Norms for letras, mayúsculas, \"la tilde y la marca de nasalidad\" (20).\n\n**3.º grado:**\n- \"noticias breves\" among the texts (7).\n- Analysing a narrative text: personajes, acciones, lugar y tiempo (11).\n- Introducing others with their características, gustos y aficiones (12).\n- Wishes and needs in everyday social situations (16).\n\nTopics the document does not name in the 1st-cycle Guarani table include numbers, colours, the alphabet or vowels, food as a topic, and places, directions or asking where something is. Animals appear only as objects of description (item 17), and food only as \"pedir alimentos\" (2.º, item 16).",
+     "quotes": [
+      {
+       "page": 26,
+       "text": "4. Comprende el significado de saludos y otras expresiones de cortesía"
+      },
+      {
+       "page": 26,
+       "text": "5. Comprende el significado de preguntas acerca de los datos personales: nombre, edad y grado."
+      },
+      {
+       "page": 26,
+       "text": "3. Sigue instrucciones breves para realizar determinadas acciones como manipular objetos y electrodomésticos, ubicarlos en un lugar determinado y trasladarse de un lugar a otro."
+      },
+      {
+       "page": 27,
+       "text": "7. Comprende la información contenida en textos breves escuchados: trabalenguas, chistes, rimas, poesías, canciones, cuentos, descripciones, fábulas, leyendas, diálogos e instrucciones breves."
+      },
+      {
+       "page": 27,
+       "text": "10.Comprende el significado de vocablos que se refieren a su contexto inmediato (mi cuerpo, mi familia, mi casa, mi escuela y mi país) y vocablos contenidos en poemas breves, canciones descripciones y adivinanzas."
+      },
+      {
+       "page": 27,
+       "text": "14.Describe las actividades que realiza durante el día: a la mañana, a la tarde y a la noche."
+      },
+      {
+       "page": 28,
+       "text": "16. Expresa sus necesidades tales como pedir ayuda, favor, permiso, préstamo de algún objeto o material conforme a contextos comunicativos usuales."
+      },
+      {
+       "page": 28,
+       "text": "16.Expresa necesidades básicas como: ir al baño, tomar agua, pedir alimentos, solicitar permiso y prestar algo."
+      },
+      {
+       "page": 27,
+       "text": "12.Saluda y se presenta y presenta a sus compañeros y familiares."
+      },
+      {
+       "page": 28,
+       "text": "17.Redacta esquelas, tarjetas, adivinanzas, poemas, acrósticos, diálogos, descripciones (personajes de textos, paisajes, animales, plantas, objetos y situaciones) y narraciones breves, teniendo en cuenta la estructura de cada tipo de texto."
+      },
+      {
+       "page": 27,
+       "text": "7. Comprende la información contenida en textos breves escuchados o leídos: trabalenguas, chistes, rimas, poesías, canciones, cuentos, descripciones, fábulas, leyendas, diálogos e instrucciones, noticias breves."
+      },
+      {
+       "page": 27,
+       "text": "11.Analiza un texto narrativo considerando personajes, acciones, lugar y tiempo."
+      },
+      {
+       "page": 27,
+       "text": "12.Saluda, se presenta y presenta a los demás mencionando sus características, gustos y aficiones."
+      },
+      {
+       "page": 28,
+       "text": "16.Comunica sus deseos y necesidades en situaciones sociales cotidianas."
+      }
+     ]
+    },
+    {
+     "q": "Q6. Weekly hours of Guarani (regular and 2021) in the 1st and 2nd cycle, and how the 2nd cycle names its language areas.",
+     "answer": "**1st cycle (Cuadro 4, p21):**\n- Guaraní: 4 hours regular, 3 in the 2021 proposal.\n- Castellano: 5 regular, 3 in 2021.\n- Comunicación as a whole: 11 regular, 7 in 2021.\n- Total: 30 regular, 20 in 2021.\n\n**2nd cycle (Cuadro 5, p21):** there is no row named Guaraní or Castellano. The language areas are \"Lengua Materna\" (5 actual, 3 in 2021) and \"Segunda Lengua\" (4 actual, 3 in 2021). The column headers are \"CARGA HORARIA ACTUAL\" and \"PROPUESTA 2021\". The document does not say which language is the Lengua Materna or the Segunda Lengua.\n\nThe 2nd-cycle capacity tables are headed \"Comunicación Castellano\" (p41) and \"Comunicación Guaraní\" (p45). The 4.º grado Castellano alcance says \"utilizando la lengua castellana como instrumento de interacción\" (p41).\n\nThe 2021 hour is defined on p20: 20 pedagogical hours a week, each equivalent to 35 minutes.",
+     "quotes": [
+      {
+       "page": 21,
+       "text": "Cuadro 4. Carga horaria semanal regular y carga horaria propuesta para el desarrollo de clases del año 2021 del 1º ciclo de la Educación Escolar Básica"
+      },
+      {
+       "page": 21,
+       "text": "Comunicación 11 7 / Castellano 5 3 / Guaraní 4 3"
+      },
+      {
+       "page": 21,
+       "text": "TOTAL 30 20"
+      },
+      {
+       "page": 21,
+       "text": "Cuadro 5. Carga horaria semanal regular y carga horaria propuesta para el desarrollo de clases del año 2021 del 2º ciclo de la Educación Escolar Básica"
+      },
+      {
+       "page": 21,
+       "text": "ÁREA | CARGA HORARIA ACTUAL | PROPUESTA 2021 ... Lengua Materna 5 3 / Segunda Lengua 4 3"
+      },
+      {
+       "page": 20,
+       "text": "realizar una disminución en la carga horaria semanal a 20 horas pedagógicas, considerando además cada una de ellas con un equivalente a 35 minutos"
+      },
+      {
+       "page": 41,
+       "text": "utilizando la lengua castellana como instrumento de interacción."
+      }
+     ]
+    },
+    {
+     "q": "Q7. For 4.º, 5.º and 6.º grado: the Guarani alcance (Guarani plus Spanish translation) and the main text types or topics.",
+     "answer": "The Spanish translations below are mine, not the document's.\n\n**4.º grado alcance (p45).** Translation: \"En este grado se espera que los estudiantes lean y sepan comprender textos no muy largos o cortos, escritos y oídos, que tengan palabras de uso frecuente y no difíciles de comprender. Así podrán contar, al hablar y al escribir, sus necesidades y todo lo que ocurre en su comunidad. Aquí los estudiantes todavía pueden cometer pequeños errores y, donde se equivocan, se les debe seguir corrigiendo/enseñando.\"\n\n**5.º grado alcance (p45).** Translation: \"En este grado se espera que los estudiantes empiecen a leer con fluidez y comprendan también textos escritos y no escritos breves, que tengan palabras un poco más difíciles de comprender. Así podrán contar, al hablar y al escribir, sus necesidades, sus sentimientos y todo lo que ocurre a su alrededor y en otros lugares. Aquí todavía pueden cometer pequeños errores y, donde se equivocan, se les debe seguir corrigiendo.\"\n\n**6.º grado alcance (p45).** Translation: \"Aquí se espera que los estudiantes ya lean con buena fluidez y comprendan también textos breves, escritos y oídos, que tengan palabras más difíciles de comprender. Así podrán contar sus necesidades, sentimientos, pensamientos y todo lo que ocurre a su alrededor y en todo lugar. Aquí todavía pueden cometer pequeños errores y, donde se equivocan, se les debe seguir corrigiendo.\"\n\n**Section headings.** The 2nd-cycle capacities fall under four Guarani headings:\n- \"Oikumbýta mba'e ohendúva oje'éva ichupe guaraníme\": will understand what is said to them in Guarani (items 1-7, p45).\n- \"Oñe'ẽkuaáta guaraníme\": will know how to speak in Guarani (8-13, p46).\n- \"Oikũmbýta jehaipyre omoñe'ẽva guaraníme\": will understand the written texts they read in Guarani (14-19, p46-47).\n- \"Ohaíta guaraníme\": will write in Guarani (20-24, p47).\n\n**Main text types and topics:**\n- Oral instructions for games and for how to do things (item 1). In 5.º this includes using household utensils; in 6.º, recipes (\"tembi'ukuéra\").\n- Main ideas (2) and listening to news (\"ñe'ẽmondo\", 4.º-5.º, item 4).\n- Greeting and noticing the context (8).\n- Daily activities: morning, afternoon and night (4.º, item 9). In 5.º, what they do at home and school; in 6.º, their own and their family's activities.\n- Trabalenguas and poems (\"kũjererã ha ñe'ẽpoty\"). 5.º and 6.º add songs and more (\"purahéi ha hetave mba'e\") (11).\n- Describing people, animals, places and things (13).\n- Reading:\n  - 4.º: written dialogues on current topics (14).\n  - 5.º: stories or poems (\"mombe'urã térã ñe'ẽpoty\") on current topics (14).\n  - 6.º: all kinds of texts on current topics (14).\n  - Written instructions (15).\n  - Analysis of text coherence, cohesion and adequacy, and of how a narrative starts and develops (19).\n- Writing:\n  - Their activities at home and school (20).\n  - What they do with family, friends and others (21).\n  - Retelling stories read or heard (22).\n  - Writing so that the meaning is understood (23).\n  - Using signs that help the reader (24).\n\nThe 2nd-cycle Guarani table does not name: letters (\"cartas\"), myths or legends by name, radio or TV news, pronouns, verbs or conjugation, accents, possessives, or the oración. \"Leyendas\", \"noticias y crónicas\" and \"textos científicos breves\" do appear in the 2nd-cycle Castellano table (p42).",
+     "quotes": [
+      {
+       "page": 45,
+       "text": "Ko mbo'esyrýpe oñeha'ãrõ temimbo'ekuéra omoñe'ẽ ha oikũmbykuaa umi téksto ndaipu-kuetéiva térã nambykyetéiva, ojehai ha oñehendúva, oguerekóva umi ñe'ẽ py'ỹinte ojepurúva ha ndahasyíva iñeikũmby. Péicha ikatúta omombe'u oñe'ẽ ha ohaikuévo hemikotevẽ ha opa mba'e oikóva hekoha rupi. Ko'ápe ikatu gueteri temimbo'ekuéra ojavymimi ha upe ojavyhaguépe oñehekombo'eveva'erã ichupekuéra."
+      },
+      {
+       "page": 45,
+       "text": "Ko mbo'esyrýpe oñeha'ãrõ temimbo'ekuéra omoñe'ẽ syryry ñepyrũ ha oikũmbykuaa avei umi ñe'ẽjehaipyre ha ñe'ẽjehaipyre'ỹva nambykyetéiva, oguerekóva umi ñe'ẽ hasy-mievéva iñeikũmby. Péicha ikatúta omombe'u oñe'ẽ ha ohaikuévo hemikotevẽ, hemiandu ha opa mba'e oikóva ijere rupi ha ambue henda rupi. Ko'ápe ikatu gueteri temimbo'ekuéra ojavymimi ha upe ojavyhaguépe oñehe-kombo'eveva'erã ichupekuéra"
+      },
+      {
+       "page": 45,
+       "text": "Ko'ápe oñeha'ãrõ temimbo'ekuéra omoñe'ẽ syryry porãma ha oikũmbykuaa avei umi ñe'ẽjehaipyre'ỹ nambykyetéiva ojehai ha oñehendúva, oguerekóva umi ñe'ẽ hasyvémava iñeikũmby. Péicha ikatúta omombe'u hemikotevẽ, hemiandu, hemimo'ã ha opa mba'e oikóva ijere rupi ha opa henda rupi. Ko'ápe ikatu gueteri temimbo'ekuéra ojavymimi ha upe ojavyhaguépe oñehekombo'eveva'erã ichupekuéra."
+      },
+      {
+       "page": 45,
+       "text": "Oikumbýta mba'e ohendúva oje'éva ichupe guaraníme"
+      },
+      {
+       "page": 45,
+       "text": "1. Oikũmby oje'éva ichupe ohuga hag̃ua, oiporu hag̃ua tembiporu ogapypegua ha oikuaa hag̃ua mba'éichapa ojapova'erã opaichagua mba'e ijedádpe g̃uarã."
+      },
+      {
+       "page": 46,
+       "text": "11. He'ijey kũjererã ha ñe'ẽpoty."
+      },
+      {
+       "page": 46,
+       "text": "14. Oikũmby ñemongeta ojehaiva'ekue oñeñe'ẽhápe umi téma rehe ko'ág̃a rupi herakuãvéva."
+      },
+      {
+       "page": 46,
+       "text": "14. Oikũmby mombe'urã térã ñe'ẽpoty oñeñe'ẽhápe umi téma rehe ko'ág̃a rupi herakuãvéva."
+      },
+      {
+       "page": 46,
+       "text": "14. Oikũmby opáichagua jehaipyre oñeñe'ẽhápe umi téma rehe ko'ág̃a rupi herakuãvéva."
+      },
+      {
+       "page": 47,
+       "text": "Ohaíta guaraníme"
+      },
+      {
+       "page": 47,
+       "text": "20. Ohai omombe'uhápe hembiapo pyharevegua, ka'arugua ha pyharegua."
+      },
+      {
+       "page": 47,
+       "text": "22. Omombe'ujey ohaikuévo mombe'urã omoñe'ẽva térã ohendúva."
+      },
+      {
+       "page": 42,
+       "text": "10. Establece la secuencia de las ideas de los textos leídos: cuentos, fábulas, parábolas, leyendas; textos informativos como noticias y crónicas, y textos científicos breves."
+      }
+     ]
+    }
+   ],
+   "grades": [
+    {
+     "grade": "1.º grado",
+     "alcance": "Al culminar el grado, se espera que los estudiantes puedan utilizar vocabulario elemental relacionado con datos personales, del hogar y la escuela, mantener conversaciones breves aplicando funciones comunicativas básicas, con las cuales podrá formular y responder preguntas. (p26)",
+     "oral": [
+      "3. Sigue instrucciones breves para realizar determinadas acciones como manipular objetos y electrodomésticos, ubicarlos en un lugar determinado y trasladarse de un lugar a otro. (p26)",
+      "4. Comprende el significado de saludos y otras expresiones de cortesía (p26)",
+      "5. Comprende el significado de preguntas acerca de los datos personales: nombre, edad y grado. (p26)",
+      "7. Comprende la información contenida en textos breves escuchados: trabalenguas, chistes, rimas, poesías, canciones, cuentos, descripciones, fábulas, leyendas, diálogos e instrucciones breves. (p27)",
+      "9. Reconoce personajes y lugares mencionados en textos escuchados. (p27)",
+      "12.Expresa diversas formas de saludo y presentación. (p27)",
+      "13.Expresa diálogos breves de forma sostenida y coherente con relación a temas cotidianos. (p27)",
+      "14.Describe las actividades que realiza durante el día: a la mañana, a la tarde y a la noche. (p27)",
+      "15.Expresa acuerdos/desacuerdos ante situaciones presentadas. (p27)",
+      "16. Expresa sus necesidades tales como pedir ayuda, favor, permiso, préstamo de algún objeto o material conforme a contextos comunicativos usuales. (p28)",
+      "18.Utiliza expresiones de cortesía en sus diálogos. (p28)"
+     ],
+     "written": [
+      "1. Anticipa posibles informaciones contenidas en un texto antes de escucharlo o leerlo, a partir de imágenes u otros soportes paratextuales. (p26)",
+      "2. Predice el contenido de los textos a partir de láminas. (p26)",
+      "17. Escribe tarjetas, adivinanzas, diálogos, descripciones (de personas, paisajes, animales, plantas y objetos) y narraciones breves. (p28)",
+      "19.Utiliza la grafía correspondiente para representar sonidos. (p28)",
+      "20. Aplica en sus redacciones las reglas de uso de: • Las letras. • Los signos básicos de puntuación. (p28)",
+      "21. Utiliza la grafía correspondiente para representar sonidos. (p28)"
+     ],
+     "topics": [
+      "saludos y otras expresiones de cortesía",
+      "datos personales: nombre, edad y grado",
+      "instrucciones: manipular objetos y electrodomésticos",
+      "mi cuerpo, mi familia, mi casa, mi escuela y mi país",
+      "trabalenguas, chistes, rimas, poesías, canciones, cuentos, descripciones, fábulas, leyendas, diálogos e instrucciones breves",
+      "actividades del día: a la mañana, a la tarde y a la noche",
+      "necesidades: pedir ayuda, favor, permiso, préstamo",
+      "acuerdos/desacuerdos",
+      "tarjetas, adivinanzas, diálogos, descripciones, narraciones breves",
+      "las letras y los signos básicos de puntuación"
+     ]
+    },
+    {
+     "grade": "2.º grado",
+     "alcance": "Al culminar el grado, se espera que los estudiantes puedan utilizar en forma oral y escrita, vocabulario básico que responda a situaciones comunicativas usuales. Comprendan la información básica de textos breves de uso frecuente procedentes de distintas fuentes (profesor, compañeros, radio, televisión, periódico, etc.). Además, sostengan conversaciones breves sobre temas cotidianos de su interés. (p26)",
+     "oral": [
+      "3. Sigue instrucciones breves para realizar determinadas acciones como manipular objetos y electrodomésticos, ubicarlos en un lugar determinado y trasladarse de un lugar a otro. (p26)",
+      "4. Comprende el significado de saludos y se presenta con cortesía (p26)",
+      "5. Comprende el significado de preguntas y responde sobre sus datos personales: nombre, edad y grado. (p26)",
+      "12.Saluda y se presenta y presenta a sus compañeros y familiares. (p27)",
+      "13.Sostiene diálogos breves sobre temas relacionados con su contexto (p27)",
+      "14.Narra las actividades que realiza durante el día: a la mañana, a la tarde y a la noche. (p27)",
+      "15. Manifiesta gusto/disgusto, acuerdo/ desacuerdos ante situaciones presentadas. (p27)",
+      "16.Expresa necesidades básicas como: ir al baño, tomar agua, pedir alimentos, solicitar permiso y prestar algo. (p28)",
+      "21. Expresa diversas formas de saludo y presentación. (p28)"
+     ],
+     "written": [
+      "1. Anticipa posibles informaciones contenidas en un texto antes de escucharlo o leerlo, a partir de imágenes u otros soportes paratextuales. (p26)",
+      "2. Predice el contenido de los textos apoyado de soporte visual. (p26)",
+      "6. Secuencia los hechos ocurridos en textos leídos. (p27)",
+      "7. Comprende la información contenida en textos breves escuchados o leídos: trabalenguas, chistes, rimas, poesías, canciones, cuentos, descripciones, fábulas, leyendas, diálogos, etiquetas e instrucciones breves. (p27)",
+      "17.Redacta esquelas, tarjetas, adivinanzas, poemas, acrósticos, diálogos, descripciones (personajes de textos, paisajes, animales, plantas, objetos y situaciones) y narraciones breves, teniendo en cuenta la estructura de cada tipo de texto. (p28)",
+      "19.Utiliza la grafía correspondiente para representar sonidos. (p28)",
+      "20.Aplica normas acerca del uso de: • Las letras. • Las mayúsculas. • La tilde y la marca de nasalidad. (p28)"
+     ],
+     "topics": [
+      "saludos, presentación de compañeros y familiares",
+      "datos personales: nombre, edad y grado",
+      "mi cuerpo, mi familia, mi casa, mi escuela y mi país (item 10)",
+      "trabalenguas, chistes, rimas, poesías, canciones, cuentos, descripciones, fábulas, leyendas, diálogos, etiquetas e instrucciones breves",
+      "actividades del día: mañana, tarde y noche",
+      "necesidades básicas: ir al baño, tomar agua, pedir alimentos, solicitar permiso y prestar algo",
+      "gusto/disgusto, acuerdo/desacuerdo",
+      "esquelas, tarjetas, adivinanzas, poemas, acrósticos, diálogos, descripciones, narraciones breves",
+      "letras, mayúsculas, tilde y marca de nasalidad"
+     ]
+    },
+    {
+     "grade": "3.º grado",
+     "alcance": "Al culminar el grado, se espera que los estudiantes puedan utilizar en forma oral y escrita, vocabulario básico que responda a diversas situaciones comunicativas usuales. Comprendan informaciones sobre temas cotidianos contenidas en textos breves procedentes de distintas fuentes. Además, que sostengan conversaciones sobre temas cotidianos de su interés. Podrían seguir apareciendo imperfecciones propias del proceso de aprendizaje de la L2, como parte del desarrollo de la competencia comunicativa. (p26)",
+     "oral": [
+      "3. Sigue instrucciones breves para realizar determinadas acciones como manipular objetos y electrodomésticos, ubicarlos en un lugar determinado y trasladarse de un lugar a otro. (p26)",
+      "4. Comprende el significado de saludos y se presenta con cortesía. (p26)",
+      "5. Comprende el significado de preguntas y responde sobre sus datos personales: nombre, edad y grado. (p26)",
+      "9. Identifica los personajes de un texto escuchado y los caracteriza brevemente. (p27)",
+      "12.Saluda, se presenta y presenta a los demás mencionando sus características, gustos y aficiones. (p27)",
+      "13.Sostiene diálogos breves sobre temas cotidianos. (p27)",
+      "14.Reproduce las actividades que realiza durante el día: a la mañana, a la tarde y a la noche. (p27)",
+      "15. Expresa sus ideas, acuerdos/desacuerdos, gustos/disgustos sobre situaciones habituales. (p27)",
+      "16.Comunica sus deseos y necesidades en situaciones sociales cotidianas. (p28)"
+     ],
+     "written": [
+      "1. Anticipa posibles informaciones contenidas en un texto antes de escucharlo o leerlo, a partir de imágenes u otros soportes paratextuales. (p26)",
+      "2. Predice el posible contenido del texto a partir de datos que se le facilitan. (p26)",
+      "6. Secuencia los hechos ocurridos en textos leídos. (p27)",
+      "7. Comprende la información contenida en textos breves escuchados o leídos: trabalenguas, chistes, rimas, poesías, canciones, cuentos, descripciones, fábulas, leyendas, diálogos e instrucciones, noticias breves. (p27)",
+      "11.Analiza un texto narrativo considerando personajes, acciones, lugar y tiempo. (p27)",
+      "17.Redacta esquelas, tarjetas, adivinanzas, poemas, acrósticos, diálogos, descripciones (personas, personajes de textos, paisajes, animales, plantas, objetos y situaciones) y narraciones breves, teniendo en cuenta la estructura de cada tipo de texto. (p28)",
+      "19.Aplica la grafía correspondiente para representar los sonidos. (p28)",
+      "20. Aplica normas acerca del uso de: • Las letras. • Las mayúsculas. • La tilde y la marca de nasalidad. (p28)"
+     ],
+     "topics": [
+      "saludos y presentación con características, gustos y aficiones",
+      "datos personales: nombre, edad y grado",
+      "mi cuerpo, mi familia, mi casa, mi escuela y mi país (item 10)",
+      "trabalenguas, chistes, rimas, poesías, canciones, cuentos, descripciones, fábulas, leyendas, diálogos e instrucciones, noticias breves",
+      "texto narrativo: personajes, acciones, lugar y tiempo",
+      "actividades del día: mañana, tarde y noche",
+      "deseos y necesidades en situaciones sociales cotidianas",
+      "esquelas, tarjetas, adivinanzas, poemas, acrósticos, diálogos, descripciones, narraciones breves",
+      "letras, mayúsculas, tilde y marca de nasalidad"
+     ]
+    },
+    {
+     "grade": "4.º grado",
+     "alcance": "Ko mbo'esyrýpe oñeha'ãrõ temimbo'ekuéra omoñe'ẽ ha oikũmbykuaa umi téksto ndaipu-kuetéiva térã nambykyetéiva, ojehai ha oñehendúva, oguerekóva umi ñe'ẽ py'ỹinte ojepurúva ha ndahasyíva iñeikũmby. Péicha ikatúta omombe'u oñe'ẽ ha ohaikuévo hemikotevẽ ha opa mba'e oikóva hekoha rupi. Ko'ápe ikatu gueteri temimbo'ekuéra ojavymimi ha upe ojavyhaguépe oñehekombo'eveva'erã ichupekuéra. (p45) [Translation, mine: se espera que lean y comprendan textos no muy largos o cortos, escritos y oídos, con palabras de uso frecuente y fáciles; que cuenten hablando y escribiendo sus necesidades y lo que ocurre en su comunidad; todavía pueden cometer pequeños errores, que se deben seguir corrigiendo.]",
+     "oral": [
+      "1. Oikũmby oje'éva ichupe mba'emba'épa ojapova'erã ohuga hag̃ua ha oikuaa hag̃ua mba'éichapa ojapova'erã opaichagua mba'e ijedádpe g̃uarã. (p45)",
+      "2. Oikũmby mba'épa oje'ehína ichupe hogapypeguáre. (p45)",
+      "7. Omomba'e hapichakuéra remimo'ã ojoavýramo jepe hemimo'ãgui. (p45)",
+      "8. Oporomaitei ojesarekóvo moomõ ha máva ndivepa oĩ. (p46)",
+      "9. He'i mba'épa ojapo hógape pyhareve, ka'aru ha pyharekue. (p46)",
+      "11. He'ijey kũjererã ha ñe'ẽpoty. (p46)",
+      "13. Ohechauka, iñe'ẽ rupi, mba'eichagua tékstopa pe he'ivahína (omokangyve térã omombareteve iñe'ẽ, omomýi hete, oñe'ẽ hatãve térã mbegueve, iñe'ẽ pohýi, ha mba'e). (p46)"
+     ],
+     "written": [
+      "14. Oikũmby ñemongeta ojehaiva'ekue oñeñe'ẽhápe umi téma rehe ko'ág̃a rupi herakuãvéva. (p46)",
+      "15. Oikũmby omoñe'ẽva he'ihápe mba'éichapa ohugava'erã, ha mba'éichapa ojapova'erã umi mba'e ijedádpe g̃uarã. (p46)",
+      "19. Ohesa'ỹijo umi mba'e jehaipyre retepýpe oĩva, ohechakuaakuévo: • Jehaipyre ojoapyha hekópe. ... (p47)",
+      "20. Ohai omombe'uhápe hembiapo pyharevegua, ka'arugua ha pyharegua. (p47)",
+      "21. Ohai omombe'uhápe mba'épa ojapo hogaygua ndive. (p47)",
+      "22. Omombe'ujey ohaikuévo mombe'urã omoñe'ẽva térã ohendúva. (p47)",
+      "23. Oñeha'ã ohai porã jahechápa oñeikũmby he'iséva. (p47)",
+      "24. Oipuru ñe'ẽ térã ambue signokuéra oipytyvõva omoñe'ẽvape oikũmby hag̃ua pe jehaipyrépe he'íva (p47)"
+     ],
+     "topics": [
+      "instrucciones para jugar y hacer cosas propias de la edad (item 1)",
+      "lo que se dice del hogar (item 2)",
+      "saludo según el lugar y la persona (item 8)",
+      "actividades de la mañana, tarde y noche (items 9, 20)",
+      "trabalenguas y poesía: kũjererã ha ñe'ẽpoty (item 11)",
+      "descripciones (item 13)",
+      "diálogos escritos sobre temas actuales (item 14)",
+      "coherencia, cohesión y adecuación del texto (item 19)",
+      "actividades con la familia (item 21)",
+      "recontar relatos leídos u oídos (item 22)"
+     ]
+    },
+    {
+     "grade": "5.º grado",
+     "alcance": "Ko mbo'esyrýpe oñeha'ãrõ temimbo'ekuéra omoñe'ẽ syryry ñepyrũ ha oikũmbykuaa avei umi ñe'ẽjehaipyre ha ñe'ẽjehaipyre'ỹva nambykyetéiva, oguerekóva umi ñe'ẽ hasy-mievéva iñeikũmby. Péicha ikatúta omombe'u oñe'ẽ ha ohaikuévo hemikotevẽ, hemiandu ha opa mba'e oikóva ijere rupi ha ambue henda rupi. Ko'ápe ikatu gueteri temimbo'ekuéra ojavymimi ha upe ojavyhaguépe oñehe-kombo'eveva'erã ichupekuéra (p45) [Translation, mine: se espera que empiecen a leer con fluidez y comprendan textos escritos y no escritos breves, con palabras algo más difíciles; que cuenten hablando y escribiendo sus necesidades, sentimientos y lo que ocurre a su alrededor y en otros lugares; todavía pueden cometer pequeños errores.]",
+     "oral": [
+      "1. Oikũmby oje'éva ichupe ohuga hag̃ua, oiporu hag̃ua tembiporu ogapypegua ha oikuaa hag̃ua mba'éichapa ojapova'erã opaichagua mba'e ijedádpe g̃uarã. (p45)",
+      "2. Oikũmby mba'épa oje'ehína ichupe hogapypeguáre ha imbo'ehaoreguáre. (p45)",
+      "8. Ombojoavy imaitei ohechakuaávo máva ndivépa oñe'ẽ ha moõpa oĩ hikuái. (p46)",
+      "9. He'i mba'épa hembiapo hógape ha mbo'ehaópe (p46)",
+      "11. He'ijey kũjererã, ñe'ẽpoty, purahéi ha hetave mba'e. (p46)",
+      "12.He'i ha'e oikũmbyhaguéicha ha oñanduháicha umi jehaipyrekuéra ohendu ha omoñe'ẽva'ekue. (p46)"
+     ],
+     "written": [
+      "14. Oikũmby mombe'urã térã ñe'ẽpoty oñeñe'ẽhápe umi téma rehe ko'ág̃a rupi herakuãvéva. (p46)",
+      "15. Oikũmby omoñe'ẽva he'ihápe mba'éichapa ohugava'erã, mba'éichapa oiporuva'erã tembiporu ogapypegua ha mba'éichapa ojapova'erã opaichagua mba'e ijedádpe g̃uarã. (p46)",
+      "19. Ohesa'ỹijo umi jehaipyre retepýpe oĩva ohechakuaakuévo: ... (p47)",
+      "20. Ohai omombe'uhápe hembiapo hogapýpe ha imbo'ehaópe (p47)",
+      "21. Ohaikuaa mba'épa ojapo hogaygua ha iñirũnguéra ndive. (p47)",
+      "22. Omombe'ujey ohaikuévo mombe'urã, ñe'ẽpoty ha mombe'ugua'u omoñe'ẽva térã ohendúva. (p47)",
+      "24. Oipuru ñe'ẽ térã ambue signokuéra oipytyvõva omoñe'ẽvape oikũmby hag̃ua pe jehaipyrépe he'íva (p47)"
+     ],
+     "topics": [
+      "instrucciones: jugar, usar utensilios del hogar (item 1)",
+      "hogar y escuela (items 2, 9, 20)",
+      "saludo según interlocutor y lugar (item 8)",
+      "trabalenguas, poesía, canciones: kũjererã, ñe'ẽpoty, purahéi (item 11)",
+      "relatos o poesías sobre temas actuales: mombe'urã térã ñe'ẽpoty (item 14)",
+      "coherencia, cohesión y adecuación del texto (item 19)",
+      "familia y amigos (item 21)",
+      "recontar relatos (mombe'urã), poesía y mombe'ugua'u leídos u oídos (item 22)"
+     ]
+    },
+    {
+     "grade": "6.º grado",
+     "alcance": "Ko'ápe oñeha'ãrõ temimbo'ekuéra omoñe'ẽ syryry porãma ha oikũmbykuaa avei umi ñe'ẽjehaipyre'ỹ nambykyetéiva ojehai ha oñehendúva, oguerekóva umi ñe'ẽ hasyvémava iñeikũmby. Péicha ikatúta omombe'u hemikotevẽ, hemiandu, hemimo'ã ha opa mba'e oikóva ijere rupi ha opa henda rupi. Ko'ápe ikatu gueteri temimbo'ekuéra ojavymimi ha upe ojavyhaguépe oñehekombo'eveva'erã ichupekuéra. (p45) [Translation, mine: se espera que ya lean con buena fluidez y comprendan textos breves escritos y oídos, con palabras más difíciles; que cuenten sus necesidades, sentimientos, pensamientos y todo lo que ocurre a su alrededor y en todo lugar; todavía pueden cometer pequeños errores.]",
+     "oral": [
+      "1. Oikũmby oje'éva ichupe ohuga hag̃ua, oiporu hag̃ua tembipuru ogapypegua ha oikuaa hag̃ua mba'éichapa ojapova'erã tembi'ukuéra ha opaichagua mba'e ijedádpe g̃uarã. (p45)",
+      "2. Oikũmby mba'épa oje'ehína ichupe hogapypeguáre, imbo'ehaoreguáre ha ambue henda mba'e oikóva rehe (p45)",
+      "8. Ohechakuaa mba'éichapa oporomomaiteiva'erã ojesarekoháp e avándipa oĩ ha mba'eichahápepa ojojuhu hikuái. (p46)",
+      "9. He'i mba'e hembiapo ha'e ha hogayguakuéra opavave aravópe. (p46)",
+      "11.He'ijey kũjererã, ñe'ẽpoty, purahéi ha hetave mba'e. (p46)",
+      "13. Ohechukáva'erã iñe'ẽ rupi he'ivahína (omokangyve térã omombareteve iñe'ẽ, ...), ha tékstopa pe he'ivahína ... (p46)"
+     ],
+     "written": [
+      "14. Oikũmby opáichagua jehaipyre oñeñe'ẽhápe umi téma rehe ko'ág̃a rupi herakuãvéva. (p46)",
+      "15.Oikũmby omoñe'ẽva he'ihápe mba'éichapa ohugava'erã, ojapova'erã tembi'u, oiporuva'erã tembipuru ogapypegua ha mba'éichapa ojapova'erã opaichagua mba'e ijedádpe g̃uarã. (p46)",
+      "16. Ohechakuaa umi mba'e jehaipyre retepýpe oĩva ohechakuaakuévo : • Jehaipyre ojoapyha hekópe. • Jehaipyre he'iha pe oñeha'ãrõva ichugui. • Umi ñe'ẽ térã ambue signokuéra oipytyvõva omoñe'ẽvape oikũmby hag̃ua pe jehaipyrépe he'íva. (p46-47)",
+      "20. Ohai omombe'uhápe hembiapo hogapýpe, imbo'ehaópe ha opavave tendápe ha'e oikóva. (p47)",
+      "21. Ohai mba'épa ojapo hogaygua, iñirũnguéra ha ambue hapicha ikuaahára ndive. (p47)",
+      "22. Omombe'ujey ohaikuévo mombe'urã, ñe'ẽpoty ha mombe'ugua'u omoñe'ẽva térã ohendúva. (p47)",
+      "24. Oipuruha ñe'ẽ térã ambue signokuéra oipytyvõva omoñe'ẽvape oikũmby hag̃ua pe jehaipyrépe (p47)"
+     ],
+     "topics": [
+      "instrucciones: jugar, utensilios del hogar, recetas (tembi'ukuéra) (items 1, 15)",
+      "hogar, escuela y otros lugares (items 2, 20)",
+      "saludo según interlocutor y situación (item 8)",
+      "actividades propias y de la familia (item 9)",
+      "trabalenguas, poesía, canciones (item 11)",
+      "todo tipo de textos sobre temas actuales (item 14)",
+      "coherencia y adecuación del texto (items 16, 19)",
+      "familia, amigos y conocidos (item 21)",
+      "recontar relatos, poesía y mombe'ugua'u leídos u oídos (item 22)"
+     ]
+    }
+   ]
+  },
+  {
+   "lens": "skeptic",
+   "answers": [
+    {
+     "q": "Q1. Is the 1st-cycle 'Comunicación Guaraní' table the program for Guarani as L2, as L1, or for both? What in the document says so?",
+     "answer": "The document gives ONE Guarani table per grade (p26-28). It does not show separate L1 and L2 tracks. The only explicit marker is in the 3.º grado alcance, which calls the learning process 'la L2'. That supports reading the table as Guarani as a second language. The document never says in so many words 'this table is for L2 only' or 'for L1 children use X'. There is no Guarani-as-L1 program in the document, and it does not say how the table applies to Guarani-speaking children (not in the document). One qualifying point: the 1st-cycle 'Comunicación Castellano' table is framed around 'lengua materna', and its writing capacities include Guarani spelling rules ('en el caso del guaraní'). So the Castellano table is written so that it can cover either language for some orthography items. The document does not explain this, and I do not infer more. In the 2nd cycle, the hours table names the areas 'Lengua Materna' and 'Segunda Lengua' (p21), but the capacity tables are titled 'Comunicación Castellano' and 'Comunicación Guaraní'. The document never maps one onto the other. SKEPTIC NOTE: the app has three tracks (L1/L2/BI). Their notes ('lee y escribe en guaraní desde 1.º grado' for L1 and BI) are not in this document.",
+     "quotes": [
+      {
+       "page": 26,
+       "text": "Podrían seguir apareciendo imperfecciones propias del proceso de aprendizaje de la L2, como parte del desarrollo de la competencia comunicativa."
+      },
+      {
+       "page": 26,
+       "text": "Comunicación Guaraní"
+      },
+      {
+       "page": 23,
+       "text": "se expresen en forma oral y escrita utilizando su lengua materna para comunicarse"
+      },
+      {
+       "page": 25,
+       "text": "La tilde y la marca de nasalidad, en el caso del guaraní."
+      },
+      {
+       "page": 21,
+       "text": "Lengua Materna 5 3"
+      },
+      {
+       "page": 21,
+       "text": "Segunda Lengua 4 3"
+      }
+     ]
+    },
+    {
+     "q": "Q2. In 1.º grado, does the Guarani program include reading and writing, or only listening and speaking? Compare the alcance with its capacities.",
+     "answer": "There is a real tension in the document. The 1.º grado ALCANCE is oral only. It says 'utilizar vocabulario elemental', 'mantener conversaciones breves' and 'formular y responder preguntas', and it never says 'escrita'. (Compare the 2.º alcance, which adds 'en forma oral o escrita'.) But the 1.º grado CAPACITIES include reading and writing. The two capacity blocks are headed 'Comprensión oral y escrita' and 'Expresión oral y escrita'. Capacity 1 mentions a text 'antes de escucharlo o leerlo'. Capacity 17 is 'Escribe tarjetas, adivinanzas, diálogos, descripciones ... y narraciones breves'. Capacities 19 and 21 are 'Utiliza la grafía correspondiente para representar sonidos'. Capacity 20 is 'Aplica en sus redacciones las reglas de uso de: Las letras. Los signos básicos de puntuación.' Most of the comprehension capacities (7, 9) refer to texts 'escuchados' only, while 2.º adds 'o leídos'. So the honest reading: the alcance describes an oral outcome, but the prioritized capacities for 1.º already include writing. SKEPTIC NOTE: the app says that with Guarani as L2, '1.º grado es oral' and 'leer y escribir empieza en 2.º grado'. The 1.º alcance supports this, but capacities 17, 19, 20 and 21 contradict it. The claim is too strong as stated.",
+     "quotes": [
+      {
+       "page": 26,
+       "text": "Al culminar el grado, se espera que los estudiantes puedan utilizar vocabulario elemental relacionado con datos personales, del hogar y la escuela, mantener conversaciones breves aplicando funciones comunicativas básicas, con las cuales podrá formular y responder preguntas."
+      },
+      {
+       "page": 26,
+       "text": "Comprensión oral y escrita"
+      },
+      {
+       "page": 26,
+       "text": "1. Anticipa posibles informaciones contenidas en un texto antes de escucharlo o leerlo, a partir de imágenes u otros soportes paratextuales."
+      },
+      {
+       "page": 27,
+       "text": "7. Comprende la información contenida en textos breves escuchados: trabalenguas, chistes, rimas, poesías, canciones, cuentos, descripciones, fábulas, leyendas, diálogos e instrucciones breves."
+      },
+      {
+       "page": 27,
+       "text": "Expresión oral y escrita"
+      },
+      {
+       "page": 28,
+       "text": "17. Escribe tarjetas, adivinanzas, diálogos, descripciones (de personas, paisajes, animales, plantas y objetos) y narraciones breves."
+      },
+      {
+       "page": 28,
+       "text": "19.Utiliza la grafía correspondiente para representar sonidos."
+      },
+      {
+       "page": 28,
+       "text": "20. Aplica en sus redacciones las reglas de uso de: • Las letras. • Los signos básicos de puntuación."
+      },
+      {
+       "page": 28,
+       "text": "21. Utiliza la grafía correspondiente para representar sonidos."
+      }
+     ]
+    },
+    {
+     "q": "Q3. In which grade does written Guarani first appear in the alcance?",
+     "answer": "2.º grado. It is the first Guarani alcance that says 'en forma oral o escrita' and mentions understanding information from texts from sources such as a 'periódico'. The 3.º alcance repeats 'en forma oral y escrita'. The 1.º alcance has no reference to writing or reading. Note, though, that the 1.º CAPACITIES already include writing (see Q2), so 'first appears in the alcance' is not the same as 'first appears in the program'.",
+     "quotes": [
+      {
+       "page": 26,
+       "text": "Al culminar el grado, se espera que los estudiantes puedan utilizar en forma oral y escrita, vocabulario básico que responda a situaciones comunicativas usuales. Comprendan la información básica de textos breves de uso frecuente procedentes de distintas fuentes (profesor, compañeros, radio, televisión, periódico, etc.)."
+      },
+      {
+       "page": 26,
+       "text": "Al culminar el grado, se espera que los estudiantes puedan utilizar en forma oral y escrita, vocabulario básico que responda a diversas situaciones comunicativas usuales."
+      }
+     ]
+    },
+    {
+     "q": "Q4. What does the document say about children whose mother tongue is Guarani: when do they read and write in Guarani?",
+     "answer": "Not in the document. No passage says when children whose mother tongue is Guarani read or write in Guarani. The document never names a 'Guarani como lengua materna' program. The only mother-tongue references are these: the 1st-cycle Castellano alcance ('utilizando su lengua materna para comunicarse', 'utilizando la lengua materna en su interacción social'), the Castellano writing capacity about Guarani orthography ('en el caso del guaraní'), and the 2nd-cycle hours table ('Lengua Materna'/'Segunda Lengua'). None of these says that Guarani-L1 children read and write in Guarani in 1.º grado. SKEPTIC NOTE: the app's L1 claim ('lee y escribe en guaraní desde 1.º grado'), its 1.º grado text ('Con el guaraní como lengua materna, en 1.º grado se empieza a leer y escribir') and its 2.º text ('como lengua materna, se afianza') are not supported by this document. If they come from another source (for example Ley 1264/98, art. 31, which the app cites for Preescolar), that source must be cited instead.",
+     "quotes": [
+      {
+       "page": 23,
+       "text": "se espera que los niños y las niñas desarrollen sus capacidades relacionadas con la lectoescritura para que empiecen a leer con cierta fluidez textos contextualizados breves con vocabulario sencillo; además, comprendan los mensajes cotidianos significativos que escuchan y leen, y se expresen en forma oral y escrita utilizando su lengua materna para comunicarse"
+      },
+      {
+       "page": 25,
+       "text": "17. Aplica en sus redacciones las reglas del uso de: ... • La tilde en palabras agudas, en el caso del castellano. • La tilde y la marca de nasalidad, en el caso del guaraní."
+      }
+     ]
+    },
+    {
+     "q": "Q5. Topics named for 1.º, 2.º and 3.º grado in Guarani.",
+     "answer": "Greetings and courtesy: cap. 4 in all three grades, cap. 12 and cap. 18 in 1.º, and cap. 21 in 2.º. Personal data (nombre, edad y grado): cap. 5, all grades. Immediate context, 'mi cuerpo, mi familia, mi casa, mi escuela y mi país': cap. 10, all grades. The 1.º alcance also names 'datos personales, del hogar y la escuela'. Parts of the day, 'a la mañana, a la tarde y a la noche': cap. 14, all grades. Needs: cap. 16. 1.º has 'pedir ayuda, favor, permiso, préstamo de algún objeto o material'. 2.º has 'ir al baño, tomar agua, pedir alimentos, solicitar permiso y prestar algo'. 3.º has 'deseos y necesidades en situaciones sociales cotidianas'. Instructions: cap. 3, all grades, 'manipular objetos y electrodomésticos, ubicarlos en un lugar determinado y trasladarse de un lugar a otro'. Agreement and disagreement: cap. 15. Texts to understand (cap. 7): in 1.º, 'trabalenguas, chistes, rimas, poesías, canciones, cuentos, descripciones, fábulas, leyendas, diálogos e instrucciones breves'. 2.º adds 'etiquetas'. 3.º adds 'noticias breves'. Texts to write (cap. 17): in 1.º, 'tarjetas, adivinanzas, diálogos, descripciones ... y narraciones breves'. 2.º and 3.º add 'esquelas', 'poemas' and 'acrósticos'. Characters (cap. 9 and 11). In 3.º, narrative analysis: 'personajes, acciones, lugar y tiempo'. Orthography: 1.º has 'Las letras' and 'Los signos básicos de puntuación'. 2.º and 3.º have 'Las letras', 'Las mayúsculas' and 'La tilde y la marca de nasalidad'. SKEPTIC NOTES on app units and 'mec' text. NOT in the Guarani 1st-cycle table: numbers 1 to 10; 'el alfabeto: las vocales y el puso'; the consonant list (ch, mb, nd, ng, nt, rr, g̃); animals or food as unit topics (animals appear only as description objects in cap. 17); 'preguntar por un lugar / dar direcciones'; 'palabras que se escriben igual en castellano y en guaraní'; and, for 3.º, 'reglas de juegos, recetas' and 'ideas principales'. Those last two come from the Castellano table (p23-24), not the Guarani one. The Guarani 3.º grado has 'Secuencia los hechos' (cap. 6) and electrical-appliance instructions (cap. 3). The claim 'se consolidan la lectura y la escritura en las dos lenguas' is not stated for Guarani; the 3.º Guarani alcance still speaks of 'imperfecciones propias del proceso de aprendizaje de la L2'.",
+     "quotes": [
+      {
+       "page": 26,
+       "text": "4. Comprende el significado de saludos y otras expresiones de cortesía"
+      },
+      {
+       "page": 26,
+       "text": "5. Comprende el significado de preguntas acerca de los datos personales: nombre, edad y grado."
+      },
+      {
+       "page": 26,
+       "text": "3. Sigue instrucciones breves para realizar determinadas acciones como manipular objetos y electrodomésticos, ubicarlos en un lugar determinado y trasladarse de un lugar a otro."
+      },
+      {
+       "page": 27,
+       "text": "10.Comprende el significado de vocablos que se refieren a su contexto inmediato (mi cuerpo, mi familia, mi casa, mi escuela y mi país) y vocablos contenidos en poemas breves, canciones descripciones y adivinanzas."
+      },
+      {
+       "page": 27,
+       "text": "14.Describe las actividades que realiza durante el día: a la mañana, a la tarde y a la noche."
+      },
+      {
+       "page": 28,
+       "text": "16. Expresa sus necesidades tales como pedir ayuda, favor, permiso, préstamo de algún objeto o material conforme a contextos comunicativos usuales."
+      },
+      {
+       "page": 28,
+       "text": "16.Expresa necesidades básicas como: ir al baño, tomar agua, pedir alimentos, solicitar permiso y prestar algo."
+      },
+      {
+       "page": 28,
+       "text": "16.Comunica sus deseos y necesidades en situaciones sociales cotidianas."
+      },
+      {
+       "page": 27,
+       "text": "7. Comprende la información contenida en textos breves escuchados o leídos: trabalenguas, chistes, rimas, poesías, canciones, cuentos, descripciones, fábulas, leyendas, diálogos e instrucciones, noticias breves."
+      },
+      {
+       "page": 28,
+       "text": "17.Redacta esquelas, tarjetas, adivinanzas, poemas, acrósticos, diálogos, descripciones (personas, personajes de textos, paisajes, animales, plantas, objetos y situaciones) y narraciones breves, teniendo en cuenta la estructura de cada tipo de texto."
+      },
+      {
+       "page": 27,
+       "text": "11.Analiza un texto narrativo considerando personajes, acciones, lugar y tiempo."
+      },
+      {
+       "page": 24,
+       "text": "9. Interpreta órdenes e instrucciones dadas como reglas de juegos, recetas de cocina, cómo usar electrodomésticos."
+      }
+     ]
+    },
+    {
+     "q": "Q6. Weekly hours of Guarani (regular and 2021) in the 1st and 2nd cycle, and how the 2nd cycle names its language areas.",
+     "answer": "1st cycle (Cuadro 4, PDF p21): Guaraní has 4 hours regular and 3 in 2021, Castellano has 5 regular and 3 in 2021, under 'Comunicación' (11 regular, 7 in 2021). Total is 30 hours regular and 20 in 2021. The 2021 periods are 35 minutes each (p20). 2nd cycle (Cuadro 5, p21): there is no row named Guaraní or Castellano. The areas are 'Lengua Materna', with 5 hours current and 3 in 2021, and 'Segunda Lengua', with 4 hours current and 3 in 2021. The document does not say which language is the Lengua Materna or the Segunda Lengua in Cuadro 5. The 2nd-cycle capacity tables are titled 'Comunicación Castellano' (p41) and 'Comunicación Guaraní' (p45). So the Guarani hours for the 2nd cycle are not stated as such: 'not in the document' beyond the LM/SL rows.",
+     "quotes": [
+      {
+       "page": 21,
+       "text": "Cuadro 4. Carga horaria semanal regular y carga horaria propuesta para el desarrollo de clases del año 2021 del 1º ciclo de la Educación Escolar Básica"
+      },
+      {
+       "page": 21,
+       "text": "Guaraní 4 3"
+      },
+      {
+       "page": 21,
+       "text": "Castellano 5 3"
+      },
+      {
+       "page": 21,
+       "text": "Cuadro 5. Carga horaria semanal regular y carga horaria propuesta para el desarrollo de clases del año 2021 del 2º ciclo de la Educación Escolar Básica"
+      },
+      {
+       "page": 21,
+       "text": "Lengua Materna 5 3"
+      },
+      {
+       "page": 21,
+       "text": "Segunda Lengua 4 3"
+      },
+      {
+       "page": 20,
+       "text": "realizar una disminución en la carga horaria semanal a 20 horas pedagógicas, considerando además cada una de ellas con un equivalente a 35 minutos"
+      }
+     ]
+    },
+    {
+     "q": "Q7. For 4.º, 5.º and 6.º grado: the Guarani alcance (Guarani + faithful Spanish translation) and main text types or topics.",
+     "answer": "4.º, translated: 'En este grado se espera que los estudiantes lean y sepan comprender textos no muy largos o bastante breves, escritos y escuchados, que tengan palabras de uso frecuente y que no sean difíciles de entender. Así podrán contar, al hablar y al escribir, sus necesidades y todo lo que pasa en su comunidad. Aquí los estudiantes todavía pueden cometer pequeños errores, y donde se equivoquen se les debe corregir/orientar más.' 5.º, translated: 'En este grado se espera que los estudiantes empiecen a leer con fluidez y también sepan comprender textos escritos y no escritos [orales] bastante breves, que tengan palabras algo más difíciles de entender. Así podrán contar, al hablar y al escribir, sus necesidades, sus sentimientos y todo lo que pasa a su alrededor y en otros lugares. Aquí los estudiantes todavía pueden cometer pequeños errores ...' 6.º, translated: 'Aquí se espera que los estudiantes ya lean con buena fluidez y también comprendan textos breves, escritos y escuchados, con palabras más difíciles de entender. Así podrán contar sus necesidades, sentimientos, pensamientos y todo lo que pasa a su alrededor y en todas partes. Aquí los estudiantes todavía pueden cometer pequeños errores ...' The 6.º Guarani literally reads 'ñe'ẽjehaipyre'ỹ ... ojehai ha oñehendúva', which is internally odd ('unwritten texts, written and heard'). The document labels 6.º as closing the cycle only in the Castellano table ('deben lograr el desarrollo íntegro de la competencia del ciclo', p41), not in the Guarani one. The 2nd-cycle Guarani table is organised in four blocks: 'Oikumbýta mba'e ohendúva oje'éva ichupe guaraníme' (listening comprehension), 'Oñe'ẽkuaáta guaraníme' (speaking), 'Oikũmbýta jehaipyre omoñe'ẽva guaraníme' (reading comprehension) and 'Ohaíta guaraníme' (writing). Main topics and text types: instructions for games, household tools and things for their age (and food in 6.º) (cap. 1, 15); what is said about home (4.º), plus school (5.º), plus other matters (6.º) (cap. 2); polysemous words (cap. 5); respecting others' opinions (cap. 7); greetings suited to the interlocutor (cap. 8); daily activities at home and school and with family and friends (cap. 9, 20, 21); 'kũjererã' (trabalenguas) and 'ñe'ẽpoty' (poems), plus 'purahéi' (songs) in 5.º and 6.º (cap. 11); expressive reading (cap. 13); dialogues (4.º) and narratives or poems (5.º) on current topics (cap. 14); text features such as sequence, connectors, purpose, beginning and development, and signs (cap. 16 and 19); retelling in writing 'mombe'urã' (stories), and in 5.º and 6.º 'ñe'ẽpoty ha mombe'ugua'u' (poems and legends) (cap. 22); writing clearly (cap. 23); signs that help the reader (cap. 24); and characters in heard texts in 6.º (cap. 3). SKEPTIC NOTES: these are not in the 2nd-cycle Guarani table: letters and esquelas ('Kuatiañe'ẽ', 4.º); 'la oración y el verbo', 'posesivos', 'acento', 'pronombres', 'conjugar el verbo'; 'mitos' ('mombe'ugua'u' = legends appears, 'mitos' does not); 'noticias de la radio y la tele' (6.º; 'noticias breves' appears only in the 1st-cycle 3.º table); and 'leer entre líneas / deduce lo que un texto no dice'. The app's 2nd-cycle 'mec' phrase 'textos ... para situaciones de todos los días y también formales' is not worded this way in the Guarani alcance.",
+     "quotes": [
+      {
+       "page": 45,
+       "text": "Ko mbo’esyrýpe oñeha’ãrõ temimbo’ekuéra omoñe’ẽ ha oikũmbykuaa umi téksto ndaipukuetéiva térã nambykyetéiva, ojehai ha oñehendúva, oguerekóva umi ñe’ẽ py’ỹinte ojepurúva ha ndahasýiva iñeikũmby. Péicha ikatúta omombe’u oñe’ẽ ha ohaikuévo hemikotevẽ ha opa mba’e oikóva hekoha rupi. Ko’ápe ikatu gueteri temimbo’ekuéra ojavymimi ha upe ojavyhaguépe oñehekombo’eveva’erã ichupekuéra."
+      },
+      {
+       "page": 45,
+       "text": "Ko mbo’esyrýpe oñeha’ãrõ temimbo’ekuéra omoñe’ẽ syryry ñepyrũ ha oikũmbykuaa avei umi ñe’ẽjehaipyre ha ñe’ẽjehaipyre’ỹva nambykyetéiva, oguerekóva umi ñe’ẽ hasymievéva iñeikũmby. Péicha ikatúta omombe’u oñe’ẽ ha ohaikuévo hemikotevẽ, hemiandu ha opa mba’e oikóva ijere rupi ha ambue henda rupi. Ko’ápe ikatu gueteri temimbo’ekuéra ojavymimi ha upe ojavyhaguépe oñehekombo’eveva’erã ichupekuéra"
+      },
+      {
+       "page": 45,
+       "text": "Ko’ápe oñeha’ãrõ temimbo’ekuéra omoñe’ẽ syryry porãma ha oikũmbykuaa avei umi ñe’ẽjehaipyre’ỹ nambykyetéiva ojehai ha oñehendúva, oguerekóva umi ñe’ẽ hasyvémava iñeikũmby. Péicha ikatúta omombe’u hemikotevẽ, hemiandu, hemimo’ã ha opa mba’e oikóva ijere rupi ha opa henda rupi. Ko’ápe ikatu gueteri temimbo’ekuéra ojavymimi ha upe ojavyhaguépe oñehekombo’eveva’erã ichupekuéra."
+      },
+      {
+       "page": 45,
+       "text": "Oikumbýta mba’e ohendúva oje’éva ichupe guaraníme"
+      },
+      {
+       "page": 46,
+       "text": "Oñe’ẽkuaáta guaraníme"
+      },
+      {
+       "page": 46,
+       "text": "Oikũmbýta jehaipyre omoñe’ẽva guaraníme"
+      },
+      {
+       "page": 47,
+       "text": "Ohaíta guaraníme"
+      },
+      {
+       "page": 46,
+       "text": "11. He’ijey kũjererã ha ñe’ẽpoty."
+      },
+      {
+       "page": 46,
+       "text": "11. He’ijey kũjererã, ñe’ẽpoty, purahéi ha hetave mba’e."
+      },
+      {
+       "page": 47,
+       "text": "22. Omombe’ujey ohaikuévo mombe’urã, ñe’ẽpoty ha mombe’ugua’u omoñe’ẽva térã ohendúva."
+      },
+      {
+       "page": 46,
+       "text": "14. Oikũmby ñemongeta ojehaiva’ekue oñeñe’ẽhápe umi téma rehe ko’ãg̃a rupi herakuãvéva."
+      },
+      {
+       "page": 41,
+       "text": "Así, al terminar este grado, deben lograr el desarrollo íntegro de la competencia del ciclo."
+      }
+     ]
+    }
+   ],
+   "grades": [
+    {
+     "grade": "1.º grado (Comunicación Guaraní, PDF p26-28)",
+     "alcance": "Al culminar el grado, se espera que los estudiantes puedan utilizar vocabulario elemental relacionado con datos personales, del hogar y la escuela, mantener conversaciones breves aplicando funciones comunicativas básicas, con las cuales podrá formular y responder preguntas. (p26)",
+     "oral": [
+      "4. Comprende el significado de saludos y otras expresiones de cortesía (p26)",
+      "5. Comprende el significado de preguntas acerca de los datos personales: nombre, edad y grado. (p26)",
+      "7. Comprende la información contenida en textos breves escuchados: trabalenguas, chistes, rimas, poesías, canciones, cuentos, descripciones, fábulas, leyendas, diálogos e instrucciones breves. (p27)",
+      "9. Reconoce personajes y lugares mencionados en textos escuchados. (p27)",
+      "12. Expresa diversas formas de saludo y presentación. (p27)",
+      "13. Expresa diálogos breves de forma sostenida y coherente con relación a temas cotidianos. (p27)",
+      "14. Describe las actividades que realiza durante el día: a la mañana, a la tarde y a la noche. (p27)",
+      "15. Expresa acuerdos/desacuerdos ante situaciones presentadas. (p27)",
+      "16. Expresa sus necesidades tales como pedir ayuda, favor, permiso, préstamo de algún objeto o material ... (p28)",
+      "18. Utiliza expresiones de cortesía en sus diálogos. (p28)"
+     ],
+     "written": [
+      "Block headings: 'Comprensión oral y escrita' (p26), 'Expresión oral y escrita' (p27)",
+      "1. Anticipa posibles informaciones contenidas en un texto antes de escucharlo o leerlo ... (p26)",
+      "17. Escribe tarjetas, adivinanzas, diálogos, descripciones (de personas, paisajes, animales, plantas y objetos) y narraciones breves. (p28)",
+      "19. Utiliza la grafía correspondiente para representar sonidos. (p28)",
+      "20. Aplica en sus redacciones las reglas de uso de: Las letras. Los signos básicos de puntuación. (p28)",
+      "21. Utiliza la grafía correspondiente para representar sonidos. (p28)"
+     ],
+     "topics": [
+      "saludos y cortesía",
+      "datos personales: nombre, edad y grado",
+      "mi cuerpo, mi familia, mi casa, mi escuela y mi país (cap. 10)",
+      "actividades: a la mañana, a la tarde y a la noche",
+      "necesidades: ayuda, favor, permiso, préstamo",
+      "instrucciones: manipular objetos y electrodomésticos, ubicarlos, trasladarse",
+      "textos breves escuchados: trabalenguas, chistes, rimas, poesías, canciones, cuentos, descripciones, fábulas, leyendas, diálogos, instrucciones",
+      "escritura: tarjetas, adivinanzas, diálogos, descripciones, narraciones breves",
+      "NOT in document: números 1-10, vocales y puso"
+     ]
+    },
+    {
+     "grade": "2.º grado (Comunicación Guaraní, PDF p26-28)",
+     "alcance": "Al culminar el grado, se espera que los estudiantes puedan utilizar en forma oral o escrita, vocabulario básico que responda a situaciones comunicativas usuales. Comprendan la información básica de textos breves de uso frecuente procedentes de distintas fuentes (profesor, compañeros, radio, televisión, periódico, etc.). Además, sostengan conversaciones breves sobre temas cotidianos de su interés. (p26)",
+     "oral": [
+      "4. Comprende el significado de saludos y se presenta con cortesía (p26)",
+      "5. Comprende el significado de preguntas y responde sobre sus datos personales: nombre, edad y grado. (p26)",
+      "12. Saluda y se presenta y presenta a sus compañeros y familiares. (p27)",
+      "13. Sostiene diálogos breves sobre temas relacionados con su contexto (p27)",
+      "14. Narra las actividades que realiza durante el día: a la mañana, a la tarde y a la noche. (p27)",
+      "15. Manifiesta gusto/disgusto, acuerdo/ desacuerdos ante situaciones presentadas. (p27)",
+      "16. Expresa necesidades básicas como: ir al baño, tomar agua, pedir alimentos, solicitar permiso y prestar algo. (p28)",
+      "21. Expresa diversas formas de saludo y presentación. (p28)"
+     ],
+     "written": [
+      "6. Secuencia los hechos ocurridos en textos leídos. (p27)",
+      "7. Comprende la información contenida en textos breves escuchados o leídos: ... etiquetas e instrucciones breves. (p27)",
+      "17. Redacta esquelas, tarjetas, adivinanzas, poemas, acrósticos, diálogos, descripciones ... y narraciones breves, teniendo en cuenta la estructura de cada tipo de texto. (p28)",
+      "19. Utiliza la grafía correspondiente para representar sonidos. (p28)",
+      "20. Aplica normas acerca del uso de: Las letras. Las mayúsculas. La tilde y la marca de nasalidad. (p28)"
+     ],
+     "topics": [
+      "saludo y presentación propia y de compañeros y familiares",
+      "datos personales",
+      "mi cuerpo, mi familia, mi casa, mi escuela y mi país",
+      "actividades del día",
+      "necesidades básicas: baño, agua, alimentos, permiso, prestar",
+      "gusto/disgusto, acuerdo/desacuerdo",
+      "personajes principales y su actitud emocional",
+      "textos: trabalenguas, chistes, rimas, poesías, canciones, cuentos, descripciones, fábulas, leyendas, diálogos, etiquetas, instrucciones",
+      "escritura: esquelas, tarjetas, adivinanzas, poemas, acrósticos, diálogos, descripciones, narraciones",
+      "NOT in document: dar direcciones, palabras iguales en castellano y guaraní, lista de consonantes"
+     ]
+    },
+    {
+     "grade": "3.º grado (Comunicación Guaraní, PDF p26-28)",
+     "alcance": "Al culminar el grado, se espera que los estudiantes puedan utilizar en forma oral y escrita, vocabulario básico que responda a diversas situaciones comunicativas usuales. Comprendan informaciones sobre temas cotidianos contenidas en textos breves procedentes de distintas fuentes. Además, que sostengan conversaciones sobre temas cotidianos de su interés. Podrían seguir apareciendo imperfecciones propias del proceso de aprendizaje de la L2, como parte del desarrollo de la competencia comunicativa. (p26)",
+     "oral": [
+      "4. Comprende el significado de saludos y se presenta con cortesía. (p26)",
+      "9. Identifica los personajes de un texto escuchado y los caracteriza brevemente. (p27)",
+      "12. Saluda, se presenta y presenta a los demás mencionando sus características, gustos y aficiones. (p27)",
+      "13. Sostiene diálogos breves sobre temas cotidianos. (p27)",
+      "14. Reproduce las actividades que realiza durante el día: a la mañana, a la tarde y a la noche. (p27)",
+      "15. Expresa sus ideas, acuerdos/desacuerdos, gustos/disgustos sobre situaciones habituales. (p27)",
+      "16. Comunica sus deseos y necesidades en situaciones sociales cotidianas. (p28)"
+     ],
+     "written": [
+      "6. Secuencia los hechos ocurridos en textos leídos. (p27)",
+      "7. Comprende la información contenida en textos breves escuchados o leídos: ... instrucciones, noticias breves. (p27)",
+      "11. Analiza un texto narrativo considerando personajes, acciones, lugar y tiempo. (p27)",
+      "17. Redacta esquelas, tarjetas, adivinanzas, poemas, acrósticos, diálogos, descripciones (personas, personajes de textos, paisajes, animales, plantas, objetos y situaciones) y narraciones breves ... (p28)",
+      "19. Aplica la grafía correspondiente para representar los sonidos. (p28)",
+      "20. Aplica normas acerca del uso de: Las letras. Las mayúsculas. La tilde y la marca de nasalidad. (p28)"
+     ],
+     "topics": [
+      "presentarse y presentar a otros: características, gustos, aficiones",
+      "deseos y necesidades",
+      "actividades del día",
+      "texto narrativo: personajes, acciones, lugar y tiempo",
+      "textos: trabalenguas, chistes, rimas, poesías, canciones, cuentos, descripciones, fábulas, leyendas, diálogos, instrucciones, noticias breves",
+      "escritura: esquelas, tarjetas, adivinanzas, poemas, acrósticos, diálogos, descripciones, narraciones",
+      "NOT in Guarani table: reglas de juegos, recetas, idea principal (these are in Castellano p23-24)"
+     ]
+    },
+    {
+     "grade": "4.º grado (Comunicación Guaraní, PDF p45-47)",
+     "alcance": "Ko mbo’esyrýpe oñeha’ãrõ temimbo’ekuéra omoñe’ẽ ha oikũmbykuaa umi téksto ndaipukuetéiva térã nambykyetéiva, ojehai ha oñehendúva, oguerekóva umi ñe’ẽ py’ỹinte ojepurúva ha ndahasýiva iñeikũmby. Péicha ikatúta omombe’u oñe’ẽ ha ohaikuévo hemikotevẽ ha opa mba’e oikóva hekoha rupi. Ko’ápe ikatu gueteri temimbo’ekuéra ojavymimi ha upe ojavyhaguépe oñehekombo’eveva’erã ichupekuéra. (p45) [ES: En este grado se espera que los estudiantes lean y comprendan textos no muy largos o bastante breves, escritos y escuchados, con palabras de uso frecuente y fáciles de entender. Así podrán contar, al hablar y al escribir, sus necesidades y todo lo que pasa en su comunidad. Aquí todavía pueden cometer pequeños errores, y donde se equivoquen se les debe orientar más.]",
+     "oral": [
+      "1. Oikũmby oje’éva ichupe mba’emba’épa ojapova’erã ohuga hag̃ua ha oikuaa hag̃ua mba’éichapa ojapova’erã opaichagua mba’e ijedádpe g̃uarã. (p45)",
+      "2. Oikũmby mba’épa oje’ehína ichupe hogapypeguáre. (p45)",
+      "8. Oporomaitei ojesarekóvo moõmõ ha máva ndivepa oĩ. (p46)",
+      "9. He’i mba’épa ojapo hógape pyhareve, ka’aru ha pyharekue. (p46)",
+      "11. He’ijey kũjererã ha ñe’ẽpoty. (p46)",
+      "12. Oipuru, oñe’ẽnguévo, umi ñe’ẽ oikuaa pyahúva ohóvo guaraníme. (p46)"
+     ],
+     "written": [
+      "13. Ohechauka, iñe’ẽ rupi, mba’eichagua tékstopa pe he’ivahína ... (p46)",
+      "14. Oikũmby ñemongeta ojehaiva’ekue oñeñe’ẽhápe umi téma rehe ko’ãg̃a rupi herakuãvéva. (p46)",
+      "19. Ohesa’ỹijo umi mba’e jehaipyre retepýpe oĩva ... (p47)",
+      "20. Ohai omombe’uhápe hembiapo pyharevegua, ka’arugua ha pyharegua. (p47)",
+      "21. Ohai omombe’uhápe mba’épa ojapo hogaygua ndive. (p47)",
+      "22. Omombe’ujey ohaikuévo mombe’urã omoñe’ẽva térã ohendúva. (p47)",
+      "23. Oñeha’ã ohai porã jahechápa oñeikũmby he’iséva. (p47)"
+     ],
+     "topics": [
+      "instrucciones: juegos y cosas para su edad",
+      "el hogar",
+      "saludos según interlocutor",
+      "actividades de mañana, tarde y noche",
+      "kũjererã (trabalenguas) y ñe’ẽpoty (poemas)",
+      "diálogos escritos sobre temas actuales",
+      "escribir rutinas, la familia, recontar relatos",
+      "NOT in document: cartas y esquelas, la oración y el verbo"
+     ]
+    },
+    {
+     "grade": "5.º grado (Comunicación Guaraní, PDF p45-47)",
+     "alcance": "Ko mbo’esyrýpe oñeha’ãrõ temimbo’ekuéra omoñe’ẽ syryry ñepyrũ ha oikũmbykuaa avei umi ñe’ẽjehaipyre ha ñe’ẽjehaipyre’ỹva nambykyetéiva, oguerekóva umi ñe’ẽ hasymievéva iñeikũmby. Péicha ikatúta omombe’u oñe’ẽ ha ohaikuévo hemikotevẽ, hemiandu ha opa mba’e oikóva ijere rupi ha ambue henda rupi. Ko’ápe ikatu gueteri temimbo’ekuéra ojavymimi ha upe ojavyhaguépe oñehekombo’eveva’erã ichupekuéra (p45) [ES: En este grado se espera que los estudiantes empiecen a leer con fluidez y comprendan también textos escritos y no escritos bastante breves, con palabras algo más difíciles de entender. Así podrán contar, al hablar y al escribir, sus necesidades, sus sentimientos y todo lo que pasa a su alrededor y en otros lugares. Aquí todavía pueden cometer pequeños errores, y donde se equivoquen se les debe orientar más.]",
+     "oral": [
+      "1. Oikũmby oje’éva ichupe ohuga hag̃ua, oiporu hag̃ua tembiporu ogapypegua ha oikuaa hag̃ua mba’éichapa ojapova’erã opaichagua mba’e ijedádpe g̃uarã. (p45)",
+      "2. Oikũmby mba’épa oje’ehína ichupe hogapypeguáre ha imbo’ehaoreguáre. (p45)",
+      "8. Ombojoavy imaitei ohechakuaávo máva ndivépa oñe’ẽ ha moõpa oĩ hikuái. (p46)",
+      "9. He’i mba’épa hembiapo hógape ha mbo’ehaópe (p46)",
+      "11. He’ijey kũjererã, ñe’ẽpoty, purahéi ha hetave mba’e. (p46)",
+      "12. He’i ha’e oikũmbyhaguéicha ha oñanduháicha umi jehaipyrekuéra ohendu ha omoñe’ẽva’ekue. (p46)"
+     ],
+     "written": [
+      "14. Oikũmby mombe’urã térã ñe’ẽpoty oñeñe’ẽhápe umi téma rehe ko’ág̃a rupi herakuãvéva. (p46)",
+      "19. Ohesa’ỹijo umi jehaipyre retepýpe oĩva ... (p47)",
+      "20. Ohai omombe’uhápe hembiapo hogapýpe ha imbo’ehaópe (p47)",
+      "21. Ohaikuaa mba’épa ojapo hogaygua ha iñirũnguéra ndive. (p47)",
+      "22. Omombe’ujey ohaikuévo mombe’urã, ñe’ẽpoty ha mombe’ugua’u omoñe’ẽva térã ohendúva. (p47)",
+      "23. Ohai porã oñeikũmby porã hag̃ua he’iséva. (p47)"
+     ],
+     "topics": [
+      "instrucciones: juegos, utensilios de la casa",
+      "hogar y escuela",
+      "saludos según interlocutor y lugar",
+      "kũjererã, ñe’ẽpoty, purahéi",
+      "relatos o poemas sobre temas actuales",
+      "recontar por escrito mombe’urã, ñe’ẽpoty y mombe’ugua’u (leyendas)",
+      "NOT in document: mitos, acento, posesivos, sentimientos/palabras contrarias as unit"
+     ]
+    },
+    {
+     "grade": "6.º grado (Comunicación Guaraní, PDF p45-47)",
+     "alcance": "Ko’ápe oñeha’ãrõ temimbo’ekuéra omoñe’ẽ syryry porãma ha oikũmbykuaa avei umi ñe’ẽjehaipyre’ỹ nambykyetéiva ojehai ha oñehendúva, oguerekóva umi ñe’ẽ hasyvémava iñeikũmby. Péicha ikatúta omombe’u hemikotevẽ, hemiandu, hemimo’ã ha opa mba’e oikóva ijere rupi ha opa henda rupi. Ko’ápe ikatu gueteri temimbo’ekuéra ojavymimi ha upe ojavyhaguépe oñehekombo’eveva’erã ichupekuéra. (p45) [ES: Aquí se espera que los estudiantes ya lean con buena fluidez y comprendan también textos breves, escritos y escuchados, con palabras más difíciles de entender. Así podrán contar sus necesidades, sentimientos, pensamientos y todo lo que pasa a su alrededor y en todas partes. Aquí todavía pueden cometer pequeños errores, y donde se equivoquen se les debe orientar más.]",
+     "oral": [
+      "1. Oikũmby oje’éva ichupe ohuga hag̃ua, oiporu hag̃ua tembipuru ogapypegua ha oikuaa hag̃ua mba’éichapa ojapova’erã tembi’ukuéra ha opaichagua mba’e ijedádpe g̃uarã. (p45)",
+      "3. Oikũmby mavamáva rehepa oñe’ẽ jehaipyrekuéra ohendúva ha umíva apytépe he’i máva rehépa oñe’ẽve. (p45)",
+      "8. Ohechakuaa mba’éichapa oporomomaiteiva’erã ojesarekohápe avándipa oĩ ha mba’eichahápepa ojojuhu hikuái. (p46)",
+      "9. He’i mba’e hembiapo ha’e ha hogayguakuéra opavave aravópe. (p46)",
+      "11. He’ijey kũjererã, ñe’ẽpoty, purahéi ha hetave mba’e. (p46)"
+     ],
+     "written": [
+      "14. Oikũmby opáichagua jehaipyre oñeñe’ẽhápe umi téma rehe ko’ág̃a rupi herakuãvéva. (p46)",
+      "16. Ohechakuaa umi mba’e jehaipyre retepýpe oĩva ohechakuaakuévo: Jehaipyre ojoapyha hekópe. Jehaipyre he’iha pe oñeha’ãrõva ichugui. ... (p46-47)",
+      "20. Ohai omombe’uháme hembiapo hogapýpe, imbo’ehaópe ha opavave tendápe ha’e oikóva. (p47)",
+      "21. Ohai mba’e ojapo hogaygua, iñirũnguéra ha ambue hapicha ikuaahára ndive. (p47)",
+      "22. Omombe’ujey ohaikuévo mombe’urã, ñe’ẽpoty ha mombe’ugua’u omoñe’ẽva térã ohendúva. (p47)",
+      "24. Oipuruha ñe’ẽ térã ambue signokuéra oipytyvõva omoñe’ẽvape oikũmby hag̃ua pe jehaipyrépe (p47)"
+     ],
+     "topics": [
+      "instrucciones: juegos, utensilios, comidas (tembi’u)",
+      "hogar, escuela y otros asuntos",
+      "personajes de textos escuchados",
+      "kũjererã, ñe’ẽpoty, purahéi",
+      "textos de todo tipo sobre temas actuales",
+      "recontar mombe’urã, ñe’ẽpoty, mombe’ugua’u",
+      "NOT in document: noticias de radio y tele, pronombres, conjugación, leer entre líneas"
+     ]
+    }
+   ]
+  },
+  {
+   "lens": "tracks",
+   "answers": [
+    {
+     "q": "Q1. Is the 1st-cycle 'Comunicación Guaraní' table the program for Guarani as L2, as L1, or both? What in the document says so?",
+     "answer": "There is only one 'Comunicación Guaraní' table for the 1st cycle (PDF p26-28). The document has no separate Guarani-as-mother-tongue (L1) table and no note that adapts it for L1 or bilingual children. The only track marker in the table is in the 3.º grado alcance, which describes the learner's errors as 'propias del proceso de aprendizaje de la L2' (p26). In the same cycle, the Castellano table's alcance says the child communicates 'utilizando su lengua materna' (p23). Read together, the 1st-cycle document assumes Castellano is the mother tongue and Guarani the second language. It never says this outright, for example in a heading like 'Guaraní como segunda lengua', and it never mentions a child whose mother tongue is Guarani. No passage in the legal-framework pages (p15-17) or the plan of study (p20-21) assigns L1 or L2 to a particular language. The legal pages quote Ley 1264/98 arts. 3, 5, 11, 117 and 125 only. Art. 31 (on mother-tongue teaching, which the app cites for Preescolar) is not quoted anywhere in the document, so the app's art. 31 claim is not in the document. Answer: the document gives the table as the program for every child, and its only L1/L2 wording frames Guarani as L2. That the same table is the L1 or bilingual program is not in the document.",
+     "quotes": [
+      {
+       "page": 26,
+       "text": "Podrían seguir apareciendo imperfecciones propias del proceso de aprendizaje de la L2, como parte del desarrollo de la competencia comunicativa."
+      },
+      {
+       "page": 23,
+       "text": "y se expresen en forma oral y escrita utilizando su lengua materna para comunicarse"
+      },
+      {
+       "page": 23,
+       "text": "se expresen en forma oral y escrita utilizando su lengua materna para comunicarse."
+      },
+      {
+       "page": 23,
+       "text": "utilizando la lengua materna en su interacción social. Así, al terminar este grado, se logrará el desarrollo íntegro de la competencia del ciclo."
+      },
+      {
+       "page": 15,
+       "text": "Ley N° 1264 / 1998, “General de Educación. Artículo 3º. “El Estado garantizará el derecho de aprender y la igualdad de oportunidades de acceder a los conocimientos y a los beneficios de la cultura humanística, de la ciencia y de la tecnología, sin discriminación alguna.”"
+      }
+     ]
+    },
+    {
+     "q": "Q2. In 1.º grado, does the Guarani program include reading and writing, or only listening and speaking? Compare the alcance with the capacities.",
+     "answer": "The two parts disagree. The 1.º grado alcance is oral only. It speaks of 'vocabulario elemental', 'conversaciones breves' and asking and answering questions, and unlike 2.º and 3.º it does not say 'en forma oral y escrita'. The capacity list for 1.º, however, falls under the headings 'Comprensión oral y escrita' and 'Expresión oral y escrita', and it includes reading and writing. Cap. 1 anticipates a text 'antes de escucharlo o leerlo'. Cap. 17 'Escribe tarjetas, adivinanzas, diálogos, descripciones ... y narraciones breves'. Cap. 19 and 21 'Utiliza la grafía correspondiente para representar sonidos'. Cap. 20 applies spelling rules ('Las letras', 'Los signos básicos de puntuación'). The reading capacities in 1.º are lighter than in 2.º. Cap. 7 speaks of 'textos breves escuchados', where 2.º says 'escuchados o leídos', and cap. 9 speaks of 'textos escuchados'. So the app's L2 note, that in 1.º the child listens and speaks and starts reading and writing in 2.º, matches the alcance but not the capacity list, which already has writing in 1.º. The document makes no distinction by home language.",
+     "quotes": [
+      {
+       "page": 26,
+       "text": "Al culminar el grado, se espera que los estudiantes puedan utilizar vocabulario elemental relacionado con datos personales, del hogar y la escuela, mantener conversaciones breves aplicando funciones comunicativas básicas, con las cuales podrá formular y responder preguntas."
+      },
+      {
+       "page": 26,
+       "text": "Comprensión oral y escrita"
+      },
+      {
+       "page": 26,
+       "text": "1. Anticipa posibles informaciones contenidas en un texto antes de escucharlo o leerlo, a partir de imágenes u otros soportes paratextuales."
+      },
+      {
+       "page": 27,
+       "text": "7. Comprende la información contenida en textos breves escuchados: trabalenguas, chistes, rimas, poesías, canciones, cuentos, descripciones, fábulas, leyendas, diálogos e instrucciones breves."
+      },
+      {
+       "page": 27,
+       "text": "Expresión oral y escrita"
+      },
+      {
+       "page": 28,
+       "text": "17. Escribe tarjetas, adivinanzas, diálogos, descripciones (de personas, paisajes, animales, plantas y objetos) y narraciones breves."
+      },
+      {
+       "page": 28,
+       "text": "19.Utiliza la grafía correspondiente para representar sonidos."
+      },
+      {
+       "page": 28,
+       "text": "20. Aplica en sus redacciones las reglas de uso de: Las letras. Los signos básicos de puntuación."
+      },
+      {
+       "page": 28,
+       "text": "21. Utiliza la grafía correspondiente para representar sonidos."
+      }
+     ]
+    },
+    {
+     "q": "Q3. In which grade does written Guarani first appear in the alcance?",
+     "answer": "2.º grado. Its alcance is the first to say 'en forma oral y escrita'. 3.º grado repeats the phrase. The 1.º grado alcance does not mention writing or reading. Writing does appear in the 1.º capacity list, though (see Q2).",
+     "quotes": [
+      {
+       "page": 26,
+       "text": "Al culminar el grado, se espera que los estudiantes puedan utilizar en forma oral y escrita, vocabulario básico que responda a situaciones comunicativas usuales."
+      },
+      {
+       "page": 26,
+       "text": "Al culminar el grado, se espera que los estudiantes puedan utilizar en forma oral y escrita, vocabulario básico que responda a diversas situaciones comunicativas usuales."
+      }
+     ]
+    },
+    {
+     "q": "Q4. What does the document say about children whose mother tongue is Guarani: when do they read and write in Guarani?",
+     "answer": "Not in the document. Nothing addresses children whose mother tongue is Guarani, or children with both languages at home. The phrase 'lengua materna' appears only in the 1st-cycle Castellano alcance (p23) and as an unassigned area name in Cuadro 5 (p21). 'L2' appears only in the 3.º grado Guarani alcance (p26). The words 'bilingüe'/'Bilingüe' appear only for unrelated programs: indigenous radio classes (p14) and adult basic education (p8, p10). So the app's L1 note ('lee y escribe en guaraní desde 1.º grado') and its BI note ('escucha, habla, lee y escribe en guaraní desde 1.º grado') are not supported by this document. The 1.º grado capacity list (writing in cap. 17, 19, 20, 21) applies to all children equally (see Q2).",
+     "quotes": [
+      {
+       "page": 21,
+       "text": "Lengua Materna 5 3"
+      },
+      {
+       "page": 21,
+       "text": "Segunda Lengua 4 3"
+      },
+      {
+       "page": 26,
+       "text": "propias del proceso de aprendizaje de la L2"
+      }
+     ]
+    },
+    {
+     "q": "Q5. Topics named for 1.º, 2.º and 3.º grado in Guarani.",
+     "answer": "All three grades share the same topics, with small changes by grade. Greetings and courtesy (cap. 4, 12, 18). Personal data: nombre, edad y grado (cap. 5). Vocabulary of the immediate context: mi cuerpo, mi familia, mi casa, mi escuela y mi país (cap. 10). Following brief instructions to handle objects and household appliances and to move from place to place (cap. 3). Activities in the parts of the day: mañana, tarde, noche (cap. 14). Basic needs (cap. 16), which in 1.º are ayuda, favor, permiso, préstamo and in 2.º are ir al baño, tomar agua, pedir alimentos, solicitar permiso y prestar algo. Agreement and disagreement (cap. 15). Text types: in 1.º, trabalenguas, chistes, rimas, poesías, canciones, cuentos, descripciones, fábulas, leyendas, diálogos e instrucciones breves. 2.º adds etiquetas, and 3.º adds noticias breves. The written texts are tarjetas, adivinanzas, diálogos, descripciones y narraciones breves in 1.º, plus esquelas, poemas y acrósticos in 2.º and 3.º. Spelling covers letras and signos básicos de puntuación in 1.º, and letras, mayúsculas, la tilde y la marca de nasalidad in 2.º and 3.º. In 3.º, the child analyzes a narrative text by 'personajes, acciones, lugar y tiempo' and presents others 'mencionando sus características, gustos y aficiones'. Several app topics are not in the Guarani 1st-cycle table and are 'not in the document'. They are: numbers 1-10, the alphabet with vowels and puso, 2.º 'preguntar por un lugar / dar direcciones', 'palabras que se escriben igual en castellano y en guaraní', and 3.º 'reglas de juegos, recetas'. The 3.º 'ideas principales' come from the Castellano table (p23), not the Guarani one. Recipes appear only in the 6.º Guarani table (cap. 1 and 15, 'tembi’u').",
+     "quotes": [
+      {
+       "page": 26,
+       "text": "4. Comprende el significado de saludos y otras expresiones de cortesía"
+      },
+      {
+       "page": 26,
+       "text": "5. Comprende el significado de preguntas acerca de los datos personales: nombre, edad y grado."
+      },
+      {
+       "page": 26,
+       "text": "3. Sigue instrucciones breves para realizar determinadas acciones como manipular objetos y electrodomésticos, ubicarlos en un lugar determinado y trasladarse de un lugar a otro."
+      },
+      {
+       "page": 27,
+       "text": "10.Comprende el significado de vocablos que se refieren a su contexto inmediato (mi cuerpo, mi familia, mi casa, mi escuela y mi país) y vocablos contenidos en poemas breves, canciones descripciones y adivinanzas."
+      },
+      {
+       "page": 27,
+       "text": "14.Describe las actividades que realiza durante el día: a la mañana, a la tarde y a la noche."
+      },
+      {
+       "page": 28,
+       "text": "16. Expresa sus necesidades tales como pedir ayuda, favor, permiso, préstamo de algún objeto o material conforme a contextos comunicativos usuales."
+      },
+      {
+       "page": 28,
+       "text": "16.Expresa necesidades básicas como: ir al baño, tomar agua, pedir alimentos, solicitar permiso y prestar algo."
+      },
+      {
+       "page": 27,
+       "text": "7. Comprende la información contenida en textos breves escuchados o leídos: trabalenguas, chistes, rimas, poesías, canciones, cuentos, descripciones, fábulas, leyendas, diálogos, etiquetas e instrucciones breves."
+      },
+      {
+       "page": 27,
+       "text": "7. Comprende la información contenida en textos breves escuchados o leídos: trabalenguas, chistes, rimas, poesías, canciones, cuentos, descripciones, fábulas, leyendas, diálogos e instrucciones, noticias breves."
+      },
+      {
+       "page": 28,
+       "text": "17.Redacta esquelas, tarjetas, adivinanzas, poemas, acrósticos, diálogos, descripciones (personajes de textos, paisajes, animales, plantas, objetos y situaciones) y narraciones breves, teniendo en cuenta la estructura de cada tipo de texto."
+      },
+      {
+       "page": 28,
+       "text": "20.Aplica normas acerca del uso de: Las letras. Las mayúsculas. La tilde y la marca de nasalidad."
+      },
+      {
+       "page": 27,
+       "text": "11.Analiza un texto narrativo considerando personajes, acciones, lugar y tiempo."
+      },
+      {
+       "page": 27,
+       "text": "12.Saluda, se presenta y presenta a los demás mencionando sus características, gustos y aficiones."
+      }
+     ]
+    },
+    {
+     "q": "Q6. Weekly hours of Guarani (regular and 2021) in 1st and 2nd cycle, and how the 2nd cycle names its language areas.",
+     "answer": "1st cycle (Cuadro 4, p21): Guaraní 4 regular and 3 in 2021; Castellano 5 regular and 3 in 2021. Both sit under the area 'Comunicación' (11 regular, 7 in 2021). The weekly total is 30 regular and 20 in 2021. 2nd cycle (Cuadro 5, p21): this table has no 'Guaraní' or 'Castellano' rows. The language areas are named 'Lengua Materna' (5 current, 3 in 2021) and 'Segunda Lengua' (4 current, 3 in 2021). The document does not say which of Castellano or Guarani is 'Lengua Materna' or 'Segunda Lengua'. The 2nd-cycle capacity tables are headed 'Comunicación Castellano' (p41) and 'Comunicación Guaraní' (p45), not L1/L2. The 2021 class period is 35 minutes (p20).",
+     "quotes": [
+      {
+       "page": 21,
+       "text": "Cuadro 4. Carga horaria semanal regular y carga horaria propuesta para el desarrollo de clases del año 2021 del 1º ciclo de la Educación Escolar Básica"
+      },
+      {
+       "page": 21,
+       "text": "Comunicación 11 7 / Castellano 5 3 / Guaraní 4 3"
+      },
+      {
+       "page": 21,
+       "text": "Cuadro 5. Carga horaria semanal regular y carga horaria propuesta para el desarrollo de clases del año 2021 del 2º ciclo de la Educación Escolar Básica"
+      },
+      {
+       "page": 21,
+       "text": "Lengua Materna 5 3"
+      },
+      {
+       "page": 21,
+       "text": "Segunda Lengua 4 3"
+      },
+      {
+       "page": 21,
+       "text": "TOTAL 30 20"
+      },
+      {
+       "page": 20,
+       "text": "El plan de estudio para el 1° ciclo de la Educación Escolar Básica se encuentra organizado en 4 áreas curriculares: Comunicación, Matemática, Vida Social y Trabajo, Medio Natural y Salud; con una carga horaria total de 30 horas semanales."
+      },
+      {
+       "page": 20,
+       "text": "realizar una disminución en la carga horaria semanal a 20 horas pedagógicas, considerando además cada una de ellas con un equivalente a 35 minutos"
+      }
+     ]
+    },
+    {
+     "q": "Q7. 4.º, 5.º, 6.º grado: Guarani alcance (Guarani + Spanish translation) and main text types/topics.",
+     "answer": "Spanish translations are mine. 4.º: 'En este grado se espera que los estudiantes lean y comprendan textos no muy largos o no muy cortos, escritos y oídos, que contengan palabras de uso frecuente y no difíciles de comprender. Así podrán contar, al hablar y al escribir, sus necesidades y todo lo que ocurre en su comunidad. Aquí los estudiantes todavía pueden cometer pequeños errores, y donde se equivocan se les debe orientar más.' 5.º: 'En este grado se espera que los estudiantes comiencen a leer con fluidez y comprendan también textos escritos y no escritos (orales) no muy cortos, con palabras algo más difíciles de comprender. Así podrán contar, al hablar y al escribir, sus necesidades, sus sentimientos y todo lo que ocurre a su alrededor y en otros lugares. Aquí los estudiantes todavía pueden cometer pequeños errores...' (the same last sentence). 6.º: 'Aquí se espera que los estudiantes ya lean con buena fluidez y comprendan también textos no muy cortos, escritos y oídos, con palabras más difíciles de comprender. Así podrán contar sus necesidades, sentimientos, pensamientos y todo lo que ocurre a su alrededor y en todas partes. Aquí los estudiantes todavía pueden cometer pequeños errores...' All three grades keep the clause that the student may still make small errors ('ojavymimi'). This echoes the L2 framing of 1st-cycle 3.º (p26), though the 2nd-cycle table never says 'L2'. Main text types and topics. 4.º: oral instructions for playing and doing things suited to their age; talk about the home; greetings by place and person; kũjererã (trabalenguas) and ñe’ẽpoty (poesía); written ñemongeta (diálogos) on current topics; written instructions; text cohesion; writing about the activities of the morning, afternoon and night and what they do with the family; retelling mombe’urã (relatos). 5.º: instructions for playing and for using household tools; home and school; kũjererã, ñe’ẽpoty, purahéi (canciones); mombe’urã or ñe’ẽpoty on current topics; retelling mombe’urã, ñe’ẽpoty and mombe’ugua’u (leyendas); writing about home and school, family and friends. 6.º: instructions including cooking food (tembi’u); home, school and other places; opáichagua jehaipyre (all kinds of texts) on current topics; kũjererã, ñe’ẽpoty, purahéi; retelling mombe’urã, ñe’ẽpoty, mombe’ugua’u; inference ('he’iha pe oñeha’ãrõva ichugui'); writing about home, school and everywhere, family, friends and acquaintances. Several app topics are not in the 2nd-cycle Guarani table: cartas y esquelas, la oración y el verbo, mitos, acentos, posesivos, noticias de radio/tele, pronombres, conjugación. 'Ombojoavy umi mba’e haihára he’íva oikovaramoguáicha ha umi he’íva ha’e oimo’ãháicha' (cap. 18) means distinguishing facts from the author's opinions.",
+     "quotes": [
+      {
+       "page": 45,
+       "text": "Ko mbo’esyrýpe oñeha’ãrõ temimbo’ekuéra omoñe’ẽ ha oikũmbykuaa umi téksto ndaipukuetéiva térã nambykyetéiva, ojehai ha oñehendúva, oguerekóva umi ñe’ẽ py’ỹinte ojepurúva ha ndahasýiva iñeikũmby. Péicha ikatúta omombe’u oñe’ẽ ha ohaikuévo hemikotevẽ ha opa mba’e oikóva hekoha rupi. Ko’ápe ikatu gueteri temimbo’ekuéra ojavymimi ha upe ojavyhaguépe oñehekombo’eveva’erã ichupekuéra."
+      },
+      {
+       "page": 45,
+       "text": "Ko mbo’esyrýpe oñeha’ãrõ temimbo’ekuéra omoñe’ẽ syryry ñepyrũ ha oikũmbykuaa avei umi ñe’ẽjehaipyre ha ñe’ẽjehaipyre’ỹva nambykyetéiva, oguerekóva umi ñe’ẽ hasymievéva iñeikũmby. Péicha ikatúta omombe’u oñe’ẽ ha ohaikuévo hemikotevẽ, hemiandu ha opa mba’e oikóva ijere rupi ha ambue henda rupi. Ko’ápe ikatu gueteri temimbo’ekuéra ojavymimi ha upe ojavyhaguépe oñehekombo’eveva’erã ichupekuéra"
+      },
+      {
+       "page": 45,
+       "text": "Ko’ápe oñeha’ãrõ temimbo’ekuéra omoñe’ẽ syryry porãma ha oikũmbykuaa avei umi ñe’ẽjehaipyre’ỹ nambykyetéiva ojehai ha oñehendúva, oguerekóva umi ñe’ẽ hasyvémava iñeikũmby. Péicha ikatúta omombe’u hemikotevẽ, hemiandu, hemimo’ã ha opa mba’e oikóva ijere rupi ha opa henda rupi. Ko’ápe ikatu gueteri temimbo’ekuéra ojavymimi ha upe ojavyhaguépe oñehekombo’eveva’erã ichupekuéra."
+      },
+      {
+       "page": 46,
+       "text": "11. He’ijey kũjererã ha ñe’ẽpoty."
+      },
+      {
+       "page": 46,
+       "text": "11. He’ijey kũjererã, ñe’ẽpoty, purahéi ha hetave mba’e."
+      },
+      {
+       "page": 46,
+       "text": "14. Oikũmby ñemongeta ojehaiva’ekue oñeñe’ẽhápe umi téma rehe ko’áǧa rupi herakuãvéva."
+      },
+      {
+       "page": 46,
+       "text": "14. Oikũmby mombe’urã térã ñe’ẽpoty oñeñe’ẽhápe umi téma rehe ko’áǧa rupi herakuãvéva."
+      },
+      {
+       "page": 46,
+       "text": "14. Oikũmby opáichagua jehaipyre oñeñe’ẽhápe umi téma rehe ko’áǧa rupi herakuãvéva."
+      },
+      {
+       "page": 46,
+       "text": "15. Oikũmby omoñe’ẽva he’ihápe mba’éichapa ohugava’erã, ojapova’erã tembi’u, oiporuva’erã tembipuru ogapypegua ha mba’éichapa ojapova’erã opaichagua mba’e ijedádpe guarã."
+      },
+      {
+       "page": 47,
+       "text": "22. Omombe’ujey ohaikuévo mombe’urã, ñe’ẽpoty ha mombe’ugua’u omoñe’ẽva térã ohendúva."
+      },
+      {
+       "page": 47,
+       "text": "18. Ombojoavy umi mba’e haihára he’íva oikovaramoguáicha ha umi he’íva ha’e oimo’ãháicha."
+      }
+     ]
+    }
+   ],
+   "grades": [
+    {
+     "grade": "1.º grado",
+     "alcance": "Al culminar el grado, se espera que los estudiantes puedan utilizar vocabulario elemental relacionado con datos personales, del hogar y la escuela, mantener conversaciones breves aplicando funciones comunicativas básicas, con las cuales podrá formular y responder preguntas. (p26)",
+     "oral": [
+      "4. Comprende el significado de saludos y otras expresiones de cortesía (p26)",
+      "5. Comprende el significado de preguntas acerca de los datos personales: nombre, edad y grado. (p26)",
+      "7. Comprende la información contenida en textos breves escuchados: trabalenguas, chistes, rimas, poesías, canciones, cuentos, descripciones, fábulas, leyendas, diálogos e instrucciones breves. (p27)",
+      "12.Expresa diversas formas de saludo y presentación. (p27)",
+      "13.Expresa diálogos breves de forma sostenida y coherente con relación a temas cotidianos. (p27)",
+      "14.Describe las actividades que realiza durante el día: a la mañana, a la tarde y a la noche. (p27)",
+      "16. Expresa sus necesidades tales como pedir ayuda, favor, permiso, préstamo de algún objeto o material conforme a contextos comunicativos usuales. (p28)"
+     ],
+     "written": [
+      "1. Anticipa posibles informaciones contenidas en un texto antes de escucharlo o leerlo (p26)",
+      "17. Escribe tarjetas, adivinanzas, diálogos, descripciones (de personas, paisajes, animales, plantas y objetos) y narraciones breves. (p28)",
+      "19.Utiliza la grafía correspondiente para representar sonidos. (p28)",
+      "20. Aplica en sus redacciones las reglas de uso de: Las letras. Los signos básicos de puntuación. (p28)",
+      "21. Utiliza la grafía correspondiente para representar sonidos. (p28)"
+     ],
+     "topics": [
+      "saludos y expresiones de cortesía",
+      "datos personales: nombre, edad y grado",
+      "mi cuerpo, mi familia, mi casa, mi escuela y mi país",
+      "instrucciones breves: manipular objetos y electrodomésticos",
+      "actividades del día: mañana, tarde, noche",
+      "necesidades: ayuda, favor, permiso, préstamo",
+      "trabalenguas, chistes, rimas, poesías, canciones, cuentos, fábulas, leyendas, diálogos",
+      "escribe tarjetas, adivinanzas, diálogos, descripciones, narraciones breves"
+     ]
+    },
+    {
+     "grade": "2.º grado",
+     "alcance": "Al culminar el grado, se espera que los estudiantes puedan utilizar en forma oral y escrita, vocabulario básico que responda a situaciones comunicativas usuales. Comprendan la información básica de textos breves de uso frecuente procedentes de distintas fuentes (profesor, compañeros, radio, televisión, periódico, etc.). Además, sostengan conversaciones breves sobre temas cotidianos de su interés. (p26)",
+     "oral": [
+      "4. Comprende el significado de saludos y se presenta con cortesía (p26)",
+      "5. Comprende el significado de preguntas y responde sobre sus datos personales: nombre, edad y grado. (p26)",
+      "12.Saluda y se presenta y presenta a sus compañeros y familiares. (p27)",
+      "13.Sostiene diálogos breves sobre temas relacionados con su contexto (p27)",
+      "14.Narra las actividades que realiza durante el día: a la mañana, a la tarde y a la noche. (p27)",
+      "16.Expresa necesidades básicas como: ir al baño, tomar agua, pedir alimentos, solicitar permiso y prestar algo. (p28)"
+     ],
+     "written": [
+      "7. Comprende la información contenida en textos breves escuchados o leídos: trabalenguas, chistes, rimas, poesías, canciones, cuentos, descripciones, fábulas, leyendas, diálogos, etiquetas e instrucciones breves. (p27)",
+      "17.Redacta esquelas, tarjetas, adivinanzas, poemas, acrósticos, diálogos, descripciones (personajes de textos, paisajes, animales, plantas, objetos y situaciones) y narraciones breves, teniendo en cuenta la estructura de cada tipo de texto. (p28)",
+      "19.Utiliza la grafía correspondiente para representar sonidos. (p28)",
+      "20.Aplica normas acerca del uso de: Las letras. Las mayúsculas. La tilde y la marca de nasalidad. (p28)"
+     ],
+     "topics": [
+      "saludos y presentación (compañeros y familiares)",
+      "datos personales",
+      "mi cuerpo, mi familia, mi casa, mi escuela y mi país",
+      "actividades del día",
+      "necesidades básicas: ir al baño, tomar agua, pedir alimentos, permiso, prestar algo",
+      "etiquetas, esquelas, poemas, acrósticos",
+      "mayúsculas, tilde y marca de nasalidad"
+     ]
+    },
+    {
+     "grade": "3.º grado",
+     "alcance": "Al culminar el grado, se espera que los estudiantes puedan utilizar en forma oral y escrita, vocabulario básico que responda a diversas situaciones comunicativas usuales. Comprendan informaciones sobre temas cotidianos contenidas en textos breves procedentes de distintas fuentes. Además, que sostengan conversaciones sobre temas cotidianos de su interés. Podrían seguir apareciendo imperfecciones propias del proceso de aprendizaje de la L2, como parte del desarrollo de la competencia comunicativa. (p26)",
+     "oral": [
+      "4. Comprende el significado de saludos y se presenta con cortesía. (p26)",
+      "12.Saluda, se presenta y presenta a los demás mencionando sus características, gustos y aficiones. (p27)",
+      "13.Sostiene diálogos breves sobre temas cotidianos. (p27)",
+      "14.Reproduce las actividades que realiza durante el día: a la mañana, a la tarde y a la noche. (p27)",
+      "15. Expresa sus ideas, acuerdos/desacuerdos, gustos/disgustos sobre situaciones habituales. (p27)",
+      "16.Comunica sus deseos y necesidades en situaciones sociales cotidianas. (p28)"
+     ],
+     "written": [
+      "6. Secuencia los hechos ocurridos en textos leídos. (p27)",
+      "7. Comprende la información contenida en textos breves escuchados o leídos: ... diálogos e instrucciones, noticias breves. (p27)",
+      "11.Analiza un texto narrativo considerando personajes, acciones, lugar y tiempo. (p27)",
+      "17.Redacta esquelas, tarjetas, adivinanzas, poemas, acrósticos, diálogos, descripciones (personas, personajes de textos, paisajes, animales, plantas, objetos y situaciones) y narraciones breves (p28)",
+      "19.Aplica la grafía correspondiente para representar los sonidos. (p28)",
+      "20. Aplica normas acerca del uso de: Las letras. Las mayúsculas. La tilde y la marca de nasalidad. (p28)"
+     ],
+     "topics": [
+      "presentarse con características, gustos y aficiones",
+      "ideas, acuerdos/desacuerdos, gustos/disgustos",
+      "deseos y necesidades",
+      "texto narrativo: personajes, acciones, lugar y tiempo",
+      "noticias breves",
+      "esquelas, tarjetas, adivinanzas, poemas, acrósticos, descripciones, narraciones breves"
+     ]
+    },
+    {
+     "grade": "4.º grado",
+     "alcance": "Ko mbo’esyrýpe oñeha’ãrõ temimbo’ekuéra omoñe’ẽ ha oikũmbykuaa umi téksto ndaipukuetéiva térã nambykyetéiva, ojehai ha oñehendúva, oguerekóva umi ñe’ẽ py’ỹinte ojepurúva ha ndahasýiva iñeikũmby. Péicha ikatúta omombe’u oñe’ẽ ha ohaikuévo hemikotevẽ ha opa mba’e oikóva hekoha rupi. Ko’ápe ikatu gueteri temimbo’ekuéra ojavymimi ha upe ojavyhaguépe oñehekombo’eveva’erã ichupekuéra. (p45)",
+     "oral": [
+      "1. Oikũmby oje’éva ichupe mba’emba’épa ojapova’erã ohuga hagua ha oikuaa hagua mba’éichapa ojapova’erã opaichagua mba’e ijedádpe ǧuarã. (p45)",
+      "2. Oikũmby mba’épa oje’ehína ichupe hogapypeguáre. (p45)",
+      "8. Oporomaitei ojesarekóvo moomõ ha máva ndivepa oĩ. (p46)",
+      "9. He’i mba’épa ojapo hógape pyhareve, ka’aru ha pyharekue. (p46)",
+      "11. He’ijey kũjererã ha ñe’ẽpoty. (p46)",
+      "12. Oipuru, oñe’ẽnguévo, umi ñe’ẽ oikuaa pyahúva ohóvo guaraníme. (p46)"
+     ],
+     "written": [
+      "14. Oikũmby ñemongeta ojehaiva’ekue oñeñe’ẽhápe umi téma rehe ko’áǧa rupi herakuãvéva. (p46)",
+      "15. Oikũmby omoñe’ẽva he’ihápe mba’éichapa ohugava’erã, ha mba’éichapa ojapova’erã umi mba’e ijedádpe guarã. (p46)",
+      "20. Ohai omombe’uhápe hembiapo pyharevegua, ka’arugua ha pyharegua. (p47)",
+      "21. Ohai omombe’uhápe mba’épa ojapo hogaygua ndive. (p47)",
+      "22. Omombe’ujey ohaikuévo mombe’urã omoñe’ẽva térã ohendúva. (p47)",
+      "23. Oñeha’ã ohai porã jahechápa oñeikũmby he’iséva. (p47)"
+     ],
+     "topics": [
+      "instrucciones para jugar y hacer cosas (ohuga hagua)",
+      "el hogar (hogapypeguáre)",
+      "saludos según lugar y persona",
+      "actividades de mañana, tarde y noche",
+      "kũjererã (trabalenguas) y ñe’ẽpoty (poesía)",
+      "ñemongeta (diálogos) escritos sobre temas actuales",
+      "escribir con la familia (hogaygua)",
+      "volver a contar mombe’urã (relatos)"
+     ]
+    },
+    {
+     "grade": "5.º grado",
+     "alcance": "Ko mbo’esyrýpe oñeha’ãrõ temimbo’ekuéra omoñe’ẽ syryry ñepyrũ ha oikũmbykuaa avei umi ñe’ẽjehaipyre ha ñe’ẽjehaipyre’ỹva nambykyetéiva, oguerekóva umi ñe’ẽ hasymievéva iñeikũmby. Péicha ikatúta omombe’u oñe’ẽ ha ohaikuévo hemikotevẽ, hemiandu ha opa mba’e oikóva ijere rupi ha ambue henda rupi. Ko’ápe ikatu gueteri temimbo’ekuéra ojavymimi ha upe ojavyhaguépe oñehekombo’eveva’erã ichupekuéra (p45)",
+     "oral": [
+      "1. Oikũmby oje’éva ichupe ohuga hagua, oiporu hagua tembiporu ogapypegua ha oikuaa hagua mba’éichapa ojapova’erã opaichagua mba’e ijedádpe guarã. (p45)",
+      "2. Oikũmby mba’épa oje’ehína ichupe hogapypeguáre ha imbo’ehaoreguáre. (p45)",
+      "8. Ombojoavy imaitei ohechakuaávo máva ndivépa oñe’ẽ ha moõpa oĩ hikuái. (p46)",
+      "9. He’i mba’épa hembiapo hógape ha mbo’ehaópe (p46)",
+      "11. He’ijey kũjererã, ñe’ẽpoty, purahéi ha hetave mba’e. (p46)",
+      "12. He’i ha’e oikũmbyhaguéicha ha oñanduháicha umi jehaipyrekuéra ohendu ha omoñe’ẽva’ekue. (p46)"
+     ],
+     "written": [
+      "14. Oikũmby mombe’urã térã ñe’ẽpoty oñeñe’ẽhápe umi téma rehe ko’áǧa rupi herakuãvéva. (p46)",
+      "19. Ohesa’ỹijo umi jehaipyre retepýpe oĩva ohechakuaakuévo: Jehaipyre ojoapyha hekópe. (p47)",
+      "20. Ohai omombe’uhápe hembiapo hogapýpe ha imbo’ehaópe (p47)",
+      "21. Ohaikuaa mba’épa ojapo hogaygua ha iñirũnguéra ndive. (p47)",
+      "22. Omombe’ujey ohaikuévo mombe’urã, ñe’ẽpoty ha mombe’ugua’u omoñe’ẽva térã ohendúva. (p47)",
+      "23. Ohai porã oñeikũmby porã hagua he’iséva. (p47)"
+     ],
+     "topics": [
+      "instrucciones: jugar, usar herramientas del hogar",
+      "hogar y escuela",
+      "saludos según interlocutor y lugar",
+      "kũjererã, ñe’ẽpoty, purahéi (canciones)",
+      "mombe’urã o ñe’ẽpoty sobre temas actuales",
+      "mombe’ugua’u (leyendas)",
+      "escribir sobre familia y amigos"
+     ]
+    },
+    {
+     "grade": "6.º grado",
+     "alcance": "Ko’ápe oñeha’ãrõ temimbo’ekuéra omoñe’ẽ syryry porãma ha oikũmbykuaa avei umi ñe’ẽjehaipyre’ỹ nambykyetéiva ojehai ha oñehendúva, oguerekóva umi ñe’ẽ hasyvémava iñeikũmby. Péicha ikatúta omombe’u hemikotevẽ, hemiandu, hemimo’ã ha opa mba’e oikóva ijere rupi ha opa henda rupi. Ko’ápe ikatu gueteri temimbo’ekuéra ojavymimi ha upe ojavyhaguépe oñehekombo’eveva’erã ichupekuéra. (p45)",
+     "oral": [
+      "1. Oikũmby oje’éva ichupe ohuga hagua, oiporu hagua tembipuru ogapypegua ha oikuaa hagua mba’éichapa ojapova’erã tembi’ukuéra ha opaichagua mba’e ijedádpe ǧuarã. (p45)",
+      "2. Oikũmby mba’épa oje’ehína ichupe hogapypeguáre, imbo’ehaoreguáre ha ambue ha’e oikóva rehe (p45)",
+      "8. Ohechakuaa mba’éichapa oporomomaiteiva’erã ojesarekohápe avándipa oĩ ha mba’eichahápepa ojojuhu hikuái. (p46)",
+      "9. He’i mba’e hembiapo ha’e ha hogayguakuéra opavave aravópe. (p46)",
+      "11.He’ijey kũjererã, ñe’ẽpoty, purahéi ha hetave mba’e. (p46)"
+     ],
+     "written": [
+      "14. Oikũmby opáichagua jehaipyre oñeñe’ẽhápe umi téma rehe ko’áǧa rupi herakuãvéva. (p46)",
+      "15. Oikũmby omoñe’ẽva he’ihápe mba’éichapa ohugava’erã, ojapova’erã tembi’u, oiporuva’erã tembipuru ogapypegua (p46)",
+      "19. Ohechakuaa umi mba’e jehaipyre retepýpe oĩva ohechakuaakuévo: Jehaipyre ojoapyha hekópe. Jehaipyre he’iha pe oñeha’ãrõva ichugui. (p47)",
+      "20. Ohai omombe’uhápe hembiapo hogapýpe, imbo’ehaópe ha opavave tendápe ha’e oikóva. (p47)",
+      "21. Ohai mba’épa ojapo hogaygua, iñirũnguéra ha ambue hapicha ikuaahára ndive. (p47)",
+      "22. Omombe’ujey ohaikuévo mombe’urã, ñe’époty ha mombe’ugua’u omoñe’ẽva térã ohendúva. (p47)"
+     ],
+     "topics": [
+      "instrucciones: jugar, cocinar (tembi’u), herramientas del hogar",
+      "hogar, escuela y otros lugares",
+      "saludos según contexto",
+      "opáichagua jehaipyre (todo tipo de textos) sobre temas actuales",
+      "kũjererã, ñe’ẽpoty, purahéi",
+      "mombe’urã, ñe’ẽpoty, mombe’ugua’u",
+      "inferencia: lo que se espera del texto",
+      "distinguir hechos de opiniones del autor (cap. 18)"
+     ]
+    }
+   ]
+  }
+ ],
+ "verdict": {
+  "claims": [
+   {
+    "where": "tracks.L1.note",
+    "current": "En casa se habla más guaraní: lee y escribe en guaraní desde 1.º grado.",
+    "verdict": "not-covered",
+    "evidence": "Not in the document. No passage speaks of children whose home language is Guarani, and the term «L1» never appears (full-text search). The 1st cycle has one «Comunicación Guaraní» table (p26-28). Its only learner marker frames it as second-language learning: «Podrían seguir apareciendo imperfecciones propias del proceso de aprendizaje de la L2, como parte del desarrollo de la competencia comunicativa.» (3.º alcance, p26). That same table already has writing in 1.º for every pupil, with no home-language condition: «Escribe tarjetas, adivinanzas, diálogos, descripciones (de personas, paisajes, animales, plantas y objetos) y narraciones breves.» (item 17, p28). So the note is not contradicted. «lengua materna» appears only in the Castellano alcances, «se expresen en forma oral y escrita utilizando su lengua materna para comunicarse» (p23), and as the unassigned area «Lengua Materna» in Cuadro 5 (p21). The Castellano 1.º spelling item includes «La tilde y la marca de nasalidad, en el caso del guaraní.» (item 17, p25). The document never says that table is the program for Guarani-speaking children; reading it that way would be inference.",
+    "fix": "En casa se habla más guaraní: lee y escribe en guaraní desde 1.º grado."
+   },
+   {
+    "where": "tracks.L2.note",
+    "current": "En casa se habla más castellano: en 1.º grado escucha y habla guaraní; a leerlo y escribirlo empieza en 2.º grado.",
+    "verdict": "partly",
+    "evidence": "Matching this track to the Guarani table fits the document, whose only learner marker is «propias del proceso de aprendizaje de la L2» (p26). The 1.º alcance is oral only: «Al culminar el grado, se espera que los estudiantes puedan utilizar vocabulario elemental relacionado con datos personales, del hogar y la escuela, mantener conversaciones breves aplicando funciones comunicativas básicas, con las cuales podrá formular y responder preguntas.» (p26). The 2.º alcance is the first to say «utilizar en forma oral y escrita, vocabulario básico» (p26). One reader quoted «oral o escrita»; the page image reads «oral y escrita». However, the 1.º capacities already include reading and writing. Item 1: «Anticipa posibles informaciones contenidas en un texto antes de escucharlo o leerlo» (p26). Item 17: «Escribe tarjetas, adivinanzas, diálogos, descripciones (de personas, paisajes, animales, plantas y objetos) y narraciones breves.» (p28). Items 19 and 21: «Utiliza la grafía correspondiente para representar sonidos.» (p28). Item 20: «Aplica en sus redacciones las reglas de uso de: • Las letras. • Los signos básicos de puntuación.» (p28). So «empieza en 2.º grado» matches the alcance but not the 1.º capacities.",
+    "fix": "En casa se habla más castellano: en 1.º grado sobre todo escucha y habla guaraní, y empieza a escribir; desde 2.º grado lee y escribe más."
+   },
+   {
+    "where": "tracks.BI.note",
+    "current": "En casa se hablan las dos: escucha, habla, lee y escribe en guaraní desde 1.º grado.",
+    "verdict": "not-covered",
+    "evidence": "Not in the document. Nothing addresses children with both languages at home. «Bilingüe» appears only in «Educación Básica Bilingüe para Personas Jóvenes y Adultas» (p8, p10) and for indigenous radio classes given «de manera bilingüe» (p14). The single 1st-cycle Guarani table gives every pupil all four skills in 1.º. It has listening and speaking (e.g. «Expresa diversas formas de saludo y presentación.», item 12, p27). It has reading («antes de escucharlo o leerlo», item 1, p26). It has writing («Escribe tarjetas, adivinanzas, diálogos …», item 17, p28). So the note's content is not contradicted, but no passage ties it to the languages spoken at home.",
+    "fix": "En casa se hablan las dos: escucha, habla, lee y escribe en guaraní desde 1.º grado."
+   },
+   {
+    "where": "grades.g1.can",
+    "current": "Saluda, dice su nombre y su edad, y nombra su cuerpo, su familia, su casa y su escuela. Si el guaraní es su lengua materna, empieza a leer y escribir.",
+    "verdict": "partly",
+    "evidence": "The first sentence is supported:\n- «Expresa diversas formas de saludo y presentación.» (item 12, p27).\n- «Comprende el significado de preguntas acerca de los datos personales: nombre, edad y grado.» (item 5, p26).\n- The alcance: «utilizar vocabulario elemental relacionado con datos personales, del hogar y la escuela … con las cuales podrá formular y responder preguntas.» (p26).\n- «Comprende el significado de vocablos que se refieren a su contexto inmediato (mi cuerpo, mi familia, mi casa, mi escuela y mi país)» (item 10, p27).\nThe second sentence's condition, «Si el guaraní es su lengua materna», is not in the document. The 1.º Guarani capacities give writing to every pupil: «Escribe tarjetas, adivinanzas, diálogos, descripciones (de personas, paisajes, animales, plantas y objetos) y narraciones breves.» (item 17, p28) and «Utiliza la grafía correspondiente para representar sonidos.» (item 19, p28).",
+    "fix": "Saluda, dice su nombre y su edad, y nombra su cuerpo, su familia, su casa y su escuela. También empieza a escribir textos cortos, como tarjetas y adivinanzas."
+   },
+   {
+    "where": "grades.g1.mec",
+    "current": "1.er ciclo. Con el guaraní como lengua materna, en 1.º grado se empieza a leer y escribir. Como segunda lengua, 1.º grado es oral: saludos y presentación, datos personales (nombre, edad, grado) y las palabras de su cuerpo, su familia, su casa, su escuela y su país.",
+    "verdict": "partly",
+    "evidence": "Supported: «1.er ciclo» («Capacidades priorizadas para el 1° ciclo de la Educación Escolar Básica», p23, covering 1.º-3.º). The topic list is also supported: «Comprende el significado de saludos y otras expresiones de cortesía» (item 4, p26), «datos personales: nombre, edad y grado» (item 5, p26), «(mi cuerpo, mi familia, mi casa, mi escuela y mi país)» (item 10, p27) and «Expresa diversas formas de saludo y presentación.» (item 12, p27). Not in the document: the whole sentence about Guarani as mother tongue. Too strong: «1.º grado es oral» matches the alcance, which mentions no reading or writing (p26). But the 1.º capacities include writing: «Escribe tarjetas, adivinanzas, diálogos, descripciones (de personas, paisajes, animales, plantas y objetos) y narraciones breves.» (item 17, p28) and «Aplica en sus redacciones las reglas de uso de: • Las letras. • Los signos básicos de puntuación.» (item 20, p28).",
+    "fix": "1.er ciclo. En 1.º grado el guaraní es sobre todo oral: saludos y presentación, datos personales (nombre, edad, grado) y las palabras de su cuerpo, su familia, su casa, su escuela y su país. También se empiezan a escribir textos cortos."
+   },
+   {
+    "where": "grades.g1.units",
+    "current": "Maitei · Saludar, presentarse y despedirse | Che rogaygua · Mi familia y mi casa | Che rete · Mi cuerpo | Che mbo'ehao · Mi escuela | Papapy · Los números del 1 al 10 | Achegety · El alfabeto: las vocales y el puso | Ñande yvága · Nuestro cielo, de la mañana a la noche",
+    "verdict": "partly",
+    "evidence": "Five units match document topics:\n- Greetings: «Expresa diversas formas de saludo y presentación.» (item 12, p27) and «Utiliza expresiones de cortesía en sus diálogos.» (item 18, p28). Farewells are not named but fall under courtesy.\n- Family, house, body and school: «(mi cuerpo, mi familia, mi casa, mi escuela y mi país)» (item 10, p27).\n- Alphabet: «Utiliza la grafía correspondiente para representar sonidos.» (item 19, p28) and «• Las letras.» (item 20, p28). Vowels and the puso are not named, but they are letters.\nNot in the document: numbers. The nearest item is «datos personales: nombre, edad y grado» (item 5, p26), so the fix ties the numbers unit to age and grade.\nPartly: the sky unit. The document's item is about the child's day, not the sky: «Describe las actividades que realiza durante el día: a la mañana, a la tarde y a la noche.» (item 14, p27).",
+    "fix": "Maitei · Saludar, presentarse y despedirse | Che rogaygua · Mi familia y mi casa | Che rete · Mi cuerpo | Che mbo'ehao · Mi escuela | Papapy · Los números para decir mi edad y mi grado | Achegety · El alfabeto: las vocales y el puso | Ñande yvága · El cielo y lo que hago de la mañana a la noche"
+   },
+   {
+    "where": "grades.g2.can",
+    "current": "Lee y escribe palabras y frases cortas; pregunta dónde queda algo y dice cómo llegar.",
+    "verdict": "partly",
+    "evidence": "Reading and writing are supported, and the document goes beyond words and phrases to short texts:\n- The alcance: «utilizar en forma oral y escrita, vocabulario básico» (p26).\n- «Comprende la información contenida en textos breves escuchados o leídos» (item 7, p27).\n- «Redacta esquelas, tarjetas, adivinanzas, poemas, acrósticos, diálogos, descripciones … y narraciones breves» (item 17, p28).\nNot in the document: asking where something is and saying how to get there. The nearest item is about following instructions: «Sigue instrucciones breves para realizar determinadas acciones como manipular objetos y electrodomésticos, ubicarlos en un lugar determinado y trasladarse de un lugar a otro.» (item 3, p26). The fix also uses «Expresa necesidades básicas como: ir al baño, tomar agua, pedir alimentos, solicitar permiso y prestar algo.» (item 16, p28).",
+    "fix": "Lee y escribe textos cortos; sigue instrucciones para ir de un lugar a otro y pide lo que necesita."
+   },
+   {
+    "where": "grades.g2.mec",
+    "current": "1.er ciclo. Como segunda lengua, leer y escribir empieza en 2.º grado, con palabras que se escriben igual en castellano y en guaraní; como lengua materna, se afianza. También: preguntar por un lugar, presentarse, dar direcciones.",
+    "verdict": "partly",
+    "evidence": "Supported: «presentarse» («Saluda y se presenta y presenta a sus compañeros y familiares.», item 12, p27). Partly: the 2.º alcance is the first to say «en forma oral y escrita» (p26), but the 1.º capacities already include writing («Escribe tarjetas, adivinanzas, diálogos …», item 17, p28). So «leer y escribir empieza en 2.º grado» is too strong. Not in the document: «palabras que se escriben igual en castellano y en guaraní», «como lengua materna, se afianza», «preguntar por un lugar» and «dar direcciones». The nearest item, «trasladarse de un lugar a otro» (item 3, p26), is about following instructions. The fix uses three passages. The 2.º alcance: «utilizar en forma oral y escrita, vocabulario básico» (p26). Item 17: «Redacta esquelas, tarjetas, adivinanzas, poemas, acrósticos, diálogos …» (p28). Item 16: «ir al baño, tomar agua, pedir alimentos, solicitar permiso y prestar algo» (p28).",
+    "fix": "1.er ciclo. En 2.º grado el guaraní ya se usa en forma oral y escrita: se leen y se escriben textos cortos, como tarjetas, adivinanzas y poemas. También: presentarse, presentar a la familia y pedir lo que se necesita."
+   },
+   {
+    "where": "grades.g2.units",
+    "current": "Mymbakuéra · Los animales | Tembi'u · La comida | Pundie · Las consonantes: ch, mb, nd, ng, nt, rr, g̃ | Moõpa? · ¿Dónde queda? Lugares y caminos | Purahéi ha ñe'ẽnga · Canciones y dichos",
+    "verdict": "partly",
+    "evidence": "Two units match, partly:\n- Consonants: «Utiliza la grafía correspondiente para representar sonidos.» (item 19, p28) and «• Las letras.» (item 20, p28). The digraph list is not named.\n- Songs: item 7 lists «canciones» (p27). «dichos» are not named.\nThree units have no matching topic:\n- Animals appear only as something to describe: «descripciones (personajes de textos, paisajes, animales, plantas, objetos y situaciones)» (item 17, p28).\n- Food appears only as a need: «pedir alimentos» (item 16, p28).\n- Places and routes, and asking where something is, are not in the document. The nearest item is «ubicarlos en un lugar determinado y trasladarse de un lugar a otro» (item 3, p26).\nThe fix ties each unit to these items. «purahéi» and «kũjererã» (trabalenguas) are words the document itself uses (item 11, p46), and item 7 lists «trabalenguas, chistes, rimas» (p27).",
+    "fix": "Mymbakuéra · Describir animales y plantas | Tembi'u · Pedir comida, agua y permiso | Pundie · Las consonantes: ch, mb, nd, ng, nt, rr, g̃ | Moõpa? · Instrucciones: poner cosas en su lugar e ir de un lugar a otro | Purahéi ha kũjererã · Canciones, rimas y trabalenguas"
+   },
+   {
+    "where": "grades.g3.can",
+    "current": "Sigue instrucciones y recetas, lee cuentos, fábulas y leyendas, y escribe adivinanzas y descripciones.",
+    "verdict": "partly",
+    "evidence": "Supported:\n- «Sigue instrucciones breves para realizar determinadas acciones como manipular objetos y electrodomésticos …» (item 3, p26).\n- «Comprende la información contenida en textos breves escuchados o leídos: trabalenguas, chistes, rimas, poesías, canciones, cuentos, descripciones, fábulas, leyendas, diálogos e instrucciones, noticias breves.» (item 7, p27).\n- «Redacta esquelas, tarjetas, adivinanzas, poemas, acrósticos, diálogos, descripciones …» (item 17, p28).\nNot in the 1st-cycle Guarani table: recipes. They are in the Castellano table: «Interpreta órdenes e instrucciones dadas como reglas de juegos, recetas de cocina, cómo usar electrodomésticos …» (3.º item 9, p24). In Guarani, cooking appears only in 6.º («tembi’ukuéra», item 1, p45).",
+    "fix": "Sigue instrucciones, lee cuentos, fábulas y leyendas, y escribe adivinanzas y descripciones."
+   },
+   {
+    "where": "grades.g3.mec",
+    "current": "1.er ciclo. Se consolidan la lectura y la escritura en las dos lenguas: ideas principales, orden de los hechos. Se interpretan órdenes e instrucciones: reglas de juegos, recetas.",
+    "verdict": "partly",
+    "evidence": "Supported: the order of events («Secuencia los hechos ocurridos en textos leídos.», item 6, p27) and following instructions (item 3, p26). Not in the Guarani table: «ideas principales» and «reglas de juegos, recetas». Both are Castellano items: «Reconoce el contenido del texto: • Tema. • Idea principal. • Idea secundaria.» (item 4, p23) and «Interpreta órdenes e instrucciones dadas como reglas de juegos, recetas de cocina …» (item 9, p24). The Guarani 3.º items are «Responde preguntas breves sobre el contenido y el tema del texto.» (item 8, p27) and «Analiza un texto narrativo considerando personajes, acciones, lugar y tiempo.» (item 11, p27). Too strong: «Se consolidan … en las dos lenguas». Only the Castellano 3.º alcance says «se logrará el desarrollo íntegro de la competencia del ciclo» (p23). The Guarani 3.º alcance says «Podrían seguir apareciendo imperfecciones propias del proceso de aprendizaje de la L2, como parte del desarrollo de la competencia comunicativa.» (p26).",
+    "fix": "1.er ciclo. Se lee y se escribe en guaraní: orden de los hechos; personajes, lugar y tiempo de un cuento. Se siguen instrucciones breves. Todavía puede haber errores, propios de quien aprende una segunda lengua."
+   },
+   {
+    "where": "grades.g3.units",
+    "current": "Instrucciones: reglas de juegos y recetas | Mombe'u · Cuentos y fábulas | Mombe'ugua'u · Leyendas | Ñe'ẽpoty ha purahéi · Poesías y canciones | Adivinanzas y trabalenguas | Describir personas, animales y lugares",
+    "verdict": "partly",
+    "evidence": "Five units match. Item 7 lists «trabalenguas, chistes, rimas, poesías, canciones, cuentos, descripciones, fábulas, leyendas» (p27). Item 17 lists «adivinanzas, poemas, acrósticos, diálogos, descripciones (personas, personajes de textos, paisajes, animales, plantas, objetos y situaciones)» (p28). The instructions unit uses Castellano examples («reglas de juegos, recetas de cocina», item 9, p24). The Guarani item is «Sigue instrucciones breves para realizar determinadas acciones como manipular objetos y electrodomésticos, ubicarlos en un lugar determinado y trasladarse de un lugar a otro.» (item 3, p26).",
+    "fix": "Instrucciones: usar objetos y aparatos, ir de un lugar a otro | Mombe'u · Cuentos y fábulas | Mombe'ugua'u · Leyendas | Ñe'ẽpoty ha purahéi · Poesías y canciones | Adivinanzas y trabalenguas | Describir personas, animales y lugares"
+   },
+   {
+    "where": "grades.g4.can",
+    "current": "Escribe cartas y esquelas, describe, y sigue instrucciones orales y escritas.",
+    "verdict": "partly",
+    "evidence": "Supported: oral and written instructions.\n- Oral (item 1, p45): «Oikũmby oje’éva ichupe mba’emba’épa ojapova’erã ohuga hag̃ua ha oikuaa hag̃ua mba’éichapa ojapova’erã opaichagua mba’e ijedádpe g̃uarã.»\n- Written (item 15, p46): «Oikũmby omoñe’ẽva he’ihápe mba’éichapa ohugava’erã, ha mba’éichapa ojapova’erã umi mba’e ijedádpe g̃uarã.»\nNot in the 2nd-cycle Guarani table: letters or notes. The writing block «Ohaíta guaraníme» (items 20-24, p47) has neither. «cartas» is a Castellano item: «Redacta narraciones breves, poemas, adivinanzas, trabalenguas, descripciones, avisos, cartas y textos instruccionales sencillos.» (4.º item 19, p44).\n«describe» is not a named Guarani 4.º capacity. One reader called item 13 describing, but the page shows it is about expressive reading: «Ohechauka, iñe’ẽ rupi, mba’eichagua tékstopa pe he’ivahína (omokangyve térã omombareteve iñe’ẽ, …)» (p46).\nThe fix uses three items (all p47):\n- Item 20: «Ohai omombe’uhápe hembiapo pyharevegua, ka’arugua ha pyharegua.»\n- Item 21: «Ohai omombe’uhápe mba’épa ojapo hogaygua ndive.»\n- Item 22: «Omombe’ujey ohaikuévo mombe’urã omoñe’ẽva térã ohendúva.»",
+    "fix": "Escribe sobre su día y su familia, vuelve a contar cuentos, y sigue instrucciones orales y escritas."
+   },
+   {
+    "where": "grades.g4.mec",
+    "current": "2.º ciclo: textos orales y escritos para situaciones de todos los días y también formales.",
+    "verdict": "partly",
+    "evidence": "Supported: the «2.º ciclo» label («Capacidades priorizadas para el 2° ciclo de la Educación Escolar Básica», p41), and oral and written texts with everyday words. The 4.º alcance (p45): «Ko mbo’esyrýpe oñeha’ãrõ temimbo’ekuéra omoñe’ẽ ha oikũmbykuaa umi téksto ndaipukuetéiva térã nambykyetéiva, ojehai ha oñehendúva, oguerekóva umi ñe’ẽ py’ỹinte ojepurúva ha ndahasýiva iñeikũmby. Péicha ikatúta omombe’u oñe’ẽ ha ohaikuévo hemikotevẽ ha opa mba’e oikóva hekoha rupi.» (My translation: that they read and understand texts that are not too long or too short, written and heard, with frequent and easy words, so they can tell in speech and writing their needs and what happens in their community.) Two readers rendered «nambykyetéiva» as «breves». By its parts (na-mbyky-eté-i-va) it means «not very short». Not in the Guarani table: «formales»; the word does not occur on p41-47. The nearest Guarani item is about fitting speech to the listener and situation: «Omohenda porã pe he’íva oikuaa rupi mávandipa ha mba’eichahápepa oñe’ẽhína.» (item 10, p46). The likely source is the Castellano 6.º alcance: «con vocabulario que va desde lo coloquial hasta lo culto» (p41).",
+    "fix": "2.º ciclo: textos orales y escritos con palabras de todos los días, para contar lo que pasa en su comunidad."
+   },
+   {
+    "where": "grades.g5.can",
+    "current": "Lee mitos, leyendas y poesías, cuenta historias y cuida los acentos.",
+    "verdict": "partly",
+    "evidence": "Supported: poems, legends and retelling stories.\n- Item 14: «Oikũmby mombe’urã térã ñe’ẽpoty oñeñe’ẽhápe umi téma rehe ko’áǧa rupi herakuãvéva.» (p46).\n- Item 22: «Omombe’ujey ohaikuévo mombe’urã, ñe’ẽpoty ha mombe’ugua’u omoñe’ẽva térã ohendúva.» (p47).\n- The alcance: «omombe’u oñe’ẽ ha ohaikuévo hemikotevẽ, hemiandu» (p45).\nThe table does not translate «mombe’ugua’u»; the app's 3.º unit glosses it «Leyendas». The word «mitos» does not occur in the Guarani tables. It appears only in the 1st-cycle Castellano table (items 21-22, p25).\nNot in the Guarani table: accents. The nearest items name no accent rule: «Ohai porã oñeikũmby porã hag̃ua he’iséva.» (item 23, p47) and «Oipuru ñe’ẽ térã ambue signokuéra oipytyvõva omoñe’ẽvape oikũmby hag̃ua pe jehaipyrépe he’íva» (item 24, p47). Accents are a Castellano item: «Aplica normas de uso de: • Letras mayúsculas y minúsculas, • Tilde en diferentes casos, • Signos de puntuación.» (5.º item 22, p44).",
+    "fix": "Lee cuentos, leyendas y poesías, los vuelve a contar por escrito y escribe para que se le entienda."
+   },
+   {
+    "where": "grades.g5.mec",
+    "current": "2.º ciclo: textos para situaciones de todos los días y formales.",
+    "verdict": "partly",
+    "evidence": "«2.º ciclo» is supported (p41, p45). Not in the Guarani table: «formales»; the word does not occur on p41-47. The likely source is the Castellano 6.º alcance «desde lo coloquial hasta lo culto» (p41). The 5.º Guarani alcance (p45): «Ko mbo’esyrýpe oñeha’ãrõ temimbo’ekuéra omoñe’ẽ syryry ñepyrũ ha oikũmbykuaa avei umi ñe’ẽjehaipyre ha ñe’ẽjehaipyre’ỹva nambykyetéiva, oguerekóva umi ñe’ẽ hasymievéva iñeikũmby. Péicha ikatúta omombe’u oñe’ẽ ha ohaikuévo hemikotevẽ, hemiandu ha opa mba’e oikóva ijere rupi ha ambue henda rupi.» (My translation: that they start to read fluently and understand written and oral texts that are not very short, with somewhat harder words, so they can tell in speech and writing their needs, feelings and what happens around them and elsewhere.)",
+    "fix": "2.º ciclo: empieza a leer con soltura textos con palabras un poco más difíciles."
+   },
+   {
+    "where": "grades.g6.can",
+    "current": "Escucha y lee noticias, describe personajes y deduce lo que un texto no dice.",
+    "verdict": "partly",
+    "evidence": "Not in the 2nd-cycle Guarani table: news, describing characters, or inferring what a text leaves unsaid.\n- News: one reader read item 4 as news («ñe'ẽmondo»); that word is not on p45. The nearest item is about texts on current topics, with no news named: «Oikũmby opáichagua jehaipyre oñeñe’ẽhápe umi téma rehe ko’áǧa rupi herakuãvéva.» (item 14, p46).\n- Characters: the Guarani item only identifies who a text is about: «Oikũmby mavamáva rehepa oñeñe’ẽ jehaipyrekuéra ohendúva ha umíva apytépe he’i máva rehépa oñeñe’ẽve.» (item 3, p45).\n- Inference: one reader called «Jehaipyre he’iha pe oñeha’ãrõva ichugui» (item 16, p46) inference, but it says the text says what is expected of it. The nearest critical-reading item is telling facts from the author's opinions: «Ombojoavy umi mba’e haihára he’íva oikovaramoguáicha ha umi he’íva ha’e oimo’ãháicha.» (item 18, p47).\nAll three app topics are in the Castellano table: «noticias radiales y televisivas» (4.º-5.º items 15 and 20, p43-44), «Caracteriza personajes principales y secundarios de textos presentados.» (6.º item 2, p41) and «Infiere el posible contenido de un texto a partir de datos como el título o una imagen que se le presenta.» (4.º item 1, p41).",
+    "fix": "Lee textos de todo tipo sobre temas de hoy, reconoce a los personajes y distingue hechos de opiniones."
+   },
+   {
+    "where": "grades.g6.mec",
+    "current": "2.º ciclo: cierra la etapa de los textos cotidianos y formales.",
+    "verdict": "partly",
+    "evidence": "Supported: 6.º is the last grade of the 2nd cycle. The Guarani table has 4.º, 5.º and 6.º columns (p45), under «Capacidades priorizadas para el 2° ciclo de la Educación Escolar Básica» (p41). Not in the Guarani table: «textos cotidianos y formales». The likely source is the Castellano 6.º alcance: «con vocabulario que va desde lo coloquial hasta lo culto, dependiendo del tipo de texto y la intencionalidad comunicativa. … Así, al terminar este grado, deben lograr el desarrollo íntegro de la competencia del ciclo.» (p41). The Guarani 6.º alcance (p45) has no such closing line and still allows small errors: «Ko’ápe oñeha’ãrõ temimbo’ekuéra omoñe’ẽ syryry porãma ha oikũmbykuaa avei umi ñe’ẽjehaipyre’ỹ nambykyetéiva ojehai ha oñehendúva, oguerekóva umi ñe’ẽ hasyvémava iñeikũmby. Péicha ikatúta omombe’u hemikotevẽ, hemiandu, hemimo’ã ha opa mba’e oikóva ijere rupi ha opa henda rupi. Ko’ápe ikatu gueteri temimbo’ekuéra ojavymimi …» (My translation: that they already read with good fluency and understand texts that are not very short, written and heard, with harder words; that they tell their needs, feelings and thoughts; and that they may still make small errors.)",
+    "fix": "2.º ciclo, último grado: ya lee con buena soltura textos con palabras más difíciles."
+   }
+  ],
+  "gaps": [
+   "1.º grado, personal data (the units cover greeting and introducing oneself, not age or grade): «Comprende el significado de preguntas acerca de los datos personales: nombre, edad y grado.» (item 5, p26)",
+   "1.º grado, following short instructions: «Sigue instrucciones breves para realizar determinadas acciones como manipular objetos y electrodomésticos, ubicarlos en un lugar determinado y trasladarse de un lugar a otro.» (item 3, p26)",
+   "1.º grado, «mi país» (the units cover body, family, house and school only): «Comprende el significado de vocablos que se refieren a su contexto inmediato (mi cuerpo, mi familia, mi casa, mi escuela y mi país)» (item 10, p27)",
+   "1.º grado, listening to short texts (no 1.º unit on stories, rhymes or songs): «Comprende la información contenida en textos breves escuchados: trabalenguas, chistes, rimas, poesías, canciones, cuentos, descripciones, fábulas, leyendas, diálogos e instrucciones breves.» (item 7, p27)",
+   "1.º grado, understanding a text: «Reconoce la secuencia de las ideas en un texto breve.» (item 6), «Responde preguntas sencillas sobre el contenido del texto.» (item 8), «Reconoce personajes y lugares mencionados en textos escuchados.» (item 9), «Identifica los personajes del texto y su actitud emocional.» (item 11) (p27)",
+   "1.º grado, short dialogues and agreeing or disagreeing: «Expresa diálogos breves de forma sostenida y coherente con relación a temas cotidianos.» (item 13), «Expresa acuerdos/desacuerdos ante situaciones presentadas.» (item 15) (p27)",
+   "1.º grado, daily activities (the sky unit has the morning-to-night frame but not the activities): «Describe las actividades que realiza durante el día: a la mañana, a la tarde y a la noche.» (item 14, p27)",
+   "1.º grado, asking for things: «Expresa sus necesidades tales como pedir ayuda, favor, permiso, préstamo de algún objeto o material conforme a contextos comunicativos usuales.» (item 16, p28)",
+   "1.º grado, writing short texts and basic punctuation (the alphabet unit covers letters only): «Escribe tarjetas, adivinanzas, diálogos, descripciones (de personas, paisajes, animales, plantas y objetos) y narraciones breves.» (item 17) and «Aplica en sus redacciones las reglas de uso de: • Las letras. • Los signos básicos de puntuación.» (item 20) (p28)",
+   "2.º grado, greeting and introducing oneself, classmates and family (no 2.º unit): «Saluda y se presenta y presenta a sus compañeros y familiares.» (item 12, p27); «Expresa diversas formas de saludo y presentación.» (item 21, p28)",
+   "2.º grado, personal data: «Comprende el significado de preguntas y responde sobre sus datos personales: nombre, edad y grado.» (item 5, p26)",
+   "2.º grado, vocabulary of the immediate context (no 2.º unit): «(mi cuerpo, mi familia, mi casa, mi escuela y mi país)» (item 10, p27)",
+   "2.º grado, following short instructions (the «Moõpa?» unit asks for and gives directions instead): «Sigue instrucciones breves para realizar determinadas acciones como manipular objetos y electrodomésticos, ubicarlos en un lugar determinado y trasladarse de un lugar a otro.» (item 3, p26)",
+   "2.º grado, short texts heard or read (only songs are covered): «Comprende la información contenida en textos breves escuchados o leídos: trabalenguas, chistes, rimas, poesías, canciones, cuentos, descripciones, fábulas, leyendas, diálogos, etiquetas e instrucciones breves.» (item 7, p27)",
+   "2.º grado, understanding a text: «Secuencia los hechos ocurridos en textos leídos.» (item 6), «Responde preguntas breves sobre el contenido del texto.» (item 8), «Identifica los personajes principales y su actitud emocional.» (item 9) (p27)",
+   "2.º grado, dialogues, daily activities, likes and opinions: «Sostiene diálogos breves sobre temas relacionados con su contexto» (item 13), «Narra las actividades que realiza durante el día: a la mañana, a la tarde y a la noche.» (item 14), «Manifiesta gusto/disgusto, acuerdo/desacuerdos ante situaciones presentadas.» (item 15) (p27)",
+   "2.º grado, basic needs (the «Tembi'u · La comida» unit is food vocabulary only): «Expresa necesidades básicas como: ir al baño, tomar agua, pedir alimentos, solicitar permiso y prestar algo.» (item 16, p28)",
+   "2.º grado, writing short texts: «Redacta esquelas, tarjetas, adivinanzas, poemas, acrósticos, diálogos, descripciones (personajes de textos, paisajes, animales, plantas, objetos y situaciones) y narraciones breves, teniendo en cuenta la estructura de cada tipo de texto.» (item 17, p28)",
+   "2.º grado, spelling beyond consonants (capitals, accent mark and nasal mark): «Aplica normas acerca del uso de: • Las letras. • Las mayúsculas. • La tilde y la marca de nasalidad.» (item 20, p28)",
+   "2.º grado, choosing words that fit the situation: «Utiliza vocablos adecuados a la situación comunicativa.» (item 18, p28)"
+  ]
+ },
+ "challenge": {
+  "reviews": [
+   {
+    "where": "tracks.L2.note",
+    "keep": true,
+    "reason": "Keep. Checked on the page images. The 1.º alcance is oral only: «Al culminar el grado, se espera que los estudiantes puedan utilizar vocabulario elemental relacionado con datos personales, del hogar y la escuela, mantener conversaciones breves aplicando funciones comunicativas básicas, con las cuales podrá formular y responder preguntas.» (p26). 2.º is the first to say «utilizar en forma oral y escrita, vocabulario básico» (p26); the image does read «oral y escrita». But 1.º already writes: «Escribe tarjetas, adivinanzas, diálogos, descripciones (de personas, paisajes, animales, plantas y objetos) y narraciones breves.» (item 17, p28) and «Utiliza la grafía correspondiente para representar sonidos.» (items 19 and 21, p28). 1.º comprehension is mostly listening, «textos breves escuchados» (item 7, p27), while 2.º adds reading: «textos breves escuchados o leídos» (item 7, p27) and «Secuencia los hechos ocurridos en textos leídos.» (item 6, p27). So the fix matches the document. One correction to the evidence: «L2» (p26) is not the only learner marker. The 1st-cycle «Comunicación Castellano» table says «utilizando su lengua materna para comunicarse» (p23), and Cuadro 5 lists «Lengua Materna» and «Segunda Lengua» (p21). Both reinforce reading the Guarani table as the L2 program. The better fix only adds «textos cortos».",
+    "better_fix": "En casa se habla más castellano: en 1.º grado sobre todo escucha y habla guaraní, y empieza a escribir textos cortos; desde 2.º grado lee y escribe más."
+   },
+   {
+    "where": "grades.g1.can",
+    "keep": true,
+    "reason": "Keep a change, but not the judge's: it deletes a supported clause. A change is needed because the 1.º Guarani (L2) table gives writing to every pupil: «Escribe tarjetas, adivinanzas, diálogos, descripciones (de personas, paisajes, animales, plantas y objetos) y narraciones breves.» (item 17, p28). The judge calls the L1 condition «not in the document». The exact words are not there, but the judge missed p25. The 1st-cycle table titled «Comunicación Castellano» is the mother-tongue table, and it covers Guarani. Its 1.º alcance: «desarrollen sus capacidades relacionadas con la lectoescritura para que empiecen a leer con cierta fluidez textos contextualizados breves con vocabulario sencillo; … y se expresen en forma oral y escrita utilizando su lengua materna para comunicarse» (p23). Its 1.º item 17 includes «La tilde y la marca de nasalidad, en el caso del guaraní.» (p25), and item 18 is limited «en el caso del castellano» (p25). So a Guarani-L1 child starts reading and writing in 1.º. «can» is shown to every track (project/Grade.dc.html, line 73), so keep the L1 clause and add writing for all. The first sentence is supported (item 5, p26; items 10 and 12, p27; 1.º alcance, p26).",
+    "better_fix": "Saluda, dice su nombre y su edad, y nombra su cuerpo, su familia, su casa y su escuela. Empieza a escribir textos cortos, como tarjetas y adivinanzas; si el guaraní es su lengua materna, también empieza a leer."
+   },
+   {
+    "where": "grades.g1.mec",
+    "keep": true,
+    "reason": "Keep a change, with a better fix. «Como segunda lengua, 1.º grado es oral» is too strong: «Escribe tarjetas, adivinanzas, diálogos …» (item 17, p28) and «Aplica en sus redacciones las reglas de uso de: • Las letras. • Los signos básicos de puntuación.» (item 20, p28). The topic list is verified (items 4-5, p26; items 10 and 12, p27). Refuted in substance: the judge's «Not in the document: the whole sentence about Guarani as mother tongue». The exact words are absent, but the mother-tongue table starts literacy in 1.º: «desarrollen sus capacidades relacionadas con la lectoescritura para que empiecen a leer con cierta fluidez textos contextualizados breves» … «utilizando su lengua materna para comunicarse» (p23). Its 1.º spelling rules name Guarani: «La tilde y la marca de nasalidad, en el caso del guaraní.» (item 17, p25). The Guarani table itself is the L2 one («propias del proceso de aprendizaje de la L2», p26). Keep the L1 sentence; correct only the L2 half.",
+    "better_fix": "1.er ciclo. Con el guaraní como lengua materna, en 1.º grado se empieza a leer y escribir. Como segunda lengua, 1.º grado es sobre todo oral: saludos y presentación, datos personales (nombre, edad, grado) y las palabras de su cuerpo, su familia, su casa, su escuela y su país; también se empiezan a escribir textos cortos, como tarjetas y adivinanzas."
+   },
+   {
+    "where": "grades.g1.units",
+    "keep": false,
+    "reason": "Reject. The document facts are right. Numbers are not in the document; the nearest item is «Comprende el significado de preguntas acerca de los datos personales: nombre, edad y grado.» (item 5, p26). The sky is not in the document; the nearest item is «Describe las actividades que realiza durante el día: a la mañana, a la tarde y a la noche.» (item 14, p27). But both new titles describe content these built units do not have (project/tp-grades.js, lines 127-146). Papapy's nights are «1 – 5», «6 – 10» and «Mboy arýpa? ¿Cuántos años?», with no grade phrase: «mi grado» overclaims, and dropping «del 1 al 10» hides what it teaches. Ñande yvága's nights are «Kuarahy ha jasy», «Pyhareve, ka'aru, pyhare» (only the three time words) and «Mborevi Rape», with no daily activities: «lo que hago» overclaims. The current titles are accurate, and a retitle does not put numbers or the sky into the document. Optional, if a visible link to item 5 is wanted: «Papapy · Los números del 1 al 10 y mi edad» is accurate.",
+    "better_fix": ""
+   },
+   {
+    "where": "grades.g2.can",
+    "keep": true,
+    "reason": "Keep as proposed. The document has texts, not just words: «utilizar en forma oral y escrita, vocabulario básico» (2.º alcance, p26); «Comprende la información contenida en textos breves escuchados o leídos» (2.º item 7, p27); «Redacta esquelas, tarjetas, adivinanzas, poemas, acrósticos, diálogos, descripciones (personajes de textos, paisajes, animales, plantas, objetos y situaciones) y narraciones breves» (2.º item 17, p28). Asking where something is and giving directions are not in the document. The new clauses are verified: «Sigue instrucciones breves para realizar determinadas acciones como manipular objetos y electrodomésticos, ubicarlos en un lugar determinado y trasladarse de un lugar a otro.» (item 3, p26) and «Expresa necesidades básicas como: ir al baño, tomar agua, pedir alimentos, solicitar permiso y prestar algo.» (2.º item 16, p28). The text also fits L1 children: «continúen desarrollando sus capacidades relacionadas con la lectoescritura» (2.º, p23).",
+    "better_fix": ""
+   },
+   {
+    "where": "grades.g2.mec",
+    "keep": true,
+    "reason": "Keep a change, with a better fix. Confirmed: «leer y escribir empieza en 2.º grado» is too strong, because 1.º already writes (item 17, p28). These are not in the document: «palabras que se escriben igual en castellano y en guaraní», «preguntar por un lugar» and «dar direcciones». Refuted: «como lengua materna, se afianza» IS supported. The 2.º mother-tongue alcance says «continúen desarrollando sus capacidades relacionadas con la lectoescritura y lean en forma oral con cierta fluidez textos contextualizados breves» (p23), and its 2.º rules include «La tilde y la marca de nasalidad, en el caso del guaraní.» (item 17, p25). The judge's fix drops this, though «mec» is shown to every track (project/Grownups.dc.html, line 59). The rest of the fix is verified: «en forma oral y escrita» (p26); «Redacta esquelas, tarjetas, adivinanzas, poemas…» (item 17, p28); «Saluda y se presenta y presenta a sus compañeros y familiares.» (item 12, p27); item 16 (p28).",
+    "better_fix": "1.er ciclo. Como segunda lengua, en 2.º grado el guaraní ya se usa en forma oral y escrita: se leen y se escriben textos cortos, como tarjetas, adivinanzas y poemas; como lengua materna, se sigue desarrollando la lectoescritura. También: presentarse, presentar a compañeros y familiares, y pedir lo que se necesita."
+   },
+   {
+    "where": "grades.g2.units",
+    "keep": true,
+    "reason": "Keep only the retitles of the two unbuilt units. «dichos» is not in the document; the listed genres are «trabalenguas, chistes, rimas, poesías, canciones» (2.º item 7, p27), and «kũjererã» is the document's own word (item 11, p46). «¿Dónde queda? Lugares y caminos» is not in the document; item 3 is «ubicarlos en un lugar determinado y trasladarse de un lugar a otro» (p26), which matches the g2.can and g2.mec fixes. Reject the retitles of the two built units, because they describe content those units lack (project/tp-grades.js, lines 151-161). Mymbakuéra has three vocabulary nights (house, forest and sky animals): no plants and no describing. Tembi'u has food and drink words only (chipa, mandi'o, avati, y, kamby, mbujape, narã, pakova, mbeju): no request phrases and nothing about permission. Their topics are in the document only as «descripciones (… animales, plantas …)» (item 17, p28) and «pedir alimentos» (item 16, p28), so the current titles stay.",
+    "better_fix": "Mymbakuéra · Los animales | Tembi'u · La comida | Pundie · Las consonantes: ch, mb, nd, ng, nt, rr, g̃ | Moõpa? · Instrucciones: poner cosas en su lugar e ir de un lugar a otro | Purahéi ha kũjererã · Canciones, rimas y trabalenguas"
+   },
+   {
+    "where": "grades.g3.can",
+    "keep": true,
+    "reason": "Keep as proposed. Supported for all tracks: item 3 (p26); «Comprende la información contenida en textos breves escuchados o leídos: trabalenguas, chistes, rimas, poesías, canciones, cuentos, descripciones, fábulas, leyendas, diálogos e instrucciones, noticias breves.» (3.º item 7, p27); «Redacta esquelas, tarjetas, adivinanzas, poemas, acrósticos, diálogos, descripciones (personas, personajes de textos, paisajes, animales, plantas, objetos y situaciones) …» (3.º item 17, p28). Recipes are not in the Guarani (L2) table. One correction to the evidence: recipes are not just a Castellano item. They are in the 1st-cycle mother-tongue table («Interpreta órdenes e instrucciones dadas como reglas de juegos, recetas de cocina, cómo usar electrodomésticos, cómo manipular objetos, cómo realizar acciones y participar en debates.», 3.º item 9, p24), which also covers «el caso del guaraní» (item 17, p25). So recipes suit an L1 child, but «can» is shown to every track, and dropping them is the safe shared text.",
+    "better_fix": ""
+   },
+   {
+    "where": "grades.g3.mec",
+    "keep": true,
+    "reason": "Keep a change, but split by track. Confirmed: «Se consolidan … en las dos lenguas» is too strong. Only the mother-tongue alcance says «Así, al terminar este grado, se logrará el desarrollo íntegro de la competencia del ciclo.» (p23). The Guarani one says «Podrían seguir apareciendo imperfecciones propias del proceso de aprendizaje de la L2, como parte del desarrollo de la competencia comunicativa.» (p26). Refuted in part: «ideas principales» and «reglas de juegos, recetas» are not outside the program. They are in the mother-tongue table («Reconoce el contenido del texto: • Tema. • Idea principal. • Idea secundaria.», item 4, p23; 3.º item 9, p24), which covers «el caso del guaraní» (item 17, p25). The judge's fix is L2-only, but «mec» is shown to L1 and BI families too, who would read «errores, propios de quien aprende una segunda lengua» as describing their child. The L2 parts are verified: «Secuencia los hechos ocurridos en textos leídos.» (item 6, p27); «Analiza un texto narrativo considerando personajes, acciones, lugar y tiempo.» (3.º item 11, p27); item 3 (p26).",
+    "better_fix": "1.er ciclo. Como lengua materna, al terminar 3.º grado se logra la competencia del ciclo: tema e idea principal, orden de los hechos, instrucciones como reglas de juegos y recetas. Como segunda lengua, se lee y se escribe en guaraní: orden de los hechos; personajes, acciones, lugar y tiempo de un cuento; instrucciones breves. Todavía puede haber errores propios de quien aprende una segunda lengua."
+   },
+   {
+    "where": "grades.g3.units",
+    "keep": true,
+    "reason": "Keep, slightly narrowed. Verified: the Guarani item is «Sigue instrucciones breves para realizar determinadas acciones como manipular objetos y electrodomésticos, ubicarlos en un lugar determinado y trasladarse de un lugar a otro.» (item 3, p26). «reglas de juegos, recetas de cocina» are only in the mother-tongue table (3.º item 9, p24), so they do not fit L2 pupils. That table also has «cómo usar electrodomésticos, cómo manipular objetos» (p24), so «usar objetos y aparatos» fits both tables. The unit is unbuilt (soon), so a retitle is safe. Improvement: drop «ir de un lugar a otro», which the 2.º Moõpa? unit now covers under the g2.units fix, to avoid two near-identical units in a row. The other five titles match 3.º item 7 (p27) and item 17 (p28).",
+    "better_fix": "Instrucciones: usar objetos y aparatos | Mombe'u · Cuentos y fábulas | Mombe'ugua'u · Leyendas | Ñe'ẽpoty ha purahéi · Poesías y canciones | Adivinanzas y trabalenguas | Describir personas, animales y lugares"
+   },
+   {
+    "where": "grades.g4.can",
+    "keep": true,
+    "reason": "Keep, with a more precise fix. Confirmed on p45-47: letters and notes are not in the 2nd-cycle Guarani table. «cartas» is Castellano: «Redacta narraciones breves, poemas, adivinanzas, trabalenguas, descripciones, avisos, cartas y textos instruccionales sencillos.» (4.º item 19, p44). No 4.º Guarani item asks for describing. Item 13 is expressive voice: «Ohechauka, iñe’ẽ rupi, mba’eichagua tékstopa pe he’ivahína (omokangyve térã omombareteve iñe’ẽ, omomýi hete, oñe’ẽ hatãve térã mbegueve, iñe’ẽ pohýi, ha mba’e).» (p46). The new clauses are verified: «Ohai omombe’uhápe hembiapo pyharevegua, ka’arugua ha pyharegua.» (item 20, p47); «Ohai omombe’uhápe mba’épa ojapo hogaygua ndive.» (item 21, p47); «Omombe’ujey ohaikuévo mombe’urã omoñe’ẽva térã ohendúva.» (item 22, p47); oral and written instructions (item 1, p45; item 15, p46). Improvement: item 22 is a written retelling («ohaikuévo») of stories read or heard, and item 21 is what he does with his family. Out of scope here: the g4 units «Kuatiañe'ẽ · Cartas y esquelas» and «Describir» have the same gap.",
+    "better_fix": "Escribe sobre lo que hace en el día y con su familia, vuelve a contar por escrito cuentos que lee o escucha, y sigue instrucciones orales y escritas."
+   },
+   {
+    "where": "grades.g4.mec",
+    "keep": true,
+    "reason": "Keep, with a fuller fix. Confirmed: «formales» is not in the document's Guarani table (p45-47). The nearest items are about fitting speech to listener and place: «Oporomaitei ojesarekóvo moomõ ha máva ndivepa oĩ.» (item 8, p46) and «Omohenda porã pe he’íva oikuaa rupi mávandipa ha mba’eichahápepa oñe’ẽhína.» (item 10, p46). The 4.º alcance (p45): «Ko mbo’esyrýpe oñeha’ãrõ temimbo’ekuéra omoñe’ẽ ha oikũmbykuaa umi téksto ndaipukuetéiva térã nambykyetéiva, ojehai ha oñehendúva, oguerekóva umi ñe’ẽ py’ỹinte ojepurúva ha ndahasýiva iñeikũmby. Péicha ikatúta omombe’u oñe’ẽ ha ohaikuévo hemikotevẽ ha opa mba’e oikóva hekoha rupi.» The judge's gloss of «nambykyetéiva» as «not very short» is right. Improvement: the fix omits «hemikotevẽ» (their needs) and «ndaipukuetéiva térã nambykyetéiva» (neither very long nor very short), and it blurs understanding texts with telling.",
+    "better_fix": "2.º ciclo: entiende textos escritos y escuchados, ni muy largos ni muy cortos, con palabras de todos los días; cuenta, hablando y escribiendo, lo que necesita y lo que pasa en su comunidad."
+   },
+   {
+    "where": "grades.g5.can",
+    "keep": true,
+    "reason": "Keep, with a better fix. Supported: «Oikũmby mombe’urã térã ñe’ẽpoty oñeñe’ẽhápe umi téma rehe ko’ág̃a rupi herakuãvéva.» (item 14, p46) and «Omombe’ujey ohaikuévo mombe’urã, ñe’ẽpoty ha mombe’ugua’u omoñe’ẽva térã ohendúva.» (item 22, p47). Accents are not in the 2nd-cycle Guarani table. Correction: the judge's «Not in the Guarani table: accents» is too broad. The 1st-cycle Guarani table has «Aplica normas acerca del uso de: • Las letras. • Las mayúsculas. • La tilde y la marca de nasalidad.» (2.º and 3.º item 20, p28). The document does not translate «mombe’ugua’u», so «leyendas», matching the app's 3.º gloss, is the safe word. Improvement: say what items 23-24 actually ask: «Ohai porã oñeikũmby porã hag̃ua he’iséva.» (item 23, p47) and «Oipuru ñe’ẽ térã ambue signokuéra oipytyvõva omoñe’ẽvape oikũmby hag̃ua pe jehaipyrépe he’íva» (item 24, p47). Out of scope: the g5 unit «Dónde va el acento» can rest on p28 and item 24.",
+    "better_fix": "Lee cuentos, leyendas y poesías, los vuelve a contar por escrito, y escribe claro, con palabras y signos que ayudan a entender."
+   },
+   {
+    "where": "grades.g5.mec",
+    "keep": true,
+    "reason": "Keep, with a fuller fix. «formales» is not in the document's Guarani table (p45-47); «desde lo coloquial hasta lo culto» is Castellano 6.º (p41). The 5.º alcance (p45): «Ko mbo’esyrýpe oñeha’ãrõ temimbo’ekuéra omoñe’ẽ syryry ñepyrũ ha oikũmbykuaa avei umi ñe’ẽjehaipyre ha ñe’ẽjehaipyre’ỹva nambykyetéiva, oguerekóva umi ñe’ẽ hasymievéva iñeikũmby. Péicha ikatúta omombe’u oñe’ẽ ha ohaikuévo hemikotevẽ, hemiandu ha opa mba’e oikóva ijere rupi ha ambue henda rupi.» The judge's fix is accurate but keeps only the reading half. It drops understanding written and oral texts («ñe’ẽjehaipyre ha ñe’ẽjehaipyre’ỹva») and telling needs, feelings and what happens around them.",
+    "better_fix": "2.º ciclo: empieza a leer con soltura y entiende textos orales y escritos con palabras un poco más difíciles; cuenta, hablando y escribiendo, lo que necesita, lo que siente y lo que pasa a su alrededor."
+   },
+   {
+    "where": "grades.g6.can",
+    "keep": true,
+    "reason": "Keep, with a better fix. Confirmed: news and inferring what a text leaves unsaid are not in the 2nd-cycle Guarani table (news appear only in 1st-cycle Guarani 3.º, «noticias breves», item 7, p27). The new clauses are verified: «Oikũmby opáichagua jehaipyre oñeñe’ẽhápe umi téma rehe ko’ág̃a rupi herakuãvéva.» (item 14, p46) and «Ombojoavy umi mba’e haihára he’íva oikovaramoguáicha ha umi he’íva ha’e oimo’ãháicha.» (item 18, p47). Refuted: «the Guarani item only identifies who a text is about». The judge missed 6.º item 4: «Ohechakuaa mba’eichagua tekovepahína pe oñeñe’ẽvare ohendúvape ha máva ha’e oikuaavévapepa ojogua upéva.» (p45). My translation: recognizes what kind of being the one spoken about is, and whom among people he knows they resemble. That is characterizing (recognizing, not describing), so «reconoce … y cómo son» is supported. Out of scope: the g6 units «Marandu», «Los personajes de un cuento» and «Leer entre líneas» have the same gaps.",
+    "better_fix": "Lee textos de todo tipo sobre temas de hoy, reconoce a los personajes y cómo son, y distingue hechos de opiniones."
+   },
+   {
+    "where": "grades.g6.mec",
+    "keep": true,
+    "reason": "Keep, with a fuller fix. Confirmed: «textos cotidianos y formales» echoes the Castellano 6.º alcance: «con vocabulario que va desde lo coloquial hasta lo culto … Así, al terminar este grado, deben lograr el desarrollo íntegro de la competencia del ciclo.» (p41). The Guarani 6.º alcance makes no such closing claim and still expects small errors: «Ko’ápe oñeha’ãrõ temimbo’ekuéra omoñe’ẽ syryry porãma ha oikũmbykuaa avei umi ñe’ẽjehaipyre’ỹ nambykyetéiva ojehai ha oñehendúva, oguerekóva umi ñe’ẽ hasyvémava iñeikũmby. Péicha ikatúta omombe’u hemikotevẽ, hemiandu, hemimo’ã ha opa mba’e oikóva ijere rupi ha opa henda rupi. Ko’ápe ikatu gueteri temimbo’ekuéra ojavymimi ha upe ojavyhaguépe oñehekombo’eveva’erã ichupekuéra.» (p45; the same error clause is in 4.º and 5.º). «último grado» is right (columns 4.º-6.º, p45). Improvement: add what the pupil tells (needs, feelings, thoughts) and the small errors.",
+    "better_fix": "2.º ciclo, último grado: ya lee con buena soltura textos con palabras más difíciles y cuenta lo que necesita, siente y piensa; todavía puede tener pequeños errores."
+   }
+  ]
+ }
+}

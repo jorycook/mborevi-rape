@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Para grandes</title>
+<script src="./support.js"></script>
+<script src="./tp-course.js"></script>
+<script src="./tp-grades.js"></script>
+<script src="./tp-sky.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&amp;family=Baloo+2:wght@600;700;800&amp;family=Nunito:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:#2A1B3D;text-decoration:none}a:hover{color:#2A1B3D}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; padding: 50px 16px 0; background: #FFF7EC; color: #2A1B3D; font-family: 'Nunito', 'Avenir Next', sans-serif; display: flex; flex-direction: column; overflow: hidden">
+
+<div style="display: flex; align-items: center; gap: 4px; height: 44px; flex-shrink: 0">
+<a href="Main.dc.html" onClick="{{ toMain }}" aria-label="Volver al camino" style="width: 44px; height: 44px; margin-left: -8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2A1B3D" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></a>
+<h1 style="margin: 0; font-family: 'Baloo 2', 'Nunito', sans-serif; font-size: 26px; font-weight: 800; line-height: 1">Para grandes</h1>
+</div>
+<div style="font-size: 13px; font-weight: 700; color: #5C4E86; line-height: 1.4; flex-shrink: 0">Cómo sigue Mborevi Rape la enseñanza del guaraní que organiza el MEC, y cómo va tu hija o tu hijo.</div>
+
+<div style="flex-grow: 1; min-height: 0; overflow-y: auto; margin: 10px -16px 0; padding: 2px 16px 34px; display: flex; flex-direction: column; gap: 12px">
+
+<section style="box-sizing: border-box; padding: 14px; border-radius: 22px; background: #1E1460; color: #FFF7EC; display: flex; gap: 12px; align-items: center; flex-shrink: 0">
+<svg viewBox="0 0 100 100" width="72" height="72" aria-hidden="true" style="flex-shrink: 0">
+<path d="{{ fig.outline }}" fill="#FFE7A3" fill-opacity="{{ fig.fillO }}" stroke="#B9A6FF" stroke-width="2.4" stroke-dasharray="4 4" stroke-linejoin="round" opacity="0.8"/>
+<path d="{{ fig.lines }}" stroke="#6E5FD0" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+<path d="{{ fig.linesOn }}" stroke="#FFE7A3" stroke-width="3" stroke-linecap="round" fill="none"/>
+<path d="{{ fig.off }}" fill="#4B3D9A" stroke="#B4A8F2" stroke-width="1.6" stroke-linejoin="round"/>
+<path d="{{ fig.on }}" fill="#FFD34E" stroke="#3B2418" stroke-width="1.8" stroke-linejoin="round"/>
+</svg>
+<div style="min-width: 0; display: flex; flex-direction: column; gap: 2px">
+<div style="font-size: 11px; font-weight: 800; letter-spacing: 0.06em; color: #CFC6FF">{{ gradeKicker }}</div>
+<div style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 20px; line-height: 1.1">{{ gradeTitle }}</div>
+<div style="font-size: 13px; font-weight: 700; color: #E4DDFF; line-height: 1.35">{{ progressLine }}</div>
+</div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 6px; flex-shrink: 0">
+<h2 style="margin: 0; font-size: 12px; font-weight: 800; letter-spacing: 0.06em; color: #6B4FD8">LO QUE PIDE EL PROGRAMA</h2>
+<div style="font-size: 14px; font-weight: 700; line-height: 1.45">{{ mec }}</div>
+<div style="font-size: 13px; font-weight: 700; color: #5C4E86; line-height: 1.4">En la app: {{ can }}</div>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 8px; flex-shrink: 0">
+<h2 style="margin: 0; font-size: 12px; font-weight: 800; letter-spacing: 0.06em; color: #6B4FD8">LAS CUATRO CAPACIDADES</h2>
+<sc-for list="{{ skills }}" as="k" hint-placeholder-count="4">
+<div role="img" aria-label="{{ k.aria }}" style="display: flex; align-items: center; gap: 10px">
+<div style="width: 104px; flex-shrink: 0; display: flex; flex-direction: column">
+<div lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 16px; line-height: 1.1">{{ k.gn }}</div>
+<div style="font-size: 11.5px; font-weight: 700; color: #5C4E86; line-height: 1.2">{{ k.mec }}</div>
+</div>
+<div style="flex-grow: 1; height: 14px; border-radius: 7px; background: #EDE6FF; overflow: hidden"><div style="height: 14px; border-radius: 7px; background: #6B4FD8; width: {{ k.w }}"></div></div>
+<div style="width: 64px; flex-shrink: 0; text-align: right; font-size: 12.5px; font-weight: 800">{{ k.n }}</div>
+</div>
+</sc-for>
+</section>
+
+<section style="box-sizing: border-box; padding: 12px 14px; border-radius: 20px; border: 2px solid #3B2418; display: flex; flex-direction: column; gap: 4px; flex-shrink: 0">
+<h2 style="margin: 0; font-size: 12px; font-weight: 800; letter-spacing: 0.06em; color: #6B4FD8">LA LENGUA DE CASA</h2>
+<div style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 18px; line-height: 1.15">{{ track.short }}</div>
+<div style="font-size: 13px; font-weight: 700; color: #4A3D72; line-height: 1.4">{{ track.note }}</div>
+<div style="font-size: 12.5px; font-weight: 700; color: #5C4E86; line-height: 1.4">En la escuela, la lengua materna de cada niño se identifica con el Test de Competencia Lingüística antes de empezar a leer y escribir.</div>
+<a href="Home.dc.html" onClick="{{ toHome }}" style="align-self: flex-start; min-height: 44px; display: flex; align-items: center; font-size: 14px; font-weight: 800; color: #4B32B8; text-decoration: underline; text-underline-offset: 3px">Cambiar la lengua de casa</a>
+</section>
+
+<section style="box-sizing: border-box; padding: 12px 14px; border-radius: 20px; border: 2px solid #3B2418; display: flex; flex-direction: column; gap: 6px; flex-shrink: 0">
+<h2 style="margin: 0; font-size: 12px; font-weight: 800; letter-spacing: 0.06em; color: #6B4FD8">LA VOZ</h2>
+<div style="font-size: 13px; font-weight: 700; color: #4A3D72; line-height: 1.4">Mborevi'i dice las palabras con una voz sintética del guaraní, hecha por computadora (MMS-TTS de Meta). Puede sonar distinta de una persona: lo mejor es que un grande las diga también.</div>
+<button type="button" onClick="{{ voice.toggle }}" aria-pressed="{{ voice.pressed }}" style="align-self: flex-start; min-height: 44px; box-sizing: border-box; padding: 0 14px; border-radius: 22px; border: 2px solid #3B2418; background: {{ voice.bg }}; color: #2A1B3D; font-size: 14px; font-weight: 800; display: flex; align-items: center; gap: 8px">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2A1B3D" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="{{ voice.wave }}"/></svg>
+<span>Voz sintética: {{ voice.label }}</span>
+</button>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 6px; flex-shrink: 0">
+<h2 style="margin: 0; font-size: 12px; font-weight: 800; letter-spacing: 0.06em; color: #6B4FD8">LOS GRADOS DEL MEC</h2>
+<div style="display: flex; align-items: baseline; gap: 10px; padding: 6px 0; border-top: 1px solid #E4DCF2">
+<div style="width: 112px; flex-shrink: 0; font-weight: 800; font-size: 13px">Educación Inicial</div>
+<div style="flex-grow: 1; font-size: 13px; font-weight: 700; color: #4A3D72; line-height: 1.35">Preescolar, a los 5 años. Sobre todo oral.</div>
+</div>
+<div style="display: flex; align-items: baseline; gap: 10px; padding: 6px 0; border-top: 1px solid #E4DCF2">
+<div style="width: 112px; flex-shrink: 0; font-weight: 800; font-size: 13px">1.er ciclo</div>
+<div style="flex-grow: 1; font-size: 13px; font-weight: 700; color: #4A3D72; line-height: 1.35">1.º, 2.º y 3.º grado, de 6 a 8 años. Empiezan a leer y escribir.</div>
+</div>
+<div style="display: flex; align-items: baseline; gap: 10px; padding: 6px 0; border-top: 1px solid #E4DCF2">
+<div style="width: 112px; flex-shrink: 0; font-weight: 800; font-size: 13px">2.º ciclo</div>
+<div style="flex-grow: 1; font-size: 13px; font-weight: 700; color: #4A3D72; line-height: 1.35">4.º, 5.º y 6.º grado, de 9 a 11 años.</div>
+</div>
+<div style="display: flex; align-items: baseline; gap: 10px; padding: 6px 0; border-top: 1px solid #E4DCF2">
+<div style="width: 112px; flex-shrink: 0; font-weight: 800; font-size: 13px">3.er ciclo</div>
+<div style="flex-grow: 1; font-size: 13px; font-weight: 700; color: #4A3D72; line-height: 1.35">7.º, 8.º y 9.º grado, de 12 a 14 años: <span lang="gn">Guarani Ñe'ẽ ha Iñe'ẽporãhaipyre</span>.</div>
+</div>
+</section>
+
+<div style="font-size: 12px; font-weight: 700; color: #5C4E86; line-height: 1.5; flex-shrink: 0">La app sigue los grados, los modelos bilingües y las cuatro capacidades de los programas de estudio del MEC. Los temas de cada unidad son una propuesta de la app: la escuela sigue su programa oficial. Las estrellas son del juego, no una nota escolar.</div>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"app":{"editor":null},"act":{"editor":null},"$preview":{"width":390,"height":844}}'>
+/* For parents and teachers: the grade as the MEC places it, what its program asks for, the four abilities the games
+   train (a bar per ability, counting the games played in this grade; the story and the pairs count as listening while
+   the grade is oral), the home-language track, the voice (synthetic, with a switch), and the grades of the system.
+   On its own: 1.º grado, Spanish at home, unit 1 lit and one night of unit 2 played. */
+class Component extends DCLogic {
+view() {
+const C = window.tpCourse;
+if (this.props.app) return this.props.app;
+if (!this.sample) this.sample = C.view(C.sample('g1', 'L2', 5));
+return this.sample;
+}
+renderVals() {
+const C = window.tpCourse;
+const act = this.props.act;
+const app = this.view();
+const nav = (to) => (e) => { if (act) { e.preventDefault(); act.go(to); } };
+const g = app.grade;
+const meta = C.meta(g);
+const prog = C.progress(app, g);
+const fig = C.figure(meta.sky, prog.lit);
+const counts = { ahendu: 0, "añe'ẽ": 0, "amoñe'ẽ": 0, ahai: 0 };
+Object.keys(app.done || {}).filter((id) => C.gradeOf(id) === g).forEach((id) => {
+const had = app.done[id] || {};
+const s = C.session(id);
+Object.keys(had).forEach((k) => { if (had[k] && C.GAMES[k]) counts[C.skillOf(k, s, app.track || 'L2')]++; });
+});
+const most = Math.max(1, counts.ahendu, counts["añe'ẽ"], counts["amoñe'ẽ"], counts.ahai);
+const skills = ['ahendu', "añe'ẽ", "amoñe'ẽ", 'ahai'].map((k) => {
+const S = C.SKILLS[k];
+const n = counts[k];
+return { gn: S.gn, mec: S.mec, n: n + (n === 1 ? ' juego' : ' juegos'), w: Math.round((n / most) * 100) + '%', aria: S.gn + ', ' + S.mec + ': ' + n + (n === 1 ? ' juego' : ' juegos') };
+});
+const learned = C.learned(app, g).length;
+const track = C.TRACKS[app.track || 'L2'];
+const voiceOn = app.voice !== false;
+return {
+fig,
+gradeKicker: (meta.cycle + ' · ' + meta.age).toUpperCase(),
+gradeTitle: meta.label + ' · ' + fig.gn,
+progressLine: prog.lit + ' de ' + prog.total + ' estrellas de ' + fig.gn + ' · ' + prog.done + ' de ' + prog.steps + ' pasos · ' + learned + ' palabras',
+mec: meta.mec,
+can: meta.can.charAt(0).toLowerCase() + meta.can.slice(1),
+skills, track,
+voice: {
+pressed: voiceOn ? 'true' : 'false',
+label: voiceOn ? 'sí' : 'no',
+bg: voiceOn ? '#FFD34E' : '#FFFFFF',
+wave: voiceOn ? 'M16.5 8.5a5 5 0 0 1 0 7M19 6a8.5 8.5 0 0 1 0 12' : 'M16 9l5 6M21 9l-5 6',
+toggle: () => { if (act) act.save({ voice: !voiceOn }); }
+},
+toMain: nav('Main'),
+toHome: nav('Home')
+};
+}
+}
+</script>
+</body>
+</html>

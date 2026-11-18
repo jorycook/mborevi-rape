@@ -1,0 +1,2037 @@
+{
+ "limited": false,
+ "failedBatches": [],
+ "missingBatches": [],
+ "confirmed": [
+  {
+   "id": "g299",
+   "gn": "Eha'ã jey",
+   "fix_gn": "Eha'ã jey",
+   "fix_es": "Esa sílaba no va ahí. Probá otra vez.",
+   "status": "confirmed",
+   "votes": "3/3",
+   "claims": [
+    {
+     "lens": "form",
+     "kind": "meaning",
+     "severity": "likely-error",
+     "problem": "The gloss does not translate the Guarani. «Eha'ã jey» means «probá otra vez», but the gloss shown under it only says «Esa sílaba no va ahí.», so a child matching the two lines learns the wrong meaning. Other screens gloss the same string with «Probá otra vez» (g303, g312).",
+     "fix_gn": "Eha'ã jey",
+     "fix_es": "Probá otra vez: esa sílaba no va ahí.",
+     "confidence": "high",
+     "evidence": "ha'ã «probar, intentar» + e- (imperativo 2sg) + jey «otra vez». Build.dc.html:203 pairs it with 'Esa sílaba no va ahí.', while Check.dc.html:231 and Pick.dc.html:206 gloss it as 'Probá otra vez.'"
+    },
+    {
+     "lens": "meaning",
+     "kind": "gloss",
+     "severity": "likely-error",
+     "problem": "«Eha'ã jey» only means «Probá otra vez». The gloss «Esa sílaba no va ahí.» says something the Guarani does not say, so a child who reads both is told two different things. Pairs.dc.html has the same mismatch: «Eha'ã jey» is shown with «No son iguales: … Probá otra vez.»",
+     "fix_gn": "Eha'ã jey",
+     "fix_es": "Probá otra vez.",
+     "confidence": "high",
+     "evidence": "ha'ã «probar, intentar», e- imperative 2sg, jey «otra vez». The same string is glossed «Probá otra vez» in Check, Pick and Mascot (g303). If the hint should stay, put it in the Guarani too, e.g. «Ko pehẽ ndaha'éi ápe. Eha'ã jey.»"
+    }
+   ],
+   "reasons": [
+    {
+     "real": true,
+     "confidence": "high",
+     "best_gn": "Eha'ã jey",
+     "best_es": "Esa sílaba no va ahí. Probá otra vez.",
+     "reason": "«Eha'ã jey» is e- (2sg imperative) + ha'ã «probar, intentar» + jey «otra vez», so it means «Probá otra vez». The spelling is right: e- before an oral stem, with the puso. In the bubble (Build.dc.html:203) it is shown with only «Esa sílaba no va ahí.», which the Guarani does not say. Check and Pick gloss the same string «Probá otra vez.» (g303). A teacher would want the gloss to include «Probá otra vez». Keeping the hint in the Spanish follows the pattern Pairs already uses («No son iguales: ... Probá otra vez.»).",
+     "sources": [
+      "Guasch & Ortiz, Diccionario castellano-guaraní / guaraní-castellano: ha'ã 'probar, intentar'; jey 'otra vez'",
+      "Krivoshein de Canese & Acosta, Ñe'ẽryru: ha'ã",
+      "project/Build.dc.html:203",
+      "project/Check.dc.html:231"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "high",
+     "best_gn": "Eha'ã jey",
+     "best_es": "Esa sílaba no va ahí. Probá otra vez.",
+     "reason": "The Guarani is correct (e- 2sg imperative + ha'ã «probar» + jey «otra vez»), but in Build.dc.html:203 the gloss says only «Esa sílaba no va ahí.», which is not what the Guarani says. Check, Pick and Mascot gloss the same string as «Probá otra vez.» Keeping the hint and adding the translation makes the gloss match the Guarani.",
+     "sources": [
+      "Build.dc.html:203",
+      "Check.dc.html:231",
+      "Pick.dc.html:207",
+      "ha'ã 'probar, intentar'; jey 'otra vez'"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "high",
+     "best_gn": "Eha'ã jey",
+     "best_es": "Probá otra vez.",
+     "reason": "The Guarani is correct (e- imperative 2sg + ha'ã 'probar' + jey 'otra vez'), but in Build.dc.html:203 it is shown with the gloss 'Esa sílaba no va ahí.', which does not translate it. A child who reads the two lines together learns the wrong meaning. Check, Pick and Mascot gloss the same string as 'Probá otra vez.', so use that gloss here. Proposal 1 ('Probá otra vez: esa sílaba no va ahí.') still adds a clause the Guarani does not have. The Guarani hint suggested in proposal 2 ('Ko pehẽ ndaha'éi ápe') is clumsy and not what a speaker would say. If the hint is wanted, show it outside the bilingual bubble.",
+     "sources": [
+      "Build.dc.html:203",
+      "Check.dc.html:231",
+      "Pick.dc.html:207",
+      "Mascot.dc.html:86-87",
+      "Guarani imperative e- + ha'ã + jey"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "g312",
+   "gn": "Eha'ã jey",
+   "fix_gn": "Eha'ã jey",
+   "fix_es": "Probá otra vez.",
+   "status": "confirmed",
+   "votes": "3/3",
+   "claims": [
+    {
+     "lens": "meaning",
+     "kind": "gloss",
+     "severity": "likely-error",
+     "problem": "The gloss «Mirá bien la palabra y probá otra vez.» adds a whole clause («mirá bien la palabra») that is missing from the Guarani, which only says «Probá otra vez».",
+     "fix_gn": "Ehecha porã pe ñe'ẽ ha eha'ã jey.",
+     "fix_es": "Mirá bien la palabra y probá otra vez.",
+     "confidence": "high",
+     "evidence": "ehecha porã «mirá bien» (already used in Letters and Pairs), ñe'ẽ «palabra», ha «y», eha'ã jey «probá otra vez». The other fix is to keep the Guarani and change the gloss to «Probá otra vez.»"
+    }
+   ],
+   "reasons": [
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Eha'ã jey",
+     "best_es": "Probá otra vez.",
+     "reason": "The Guarani says only «Probá otra vez», but the gloss in Letters.dc.html:239 is «Mirá bien la palabra y probá otra vez.», which adds a clause the Guarani does not have. A child comparing the two lines is told something extra. The smallest fix is to change the gloss to «Probá otra vez.». If the hint should stay, the reviewer's Guarani «Ehecha porã pe ñe'ẽ ha eha'ã jey.» is grammatical and would match the longer gloss.",
+     "sources": [
+      "Guasch & Ortiz: hecha 'ver', ha'ã 'probar', jey 'otra vez'",
+      "project/Letters.dc.html:239"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Ehecha porã pe ñe'ẽ ha eha'ã jey.",
+     "best_es": "Mirá bien la palabra y probá otra vez.",
+     "reason": "In Letters.dc.html:239 the gloss adds «mirá bien la palabra», which the Guarani does not say, so the two lines do not match. The proposed Guarani follows the rules: two 2sg imperatives (e-hecha, e-ha'ã), porã after the verb, the demonstrative pe before the noun ñe'ẽ, and the sentence ends with a period. Changing the gloss to «Probá otra vez.» would also fix it, but then the hint is lost.",
+     "sources": [
+      "Letters.dc.html:239",
+      "Pairs.dc.html:201 (Ehecha porã = Mirá bien)"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Eha'ã jey",
+     "best_es": "Probá otra vez.",
+     "reason": "The gloss 'Mirá bien la palabra y probá otra vez.' adds a whole command ('mirá bien la palabra') that is not in 'Eha'ã jey', so the two lines do not match. Keep the Guarani as it is: it is the game's recurring mascot line, the same on every screen, and children learn it as a fixed phrase. Fix the gloss to 'Probá otra vez.' The proposed Guarani 'Ehecha porã pe ñe'ẽ ha eha'ã jey.' is grammatical and natural, but it turns a familiar short phrase into a longer sentence for early readers. Changing the gloss is the smaller and better fix.",
+     "sources": [
+      "Letters.dc.html:239",
+      "Check.dc.html:231",
+      "Pick.dc.html:207"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "g313",
+   "gn": "Ehecha porã",
+   "fix_gn": "Ehecha porã",
+   "fix_es": "Mirá bien.",
+   "status": "confirmed",
+   "votes": "3/3",
+   "claims": [
+    {
+     "lens": "meaning",
+     "kind": "gloss",
+     "severity": "likely-error",
+     "problem": "«Ehecha porã» means «Mirá bien», but the code shows it in the bubble with unrelated Spanish: «¿Con qué vocal empieza?», «¿Qué vocal falta?», «¿Cuál está bien escrita?» (Letters) and «Abriste: X.» (Pairs). Only the Pairs line «Mirá bien y acordate.» comes close. The child sees a Guarani line and a Spanish line that do not say the same thing.",
+     "fix_gn": "Ehecha porã",
+     "fix_es": "Mirá bien.",
+     "confidence": "medium",
+     "evidence": "Letters.dc.html line 239: { gn: \"Ehecha porã\", es: R.ask }. Pairs.dc.html line 201: { gn: 'Ehecha porã', es: 'Abriste: ' + … }. hecha «ver», porã «bien». Either gloss it «Mirá bien.» and show the question outside the bubble, or ask the question in Guarani, e.g. «Mba'e vocal-pe oñepyrũ?»"
+    }
+   ],
+   "reasons": [
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Ehecha porã",
+     "best_es": "Mirá bien.",
+     "reason": "«Ehecha porã» (e- + hecha 'ver' + porã 'bien') means «Mirá bien», and its spelling is correct. In the code, though, it is paired with Spanish that says something else: the Letters questions («¿Con qué vocal empieza?», «¿Qué vocal falta?») and «Abriste: X.» in Pairs. Only the Pairs line «Mirá bien y acordate.» is close. Because the Spanish line in the bubble is meant to gloss the Guarani, this is a meaning mismatch a teacher would point out. Gloss it «Mirá bien.» and show the task question outside the bubble, or ask the question in Guarani.",
+     "sources": [
+      "Guasch & Ortiz: hecha 'ver', porã 'bien'",
+      "project/Letters.dc.html:239",
+      "project/Pairs.dc.html:201"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Ehecha porã",
+     "best_es": "Mirá bien.",
+     "reason": "«Ehecha porã» means «Mirá bien» (e- imperative + hecha «ver» + porã «bien»). In Letters.dc.html:239 the code shows it with the Spanish question R.ask (e.g. «¿Qué vocal falta?»), and in Pairs.dc.html:201 with «Abriste: X.». Neither says what the Guarani says. Only «Mirá bien y acordate.» comes close. The reviewer's other idea, «Mba'e vocal-pe oñepyrũ?», mixes in the Spanish word «vocal» with a hyphen and should not be used as written.",
+     "sources": [
+      "Letters.dc.html:239",
+      "Pairs.dc.html:201"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "high",
+     "best_gn": "Ehecha porã",
+     "best_es": "Mirá bien.",
+     "reason": "'Ehecha porã' means 'Mirá bien' (e- + hecha 'ver' + porã 'bien'). In Letters.dc.html:239 it is paired with the lesson question (R.ask, e.g. '¿Con qué vocal empieza?'), and in Pairs.dc.html:201 with 'Abriste: X.'. Neither translates it. The pair 'Mirá bien y acordate.' only comes close. Gloss it 'Mirá bien.' and show the question or the status outside the bubble. The reviewer's alternative 'Mba'e vocal-pe oñepyrũ?' should not be used: it mixes in a Spanish word and the postposition use is unnatural.",
+     "sources": [
+      "Letters.dc.html:239",
+      "Pairs.dc.html:201",
+      "hecha 'ver', porã 'bien'"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "g341",
+   "gn": "Jaha!",
+   "fix_gn": "Jaha!",
+   "fix_es": "¡Vamos!",
+   "status": "confirmed",
+   "votes": "3/3",
+   "claims": [
+    {
+     "lens": "form",
+     "kind": "gloss",
+     "severity": "likely-error",
+     "problem": "«Jaha!» means «¡Vamos!» (1st person plural inclusive of -ho «ir»), not «Volver». A child who reads the gloss learns the wrong meaning. To say «volver», the Guarani would be «Jajevy!» («¡Volvamos!»).",
+     "fix_gn": "Jajevy!",
+     "fix_es": "¡Volvamos!",
+     "confidence": "high",
+     "evidence": "ho «ir»: aha, reho, oho, jaha, roho, peho; «jevy» means «volver» (ajevy, jajevy). Context: Tonight.dc.html line 118, a CTA that returns to Main. Line 159 uses the same «Jaha!» correctly as «vamos» to the next game."
+    },
+    {
+     "lens": "meaning",
+     "kind": "gloss",
+     "severity": "likely-error",
+     "problem": "«Jaha!» means «¡Vamos!» (1st person plural inclusive of «ha» 'ir'), not «Volver». Everywhere else in the app it is glossed «¡Vamos!». Here the button goes back to the path, but the gloss gives the child the wrong meaning of the word.",
+     "fix_gn": "Jaha!",
+     "fix_es": "¡Vamos al camino!",
+     "confidence": "high",
+     "evidence": "ha 'ir': aha, reho, oho, jaha (vamos). 'Volver' is -jevy (jajevy 'volvamos'). Welcome.dc.html and Main.dc.html gloss Jaha! as «¡Vamos!»."
+    }
+   ],
+   "reasons": [
+    {
+     "real": true,
+     "confidence": "high",
+     "best_gn": "Jaha!",
+     "best_es": "¡Vamos!",
+     "reason": "The Guarani is correct, but the gloss is wrong. Jaha is the 1st person plural inclusive of «ir» (aha, reho, oho, jaha), so it means «¡Vamos!», not «Volver». The rest of the app glosses it «¡Vamos!» (Main.dc.html, Welcome.dc.html, and line 159 of the same file). A child reading «Volver» learns the wrong meaning. «Volvé al camino» is already in the subtitle, so the button can stay «Jaha!» with the gloss «¡Vamos!». If the gloss has to keep the idea of returning, the Guarani would have to change to «Jajevy!» («¡Volvamos!»).",
+     "sources": [
+      "Guasch & Ortiz, Diccionario castellano-guaraní/guaraní-castellano: ho «ir»; jevy «volver»",
+      "Krivoshein de Canese & Acosta, Ñe'ẽryru: ho, jaha",
+      "Project: Main.dc.html lines 285/294, Welcome.dc.html, Tonight.dc.html lines 118 and 159"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "high",
+     "best_gn": "Jaha!",
+     "best_es": "¡Vamos!",
+     "reason": "Jaha! is the first person plural inclusive form of ho «ir» (aha, reho, oho, jaha), so it means «¡Vamos!». It does not mean «Volver». The Guarani is correct. Only the gloss is wrong, and a child would learn a wrong meaning from it. Main.dc.html already glosses the same button «¡Vamos!», and Tonight.dc.html line 159 uses it as «vamos». So the simplest fix keeps Jaha! and glosses it «¡Vamos!». Jajevy! («¡Volvamos!») would also be correct, but the screen does not need it.",
+     "sources": [
+      "Tonight.dc.html line 118 (cta {gn:'Jaha!', es:'Volver'})",
+      "Main.dc.html lines 285/294 (Jaha! = ¡Vamos!)",
+      "Conjugation of ho: aha, reho, oho, jaha, roho, peho"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "high",
+     "best_gn": "Jaha!",
+     "best_es": "¡Vamos al camino!",
+     "reason": "«Jaha!» is 1st person plural inclusive of «ha» (aha, reho, oho, jaha), so it means «¡Vamos!», not «Volver». The button is right to say «Jaha!»: it goes back to the path, and every other screen (Main, Welcome, Sky) glosses «Jaha!» as «¡Vamos!». Only the gloss is wrong, because it teaches a wrong meaning of a word the child sees all through the app. Changing the word to «Jajevy!» is grammatical but not needed: it would replace a word children already know with one they have not met. The screen's subtitle already says «Volvé al camino», so «¡Vamos al camino!» fits the action and the meaning of the word.",
+     "sources": [
+      "Tonight.dc.html line 118 (cta gn 'Jaha!', es 'Volver')",
+      "Main.dc.html lines 285, 294 (Jaha! = ¡Vamos!)",
+      "Sky.dc.html line 188 ('Jaha! Ir al camino de …')",
+      "Paradigm of irregular verb ha/ho «ir»: aha, reho, oho, jaha, roho, peho, oho"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "g325",
+   "gn": "Ehecha porã",
+   "fix_gn": "Ehecha porã",
+   "fix_es": "Mirá bien. Abriste: X.",
+   "status": "confirmed",
+   "votes": "3/3",
+   "claims": [
+    {
+     "lens": "form",
+     "kind": "gloss",
+     "severity": "likely-error",
+     "problem": "«Ehecha porã» means «Mirá bien», but here the Spanish shown with it is only «Abriste: X.», so the Guarani has no translation. The gloss should begin with the meaning of the Guarani.",
+     "fix_gn": "Ehecha porã",
+     "fix_es": "Mirá bien. Abriste: X.",
+     "confidence": "medium",
+     "evidence": "Pairs.dc.html line 201: {gn: 'Ehecha porã', es: 'Abriste: ' + shown[0] + '.'}. The sibling message g326 glosses the same Guarani as «Mirá bien y acordate.»"
+    },
+    {
+     "lens": "meaning",
+     "kind": "gloss",
+     "severity": "likely-error",
+     "problem": "«Ehecha porã» means «Mirá bien», but the Spanish shown under it is only «Abriste: X.», which does not translate the Guarani at all. A child reading the pair would think «Ehecha porã» means «abriste».",
+     "fix_gn": "Ehecha porã",
+     "fix_es": "Mirá bien. Abriste: ",
+     "confidence": "high",
+     "evidence": "Ehecha = e- (2sg imperative) + hecha «ver/mirar»; porã «bien». The same string is glossed «Mirá bien y acordate» on the next line (g326) and «Mirá bien la palabra» in Letters.dc.html."
+    }
+   ],
+   "reasons": [
+    {
+     "real": true,
+     "confidence": "high",
+     "best_gn": "Ehecha porã",
+     "best_es": "Mirá bien. Abriste: X.",
+     "reason": "The Guarani is correct: e- (2nd person singular imperative) + hecha «ver» + porã «bien» = «Mirá bien». But the Spanish shown with it is only «Abriste: X.», which does not translate it, so a child could think «Ehecha porã» means «abriste». The gloss should start with the translation, then the feedback. Its sibling message glosses the same string «Mirá bien y acordate».",
+     "sources": [
+      "Guasch & Ortiz: hecha «ver, mirar»; porã «bien, lindo»",
+      "Project: Pairs.dc.html line 201; Letters.dc.html line 239"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Ehecha porã",
+     "best_es": "Mirá bien. Abriste: (palabra).",
+     "reason": "Ehecha porã is the 2nd person singular imperative e- + hecha («ver/mirar») + porã («bien»), so it means «Mirá bien». The Guarani is correct. The Spanish shown with it is only «Abriste: X.», which does not translate it, so a child pairing the two lines would think ehecha porã means «abriste». The gloss should start with the translation and then give the status text, the same way the sibling g326 glosses the same words «Mirá bien y acordate».",
+     "sources": [
+      "Pairs.dc.html line 201",
+      "Same file, sibling message g326 (Ehecha porã = Mirá bien y acordate)",
+      "Letters.dc.html line 239"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "high",
+     "best_gn": "Ehecha porã",
+     "best_es": "Mirá bien. Abriste: ",
+     "reason": "«Ehecha porã» (e- 2nd person singular imperative + hecha «ver» + porã «bien») means «Mirá bien». The Spanish under it, «Abriste: X.», does not translate it, so a child would think «Ehecha porã» means «abriste». The Guarani itself is correct; the gloss should start with its meaning and then add the information about the card. This matches the sibling message, which glosses the same string «Mirá bien y acordate».",
+     "sources": [
+      "Pairs.dc.html line 201 (both the 'Abriste' and the 'Mirá bien y acordate' branches)",
+      "Letters.dc.html line 239 (Ehecha porã, 'Mirá bien la palabra')",
+      "Imperative e- + hecha; porã «bien»"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "g342",
+   "gn": "Jaguata!",
+   "fix_gn": "Jaguata!",
+   "fix_es": "¡A caminar!",
+   "status": "confirmed",
+   "votes": "3/3",
+   "claims": [
+    {
+     "lens": "meaning",
+     "kind": "gloss",
+     "severity": "likely-error",
+     "problem": "«Jaguata!» means «¡Caminemos! / ¡A caminar!». It does not say «volver», and Ready and Shine gloss the same button «¡A caminar!». The gloss «Volver al camino» describes where the button goes, not what the word means. If the Guarani should say «volvamos al camino», it would be «Jajevy tapépe!».",
+     "fix_gn": "Jaguata!",
+     "fix_es": "¡A caminar!",
+     "confidence": "medium",
+     "evidence": "guata 'caminar': aguata, reguata, oguata, jaguata (caminemos). Ready.dc.html and Shine.dc.html: Jaguata! = «¡A caminar!»."
+    }
+   ],
+   "reasons": [
+    {
+     "real": true,
+     "confidence": "high",
+     "best_gn": "Jaguata!",
+     "best_es": "¡A caminar!",
+     "reason": "Jaguata is the 1st person plural inclusive of guata «caminar», so it means «¡Caminemos! / ¡A caminar!». The gloss «Volver al camino» describes where the button goes, not what the word means, and «volver» is nowhere in the Guarani. Ready.dc.html and Shine.dc.html gloss the same button «¡A caminar!». The Guarani needs no change; the gloss does.",
+     "sources": [
+      "Guasch & Ortiz: guata «caminar, andar»",
+      "Project: Shine.dc.html line 113, Ready.dc.html line 77, Tonight.dc.html line 160"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Jaguata!",
+     "best_es": "¡A caminar!",
+     "reason": "Jaguata! is the first person plural inclusive of guata («caminar»): aguata, reguata, oguata, jaguata. It means «¡Caminemos! / ¡A caminar!». The gloss «Volver al camino» describes where the button goes, not what the word says, and it has no «volver» (-jevy) in it. The Guarani is correct, so the fix is in the gloss. Shine.dc.html already glosses the same button «¡A caminar!». If the text should really say «volvamos al camino», the Guarani would be «Jajevy tapépe!».",
+     "sources": [
+      "Tonight.dc.html line 160",
+      "Shine.dc.html line 113 (Jaguata! = ¡A caminar!)",
+      "Conjugation of guata: aguata, reguata, oguata, jaguata"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Jaguata!",
+     "best_es": "¡A caminar!",
+     "reason": "«Jaguata!» (ja- + guata) means «¡Caminemos!» / «¡A caminar!». It says nothing about «volver». The gloss «Volver al camino» describes where the button leads, not what the word means. Ready.dc.html and Shine.dc.html gloss the same button «¡A caminar!», and the story uses «Jaguata» as «Caminemos». The word is right for a button that leads to the path; for consistency and correct meaning, the gloss should be «¡A caminar!». No change to the Guarani is needed («Jajevy tapépe!» would bring in a new word for no gain).",
+     "sources": [
+      "Tonight.dc.html line 160",
+      "Ready.dc.html line 77 and Shine.dc.html line 113 (Jaguata! = ¡A caminar!)",
+      "tp-sky.js story page 7 ('Jaguata yvága rupi' = 'Caminemos por el cielo')",
+      "guata paradigm: aguata, reguata, oguata, jaguata"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "g332",
+   "gn": "Mborevi'i ohendu…",
+   "fix_gn": "Mborevi'i ohendu…",
+   "fix_es": "Mborevi'i escucha. Tocá cuando termines.",
+   "status": "confirmed",
+   "votes": "3/3",
+   "claims": [
+    {
+     "lens": "meaning",
+     "kind": "meaning",
+     "severity": "likely-error",
+     "problem": "The gloss says «Mborevi'i te escucha», but «ohendu» is plain 3rd person («escucha») with no second-person object. When a 3rd-person subject acts on «vos», Guarani uses the nde- form: «nderendu» = «te escucha».",
+     "fix_gn": "Mborevi'i nderendu…",
+     "fix_es": "Mborevi'i te escucha. Tocá cuando termines.",
+     "confidence": "medium",
+     "evidence": "3>2 person marking with relational hendu: che rendu / nde rendu / ohendu; «X nderendu» = «X te escucha» (compare «Ñandejára nderovasa» 'Dios te bendiga'). Another option is to keep «ohendu» and gloss it «Mborevi'i escucha»."
+    }
+   ],
+   "reasons": [
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Mborevi'i ohendu…",
+     "best_es": "Mborevi'i escucha. Tocá cuando termines.",
+     "reason": "Guarani has to mark a 2nd-person object when the subject is 3rd person: «X ohendu» means «X escucha / lo escucha», and «te escucha» is the portmanteau form «nerendu» (nde- becomes ne- by nasal harmony before hendu; compare «Ñandejára nderovasa» «Dios te bendiga»). As written, the Guarani and the gloss disagree. The smallest fix is to keep «ohendu» and gloss it «Mborevi'i escucha». The other option is to change the Guarani to «Mborevi'i nerendu…», glossed «Mborevi'i te escucha».",
+     "sources": [
+      "Gramática guaraní (Academia de la Lengua Guaraní / Guasch): 3rd person subject acting on a 2nd person object marked with nde-/ne-",
+      "Krivoshein de Canese & Acosta, Gramática guaraní: hendu «oír, escuchar»"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Mborevi'i nderendu…",
+     "best_es": "Mborevi'i te escucha. Tocá cuando termines.",
+     "reason": "Ohendu is the third person form acting on a third person or with no object. It cannot carry a «te». When a third person acts on «vos», Guarani marks the 2nd person object on the verb with nde- and the relational r- form of hendu: che rendu «me escucha», nderendu «te escucha». It works like Ñandejára nderovasa «Dios te bendiga». Nderendu keeps nasal harmony and follows the relational-prefix rule. So «ohendu» and the gloss «te escucha» do not match. Either change the Guarani to «nderendu», which keeps the friendly message to the child, or keep «ohendu» and gloss it «Mborevi'i escucha».",
+     "sources": [
+      "Say.dc.html line 175",
+      "Relational verb hendu: ahendu / ohendu; 3>2 object marking nde- + r-: nderendu",
+      "Ñandejára nderovasa (same 3>2 pattern)"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Mborevi'i ohendu…",
+     "best_es": "Mborevi'i escucha. Tocá cuando termines.",
+     "reason": "«ohendu» is 3rd person: «(él) escucha / lo escucha». It does not contain «te». When a 3rd-person subject acts on «vos», Guarani uses the nde- form (Mborevi'i nderendu = «Mborevi'i te escucha»), so the gloss «te escucha» gives a child a wrong meaning of «ohendu». The Guarani on its own is natural and fine («Mborevi'i is listening»), so the smallest correct fix is to the gloss: «Mborevi'i escucha». The reviewer's alternative, «Mborevi'i nderendu…» with gloss «te escucha», is also correct and natural. But it brings in the relational nde- + r- form for the youngest graders, so the teacher's choice is to keep «ohendu» and correct the gloss.",
+     "sources": [
+      "Say.dc.html line 175",
+      "Relational verb hendu: che rendu / nde rendu / ohendu; 3>2 marking with nde- (cf. «Ñandejára nderovasa»)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "g266",
+   "gn": "Castellano",
+   "fix_gn": "Karaiñe'ẽ",
+   "fix_es": "Más castellano",
+   "status": "confirmed",
+   "votes": "3/3",
+   "claims": [
+    {
+     "lens": "form",
+     "kind": "spelling",
+     "severity": "likely-error",
+     "problem": "This string appears as Guarani, but it is the Spanish word spelled with «c», a letter that is not in the 33-letter achegety. A Guarani school text names the Spanish language «karaiñe'ẽ», or writes the loan as «kastellano». The «Más» in the gloss is also not in the Guarani; the Guarani is just the name of the language.",
+     "fix_gn": "Karaiñe'ẽ",
+     "fix_es": "Castellano (más castellano)",
+     "confidence": "medium",
+     "evidence": "The achegety (a ã ch e ẽ g g̃ h i ĩ j k l m mb n nd ng nt ñ o õ p r rr s t u ũ v y ỹ ') has no «c». MEC and Academia Guarani materials call Spanish «karaiñe'ẽ» (karai + ñe'ẽ, 'the language of the karai'), with Guarani spelling throughout."
+    },
+    {
+     "lens": "meaning",
+     "kind": "spelling",
+     "severity": "likely-error",
+     "problem": "The Guarani label for the track is a Spanish word in Spanish spelling. «C» is not one of the letters of the achegety, and it does not say «más» as the gloss does. In Guarani school texts the Spanish language is called karaiñe'ẽ.",
+     "fix_gn": "Karaiñe'ẽ",
+     "fix_es": "Más castellano",
+     "confidence": "medium",
+     "evidence": "The 33-letter achegety has no c. MEC bilingual materials call Spanish «karaiñe'ẽ» (karai + ñe'ẽ, «the language of the karai») next to «guarani ñe'ẽ»."
+    }
+   ],
+   "reasons": [
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Karaiñe'ẽ",
+     "best_es": "Más castellano",
+     "reason": "The Guarani slot holds the Spanish word «Castellano», spelled with «c», and «c» is not one of the 33 letters of the achegety. A Guarani teacher would rewrite it. Guarani school materials name Spanish «karaiñe'ẽ» («guarani ha karaiñe'ẽ»), and the loan written in Guarani spelling, «kastellano», is also heard. «Karaiñe'ẽ» is the usual school form. Neither the original nor the fix says «más». This is the same gloss gap as the paired L1 label «Guarani» / «Más guaraní». These are option labels, so I left the gloss as it is. If you want the Guarani to say «más» too, «Karaiñe'ẽ hetave» would do it.",
+     "sources": [
+      "Academia de la Lengua Guaraní, Gramática Guaraní: the achegety",
+      "Krivoshein de Canese & Acosta, Diccionario guaraní-español: karaiñe'ẽ «castellano»",
+      "Guasch & Ortiz, Diccionario castellano-guaraní: castellano = karaiñe'ẽ",
+      "MEC bilingual programme texts that use «guarani ha karaiñe'ẽ»"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "high",
+     "best_gn": "Karaiñe'ẽ",
+     "best_es": "Más castellano",
+     "reason": "«Castellano» is the Spanish word in Spanish spelling. «c» is not one of the 33 letters of the achegety, so a teacher would not accept it as a Guarani string. Guarani school materials call Spanish «karaiñe'ẽ» (karai + ñe'ẽ). The fix follows the rules: ñ appears by nasal contact before the nasal ñe'ẽ, the stress falls on the last syllable so no acute accent is needed, the tilde on ẽ marks the nasal vowel, and the capital letter is right for a standalone label. The «más» in the gloss is not an error, because the gloss is the Spanish track label answering «¿Qué se habla en casa?», as with g265; I treat that gloss as acceptable. The proposed gloss «Castellano (más castellano)» is unnecessary. Note: in tp-course.js the screens show only the es, short and note fields of TRACKS (Home.dc.html, Grownups.dc.html), so this gn string is not shown on screen at the moment, but it should still be correct.",
+     "sources": [
+      "Achegety of the Academia de la Lengua Guaraní (33 letters, no c)",
+      "MEC bilingual-education terminology: guarani ñe'ẽ / karaiñe'ẽ",
+      "project/tp-course.js line 235",
+      "project/Home.dc.html"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Karaiñe'ẽ",
+     "best_es": "Más castellano",
+     "reason": "This is the gn label for the L2 track (tp-course.js line 235), but «Castellano» is just the Spanish word, spelled with «c», which is not in the achegety. A Guarani teacher would not leave it in the Guarani slot. The usual Guarani name for the Spanish language in school materials is «karaiñe'ẽ» (capitalised here because it is a label on its own). I keep the gloss «Más castellano» so it matches the L1 label (g265 «Guarani» / «Más guaraní»). The «más» in the gloss tells the child which track this is (more Spanish at home), so this is not a translation error. Both reviewers' main fix is right. Reviewer 1's gloss «Castellano (más castellano)» is clumsy and not needed.",
+     "sources": [
+      "tp-course.js:234-235 (track labels L1/L2 and their notes)",
+      "Achegety of the Academia de la Lengua Guaraní (33 letters, no c)",
+      "Common MEC/Academia usage: karaiñe'ẽ = castellano"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "g260",
+   "gn": "Mombe'u",
+   "fix_gn": "Yvága mombe'u",
+   "fix_es": "Cuento del cielo",
+   "status": "confirmed",
+   "votes": "3/3",
+   "claims": [
+    {
+     "lens": "meaning",
+     "kind": "meaning",
+     "severity": "likely-error",
+     "problem": "«Mombe'u» only means «relato/cuento». The gloss says «Cuento del cielo», but nothing in the Guarani names the sky, so the game title and its gloss do not match.",
+     "fix_gn": "Yvága mombe'u",
+     "fix_es": "Cuento del cielo",
+     "confidence": "medium",
+     "evidence": "In a Guarani genitive the possessor comes first (yvága + mombe'u = «el relato del cielo»). The project's own story uses «yvága» for the sky: «Yvágape oĩ avei Mborevi Rape», «Jaguata yvága rupi»."
+    }
+   ],
+   "reasons": [
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Yvága mombe'u",
+     "best_es": "Cuento del cielo",
+     "reason": "«Mombe'u» only means «relato, narración, contar». Nothing in it names the sky, so the game title does not say what the gloss «Cuento del cielo» says, and a child reading the pair would be misled. The fix puts the possessor first, as Guarani does: «yvága mombe'u» = «el relato del cielo». «Yvága» (stress on the second-to-last syllable, so it takes the accent) is the form the project already uses in its story. The other fix is to keep «Mombe'u» and change the gloss to «Cuento». Note that tp-grades.js also uses «Mombe'u» with the gloss «Cuentos y fábulas», which is correct there.",
+     "sources": [
+      "Guasch & Ortiz, Diccionario: mombe'u «contar, narrar; relato»; yvága «cielo»",
+      "Krivoshein de Canese & Acosta, Diccionario guaraní-español",
+      "Project file tp-sky.js (Yvágape oĩ avei Mborevi Rape)"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Yvága mombe'u",
+     "best_es": "Cuento del cielo",
+     "reason": "«Mombe'u» means only «relato/cuento». The project itself glosses it «Cuentos y fábulas» in tp-grades.js. As a game name glossed «Cuento del cielo», the Guarani does not say what the Spanish says. «Yvága mombe'u» follows the possessor + possessed order and is correct. «mombe'u» is not a relational noun, so it takes no r-/h- prefix. «yvága» is stressed on the penultimate syllable, so it needs the acute accent, as in the project's own story (Yvágape, yvága rupi). A lowercase m after the first word is right. Another fix would be to keep «Mombe'u» and change the gloss to «Cuento». But the game's gloss names the sky, so adding yvága is the better fix. The Story screen header «Mombe'u: Mborevi Rape» can stay as it is.",
+     "sources": [
+      "project/tp-course.js line 224",
+      "project/tp-grades.js line 167",
+      "project/tp-sky.js (Yvágape, yvága rupi)",
+      "Guarani genitive construction: possessor precedes possessed"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Mombe'u",
+     "best_es": "Cuento",
+     "reason": "«Mombe'u» means only «cuento/relato», so the gloss «Cuento del cielo» adds something the Guarani does not say, and a teacher would fix that mismatch. The smallest fix is to the gloss, not the Guarani. «Mombe'u» is the same word the lessons use for 'Cuentos y fábulas' (tp-grades.js:167), and the Story screen already shows «Mombe'u: Mborevi Rape» as the title. The reviewer's «Yvága mombe'u» is also correct Guarani (possessor first) and would be an acceptable alternative if the designer wants to keep «del cielo» in the gloss.",
+     "sources": [
+      "tp-course.js:224",
+      "tp-grades.js:167-168 (Mombe'u = Cuentos y fábulas)",
+      "Story.dc.html:33 (Mombe'u: Mborevi Rape)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "g91",
+   "gn": "Che Paraguaigua",
+   "fix_gn": "Che paraguaigua",
+   "fix_es": "Soy de Paraguay",
+   "status": "confirmed",
+   "votes": "3/3",
+   "claims": [
+    {
+     "lens": "form",
+     "kind": "punctuation-capitals",
+     "severity": "likely-error",
+     "problem": "«paraguaigua» is a demonym (paraguayo/a), not a proper name, so it should be lowercase in the middle of the phrase. Only Paraguái, the country name, takes a capital. The gloss is acceptable, though «Soy paraguayo/a» is the literal meaning.",
+     "fix_gn": "Che paraguaigua",
+     "fix_es": "Soy de Paraguay",
+     "confidence": "medium",
+     "evidence": "The project norm (and the ALG/MEC norm) is that a capital only starts a sentence or a name. Demonyms formed with -gua are written lowercase, as in Spanish: «Che paraguaigua», «ñande paraguaigua», but «Paraguái» for the country."
+    },
+    {
+     "lens": "meaning",
+     "kind": "punctuation-capitals",
+     "severity": "likely-error",
+     "problem": "The meaning matches the gloss. But «paraguaigua» is a demonym (Paraguái + -gua, 'from Paraguay'), not a proper name, so it should not be capitalized in the middle of the phrase, just as Spanish writes «paraguayo» in lowercase.",
+     "fix_gn": "Che paraguaigua",
+     "fix_es": "Soy de Paraguay",
+     "confidence": "medium",
+     "evidence": "Project norm: a capital letter only starts a sentence or a name. Paraguái is the name; the derived demonym paraguaigua is written in lowercase (compare «Che paraguaigua» in school greeting and self-introduction lessons)."
+    }
+   ],
+   "reasons": [
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Che paraguaigua",
+     "best_es": "Soy de Paraguay",
+     "reason": "«paraguaigua» is a common word, the demonym made from Paraguái plus -gua («de, procedente de»). It is not a proper name. Under the project rule and the ALG/MEC rule, a capital letter only starts a sentence or a name, so a teacher would lowercase it in the middle of the phrase, the same way Spanish writes «paraguayo». The capital belongs only to the country name «Paraguái». The rest is correct: «che» plus a nominal predicate with no copula is the normal way to say «I am X» in Guarani. The gloss «Soy de Paraguay» is accurate («Soy paraguayo/a» would also fit), so it stays.",
+     "sources": [
+      "Academia de la Lengua Guaraní, Gramática Guarani (2018) and orthography rules: capitals for proper names and sentence starts",
+      "Guasch & Ortiz, Diccionario castellano-guaraní / guaraní-castellano: -gua «de, procedente de»",
+      "Krivoshein de Canese & Acosta, Ñe'ẽryru avañe'ẽ-castellano",
+      "UNI (Universidad Nacional de Itapúa), toponymy document using «paraguaigua» as an adjective: https://uni.edu.py/wp-content/uploads/2024/04/TOPONIMICOS-2-sebastian-araujo.pdf"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "high",
+     "best_gn": "Che paraguaigua",
+     "best_es": "Soy de Paraguay",
+     "reason": "Paraguaigua is a demonym (Paraguái + -gua, \"from Paraguay\"), not a proper name. The project rule and the ALG/MEC rule both say a capital letter only starts a sentence or a name, so the word is written in lowercase in the middle of the phrase, the same way Spanish writes «paraguayo». Only the country name, Paraguái, takes a capital. Che starts the sentence, so its capital stays. The verbless sentence «Che + noun» is grammatical and is the standard way to say this in self-introduction lessons. The gloss «Soy de Paraguay» is correct and suits a child; «Soy paraguayo/a» would be the literal meaning. The fix breaks no other rule: the spelling paraguaigua (with -ai-, not -ay-, matching Paraguái) and the lack of a written accent are what school materials commonly use.",
+     "sources": [
+      "tools/audit/batch-04.json (entry g91)",
+      "project/tp-grades.js line 105",
+      "Project norm on capitals (a capital only starts a sentence or a name)",
+      "ALG Gramática Oficial / MEC orthography: capitals follow the same rules as Spanish, and demonyms are written in lowercase"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "high",
+     "best_gn": "Che paraguaigua",
+     "best_es": "Soy de Paraguay",
+     "reason": "In the middle of a phrase, a capital letter only goes on a name. Paraguái is the name of the country. Paraguaigua (Paraguái + -gua, 'from Paraguay') is a demonym, so it is written in lowercase, just as Spanish writes «paraguayo». A teacher would correct the capital P in this 1.º grado self-introduction phrase. The fix changes only that capital. The word and the lesson stay the same, so it does not make things worse for the child. The gloss «Soy de Paraguay» is correct and natural for a child and can stay. «Soy paraguayo/a» would be more literal, but it is not needed.",
+     "sources": [
+      "Project norm in the task: a capital letter only starts a sentence or a name",
+      "ALG/MEC orthography: demonyms with -gua are common nouns and written in lowercase (paraguaigua, but Paraguái)",
+      "tp-grades.js line 105 (g1 u1, lesson 'Che réra')"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "g88",
+   "gn": "Che réra",
+   "fix_gn": "Che réra",
+   "fix_es": "Mi nombre",
+   "status": "confirmed",
+   "votes": "2/3",
+   "claims": [
+    {
+     "lens": "meaning",
+     "kind": "meaning",
+     "severity": "likely-error",
+     "problem": "The Guarani title says only \"mi nombre\", but the gloss and the lesson cover name and age (Aguereko poteĩ ary, Mboy ary reguereko?). The title names only half of what the lesson teaches.",
+     "fix_gn": "Che réra ha che ary",
+     "fix_es": "Mi nombre y mi edad",
+     "confidence": "medium",
+     "evidence": "tp-grades.js line 105: the night teaches 'Aguereko poteĩ ary' and 'Mboy ary reguereko?' (ary = año/edad). 'Che réra' = mi nombre (téra/réra/héra). If the title should stay 'Che réra', change the gloss to 'Mi nombre' instead."
+    }
+   ],
+   "reasons": [
+    {
+     "real": false,
+     "confidence": "medium",
+     "best_gn": "Che réra",
+     "best_es": "Mi nombre y mi edad",
+     "reason": "The Guarani is correct. «Che réra» is the standard form (téra / che réra / nde réra / héra) and it is the usual opener in MEC first-grade materials («Che réra ...»). The flag is about the match with the Spanish, not about the Guarani. In this file the Spanish line on a night (lesson) title names the lesson's topic; it is not a word-for-word translation. The neighbouring titles do the same: «Maitei» is glossed «Saludar» and «Jajotopáta» «Despedirse», neither of which is literal. Under that convention, a title that names only the first item (the name) of a lesson about name and age is not something a Guarani teacher would mark wrong. The Guarani is not misspelled or ungrammatical, and the gloss does not mislead about any word, because the lesson's word cards gloss «Che réra…» as «Me llamo…». If the team wants the title to cover the whole topic, «Che réra ha che ary» (ary = año/edad, as in «Mboy ary reguereko?») is a grammatical option. The other option is to keep the title and gloss it «Mi nombre». Either is an optional style change, not a correction.",
+     "sources": [
+      "tp-grades.js line 105 (g1 unit 1 night 2) and lines 104/107 (titles Maitei = Saludar, Jajotopáta = Despedirse, same topic-gloss convention)",
+      "Guasch & Ortiz, Diccionario castellano-guaraní / guaraní-castellano: téra (r-/h-) 'nombre'; ary 'año, edad'",
+      "Krivoshein de Canese & Acosta, Ñe'ẽryru: téra, ary",
+      "Common Paraguayan classroom usage: «Che réra ...», «Mboy ary reguereko?», «Areko/Aguereko ... ary»"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Che réra",
+     "best_es": "Mi nombre",
+     "reason": "«Che réra» is spelled correctly: téra becomes réra after che, and the accent is right because the stress falls on the second-to-last syllable. The problem is the gloss. «Che réra» means only «mi nombre», but the gloss says «Mi nombre y mi edad». A child reading the pair would think the Guarani also names the age, and a teacher would correct that. Other titles have topic-style glosses (Maitei = «Saludar»), but those still describe only what the Guarani says. This one adds content that is not there. The safest fix is to keep the Guarani and change the gloss to «Mi nombre». It adds no new Guarani. The words inside the lesson (Aguereko poteĩ ary, Mboy ary reguereko?) already teach the age. The reviewer's other option, «Che réra ha che ary» with the gloss «Mi nombre y mi edad», is also rule-compliant: ha joins the two parts, che needs no prefix before ary, and nothing changes in spelling or nasal harmony. But «che ary» for «mi edad» is less established in school materials than the question form «Mboy ary reguereko?». So changing the gloss is the better choice.",
+     "sources": [
+      "tools/audit/batch-07.json (entry g88)",
+      "project/tp-grades.js lines 65-67 (Preescolar 'Che réra' = 'Me llamo…') and 103-106 (g1 unit 1 titles and night 2 content)",
+      "Academia de la Lengua Guaraní / MEC grammar: relational noun téra/réra/héra; accent rule for non-final stress"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Che réra ha che ary",
+     "best_es": "Mi nombre y mi edad",
+     "reason": "The Guarani is spelled correctly: «Che réra» (téra/réra/héra, accent on the stressed syllable that is not the last, lowercase after che). The problem is meaning. «Che réra» means only «mi nombre», but the gloss shown with it is «Mi nombre y mi edad», so a child would link that Guarani to a meaning it does not have. The lesson also teaches age (Aguereko poteĩ ary, Mboy ary reguereko?), so a teacher would make the title and gloss match. The proposed title «Che réra ha che ary» is grammatical and clear for 1.º grado. It keeps the lesson word réra and uses ary, which the lesson itself teaches. It also stops this title from repeating the Preescolar lesson title «Che réra» (Me llamo…) on tp-grades.js line 65. An equally acceptable fix is to keep «Che réra» and change the gloss to «Mi nombre». Either fix works; the one thing that must change is that the title and gloss currently do not match.",
+     "sources": [
+      "tools/audit/batch-07.json (g88)",
+      "project/tp-grades.js lines 65-67, 105-106",
+      "Guarani relational noun téra/réra/héra; ary = año, used for age (Mboy ary reguereko?)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "g167",
+   "gn": "Achegety",
+   "fix_gn": "Achegety",
+   "fix_es": "El alfabeto: las vocales y el puso",
+   "status": "confirmed",
+   "votes": "3/3",
+   "claims": [
+    {
+     "lens": "form",
+     "kind": "meaning",
+     "severity": "likely-error",
+     "problem": "«Achegety» means the alphabet (abecedario), not «las vocales y el puso». The gloss teaches the child a wrong meaning for the word. The unit only covers the vowels and the puso.",
+     "fix_gn": "Achegety",
+     "fix_es": "El alfabeto: las vocales y el puso",
+     "confidence": "high",
+     "evidence": "In MEC and Academia materials, achegety is the name of the 33-letter Guarani alphabet (a-che-ge + ty, «conjunto»). The vowels are «pu'ae». If the title should name only the vowels and the puso, «Pu'ae ha puso» would also work."
+    },
+    {
+     "lens": "meaning",
+     "kind": "gloss",
+     "severity": "likely-error",
+     "problem": "«Achegety» means «el alfabeto» (the whole set of letters), not «las vocales y el puso». The gloss teaches the child a wrong meaning for the word. The same title is also used for the 2.º grado consonants unit, so «Achegety» cannot mean «vowels and puso» in both places.",
+     "fix_gn": "Achegety",
+     "fix_es": "El alfabeto: las vocales y el puso",
+     "confidence": "medium",
+     "evidence": "Achegety = alfabeto guaraní (Academia de la Lengua Guaraní; MEC materials: «achegety» is the 33-letter alphabet). In tp-grades.js the g2 unit 3 also uses «Achegety» with the gloss «Las consonantes: ch, mb, nd, ng, nt, rr, g̃». A gloss that names the alphabet and then the lesson's topic keeps the word's meaning accurate."
+    }
+   ],
+   "reasons": [
+    {
+     "real": true,
+     "confidence": "high",
+     "best_gn": "Achegety",
+     "best_es": "El alfabeto: las vocales y el puso",
+     "reason": "The Guarani title is spelled correctly, but the gloss gives it the wrong meaning. «Achegety» is the standard name of the Guarani alphabet, the 33-letter set (a-che-ge + -ty, «conjunto»), in Academia de la Lengua Guaraní and MEC usage. It does not mean «las vocales y el puso». The project itself uses it that way elsewhere: tp-course.js glosses the same word as «Las letras», and in tp-grades.js the 2.º grado consonant unit gets the same title with a different gloss. A child would learn a wrong translation of a basic school word, so a teacher would correct it. The fix that changes least is to keep the title and gloss it as «El alfabeto: las vocales y el puso». Another option is to retitle the unit with the school terms for the topic, «Pu'ae ha puso» (pu'ae = vocal).",
+     "sources": [
+      "Academia de la Lengua Guaraní, Gramática Guaraní (2018) and the official achegety of 33 letters",
+      "MEC Paraguay Guarani textbooks: «achegety» = alfabeto/abecedario, «pu'ae» = vocal, «pundie» = consonante",
+      "Krivoshein de Canese & Acosta, Ñe'ẽryru (dictionary): achegety = alfabeto",
+      "Project files: tp-course.js line 223 (Achegety = 'Las letras'), tp-grades.js lines 131 and 159"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "high",
+     "best_gn": "Achegety",
+     "best_es": "El alfabeto: las vocales y el puso",
+     "reason": "The Guarani itself is written correctly. It is a capital at the start of a title, it has the oxytone stress (-ty), so it needs no written accent, and it uses only achegety letters. The problem is the gloss. Achegety (a-che-ge + -ty, a set) means the Guarani alphabet, the whole set of letters. It does not mean «las vocales y el puso». The vowels are pu'ae. A child who reads the gloss as a translation learns a wrong meaning. The project contradicts itself here too. tp-grades.js line 159 uses the same title for the 2.º grado consonants unit with a different gloss, and tp-course.js line 223 glosses Achegety as «Las letras». So the word cannot mean «vowels and puso» in one place and «consonants» in another. The fix names the alphabet first and then the lesson's topic, and it breaks no other rule. Another valid fix would be to retitle the unit «Pu'ae ha puso», which keeps the same gloss.",
+     "sources": [
+      "Academia de la Lengua Guaraní, Gramática Guaraní / orthography: achegety = the 33-letter Guarani alphabet",
+      "MEC Paraguay Guarani teaching materials: achegety (alfabeto), pu'ae (vocal), pundie (consonante)",
+      "Project: tp-grades.js:131 and :159, tp-course.js:223"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Achegety",
+     "best_es": "El alfabeto: las vocales y el puso",
+     "reason": "The Guarani title is right: «Achegety» is the standard school word for the Guarani alphabet, and it is a good word for 1.º grado children to meet. The problem is the gloss. Most unit glosses in the project describe the topic rather than translate the title word for word (Maitei = «Saludar, presentarse y despedirse»), but those glosses still include the word's meaning. «Las vocales y el puso» leaves out what «achegety» means, so a child would take it to mean «vowels and puso». In 2.º grado (tp-grades.js line 159) the same word is glossed «Las consonantes...», which contradicts that. tp-course.js glosses it «Las letras». A teacher would keep the word and fix the gloss so it names the alphabet first and then the part covered here. The proposed gloss does that without changing the word the lesson is about. Changing the title to «Pu'ae ha puso» would be worse, because it swaps out a key school term the child should learn here.",
+     "sources": [
+      "Academia de la Lengua Guaraní / MEC: «achegety» is the name of the 33-letter Guarani alphabet",
+      "tp-grades.js line 131 (g1 unit 6) and line 159 (g2 unit 3, same title glossed as consonants)",
+      "tp-course.js line 223 (Achegety glossed «Las letras»)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "g232",
+   "gn": "Yva",
+   "fix_gn": "Yva ha mbeju",
+   "fix_es": "Frutas y mbeju",
+   "status": "confirmed",
+   "votes": "3/3",
+   "claims": [
+    {
+     "lens": "form",
+     "kind": "meaning",
+     "severity": "error",
+     "problem": "The Guarani title says only 'fruta(s)', but the gloss says 'Frutas y mbeju'. The lesson includes mbeju, which is not a fruit, so the title and gloss do not match.",
+     "fix_gn": "Yva ha mbeju",
+     "fix_es": "Frutas y mbeju",
+     "confidence": "high",
+     "evidence": "yva = fruta; 'ha' = y (compare the sibling titles 'Chipa ha mandi'o' and 'Y ha kamby'). The lesson words are narã, pakova and mbeju (tp-grades.js line 157)."
+    },
+    {
+     "lens": "meaning",
+     "kind": "meaning",
+     "severity": "error",
+     "problem": "The Guarani title says only «fruta(s)», but the gloss says «Frutas y mbeju». The lesson does teach mbeju, which is not a fruit, so either the Guarani has to name it too or the gloss has to drop it.",
+     "fix_gn": "Yva ha mbeju",
+     "fix_es": "Frutas y mbeju",
+     "confidence": "high",
+     "evidence": "yva = fruta; mbeju is a food made from starch, not a yva. The sister titles follow the pattern «X ha Y» = «X y Y» (Chipa ha mandi'o, Y ha kamby). Lesson words: narã, pakova, mbeju."
+    }
+   ],
+   "reasons": [
+    {
+     "real": true,
+     "confidence": "high",
+     "best_gn": "Yva ha mbeju",
+     "best_es": "Frutas y mbeju",
+     "reason": "Yva means only 'fruta(s)', but the gloss also names mbeju. Mbeju is a starch cake, not a fruit, so the Guarani and the gloss do not say the same thing. The lesson teaches narã, pakova and mbeju. The sister title «Y ha kamby» shows the pattern 'X ha Y', and following it here makes the Guarani match the gloss.",
+     "sources": [
+      "Guasch & Ortiz, Diccionario castellano-guaraní / guaraní-castellano: yva = fruta; ha = y",
+      "Krivoshein de Canese & Acosta, Diccionario guaraní-español: mbeju = torta de almidón",
+      "tp-grades.js line 157 (lesson words narã, pakova, mbeju)"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "high",
+     "best_gn": "Yva ha mbeju",
+     "best_es": "Frutas y mbejú",
+     "reason": "Yva means only 'fruta(s)'. The gloss and the lesson (narã, pakova, mbeju) also include mbeju, which is a starch cake, not a fruit, so the Guarani title does not say what the gloss says. «Yva ha mbeju» follows the X ha Y pattern of the sister titles (Chipa ha mandi'o, Y ha kamby) and breaks no orthography rule: mbeju is stressed on the last syllable, so it takes no accent. In the Spanish gloss, the lesson's own word gloss writes «mbejú», so writing it the same way in the title gloss keeps the Spanish consistent. This is optional; «mbeju» is also acceptable.",
+     "sources": [
+      "tp-grades.js line 157 (lesson words narã, pakova, mbeju; word gloss 'mbejú')",
+      "tp-grades.js lines 155-156 (sister titles with 'ha')",
+      "Guarani lexicon: yva = fruta; ha = y"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "high",
+     "best_gn": "Yva ha mbeju",
+     "best_es": "Frutas y mbeju",
+     "reason": "Yva means only 'fruta(s)', but the gloss says 'Frutas y mbeju', and the lesson does teach mbeju (narã, pakova, mbeju). Mbeju is not a yva, so the Guarani and the gloss do not say the same thing. «Yva ha mbeju» is natural and simple, uses only words the child meets in this lesson, and follows the sibling titles «Chipa ha mandi'o» and «Y ha kamby». The other option, cutting the gloss to «Frutas», would leave mbeju out of a title that already names it in Spanish, so adding «ha mbeju» to the Guarani is the better fix.",
+     "sources": [
+      "tp-grades.js line 157 (lesson words narã, pakova, mbeju)",
+      "tp-grades.js lines 155-156 (sibling titles 'X ha Y')",
+      "yva = fruta; ha = y (common Guarani vocabulary)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "g239",
+   "gn": "Achegety",
+   "fix_gn": "Pundie",
+   "fix_es": "Las consonantes: ch, mb, nd, ng, nt, rr, g̃",
+   "status": "confirmed",
+   "votes": "3/3",
+   "claims": [
+    {
+     "lens": "form",
+     "kind": "gloss",
+     "severity": "likely-error",
+     "problem": "Achegety means the alphabet (las letras), not 'the consonants'. The 1.º grado unit uses the same title with the gloss 'Las vocales y el puso', so a child sees one Guarani word glossed two different ways. Either keep Achegety and gloss it as letters, or use pundie, the school term for consonant.",
+     "fix_gn": "Achegety",
+     "fix_es": "Las letras: ch, mb, nd, ng, nt, rr, g̃",
+     "confidence": "high",
+     "evidence": "achegety = abecedario/alfabeto (a-che-ge + ty); in school terms, pundie = consonante and pu'ae = vocal. tp-course.js line 223 glosses Achegety as 'Las letras'; tp-grades.js line 131 glosses it as 'Las vocales y el puso'. An alternative fix is gn 'Pundie' with es 'Las consonantes: ch, mb, nd, ng, nt, rr, g̃'."
+    },
+    {
+     "lens": "meaning",
+     "kind": "meaning",
+     "severity": "likely-error",
+     "problem": "«Achegety» means the alphabet (abecedario), not «the consonants», so the Guarani does not say what the gloss says. It is also the same title as the 1.º grado vowels unit, so the two units cannot be told apart. The school term for consonant is «pundie».",
+     "fix_gn": "Pundie",
+     "fix_es": "Las consonantes: ch, mb, nd, ng, nt, rr, g̃",
+     "confidence": "medium",
+     "evidence": "achegety = alfabeto/abecedario; MEC grammar terms: pu'ae = vocal, pundie = consonante. g1 unit 6 is already titled «Achegety» («Las vocales y el puso»). Another option: keep Achegety and gloss it «El abecedario: ch, mb, nd, ng, nt, rr, g̃»."
+    }
+   ],
+   "reasons": [
+    {
+     "real": true,
+     "confidence": "high",
+     "best_gn": "Pundie",
+     "best_es": "Las consonantes: ch, mb, nd, ng, nt, rr, g̃",
+     "reason": "Achegety means the alphabet (abecedario), not 'the consonants', so the Guarani does not say what the gloss says. The project also uses Achegety for the 1.º grado unit 'Las vocales y el puso' and glosses it as 'Las letras' in tp-course.js, so here it is ambiguous as well as wrong. School grammar uses pundie for consonant (and pu'ae for vowel). Another fix is to keep Achegety and gloss it 'El abecedario: ch, mb, nd, ng, nt, rr, g̃', but Pundie matches what the unit teaches.",
+     "sources": [
+      "Academia de la Lengua Guaraní, Gramática Guaraní: achegety = alfabeto; pu'ae = vocal; pundie = consonante",
+      "MEC Paraguay Guarani textbooks (Ñe'ẽ, Achegety units)",
+      "tp-grades.js lines 131 and 159; tp-course.js line 223"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Pundie",
+     "best_es": "Las consonantes: ch, mb, nd, ng, nt, rr, g̃",
+     "reason": "Achegety is the Guarani alphabet (abecedario), not 'the consonants', so the Guarani and the gloss do not match. The same title is also used for the 1.º grado unit 'Las vocales y el puso', which means two different units share one name. The school grammar term for consonant is pundie (vowel = pu'ae). «Pundie» matches the existing gloss and keeps the units apart. An acceptable alternative is to keep «Achegety» and gloss it «El abecedario: ch, mb, nd, ng, nt, rr, g̃», but that still repeats the 1.º grado title.",
+     "sources": [
+      "tp-grades.js line 131 (g1 unit 6 'Achegety' = 'Las vocales y el puso')",
+      "tp-grades.js line 159",
+      "tp-course.js line 223 (Achegety = 'Las letras')",
+      "MEC/Academia grammar terminology: achegety = alfabeto, pundie = consonante, pu'ae = vocal"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Achegety",
+     "best_es": "Las letras: ch, mb, nd, ng, nt, rr, g̃",
+     "reason": "Achegety is the alphabet, the set of letters (a-che-ge + ty). It does not mean 'las consonantes', so the gloss does not translate the title. The same word is glossed 'Las vocales y el puso' in 1.º grado and 'Las letras' in tp-course.js, so a child sees one word with three meanings. A teacher would fix the gloss. Keeping «Achegety» is better than switching to «Pundie»: children met achegety in 1.º grado, while pundie is a grammar term for older grades. The listed items are also mostly digraphs, not all the consonants, so 'Las letras' is the more accurate word. If the two units must have different titles, a later edit could use «Achegety: pundie», but the gloss fix alone is enough here.",
+     "sources": [
+      "tp-grades.js line 159 (this unit) and line 131 (1.º grado unit 6, 'Las vocales y el puso')",
+      "tp-course.js line 223 (Achegety = 'Las letras')",
+      "School terms: achegety = alfabeto, pu'ae = vocal, pundie = consonante"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "g206",
+   "gn": "Mymba rógape",
+   "fix_gn": "Mymba ógape",
+   "fix_es": "Animales de la casa",
+   "status": "confirmed",
+   "votes": "3/3",
+   "claims": [
+    {
+     "lens": "form",
+     "kind": "grammar",
+     "severity": "likely-error",
+     "problem": "Óga is a relational noun (óga/róga/hóga). The r- form after a noun marks that noun as the possessor, so 'mymba rógape' reads 'en la casa del animal' (the animal's own house or pen), not 'animales de la casa'. To say animals that are at home, use the absolute form.",
+     "fix_gn": "Mymba ógape",
+     "fix_es": "Animales de la casa",
+     "confidence": "medium",
+     "evidence": "Relational paradigm: óga 'casa' (absolute), che róga 'mi casa', hóga 'su casa', X róga 'la casa de X'. The project itself writes 'Che róga' = Mi casa and absolute 'óga' = casa (tp-grades.js line 113). Compare 'Mymba ka'aguýpe' and 'Mymba yvágape', which use non-relational nouns."
+    }
+   ],
+   "reasons": [
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Mymba ógape",
+     "best_es": "Animales de la casa",
+     "reason": "Óga is a relational noun (óga / che róga / hóga). The r- form after a noun makes that noun the possessor, so 'mymba róga' is 'la casa del animal' and 'Mymba rógape' reads 'en la casa del animal', not 'animales de la casa'. The absolute form 'ógape' ('en casa', as in «Jaha ógape») gives the intended sense. It also matches the sibling titles «Mymba ka'aguýpe» and «Mymba yvágape», which use non-relational nouns. 'Mymba ogaygua' ('animales domésticos') is also acceptable.",
+     "sources": [
+      "Academia de la Lengua Guaraní, Gramática Guaraní: relational nouns (t-/r-/h-), óga paradigm",
+      "Guasch, El idioma guaraní: genitive construction N1 + r-N2 = 'N2 de N1'",
+      "tp-grades.js lines 113 and 150"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Mymba ógape",
+     "best_es": "Animales de la casa",
+     "reason": "Óga is a relational noun (óga / che róga / hóga). The r- form is used only after a possessor, so in «mymba rógape» the noun mymba is read as the possessor: 'en la casa del animal' (the animal's own house or pen). For animals that are at home, the absolute form is needed: «mymba ógape», which is parallel to the sister titles «Mymba ka'aguýpe» and «Mymba yvágape». The accent stays on ó because the stress is not on the last syllable. «Mymba ogaygua» ('animales domésticos') would also be possible, but «Mymba ógape» is the smallest fix that follows the series.",
+     "sources": [
+      "Academia/MEC relational prefix rules (t-/r-/h- and óga/róga/hóga)",
+      "tp-grades.js line 113 ('Che róga' = Mi casa; absolute óga = casa)",
+      "tp-grades.js lines 150-152 (sister titles)"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Mymba ógape",
+     "best_es": "Animales de la casa",
+     "reason": "Óga is a relational noun (óga / che róga / hóga). The r- form after a noun marks that noun as the owner, so 'mymba róga' is 'la casa del animal', and 'Mymba rógape' reads 'en la casa del animal' (its pen or stable), not animals that live at people's homes. The absolute form 'ógape' gives 'animales en (la) casa'. That matches the sibling titles 'Mymba ka'aguýpe' and 'Mymba yvágape', and the project already teaches absolute óga (tp-grades.js line 113). The acute stays because the stress is on ó, not on the last syllable. The textbook term for domestic animals is 'mymba ogaygua', but the -ygua suffix is new to a 2.º grado child and breaks the -pe pattern of the unit, so the proposed fix is the better choice here.",
+     "sources": [
+      "tp-grades.js line 150 (this night; words jagua, mbarakaja, ryguasu, ype)",
+      "tp-grades.js line 113 ('Che róga' = Mi casa; 'óga' = casa)",
+      "tp-grades.js lines 151-152 (sibling titles with -pe)",
+      "Relational t-/r-/h- paradigm (óga, róga, hóga)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "g247",
+   "gn": "Ñe'ẽtéva",
+   "fix_gn": "Ñe'ẽjoaju ha ñe'ẽtéva",
+   "fix_es": "La oración y el verbo",
+   "status": "confirmed",
+   "votes": "3/3",
+   "claims": [
+    {
+     "lens": "form",
+     "kind": "meaning",
+     "severity": "likely-error",
+     "problem": "The title is spelled correctly, but ñe'ẽtéva only means «verbo». The gloss «La oración y el verbo» promises a second idea, «oración» (ñe'ẽjoaju), that the Guarani title does not name.",
+     "fix_gn": "Ñe'ẽjoaju ha ñe'ẽtéva",
+     "fix_es": "La oración y el verbo",
+     "confidence": "medium",
+     "evidence": "In MEC/Academia grammar terms, ñe'ẽtéva = verbo and ñe'ẽjoaju = oración. A shorter fix is to keep «Ñe'ẽtéva» and change the gloss to «El verbo»."
+    },
+    {
+     "lens": "meaning",
+     "kind": "meaning",
+     "severity": "likely-error",
+     "problem": "Ñe'ẽtéva means only «verbo». The gloss also says «la oración», and the Guarani title does not cover that.",
+     "fix_gn": "Ñe'ẽjoaju ha ñe'ẽtéva",
+     "fix_es": "La oración y el verbo",
+     "confidence": "high",
+     "evidence": "In MEC grammar terms, ñe'ẽjoaju = oración and ñe'ẽtéva = verbo. The same title is glossed «Conjugar el verbo» for 6.º grado (tp-grades.js line 194)."
+    }
+   ],
+   "reasons": [
+    {
+     "real": true,
+     "confidence": "high",
+     "best_gn": "Ñe'ẽjoaju ha ñe'ẽtéva",
+     "best_es": "La oración y el verbo",
+     "reason": "The spelling is right, but ñe'ẽtéva means only «verbo». In school grammar «oración» is ñe'ẽjoaju. An ABC Color school supplement defines ñe'ẽjoaju as a group of words that contains a conjugated ñe'ẽtéva. As it stands, the gloss promises a topic the Guarani title does not name, and the same title is glossed «Conjugar el verbo» in 6.º grado. Either add ñe'ẽjoaju to the title (proposed) or keep «Ñe'ẽtéva» and change the gloss to «El verbo».",
+     "sources": [
+      "https://www.abc.com.py/edicion-impresa/suplementos/escolar/2023/06/06/neejoaju-1/",
+      "Academia de la Lengua Guaraní, Gramática Guaraní (ñe'ẽtéva = verbo, ñe'ẽjoaju = oración)",
+      "tp-grades.js lines 179 and 194"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Ñe'ẽjoaju ha ñe'ẽtéva",
+     "best_es": "La oración y el verbo",
+     "reason": "The spelling of Ñe'ẽtéva is correct: puso, nasal ẽ and an accent on the stressed penultimate syllable. The problem is meaning. It names only the verb, while the gloss also promises «la oración». The same title is glossed «Conjugar el verbo» in 6.º grado (tp-grades.js line 194), which makes the 4.º grado gloss misleading. The proposed fix is well formed. Ñe'ẽjoaju is the school term for «oración» and is written as one word (ñe'ẽ + joaju). «ha» is lowercase and only the first word is capitalized. The shorter option, keeping Ñe'ẽtéva and changing the gloss to «El verbo», is also acceptable if the unit really covers only the verb.",
+     "sources": [
+      "tp-grades.js lines 179 and 194",
+      "Academia de la Lengua Guaraní / MEC grammar terminology: ñe'ẽjoaju = oración, ñe'ẽtéva = verbo"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Ñe'ẽjoaju ha ñe'ẽtéva",
+     "best_es": "La oración y el verbo",
+     "reason": "The spelling of Ñe'ẽtéva is correct, but the word means only «verbo». The gloss «La oración y el verbo» names two topics, so a 4.º grado child would take ñe'ẽtéva to mean both. The 6.º grado unit uses the same title for «Conjugar el verbo», which makes the 4.º grado title confusing too. Ñe'ẽjoaju is the usual school word for «oración», and «Ñe'ẽjoaju ha ñe'ẽtéva» is correct and natural. It keeps the unit's real content and gives the two grades different titles. The other possible fix, keeping Ñe'ẽtéva and changing the gloss to «El verbo», would drop part of the 4.º grado unit, so the proposed fix is better.",
+     "sources": [
+      "tp-grades.js line 179 (g4 unit 6) and line 194 (g6 unit 5, «Ñe'ẽtéva» = «Conjugar el verbo»)",
+      "MEC/Academia grammar terms: ñe'ẽtéva = verbo, ñe'ẽjoaju = oración"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "g248",
+   "gn": "Mborevi Rape",
+   "fix_gn": "Mborevi Rape",
+   "fix_es": "El camino del tapir (leyendas del cielo guaraní)",
+   "status": "confirmed",
+   "votes": "3/3",
+   "claims": [
+    {
+     "lens": "meaning",
+     "kind": "gloss",
+     "severity": "likely-error",
+     "problem": "Mborevi Rape literally means «el camino del tapir», the Guarani name for the Vía Láctea. It does not mean «Leyendas del cielo guaraní», so a child would learn the wrong meaning. The same title is glossed «El camino del tapir» elsewhere in the app.",
+     "fix_gn": "Mborevi Rape",
+     "fix_es": "El camino del tapir (leyendas del cielo guaraní)",
+     "confidence": "high",
+     "evidence": "mborevi = tapir; tape/rape = camino (relational t-/r-/h-). tp-grades.js lines 95 and 142 gloss it «El camino del tapir» and the word as «la Vía Láctea»."
+    }
+   ],
+   "reasons": [
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Mborevi Rape",
+     "best_es": "El camino del tapir (leyendas del cielo guaraní)",
+     "reason": "Mborevi Rape means «camino del tapir»: mborevi is «tapir», and rape is tape «camino» with the relational r-. It is the Guarani name of the Vía Láctea. Everywhere else in the app it is glossed «El camino del tapir» (tp-grades.js lines 95 and 142, and the story in tp-sky.js). The gloss «Leyendas del cielo guaraní» does not translate it and would teach a child the wrong meaning. The unit theme can stay in parentheses after the literal meaning.",
+     "sources": [
+      "Guasch & Ortiz, Diccionario castellano-guaraní (mborevi = tapir; tape/rape = camino)",
+      "Blas Servín on the Paraguayan Guarani sky (cited in tp-sky.js)",
+      "tp-grades.js lines 95, 142 and 182"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Mborevi Rape",
+     "best_es": "El camino del tapir: leyendas del cielo guaraní",
+     "reason": "The Guarani is correct. In mborevi + tape → rape, the relational prefix changes t- to r- after a noun possessor, and Rape is capitalized as part of the proper name of the Vía Láctea. The gloss is wrong as a translation. Mborevi Rape means «el camino del tapir», and the same app glosses it that way in 1.º grado, in Cielo.dc.html and in the story. Glossing it «Leyendas del cielo guaraní» teaches a child a wrong meaning. Keeping the literal meaning first and the unit topic after it fixes this.",
+     "sources": [
+      "tp-grades.js lines 95, 142, 182",
+      "tp-sky.js story 'rape'",
+      "Cielo.dc.html line 39",
+      "relational t-/r-/h- rule (tape / rape / hape)"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "high",
+     "best_gn": "Mborevi Rape",
+     "best_es": "El camino del tapir (leyendas del cielo guaraní)",
+     "reason": "The Guarani is correct (mborevi «tapir» + rape, the r- form of tape «camino»). The gloss, however, gives a meaning the words do not have. Everywhere else the app glosses Mborevi Rape as «El camino del tapir» or «la Vía Láctea»: the 1.º and 2.º grado lessons, the story, the sky screen and the mascot screen. With this gloss, the 5.º grado child would see the same title paired with two different meanings. The proposed gloss gives the literal meaning first and keeps the unit's theme in parentheses.",
+     "sources": [
+      "tp-grades.js lines 95, 142 and 182",
+      "tp-sky.js (story «rape»: «El camino del tapir»; mborevi note: «Mborevi Rape: el camino del tapir»)",
+      "Cielo.dc.html line 39"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "g244",
+   "gn": "Ñe'ẽpoty",
+   "fix_gn": "Ñe'ẽpoty ha purahéi",
+   "fix_es": "Poesías y canciones",
+   "status": "confirmed",
+   "votes": "3/3",
+   "claims": [
+    {
+     "lens": "meaning",
+     "kind": "gloss",
+     "severity": "likely-error",
+     "problem": "Ñe'ẽpoty means «poesía». It does not cover «canciones» (purahéi), which the gloss adds. The 5.º grado unit glosses the same title simply as «Poesía».",
+     "fix_gn": "Ñe'ẽpoty ha purahéi",
+     "fix_es": "Poesías y canciones",
+     "confidence": "medium",
+     "evidence": "ñe'ẽpoty = poesía (lit. «palabra florida»); purahéi = canción, as in g241 «Purahéi ha ñe'ẽnga»."
+    }
+   ],
+   "reasons": [
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Ñe'ẽpoty ha purahéi",
+     "best_es": "Poesías y canciones",
+     "reason": "Ñe'ẽpoty (literally «palabra florida») is the standard school term for «poesía». «Canción» is purahéi, as the project itself uses in g241 «Purahéi ha ñe'ẽnga». The 5.º grado unit glosses the same title simply as «Poesía». So «y canciones» goes beyond what the title says. Either add purahéi to the title (proposed) or change the gloss to «Poesía».",
+     "sources": [
+      "Krivoshein de Canese & Acosta, Diccionario guaraní-español (ñe'ẽpoty = poesía; purahéi = canción)",
+      "tp-grades.js lines 169 and 184"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Ñe'ẽpoty ha purahéi",
+     "best_es": "Poesías y canciones",
+     "reason": "Ñe'ẽpoty is spelled correctly. It means «poesía» and does not cover «canciones» (purahéi), which the gloss adds. In 5.º grado the app glosses the same title simply as «Poesía». The proposed fix follows the rules. Purahéi takes the acute accent because the stress falls on hé, which is not the last syllable (pu·ra·hé·i). Purahéi is the same word used in g241 «Purahéi ha ñe'ẽnga», and «ha» is lowercase. Another acceptable fix is to keep Ñe'ẽpoty and gloss it «Poesía».",
+     "sources": [
+      "tp-grades.js lines 161, 169, 184",
+      "Academia/MEC terms: ñe'ẽpoty = poesía, purahéi = canción",
+      "accent rule: written only when stress is not on the last syllable"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Ñe'ẽpoty ha purahéi",
+     "best_es": "Poesías y canciones",
+     "reason": "Ñe'ẽpoty is correct and means «poesía» («palabra florida»). It does not mean «canción», which in school texts is purahéi. The 5.º grado unit glosses the same word simply as «Poesía», so with this gloss the child meets ñe'ẽpoty with two different meanings. «Ñe'ẽpoty ha purahéi» is correct, natural and follows the pattern of the 2.º grado title «Purahéi ha ñe'ẽnga». A teacher might also accept just changing the gloss to «Poesías», but adding purahéi keeps the songs in the unit and uses a word the child already met in 2.º grado.",
+     "sources": [
+      "tp-grades.js line 169 (g3 unit 4), line 184 (g5 unit 3 «Ñe'ẽpoty» = «Poesía») and line 161 (g2 «Purahéi ha ñe'ẽnga» = «Canciones y dichos»)",
+      "MEC school terms: ñe'ẽpoty = poesía, purahéi = canción"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "g20",
+   "gn": "Tereg̃uahẽ porãite",
+   "fix_gn": "Tereguahẽ porãite",
+   "fix_es": "¡Bienvenida! ¡Bienvenido!",
+   "status": "confirmed",
+   "votes": "3/3",
+   "claims": [
+    {
+     "lens": "form",
+     "kind": "accent-tilde-puso",
+     "severity": "likely-error",
+     "problem": "The word marks nasality twice, with g̃ and with ẽ. In the official orthography the stressed nasal vowel ẽ already nasalises the whole word, so the g is written plain: Tereguahẽ.",
+     "fix_gn": "Tereguahẽ porãite",
+     "fix_es": "¡Bienvenida! ¡Bienvenido!",
+     "confidence": "medium",
+     "evidence": "The Academia and MEC norm puts one nasal mark per word, on the stressed nasal syllable. The g̃ is kept for words whose only nasal mark is that consonant, as in ko'ág̃a. The root is guahẽ «llegar», as in Eguahẽ porã and Tereguahẽ porã in school greetings. Tereg̃uahẽ does appear on signs, but school materials use Tereguahẽ."
+    }
+   ],
+   "reasons": [
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Tereguahẽ porãite",
+     "best_es": "¡Bienvenida! ¡Bienvenido!",
+     "reason": "The root is guahẽ «llegar». Its stressed nasal vowel ẽ already carries the nasal mark, and the official orthography marks nasality once per word, on the stressed nasal syllable. So the g is written plain: Tereguahẽ, like Eguahẽ porã. The g̃ is kept only when it is the word's single nasal mark, as in ko'ág̃a. Tereg̃uahẽ does show up on signs, but school texts and official greetings use Tereguahẽ porã or Tereguahẽ porãite. A teacher would take out the double mark. The same string is used in pre u1 and g1 u1, so fix it in both places.",
+     "sources": [
+      "Academia de la Lengua Guaraní, Gramática Guaraní (rule on the nasal tilde: one mark per word, on the stressed nasal syllable)",
+      "Guasch & Ortiz, Diccionario castellano-guaraní / guaraní-castellano: guahẽ «llegar»",
+      "Krivoshein de Canese & Acosta, Ñe'ẽryru: guahẽ",
+      "https://en.wikibooks.org/wiki/Guarani/Orthography_and_pronunciation",
+      "https://escholarship.org/content/qt14z2t2fk/qt14z2t2fk_noSplash_c78e53963c1c970e43328d083e184e33.pdf"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "high",
+     "best_gn": "Tereguahẽ porãite",
+     "best_es": "¡Bienvenida! ¡Bienvenido!",
+     "reason": "The rule is to mark nasality once per word, on the stressed nasal vowel. In guahẽ the stressed ẽ already carries the tilde, and the g is nasalised by nasal harmony without being written as g̃. The g̃ is only written when a word has no other nasal mark (ko'ág̃a). So Tereg̃uahẽ marks nasality twice, and school texts write Tereguahẽ porãite (compare Eguahẽ porã). Spellings with g̃ do appear on signs and in older or religious texts, but they are not the school norm. The fix breaks no other rule: ã in porãite stays, the capital T starts the expression, and the gloss is correct. The same string appears in both places (pre u1 and g1 u1), so the fix applies to both.",
+     "sources": [
+      "project/tp-grades.js lines 66, 103",
+      "Academia de la Lengua Guaraní, Gramática/Ortografía oficial: tilde nasal solo en la sílaba tónica, armonía nasal no se marca dos veces; g̃ only when no other nasal mark",
+      "MEC materials: Eguahẽ porã / Tereguahẽ porãite"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Tereguahẽ porãite",
+     "best_es": "¡Bienvenida! ¡Bienvenido!",
+     "reason": "In the Academia and MEC orthography a nasal word carries one nasal mark, on the stressed nasal syllable. In guahẽ «llegar» the stressed ẽ already marks the nasality, so the g is written plain. G̃ is used only when it is the word's single nasal mark, as in ko'ág̃a. School materials write Eguahẽ porã and Tereguahẽ porã. Tereg̃uahẽ is common on public signs, but a teacher would correct it in a school text. The fix keeps the same word and meaning and only removes the extra mark, so it is a safe change at both places (pre u1 n2 and 1.º grado u1 n1). Porãite is correct.",
+     "sources": [
+      "Academia de la Lengua Guaraní, Gramática Guaraní (2018): one nasal mark per word; g̃ only when no other nasal mark",
+      "MEC Guarani textbooks for 1.º ciclo: greeting written Tereguahẽ porã / Eguahẽ porã",
+      "tp-grades.js lines 66 and 103"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "g21",
+   "gn": "Che réra…",
+   "fix_gn": "Che réra…",
+   "fix_es": "Me llamo… (decí tu nombre)",
+   "status": "confirmed",
+   "votes": "2/3",
+   "claims": [
+    {
+     "lens": "meaning",
+     "kind": "gloss",
+     "severity": "likely-error",
+     "problem": "The gloss '(y tu nombre)' is ambiguous for a child: it can be read as 'and your name?', a question back to the other person, not an instruction to say their own name. The same say-phrase in 1.º grado (tp-grades.js line 106) already uses the clearer '(decí tu nombre)'.",
+     "fix_gn": "Che réra…",
+     "fix_es": "Me llamo… (decí tu nombre)",
+     "confidence": "medium",
+     "evidence": "Che réra = 'mi nombre / me llamo'. The project's own parallel entry in g1 u1 uses 'Me llamo… (decí tu nombre)', and other prompts follow the same pattern: 'Tengo … años. (decí tu edad)'."
+    }
+   ],
+   "reasons": [
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Che réra…",
+     "best_es": "Me llamo… (decí tu nombre)",
+     "reason": "The Guarani is correct: che réra uses the r- relational form of téra after che, and it means «mi nombre / me llamo». The issue is the gloss «(y tu nombre)», which a child can read as «¿y tu nombre?», a question back to the other person. In Guarani that would be «Ha nde?», a different thing to say. The project's own parallel say-phrase in 1.º grado (tp-grades.js line 106) uses «(decí tu nombre)», and the age prompt follows the same pattern with «(decí tu edad)». The gloss should match them.",
+     "sources": [
+      "tp-grades.js lines 67 and 106 (parallel say-phrases)",
+      "Guasch & Ortiz: téra / réra / héra «nombre»",
+      "Krivoshein de Canese & Acosta, Ñe'ẽryru: téra"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Che réra…",
+     "best_es": "Me llamo… (decí tu nombre)",
+     "reason": "The Guarani is correct: che réra, with the accent on the penult because stress is not on the last syllable, and the relational r- after che. The problem is the gloss: '(y tu nombre)' can be read as 'and your name?', a question, when it is an instruction to say your own name. The project's own matching entry in 1.º grado (line 106) uses '(decí tu nombre)', and other prompts follow the same pattern ('(decí tu edad)'). The gloss should match.",
+     "sources": [
+      "project/tp-grades.js lines 67, 106",
+      "Relational stem t-/r-/h-: téra / che réra / héra"
+     ]
+    },
+    {
+     "real": false,
+     "confidence": "medium",
+     "best_gn": "Che réra…",
+     "best_es": "Me llamo… (y tu nombre)",
+     "reason": "The Guarani is correct: che réra = «mi nombre / me llamo», with the r- relational form after che. The gloss is not wrong. «(y tu nombre)» has no ¿?, so in Spanish it does not read as a question. It is a cue for the child to add their name. Preescolar children only listen and speak, so the adult who reads the gloss to them understands it. «(decí tu nombre)», as in 1.º grado (tp-grades.js line 106), would be clearer and more consistent, and it is a good optional edit. Still, a teacher would not mark the current gloss as an error.",
+     "sources": [
+      "tp-grades.js line 67 (pre u1 n2) and line 106 (g1 u1)",
+      "Che réra: relational stem t-/r-/h- (téra, che réra, héra)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "g35",
+   "gn": "Akã, tesa, tĩ, juru!",
+   "fix_gn": "Akã, tesa, tĩ, juru!",
+   "fix_es": "¡Cabeza, ojos, nariz, boca! (tocalos mientras cantás)",
+   "status": "confirmed",
+   "votes": "2/3",
+   "claims": [
+    {
+     "lens": "meaning",
+     "kind": "gloss",
+     "severity": "likely-error",
+     "problem": "The Guarani is only the list 'cabeza, ojo(s), nariz, boca!', but the gloss adds an instruction ('tocalos mientras cantás') that the Guarani does not say. A child matching the gloss to the phrase may think part of the Guarani means 'touch them while you sing'. The instruction belongs in the Spanish interface text, not in the gloss.",
+     "fix_gn": "Akã, tesa, tĩ, juru!",
+     "fix_es": "¡Cabeza, ojos, nariz, boca! (tocalos mientras cantás)",
+     "confidence": "medium",
+     "evidence": "akã 'cabeza', tesa 'ojo' (absolute form of the relational t-/r-/h- stem), tĩ 'nariz', juru 'boca'. Nothing in the string means 'tocar' (pokóke / epoko) or 'cantar' (purahéi). Other say-phrases put instructions in parentheses, e.g. '(decí tu edad)'."
+    }
+   ],
+   "reasons": [
+    {
+     "real": false,
+     "confidence": "medium",
+     "best_gn": "Akã, tesa, tĩ, juru!",
+     "best_es": "Cabeza, ojos, nariz, boca: tocalos mientras cantás.",
+     "reason": "The Guarani is right: akã «cabeza», tesa «ojo(s)» (the absolute form of the relational stem), tĩ «nariz», juru «boca». The gloss translates those four words exactly. The instruction comes after a colon and is clearly separate, so nothing suggests that the Guarani means «tocar» or «cantar». Putting the instruction in parentheses, as in «¡Cabeza, ojos, nariz, boca! (tocalos mientras cantás)», would match the project's other prompts and is a fair style change. It is not a meaning error a Guarani teacher would correct.",
+     "sources": [
+      "Guasch & Ortiz: akã, tesa, tĩ, juru",
+      "Krivoshein de Canese & Acosta, Ñe'ẽryru",
+      "tp-grades.js line 75"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Akã, tesa, tĩ, juru!",
+     "best_es": "¡Cabeza, ojos, nariz, boca! (tocalos mientras cantás)",
+     "reason": "The Guarani is correct: akã, tesa (the absolute form of the relational stem), tĩ and juru all have the right tildes and no accents, and the exclamation uses the closing sign only, as the project does. The gloss in the file is 'Cabeza, ojos, nariz, boca: tocalos mientras cantás.' (the reviewer quoted it slightly wrong). After the colon the gloss goes on with words the Guarani does not say ('touch them while you sing'; nothing in the phrase means poko or purahéi). A child or adult matching gloss to phrase could take part of the Guarani for that instruction. The project marks instructions with parentheses elsewhere, and the Spanish exclamation needs both signs. One caveat: tesa can mean 'ojo' or 'ojos', so 'ojos' is fine.",
+     "sources": [
+      "project/tp-grades.js line 75 and line 106 (parenthesised instruction convention)",
+      "Vocabulary: akã cabeza, tesa ojo, tĩ nariz, juru boca"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Akã, tesa, tĩ, juru!",
+     "best_es": "¡Cabeza, ojos, nariz, boca! (tocalos mientras cantás)",
+     "reason": "The Guarani is correct: akã «cabeza», tesa «ojo(s)» (absolute form, no plural needed), tĩ «nariz», juru «boca», with the closing exclamation sign the project uses for Guarani. The gloss, though, runs a translation and an instruction together after a colon («…: tocalos mientras cantás.»). A child or parent matching gloss to phrase could take the instruction as part of the meaning of the Guarani. The project's other say-phrases put instructions in parentheses, e.g. «(decí tu edad)». The gloss also drops the Spanish exclamation that the Guarani «!» calls for, and the project writes Spanish with both signs. The proposed gloss fixes both points and leaves the Guarani unchanged.",
+     "sources": [
+      "tp-grades.js line 75 (pre u2 n3)",
+      "tp-grades.js lines 106 and 129: instructions in parentheses",
+      "Project style rule: Spanish with ¡! / ¿?"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "g288",
+   "gn": "Kóva ha'e mborevi.",
+   "fix_gn": "Kóva ha'e mborevi. Oiko ka'aguýpe.",
+   "fix_es": "Este es el tapir. Vive en el monte.",
+   "status": "confirmed",
+   "votes": "3/3",
+   "claims": [
+    {
+     "lens": "form",
+     "kind": "meaning",
+     "severity": "likely-error",
+     "problem": "The spelling is correct, but the Guarani only says «Este es el tapir.» The second sentence of the gloss, «Vive en el monte.», has no Guarani in the string, so a child who reads both lines thinks the Guarani says more than it does.",
+     "fix_gn": "Kóva ha'e mborevi. Oiko ka'aguýpe.",
+     "fix_es": "Este es el tapir. Vive en el monte.",
+     "confidence": "high",
+     "evidence": "oiko «vive» (3rd person of iko). ka'aguy «monte» + -pe takes ka'aguýpe, with the accent kept on the stressed syllable before the suffix (as in ysyrýpe on page 3)."
+    },
+    {
+     "lens": "meaning",
+     "kind": "meaning",
+     "severity": "error",
+     "problem": "The gloss has a second sentence, «Vive en el monte», that the Guarani does not say. The child reads two sentences in Spanish but only one in Guarani. (The copula ha'e is common in school texts, so it can stay. «Kóva mborevi.» would also be correct.)",
+     "fix_gn": "Kóva ha'e mborevi. Oiko ka'aguýpe.",
+     "fix_es": "Este es el tapir. Vive en el monte.",
+     "confidence": "high",
+     "evidence": "oiko «vive» (o- + iko), ka'aguy «monte» + -pe → ka'aguýpe. The stress stays on gu, so it takes an accent before the suffix, as in ysyrýpe."
+    }
+   ],
+   "reasons": [
+    {
+     "real": true,
+     "confidence": "high",
+     "best_gn": "Kóva ha'e mborevi. Oiko ka'aguýpe.",
+     "best_es": "Este es el tapir. Vive en el monte.",
+     "reason": "The Guarani spelling is correct, but the gloss has a second sentence («Vive en el monte») that the Guarani does not say, so the child sees more in Spanish than in Guarani. The fix is to add «Oiko ka'aguýpe.» oiko is the normal 3rd-person form of iko «vivir». ka'aguy is stressed on its last syllable, so before the unstressed -pe the stress mark has to be written: ka'aguýpe, which is the attested school spelling. Dropping the second Spanish sentence would also fix it, but this page is the story's setup, so the Guarani should carry it. «Kóva ha'e mborevi» with the copula ha'e is accepted in school texts.",
+     "sources": [
+      "Guasch & Ortiz, Diccionario castellano-guaraní / guaraní-castellano (iko, ka'aguy)",
+      "Krivoshein de Canese & Acosta, Diccionario guaraní-español (ka'aguy, -pe)",
+      "Academia de la Lengua Guaraní, Gramática Guaraní (stress on words with atonic suffixes)",
+      "tp-sky.js story rape page 1"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "high",
+     "best_gn": "Kóva ha'e mborevi. Oiko ka'aguýpe.",
+     "best_es": "Este es el tapir. Vive en el monte.",
+     "reason": "The spelling of «Kóva ha'e mborevi.» is correct: kóva has an accent because the stress is not on the last syllable, and ha'e is acceptable. The problem is that the gloss adds a second sentence, «Vive en el monte», that the Guarani does not have. The proposed fix follows the rules. Oiko is the 3rd person of iko. Ka'aguy takes the unstressed suffix -pe and keeps its stress on «guy», so it is written ka'aguýpe, the same pattern as ysyrýpe on page 3. The other fix, cutting the gloss to «Este es el tapir.», would lose the forest scene, so adding the Guarani is better.",
+     "sources": [
+      "ALG Gramática Oficial: accent mark on the stressed syllable before an unstressed suffix (-pe)",
+      "tp-sky.js __tpStories.rape page 1 (scene: forest)",
+      "project usage: ysyrýpe on page 3"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "high",
+     "best_gn": "Kóva ha'e mborevi. Oiko ka'aguýpe.",
+     "best_es": "Este es el tapir. Vive en el monte.",
+     "reason": "The Guarani spelling is correct. The problem is the gloss, which has a second sentence («Vive en el monte.») with no Guarani under it. The story screen shows the Guarani line in large type with the Spanish right below, so the child takes both lines as the same text. A teacher would correct that. Adding «Oiko ka'aguýpe.» fixes it and keeps the story as written. It is easy for young readers: oiko is the 3rd person of iko, and ka'aguýpe has the accent because stress stays on gu once -pe is added. Children have already met ka'aguýpe in the lesson «Mymba ka'aguýpe» in tp-grades.js. Both reviewers proposed the same fix, and it is correct. Trimming the gloss to «Este es el tapir.» would also be acceptable, but it would drop story content.",
+     "sources": [
+      "tp-sky.js __tpStories.rape.pages[0]",
+      "Story.dc.html lines 91-92 (gn shown above es)",
+      "tp-grades.js lesson «Mymba ka'aguýpe»",
+      "Academia de la Lengua Guaraní orthography: accent on the non-final stressed vowel before a suffix"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "g290",
+   "gn": "Opa pyhare oho ysyrýpe.",
+   "fix_gn": "Opa pyhare oho ysyrýpe hoy'u hag̃ua.",
+   "fix_es": "Todas las noches va al arroyo a tomar agua.",
+   "status": "confirmed",
+   "votes": "3/3",
+   "claims": [
+    {
+     "lens": "form",
+     "kind": "meaning",
+     "severity": "likely-error",
+     "problem": "The Guarani says «Todas las noches va al arroyo.» It has nothing for «a tomar agua», which the gloss adds. The spelling (ysyrýpe) is correct.",
+     "fix_gn": "Opa pyhare oho ysyrýpe hoy'u haguã.",
+     "fix_es": "Todas las noches va al arroyo a tomar agua.",
+     "confidence": "high",
+     "evidence": "Purpose is marked with haguã: hoy'u haguã «para tomar agua» (y'u «tomar agua», 3rd person hoy'u)."
+    },
+    {
+     "lens": "meaning",
+     "kind": "meaning",
+     "severity": "error",
+     "problem": "The gloss says «a tomar agua», but the Guarani only says «todas las noches va al arroyo». The purpose clause is missing.",
+     "fix_gn": "Opa pyhare oho ysyrýpe oy'u hag̃ua.",
+     "fix_es": "Todas las noches va al arroyo a tomar agua.",
+     "confidence": "high",
+     "evidence": "y'u «tomar agua» → oy'u «toma agua». A purpose clause is built with the postposition hag̃ua «para», as in oho oy'u hag̃ua «va a tomar agua»."
+    }
+   ],
+   "reasons": [
+    {
+     "real": true,
+     "confidence": "high",
+     "best_gn": "Opa pyhare oho ysyrýpe hoy'u haguã.",
+     "best_es": "Todas las noches va al arroyo a tomar agua.",
+     "reason": "The Guarani only says «todas las noches va al arroyo». The purpose «a tomar agua» in the gloss has no Guarani. y'u «tomar agua» conjugates ahy'u, rehy'u, hoy'u, so the 3rd person is hoy'u. «oy'u», which one reviewer proposed, is a less careful form. Purpose is marked with haguã (MEC textbooks) or hag̃ua (Academia spelling); both are accepted, so use whichever the project uses elsewhere. ysyrýpe is spelled correctly.",
+     "sources": [
+      "Guasch & Ortiz, Diccionario (y'u: ahy'u, rehy'u, hoy'u)",
+      "Krivoshein de Canese & Acosta, Diccionario guaraní-español (y'u; haguã)",
+      "Academia de la Lengua Guaraní, Gramática Guaraní (hag̃ua, purpose postposition)",
+      "tp-sky.js story rape page 3"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "high",
+     "best_gn": "Opa pyhare oho ysyrýpe hoy'u hag̃ua.",
+     "best_es": "Todas las noches va al arroyo a tomar agua.",
+     "reason": "«Opa pyhare oho ysyrýpe» is correct but only means «Todas las noches va al arroyo». The purpose «a tomar agua» is missing. Y'u «tomar agua» is an h- verb in the school paradigm (ahy'u, rehy'u, hoy'u, jahy'u), so the 3rd person is hoy'u. Reviewer 2's «oy'u» is a colloquial form and not the school form. Purpose is marked with hag̃ua, which is how the Academia writes it. «haguã» is a widely used variant in MEC materials, so either spelling is acceptable, but use one consistently.",
+     "sources": [
+      "ALG Gramática Oficial / Diccionario: hag̃ua (posposición de finalidad)",
+      "School conjugation of y'u: ahy'u, rehy'u, hoy'u",
+      "tp-sky.js __tpStories.rape page 3"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "high",
+     "best_gn": "Opa pyhare oho ysyrýpe hoy'u hag̃ua.",
+     "best_es": "Todas las noches va al arroyo a tomar agua.",
+     "reason": "The original Guarani is correct, but it only says «Todas las noches va al arroyo»; the gloss adds «a tomar agua», which the Guarani does not say. Adding a purpose clause fixes it. y'u «tomar agua» is an h- verb (ay'u, rey'u, hoy'u), so school materials use hoy'u in the 3rd person, as reviewer 1 proposed. Reviewer 2's oy'u is heard in speech, but it is not the standard school form. I write the postposition hag̃ua as in Academia materials; haguã is a widely used variant and also acceptable. Trimming the gloss to «Todas las noches va al arroyo.» would also be correct, but it would drop the story's point (the path between home and water).",
+     "sources": [
+      "tp-sky.js __tpStories.rape.pages[2] and credit line (sendero entre su casa y el agua)",
+      "Standard conjugation of y'u: ay'u, rey'u, hoy'u",
+      "Academia de la Lengua Guaraní / MEC: purpose postposition hag̃ua (variant haguã)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "g292",
+   "gn": "Jasy ombohesape tape.",
+   "fix_gn": "Jasy ombohesape tape, ha umi yvyra rogue piru omimbi.",
+   "fix_es": "La luna ilumina el camino, y las hojas secas brillan.",
+   "status": "confirmed",
+   "votes": "3/3",
+   "claims": [
+    {
+     "lens": "form",
+     "kind": "meaning",
+     "severity": "likely-error",
+     "problem": "The Guarani only says «La luna ilumina el camino.» The second half of the gloss, «las hojas secas brillan», is not in the string. That image is the point of the story (it is in the credit line from Servín), so it should either be said in Guarani or be dropped from the gloss.",
+     "fix_gn": "Jasy ombohesape tape, ha togue piru ojajái.",
+     "fix_es": "La luna ilumina el camino, y las hojas secas brillan.",
+     "confidence": "medium",
+     "evidence": "ombohesape «ilumina» is correct (mbo- + hesape). The relational noun -ogue «hoja» takes the absolute form togue. piru «seco»; ojajái «brilla, resplandece»."
+    },
+    {
+     "lens": "meaning",
+     "kind": "meaning",
+     "severity": "error",
+     "problem": "The Guarani only says «La luna ilumina el camino». The second half of the gloss, «las hojas secas brillan», has no Guarani, and that half is the key image of the story.",
+     "fix_gn": "Jasy ombohesape tape, ha yvyra rogue piru omimbi.",
+     "fix_es": "La luna ilumina el camino, y las hojas secas brillan.",
+     "confidence": "high",
+     "evidence": "togue «hoja» (relational: yvyra rogue «hoja de árbol»), piru «seco», omimbi «brilla». ombohesape is mbo- + tesape «luz», which means «ilumina»."
+    }
+   ],
+   "reasons": [
+    {
+     "real": true,
+     "confidence": "high",
+     "best_gn": "Jasy ombohesape tape, ha umi yvyra rogue piru omimbi.",
+     "best_es": "La luna ilumina el camino, y las hojas secas brillan.",
+     "reason": "«Jasy ombohesape tape» is correct and means «La luna ilumina el camino» (mbo- + hesape). The second half of the gloss, «las hojas secas brillan», has no Guarani, and that image is the point of the story. Add it with attested forms. yvyra rogue «hoja de árbol» is the relational noun togue/rogue/hogue. piru «seco» comes after the noun. omimbi «brilla» is already used in the project (Mbyja guasu omimbi!). umi gives the plural «las hojas». The other proposals are also acceptable: «togue piru» works as well as «yvyra rogue piru», and ojajái is a less common choice than omimbi.",
+     "sources": [
+      "Guasch & Ortiz, Diccionario (togue/rogue/hogue; piru; mimbi; tesape/hesape)",
+      "Krivoshein de Canese & Acosta, Diccionario guaraní-español (mbohesape, mimbi)",
+      "Academia de la Lengua Guaraní, Gramática Guaraní (relational prefixes t-/r-/h-)",
+      "tp-sky.js (story page 5 and the credit line from Blas Servín; omimbi in other screens)"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "high",
+     "best_gn": "Jasy ombohesape tape, ha umi togue piru omimbi.",
+     "best_es": "La luna ilumina el camino, y las hojas secas brillan.",
+     "reason": "«Jasy ombohesape tape.» is correct. Ombohesape is the causative mbo- + hesape (from tesape «claridad») and means «ilumina». Tape keeps its absolute t- form. The gloss also says «las hojas secas brillan», which the Guarani lacks, and that is the central image of the story. In the fix, -ogue «hoja» is a relational noun and takes the absolute form togue when it has no possessor. Piru means «seco». Omimbi «brilla» is the verb the project already uses (Mbyja guasu omimbi!). Umi gives the plural «las». Reviewer 2's «yvyra rogue» is also correct, and «ojajái» is acceptable, but omimbi matches the rest of the game.",
+     "sources": [
+      "Relational nouns t-/r-/h-: togue / yvyra rogue / hogue",
+      "causative mbo- + tesape → ombohesape",
+      "project usage: «Mbyja guasu omimbi!»",
+      "tp-sky.js __tpStories.rape page 5 and credit line"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "high",
+     "best_gn": "Jasy ombohesape tape, ha yvyra rogue piru omimbi.",
+     "best_es": "La luna ilumina el camino y las hojas secas brillan.",
+     "reason": "«Jasy ombohesape tape» is correct (mbo- + tesape gives ombohesape, «ilumina»). But the gloss's second half, «las hojas secas brillan», has no Guarani, and that image is the key to the story (the credit line from Servín). Reviewer 2's fix is the better one. «yvyra rogue» (relational togue/rogue/hogue) is the usual school form for «hoja de árbol», piru works here as an attributive adjective («seca»), and omimbi «brilla» is the verb children already know from this game (the Shine screen, «Mbyja guasu omimbi!»). Reviewer 1's bare absolute «togue piru ojajái» uses a rarer verb that children have not met, and bare togue reads less naturally to a child. In the Spanish, a plain «y» without the colon matches the Guarani «ha».",
+     "sources": [
+      "tp-sky.js __tpStories.rape.pages[4] and credit line",
+      "Shine.dc.html and tp-course.js (omimbi already used)",
+      "Relational noun togue/rogue/hogue; t-/r-/h- norm given in the brief"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "g93",
+   "gn": "Mboy ary reguereko?",
+   "fix_gn": "Mboy arýpa reguereko?",
+   "fix_es": "¿Cuántos años tenés?",
+   "status": "confirmed",
+   "votes": "2/3",
+   "claims": [
+    {
+     "lens": "critic",
+     "kind": "grammar",
+     "severity": "likely-error",
+     "problem": "A question with an interrogative word takes the question suffix -pa in school Guarani (Mboy arýpa…?). The app already uses it in Mboýpa? (g69) and Mba'éichapa nde réra? (g19), but leaves it off here. The same string is the say-phrase in g1 u1 n2 and g1 u5 n3, so children practise it twice.",
+     "fix_gn": "Mboy arýpa reguereko?",
+     "fix_es": "¿Cuántos años tenés?",
+     "confidence": "medium",
+     "evidence": "tp-grades.js lines 106 and 129. Compare g69 'Mboýpa?' and g19 'Mba'éichapa nde réra?', both with -pa. Rereko/reguereko are both acceptable. Only the missing -pa is at issue."
+    }
+   ],
+   "reasons": [
+    {
+     "real": false,
+     "confidence": "medium",
+     "best_gn": "Mboy ary reguereko?",
+     "best_es": "¿Cuántos años tenés?",
+     "reason": "In Paraguayan Guarani the interrogative word mboy already marks the question. The suffix -pa is frequent with question words, but it is not obligatory. Questions like Mboy ary reguereko? / Mboy ary rereko?, Moõ reho? and Mba'e rejapo? are everyday speech and also appear in teaching materials. A teacher would accept the string. Mboy arýpa reguereko? is also correct and is common in school texts. Adding -pa would match g19 and g69, so it is a consistency choice, not a correction. At most it is a variant, and the -pa form is not clearly the only school form. If the project adds -pa, it must write arýpa with the accent, as the critic proposed.",
+     "sources": [
+      "Guasch, El idioma guaraní: -pa as the interrogative particle, usual but not indispensable with interrogative words",
+      "Academia de la Lengua Guaraní, Gramática Guaraní (interrogative particles)",
+      "Common Paraguayan usage; an interview transcript (epub.uni-regensburg.de) has the colloquial age question without -pa: 'Mboy año nde eguereko?'",
+      "Web search found no page for either exact phrase"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Mboy arýpa reguereko?",
+     "best_es": "¿Cuántos años tenés?",
+     "reason": "In school Guarani, a question that starts with a question word (mboy, mba'e, máva, moõ) takes the question suffix -pa. The app already does this in Mboýpa? (g69) and Mba'éichapa? (g19). Speech often leaves -pa out, but a teacher would add it in a written model phrase that children practise twice (tp-grades.js lines 106 and 129). The fix keeps the other rules. -pa is unstressed, so the stress stays on the last syllable of ary and is now not the last syllable of the word, which is why the accent is written (arýpa, like mboy → mboýpa). Mboy ary rerekópa? would also be correct. Rereko and reguereko are both accepted.",
+     "sources": [
+      "Academia de la Lengua Guaraní, Gramática Guaraní (2018): question particles -pa/-piko with interrogative words",
+      "MEC orthography rule: accent on the stressed vowel when stress is not on the last syllable; unstressed suffixes (-pa, -va) shift the written accent (mboýpa, arýpa)",
+      "tp-grades.js lines 106, 128-129; g69 Mboýpa?, g19 Mba'éichapa nde réra?"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Mboy arýpa reguereko?",
+     "best_es": "¿Cuántos años tenés?",
+     "reason": "In school Guarani a question that starts with a question word marks the questioned part with -pa: Mboýpa?, Mba'éichapa?, Mávapa?. Speakers often drop -pa in casual talk, but this string is a model sentence that 1.º grado children repeat aloud twice (g1 u1 n2 and g1 u5 n3). A teacher would write it in the school form. When -pa is attached to ary, the stress stays on -ry and is now no longer on the last syllable, so the word is written arýpa. The fix also matches the app's own Mboýpa? (g69) and Mba'éichapa nde réra? (g19). Reguereko and rereko are both acceptable, so that word stays.",
+     "sources": [
+      "tp-grades.js lines 106 and 129 (say-phrases)",
+      "tp-grades.js line 90: Mboýpa? (g69)",
+      "g19 Mba'éichapa nde réra?",
+      "Academia/MEC orthography: the accent is written when the stress is not on the last syllable (the -pa suffix is unstressed)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "g271",
+   "gn": "Eichu es un panal de avispas. Cuando reaparece en junio empieza el frío: para muchos, es el año nuevo guaraní. Los guaraní occidentales, del Chaco, le dicen Oñembyatyva, «los que se juntan».",
+   "fix_gn": "Eichu es un panal de avispas. Cuando reaparece en junio empieza el frío: para muchos, es el año nuevo guaraní. Los guaraní occidentales, del Chaco, le dicen Oñembyatýva, «los que se juntan».",
+   "fix_es": "(Spanish note) Eichu es un panal de avispas. Cuando reaparece en junio empieza el frío: para muchos, es el año nuevo guaraní. Los guaraní occidentales, del Chaco, le dicen Oñembyatýva, «los que se juntan».",
+   "status": "confirmed",
+   "votes": "3/3",
+   "claims": [
+    {
+     "lens": "critic",
+     "kind": "accent-tilde-puso",
+     "severity": "likely-error",
+     "problem": "In Oñembyatyva the suffix -va is unstressed, so the stress falls on -ty-. That syllable is not the last one, so the official orthography writes the accent: Oñembyatýva. The app accents the same pattern elsewhere: Mokõivéva, Ñe'ẽtéva.",
+     "fix_gn": "Eichu es un panal de avispas. Cuando reaparece en junio empieza el frío: para muchos, es el año nuevo guaraní. Los guaraní occidentales, del Chaco, le dicen Oñembyatýva, «los que se juntan».",
+     "fix_es": "(Spanish note) Eichu es un panal de avispas… le dicen Oñembyatýva, «los que se juntan».",
+     "confidence": "medium",
+     "evidence": "Compare g267 'Mokõivéva' and g247 'Ñe'ẽtéva', where -va is likewise unstressed and the accent is written."
+    }
+   ],
+   "reasons": [
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Eichu es un panal de avispas. Cuando reaparece en junio empieza el frío: para muchos, es el año nuevo guaraní. Los guaraní occidentales, del Chaco, le dicen Oñembyatýva, «los que se juntan».",
+     "best_es": "(Spanish note) Eichu es un panal de avispas. Cuando reaparece en junio empieza el frío: para muchos, es el año nuevo guaraní. Los guaraní occidentales, del Chaco, le dicen Oñembyatýva, «los que se juntan».",
+     "reason": "The verb oñembyaty («se juntan») is stressed on its last syllable, -ty. The nominalizer -va is an unstressed suffix, so the stress stays on -ty-, which is now the second-to-last syllable. The official ALG/MEC rule writes the acute accent when stress is not on the last syllable. That gives Oñembyatýva, like ohóva, oikóva, and the app's own Mokõivéva and Ñe'ẽtéva. My searches did not find the name attested in any spelling. The source may have used an older or Chaco orthography, but a Paraguayan school text in the official orthography would write the accent. Eichu itself needs no accent, since its stress is on the last syllable.",
+     "sources": [
+      "Academia de la Lengua Guaraní, Gramática Guaraní / Guaraní Ñe'ẽtekuatia (accent rule; -va as an unstressed suffix)",
+      "Guasch & Ortiz, Diccionario guaraní-castellano (ñembyaty 'juntarse, reunirse')",
+      "Project usage: g267 Mokõivéva, g247 Ñe'ẽtéva",
+      "Última Hora, 'Blas Servín, un guía del cielo guaraní' (Eichu; does not mention Oñembyatyva)"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "high",
+     "best_gn": "Eichu es un panal de avispas. Cuando reaparece en junio empieza el frío: para muchos, es el año nuevo guaraní. Los guaraní occidentales, del Chaco, le dicen Oñembyatýva, «los que se juntan».",
+     "best_es": "Eichu es un panal de avispas. Cuando reaparece en junio empieza el frío: para muchos, es el año nuevo guaraní. Los guaraní occidentales, del Chaco, le dicen Oñembyatýva, «los que se juntan».",
+     "reason": "The suffix -va is unstressed. In oñembyaty + -va the stress stays on -ty-, which is no longer the last syllable, so the official orthography requires the accent: Oñembyatýva. Mokõivéva (g267) and Ñe'ẽtéva (g247) follow the same pattern. The rest of the word is correct: o- (3rd person) plus ñe- (reflexive), which is nasal before the nasal stem mbyaty. The capital is right because it is a name.",
+     "sources": [
+      "Academia de la Lengua Guaraní / MEC orthography: acute accent when stress is not on the last syllable; unstressed suffix -va",
+      "g267 Mokõivéva, g247 Ñe'ẽtéva",
+      "tp-sky.js eichu note"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "high",
+     "best_gn": "Eichu es un panal de avispas. Cuando reaparece en junio empieza el frío: para muchos, es el año nuevo guaraní. Los guaraní occidentales, del Chaco, le dicen Oñembyatýva, «los que se juntan».",
+     "best_es": "(Spanish note) Eichu es un panal de avispas. Cuando reaparece en junio empieza el frío: para muchos, es el año nuevo guaraní. Los guaraní occidentales, del Chaco, le dicen Oñembyatýva, «los que se juntan».",
+     "reason": "Oñembyaty means «se juntan». The relativizer -va is unstressed, so the stress stays on -ty-, which is no longer the last syllable. The official orthography therefore writes the accent: Oñembyatýva, just like oikóva, Mokõivéva (g267) and Ñe'ẽtéva (g247) in the app. The name comes from Chaco Guarani, but this text uses the Paraguayan school orthography, so the accent is required. The rest of the note is Spanish and is fine.",
+     "sources": [
+      "tp-sky.js eichu note",
+      "g267 Mokõivéva",
+      "g247 Ñe'ẽtéva",
+      "Academia/MEC accent rule for words stressed before the last syllable"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "g124",
+   "gn": "Po ha py",
+   "fix_gn": "Nambi, po ha py",
+   "fix_es": "La oreja, las manos y los pies",
+   "status": "confirmed",
+   "votes": "2/3",
+   "claims": [
+    {
+     "lens": "critic",
+     "kind": "meaning",
+     "severity": "likely-error",
+     "problem": "The night title 'Po ha py' / 'Las manos y los pies' includes nambi (oreja) among its words. An ear is not a hand or a foot, so the title does not match what the night teaches. This is the same mismatch as in the preschool body unit (g29).",
+     "fix_gn": "Nambi, po ha py",
+     "fix_es": "La oreja, las manos y los pies",
+     "confidence": "medium",
+     "evidence": "tp-grades.js line 117: { gn: 'Po ha py', es: 'Las manos y los pies', words: [nambi 'oreja', po 'mano', py 'pie'] }"
+    }
+   ],
+   "reasons": [
+    {
+     "real": false,
+     "confidence": "medium",
+     "best_gn": "Po ha py",
+     "best_es": "Las manos y los pies",
+     "reason": "The Guarani and the gloss match exactly: po ha py = las manos y los pies, correct spelling and grammar. The title not naming nambi is a lesson-design matter, not a language error. The neighbouring title Akã ha tesa likewise does not list tĩ and juru. A teacher would not correct the Guarani. If the project wants the title to cover the ear, Nambi, po ha py («La oreja, las manos y los pies») would also be correct. Another option is to swap nambi into the Akã ha tesa night.",
+     "sources": [
+      "Guasch & Ortiz, Diccionario guaraní-castellano (po 'mano', py 'pie', nambi 'oreja')",
+      "tp-grades.js lines 116-117 (g1 u3 nights 1-2)"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Nambi, po ha py",
+     "best_es": "La oreja, las manos y los pies",
+     "reason": "The Guarani and its gloss agree, and Po ha py has no spelling or grammar problem. But the title is wrong for the lesson: the night teaches nambi (ear), po (hand) and py (foot), and an ear is neither a hand nor a foot. A teacher would correct a lesson title that leaves out one of its three words. The fix lists all three, with a comma and ha before the last item. The words are lowercase and start the title without an article, as in the neighbouring title Akã ha tesa. Another fix would be to move nambi to the Akã ha tesa night, which is about the head.",
+     "sources": [
+      "tp-grades.js line 117: { gn: 'Po ha py', es: 'Las manos y los pies', words: nambi, po, py }",
+      "tp-grades.js line 116: neighbouring title 'Akã ha tesa'"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Nambi, po ha py",
+     "best_es": "La oreja, las manos y los pies",
+     "reason": "The Guarani and the Spanish agree with each other, but the night teaches nambi (oreja) along with po and py. A title that says only «Las manos y los pies» does not match the content, and a child would see an ear under a hands-and-feet heading. Nambi is the everyday word children know for the outer ear, and the comma plus ha follows normal list style. The proposed title is correct and natural, and it keeps the lesson's words. The other way to fix it, moving nambi to the head night (Akã ha tesa), would change the words, so retitling is the lighter fix.",
+     "sources": [
+      "tp-grades.js line 117 (g1 u3 n2: nambi, po, py)",
+      "tp-grades.js line 116 (Akã ha tesa night)"
+     ]
+    }
+   ]
+  }
+ ],
+ "disputed": [
+  {
+   "id": "g315",
+   "gn": "Mborevi oguata akóinte pe tape rupi.",
+   "fix_gn": "Mborevi oguata akóinte hape rupi.",
+   "fix_es": "El tapir camina siempre por su camino.",
+   "status": "disputed",
+   "votes": "1/3",
+   "claims": [
+    {
+     "lens": "meaning",
+     "kind": "meaning",
+     "severity": "likely-error",
+     "problem": "The gloss says «por el mismo camino», but the Guarani says «pe tape rupi», «por ese/el camino»: nothing in it means «mismo». Standing alone, «pe tape» also has nothing to refer back to. The possessive «hape», «su camino», says what is meant and ties in with the name Mborevi Rape.",
+     "fix_gn": "Mborevi oguata akóinte hape rupi.",
+     "fix_es": "El tapir camina siempre por su camino.",
+     "confidence": "medium",
+     "evidence": "Relational tape: tape «camino», che rape «mi camino», hape «su camino» (as in Mborevi Rape). «El mismo camino» would need something like «peteĩ tape rupínte» or «tape peteĩchagua rupi». Another fix is to keep «pe tape rupi» and change the gloss to «por ese camino»."
+    }
+   ],
+   "reasons": [
+    {
+     "real": false,
+     "confidence": "medium",
+     "best_gn": "Mborevi oguata akóinte pe tape rupi.",
+     "best_es": "El tapir camina siempre por el mismo camino.",
+     "reason": "The sentence is grammatical and spelled correctly. Akóinte 'siempre' is accented on the stressed ó, which is not the last syllable. Oguata is 3rd person of guata, and rupi means 'por'. «Pe tape» with akóinte means 'always along that (known) path', and «por el mismo camino» is a fair free gloss of that idea: tapirs keep to their usual trails. A teacher would not mark it wrong. The reviewer's «hape rupi» ('por su camino') is also good and would echo the title Mborevi Rape, but it is a style choice, not a correction. A closer literal gloss would be «por ese camino».",
+     "sources": [
+      "Guasch & Ortiz: akóinte 'siempre', tape/rape/hape 'camino', rupi 'por'",
+      "Krivoshein de Canese & Acosta, Ñe'ẽryru: akóinte",
+      "project/Mascot.dc.html:26"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Mborevi oguata akóinte hape rupi.",
+     "best_es": "El tapir camina siempre por su camino.",
+     "reason": "Mascot.dc.html:26 glosses the line as «por el mismo camino», but «pe tape rupi» only means «por ese/el camino»: nothing in it means «mismo». tape is a relational noun (tape, che rape, hape), as in the title Mborevi Rape, so «hape rupi» («por su camino») is correct and ties in with the name. The rest is correct: o-guata 3rd person, akóinte has its accent because stress is not on the last syllable, and rupi follows the noun. Another fix is to keep the Guarani and change the gloss to «por ese camino».",
+     "sources": [
+      "Mascot.dc.html:26",
+      "Relational noun tape/rape/hape (Academia grammar)",
+      "Game title Mborevi Rape"
+     ]
+    },
+    {
+     "real": false,
+     "confidence": "medium",
+     "best_gn": "Mborevi oguata akóinte pe tape rupi.",
+     "best_es": "El tapir camina siempre por el mismo camino.",
+     "reason": "The sentence is grammatical and natural: oguata 'camina', akóinte 'siempre' (correct accent), pe tape rupi 'por ese/el camino'. On the Mascot screen it comes right after the heading 'Mborevi Rape', so 'pe tape' refers back to that path. With 'akóinte', 'siempre por ese camino' means in context that he always takes the same path. So the gloss is a fair free translation, not a mistranslation a teacher would mark. 'Mborevi oguata akóinte hape rupi' ('por su camino') is a good optional improvement that echoes the relational form tape/hape from Mborevi Rape, but the original is not an error.",
+     "sources": [
+      "Mascot.dc.html:25-26",
+      "tp-sky.js:8 (Mborevi Rape lore: el tapir camina siempre por el mismo sendero)",
+      "relational tape / che rape / hape"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "g59",
+   "gn": "Sa'ykuéra",
+   "fix_gn": "Opaite sa'y",
+   "fix_es": "Todos los colores",
+   "status": "disputed",
+   "votes": "1/3",
+   "claims": [
+    {
+     "lens": "meaning",
+     "kind": "meaning",
+     "severity": "likely-error",
+     "problem": "Sa'ykuéra only means «los colores» (sa'y plus the plural -kuéra). It does not say «todos», so the gloss «Todos los colores» claims more than the Guarani says. It also hardly differs from the unit title Sa'y «Los colores». To say «todos los colores» the Guarani needs opaite.",
+     "fix_gn": "Opaite sa'y",
+     "fix_es": "Todos los colores",
+     "confidence": "medium",
+     "evidence": "-kuéra is a plain plural (mymbakuéra «los animales»). «Todos» is opaite or entero (opaite mitã «todos los niños»), so opaite sa'y = «todos los colores». The other fix is to keep Sa'ykuéra and change the gloss to «Los colores», but that would repeat the unit title g50."
+    }
+   ],
+   "reasons": [
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Opaite sa'y",
+     "best_es": "Todos los colores",
+     "reason": "Sa'ykuéra is spelled correctly. It is sa'y «color» plus the ordinary plural suffix -kuéra, so it means «los colores» and has no word for «todos». This is the title of night 3 of the Preescolar colors unit, where the child reviews all five colors (pytã, sa'yju, hovy, morotĩ, hũ). Every string is taught next to its Spanish gloss, so a child would learn -kuéra as «todos», and a teacher would correct that. In Paraguayan Guarani «todos» is opaite, placed before the noun (opaite mitã «todos los niños»). The fix is «Opaite sa'y» = «Todos los colores». Changing only the gloss to «Los colores» would also be correct, but then the title would repeat the unit title Sa'y «Los colores» (g50). This is a meaning mismatch in a title, not a grammar error, so I rate it medium confidence.",
+     "sources": [
+      "Guasch & Ortiz, Diccionario castellano-guaraní / guaraní-castellano: opaite «todo, todos»; -kuéra plural suffix",
+      "Krivoshein de Canese & Acosta, Diccionario guaraní-español: -kuéra «pluralizador»; opaite «todo»",
+      "Usage attested in a Guarani-language article (opaite = «todos»): https://www.lanacion.com.py/gran-diario-domingo/2025/08/24/jaekuaa-guarani-haeha-nande-rekovesa/",
+      "Paraguayan Guarani Swadesh list (color terms sa'yju, morotĩ, hũ): https://en.wiktionary.com/wiki/Appendix:Guaran%C3%AD_Swadesh_list",
+      "Project context: project/tp-grades.js lines 82-86"
+     ]
+    },
+    {
+     "real": false,
+     "confidence": "medium",
+     "best_gn": "Sa'ykuéra",
+     "best_es": "Todos los colores",
+     "reason": "The spelling is correct. Sa'y is an oral root, so it takes oral -kuéra and not -nguéra. The accent on -kuéra is right because the stress is not on the last syllable. The puso is in the right place, and the capital starts the title. The grammar is also correct: noun + plural -kuéra. The reviewer is right that -kuéra is a plural and not «todos». But this is the title of a review night that brings back all five colors from the unit (pytã, sa'yju, hovy, morotĩ, hũ). Spanish titles are free renderings throughout the file, and «Todos los colores» is a normal title-level gloss for a plural whose sense here is the whole set. It is not a mistranslation a teacher would mark. The proposed «Opaite sa'y» is correct too: opaite is the right word for «todo/todos» with things, and opavave is used for people. If a stricter word-for-word match is wanted, «Opaite sa'y» (or «Opaite sa'ykuéra»), glossed «Todos los colores», is a valid optional change. The current string is not an error.",
+     "sources": [
+      "Academia de la Lengua Guaraní, Gramática Guaraní (2018): plural -kuéra/-nguéra chosen by nasal harmony; accent rule for non-final stress",
+      "MEC achegety and orthography rules (Ley 4251/10 framework)",
+      "Project context: tp-grades.js line 85, Preescolar unit 4 night 3 lists all five colors under this title; unit title g50 is Sa'y «Los colores»"
+     ]
+    },
+    {
+     "real": false,
+     "confidence": "medium",
+     "best_gn": "Sa'ykuéra",
+     "best_es": "Todos los colores",
+     "reason": "Sa'ykuéra is correct: sa'y plus the plural suffix -kuéra, with the accent on -kuéra and the puso in place. It is also a natural title. The reviewer is right that -kuéra is a plain plural and that the literal meaning is «los colores». But this is the title of the third night of the Preescolar colours unit (tp-grades.js line 85). That night brings back all five colours from nights 1 and 2: pytã, sa'yju, hovy, morotĩ and hũ. So «Todos los colores» is a fair free gloss of a review title, not a mistranslation, and it will not mislead a child about what any word means. Preescolar children do not read the gloss anyway; it is there for adults. The plural title also differs from the unit title Sa'y, which is singular. The proposed «Opaite sa'y» is correct and natural, but it is no clear improvement. It adds opaite, a word this grade has not met and that no other entry practises, and it drops the -kuéra plural, which is a useful pattern for the child to hear. A teacher would accept the original as it is. At most they might tighten the gloss to «Los colores», which would repeat the unit title, so that is not worth it.",
+     "sources": [
+      "project/tp-grades.js (pre unit 4, lines 81-86)",
+      "tools/audit/batch-13.json (entries g59, g50)",
+      "Guarani grammar: -kuéra as a nominal plural (mymbakuéra), opaite meaning 'todos'"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "g291",
+   "gn": "Oguata akóinte pe tape rupi.",
+   "fix_gn": "Oguata akóinte pe tape rupi.",
+   "fix_es": "Camina siempre por ese camino.",
+   "status": "disputed",
+   "votes": "1/3",
+   "claims": [
+    {
+     "lens": "form",
+     "kind": "meaning",
+     "severity": "likely-error",
+     "problem": "«pe tape» means «ese camino». The Guarani has no diminutive for «caminito» and nothing for «el mismo», so the gloss says more than the Guarani. Either add tape'i and voi («ese mismo caminito»), or make the gloss literal.",
+     "fix_gn": "Oguata akóinte upe tape'i rupi voi.",
+     "fix_es": "Camina siempre por ese mismo caminito.",
+     "confidence": "low",
+     "evidence": "tape'i «caminito» (diminutive -'i). voi after a demonstrative phrase gives «mismo» (upéva voi «eso mismo»). Spelling of akóinte and rupi is correct."
+    },
+    {
+     "lens": "meaning",
+     "kind": "meaning",
+     "severity": "likely-error",
+     "problem": "«pe tape» means «ese camino», not «el mismo caminito». The Guarani has nothing for «mismo» and no diminutive for «caminito». Either change the Guarani, or change the gloss to «Camina siempre por ese camino».",
+     "fix_gn": "Oguata akóinte upe tape'i rupínte.",
+     "fix_es": "Camina siempre por ese caminito, nada más.",
+     "confidence": "medium",
+     "evidence": "tape'i «caminito» (tape + -'i, diminutive). The suffix -nte «solamente» gives the idea of «siempre el mismo», as in rupínte. upe/pe are demonstratives meaning «ese»."
+    }
+   ],
+   "reasons": [
+    {
+     "real": false,
+     "confidence": "medium",
+     "best_gn": "Oguata akóinte pe tape rupi.",
+     "best_es": "Camina siempre por el mismo caminito.",
+     "reason": "The Guarani is grammatical and spelled correctly (akóinte, rupi). «Oguata akóinte pe tape rupi» means «camina siempre por ese camino», and in Paraguayan Guarani a native reader takes that as «siempre por el mismo camino». The gloss «el mismo caminito» is a free but faithful rendering: the diminutive is a matter of Spanish style and «mismo» is implied by akóinte with the demonstrative. A teacher would not mark this as wrong. If an exact match is wanted later, the gloss could be «Camina siempre por ese caminito», or tape'i and voi could be added («upe tape'i voi rupi»), but neither change is required.",
+     "sources": [
+      "Guasch & Ortiz, Diccionario (akóinte, pe/upe, rupi)",
+      "Krivoshein de Canese & Acosta, Diccionario guaraní-español (tape, -'i)",
+      "Mascot.dc.html, which glosses the same line as «El tapir camina siempre por el mismo camino»"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "medium",
+     "best_gn": "Oguata akóinte pe tape rupi.",
+     "best_es": "Camina siempre por ese camino.",
+     "reason": "The Guarani is correct: oguata, akóinte (akói + -nte, accented because the stress is not on the last syllable), pe tape rupi. But «pe tape» means «ese camino». There is no diminutive for «caminito» and no word for «el mismo», so the gloss says more than the Guarani. The fix that carries the least risk is to make the gloss literal. In context (page 3 just said he goes to the arroyo), «ese camino» already means the same path. If the story should keep «mismo caminito», «Oguata akóinte upe tape'i rupi voi.» also follows the rules (tape + diminutive -'i, voi «mismo» after the phrase). The reviewers' «rupínte» changes the meaning to «only by».",
+     "sources": [
+      "ALG Gramática Oficial: accent before the suffix -nte (akóinte)",
+      "diminutive -'i (tape'i)",
+      "tp-sky.js __tpStories.rape page 4 and credit line (Servín: «el mismo sendero»)"
+     ]
+    },
+    {
+     "real": false,
+     "confidence": "medium",
+     "best_gn": "Oguata akóinte pe tape rupi.",
+     "best_es": "Camina siempre por el mismo caminito.",
+     "reason": "The spelling is correct (akóinte, rupi). In context, «akóinte pe tape rupi» («siempre por ese camino») means walking the same path every time, so «el mismo» is a fair idiomatic rendering, not a misleading one. The Spanish diminutive «caminito» is an affectionate tone for children, not a change of meaning. A teacher would not mark this. Both proposed fixes are worse. «upe tape'i rupi voi» puts voi awkwardly after the postpositional phrase, and it sounds unnatural. «akóinte ... rupínte» says «only/always» twice. Optional: if exact matching is wanted, the gloss could become «Camina siempre por ese camino.», but that is not needed.",
+     "sources": [
+      "tp-sky.js __tpStories.rape.pages[3]",
+      "Blas Servín credit line in tp-sky.js (el mismo sendero)"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "g166",
+   "gn": "Mboy ary?",
+   "fix_gn": "Mboy arýpa?",
+   "fix_es": "¿Cuántos años?",
+   "status": "disputed",
+   "votes": "1/3",
+   "claims": [
+    {
+     "lens": "critic",
+     "kind": "grammar",
+     "severity": "variant",
+     "problem": "This night title is the short form of the question in g93. If g93 is corrected to Mboy arýpa…?, the title should follow it so the two match. As an elliptical title, Mboy ary? is acceptable.",
+     "fix_gn": "Mboy arýpa?",
+     "fix_es": "¿Cuántos años?",
+     "confidence": "low",
+     "evidence": "tp-grades.js line 128 (g1 u5 n3 title). Its say-phrase is g93. g69 'Mboýpa?' already uses -pa."
+    }
+   ],
+   "reasons": [
+    {
+     "real": false,
+     "confidence": "medium",
+     "best_gn": "Mboy ary?",
+     "best_es": "¿Cuántos años?",
+     "reason": "This is an elliptical lesson title, and Mboy ary? is natural and grammatical. The question word mboy is enough to make it a question. The change only matters if g93 is changed for consistency, and g93 is not an error, so this title is not one either. If the project adds -pa to g93, it could write Mboy arýpa? here to match, as a stylistic choice.",
+     "sources": [
+      "Guasch, El idioma guaraní (interrogatives)",
+      "Common Paraguayan usage"
+     ]
+    },
+    {
+     "real": true,
+     "confidence": "low",
+     "best_gn": "Mboy arýpa?",
+     "best_es": "¿Cuántos años?",
+     "reason": "This is a written question built on the question word mboy, so the same -pa rule applies as in g93. Mboýpa? (g69) is the app's own model for a short question title. The elliptical Mboy ary? is common in speech and could pass as a title, so this is a weak call. Still, a teacher would most likely want the title to match the corrected say-phrase (g93) and g69. The accent in arýpa is correct because -pa is unstressed.",
+     "sources": [
+      "Academia de la Lengua Guaraní, Gramática Guaraní: -pa in questions with interrogative words",
+      "tp-grades.js line 128 (g1 u5 n3 title), line 129 (say-phrase g93); g69 Mboýpa?"
+     ]
+    },
+    {
+     "real": false,
+     "confidence": "low",
+     "best_gn": "Mboy ary?",
+     "best_es": "¿Cuántos años?",
+     "reason": "This is a short night title, and Paraguayan speakers really do ask Mboy ary? in this clipped form. A teacher would not mark it wrong. If g93 is changed to Mboy arýpa reguereko?, matching the title to it (Mboy arýpa?) would be a good consistency edit, but it is optional, not a correction.",
+     "sources": [
+      "tp-grades.js line 128 (g1 u5 n3 title)",
+      "g69 Mboýpa? (pre u5 n3 title)"
+     ]
+    }
+   ]
+  }
+ ],
+ "refuted": [
+  {
+   "id": "g309",
+   "gn": "Guarani Ñe'ẽ ha Iñe'ẽporãhaipyre",
+   "proposed": [
+    "Guarani Ñe'ẽ ha iñe'ẽporãhaipyre"
+   ],
+   "why": [
+    "This is a descriptive phrase inside a Spanish sentence, not a proper name, yet it uses title case: the capital on «Iñe'ẽporãhaipyre» after «ha» comes from the Spanish or English title habit. «Guarani Ñe'ẽ» can keep its capitals because it is the name of the MEC subject. The spelling is correct: iñe'ẽ- is the 3rd-person form before a nasal stem, and ñe'ẽporãhaipyre means «ortografía»."
+   ]
+  },
+  {
+   "id": "g339",
+   "gn": "Mombe'u: Mborevi Rape",
+   "proposed": [
+    "Mombe'urã: Mborevi Rape"
+   ],
+   "why": [
+    "«Mombe'u» is mainly the verb/root «contar, relatar». The usual school word for a story (cuento) is «mombe'urã» or «mombe'upy». Also, the gloss «Cuento del cielo» adds «del cielo», which is not in the Guarani."
+   ]
+  },
+  {
+   "id": "g257",
+   "gn": "Emopu'ã ñe'ẽ",
+   "proposed": [
+    "Embojoaju ñe'ẽ"
+   ],
+   "why": [
+    "«Mopu'ã» means to lift up, stand up or erect, as in mopu'ã óga «levantar una casa». Teachers do not usually say it for putting syllables together into a word. School materials say «embojoaju» (uní) or «ejapo» (hacé) for this."
+   ]
+  },
+  {
+   "id": "g265",
+   "gn": "Guarani",
+   "proposed": [
+    "Guarani hetave"
+   ],
+   "why": [
+    "The gloss says «Más guaraní», but the Guarani only says «Guarani». It does not show that this track is for children who hear more Guarani at home."
+   ]
+  },
+  {
+   "id": "g240",
+   "gn": "Moõpa?",
+   "proposed": [
+    "Moõpa?"
+   ],
+   "why": [
+    "«Moõpa?» means only «¿Dónde?». The gloss adds «queda» and a subtitle, «Lugares y caminos», that the Guarani does not contain."
+   ]
+  },
+  {
+   "id": "g227",
+   "gn": "Y ha kamby",
+   "proposed": [
+    "Y, kamby ha mbujape"
+   ],
+   "why": [
+    "The title and gloss name only water and milk, but the lesson also teaches mbujape («pan»), so the title does not fully name what the lesson is."
+   ]
+  },
+  {
+   "id": "g242",
+   "gn": "Mombe'u",
+   "proposed": [
+    "Mombe'urã"
+   ],
+   "why": [
+    "Mombe'u is the verb or noun for «contar, relato». In school materials the literary genre «cuento» is usually mombe'urã, which is set against mombe'ugua'u «leyenda», the title of the next unit."
+   ]
+  },
+  {
+   "id": "g29",
+   "gn": "Che po",
+   "proposed": [
+    "Che po"
+   ],
+   "why": [
+    "As a lesson title, «Che po» glossed «Mis manos» names only one of the four words taught (che juru, che nambi, che po, che py). The gloss is also plural, while the same phrase is glossed «Mi mano» inside the lesson and the word list."
+   ]
+  },
+  {
+   "id": "g11",
+   "gn": "Mba'éichapa?",
+   "proposed": [
+    "Mba'éichapa?"
+   ],
+   "why": [
+    "Mba'éichapa? means «¿Cómo estás?» / «¿Qué tal?». The gloss adds «¡Hola!», which in this same unit is the meaning of Maitei (the unit title). A preschool child could take Mba'éichapa to be the word for «hola»."
+   ]
+  }
+ ]
+}

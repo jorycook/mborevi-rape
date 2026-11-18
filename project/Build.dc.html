@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Armá la palabra</title>
+<script src="./support.js"></script>
+<script src="./tp-sound.js"></script>
+<script src="./tp-course.js"></script>
+<script src="./tp-grades.js"></script>
+<script src="./tp-pics.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&amp;family=Baloo+2:wght@600;700;800&amp;family=Nunito:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:#2A1B3D;text-decoration:none}a:hover{color:#2A1B3D}
+@keyframes tp-legA{0%,100%{transform:rotate(14deg)}50%{transform:rotate(-14deg)}}
+@keyframes tp-legB{0%,100%{transform:rotate(-14deg)}50%{transform:rotate(14deg)}}
+@keyframes tp-tw{0%,100%{opacity:1}50%{opacity:.35}}
+@keyframes tp-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes tp-pop{0%{transform:scale(.6);opacity:0}60%{transform:scale(1.06);opacity:1}100%{transform:scale(1);opacity:1}}
+@keyframes tp-shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; position: relative; overflow: hidden; box-sizing: border-box; padding: 50px 16px 34px; background: linear-gradient(180deg, #1E1460 0%, #33207E 60%, #4A2A8F 100%); color: #FFF7EC; font-family: 'Nunito', 'Avenir Next', sans-serif; display: flex; flex-direction: column">
+
+<svg width="390" height="844" viewBox="0 0 390 844" style="position: absolute; left: 0; top: 0" aria-hidden="true">
+<path d="{{ field.dim }}" fill="#FFF6DD" opacity="0.35"/>
+<path d="{{ field.dots }}" fill="#FFF6DD" opacity="0.8" style="animation: tp-tw 3.6s ease-in-out infinite"/>
+</svg>
+
+<div style="position: relative; display: flex; align-items: center; gap: 10px; height: 44px; flex-shrink: 0">
+<a href="Tonight.dc.html" onClick="{{ close }}" aria-label="Cerrar el juego" style="width: 44px; height: 44px; margin-left: -6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFF7EC" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+<div style="flex-grow: 1; display: flex; flex-direction: column; min-width: 0">
+<div lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.05">Emopu'ã ñe'ẽ</div>
+<div style="font-size: 12px; font-weight: 700; color: #CFC6FF">Armá la palabra, sílaba por sílaba</div>
+</div>
+<div role="img" aria-label="{{ dotsAria }}" style="display: flex; gap: 5px; flex-shrink: 0">
+<sc-for list="{{ dots }}" as="d" hint-placeholder-count="3">
+<div style="width: 12px; height: 12px; border-radius: 6px; background: {{ d.bg }}; border: 2px solid #FFF7EC; box-sizing: border-box"></div>
+</sc-for>
+</div>
+</div>
+
+<sc-if value="{{ playing }}" hint-placeholder-val="{{ true }}">
+<div style="position: relative; margin-top: 14px; box-sizing: border-box; padding: 16px; border-radius: 30px; background: #FFF7EC; color: #2A1B3D; border: 3px solid #3B2418; box-shadow: 0 6px 0 #3B2418; display: flex; flex-direction: column; align-items: center; gap: 10px; flex-shrink: 0">
+<svg viewBox="0 0 100 100" width="132" height="132" role="img" aria-label="{{ word.es }}">
+<path d="{{ word.pic.f0.d }}" fill="{{ word.pic.f0.fill }}" stroke="#2A1B3D" stroke-width="2.8" stroke-linejoin="round" fill-rule="{{ word.pic.rule }}"/>
+<path d="{{ word.pic.f1.d }}" fill="{{ word.pic.f1.fill }}" stroke="#2A1B3D" stroke-width="2.8" stroke-linejoin="round"/>
+<path d="{{ word.pic.f2.d }}" fill="{{ word.pic.f2.fill }}" stroke="#2A1B3D" stroke-width="2.8" stroke-linejoin="round"/>
+<path d="{{ word.pic.f3.d }}" fill="{{ word.pic.f3.fill }}" stroke="#2A1B3D" stroke-width="2.8" stroke-linejoin="round"/>
+<path d="{{ word.pic.f4.d }}" fill="{{ word.pic.f4.fill }}" stroke="#2A1B3D" stroke-width="2.8" stroke-linejoin="round"/>
+<path d="{{ word.pic.f5.d }}" fill="{{ word.pic.f5.fill }}" stroke="#2A1B3D" stroke-width="2.8" stroke-linejoin="round"/>
+<path d="{{ word.pic.pink }}" fill="#FF8FAB" opacity="0.75"/>
+<path d="{{ word.pic.white }}" fill="#FFFFFF"/>
+<path d="{{ word.pic.ink }}" fill="#2A1B3D"/>
+<path d="{{ word.pic.line }}" fill="none" stroke="#2A1B3D" stroke-width="{{ word.pic.lineW }}" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+<div style="font-size: 15px; font-weight: 800; color: #5C4E86">{{ word.es }}</div>
+<div role="img" aria-label="{{ slotsAria }}" style="display: flex; gap: 6px; flex-wrap: wrap; justify-content: center">
+<sc-for list="{{ slots }}" as="sl" hint-placeholder-count="3">
+<div lang="gn" style="min-width: 52px; height: 52px; box-sizing: border-box; padding: 0 8px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-family: 'Andika', 'Nunito', sans-serif; font-weight: 700; font-size: 24px; border: {{ sl.border }}; background: {{ sl.bg }}; animation: {{ sl.anim }}">{{ sl.t }}</div>
+</sc-for>
+</div>
+</div>
+
+<div style="position: relative; margin-top: 18px; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; flex-shrink: 0">
+<sc-for list="{{ keys }}" as="k" hint-placeholder-count="4">
+<button type="button" onClick="{{ k.tap }}" aria-label="{{ k.aria }}" aria-disabled="{{ k.off }}" style="position: relative; width: 78px; height: 78px; padding: 0; border: 0; background: none; opacity: {{ k.opacity }}; animation: {{ k.anim }}">
+<svg viewBox="0 0 78 78" width="78" height="78" aria-hidden="true" style="position: absolute; left: 0; top: 0"><path d="{{ k.star }}" fill="#FFD34E" stroke="#3B2418" stroke-width="3" stroke-linejoin="round"/></svg>
+<span lang="gn" style="position: relative; font-family: 'Andika', 'Nunito', sans-serif; font-weight: 700; font-size: 19px; color: #2A1B3D; line-height: 78px">{{ k.t }}</span>
+</button>
+</sc-for>
+</div>
+</sc-if>
+
+<sc-if value="{{ finished }}" hint-placeholder-val="{{ false }}">
+<div style="position: relative; margin-top: 24px; box-sizing: border-box; padding: 22px 18px; border-radius: 30px; background: #FFF7EC; color: #2A1B3D; border: 3px solid #3B2418; box-shadow: 0 6px 0 #3B2418; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; flex-shrink: 0; animation: tp-pop 420ms ease-out">
+<svg viewBox="0 0 64 64" width="88" height="88" aria-hidden="true"><path d="{{ bigStar }}" fill="#FFD34E" stroke="#3B2418" stroke-width="3" stroke-linejoin="round"/><path d="M22 31q3.6-5 7.2 0M34.8 31q3.6-5 7.2 0M27 38q5 5 10 0" fill="none" stroke="#3B2418" stroke-width="2.8" stroke-linecap="round"/></svg>
+<div lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 30px; line-height: 1">Iporãite!</div>
+<sc-if value="{{ fresh }}" hint-placeholder-val="{{ true }}"><div lang="gn" style="font-family: 'Andika', 'Nunito', sans-serif; font-weight: 700; font-size: 18px">Rehupyty peteĩ mbyja.</div></sc-if>
+<div style="font-size: 14px; font-weight: 700; color: #5C4E86">{{ builtLine }}</div>
+</div>
+</sc-if>
+
+<div style="flex-grow: 1"></div>
+<div style="position: relative; display: flex; align-items: flex-end; gap: 10px; flex-shrink: 0">
+<div style="flex-shrink: 0; animation: tp-bob 2.6s ease-in-out infinite">
+<dc-import name="Mborevi" pose="{{ pose }}" size="104" hint-size="104px,84px"></dc-import>
+</div>
+<sc-if value="{{ playing }}" hint-placeholder-val="{{ true }}">
+<div role="status" style="flex-grow: 1; margin-bottom: 14px; display: flex; flex-direction: column">
+<div lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 24px; line-height: 1.1">{{ say.gn }}</div>
+<div style="font-size: 14px; font-weight: 700; color: #CFC6FF">{{ say.es }}</div>
+</div>
+</sc-if>
+<sc-if value="{{ finished }}" hint-placeholder-val="{{ false }}">
+<a href="Tonight.dc.html" onClick="{{ done }}" ref="{{ doneRef }}" style="flex-grow: 1; height: 60px; margin-bottom: 8px; border-radius: 30px; background: #FFD34E; border: 3px solid #3B2418; box-shadow: 0 5px 0 #3B2418; display: flex; align-items: center; justify-content: center; gap: 10px; color: #2A1B3D">
+<span lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 22px">Jaha!</span>
+<span style="font-size: 15px; font-weight: 800; color: #5C4E86">Seguir</span>
+</a>
+</sc-if>
+</div>
+
+<div role="status" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">{{ announce }}</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"app":{"editor":null},"act":{"editor":null},"$preview":{"width":390,"height":844}}'>
+/* Build tonight's words from their syllables: the picture and its meaning, the empty boxes, and star keys with the
+   syllables plus one that does not belong. Guarani syllables end in a vowel, and the digraphs (mb, nd, ch…) and the
+   puso stay inside them as one letter: mba·ra·ka·ja, ma·ndi·'o. A wrong key shakes and nothing is lost. The extra
+   keys are never a syllable of the word itself, whatever its capital letter. At the end, a star (a game played again
+   keeps the one it had). On its own: 1.º grado, a child with Guarani at home (L1), unit 5, night 1. */
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { r: 0, got: [], used: [], bad: null, done: false, finished: false };
+this.timers = [];
+this.doneRef = (el) => { this.doneEl = el; };
+}
+componentWillUnmount() { this.timers.forEach((t) => clearTimeout(t)); }
+componentDidUpdate() {
+const f = !!this.state.finished;
+if (f && !this.wasFinished) { if (this.doneEl) this.doneEl.focus(); window.tpCourse.say(this.endLine); }
+this.wasFinished = f;
+}
+view() {
+const C = window.tpCourse;
+if (this.props.app) return this.props.app;
+if (!this.sample) { const st = C.sample('g1', 'L1', 16); st.cur = 'g1u05n1'; st.done.g1u05n1 = { meet: 1, read: 1 }; st.game = 'build'; this.sample = C.view(st); }
+return this.sample;
+}
+renderVals() {
+const C = window.tpCourse;
+const S = window.tpSound;
+const act = this.props.act;
+const app = this.view();
+const s = app.step;
+const words = (s && s.data && s.data.words ? s.data.words : []).filter((w) => w.syl && w.syl.length > 1).slice(0, 3).map((w) => C.word(w));
+const n = words.length;
+const r = Math.min(this.state.r, Math.max(0, n - 1));
+const w = words[r] || C.word({ gn: '', es: '', pic: '', syl: [] });
+const low = (t) => t.toLowerCase();
+const mine = w.syl.map(low);
+const others = [].concat.apply([], C.unitWords(s ? s.grade : 'g1', s ? s.unit : 1).map((x) => x.syl || []))
+.filter((t, j, all) => mine.indexOf(low(t)) < 0 && all.findIndex((u) => low(u) === low(t)) === j);
+const extra = C.shuffle(others, (s ? s.id : '') + 'x' + r).slice(0, w.syl.length > 3 ? 1 : 2);
+const pool = C.shuffle(w.syl.map((t, i) => ({ t, i, real: true })).concat(extra.map((t, i) => ({ t, i: 100 + i, real: false }))), (s ? s.id : '') + 'k' + r);
+const got = this.state.got;
+const finished = this.state.finished || n === 0;
+const again = !!(s && ((app.done || {})[s.id] || {}).build);
+this.endLine = again ? C.VOICE.good : C.VOICE.star;
+const stop = (t) => (/[.!?…]$/.test(t) ? t : t + '.');
+const bang = (t) => (/[!?…]$/.test(t) ? t : t + '!');
+const keys = pool.map((k, j) => {
+const used = this.state.used.indexOf(j) >= 0;
+const bad = this.state.bad === j;
+return {
+t: k.t,
+star: C.puffyD(39, 41, 36, 0.62),
+aria: 'Sílaba ' + k.t,
+off: used || this.state.done ? 'true' : 'false',
+opacity: used ? 0.25 : 1,
+anim: bad ? 'tp-shake 420ms ease-out' : 'none',
+tap: () => {
+if (used || this.state.done) return;
+const want = w.syl[got.length];
+if (k.t === want) {
+const g2 = got.concat([k.t]);
+const complete = g2.length === w.syl.length;
+this.setState({ got: g2, used: this.state.used.concat([j]), bad: null, done: complete });
+if (complete) {
+const key = 'w:' + C.fold(w.gn);
+if (S && S.has(key)) { S.unlock(); S.play(key); }
+this.timers.push(setTimeout(() => {
+if (r + 1 < n) this.setState({ r: r + 1, got: [], used: [], bad: null, done: false });
+else this.setState({ finished: true });
+}, 1300));
+}
+} else {
+C.say(C.VOICE.again);
+this.setState({ bad: j });
+this.timers.push(setTimeout(() => { if (this.state.bad === j) this.setState({ bad: null }); }, 700));
+}
+}
+};
+});
+const slots = w.syl.map((t, i) => ({
+t: i < got.length ? got[i] : '',
+border: i < got.length ? '3px solid #3B2418' : i === got.length ? '3px dashed #6B4FD8' : '3px dashed #8C7CC8',
+bg: this.state.done ? '#B8F0E0' : i < got.length ? '#FFE7A3' : i === got.length ? '#EDE6FF' : '#FFFFFF',
+anim: i === got.length - 1 ? 'tp-pop 260ms ease-out' : 'none'
+}));
+return {
+field: C.starfield('build', 390, 40, 760, 46),
+dots: words.map((x, k) => ({ bg: finished || k < r ? '#FFD34E' : k === r ? '#FFF7EC' : 'transparent' })),
+dotsAria: 'Palabra ' + Math.min(r + 1, n) + ' de ' + n,
+playing: !finished, finished,
+word: w, slots, keys,
+slotsAria: (got.length ? 'Armaste: ' + got.join(' ') + '. ' : '') + (w.syl.length - got.length ? 'Cajas vacías: ' + (w.syl.length - got.length) + ' de ' + w.syl.length : 'Palabra completa'),
+say: this.state.done ? { gn: bang(w.gn), es: '¡Muy bien! ' + stop(w.es) } : this.state.bad != null ? { gn: "Eha'ã jey", es: 'Probá otra vez: esa sílaba no va ahí.' } : { gn: got.length ? 'Upéi?' : 'Mba\'éichapa oñepyrũ?', es: got.length ? '¿Y después?' : '¿Cómo empieza?' },
+pose: finished || this.state.done ? 'happy' : this.state.bad != null ? 'oops' : 'stand',
+builtLine: 'Armaste ' + n + (n === 1 ? ' palabra' : ' palabras') + ' en guaraní.',
+fresh: !again,
+announce: finished && n ? 'Iporãite! ' + (again ? '' : 'Rehupyty peteĩ mbyja. ') + 'Armaste ' + n + (n === 1 ? ' palabra' : ' palabras') + ' en guaraní.' : '',
+doneRef: this.doneRef,
+bigStar: C.puffyD(32, 33.5, 28),
+close: (e) => { if (act) { e.preventDefault(); if (finished) act.finish('build'); else act.go('Tonight'); } },
+done: (e) => { if (act) { e.preventDefault(); act.finish('build'); } }
+};
+}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>¿En qué grado estás?</title>
+<script src="./support.js"></script>
+<script src="./tp-course.js"></script>
+<script src="./tp-grades.js"></script>
+<script src="./tp-sky.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&amp;family=Baloo+2:wght@600;700;800&amp;family=Nunito:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:#2A1B3D;text-decoration:none}a:hover{color:#2A1B3D}
+@keyframes tp-legA{0%,100%{transform:rotate(14deg)}50%{transform:rotate(-14deg)}}
+@keyframes tp-legB{0%,100%{transform:rotate(-14deg)}50%{transform:rotate(14deg)}}
+@keyframes tp-tw{0%,100%{opacity:1}50%{opacity:.35}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; position: relative; overflow: hidden; box-sizing: border-box; padding: 50px 16px 34px; background: linear-gradient(180deg, #110A38 0%, #1E1460 50%, #33207E 100%); color: #FFF7EC; font-family: 'Nunito', 'Avenir Next', sans-serif; display: flex; flex-direction: column">
+
+<svg width="390" height="844" viewBox="0 0 390 844" style="position: absolute; left: 0; top: 0" aria-hidden="true">
+<path d="{{ field.dim }}" fill="#FFF6DD" opacity="0.35"/>
+<path d="{{ field.dots }}" fill="#FFF6DD" opacity="0.8" style="animation: tp-tw 3.6s ease-in-out infinite"/>
+</svg>
+
+<div style="position: relative; display: flex; align-items: center; gap: 4px; height: 44px; flex-shrink: 0">
+<a href="Welcome.dc.html" onClick="{{ toWelcome }}" aria-label="Volver" style="width: 44px; height: 44px; margin-left: -8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFF7EC" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></a>
+<h1 style="margin: 0; font-family: 'Baloo 2', 'Nunito', sans-serif; font-size: 26px; font-weight: 800; line-height: 1; white-space: nowrap">¿En qué grado estás?</h1>
+</div>
+<div style="position: relative; margin-top: 2px; font-size: 13px; font-weight: 700; color: #CFC6FF; line-height: 1.4; max-width: 250px">Los grados de la escuela paraguaya, como los ordena el MEC. Cada grado es una figura del cielo guaraní.</div>
+<div style="position: absolute; right: 8px; top: 92px">
+<dc-import name="Mborevi" pose="listen" size="96" flip="{{ true }}" hint-size="96px,78px"></dc-import>
+</div>
+
+<div style="position: relative; margin-top: 14px; display: flex; flex-direction: column; gap: 8px; flex-shrink: 0">
+<sc-for list="{{ groups }}" as="grp" hint-placeholder-count="4">
+<div role="group" aria-label="{{ grp.aria }}" style="display: flex; flex-direction: column; gap: 4px">
+<div style="font-size: 11px; font-weight: 800; letter-spacing: 0.08em; color: #CFC6FF">{{ grp.title }}</div>
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+<sc-for list="{{ grp.items }}" as="it" hint-placeholder-count="3">
+<button type="button" onClick="{{ it.pick }}" aria-pressed="{{ it.pressed }}" aria-label="{{ it.aria }}" style="height: 84px; box-sizing: border-box; padding: 4px; border-radius: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; border: {{ it.border }}; background: {{ it.bg }}; box-shadow: {{ it.shadow }}; color: {{ it.ink }}">
+<svg viewBox="0 0 100 100" width="38" height="38" aria-hidden="true">
+<circle cx="50" cy="50" r="48" fill="#1E1460" opacity="{{ it.discO }}"/>
+<path d="{{ it.fig.outline }}" fill="none" stroke="#B9A6FF" stroke-width="3" stroke-dasharray="5 5" stroke-linejoin="round" opacity="0.6"/>
+<path d="{{ it.fig.lines }}" stroke="#8F80E6" stroke-width="3.4" stroke-linecap="round" fill="none"/>
+<path d="{{ it.fig.off }}" fill="#FFE7A3" stroke="#3B2418" stroke-width="2" stroke-linejoin="round"/>
+</svg>
+<div style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 17px; line-height: 1">{{ it.short }}</div>
+<div style="font-size: 11px; font-weight: 800; line-height: 1.1; opacity: 0.85">{{ it.sub }}</div>
+</button>
+</sc-for>
+</div>
+</div>
+</sc-for>
+</div>
+
+<div style="position: relative; margin-top: 10px; box-sizing: border-box; padding: 12px 14px; border-radius: 22px; background: #FFF7EC; color: #2A1B3D; border: 3px solid #3B2418; display: flex; align-items: center; gap: 12px; flex-shrink: 0">
+<svg viewBox="0 0 100 100" width="62" height="62" aria-hidden="true" style="flex-shrink: 0">
+<circle cx="50" cy="50" r="49" fill="#1E1460"/>
+<path d="{{ sel.fig.outline }}" fill="none" stroke="#B9A6FF" stroke-width="2.4" stroke-dasharray="4 4" stroke-linejoin="round" opacity="0.7"/>
+<path d="{{ sel.fig.lines }}" stroke="#8F80E6" stroke-width="2.6" stroke-linecap="round" fill="none"/>
+<path d="{{ sel.fig.off }}" fill="#FFE7A3" stroke="#3B2418" stroke-width="1.6" stroke-linejoin="round"/>
+</svg>
+<div style="flex-grow: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px">
+<div style="font-size: 11px; font-weight: 800; letter-spacing: 0.06em; color: #6B4FD8">{{ sel.kicker }}</div>
+<sc-if value="{{ sel.hasGn }}" hint-placeholder-val="{{ true }}"><div lang="gn" style="font-family: 'Andika', 'Nunito', sans-serif; font-weight: 700; font-size: 18px; line-height: 1.15">{{ sel.gn }}</div></sc-if>
+<div style="font-size: 12.5px; font-weight: 700; color: #5C4E86; line-height: 1.3">{{ sel.can }}</div>
+<sc-if value="{{ sel.soon }}" hint-placeholder-val="{{ false }}"><div style="font-size: 12px; font-weight: 800; color: #8A3F00">Sus noches se están escribiendo</div></sc-if>
+</div>
+</div>
+
+<div style="flex-grow: 1"></div>
+<a href="Home.dc.html" onClick="{{ next }}" style="position: relative; height: 60px; border-radius: 30px; background: #FFD34E; border: 3px solid #3B2418; box-shadow: 0 5px 0 #3B2418; display: flex; align-items: center; justify-content: center; gap: 10px; color: #2A1B3D; flex-shrink: 0">
+<span lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 22px">Jaha!</span>
+<span style="font-size: 15px; font-weight: 800; color: #5C4E86">Elegir {{ selLabel }}</span>
+</a>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"app":{"editor":null},"act":{"editor":null},"$preview":{"width":390,"height":844}}'>
+/* The grades as the MEC orders them: Educación Inicial (Preescolar), then the three cycles of the Educación Escolar
+   Básica. A grade with its nights written shows on a cream card; one still being written, on a dashed one (it can be
+   picked: its path says so and offers a written grade meanwhile). On its own the artboard has 1.º grado picked. */
+const CYCLES = [
+{ key: 'Inicial', title: 'EDUCACIÓN INICIAL', aria: 'Educación Inicial' },
+{ key: '1.er ciclo', title: '1.ER CICLO · 6 A 8 AÑOS', aria: 'Primer ciclo de la Educación Escolar Básica' },
+{ key: '2.º ciclo', title: '2.º CICLO · 9 A 11 AÑOS', aria: 'Segundo ciclo de la Educación Escolar Básica' },
+{ key: '3.er ciclo', title: '3.ER CICLO · 12 A 14 AÑOS', aria: 'Tercer ciclo de la Educación Escolar Básica' }
+];
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { pick: null };
+}
+renderVals() {
+const C = window.tpCourse;
+const act = this.props.act;
+const app = this.props.app || null;
+const pick = this.state.pick || (app && app.gradeSet ? app.grade : 'g1');
+const all = C.grades();
+const items = all.map((g) => {
+const on = g.code === pick;
+const written = g.ready;
+const fig = C.figure(g.sky, 0);
+return {
+code: g.code, cycle: g.cycleShort,
+short: g.code === 'pre' ? 'Pre' : g.label.replace(' grado', ''),
+sub: g.code === 'pre' ? 'escolar · ' + g.age : g.age,
+fig,
+discO: on ? 1 : 0.7,
+border: on ? '3px solid #3B2418' : written ? '2px solid #3B2418' : '2px dashed #8F80E6',
+bg: on ? '#FFD34E' : written ? '#FFF7EC' : 'rgba(255, 247, 236, 0.08)',
+shadow: on ? '0 4px 0 #3B2418' : 'none',
+ink: on || written ? '#2A1B3D' : '#E4DDFF',
+pressed: on ? 'true' : 'false',
+aria: g.label + ', ' + g.age + ', ' + fig.gn + (written ? '' : ', en preparación'),
+pick: () => this.setState({ pick: g.code })
+};
+});
+const groups = CYCLES.map((c) => Object.assign({}, c, { items: items.filter((it) => it.cycle === c.key) }));
+const m = all.filter((g) => g.code === pick)[0] || all[0];
+const fig = C.figure(m.sky, 0);
+const sel = {
+fig,
+kicker: (m.label + ' · ' + fig.gn).toUpperCase(),
+gn: m.gn,
+hasGn: !!m.gn,
+can: m.can,
+soon: !m.ready
+};
+return {
+field: C.starfield('grade', 390, 40, 760, 46),
+groups, sel,
+selLabel: m.label,
+toWelcome: (e) => { if (act) { e.preventDefault(); act.go('Welcome'); } },
+next: (e) => { if (act) { e.preventDefault(); act.startGrade(pick); } }
+};
+}
+}
+</script>
+</body>
+</html>

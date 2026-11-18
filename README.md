@@ -1,0 +1,132 @@
+# Mborevi Rape
+
+A Guarani app for children, organised by the grades of Paraguay's Ministry of Education (MEC). Mborevi'i, a little
+tapir, walks along the Milky Way (*Mborevi Rape*, "the tapir's path") from one lesson to the next. Each grade is a
+constellation of the Guarani sky.
+
+- **Grades, not CEFR levels:** Preescolar, then 1.º to 9.º grado of the Educación Escolar Básica, in the MEC's three
+  cycles.
+- **Three home-language tracks** («¿Qué se habla en casa?»), following the MEC's three bilingual proposals:
+  - Más guaraní: Guarani as mother tongue (Propuesta A).
+  - Más castellano: Guarani as second language (Propuesta B).
+  - Las dos: both languages as mother tongues (Propuesta C).
+- **Four abilities:** the games train the four abilities of the MEC programs: *Ahendu* (listen), *Añe'ẽ* (speak),
+  *Amoñe'ẽ* (read) and *Ahai* (write).
+
+Every claim the app makes about the MEC, with the document and page behind it, is in [MEC.md](MEC.md).
+
+## See it
+
+The app lives on claude.ai as a Claude Design canvas, which keeps the published copy of everything in `project/`:
+
+- App: https://claude.ai/artifact/2gWEiYnoDjxVwaZC7dnMtx. The **App** board is the whole app, playable in place.
+  The other boards show each screen on its own.
+- Listening page for the voice clips: https://claude.ai/artifact/MD3owciKYk1epggzWcbMhr. A Guarani speaker can mark
+  each clip as good or not.
+
+Both are private until you share them from claude.ai.
+
+## What is written
+
+| Grade | Units | Status |
+| --- | --- | --- |
+| Preescolar | 6 | All nights written, all oral |
+| 1.º grado | 7 | All nights written |
+| 2.º grado | 5 | Units 1–2 written; 3–5 outlined |
+| 3.º–9.º grado | 5–6 each | Outlined: titles, «what the program asks» and «in the app» texts |
+
+There are 99 voice clips, made with a synthetic Guarani voice and each checked by speech recognition. 23 more are held
+back until a person approves them on the listening page.
+
+## Layout
+
+```
+project/          the app as published on the canvas
+  *.dc.html       one board per screen (App.dc.html runs them all)
+  tp-course.js    the engine: state, games per night, tracks, sounds
+  tp-grades.js    grades, units, nights and words; MEC texts per grade
+  tp-sky.js       the constellations and the sky stories
+  tp-pics.js      the drawings
+  tp-sound*.js    the voice player and the clips (MP3, base64)
+  canvas.json     where the boards sit on the canvas
+tests/            the app's logic run in Node, no browser
+tools/render/     screenshots and layout checks with Playwright
+tools/audio/      makes the voice clips
+voces/            the listening page and its clips
+docs/
+  screens/        screenshots of the app
+  mec-check.json  claim-by-claim check against the Priorización curricular 2021
+  guarani-audit.json  review of every Guarani string in the app
+```
+
+## Tests
+
+From the repository root (made with Node 22):
+
+```bash
+node tests/test-engine.js
+```
+
+```bash
+node tests/flow-test.js L2 g1
+```
+
+`flow-test.js` plays a whole grade like a child would: every night, every game, with replays and a change of home
+language. Tracks: `L1`, `L2`, `BI`. Grades: `pre`, `g1`, `g2`. It prints `no problems` when all is well.
+
+```bash
+node tests/runlogic.js project/Home.dc.html
+```
+
+## Previewing the boards locally
+
+The boards load `project/support.js`, the Design canvas runtime. That file belongs to the canvas type and is not in
+this repository; a Claude session can fetch it from the canvas type when it is needed. With it in place:
+
+```bash
+python3 -m http.server 8766
+```
+
+```bash
+node tools/render/render-one.js Home.dc.html
+```
+
+Screenshots go to `render/`. `tools/render/overflow.js` reports anything a board clips, and `walk-app.js` drives the
+App board through a night like a child would. Playwright must be installed.
+
+## Making the voice clips
+
+`tools/audio` speaks every word, phrase and story page with Meta's MMS-TTS Guarani voice (`facebook/mms-tts-grn`). It
+then transcribes each clip back with MMS speech recognition (`facebook/mms-1b-all`, Guarani adapter) and keeps the
+take that comes back closest to the text. Needs Python 3 (made with 3.13), ffmpeg and about 4 GB for the models,
+which go in `tools/hf/` (git ignores it).
+
+```bash
+python3 -m venv tools/venv && tools/venv/bin/pip install -r tools/audio/requirements.txt
+```
+
+```bash
+node tools/audio/inventory.js > tools/audio/inventory.json
+```
+
+```bash
+tools/venv/bin/python tools/audio/make_sound.py tools/audio/inventory.json tools/audio/out
+```
+
+```bash
+python3 tools/audio/install.py tools/audio/out
+```
+
+`make_sound.py` reads the models from `tools/hf/` and does not download them: fetch `facebook/mms-tts-grn` and
+`facebook/mms-1b-all` (with `adapter.grn.safetensors`) into that folder first, for example with `huggingface_hub`'s
+`snapshot_download(..., cache_dir='tools/hf')`. If a download stalls behind a proxy, set `HF_HUB_DISABLE_XET=1`.
+
+`build_review.py` makes the listening page's `voces/clips.json` from a run's `report.json` and the inventory with its
+Spanish glosses.
+
+## Licences and credits
+
+- **Voice:** the clips in `project/tp-sound-*.js` and `voces/clips.json` were made with MMS-TTS Guarani by Meta AI
+  (Pratap et al., 2023). It is licensed **CC BY-NC 4.0**, so the clips are for **non-commercial use only**.
+- **MEC documents:** they are not included. MEC.md cites them by title and page.
+- **App code and content:** no licence file has been chosen yet. Add one if others should be allowed to reuse it.

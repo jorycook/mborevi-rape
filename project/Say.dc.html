@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Decilo con Mborevi'i</title>
+<script src="./support.js"></script>
+<script src="./tp-sound.js"></script>
+<script src="./tp-course.js"></script>
+<script src="./tp-grades.js"></script>
+<script src="./tp-pics.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&amp;family=Baloo+2:wght@600;700;800&amp;family=Nunito:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:#2A1B3D;text-decoration:none}a:hover{color:#2A1B3D}
+@keyframes tp-legA{0%,100%{transform:rotate(14deg)}50%{transform:rotate(-14deg)}}
+@keyframes tp-legB{0%,100%{transform:rotate(-14deg)}50%{transform:rotate(14deg)}}
+@keyframes tp-tw{0%,100%{opacity:1}50%{opacity:.35}}
+@keyframes tp-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes tp-pop{0%{transform:scale(.6);opacity:0}60%{transform:scale(1.06);opacity:1}100%{transform:scale(1);opacity:1}}
+@keyframes tp-ring-mic{0%{transform:scale(.8);opacity:.9}100%{transform:scale(1.5);opacity:0}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; position: relative; overflow: hidden; box-sizing: border-box; padding: 50px 16px 34px; background: linear-gradient(180deg, #1E1460 0%, #33207E 60%, #4A2A8F 100%); color: #FFF7EC; font-family: 'Nunito', 'Avenir Next', sans-serif; display: flex; flex-direction: column">
+
+<svg width="390" height="844" viewBox="0 0 390 844" style="position: absolute; left: 0; top: 0" aria-hidden="true">
+<path d="{{ field.dim }}" fill="#FFF6DD" opacity="0.35"/>
+<path d="{{ field.dots }}" fill="#FFF6DD" opacity="0.8" style="animation: tp-tw 3.6s ease-in-out infinite"/>
+</svg>
+
+<div style="position: relative; display: flex; align-items: center; gap: 10px; height: 44px; flex-shrink: 0">
+<a href="Tonight.dc.html" onClick="{{ close }}" aria-label="Cerrar el juego" style="width: 44px; height: 44px; margin-left: -6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFF7EC" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+<div style="flex-grow: 1; display: flex; flex-direction: column; min-width: 0">
+<div lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.05">Ere Mborevi'i ndive</div>
+<div style="font-size: 12px; font-weight: 700; color: #CFC6FF">Decilo en voz alta con Mborevi'i</div>
+</div>
+<div role="img" aria-label="{{ dotsAria }}" style="display: flex; gap: 5px; flex-shrink: 0">
+<sc-for list="{{ dots }}" as="d" hint-placeholder-count="2">
+<div style="width: 12px; height: 12px; border-radius: 6px; background: {{ d.bg }}; border: 2px solid #FFF7EC; box-sizing: border-box"></div>
+</sc-for>
+</div>
+</div>
+
+<sc-if value="{{ playing }}" hint-placeholder-val="{{ true }}">
+<div style="position: relative; margin-top: 14px; box-sizing: border-box; padding: 18px 16px; border-radius: 30px; background: #FFF7EC; color: #2A1B3D; border: 3px solid #3B2418; box-shadow: 0 6px 0 #3B2418; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center; flex-shrink: 0">
+<sc-if value="{{ item.hasPic }}" hint-placeholder-val="{{ false }}">
+<svg viewBox="0 0 100 100" width="120" height="120" aria-hidden="true">
+<path d="{{ item.pic.f0.d }}" fill="{{ item.pic.f0.fill }}" stroke="#2A1B3D" stroke-width="2.8" stroke-linejoin="round" fill-rule="{{ item.pic.rule }}"/>
+<path d="{{ item.pic.f1.d }}" fill="{{ item.pic.f1.fill }}" stroke="#2A1B3D" stroke-width="2.8" stroke-linejoin="round"/>
+<path d="{{ item.pic.f2.d }}" fill="{{ item.pic.f2.fill }}" stroke="#2A1B3D" stroke-width="2.8" stroke-linejoin="round"/>
+<path d="{{ item.pic.f3.d }}" fill="{{ item.pic.f3.fill }}" stroke="#2A1B3D" stroke-width="2.8" stroke-linejoin="round"/>
+<path d="{{ item.pic.f4.d }}" fill="{{ item.pic.f4.fill }}" stroke="#2A1B3D" stroke-width="2.8" stroke-linejoin="round"/>
+<path d="{{ item.pic.f5.d }}" fill="{{ item.pic.f5.fill }}" stroke="#2A1B3D" stroke-width="2.8" stroke-linejoin="round"/>
+<path d="{{ item.pic.pink }}" fill="#FF8FAB" opacity="0.75"/>
+<path d="{{ item.pic.white }}" fill="#FFFFFF"/>
+<path d="{{ item.pic.ink }}" fill="#2A1B3D"/>
+<path d="{{ item.pic.line }}" fill="none" stroke="#2A1B3D" stroke-width="{{ item.pic.lineW }}" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</sc-if>
+<div lang="gn" style="font-family: 'Andika', 'Nunito', sans-serif; font-weight: 700; font-size: {{ item.size }}; line-height: 1.15">{{ item.gn }}</div>
+<div style="font-size: 16px; font-weight: 800; color: #5C4E86; line-height: 1.3">{{ item.es }}</div>
+<button type="button" onClick="{{ listen }}" aria-label="{{ item.listenAria }}" style="height: 46px; box-sizing: border-box; padding: 0 18px; border-radius: 23px; background: #8EC5FF; border: 3px solid #3B2418; display: flex; align-items: center; gap: 8px; color: #2A1B3D">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2A1B3D" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19 6a8.5 8.5 0 0 1 0 12"/></svg>
+<span lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 17px">Ehendu raẽ</span>
+<span style="font-size: 13px; font-weight: 800">Escuchá primero</span>
+</button>
+</div>
+
+<div style="position: relative; margin-top: 22px; display: flex; flex-direction: column; align-items: center; gap: 8px; flex-shrink: 0">
+<div style="position: relative; width: 112px; height: 112px">
+<sc-if value="{{ mic.live }}" hint-placeholder-val="{{ false }}"><div aria-hidden="true" style="position: absolute; inset: 0; border-radius: 56px; border: 4px solid #FFD34E; animation: tp-ring-mic 1.4s ease-out infinite"></div></sc-if>
+<button type="button" onClick="{{ mic.tap }}" aria-label="{{ mic.aria }}" style="position: absolute; inset: 0; border-radius: 56px; background: {{ mic.bg }}; border: 4px solid #3B2418; box-shadow: 0 5px 0 #3B2418; display: flex; align-items: center; justify-content: center">
+<svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="#2A1B3D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><path d="M12 18v3M9 21h6"/></svg>
+</button>
+</div>
+<div lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 20px; line-height: 1.1; text-align: center">{{ mic.gn }}</div>
+<div style="font-size: 14px; font-weight: 700; color: #CFC6FF; text-align: center; max-width: 300px; line-height: 1.35">{{ mic.es }}</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ finished }}" hint-placeholder-val="{{ false }}">
+<div style="position: relative; margin-top: 24px; box-sizing: border-box; padding: 22px 18px; border-radius: 30px; background: #FFF7EC; color: #2A1B3D; border: 3px solid #3B2418; box-shadow: 0 6px 0 #3B2418; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; flex-shrink: 0; animation: tp-pop 420ms ease-out">
+<svg viewBox="0 0 64 64" width="88" height="88" aria-hidden="true"><path d="{{ bigStar }}" fill="#FFD34E" stroke="#3B2418" stroke-width="3" stroke-linejoin="round"/><path d="M22 31q3.6-5 7.2 0M34.8 31q3.6-5 7.2 0M27 38q5 5 10 0" fill="none" stroke="#3B2418" stroke-width="2.8" stroke-linecap="round"/></svg>
+<div lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 30px; line-height: 1">Iporãite!</div>
+<sc-if value="{{ fresh }}" hint-placeholder-val="{{ true }}"><div lang="gn" style="font-family: 'Andika', 'Nunito', sans-serif; font-weight: 700; font-size: 18px">Rehupyty peteĩ mbyja.</div></sc-if>
+<div style="font-size: 14px; font-weight: 700; color: #5C4E86">¡Lo dijiste todo en guaraní!</div>
+</div>
+</sc-if>
+
+<div style="flex-grow: 1"></div>
+<div style="position: relative; display: flex; align-items: flex-end; gap: 10px; flex-shrink: 0">
+<div style="position: relative; flex-shrink: 0">
+<div lang="gn" role="status" style="position: absolute; left: 70px; bottom: 70px">
+<sc-if value="{{ bubble.on }}" hint-placeholder-val="{{ false }}">
+<div style="padding: 6px 12px; border-radius: 16px; background: #FFF7EC; color: #2A1B3D; border: 2px solid #3B2418; font-family: 'Andika', 'Nunito', sans-serif; font-weight: 700; font-size: 17px; white-space: nowrap; animation: tp-pop 300ms ease-out">{{ bubble.text }}</div>
+</sc-if>
+</div>
+<div style="animation: tp-bob 2.6s ease-in-out infinite">
+<dc-import name="Mborevi" pose="{{ pose }}" size="104" hint-size="104px,84px"></dc-import>
+</div>
+</div>
+<a href="Tonight.dc.html" onClick="{{ forward }}" aria-disabled="{{ fwdOff }}" style="flex-grow: 1; height: 60px; margin-bottom: 8px; border-radius: 30px; background: #FFD34E; border: 3px solid #3B2418; box-shadow: 0 5px 0 #3B2418; display: flex; align-items: center; justify-content: center; gap: 10px; color: #2A1B3D; opacity: {{ fwdO }}">
+<sc-if value="{{ playing }}" hint-placeholder-val="{{ true }}">
+<span lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 22px">Upéi</span>
+<span style="font-size: 15px; font-weight: 800; color: #5C4E86">Siguiente</span>
+</sc-if>
+<sc-if value="{{ finished }}" hint-placeholder-val="{{ false }}">
+<span lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 22px">Jaha!</span>
+<span style="font-size: 15px; font-weight: 800; color: #5C4E86">Seguir</span>
+</sc-if>
+</a>
+</div>
+
+<div role="status" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">{{ announce }}</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"app":{"editor":null},"act":{"editor":null},"$preview":{"width":390,"height":844}}'>
+/* Say it aloud: hear the model first («Ehendu raẽ»), tap the microphone, say the phrase, tap again when done.
+   Nothing is recorded or graded: as in Epu'ã's prototype, the canvas grants no microphone and the app trusts the
+   child; Mborevi'i listens and cheers. The phrases are the night's own (say) or else all its words. «Upéi» stays in
+   place (dimmed until the phrase is said), so the focus never drops; after the last phrase it becomes «Jaha!».
+   On its own: 1.º grado, unit 1, night 1 (Maitei!). */
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { i: 0, step: 'ready', said: false, finished: false };
+this.timers = [];
+}
+componentWillUnmount() { this.timers.forEach((t) => clearTimeout(t)); }
+componentDidUpdate() {
+const f = !!this.state.finished;
+if (f && !this.wasFinished) window.tpCourse.say(this.endLine);
+this.wasFinished = f;
+}
+view() {
+const C = window.tpCourse;
+if (this.props.app) return this.props.app;
+if (!this.sample) { const st = C.sample('g1', 'L2', 0); st.cur = 'g1u01n1'; st.done.g1u01n1 = { meet: 1, pick: 1 }; st.game = 'say'; this.sample = C.view(st); }
+return this.sample;
+}
+renderVals() {
+const C = window.tpCourse;
+const S = window.tpSound;
+const act = this.props.act;
+const app = this.view();
+const s = app.step;
+const data = (s && s.data) || {};
+const items = (data.say && data.say.length ? data.say.map((p) => ({ gn: C.norm(p.gn), es: p.es, pic: C.pic(''), hasPic: false })) : (data.words || []).map((w) => { const x = C.word(w); return { gn: x.gn, es: x.es, pic: x.pic, hasPic: x.pic.has }; }));
+const n = items.length;
+const i = Math.min(this.state.i, Math.max(0, n - 1));
+const it = items[i] || { gn: '', es: '', pic: C.pic(''), hasPic: false };
+const finished = this.state.finished || n === 0;
+const again = !!(s && ((app.done || {})[s.id] || {}).say);
+this.endLine = again ? C.VOICE.good : C.VOICE.star;
+const step = this.state.step;
+const key = 'w:' + C.fold(it.gn);
+const listen = () => {
+if (S) S.unlock();
+const played = S && S.has(key) ? S.play(key) : false;
+this.setState({ said: true, voiced: !!played });
+clearTimeout(this.saidT);
+this.saidT = setTimeout(() => this.setState({ said: false }), played ? Math.max(900, S.ms(key) + 300) : 2000);
+this.timers.push(this.saidT);
+};
+const tap = () => {
+if (step === 'ready' || step === 'heard') this.setState({ step: 'listening' });
+else if (step === 'listening') this.setState({ step: 'heard' });
+};
+const next = () => {
+clearTimeout(this.saidT);
+if (i + 1 < n) this.setState({ i: i + 1, step: 'ready', said: false });
+else this.setState({ finished: true });
+};
+const len = C.chars(it.gn).length;
+const mic = step === 'listening'
+? { gn: 'Mborevi\'i ohendu…', es: 'Mborevi\'i escucha. Tocá cuando termines.', bg: '#FF8FAB', live: true, aria: 'Terminé de decirlo' }
+: step === 'heard'
+? { gn: 'Iporãite!', es: '¡Muy bien dicho! Podés decirlo otra vez o seguir.', bg: '#B8F0E0', live: false, aria: 'Decirlo otra vez' }
+: { gn: 'Ere!', es: 'Tocá el micrófono y decilo en voz alta. Nadie te graba.', bg: '#FFD34E', live: false, aria: 'Empezar a decirlo' };
+return {
+field: C.starfield('say', 390, 40, 760, 46),
+dots: items.map((x, k) => ({ bg: finished || k < i ? '#FFD34E' : k === i ? '#FFF7EC' : 'transparent' })),
+dotsAria: 'Frase ' + Math.min(i + 1, n) + ' de ' + n,
+playing: !finished, finished,
+fwdOff: !finished && step !== 'heard' ? 'true' : 'false',
+fwdO: !finished && step !== 'heard' ? 0.4 : 1,
+forward: (e) => {
+if (!finished) { e.preventDefault(); if (step === 'heard') next(); return; }
+if (act) { e.preventDefault(); act.finish('say'); }
+},
+fresh: !again,
+announce: finished && n ? 'Iporãite! ' + (again ? '' : 'Rehupyty peteĩ mbyja. ') + '¡Lo dijiste todo en guaraní!' : '',
+item: Object.assign({}, it, { size: len > 18 ? '24px' : len > 10 ? '30px' : '38px', listenAria: 'Ehendu raẽ, escuchá primero: ' + it.gn }),
+mic: Object.assign(mic, { tap }),
+listen, next,
+bubble: { on: this.state.said && !this.state.voiced && !finished, text: it.gn },
+pose: finished || step === 'heard' ? 'happy' : step === 'listening' || this.state.said ? 'listen' : 'stand',
+bigStar: C.puffyD(32, 33.5, 28),
+close: (e) => { if (act) { e.preventDefault(); if (finished) act.finish('say'); else act.go('Tonight'); } }
+};
+}
+}
+</script>
+</body>
+</html>

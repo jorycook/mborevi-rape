@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Colores, letras y la regla de la figura</title>
+<script src="./support.js"></script>
+<script src="./tp-course.js"></script>
+<script src="./tp-grades.js"></script>
+<script src="./tp-sky.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&amp;family=Baloo+2:wght@600;700;800&amp;family=Nunito:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#2A1B3D;text-decoration:none}a:hover{color:#2A1B3D}
+</style>
+</helmet>
+<div style="width: 720px; height: 640px; box-sizing: border-box; padding: 32px 36px; background: #FFF7EC; color: #2A1B3D; font-family: 'Nunito', 'Avenir Next', sans-serif; display: flex; flex-direction: column; gap: 18px">
+
+<h2 style="margin: 0; font-family: 'Baloo 2', 'Nunito', sans-serif; font-size: 28px; font-weight: 800; line-height: 1">Colores, letras y la regla de la figura</h2>
+
+<div style="display: flex; gap: 24px">
+<section style="flex: 1 1 0; display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 12px; font-weight: 800; letter-spacing: 0.08em; color: #6B4FD8">COLORES</h3>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 12px">
+<sc-for list="{{ colors }}" as="c" hint-placeholder-count="8">
+<div style="display: flex; align-items: center; gap: 8px">
+<div style="width: 30px; height: 30px; border-radius: 10px; background: {{ c.hex }}; border: 2px solid #3B2418; box-sizing: border-box; flex-shrink: 0"></div>
+<div style="display: flex; flex-direction: column; min-width: 0">
+<div style="font-size: 13px; font-weight: 800; line-height: 1.2">{{ c.name }} <span style="font-weight: 700; color: #5C4E86">{{ c.hex }}</span></div>
+<div style="font-size: 11.5px; font-weight: 700; color: #5C4E86; line-height: 1.25">{{ c.use }}</div>
+</div>
+</div>
+</sc-for>
+</div>
+</section>
+<section style="flex: 0 0 236px; display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 12px; font-weight: 800; letter-spacing: 0.08em; color: #6B4FD8">LETRAS</h3>
+<div style="display: flex; flex-direction: column; gap: 1px">
+<div style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 26px; line-height: 1.1">Baloo 2</div>
+<div style="font-size: 12px; font-weight: 700; color: #5C4E86">Títulos y botones: redonda, alegre.</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 1px">
+<div lang="gn" style="font-family: 'Andika', 'Nunito', sans-serif; font-weight: 700; font-size: 24px; line-height: 1.15">ã ẽ ĩ õ ũ ỹ g̃ '</div>
+<div style="font-size: 12px; font-weight: 700; color: #5C4E86">Andika: las palabras en guaraní. Hecha para quien empieza a leer.</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 1px">
+<div style="font-weight: 800; font-size: 18px; line-height: 1.2">Nunito</div>
+<div style="font-size: 12px; font-weight: 700; color: #5C4E86">Todo lo demás, en castellano.</div>
+</div>
+</section>
+</div>
+
+<section style="display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 12px; font-weight: 800; letter-spacing: 0.08em; color: #6B4FD8">LA REGLA DE LA FIGURA</h3>
+<div style="display: flex; gap: 14px">
+<sc-for list="{{ stages }}" as="s" hint-placeholder-count="3">
+<figure style="margin: 0; flex: 1 1 0; box-sizing: border-box; padding: 10px 10px 12px; border-radius: 18px; background: #1E1460; color: #FFF7EC; display: flex; flex-direction: column; align-items: center; gap: 6px">
+<svg viewBox="0 0 100 100" width="104" height="104" role="img" aria-label="{{ s.aria }}">
+<path d="{{ s.fig.outline }}" fill="#FFE7A3" fill-opacity="{{ s.fig.fillO }}" stroke="{{ s.ink }}" stroke-width="1.6" stroke-dasharray="{{ s.dash }}" stroke-linejoin="round" opacity="{{ s.fig.outlineO }}"/>
+<path d="{{ s.fig.lines }}" stroke="#6E5FD0" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+<path d="{{ s.fig.linesOn }}" stroke="#FFE7A3" stroke-width="2" stroke-linecap="round" fill="none"/>
+<path d="{{ s.fig.off }}" fill="#4B3D9A" stroke="#B4A8F2" stroke-width="1.2" stroke-linejoin="round"/>
+<path d="{{ s.fig.on }}" fill="#FFD34E" stroke="#3B2418" stroke-width="1.3" stroke-linejoin="round"/>
+</svg>
+<figcaption style="text-align: center; display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 13px; font-weight: 800">{{ s.title }}</span>
+<span style="font-size: 11.5px; font-weight: 700; color: #D9D0FF; line-height: 1.35">{{ s.note }}</span>
+</figcaption>
+</figure>
+</sc-for>
+</div>
+<div style="font-size: 13px; font-weight: 700; line-height: 1.45">Cada juego ganado es una estrellita; tres juegos cierran una noche y Mborevi'i camina a la estrella siguiente. La estrella grande de cada unidad enciende una estrella de la figura del grado. Ninguna estrella se apaga: un error no quita nada, y lo que no salió se juega otra vez.</div>
+</section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":720,"height":640}}'>
+/* The design rules of Mborevi Rape: the night palette (mistakes in peach, never red; right answers in mint; the peach
+   is the darker of the two, so they differ in lightness too, and a wrong tile also shakes), the three typefaces, and the figure rule, shown with Eichu (1.º grado, seven units): dark,
+   three units lit, all lit with its drawing. */
+const COLORS = [
+{ name: 'Noche', hex: '#1E1460', use: 'El cielo de fondo' },
+{ name: 'Vía Láctea', hex: '#FFF1D0', use: 'El camino que brilla' },
+{ name: 'Estrella', hex: '#FFD34E', use: 'Botones y lo ganado' },
+{ name: 'Papel', hex: '#FFF7EC', use: 'Tarjetas para leer' },
+{ name: 'Tinta', hex: '#3B2418', use: 'Bordes y Mborevi\'i' },
+{ name: 'Menta', hex: '#B8F0E0', use: 'Respuesta buena' },
+{ name: 'Durazno', hex: '#FFB98A', use: 'Probá otra vez' },
+{ name: 'Cielo', hex: '#8EC5FF', use: 'Escuchar' }
+];
+class Component extends DCLogic {
+renderVals() {
+const C = window.tpCourse;
+const total = (C.sky('eichu') || { stars: [] }).stars.length;
+const stage = (lit, title, note) => {
+const fig = C.figure('eichu', lit);
+return { fig, title, note, ink: fig.all ? '#FFE7A3' : '#B9A6FF', dash: fig.all ? 'none' : '3 3', aria: 'Eichu con ' + lit + ' de ' + total + ' estrellas encendidas' };
+};
+return {
+colors: COLORS,
+stages: [
+stage(0, 'Al empezar el grado', 'La figura está oscura: sus estrellas esperan.'),
+stage(3, 'Tres unidades', 'Cada estrella grande enciende una y la une a las otras.'),
+stage(total, 'Grado terminado', 'Aparece el dibujo y la figura brilla entera.')
+]
+};
+}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Mborevi'i se despierta</title>
+<script src="./support.js"></script>
+<script src="./tp-course.js"></script>
+<script src="./tp-grades.js"></script>
+<script src="./tp-sound.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&amp;family=Baloo+2:wght@600;700;800&amp;family=Nunito:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:#2A1B3D;text-decoration:none}a:hover{color:#2A1B3D}
+@keyframes tp-legA{0%,100%{transform:rotate(14deg)}50%{transform:rotate(-14deg)}}
+@keyframes tp-legB{0%,100%{transform:rotate(-14deg)}50%{transform:rotate(14deg)}}
+@keyframes tp-tw{0%,100%{opacity:1}50%{opacity:.35}}
+@keyframes tp-breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
+@keyframes tp-pop{0%{transform:scale(.6);opacity:0}60%{transform:scale(1.06);opacity:1}100%{transform:scale(1);opacity:1}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; position: relative; overflow: hidden; background: linear-gradient(180deg, #0E0832 0%, #1E1460 50%, #3B2585 100%); color: #FFF7EC; font-family: 'Nunito', 'Avenir Next', sans-serif">
+
+<svg width="390" height="844" viewBox="0 0 390 844" style="position: absolute; left: 0; top: 0" aria-hidden="true">
+<defs>
+<filter id="tp-welcome-glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="22"/></filter>
+</defs>
+<path d="{{ field.dim }}" fill="#FFF6DD" opacity="0.4"/>
+<path d="{{ field.dots }}" fill="#FFF6DD" style="animation: tp-tw 3.4s ease-in-out infinite"/>
+<path d="{{ field.sparks }}" fill="#FFF6DD" style="animation: tp-tw 2.6s 1s ease-in-out infinite"/>
+<path d="M60 300C60 190 150 110 262 118C200 150 168 214 176 290C184 362 236 410 300 418C230 470 128 450 86 392C70 370 60 336 60 300Z" fill="#FFE7A3" opacity="0.55" filter="url(#tp-welcome-glow)"/>
+<path d="M60 300C60 190 150 110 262 118C200 150 168 214 176 290C184 362 236 410 300 418C230 470 128 450 86 392C70 370 60 336 60 300Z" fill="#FFE7A3" stroke="#3B2418" stroke-width="4" stroke-linejoin="round"/>
+<circle cx="130" cy="200" r="7" fill="#F2CF78"/>
+<circle cx="110" cy="360" r="9" fill="#F2CF78"/>
+<circle cx="150" cy="392" r="5" fill="#F2CF78"/>
+<path d="{{ moonEyes }}" fill="none" stroke="#3B2418" stroke-width="4" stroke-linecap="round"/>
+<path d="M96 300q12 10 24 0" fill="none" stroke="#3B2418" stroke-width="4" stroke-linecap="round"/>
+<ellipse cx="96" cy="282" rx="10" ry="6" fill="#FF8FAB" opacity="0.7"/>
+</svg>
+
+<div style="position: absolute; left: {{ tap.left }}; top: {{ tap.top }}; transform: {{ tap.turn }}; transition: left 600ms ease-in-out, top 600ms ease-in-out, transform 600ms ease-in-out">
+<div style="animation: {{ tap.anim }}; transform-origin: center bottom">
+<dc-import name="Mborevi" pose="{{ tap.pose }}" size="190" hint-size="190px,154px"></dc-import>
+</div>
+</div>
+
+<sc-if value="{{ awake }}" hint-placeholder-val="{{ false }}">
+<div role="status" style="position: absolute; left: 150px; right: 20px; top: 150px; box-sizing: border-box; padding: 12px 14px; border-radius: 22px; background: #FFF7EC; color: #2A1B3D; border: 3px solid #3B2418; box-shadow: 0 4px 0 #3B2418; display: flex; flex-direction: column; gap: 2px; animation: tp-pop 420ms ease-out">
+<div lang="gn" style="font-family: 'Andika', 'Nunito', sans-serif; font-weight: 700; font-size: 20px; line-height: 1.2">Maitei! Che réra Mborevi'i.</div>
+<div style="font-size: 13px; font-weight: 700; color: #5C4E86">¡Hola! Me llamo Mborevi'i, el tapir.</div>
+</div>
+</sc-if>
+
+<div style="position: absolute; left: 24px; right: 24px; top: 520px; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center">
+<h1 lang="gn" style="margin: 0; font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 44px; line-height: 1">Mborevi Rape</h1>
+<div style="font-size: 16px; font-weight: 700; color: #CFC6FF; line-height: 1.35">El camino del tapir es la Vía Láctea. Caminalo noche a noche y aprendé guaraní.</div>
+</div>
+
+<a href="Grade.dc.html" onClick="{{ main }}" aria-label="{{ mainAria }}" style="position: absolute; left: 24px; right: 24px; bottom: 96px; height: 64px; border-radius: 32px; background: #FFD34E; border: 3px solid #3B2418; box-shadow: 0 5px 0 #3B2418; display: flex; align-items: center; justify-content: center; gap: 10px; color: #2A1B3D">
+<sc-if value="{{ asleep }}" hint-placeholder-val="{{ true }}">
+<span lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 24px">Epáy, Mborevi'i!</span>
+<span style="font-size: 15px; font-weight: 800; color: #5C4E86">¡Despertate!</span>
+</sc-if>
+<sc-if value="{{ awake }}" hint-placeholder-val="{{ false }}">
+<span lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 24px; animation: tp-pop 420ms ease-out">Jaha!</span>
+<span style="font-size: 15px; font-weight: 800; color: #5C4E86">¡Vamos!</span>
+</sc-if>
+</a>
+
+<div style="position: absolute; left: 24px; right: 24px; bottom: 40px; text-align: center; font-size: 13px; font-weight: 700; color: #C9BEFF; line-height: 1.4">Sigue los grados de la escuela paraguaya, del Preescolar al 9.º grado.</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"app":{"editor":null},"act":{"editor":null},"$preview":{"width":390,"height":844}}'>
+/* The first screen: Mborevi'i sleeps on the crescent moon (Jasy). «Epáy, Mborevi'i!» wakes him: he jumps down, says
+   his name in Guarani (out loud too, once the shared sound file is in), and the button becomes «Jaha!», which goes on
+   to choose the grade. */
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { awake: false, hop: false };
+this.timers = [];
+}
+componentWillUnmount() { this.timers.forEach((t) => clearTimeout(t)); }
+componentDidMount() { if (window.tpSound) window.tpSound.need('ui'); }
+renderVals() {
+const C = window.tpCourse;
+const act = this.props.act;
+const awake = this.state.awake;
+/* one button: the first tap wakes him, the next one (not a double tap) goes on to the grades */
+const main = (e) => {
+if (!this.state.awake) {
+e.preventDefault();
+this.wokeAt = Date.now();
+C.say(C.VOICE.hello);
+this.setState({ awake: true, hop: true });
+this.timers.push(setTimeout(() => this.setState({ hop: false }), 1200));
+return;
+}
+if (Date.now() - (this.wokeAt || 0) < 600) { e.preventDefault(); return; }
+if (act) { e.preventDefault(); act.go('Grade'); }
+};
+return {
+field: C.starfield('welcome', 390, 30, 600, 72),
+awake,
+asleep: !awake,
+moonEyes: awake ? 'M88 248q10-8 20 0' : 'M88 250q10 8 20 0',
+tap: awake
+? { left: '120px', top: '312px', turn: 'rotate(0deg)', pose: this.state.hop ? 'happy' : 'stand', anim: 'none' }
+: { left: '150px', top: '250px', turn: 'rotate(-14deg)', pose: 'sleep', anim: 'tp-breathe 3.2s ease-in-out infinite' },
+main,
+mainAria: awake ? 'Jaha, vamos: elegir el grado' : "Epáy, Mborevi'i: despertalo"
+};
+}
+}
+</script>
+</body>
+</html>

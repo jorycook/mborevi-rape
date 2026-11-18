@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Mirá y escuchá</title>
+<script src="./support.js"></script>
+<script src="./tp-sound.js"></script>
+<script src="./tp-course.js"></script>
+<script src="./tp-grades.js"></script>
+<script src="./tp-pics.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&amp;family=Baloo+2:wght@600;700;800&amp;family=Nunito:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:#2A1B3D;text-decoration:none}a:hover{color:#2A1B3D}
+@keyframes tp-legA{0%,100%{transform:rotate(14deg)}50%{transform:rotate(-14deg)}}
+@keyframes tp-legB{0%,100%{transform:rotate(-14deg)}50%{transform:rotate(14deg)}}
+@keyframes tp-tw{0%,100%{opacity:1}50%{opacity:.35}}
+@keyframes tp-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes tp-pop{0%{transform:scale(.6);opacity:0}60%{transform:scale(1.06);opacity:1}100%{transform:scale(1);opacity:1}}
+@keyframes tp-wave{0%,100%{transform:scaleY(.4)}50%{transform:scaleY(1)}}
+@keyframes tp-slide{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; position: relative; overflow: hidden; box-sizing: border-box; padding: 50px 16px 34px; background: linear-gradient(180deg, #1E1460 0%, #33207E 60%, #4A2A8F 100%); color: #FFF7EC; font-family: 'Nunito', 'Avenir Next', sans-serif; display: flex; flex-direction: column">
+
+<svg width="390" height="844" viewBox="0 0 390 844" style="position: absolute; left: 0; top: 0" aria-hidden="true">
+<path d="{{ field.dim }}" fill="#FFF6DD" opacity="0.35"/>
+<path d="{{ field.dots }}" fill="#FFF6DD" opacity="0.8" style="animation: tp-tw 3.6s ease-in-out infinite"/>
+</svg>
+
+<div style="position: relative; display: flex; align-items: center; gap: 10px; height: 44px; flex-shrink: 0">
+<a href="Tonight.dc.html" onClick="{{ close }}" aria-label="Cerrar el juego" style="width: 44px; height: 44px; margin-left: -6px; border-radius: 22px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFF7EC" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+<div style="flex-grow: 1; display: flex; flex-direction: column; min-width: 0">
+<div lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.05">Ehecha ha ehendu</div>
+<div style="font-size: 12px; font-weight: 700; color: #CFC6FF">Mirá y escuchá</div>
+</div>
+<div role="img" aria-label="{{ dotsAria }}" style="display: flex; gap: 5px; flex-shrink: 0">
+<sc-for list="{{ dots }}" as="d" hint-placeholder-count="4">
+<div style="width: 12px; height: 12px; border-radius: 6px; background: {{ d.bg }}; border: 2px solid #FFF7EC; box-sizing: border-box"></div>
+</sc-for>
+</div>
+</div>
+
+<sc-if value="{{ playing }}" hint-placeholder-val="{{ true }}">
+<div style="position: relative; margin-top: 14px; box-sizing: border-box; padding: 18px 16px 16px; border-radius: 30px; background: #FFF7EC; color: #2A1B3D; border: 3px solid #3B2418; box-shadow: 0 6px 0 #3B2418; display: flex; flex-direction: column; align-items: center; gap: 8px; flex-shrink: 0; animation: tp-slide 280ms ease-out">
+<svg viewBox="0 0 100 100" width="196" height="196" role="img" aria-label="{{ card.picAria }}">
+<path d="{{ card.pic.f0.d }}" fill="{{ card.pic.f0.fill }}" stroke="#2A1B3D" stroke-width="2.6" stroke-linejoin="round" fill-rule="{{ card.pic.rule }}"/>
+<path d="{{ card.pic.f1.d }}" fill="{{ card.pic.f1.fill }}" stroke="#2A1B3D" stroke-width="2.6" stroke-linejoin="round"/>
+<path d="{{ card.pic.f2.d }}" fill="{{ card.pic.f2.fill }}" stroke="#2A1B3D" stroke-width="2.6" stroke-linejoin="round"/>
+<path d="{{ card.pic.f3.d }}" fill="{{ card.pic.f3.fill }}" stroke="#2A1B3D" stroke-width="2.6" stroke-linejoin="round"/>
+<path d="{{ card.pic.f4.d }}" fill="{{ card.pic.f4.fill }}" stroke="#2A1B3D" stroke-width="2.6" stroke-linejoin="round"/>
+<path d="{{ card.pic.f5.d }}" fill="{{ card.pic.f5.fill }}" stroke="#2A1B3D" stroke-width="2.6" stroke-linejoin="round"/>
+<path d="{{ card.pic.pink }}" fill="#FF8FAB" opacity="0.75"/>
+<path d="{{ card.pic.white }}" fill="#FFFFFF"/>
+<path d="{{ card.pic.ink }}" fill="#2A1B3D"/>
+<path d="{{ card.pic.line }}" fill="none" stroke="#2A1B3D" stroke-width="{{ card.pic.lineW }}" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+<div lang="gn" style="font-family: 'Andika', 'Nunito', sans-serif; font-weight: 700; font-size: {{ card.size }}; line-height: 1.1; text-align: center">{{ card.gn }}</div>
+<div style="font-size: 17px; font-weight: 800; color: #5C4E86; text-align: center">{{ card.es }}</div>
+<sc-if value="{{ card.hasSyl }}" hint-placeholder-val="{{ true }}">
+<div role="img" aria-label="{{ card.sylAria }}" style="display: flex; gap: 6px; flex-wrap: wrap; justify-content: center">
+<sc-for list="{{ card.syl }}" as="y" hint-placeholder-count="2">
+<div lang="gn" style="min-width: 36px; height: 32px; box-sizing: border-box; padding: 0 10px; border-radius: 16px; background: #EDE6FF; border: 2px solid #6B4FD8; display: flex; align-items: center; justify-content: center; font-family: 'Andika', 'Nunito', sans-serif; font-weight: 700; font-size: 17px; color: #2A1B3D">{{ y.t }}</div>
+</sc-for>
+</div>
+</sc-if>
+<button type="button" onClick="{{ listen }}" aria-label="{{ card.listenAria }}" style="margin-top: 4px; height: 48px; box-sizing: border-box; padding: 0 18px; border-radius: 24px; background: #8EC5FF; border: 3px solid #3B2418; display: flex; align-items: center; gap: 8px; color: #2A1B3D">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2A1B3D" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19 6a8.5 8.5 0 0 1 0 12"/></svg>
+<span lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 18px">Ehendu</span>
+<span style="font-size: 13px; font-weight: 800; color: #2A1B3D">Escuchá</span>
+</button>
+</div>
+</sc-if>
+
+<sc-if value="{{ finished }}" hint-placeholder-val="{{ false }}">
+<div style="position: relative; margin-top: 24px; box-sizing: border-box; padding: 22px 18px; border-radius: 30px; background: #FFF7EC; color: #2A1B3D; border: 3px solid #3B2418; box-shadow: 0 6px 0 #3B2418; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; flex-shrink: 0; animation: tp-pop 420ms ease-out">
+<svg viewBox="0 0 64 64" width="88" height="88" aria-hidden="true"><path d="{{ bigStar }}" fill="#FFD34E" stroke="#3B2418" stroke-width="3" stroke-linejoin="round"/><path d="M22 31q3.6-5 7.2 0M34.8 31q3.6-5 7.2 0M27 38q5 5 10 0" fill="none" stroke="#3B2418" stroke-width="2.8" stroke-linecap="round"/></svg>
+<div lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 30px; line-height: 1">Iporãite!</div>
+<sc-if value="{{ fresh }}" hint-placeholder-val="{{ true }}"><div lang="gn" style="font-family: 'Andika', 'Nunito', sans-serif; font-weight: 700; font-size: 18px">Rehupyty peteĩ mbyja.</div></sc-if>
+<div style="font-size: 14px; font-weight: 700; color: #5C4E86"><sc-if value="{{ fresh }}" hint-placeholder-val="{{ true }}">¡Muy bien! Ganaste una estrella.</sc-if><sc-if value="{{ again }}" hint-placeholder-val="{{ false }}">¡Muy bien! Esta estrella ya era tuya.</sc-if> Ya conocés las {{ count }} palabras de esta noche.</div>
+</div>
+</sc-if>
+
+<div style="flex-grow: 1"></div>
+<div style="position: relative; display: flex; align-items: flex-end; gap: 8px; flex-shrink: 0">
+<div style="position: relative; flex-shrink: 0">
+<div lang="gn" role="status" style="position: absolute; left: 70px; bottom: 70px">
+<sc-if value="{{ bubble.on }}" hint-placeholder-val="{{ false }}">
+<div style="padding: 6px 12px; border-radius: 16px; background: #FFF7EC; color: #2A1B3D; border: 2px solid #3B2418; font-family: 'Andika', 'Nunito', sans-serif; font-weight: 700; font-size: 18px; white-space: nowrap; animation: tp-pop 300ms ease-out">{{ bubble.text }}</div>
+</sc-if>
+</div>
+<div style="animation: tp-bob 2.6s ease-in-out infinite">
+<dc-import name="Mborevi" pose="{{ pose }}" size="104" hint-size="104px,84px"></dc-import>
+</div>
+</div>
+<sc-if value="{{ playing }}" hint-placeholder-val="{{ true }}">
+<button type="button" onClick="{{ next }}" style="flex-grow: 1; height: 60px; margin-bottom: 8px; border-radius: 30px; background: #FFD34E; border: 3px solid #3B2418; box-shadow: 0 5px 0 #3B2418; display: flex; align-items: center; justify-content: center; gap: 10px; color: #2A1B3D">
+<span lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 22px">Upéi</span>
+<span style="font-size: 15px; font-weight: 800; color: #5C4E86">Siguiente</span>
+</button>
+</sc-if>
+<sc-if value="{{ finished }}" hint-placeholder-val="{{ false }}">
+<a href="Tonight.dc.html" onClick="{{ done }}" ref="{{ doneRef }}" style="flex-grow: 1; height: 60px; margin-bottom: 8px; border-radius: 30px; background: #FFD34E; border: 3px solid #3B2418; box-shadow: 0 5px 0 #3B2418; display: flex; align-items: center; justify-content: center; gap: 10px; color: #2A1B3D">
+<span lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 22px">Jaha!</span>
+<span style="font-size: 15px; font-weight: 800; color: #5C4E86">Al juego que sigue</span>
+</a>
+</sc-if>
+</div>
+
+<div role="status" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">{{ announce }}</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"app":{"editor":null},"act":{"editor":null},"$preview":{"width":390,"height":844}}'>
+/* Meet tonight's words, one card at a time: the picture, the word in Guarani, its meaning, its syllables (once the
+   child reads Guarani: from 1.º grado with Guarani at home, from 2.º grado as a second language) and «Ehendu» to
+   hear it. The sound is a recorded clip, keyed «w:» + the word
+   (tp-sound.js, one file per grade); where a clip is missing or the voice is off, Mborevi'i says the word in a
+   bubble instead. After the last card, a
+   star (a game played again keeps the one it had), and the button to go on takes the focus. On its own: 1.º grado,
+   unit 5 (the numbers), night 1: peteĩ to po. */
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { i: 0, said: false, finished: false };
+this.timers = [];
+this.calm = 0;
+this.doneRef = (el) => { this.doneEl = el; };
+}
+componentWillUnmount() { this.timers.forEach((t) => clearTimeout(t)); }
+componentDidUpdate() {
+const f = !!this.state.finished;
+if (f && !this.wasFinished) { if (this.doneEl) this.doneEl.focus(); window.tpCourse.say(this.endLine); }
+this.wasFinished = f;
+}
+view() {
+const C = window.tpCourse;
+if (this.props.app) return this.props.app;
+if (!this.sample) { const st = C.sample('g1', 'L2', 16); st.cur = 'g1u05n1'; this.sample = C.view(st); }
+return this.sample;
+}
+renderVals() {
+const C = window.tpCourse;
+const S = window.tpSound;
+const act = this.props.act;
+const app = this.view();
+const s = app.step;
+const words = s && s.data && s.data.words ? s.data.words.map((w) => C.word(w)) : [];
+const n = words.length;
+const i = Math.min(this.state.i, Math.max(0, n - 1));
+const w = words[i] || C.word({ gn: '', es: '', pic: '' });
+const readers = !!s && !C.isOral(s, app.track || 'L2');
+const key = 'w:' + C.fold(w.gn);
+const listen = () => {
+if (S) S.unlock();
+const played = S && S.has(key) ? S.play(key) : false;
+this.setState({ said: true, voiced: !!played });
+clearTimeout(this.saidT);
+this.saidT = setTimeout(() => this.setState({ said: false }), played ? Math.max(900, S.ms(key) + 300) : 1800);
+this.timers.push(this.saidT);
+};
+/* a double tap is one tap: it must not skip a card */
+const next = () => {
+if (Date.now() < this.calm) return;
+this.calm = Date.now() + 400;
+this.timers.forEach((t) => clearTimeout(t));
+this.timers = [];
+if (i + 1 < n) this.setState({ i: i + 1, said: false });
+else this.setState({ finished: true, said: false });
+};
+const len = C.chars(w.gn).length;
+const finished = this.state.finished || n === 0;
+const again = !!(s && ((app.done || {})[s.id] || {}).meet);
+this.endLine = again ? C.VOICE.good : C.VOICE.star;
+return {
+field: C.starfield('meet', 390, 40, 760, 46),
+dots: words.map((x, k) => ({ bg: finished || k < i ? '#FFD34E' : k === i ? '#FFF7EC' : 'transparent' })),
+dotsAria: 'Palabra ' + (Math.min(i + 1, n)) + ' de ' + n,
+playing: !finished,
+finished,
+card: {
+pic: w.pic,
+picAria: w.es,
+gn: w.gn, es: w.es,
+size: len > 16 ? '28px' : len > 10 ? '34px' : '42px',
+hasSyl: readers && w.syl && w.syl.length > 1,
+syl: (w.syl || []).map((t) => ({ t })),
+sylAria: 'Sílabas: ' + (w.syl || []).join(', '),
+listenAria: 'Ehendu, escuchá: ' + w.gn
+},
+bubble: { on: this.state.said && !this.state.voiced && !finished, text: w.gn },
+pose: finished ? 'happy' : this.state.said ? 'listen' : 'stand',
+listen, next,
+count: String(n),
+fresh: !again, again,
+announce: finished && n ? 'Iporãite! ' + (again ? '¡Muy bien! Esta estrella ya era tuya.' : 'Rehupyty peteĩ mbyja. ¡Muy bien! Ganaste una estrella.') + ' Ya conocés las ' + n + ' palabras de esta noche.' : '',
+doneRef: this.doneRef,
+bigStar: C.puffyD(32, 33.5, 28),
+close: (e) => { if (act) { e.preventDefault(); if (finished) act.finish('meet'); else act.go('Tonight'); } },
+done: (e) => { if (act) { e.preventDefault(); act.finish('meet'); } }
+};
+}
+}
+</script>
+</body>
+</html>

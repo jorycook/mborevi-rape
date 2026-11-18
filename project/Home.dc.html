@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>La lengua de casa</title>
+<script src="./support.js"></script>
+<script src="./tp-course.js"></script>
+<script src="./tp-grades.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&amp;family=Baloo+2:wght@600;700;800&amp;family=Nunito:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:#2A1B3D;text-decoration:none}a:hover{color:#2A1B3D}
+@keyframes tp-legA{0%,100%{transform:rotate(14deg)}50%{transform:rotate(-14deg)}}
+@keyframes tp-legB{0%,100%{transform:rotate(-14deg)}50%{transform:rotate(14deg)}}
+@keyframes tp-tw{0%,100%{opacity:1}50%{opacity:.35}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; position: relative; overflow: hidden; box-sizing: border-box; padding: 50px 16px 34px; background: linear-gradient(180deg, #110A38 0%, #1E1460 50%, #33207E 100%); color: #FFF7EC; font-family: 'Nunito', 'Avenir Next', sans-serif; display: flex; flex-direction: column">
+
+<svg width="390" height="844" viewBox="0 0 390 844" style="position: absolute; left: 0; top: 0" aria-hidden="true">
+<path d="{{ field.dim }}" fill="#FFF6DD" opacity="0.35"/>
+<path d="{{ field.dots }}" fill="#FFF6DD" opacity="0.8" style="animation: tp-tw 3.6s ease-in-out infinite"/>
+</svg>
+
+<div style="position: relative; display: flex; align-items: center; gap: 4px; height: 44px; flex-shrink: 0">
+<a href="Grade.dc.html" onClick="{{ toGrade }}" aria-label="Volver a los grados" style="width: 44px; height: 44px; margin-left: -8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFF7EC" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></a>
+<h1 style="margin: 0; font-family: 'Baloo 2', 'Nunito', sans-serif; font-size: 26px; font-weight: 800; line-height: 1; white-space: nowrap">¿Qué se habla en casa?</h1>
+</div>
+<div style="position: relative; margin-top: 2px; font-size: 13px; font-weight: 700; color: #CFC6FF; line-height: 1.4">Para grandes: así el camino sigue el modelo bilingüe de la escuela.</div>
+
+<div style="position: relative; height: 84px; margin-top: 4px; flex-shrink: 0">
+<div style="position: absolute; left: 134px; top: 6px">
+<dc-import name="Mborevi" pose="listen" size="90" hint-size="90px,73px"></dc-import>
+</div>
+<div lang="gn" style="position: absolute; left: 6px; top: 10px; padding: 6px 12px; border-radius: 16px; background: #FFF7EC; color: #2A1B3D; border: 2px solid #3B2418; font-family: 'Andika', 'Nunito', sans-serif; font-weight: 700; font-size: 16px; transform: rotate(-5deg)">Mba'éichapa?</div>
+<div lang="es" style="position: absolute; right: 6px; top: 4px; padding: 6px 12px; border-radius: 16px; background: #B8F0E0; color: #2A1B3D; border: 2px solid #3B2418; font-weight: 800; font-size: 15px; transform: rotate(5deg)">¿Cómo estás?</div>
+</div>
+
+<div role="group" aria-label="La lengua que más se habla en casa" style="position: relative; display: flex; flex-direction: column; gap: 8px; flex-shrink: 0">
+<sc-for list="{{ options }}" as="op" hint-placeholder-count="3">
+<button type="button" aria-pressed="{{ op.checked }}" onClick="{{ op.pick }}" style="box-sizing: border-box; width: 100%; padding: 8px 12px 10px; border-radius: 22px; text-align: left; display: flex; flex-direction: column; gap: 5px; border: {{ op.border }}; background: {{ op.bg }}; box-shadow: {{ op.shadow }}; color: #2A1B3D">
+<div style="display: flex; align-items: center; gap: 10px">
+<div aria-hidden="true" style="width: 22px; height: 22px; box-sizing: border-box; border-radius: 50%; border: 3px solid #3B2418; background: #FFFFFF; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><div style="width: 10px; height: 10px; border-radius: 50%; background: #3B2418; opacity: {{ op.dotO }}"></div></div>
+<div style="flex-grow: 1; min-width: 0; display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap">
+<span style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.1">{{ op.es }}</span>
+<span style="font-size: 12px; font-weight: 800; color: #5C4E86">{{ op.short }}</span>
+</div>
+</div>
+<div style="font-size: 12.5px; font-weight: 700; color: #4A3D72; line-height: 1.35">{{ op.note }}</div>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px">
+<sc-for list="{{ op.skills }}" as="sk" hint-placeholder-count="4">
+<div style="min-width: 0; box-sizing: border-box; padding: 3px 4px 4px; border-radius: 10px; display: flex; flex-direction: column; align-items: center; text-align: center; line-height: 1.15; border: {{ sk.border }}; background: {{ sk.bg }}; color: #2A1B3D"><span lang="gn" style="font-size: 12px; font-weight: {{ sk.weight }}">{{ sk.gn }}</span><span style="font-size: 11px; font-weight: 700; color: #5C4E86">{{ sk.es }}</span></div>
+</sc-for>
+</div>
+</button>
+</sc-for>
+</div>
+
+<div style="position: relative; margin-top: 8px; font-size: 12px; font-weight: 700; color: #CFC6FF; line-height: 1.45; flex-shrink: 0">La ley 1264/98 (art. 31) pide enseñar en la lengua materna desde el comienzo, y la otra lengua oficial también desde el inicio, como segunda lengua. Acá lo elegís vos y lo podés cambiar; en Preescolar todo es oral.</div>
+
+<div style="flex-grow: 1"></div>
+<a href="Ready.dc.html" onClick="{{ next }}" style="position: relative; height: 60px; border-radius: 30px; background: #FFD34E; border: 3px solid #3B2418; box-shadow: 0 5px 0 #3B2418; display: flex; align-items: center; justify-content: center; gap: 10px; color: #2A1B3D; flex-shrink: 0">
+<span lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 22px">Jaha!</span>
+<span style="font-size: 15px; font-weight: 800; color: #5C4E86">¡Vamos!</span>
+</a>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"app":{"editor":null},"act":{"editor":null},"$preview":{"width":390,"height":844}}'>
+/* The language spoken most at home picks the track, as the MEC's bilingual models do: Guarani first (L1) reads and
+   writes Guarani from 1.º grado; Spanish first (Guarani L2) listens and speaks before reading and writing; both
+   (bilingual) mixes them. The four chips are the four abilities of the programs, as a child says them: the ones the
+   track starts with are lit, for the grade picked: Preescolar is oral on every track, and with Guarani as a second
+   language reading and writing join from 2.º grado. On its own the artboard has «Más castellano» picked, the most
+   common case in towns, and 1.º grado. */
+const ORDER = ['L1', 'L2', 'BI'];
+const FIRST = { L1: ["amoñe'ẽ", 'ahai', 'ahendu', "añe'ẽ"], L2: ['ahendu', "añe'ẽ", "amoñe'ẽ", 'ahai'], BI: ['ahendu', "añe'ẽ", "amoñe'ẽ", 'ahai'] };
+const LIT = { L1: 2, L2: 2, BI: 4 };
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { pick: null };
+}
+renderVals() {
+const C = window.tpCourse;
+const act = this.props.act;
+const app = this.props.app || null;
+const pick = this.state.pick || (app && app.track) || 'L2';
+const g = (app && app.gradeSet && app.grade) || 'g1';
+const options = ORDER.map((k) => {
+const t = C.TRACKS[k];
+const on = k === pick;
+const first = g === 'pre' ? FIRST.L2 : FIRST[k];
+const many = g === 'pre' ? 2 : k === 'L2' && g !== 'g1' ? 4 : LIT[k];
+return {
+es: t.es, short: t.short, note: t.note,
+checked: on ? 'true' : 'false',
+dotO: on ? 1 : 0,
+border: on ? '3px solid #3B2418' : '2px solid #3B2418',
+bg: on ? '#FFD34E' : '#FFF7EC',
+shadow: on ? '0 4px 0 #3B2418' : 'none',
+skills: first.map((s, i) => {
+const lit = i < many;
+return { gn: C.SKILLS[s].gn, es: C.SKILLS[s].es, bg: lit ? (on ? '#FFF7EC' : '#FFE7A3') : 'transparent', border: lit ? '2px solid #3B2418' : '1.5px dashed #8F80E6', weight: lit ? 800 : 700 };
+}),
+pick: () => this.setState({ pick: k })
+};
+});
+return {
+field: C.starfield('home', 390, 40, 760, 46),
+options,
+toGrade: (e) => { if (act) { e.preventDefault(); act.go('Grade'); } },
+next: (e) => { if (act) { e.preventDefault(); act.track(pick); } }
+};
+}
+}
+</script>
+</body>
+</html>

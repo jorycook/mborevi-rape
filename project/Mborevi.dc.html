@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Mborevi'i, el tapir bebé</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+@keyframes tp-legA{0%,100%{transform:rotate(14deg)}50%{transform:rotate(-14deg)}}
+@keyframes tp-legB{0%,100%{transform:rotate(-14deg)}50%{transform:rotate(14deg)}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+<div style="width: {{ w }}; height: {{ h }}; transform: {{ flipT }}; flex-shrink: 0; line-height: 0; font-family: 'Nunito', sans-serif; color: #3B2418">
+<svg viewBox="0 0 210 170" width="100%" height="100%" role="img" aria-label="{{ label }}" style="display: block; overflow: visible">
+<defs>
+<clipPath id="{{ clipId }}">
+<path d="M34 98C34 68 64 56 96 60C122 63 136 78 134 98C132 118 110 126 84 126C56 126 34 120 34 98Z"/>
+</clipPath>
+</defs>
+<ellipse cx="104" cy="{{ shadowY }}" rx="{{ shadowRx }}" ry="6" fill="#0B0726" opacity="0.4"/>
+<g transform="{{ lift }}">
+<g data-part="legs-far-stand" opacity="{{ o.stand }}">
+<rect x="62" y="108" width="20" height="34" rx="10" fill="#7F5236" stroke="#3B2418" stroke-width="3"/>
+<path d="M63.5 133h17v1.5a7.5 7.5 0 0 1-7.5 7.5h-2a7.5 7.5 0 0 1-7.5-7.5z" fill="#3B2418"/>
+<rect x="125" y="106" width="20" height="36" rx="10" fill="#7F5236" stroke="#3B2418" stroke-width="3"/>
+<path d="M126.5 133h17v1.5a7.5 7.5 0 0 1-7.5 7.5h-2a7.5 7.5 0 0 1-7.5-7.5z" fill="#3B2418"/>
+</g>
+<g data-part="legs-far-walk" opacity="{{ o.walk }}">
+<g style="transform-origin: 72px 112px; transform-box: view-box; animation: tp-legB 0.7s ease-in-out infinite">
+<rect x="62" y="108" width="20" height="34" rx="10" fill="#7F5236" stroke="#3B2418" stroke-width="3"/>
+<path d="M63.5 133h17v1.5a7.5 7.5 0 0 1-7.5 7.5h-2a7.5 7.5 0 0 1-7.5-7.5z" fill="#3B2418"/>
+</g>
+<g style="transform-origin: 134px 110px; transform-box: view-box; animation: tp-legA 0.7s ease-in-out infinite">
+<rect x="125" y="106" width="20" height="36" rx="10" fill="#7F5236" stroke="#3B2418" stroke-width="3"/>
+<path d="M126.5 133h17v1.5a7.5 7.5 0 0 1-7.5 7.5h-2a7.5 7.5 0 0 1-7.5-7.5z" fill="#3B2418"/>
+</g>
+</g>
+<g data-part="legs-far-jump" opacity="{{ o.jump }}">
+<g transform="rotate(16 72 112)">
+<rect x="62" y="108" width="20" height="32" rx="10" fill="#7F5236" stroke="#3B2418" stroke-width="3"/>
+<path d="M63.5 131h17v1.5a7.5 7.5 0 0 1-7.5 7.5h-2a7.5 7.5 0 0 1-7.5-7.5z" fill="#3B2418"/>
+</g>
+<g transform="rotate(-16 134 110)">
+<rect x="125" y="106" width="20" height="34" rx="10" fill="#7F5236" stroke="#3B2418" stroke-width="3"/>
+<path d="M126.5 131h17v1.5a7.5 7.5 0 0 1-7.5 7.5h-2a7.5 7.5 0 0 1-7.5-7.5z" fill="#3B2418"/>
+</g>
+</g>
+<path d="M37 88C28 85 24 94 29 98C32 100 35 99 37 97" fill="#A0704E" stroke="#3B2418" stroke-width="3" stroke-linejoin="round"/>
+<path d="M34 98C34 68 64 56 96 60C122 63 136 78 134 98C132 118 110 126 84 126C56 126 34 120 34 98Z" fill="#A0704E" stroke="#3B2418" stroke-width="3"/>
+<g clip-path="{{ clipUrl }}">
+<ellipse cx="86" cy="126" rx="52" ry="15" fill="#B98A64"/>
+<path d="M38 86C58 76 76 90 96 82C110 77 122 82 136 78" fill="none" stroke="#FFF0D9" stroke-width="5" stroke-linecap="round"/>
+<path d="M36 103C56 95 78 107 100 99C114 94 126 99 138 95" fill="none" stroke="#FFF0D9" stroke-width="5" stroke-linecap="round"/>
+<path d="M46 117C66 111 86 121 106 114" fill="none" stroke="#FFF0D9" stroke-width="4" stroke-linecap="round"/>
+<circle cx="60" cy="71" r="3" fill="#FFF0D9"/>
+<circle cx="82" cy="67" r="3.4" fill="#FFF0D9"/>
+<circle cx="104" cy="69" r="2.8" fill="#FFF0D9"/>
+<circle cx="70" cy="93" r="2.6" fill="#FFF0D9"/>
+<circle cx="116" cy="88" r="2.6" fill="#FFF0D9"/>
+<circle cx="88" cy="108" r="2.4" fill="#FFF0D9"/>
+<ellipse cx="78" cy="66" rx="22" ry="5" fill="#FFFFFF" opacity="0.16"/>
+</g>
+<g data-part="legs-near-stand" opacity="{{ o.stand }}">
+<rect x="46" y="110" width="20" height="34" rx="10" fill="#A0704E" stroke="#3B2418" stroke-width="3"/>
+<path d="M47.5 135h17v1.5a7.5 7.5 0 0 1-7.5 7.5h-2a7.5 7.5 0 0 1-7.5-7.5z" fill="#3B2418"/>
+<rect x="110" y="108" width="20" height="36" rx="10" fill="#A0704E" stroke="#3B2418" stroke-width="3"/>
+<path d="M111.5 135h17v1.5a7.5 7.5 0 0 1-7.5 7.5h-2a7.5 7.5 0 0 1-7.5-7.5z" fill="#3B2418"/>
+</g>
+<g data-part="legs-near-walk" opacity="{{ o.walk }}">
+<g style="transform-origin: 56px 114px; transform-box: view-box; animation: tp-legA 0.7s ease-in-out infinite">
+<rect x="46" y="110" width="20" height="34" rx="10" fill="#A0704E" stroke="#3B2418" stroke-width="3"/>
+<path d="M47.5 135h17v1.5a7.5 7.5 0 0 1-7.5 7.5h-2a7.5 7.5 0 0 1-7.5-7.5z" fill="#3B2418"/>
+</g>
+<g style="transform-origin: 120px 112px; transform-box: view-box; animation: tp-legB 0.7s ease-in-out infinite">
+<rect x="110" y="108" width="20" height="36" rx="10" fill="#A0704E" stroke="#3B2418" stroke-width="3"/>
+<path d="M111.5 135h17v1.5a7.5 7.5 0 0 1-7.5 7.5h-2a7.5 7.5 0 0 1-7.5-7.5z" fill="#3B2418"/>
+</g>
+</g>
+<g data-part="legs-near-jump" opacity="{{ o.jump }}">
+<g transform="rotate(14 56 114)">
+<rect x="46" y="110" width="20" height="32" rx="10" fill="#A0704E" stroke="#3B2418" stroke-width="3"/>
+<path d="M47.5 133h17v1.5a7.5 7.5 0 0 1-7.5 7.5h-2a7.5 7.5 0 0 1-7.5-7.5z" fill="#3B2418"/>
+</g>
+<g transform="rotate(-14 120 112)">
+<rect x="110" y="108" width="20" height="34" rx="10" fill="#A0704E" stroke="#3B2418" stroke-width="3"/>
+<path d="M111.5 133h17v1.5a7.5 7.5 0 0 1-7.5 7.5h-2a7.5 7.5 0 0 1-7.5-7.5z" fill="#3B2418"/>
+</g>
+</g>
+<g data-part="legs-folded" opacity="{{ o.fold }}">
+<path d="M52 122c0-6 16-6 16 0s-16 6-16 0z" fill="#A0704E" stroke="#3B2418" stroke-width="3"/>
+<path d="M106 122c0-6 18-6 18 0s-18 6-18 0z" fill="#A0704E" stroke="#3B2418" stroke-width="3"/>
+</g>
+<g transform="translate(150 86) scale(1.12) translate(-150 -86)">
+<g transform="{{ earT }}">
+<ellipse cx="132" cy="50" rx="11" ry="15" fill="#A0704E" stroke="#3B2418" stroke-width="3"/>
+<ellipse cx="132" cy="51.5" rx="6" ry="9.5" fill="#F4A6B6"/>
+<path d="M123.5 44a11 15 0 0 1 17 0" fill="none" stroke="#FFF0D9" stroke-width="2" stroke-linecap="round"/>
+</g>
+<path d="M120 104C111 90 114 66 134 56C150 48 168 52 176 62C186 65 197 74 198 86C199 94 193 99 187 97C183 95 182 91 178 91C176 100 167 110 153 112C138 114 125 111 120 104Z" fill="#A0704E" stroke="#3B2418" stroke-width="3" stroke-linejoin="round"/>
+<path d="M182 80C186 81 189 84 190 88" fill="none" stroke="#3B2418" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+<ellipse cx="193.5" cy="90" rx="1.7" ry="2.4" fill="#3B2418"/>
+<circle cx="134" cy="74" r="2.6" fill="#FFF0D9"/>
+<circle cx="128" cy="90" r="2.2" fill="#FFF0D9"/>
+<circle cx="142" cy="62" r="2" fill="#FFF0D9"/>
+<g data-part="eyes-open" opacity="{{ o.eyeOpen }}">
+<ellipse cx="158" cy="78" rx="7" ry="8.2" fill="#2A1913"/>
+<circle cx="160.6" cy="74.4" r="2.8" fill="#FFFFFF"/>
+<circle cx="155.6" cy="81.6" r="1.4" fill="#FFFFFF"/>
+</g>
+<g data-part="eyes-closed" opacity="{{ o.eyeClosed }}">
+<path d="M151 80q7 6 14 0" fill="none" stroke="#3B2418" stroke-width="3" stroke-linecap="round"/>
+</g>
+<g data-part="eyes-happy" opacity="{{ o.eyeHappy }}">
+<path d="M151 81q7-9 14 0" fill="none" stroke="#3B2418" stroke-width="3.4" stroke-linecap="round"/>
+</g>
+<g data-part="eyes-wide" opacity="{{ o.eyeWide }}">
+<path d="M150 64q7-5 14-2" fill="none" stroke="#3B2418" stroke-width="2.6" stroke-linecap="round"/>
+<ellipse cx="158" cy="77" rx="8" ry="9" fill="#FFFFFF" stroke="#3B2418" stroke-width="2.4"/>
+<ellipse cx="159" cy="78" rx="4.4" ry="5" fill="#2A1913"/>
+<circle cx="160.6" cy="76" r="1.6" fill="#FFFFFF"/>
+</g>
+<g data-part="eyes-up" opacity="{{ o.eyeUp }}">
+<ellipse cx="158" cy="77" rx="7" ry="8.2" fill="#2A1913"/>
+<circle cx="160" cy="72" r="2.8" fill="#FFFFFF"/>
+<circle cx="155.6" cy="80.6" r="1.3" fill="#FFFFFF"/>
+</g>
+<ellipse cx="153" cy="92" rx="7.2" ry="4.4" fill="#FF8FAB" opacity="0.85"/>
+<g data-part="mouth-smile" opacity="{{ o.mSmile }}">
+<path d="M158 98.5q5 5 10 0" fill="none" stroke="#3B2418" stroke-width="2.6" stroke-linecap="round"/>
+</g>
+<g data-part="mouth-open" opacity="{{ o.mOpen }}">
+<path d="M157 97.5c1.5 8 10.5 9 13 .5z" fill="#7A2E3B" stroke="#3B2418" stroke-width="2.4" stroke-linejoin="round"/>
+<path d="M160.5 102.5c2 2 5 2 7 0" fill="none" stroke="#FF8FAB" stroke-width="2.4" stroke-linecap="round"/>
+</g>
+<g data-part="mouth-o" opacity="{{ o.mO }}">
+<ellipse cx="163.5" cy="100" rx="3" ry="3.4" fill="#7A2E3B" stroke="#3B2418" stroke-width="2"/>
+</g>
+<g data-part="mouth-sleep" opacity="{{ o.mSleep }}">
+<path d="M160 99.5q3.5 2 7 0" fill="none" stroke="#3B2418" stroke-width="2.4" stroke-linecap="round"/>
+</g>
+<path d="M121 33.5L123.1 38.1L128.1 38.7L124.4 42.1L125.4 47.1L121 44.6L116.6 47.1L117.6 42.1L113.9 38.7L118.9 38.1Z" fill="#FFD34E" stroke="#3B2418" stroke-width="2" stroke-linejoin="round"/>
+</g>
+<g data-part="sweat" opacity="{{ o.sweat }}">
+<path d="M190 52c-3 5-5 8-5 10a5 5 0 0 0 10 0c0-2-2-5-5-10z" fill="#9FD8FF" stroke="#3B2418" stroke-width="2" stroke-linejoin="round"/>
+</g>
+<g data-part="zzz" opacity="{{ o.zzz }}">
+<path d="M168 40h9l-9 10h9M184 26h7l-7 8h7" fill="none" stroke="#FFF0D9" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<g data-part="sparks" opacity="{{ o.sparks }}">
+<path d="M22 42L24.3 46.9L29.6 47.5L25.7 51.2L26.7 56.5L22 53.8L17.3 56.5L18.3 51.2L14.4 47.5L19.7 46.9Z" fill="#FFD34E" stroke="#3B2418" stroke-width="1.8" stroke-linejoin="round"/>
+<path d="M198 28L199.7 31.7L203.7 32.1L200.7 34.9L201.5 38.9L198 36.9L194.5 38.9L195.3 34.9L192.3 32.1L196.3 31.7Z" fill="#FFC2D4" stroke="#3B2418" stroke-width="1.6" stroke-linejoin="round"/>
+<path d="M52 21L53.4 24.1L56.8 24.5L54.3 26.7L54.9 30L52 28.4L49.1 30L49.7 26.7L47.2 24.5L50.6 24.1Z" fill="#B8F0E0" stroke="#3B2418" stroke-width="1.4" stroke-linejoin="round"/>
+</g>
+<g data-part="sound" opacity="{{ o.sound }}">
+<path d="M146 30q6-6 12 0M141 21q11-11 22 0" fill="none" stroke="#FFF0D9" stroke-width="2.6" stroke-linecap="round"/>
+</g>
+</g>
+</svg>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"pose":{"editor":"enum","options":["stand","walk","happy","oops","sleep","listen","cheer"],"default":"stand"},"size":{"editor":"int","min":40,"max":800,"default":420,"unit":"px"},"flip":{"editor":"boolean","default":false},"$preview":{"width":420,"height":340}}'>
+/* Mborevi'i, the baby tapir: one drawing with every pose's parts, each part shown or hidden by its opacity.
+   Poses: stand, walk (the legs swing with the importer's tp-legA and tp-legB keyframes), happy, oops, sleep,
+   listen and cheer. size is the width in px (the height follows, 210 by 170); flip turns it to face left.
+   Baby tapirs have cream stripes and spots, like a sky full of stars; the star on the ear is the one it carries. */
+const POSES = ['stand', 'walk', 'happy', 'oops', 'sleep', 'listen', 'cheer'];
+const LABEL = {
+stand: "Mborevi'i, el tapir bebé",
+walk: "Mborevi'i camina",
+happy: "Mborevi'i salta de contento",
+oops: "Mborevi'i se sorprende",
+sleep: "Mborevi'i duerme",
+listen: "Mborevi'i escucha",
+cheer: "Mborevi'i festeja"
+};
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.uid = 'tp-body-' + Math.random().toString(36).slice(2, 8);
+}
+renderVals() {
+const pose = POSES.indexOf(this.props.pose) >= 0 ? this.props.pose : 'stand';
+const size = Number(this.props.size) || 420;
+const flip = this.props.flip === true || this.props.flip === 'true';
+const legs = { stand: 'stand', walk: 'walk', happy: 'jump', cheer: 'jump', oops: 'stand', listen: 'stand', sleep: 'fold' }[pose];
+const eye = { sleep: 'eyeClosed', happy: 'eyeHappy', cheer: 'eyeHappy', oops: 'eyeWide', listen: 'eyeUp' }[pose] || 'eyeOpen';
+const mouth = { happy: 'mOpen', cheer: 'mOpen', oops: 'mO', sleep: 'mSleep' }[pose] || 'mSmile';
+const o = { stand: 0, walk: 0, jump: 0, fold: 0, eyeOpen: 0, eyeClosed: 0, eyeHappy: 0, eyeWide: 0, eyeUp: 0, mSmile: 0, mOpen: 0, mO: 0, mSleep: 0, sweat: 0, zzz: 0, sparks: 0, sound: 0 };
+o[legs] = 1;
+o[eye] = 1;
+o[mouth] = 1;
+if (pose === 'oops') o.sweat = 1;
+if (pose === 'sleep') o.zzz = 1;
+if (pose === 'happy' || pose === 'cheer') o.sparks = 1;
+if (pose === 'listen') o.sound = 1;
+return {
+o,
+lift: legs === 'jump' ? 'translate(0 -10)' : legs === 'fold' ? 'translate(0 8)' : 'translate(0 0)',
+earT: pose === 'listen' ? 'rotate(-6 132 54)' : pose === 'oops' ? 'rotate(-40 132 54)' : 'rotate(-24 132 54)',
+clipId: this.uid,
+clipUrl: 'url(#' + this.uid + ')',
+shadowY: legs === 'fold' ? 138 : 151,
+shadowRx: legs === 'jump' ? 48 : 64,
+w: size + 'px',
+h: Math.round((size * 170) / 210) + 'px',
+flipT: flip ? 'scaleX(-1)' : 'none',
+label: LABEL[pose]
+};
+}
+}
+</script>
+</body>
+</html>

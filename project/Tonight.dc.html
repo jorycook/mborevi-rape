@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Los juegos de esta noche</title>
+<script src="./support.js"></script>
+<script src="./tp-course.js"></script>
+<script src="./tp-grades.js"></script>
+<script src="./tp-pics.js"></script>
+<script src="./tp-sky.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&amp;family=Baloo+2:wght@600;700;800&amp;family=Nunito:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:#2A1B3D;text-decoration:none}a:hover{color:#2A1B3D}
+@keyframes tp-legA{0%,100%{transform:rotate(14deg)}50%{transform:rotate(-14deg)}}
+@keyframes tp-legB{0%,100%{transform:rotate(-14deg)}50%{transform:rotate(14deg)}}
+@keyframes tp-tw{0%,100%{opacity:1}50%{opacity:.35}}
+@keyframes tp-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes tp-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; position: relative; overflow: hidden; box-sizing: border-box; padding: 50px 16px 34px; background: linear-gradient(180deg, #110A38 0%, #1E1460 50%, #33207E 100%); color: #FFF7EC; font-family: 'Nunito', 'Avenir Next', sans-serif; display: flex; flex-direction: column">
+
+<svg width="390" height="844" viewBox="0 0 390 844" style="position: absolute; left: 0; top: 0" aria-hidden="true">
+<path d="{{ field.dim }}" fill="#FFF6DD" opacity="0.35"/>
+<path d="{{ field.dots }}" fill="#FFF6DD" opacity="0.85" style="animation: tp-tw 3.6s ease-in-out infinite"/>
+</svg>
+
+<div style="position: relative; display: flex; align-items: center; gap: 4px; height: 44px; flex-shrink: 0">
+<a href="Main.dc.html" onClick="{{ toMain }}" aria-label="Volver al camino" style="width: 44px; height: 44px; margin-left: -8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFF7EC" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></a>
+<div style="font-size: 12px; font-weight: 800; letter-spacing: 0.06em; color: #CFC6FF; line-height: 1.3">{{ kicker }}</div>
+</div>
+<div style="position: relative; display: flex; flex-direction: column; flex-shrink: 0">
+<h1 lang="gn" style="margin: 0; font-family: 'Andika', 'Nunito', sans-serif; font-weight: 700; font-size: 30px; line-height: 1.1">{{ title }}</h1>
+<div style="font-size: 15px; font-weight: 700; color: #CFC6FF">{{ sub }}</div>
+</div>
+
+<div style="position: relative; margin-top: 12px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; flex-shrink: 0">
+<sc-for list="{{ words }}" as="w" hint-placeholder-count="3">
+<div style="box-sizing: border-box; height: 92px; padding: 6px 4px; border-radius: 18px; background: #FFF7EC; color: #2A1B3D; border: 2px solid #3B2418; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px">
+<svg viewBox="0 0 100 100" width="{{ w.ps }}" height="{{ w.ps }}" aria-hidden="true">
+<path d="{{ w.pic.f0.d }}" fill="{{ w.pic.f0.fill }}" stroke="#2A1B3D" stroke-width="3" stroke-linejoin="round" fill-rule="{{ w.pic.rule }}"/>
+<path d="{{ w.pic.f1.d }}" fill="{{ w.pic.f1.fill }}" stroke="#2A1B3D" stroke-width="3" stroke-linejoin="round"/>
+<path d="{{ w.pic.f2.d }}" fill="{{ w.pic.f2.fill }}" stroke="#2A1B3D" stroke-width="3" stroke-linejoin="round"/>
+<path d="{{ w.pic.f3.d }}" fill="{{ w.pic.f3.fill }}" stroke="#2A1B3D" stroke-width="3" stroke-linejoin="round"/>
+<path d="{{ w.pic.f4.d }}" fill="{{ w.pic.f4.fill }}" stroke="#2A1B3D" stroke-width="3" stroke-linejoin="round"/>
+<path d="{{ w.pic.f5.d }}" fill="{{ w.pic.f5.fill }}" stroke="#2A1B3D" stroke-width="3" stroke-linejoin="round"/>
+<path d="{{ w.pic.pink }}" fill="#FF8FAB" opacity="0.75"/>
+<path d="{{ w.pic.white }}" fill="#FFFFFF"/>
+<path d="{{ w.pic.ink }}" fill="#2A1B3D"/>
+<path d="{{ w.pic.line }}" fill="none" stroke="#2A1B3D" stroke-width="{{ w.pic.lineW }}" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+<div lang="gn" style="max-width: 100%; font-family: 'Andika', 'Nunito', sans-serif; font-weight: 700; font-size: {{ w.fs }}; line-height: 1.1; text-align: center">{{ w.gn }}</div>
+</div>
+</sc-for>
+</div>
+
+<div style="position: relative; margin-top: 16px; font-size: 12px; font-weight: 800; letter-spacing: 0.06em; color: #CFC6FF; flex-shrink: 0">TRES JUEGOS, TRES ESTRELLAS</div>
+<div style="position: relative; margin-top: 8px; display: flex; flex-direction: column; gap: 10px; flex-shrink: 0">
+<sc-for list="{{ games }}" as="g" hint-placeholder-count="3">
+<a href="{{ g.href }}" onClick="{{ g.open }}" aria-label="{{ g.aria }}" style="box-sizing: border-box; min-height: 74px; padding: 10px 12px; border-radius: 22px; display: flex; align-items: center; gap: 12px; border: {{ g.border }}; background: {{ g.bg }}; box-shadow: {{ g.shadow }}; color: {{ g.ink }}; animation: tp-in 300ms ease-out">
+<svg viewBox="0 0 44 44" width="44" height="44" aria-hidden="true" style="flex-shrink: 0">
+<path d="{{ g.star }}" fill="{{ g.starFill }}" stroke="{{ g.starStroke }}" stroke-width="2.4" stroke-linejoin="round"/>
+<path d="{{ g.face }}" fill="none" stroke="#3B2418" stroke-width="2.2" stroke-linecap="round"/>
+</svg>
+<div style="flex-grow: 1; min-width: 0; display: flex; flex-direction: column; gap: 1px">
+<div lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.1">{{ g.gn }}</div>
+<div style="font-size: 13px; font-weight: 700; opacity: 0.85">{{ g.es }}</div>
+</div>
+<div style="height: 28px; box-sizing: border-box; padding: 0 10px; border-radius: 14px; border: 1.5px solid {{ g.chipLine }}; display: flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 800; white-space: nowrap; flex-shrink: 0"><span lang="gn">{{ g.skillGn }}</span></div>
+</a>
+</sc-for>
+</div>
+
+<div style="flex-grow: 1"></div>
+<div style="position: relative; display: flex; align-items: flex-end; gap: 8px; flex-shrink: 0">
+<div style="flex-shrink: 0; animation: tp-bob 2.6s ease-in-out infinite">
+<dc-import name="Mborevi" pose="{{ pose }}" size="96" hint-size="96px,78px"></dc-import>
+</div>
+<a href="{{ cta.href }}" onClick="{{ cta.go }}" style="flex-grow: 1; height: 60px; margin-bottom: 6px; border-radius: 30px; background: #FFD34E; border: 3px solid #3B2418; box-shadow: 0 5px 0 #3B2418; display: flex; align-items: center; justify-content: center; gap: 10px; color: #2A1B3D">
+<span lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 22px">{{ cta.gn }}</span>
+<span style="font-size: 15px; font-weight: 800; color: #5C4E86">{{ cta.es }}</span>
+</a>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"app":{"editor":null},"act":{"editor":null},"$preview":{"width":390,"height":844}}'>
+/* Tonight's spread: the night's words with their pictures, and its three games in order. A game played shows its
+   star (a game can be played again); the next one is lit and the button opens it. On its own the artboard shows
+   1.º grado, unit 2, night 2 for a child with Spanish at home: the first game done, «Ehendu ha eiporavo» next. */
+class Component extends DCLogic {
+view() {
+const C = window.tpCourse;
+if (this.props.app) return this.props.app;
+if (!this.sample) {
+const st = C.sample('g1', 'L2', 5);
+st.cur = 'g1u02n2';
+st.done.g1u02n2 = { meet: 1 };
+this.sample = C.view(st);
+}
+return this.sample;
+}
+renderVals() {
+const C = window.tpCourse;
+const act = this.props.act;
+const app = this.view();
+const nav = (to) => (e) => { if (act) { e.preventDefault(); act.go(to); } };
+const s = app.step || C.next(app, app.grade);
+const field = C.starfield('tonight', 390, 40, 760, 50);
+if (!s || s.kind !== 'night') {
+return { field, kicker: '', title: 'Esta noche no hay juegos', sub: 'Volvé al camino.', words: [], games: [], pose: 'stand', cta: { gn: 'Jaha!', es: '¡Vamos!', href: 'Main.dc.html', go: nav('Main') }, toMain: nav('Main') };
+}
+const unit = C.unit(s.grade, s.unit) || { gn: '', es: '', nights: [] };
+const keys = C.gamesFor(s, app.track || 'L2');
+const had = (app.done || {})[s.id] || {};
+const nextKey = keys.filter((k) => !had[k])[0] || null;
+const games = keys.map((k, i) => {
+const G = C.GAMES[k];
+const done = !!had[k];
+const on = k === nextKey;
+const sk = C.SKILLS[C.skillOf(k, s, app.track || 'L2')];
+return {
+gn: G.gn, es: (i + 1) + '. ' + G.es,
+skillGn: sk.gn + ' · ' + sk.es,
+star: C.puffyD(22, 23, 19),
+starFill: done ? '#FFD34E' : on ? '#FFF3C4' : '#2E2272',
+starStroke: done || on ? '#3B2418' : '#9C8BF0',
+face: done ? 'M14.5 22q2.6-3.6 5.2 0M24.3 22q2.6-3.6 5.2 0M19 27.4q3 3 6 0' : 'M0 0',
+border: on ? '3px solid #3B2418' : done ? '2px solid #3B2418' : '2px solid #6E5FD0',
+bg: on ? '#FFD34E' : done ? '#FFF7EC' : 'rgba(255, 247, 236, 0.08)',
+shadow: on ? '0 4px 0 #3B2418' : 'none',
+ink: on || done ? '#2A1B3D' : '#E4DDFF',
+chipLine: on || done ? '#3B2418' : '#8F80E6',
+href: G.screen + '.dc.html',
+aria: G.gn + ', ' + G.es + (done ? ': hecho, jugar otra vez' : on ? ': el que sigue' : ''),
+open: (e) => { if (act) { e.preventDefault(); act.open(s.id, k); } }
+};
+});
+/* a phrase gets a smaller picture and type, so it fits on two lines in the same tile */
+const words = (s.data.words || []).map((w) => {
+const long = Array.from(C.norm(w.gn)).length > 11;
+return Object.assign(C.word(w), { fs: long ? '13px' : '14px', ps: long ? 44 : 52 });
+});
+const nextG = nextKey ? C.GAMES[nextKey] : null;
+return {
+field,
+kicker: ('Noche ' + s.night + ' de ' + unit.nights.length + ' · unidad ' + s.unit + (unit.gn ? ' · ' + unit.gn : '')).toUpperCase(),
+title: C.norm(s.gn), sub: s.es,
+words, games,
+pose: nextKey ? 'stand' : 'happy',
+cta: nextG
+? { gn: 'Jaha!', es: nextG.es, href: nextG.screen + '.dc.html', go: (e) => { if (act) { e.preventDefault(); act.open(s.id, nextKey); } } }
+: { gn: 'Jaguata!', es: '¡A caminar!', href: 'Main.dc.html', go: nav('Main') },
+toMain: nav('Main')
+};
+}
+}
+</script>
+</body>
+</html>

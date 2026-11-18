@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Mborevi Rape, prototipo</title>
+<script src="./support.js"></script>
+<script src="./tp-sound.js"></script>
+<script src="./tp-course.js"></script>
+<script src="./tp-grades.js"></script>
+<script src="./tp-pics.js"></script>
+<script src="./tp-sky.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&amp;family=Baloo+2:wght@600;700;800&amp;family=Nunito:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:#2A1B3D;text-decoration:none}a:hover{color:#2A1B3D}
+@keyframes tp-legA{0%,100%{transform:rotate(14deg)}50%{transform:rotate(-14deg)}}
+@keyframes tp-legB{0%,100%{transform:rotate(-14deg)}50%{transform:rotate(14deg)}}
+@keyframes tp-tw{0%,100%{opacity:1}50%{opacity:.35}}
+@keyframes tp-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes tp-hop{0%,100%{transform:translateY(0)}40%{transform:translateY(-22px)}}
+@keyframes tp-ring{0%{transform:scale(.7);opacity:.9}100%{transform:scale(1.6);opacity:0}}
+@keyframes tp-pop{0%{transform:scale(.6);opacity:0}60%{transform:scale(1.06);opacity:1}100%{transform:scale(1);opacity:1}}
+@keyframes tp-shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
+@keyframes tp-flip{0%{transform:scaleX(.1)}100%{transform:scaleX(1)}}
+@keyframes tp-spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+@keyframes tp-glow{0%,100%{opacity:.5}50%{opacity:1}}
+@keyframes tp-breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
+@keyframes tp-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes tp-screen{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes tp-slide{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
+@keyframes tp-ring-mic{0%{transform:scale(.8);opacity:.9}100%{transform:scale(1.5);opacity:0}}
+@keyframes tp-bob-big{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes tp-pop-big{0%{transform:scale(.4);opacity:0}60%{transform:scale(1.15);opacity:1}100%{transform:scale(1);opacity:1}}
+@keyframes tp-ring-big{0%{transform:scale(.6);opacity:.95}100%{transform:scale(2.2);opacity:0}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; position: relative; overflow: hidden; background: #110A38; color: #FFF7EC; font-family: 'Nunito', 'Avenir Next', sans-serif">
+<sc-if value="{{ at.Welcome }}" hint-placeholder-val="{{ true }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: tp-screen 220ms ease-out"><dc-import name="Welcome" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
+<sc-if value="{{ at.Grade }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: tp-screen 220ms ease-out"><dc-import name="Grade" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
+<sc-if value="{{ at.Home }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: tp-screen 220ms ease-out"><dc-import name="Home" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
+<sc-if value="{{ at.Ready }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: tp-screen 220ms ease-out"><dc-import name="Ready" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
+<sc-if value="{{ at.Main }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: tp-screen 220ms ease-out"><dc-import name="Main" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
+<sc-if value="{{ at.Tonight }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: tp-screen 220ms ease-out"><dc-import name="Tonight" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
+<sc-if value="{{ at.Sky }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: tp-screen 220ms ease-out"><dc-import name="Sky" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
+<sc-if value="{{ at.Grownups }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: tp-screen 220ms ease-out"><dc-import name="Grownups" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
+<sc-if value="{{ at.Meet }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: tp-screen 220ms ease-out"><dc-import name="Meet" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
+<sc-if value="{{ at.Pick }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: tp-screen 220ms ease-out"><dc-import name="Pick" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
+<sc-if value="{{ at.Pairs }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: tp-screen 220ms ease-out"><dc-import name="Pairs" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
+<sc-if value="{{ at.Build }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: tp-screen 220ms ease-out"><dc-import name="Build" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
+<sc-if value="{{ at.Say }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: tp-screen 220ms ease-out"><dc-import name="Say" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
+<sc-if value="{{ at.Letters }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: tp-screen 220ms ease-out"><dc-import name="Letters" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
+<sc-if value="{{ at.Story }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: tp-screen 220ms ease-out"><dc-import name="Story" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
+<sc-if value="{{ at.Check }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: tp-screen 220ms ease-out"><dc-import name="Check" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
+<sc-if value="{{ at.Shine }}" hint-placeholder-val="{{ false }}"><div ref="{{ screenRef }}" tabindex="-1" style="outline: none; animation: tp-screen 220ms ease-out"><dc-import name="Shine" app="{{ app }}" act="{{ act }}" hint-size="390px,844px"></dc-import></div></sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+/* The whole app on one board: one shared memory (tpCourse.fresh()), one screen at a time, every screen given the same
+   two props: app (what tpCourse.view() reads from the memory) and act (its handlers: go, grade, track, open, finish,
+   checked, walked, save), as Epu'ã's prototype does. From the Moon to the grade, the home language, the figure of the
+   grade, then night after night: three games, and Mborevi'i walks the Milky Way to the next star. The boards that are
+   only brand moments (the mascot sheet, the component, the icon, the sky poster, the rules) are not played here.
+   When the screen changes, the focus moves to the new screen's heading (or the screen itself), so a keyboard or a
+   screen reader starts there and is not left on a button that is gone. */
+const SCREENS = ['Welcome', 'Grade', 'Home', 'Ready', 'Main', 'Tonight', 'Sky', 'Grownups', 'Meet', 'Pick', 'Pairs', 'Build', 'Say', 'Letters', 'Story', 'Check', 'Shine'];
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = window.tpCourse.fresh();
+this.act = window.tpCourse.handlers(() => this.state, (fn) => this.setState(fn));
+this.screenRef = (el) => { if (el) this.screenEl = el; };
+}
+componentDidUpdate() {
+const now = this.state.screen;
+if (this.shown && now !== this.shown && this.screenEl) {
+const el = this.screenEl;
+const h = el.querySelector ? el.querySelector('h1') : null;
+const to = h || el;
+if (h && !h.hasAttribute('tabindex')) h.setAttribute('tabindex', '-1');
+try { to.focus({ preventScroll: true }); } catch (e) { try { to.focus(); } catch (e2) {} }
+}
+this.shown = now;
+}
+renderVals() {
+const s = this.state;
+const at = {};
+SCREENS.forEach((n) => { at[n] = s.screen === n; });
+return { at, app: window.tpCourse.view(s), act: this.act, screenRef: this.screenRef };
+}
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>El ícono de Mborevi Rape</title>
+<script src="./support.js"></script>
+<script src="./tp-course.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&amp;family=Baloo+2:wght@600;700;800&amp;family=Nunito:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#2A1B3D;text-decoration:none}a:hover{color:#2A1B3D}
+@keyframes tp-legA{0%,100%{transform:rotate(14deg)}50%{transform:rotate(-14deg)}}
+@keyframes tp-legB{0%,100%{transform:rotate(-14deg)}50%{transform:rotate(14deg)}}
+</style>
+</helmet>
+<div style="width: 1120px; height: 640px; box-sizing: border-box; padding: 40px 48px; background: #FFF7EC; color: #2A1B3D; font-family: 'Nunito', 'Avenir Next', sans-serif; display: flex; gap: 48px; align-items: flex-start">
+
+<div style="display: flex; flex-direction: column; gap: 22px; flex-grow: 1">
+<header style="display: flex; flex-direction: column; gap: 4px">
+<h2 style="margin: 0; font-family: 'Baloo 2', 'Nunito', sans-serif; font-size: 32px; font-weight: 800; line-height: 1">El ícono: Mborevi'i en la Vía Láctea</h2>
+<p style="margin: 0; font-size: 16px; font-weight: 700; color: #5C4E86; max-width: 560px; line-height: 1.45">La cara del tapir bebé, con su estrella en la oreja y sus rayas de crema, camina sobre la franja clara del cielo. Se lee en chiquito: una cara, una estrella, un camino.</p>
+</header>
+<div style="display: flex; align-items: flex-end; gap: 28px">
+<sc-for list="{{ sizes }}" as="s" hint-placeholder-count="4">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 8px">
+<div role="img" aria-label="Ícono de Mborevi Rape" style="position: relative; width: {{ s.box }}; height: {{ s.box }}; border-radius: {{ s.radius }}; overflow: hidden; box-shadow: {{ s.shadow }}">
+<div style="position: absolute; left: 0; top: 0; width: 400px; height: 400px; transform: scale({{ s.k }}); transform-origin: 0 0; background: linear-gradient(160deg, #2A1B7A 0%, #1B1255 55%, #110A38 100%)">
+<svg width="400" height="400" viewBox="0 0 400 400" aria-hidden="true" style="position: absolute; left: 0; top: 0">
+<path d="M-40 420C60 330 140 300 210 250C290 194 340 120 440 40" fill="none" stroke="#8F7BFF" stroke-width="210" stroke-linecap="round" opacity="0.2"/>
+<path d="M-40 420C60 330 140 300 210 250C290 194 340 120 440 40" fill="none" stroke="#FFC7DD" stroke-width="120" stroke-linecap="round" opacity="0.2"/>
+<path d="M-40 420C60 330 140 300 210 250C290 194 340 120 440 40" fill="none" stroke="#FFF1D0" stroke-width="54" stroke-linecap="round" opacity="0.32"/>
+<path d="{{ dust }}" fill="#FFF6DD" opacity="0.9"/>
+<path d="{{ star }}" fill="#FFD34E" stroke="#3B2418" stroke-width="7" stroke-linejoin="round"/>
+</svg>
+<div style="position: absolute; left: -196px; top: 30px">
+<dc-import name="Mborevi" pose="stand" size="540" hint-size="540px,437px"></dc-import>
+</div>
+</div>
+</div>
+<div style="font-size: 13px; font-weight: 800; color: #5C4E86">{{ s.label }}</div>
+</div>
+</sc-for>
+</div>
+<div style="display: flex; gap: 10px; flex-wrap: wrap; max-width: 600px">
+<div style="height: 30px; box-sizing: border-box; padding: 0 12px; border-radius: 15px; background: #1B1255; color: #FFF7EC; font-size: 13px; font-weight: 800; display: flex; align-items: center">Noche del ícono #1B1255</div>
+<div style="height: 30px; box-sizing: border-box; padding: 0 12px; border-radius: 15px; background: #FFF1D0; color: #2A1B3D; border: 1.5px solid #3B2418; font-size: 13px; font-weight: 800; display: flex; align-items: center">Vía Láctea #FFF1D0</div>
+<div style="height: 30px; box-sizing: border-box; padding: 0 12px; border-radius: 15px; background: #FFD34E; color: #2A1B3D; border: 1.5px solid #3B2418; font-size: 13px; font-weight: 800; display: flex; align-items: center">Estrella #FFD34E</div>
+<div style="height: 30px; box-sizing: border-box; padding: 0 12px 0 8px; border-radius: 15px; background: #FFF7EC; color: #2A1B3D; border: 1.5px solid #3B2418; font-size: 13px; font-weight: 800; display: flex; align-items: center"><span style="width: 14px; height: 14px; box-sizing: border-box; border-radius: 7px; background: #A0704E; border: 1.5px solid #3B2418; margin-right: 6px; flex-shrink: 0"></span>Tapir #A0704E</div>
+</div>
+</div>
+
+<div role="img" aria-label="Pantalla de inicio de un teléfono con el ícono de Mborevi Rape entre otras aplicaciones" style="position: relative; width: 300px; height: 560px; flex-shrink: 0; box-sizing: border-box; border-radius: 48px; border: 10px solid #2A1B3D; background: linear-gradient(180deg, #8FB3FF 0%, #C9A5F0 55%, #F7B9D2 100%); padding: 56px 20px 20px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: 80px; gap: 8px 10px">
+<sc-for list="{{ home }}" as="h" hint-placeholder-count="20">
+<div style="display: flex; flex-direction: column; align-items: center; gap: 4px">
+<sc-if value="{{ h.ours }}" hint-placeholder-val="{{ false }}">
+<div style="position: relative; width: 52px; height: 52px; border-radius: 13px; overflow: hidden; box-shadow: 0 2px 6px rgba(42, 27, 61, 0.35)">
+<div style="position: absolute; left: 0; top: 0; width: 400px; height: 400px; transform: scale(0.13); transform-origin: 0 0; background: linear-gradient(160deg, #2A1B7A 0%, #1B1255 55%, #110A38 100%)">
+<svg width="400" height="400" viewBox="0 0 400 400" aria-hidden="true" style="position: absolute; left: 0; top: 0">
+<path d="M-40 420C60 330 140 300 210 250C290 194 340 120 440 40" fill="none" stroke="#8F7BFF" stroke-width="210" stroke-linecap="round" opacity="0.2"/>
+<path d="M-40 420C60 330 140 300 210 250C290 194 340 120 440 40" fill="none" stroke="#FFF1D0" stroke-width="54" stroke-linecap="round" opacity="0.32"/>
+<path d="{{ star }}" fill="#FFD34E" stroke="#3B2418" stroke-width="7" stroke-linejoin="round"/>
+</svg>
+<div style="position: absolute; left: -196px; top: 30px">
+<dc-import name="Mborevi" pose="stand" size="540" hint-size="540px,437px"></dc-import>
+</div>
+</div>
+</div>
+<div style="font-size: 10.5px; font-weight: 800; color: #2A1B3D; white-space: nowrap">Mborevi Rape</div>
+</sc-if>
+<sc-if value="{{ h.other }}" hint-placeholder-val="{{ true }}">
+<div style="width: 52px; height: 52px; border-radius: 13px; background: {{ h.bg }}; opacity: 0.85"></div>
+<div style="width: 36px; height: 6px; border-radius: 3px; background: rgba(42, 27, 61, 0.35)"></div>
+</sc-if>
+</div>
+</sc-for>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1120,"height":640}}'>
+/* The app icon at four sizes and among other apps on a home screen. One drawing: the night, the Milky Way crossing
+   it, a yellow star, and Mborevi'i (the component, so the icon follows any change to the mascot), cropped to his face. */
+const SIZES = [
+{ box: 260, label: 'Tienda · 1024 px', radius: 58 },
+{ box: 120, label: 'Pantalla · 180 px', radius: 27 },
+{ box: 76, label: 'Ajustes · 120 px', radius: 17 },
+{ box: 44, label: 'Avisos · 60 px', radius: 10 }
+];
+const TILES = ['#FFFFFF', '#B8F0E0', '#FFD9B8', '#C9D8F5', '#FFE7A3', '#E8E4F2', '#9FD8FF', '#FFC7DD'];
+class Component extends DCLogic {
+renderVals() {
+const C = window.tpCourse;
+const band = C.chain([[[-40, 420], [60, 330], [140, 300], [210, 250]], [[210, 250], [290, 194], [340, 120], [440, 40]]]);
+const home = [];
+for (let i = 0; i < 20; i++) home.push({ ours: i === 5, other: i !== 5, bg: TILES[i % TILES.length] });
+return {
+sizes: SIZES.map((s) => ({ box: s.box + 'px', label: s.label, radius: s.radius + 'px', k: s.box / 400, shadow: s.box > 100 ? '0 8px 0 #3B2418' : '0 3px 0 #3B2418' })),
+dust: C.dust(band, 'icon', 60, 90).a,
+star: C.puffyD(312, 84, 42),
+home
+};
+}
+}
+</script>
+</body>
+</html>

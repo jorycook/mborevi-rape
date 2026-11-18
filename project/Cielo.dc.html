@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>El cielo guaraní</title>
+<script src="./support.js"></script>
+<script src="./tp-course.js"></script>
+<script src="./tp-grades.js"></script>
+<script src="./tp-sky.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&amp;family=Baloo+2:wght@600;700;800&amp;family=Nunito:wght@600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#FFE7A3;text-decoration:none}a:hover{color:#FFF7EC}
+@keyframes tp-legA{0%,100%{transform:rotate(14deg)}50%{transform:rotate(-14deg)}}
+@keyframes tp-legB{0%,100%{transform:rotate(-14deg)}50%{transform:rotate(14deg)}}
+@keyframes tp-tw{0%,100%{opacity:1}50%{opacity:.35}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+</helmet>
+<div style="width: 1440px; height: 1120px; position: relative; overflow: hidden; box-sizing: border-box; padding: 40px 48px; background: linear-gradient(180deg, #0E0832 0%, #1E1460 55%, #3B2585 100%); color: #FFF7EC; font-family: 'Nunito', 'Avenir Next', sans-serif; display: flex; flex-direction: column; gap: 22px">
+
+<svg width="1440" height="1120" viewBox="0 0 1440 1120" style="position: absolute; left: 0; top: 0" aria-hidden="true">
+<defs><filter id="tp-cielo-blur" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="30"/></filter></defs>
+<path d="{{ field.dim }}" fill="#FFF6DD" opacity="0.4"/>
+<path d="{{ field.dots }}" fill="#FFF6DD" style="animation: tp-tw 3.6s ease-in-out infinite"/>
+<path d="{{ field.sparks }}" fill="#FFF6DD" style="animation: tp-tw 2.8s 1s ease-in-out infinite"/>
+<path d="M-80 1080C260 880 520 800 760 590C980 400 1180 260 1520 80" fill="none" stroke="#A996FF" stroke-width="300" stroke-linecap="round" opacity="0.18" filter="url(#tp-cielo-blur)"/>
+<path d="M-80 1080C260 880 520 800 760 590C980 400 1180 260 1520 80" fill="none" stroke="#FFF1D0" stroke-width="90" stroke-linecap="round" opacity="0.14" filter="url(#tp-cielo-blur)"/>
+<path d="{{ dust }}" fill="#FFF3D6" opacity="0.6"/>
+</svg>
+
+<header style="position: relative; display: flex; align-items: flex-end; gap: 28px">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<h2 style="margin: 0; font-family: 'Baloo 2', 'Nunito', sans-serif; font-size: 40px; font-weight: 800; line-height: 1">El cielo guaraní <span lang="gn" style="color: #FFE7A3">· Yvága</span></h2>
+<p style="margin: 0; font-size: 17px; font-weight: 700; color: #E4DDFF; max-width: 900px; line-height: 1.45">Una figura del cielo por grado, de la Luna (Preescolar) al Sol (9.º grado). Cada unidad enciende una estrella; con todas, aparece la figura. <span lang="gn">Mborevi Rape</span>, el camino del tapir, es la Vía Láctea: por ahí camina Mborevi'i.</p>
+</div>
+<div style="flex-grow: 1"></div>
+<div style="flex-shrink: 0">
+<dc-import name="Mborevi" pose="walk" size="120" hint-size="120px,97px"></dc-import>
+</div>
+</header>
+
+<div style="position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 20px">
+<sc-for list="{{ cards }}" as="c" hint-placeholder-count="10">
+<article style="box-sizing: border-box; height: 420px; padding: 14px 14px 16px; border-radius: 24px; background: rgba(17, 10, 56, 0.86); border: 2px solid rgba(255, 247, 236, 0.28); display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 8px">
+<div style="height: 26px; box-sizing: border-box; padding: 0 10px; border-radius: 13px; background: #FFD34E; color: #2A1B3D; font-size: 12px; font-weight: 800; display: flex; align-items: center; white-space: nowrap">{{ c.grade }}</div>
+<div style="font-size: 11px; font-weight: 800; letter-spacing: 0.05em; color: #EDE8FF; text-align: right">{{ c.cycle }}</div>
+</div>
+<svg viewBox="0 0 100 100" width="110" height="110" role="img" aria-label="{{ c.aria }}" style="align-self: center">
+<path d="{{ c.fig.outline }}" fill="#FFE7A3" fill-opacity="0.14" stroke="#FFE7A3" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="{{ c.fig.linesOn }}" stroke="#FFE7A3" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+<path d="{{ c.fig.on }}" fill="#FFD34E" stroke="#3B2418" stroke-width="1.2" stroke-linejoin="round"/>
+</svg>
+<div lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 22px; line-height: 1.05">{{ c.gn }}</div>
+<div style="font-size: 14px; font-weight: 800; color: #FFE7A3; line-height: 1.25">{{ c.es }}</div>
+<div style="font-size: 12px; font-weight: 600; color: #E4DDFF; line-height: 1.35">{{ c.note }}</div>
+<div style="flex-grow: 1"></div>
+<div style="font-size: 11.5px; font-weight: 700; color: #EDE8FF; line-height: 1.35">{{ c.when }}</div>
+</article>
+</sc-for>
+</div>
+
+<div style="position: relative; font-size: 12.5px; font-weight: 700; color: #CFC6FF; line-height: 1.5">Fuentes: Blas Servín (el cielo guaraní del Paraguay: <span lang="gn">Eichu, Ñandu Pysã, Mborevi Rape, Mborevi Tupã Rokái</span>), Germano Afonso (los guaraní del Brasil: el ñandú, el venado, el tapir y el abuelo) y Lehmann-Nitsche (los ava guaraní). Para revisar con una maestra o un maestro de guaraní antes de publicar.</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1120}}'>
+/* The ten figures of the Guarani sky the app gives its ten grades, all lit, with who tells of each and when it is seen.
+   They come from different Guarani peoples and sources, and each card says which, so nothing reads as one people's. */
+class Component extends DCLogic {
+renderVals() {
+const C = window.tpCourse;
+const band = C.chain([[[-80, 1080], [260, 880], [520, 800], [760, 590]], [[760, 590], [980, 400], [1180, 260], [1520, 80]]]);
+const cards = C.grades().map((g) => {
+const f = C.sky(g.sky) || { stars: [] };
+const fig = C.figure(g.sky, f.stars.length);
+return {
+grade: g.label,
+cycle: g.cycleShort.toUpperCase(),
+fig,
+gn: fig.gn,
+es: fig.es,
+note: fig.note,
+when: 'Cuándo: ' + fig.when + '. ' + fig.who + '.',
+aria: fig.gn + ', ' + fig.es + ', con sus ' + fig.count + ' estrellas encendidas'
+};
+});
+return {
+field: C.starfield('cielo', 1440, 0, 1120, 260),
+dust: C.dust(band, 'cielo-dust', 260, 220).a,
+cards
+};
+}
+}
+</script>
+</body>
+</html>
