@@ -18,41 +18,422 @@ body{margin:0}
 button{font:inherit;color:inherit;cursor:pointer}
 a{color:#2A1B3D;text-decoration:none}a:hover{color:#2A1B3D}
 button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([aria-disabled='true']),a:active:not([aria-disabled='true']){transform:translateY(2px) scale(.98)}
+@keyframes tp-legA{0%,100%{transform:rotate(14deg)}50%{transform:rotate(-14deg)}}
+@keyframes tp-legB{0%,100%{transform:rotate(-14deg)}50%{transform:rotate(14deg)}}
+@keyframes tp-blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.12)}}
+@keyframes tp-talk-a{0%{opacity:1}50%{opacity:0}100%{opacity:0}}
+@keyframes tp-talk-b{0%{opacity:0}50%{opacity:1}100%{opacity:1}}
+@keyframes tp-hop-a{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}38%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}76%{transform:scale(1.06,.9)}88%{transform:scale(.98,1.03)}100%{transform:none}}
+@keyframes tp-hop-b{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}38%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}76%{transform:scale(1.06,.9)}88%{transform:scale(.98,1.03)}100%{transform:none}}
+@keyframes tp-hop2-a{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}22%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}44%{transform:scale(1.05,.92)}50%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}68%{transform:translateY(-9%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}86%{transform:scale(1.04,.94)}100%{transform:none}}
+@keyframes tp-hop2-b{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}22%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}44%{transform:scale(1.05,.92)}50%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}68%{transform:translateY(-9%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}86%{transform:scale(1.04,.94)}100%{transform:none}}
+@keyframes tp-recoil-a{0%,100%{transform:none}30%{transform:translateX(-4%) rotate(-5deg)}}
+@keyframes tp-recoil-b{0%,100%{transform:none}30%{transform:translateX(-4%) rotate(-5deg)}}
+@keyframes tp-perk-a{0%,100%{transform:none}40%{transform:translateY(-3%)}}
+@keyframes tp-perk-b{0%,100%{transform:none}40%{transform:translateY(-3%)}}
+@keyframes tp-tw{0%,100%{opacity:1}50%{opacity:.35}}
+@keyframes tp-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes tp-pop{0%{transform:scale(.6);opacity:0}60%{transform:scale(1.06);opacity:1}100%{transform:scale(1);opacity:1}}
+@keyframes tp-in-a{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes tp-in-b{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes tp-float-a{0%,100%{transform:translate(0,0)}25%{transform:translate(10px,-8px)}50%{transform:translate(14px,4px)}75%{transform:translate(-6px,12px)}}
+@keyframes tp-float-b{0%,100%{transform:translate(0,0)}25%{transform:translate(-12px,6px)}50%{transform:translate(-4px,-12px)}75%{transform:translate(8px,-6px)}}
+@keyframes tp-float-c{0%,100%{transform:translate(0,0)}33%{transform:translate(12px,10px)}66%{transform:translate(-10px,4px)}}
+@keyframes tp-float-d{0%,100%{transform:translate(0,0)}33%{transform:translate(-8px,-10px)}66%{transform:translate(14px,-2px)}}
+@keyframes tp-shake-a{0%,100%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
+@keyframes tp-shake-b{0%,100%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
+@keyframes tp-ring{0%{transform:scale(.7);opacity:.9}100%{transform:scale(1.6);opacity:0}}
+@keyframes tp-land{0%{transform:translateY(-14px) scale(1.15);opacity:.3}60%{transform:translateY(2px) scale(.97);opacity:1}100%{transform:none;opacity:1}}
+@keyframes tp-yes{0%{transform:scale(1)}35%{transform:scale(1.1)}65%{transform:scale(.97)}100%{transform:scale(1)}}
+@keyframes tp-dot{0%{transform:scale(1.7)}100%{transform:none}}
+@keyframes tp-wave{0%,100%{transform:scaleY(.4)}50%{transform:scaleY(1)}}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
 </style>
 </helmet>
 <div style="width: 390px; height: 844px; position: relative; overflow: hidden; box-sizing: border-box; padding: 50px 16px 34px; background: linear-gradient(180deg, #1E1460 0%, #33207E 60%, #4A2A8F 100%); color: #FFF7EC; font-family: 'Nunito', 'Avenir Next', sans-serif; display: flex; flex-direction: column">
+
+<svg width="390" height="844" viewBox="0 0 390 844" style="position: absolute; left: 0; top: 0" aria-hidden="true">
+<path d="{{ field.dim }}" fill="#FFF6DD" opacity="0.35"/>
+<path d="{{ field.dots }}" fill="#FFF6DD" opacity="0.8" style="animation: tp-tw 3.6s ease-in-out infinite"/>
+</svg>
+
 <div style="position: relative; display: flex; align-items: center; gap: 10px; height: 44px; flex-shrink: 0">
-<a href="Tonight.dc.html" onClick="{{ close }}" aria-label="Cerrar el juego" style="width: 44px; height: 44px; margin-left: -6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFF7EC" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+<a href="Tonight.dc.html" onClick="{{ close }}" aria-label="Cerrar el juego" style="width: 56px; height: 56px; margin: -6px -6px -6px -12px; border-radius: 28px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFF7EC" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
 <div style="flex-grow: 1; display: flex; flex-direction: column; min-width: 0">
 <div lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.05">{{ titleGn }}</div>
 <div style="font-size: 12px; font-weight: 700; color: #CFC6FF">{{ titleEs }}</div>
 </div>
+<div role="img" aria-label="{{ dotsAria }}" style="display: flex; gap: 5px; flex-shrink: 0">
+<sc-for list="{{ dots }}" as="d" hint-placeholder-count="3">
+<div style="width: 12px; height: 12px; border-radius: 6px; background: {{ d.bg }}; border: 2px solid #FFF7EC; box-sizing: border-box; animation: {{ d.anim }}"></div>
+</sc-for>
 </div>
+</div>
+
+<sc-if value="{{ playing }}" hint-placeholder-val="{{ true }}">
+<sc-for list="{{ stars }}" as="s" hint-placeholder-count="4">
+<div style="position: absolute; left: {{ s.x }}; top: {{ s.y }}; width: 132px; height: 132px; z-index: {{ s.z }}; transform: {{ s.fly }}; transition: {{ s.flyT }}; opacity: {{ s.flyO }}">
+<div style="width: 132px; height: 132px; animation: {{ s.enter }}">
+<div style="width: 132px; height: 132px; animation: {{ s.float }}">
+<button type="button" onClick="{{ s.pick }}" aria-label="{{ s.aria }}" aria-disabled="{{ s.off }}" aria-hidden="{{ s.hide }}" tabindex="{{ s.tab }}" style="position: relative; display: block; width: 132px; height: 132px; margin: 0; padding: 0; border: 0; border-radius: 66px; background: none; visibility: {{ s.vis }}; opacity: {{ s.o }}; animation: {{ s.anim }}; transition: transform 90ms cubic-bezier(.2,.8,.2,1), opacity 240ms ease-out">
+<sc-if value="{{ s.hint }}" hint-placeholder-val="{{ false }}">
+<div style="position: absolute; left: 0; top: 0; width: 132px; height: 132px; box-sizing: border-box; border-radius: 66px; border: 4px solid #FFD34E"></div>
+<div style="position: absolute; left: 0; top: 0; width: 132px; height: 132px; box-sizing: border-box; border-radius: 66px; border: 4px solid #FFD34E; animation: tp-ring 1.4s ease-out infinite"></div>
+</sc-if>
+<svg viewBox="0 0 132 132" width="132" height="132" aria-hidden="true" style="position: absolute; left: 0; top: 0">
+<path d="{{ starD }}" fill="#FFD34E" stroke="#3B2418" stroke-width="3" stroke-linejoin="round"/>
+<circle cx="66" cy="70" r="38" fill="{{ s.disc }}" stroke="#3B2418" stroke-width="3"/>
+</svg>
+<svg viewBox="0 0 100 100" width="64" height="64" aria-hidden="true" style="position: absolute; left: 34px; top: 38px">
+<path d="{{ s.pic.f0.d }}" fill="{{ s.pic.f0.fill }}" stroke="#2A1B3D" stroke-width="3.4" stroke-linejoin="round" fill-rule="{{ s.pic.rule }}"/>
+<path d="{{ s.pic.f1.d }}" fill="{{ s.pic.f1.fill }}" stroke="#2A1B3D" stroke-width="3.4" stroke-linejoin="round"/>
+<path d="{{ s.pic.f2.d }}" fill="{{ s.pic.f2.fill }}" stroke="#2A1B3D" stroke-width="3.4" stroke-linejoin="round"/>
+<path d="{{ s.pic.f3.d }}" fill="{{ s.pic.f3.fill }}" stroke="#2A1B3D" stroke-width="3.4" stroke-linejoin="round"/>
+<path d="{{ s.pic.f4.d }}" fill="{{ s.pic.f4.fill }}" stroke="#2A1B3D" stroke-width="3.4" stroke-linejoin="round"/>
+<path d="{{ s.pic.f5.d }}" fill="{{ s.pic.f5.fill }}" stroke="#2A1B3D" stroke-width="3.4" stroke-linejoin="round"/>
+<path d="{{ s.pic.pink }}" fill="#FF8FAB" opacity="0.75"/>
+<path d="{{ s.pic.white }}" fill="#FFFFFF"/>
+<path d="{{ s.pic.ink }}" fill="#2A1B3D"/>
+<path d="{{ s.pic.line }}" fill="none" stroke="#2A1B3D" stroke-width="{{ s.pic.lineW }}" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</button>
+</div>
+</div>
+</div>
+</sc-for>
+</sc-if>
+
+<sc-if value="{{ finished }}" hint-placeholder-val="{{ false }}">
+<div style="position: relative; margin-top: 24px; box-sizing: border-box; padding: 22px 18px; border-radius: 30px; background: #FFF7EC; color: #2A1B3D; border: 3px solid #3B2418; box-shadow: 0 6px 0 #3B2418; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; flex-shrink: 0; animation: tp-pop 420ms ease-out">
+<svg viewBox="0 0 64 64" width="88" height="88" aria-hidden="true"><path d="{{ bigStar }}" fill="#FFD34E" stroke="#3B2418" stroke-width="3" stroke-linejoin="round"/><path d="M22 31q3.6-5 7.2 0M34.8 31q3.6-5 7.2 0M27 38q5 5 10 0" fill="none" stroke="#3B2418" stroke-width="2.8" stroke-linecap="round"/></svg>
+<div lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 30px; line-height: 1">Iporãite!</div>
+<sc-if value="{{ fresh }}" hint-placeholder-val="{{ true }}"><div lang="gn" style="font-family: 'Andika', 'Nunito', sans-serif; font-weight: 700; font-size: 18px">Rehupyty peteĩ mbyja.</div></sc-if>
+<div style="font-size: 14px; font-weight: 700; color: #5C4E86">{{ scoreLine }}</div>
+</div>
+</sc-if>
+
 <div style="flex-grow: 1"></div>
-<a href="Tonight.dc.html" onClick="{{ done }}" ref="{{ doneRef }}" style="height: 60px; border-radius: 30px; background: #FFD34E; border: 3px solid #3B2418; box-shadow: 0 5px 0 #3B2418; display: flex; align-items: center; justify-content: center; color: #2A1B3D; font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 22px" lang="gn">Jaha!</a>
+<div style="position: relative; display: flex; align-items: flex-end; gap: 10px; flex-shrink: 0; margin-right: 88px">
+<div style="position: relative; flex-shrink: 0">
+<div lang="gn" role="status" style="position: absolute; left: 56px; bottom: 72px; z-index: 1">
+<sc-if value="{{ bubble.on }}" hint-placeholder-val="{{ false }}">
+<div style="width: max-content; max-width: 214px; box-sizing: border-box; padding: 6px 14px; border-radius: 18px; background: #FFF7EC; color: #2A1B3D; border: 2px solid #3B2418; font-family: 'Andika', 'Nunito', sans-serif; font-weight: 700; font-size: {{ bubble.size }}; line-height: 1.15; text-align: center; animation: {{ bubble.anim }}">{{ bubble.text }}</div>
+</sc-if>
+</div>
+<div style="animation: tp-bob 2.6s ease-in-out infinite">
+<dc-import name="Mborevi" pose="{{ pose }}" talk="{{ talk }}" size="104" hint-size="104px,84px"></dc-import>
+</div>
+</div>
+<sc-if value="{{ playing }}" hint-placeholder-val="{{ true }}">
+<div role="status" style="flex-grow: 1; min-width: 0; margin-bottom: 14px; display: flex; flex-direction: column">
+<div style="display: flex; align-items: center; gap: 7px">
+<sc-if value="{{ ear.on }}" hint-placeholder-val="{{ true }}">
+<div aria-hidden="true" style="width: 34px; height: 34px; flex-shrink: 0; box-sizing: border-box; border-radius: 17px; background: #8EC5FF; border: 2.5px solid #3B2418; display: flex; align-items: center; justify-content: center; gap: 3px">
+<sc-if value="{{ ear.wave }}" hint-placeholder-val="{{ false }}">
+<div style="width: 4px; height: 15px; border-radius: 2px; background: #2A1B3D; transform: scaleY(.7); transform-origin: 50% 100%; animation: tp-wave 520ms ease-in-out infinite"></div>
+<div style="width: 4px; height: 15px; border-radius: 2px; background: #2A1B3D; transform: scaleY(.7); transform-origin: 50% 100%; animation: tp-wave 520ms ease-in-out 130ms infinite"></div>
+<div style="width: 4px; height: 15px; border-radius: 2px; background: #2A1B3D; transform: scaleY(.7); transform-origin: 50% 100%; animation: tp-wave 520ms ease-in-out 260ms infinite"></div>
+</sc-if>
+<sc-if value="{{ ear.still }}" hint-placeholder-val="{{ true }}">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2A1B3D" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19 6a8.5 8.5 0 0 1 0 12"/></svg>
+</sc-if>
+</div>
+</sc-if>
+<div lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 24px; line-height: 1.1; color: {{ say.ink }}">{{ say.gn }}</div>
+</div>
+<div style="font-size: 14px; font-weight: 700; line-height: 1.25; color: #CFC6FF">{{ say.es }}</div>
+</div>
+</sc-if>
+<sc-if value="{{ finished }}" hint-placeholder-val="{{ false }}">
+<a href="Tonight.dc.html" onClick="{{ done }}" ref="{{ doneRef }}" style="flex-grow: 1; height: 60px; margin-bottom: 8px; border-radius: 30px; background: #FFD34E; border: 3px solid #3B2418; box-shadow: 0 5px 0 #3B2418; display: flex; align-items: center; justify-content: center; gap: 10px; color: #2A1B3D">
+<span lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 22px">Jaha!</span>
+<span style="font-size: 15px; font-weight: 800; color: #5C4E86">Seguir</span>
+</a>
+</sc-if>
+<sc-if value="{{ canAsk }}" hint-placeholder-val="{{ true }}">
+<button type="button" onClick="{{ ask }}" aria-label="Ehendu, escuchá otra vez" style="position: absolute; left: -6px; top: -6px; right: 0; bottom: 0; margin: 0; padding: 0; border: 0; border-radius: 24px; background: transparent"></button>
+</sc-if>
+</div>
+
+<div role="img" aria-label="{{ jarAria }}" style="position: absolute; right: 16px; bottom: 40px; width: 78px; height: 92px; transform-origin: 50% 100%; animation: {{ jarAnim }}">
+<svg viewBox="0 0 78 92" width="78" height="92" aria-hidden="true" style="position: absolute; left: 0; top: 0">
+<path d="M18 14h42c6 0 10 6 10 14v50c0 6-4 10-10 10H18c-6 0-10-4-10-10V28c0-8 4-14 10-14Z" fill="#CFE8FF" fill-opacity="0.24"/>
+</svg>
+<sc-for list="{{ slots }}" as="j" hint-placeholder-count="3">
+<div style="position: absolute; left: {{ j.x }}; top: {{ j.y }}; width: 20px; height: 20px; opacity: {{ j.o }}; animation: {{ j.anim }}">
+<svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="{{ smallStar }}" fill="#FFD34E" stroke="#3B2418" stroke-width="1.8" stroke-linejoin="round"/></svg>
+</div>
+</sc-for>
+<svg viewBox="0 0 78 92" width="78" height="92" aria-hidden="true" style="position: absolute; left: 0; top: 0">
+<path d="M18 14h42c6 0 10 6 10 14v50c0 6-4 10-10 10H18c-6 0-10-4-10-10V28c0-8 4-14 10-14Z" fill="none" stroke="#FFF7EC" stroke-width="3"/>
+<path d="M15 32v30" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+<rect x="13" y="3" width="52" height="11" rx="4" fill="#B98A64" stroke="#3B2418" stroke-width="2.6"/>
+<path d="{{ lidStar }}" fill="#FFD34E" stroke="#3B2418" stroke-width="1.4" stroke-linejoin="round"/>
+</svg>
+</div>
+
+<div role="status" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">{{ announce }}</div>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"app":{"editor":null},"act":{"editor":null},"$preview":{"width":390,"height":844}}'>
-/* A stand-in while the game is being built: it ends at once with its star. Replaced by the game itself. */
+/* Ejapyhy mbyja, catch the star. Stars carrying pictures float slowly in the sky of the game screen (three in
+   Preescolar, four from 1.º grado), and Mborevi'i names one; the child catches it, and it flies into his jar.
+   - By ear (Preescolar, and 1.º grado with Guarani as a second language): the word plays by itself as each round
+     opens (in the app), and a tap on Mborevi'i or on «Ehendu» says it again.
+   - On a readers' night the word is written in his bubble, and it is heard only once its star is caught.
+   The right star turns mint and flies into the jar, the word plays, and the line gives its meaning; a moment later a
+   small star lands in the jar. A star that is not the one shakes and dims for the round, Mborevi'i is surprised,
+   «Eha'ã jey», and the word comes again; after two misses the right star rings. Nothing is lost.
+   One round per word of the night (by ear: the words that can be heard), one per picture, three at least; the other
+   stars are tonight's words first, and never two pictures that look alike. After the last star the jar jumps, then a
+   star (a game played again keeps the one it had), and the button to go on takes the focus.
+   The motion is CSS only: each star floats on an inner wrapper and flies on its outer one with a transform transition,
+   and the next round puts every wrapper back with no transition, so nothing flies back. Nothing is drawn frame by
+   frame, and nothing waits for a motion to end. With reduced motion the stars stand still and the flight is instant.
+   On its own: by ear, 1.º grado, unit 2 (the family), night 2. */
+/* the centres of the stars (in the 390 × 844 screen), by how many there are */
+const ZONES = { 3: [[100, 250], [290, 250], [195, 470]], 4: [[102, 220], [288, 262], [96, 468], [292, 510]] };
+/* each zone floats its own way: name, seconds, start (a negative delay, so they are never in step) */
+const FLOAT = [['tp-float-a', 6.4, -1.2], ['tp-float-b', 7.6, -3.4], ['tp-float-c', 7, -2.3], ['tp-float-d', 8, -5.1]];
+/* where a caught star flies: the middle of the jar (78 × 92, 16 px from the right, 40 px from the bottom) */
+const JAR = [335, 762];
+/* the caught stars' places in the jar, from the bottom up (centres in the jar's box) */
+const SLOTS = [[22, 72], [39, 72], [56, 72], [30, 55], [48, 55], [39, 38]];
 class Component extends DCLogic {
 constructor(props) {
 super(props);
+this.state = { r: 0, caught: false, landed: false, full: false, wrong: [], shook: {}, misses: 0, oops: false, first: 0, finished: false, said: false, voiced: false, shown: -1 };
+this.timers = [];
+this.salt = window.tpCourse.salt(props);
+this.oopsN = 0;
+this.askN = 0;
 this.doneRef = (el) => { this.doneEl = el; };
 }
-componentDidMount() { this.onBack(); }
-componentWillUnmount() { this.offBack(); }
+componentDidMount() { this.onBack(); this.autoplay(); }
+componentWillUnmount() { this.gone = true; this.timers.forEach((t) => clearTimeout(t)); this.timers = []; this.offBack(); }
+componentDidUpdate() {
+const f = !!this.state.finished;
+if (f && !this.wasFinished) {
+if (this.doneEl) this.doneEl.focus();
+const S = window.tpSound;
+if (this.props.act && S && S.beep) S.beep('star');
+window.tpCourse.say(this.endLine);
+}
+this.wasFinished = f;
+this.autoplay();
+}
+/* the phone's Back on the site (App) asks this screen what its close button would do */
 onBack() { const act = this.props.act; if (!act) return; const f = () => this.leave(); f.board = this; act.leave = f; }
 offBack() { const act = this.props.act; if (act && act.leave && act.leave.board === this) act.leave = null; }
+later(fn, ms) { const t = setTimeout(() => { if (!this.gone) fn(); }, ms); this.timers.push(t); return t; }
+view() {
+const C = window.tpCourse;
+if (this.props.app) return this.props.app;
+if (!this.sample) {
+const st = C.sample('g1', 'L2', C.sessions('g1').findIndex((x) => x.id === 'g1u02n2'));
+st.cur = 'g1u02n2'; st.done.g1u02n2 = { meet: 1 }; st.game = 'catch';
+this.sample = C.view(st);
+}
+return this.sample;
+}
+/* the game, made once: the rounds (their word, the stars by zone, the zone of the right one) */
+plan(app) {
+const C = window.tpCourse;
+const s = app.step;
+const track = app.track || 'L2';
+const id = (s ? s.id : '-') + ':' + track;
+if (this.memo && this.memo.id === id) return this.memo;
+const listen = !s || C.isOral(s, track);
+const many = s && s.grade === 'pre' ? 3 : 4;
+const salt = this.salt || '';
+const all = s && s.data && s.data.words ? s.data.words.map((w) => C.word(w)).filter((w) => w.gn) : [];
+const one = (list) => { const seen = {}; return list.filter((w) => (seen[w.picKey] ? false : (seen[w.picKey] = true))); };
+/* by ear only the words that can be heard (with fewer than two, every word: one without a clip shows in his bubble) */
+let words = one(listen ? all.filter((w) => C.voiced(w)) : all);
+if (words.length < 2) words = one(all);
+const base = s ? C.shuffle(words, s.id + 'catch' + salt) : [];
+const list = base.slice(0, 6);
+for (let k = 0; base.length && list.length < 3; k++) {
+const prev = list[list.length - 1];
+const pool = C.shuffle(base, s.id + 'more' + k + salt);
+list.push(pool.filter((w) => w.picKey !== prev.picKey)[0] || pool[0]);
+}
+let before = -1;
+const rounds = list.map((target, r) => {
+const others = C.distractors(target, s.grade, s.unit, many - 1, s.id + 'c' + r + salt, s.night);
+const rnd = C.rng(s.id + 'z' + r + salt);
+let tz = Math.floor(rnd() * many);
+if (tz === before) tz = (tz + 1 + Math.floor(rnd() * (many - 1))) % many;
+before = tz;
+const stars = [];
+for (let z = 0, o = 0; z < many; z++) stars.push(z === tz ? target : others[o++] || null);
+return { target, tz, stars };
+});
+this.memo = { id, listen, many, rounds, n: rounds.length };
+return this.memo;
+}
+/* the word of the round in play, heard now; when it has no clip (the voice switched off, its file not there yet) it
+   stays written in his bubble for the rest of the round */
+listenNow() {
+const C = window.tpCourse;
+const P = this.plan(this.view());
+const r = Math.min(this.state.r, P.n - 1);
+const R = P.rounds[r];
+if (!R) return false;
+const played = C.listen(this, 'w:' + C.fold(R.target.gn));
+if (!played && this.state.shown !== r) this.setState({ shown: r });
+return played;
+}
+/* by ear, in the app: each round's word plays by itself a moment after the round opens */
+autoplay() {
+if (!this.props.act || this.state.finished) return;
+const P = this.plan(this.view());
+if (!P.listen || !P.n) return;
+const r = this.state.r;
+const id = P.id + ':' + r;
+if (id === this.spoken) return;
+this.spoken = id;
+this.later(() => { if (this.state.r === r && !this.state.caught && !this.state.finished) this.listenNow(); }, 450);
+}
+/* the right star: it flies into the jar while its word plays; the next round comes when the word has ended */
+catchIt(r) {
+const C = window.tpCourse;
+const S = window.tpSound;
+const P = this.plan(this.view());
+const st = this.state;
+const last = r + 1 >= P.n;
+if (this.props.act && S && S.beep) S.beep('right');
+this.askN++;
+this.setState({ caught: true, landed: false, oops: false, first: st.first + (st.wrong.length ? 0 : 1) });
+const key = 'w:' + C.fold(P.rounds[r].target.gn);
+const played = C.listen(this, key);
+const ms = played && S && S.ms ? S.ms(key) : 0;
+const next = played ? Math.min(1600, Math.max(1000, ms + 600)) : 1600;
+this.later(() => { if (this.state.r === r && this.state.caught) this.setState({ landed: true, full: last }); }, 650);
+this.later(() => {
+if (this.state.r !== r || !this.state.caught || this.state.finished) return;
+if (last) this.setState({ finished: true, said: false });
+else this.setState({ r: r + 1, caught: false, landed: false, wrong: [], shook: {}, oops: false, said: false });
+}, last ? Math.max(1500, next) : next);
+}
+/* not the one: it shakes and dims for the round, Mborevi'i is surprised for a moment, and the word comes again */
+miss(r, z) {
+const C = window.tpCourse;
+const S = window.tpSound;
+const P = this.plan(this.view());
+const st = this.state;
+if (this.props.act && S && S.beep) S.beep('wrong');
+C.say(C.VOICE.again);
+const shook = Object.assign({}, st.shook);
+shook[z] = st.misses + 1;
+const oops = ++this.oopsN;
+const ask = ++this.askN;
+this.setState({ wrong: st.wrong.concat([z]), shook, misses: st.misses + 1, oops: true });
+this.later(() => { if (this.oopsN === oops) this.setState({ oops: false }); }, 900);
+if (P.listen) this.later(() => { if (this.askN === ask && this.state.r === r && !this.state.caught && !this.state.finished) this.listenNow(); }, 1400);
+}
 renderVals() {
 const C = window.tpCourse;
 const act = this.props.act;
+const app = this.view();
+const s = app.step;
 const G = C.GAMES.catch;
-this.leave = () => { if (act) act.finish('catch'); };
+const P = this.plan(app);
+const n = P.n;
+const st = this.state;
+const r = Math.min(st.r, Math.max(0, n - 1));
+const finished = !!st.finished || n === 0;
+const playing = !finished;
+const R = P.rounds[r] || { target: C.word({ gn: '', es: '', pic: '' }), tz: -1, stars: [] };
+const target = R.target;
+const caught = !!st.caught && playing;
+const listen = P.listen;
+const again = !!(s && ((app.done || {})[s.id] || {}).catch);
+this.endLine = again ? C.VOICE.good : C.VOICE.star;
+const enter = (r % 2 ? 'tp-in-b' : 'tp-in-a') + ' 320ms cubic-bezier(.2,.8,.2,1) ';
+const stars = ZONES[P.many].map((c, z) => {
+const w = R.stars[z] || null;
+const isT = z === R.tz;
+const bad = st.wrong.indexOf(z) >= 0;
+const flying = caught && isT;
+const shook = st.shook[z] || 0;
 return {
+x: c[0] - 66 + 'px', y: c[1] - 66 + 'px',
+z: flying ? 3 : 2,
+fly: flying ? 'translate(' + (JAR[0] - c[0]) + 'px, ' + (JAR[1] - c[1]) + 'px) scale(.3)' : 'none',
+flyT: flying ? 'transform 600ms cubic-bezier(.5,0,.7,1), opacity 200ms linear 450ms' : 'none',
+flyO: flying ? 0 : 1,
+enter: enter + z * 70 + 'ms both',
+float: FLOAT[z][0] + ' ' + FLOAT[z][1] + 's ease-in-out ' + FLOAT[z][2] + 's infinite',
+pic: w ? w.pic : C.pic(''),
+disc: flying ? '#B8F0E0' : '#FFF7EC',
+aria: w ? 'Dibujo: ' + w.es : '',
+off: !w || caught || bad ? 'true' : 'false',
+hide: w ? 'false' : 'true',
+tab: w ? 0 : -1,
+vis: w ? 'visible' : 'hidden',
+o: bad ? 0.45 : caught && !isT ? 0.6 : 1,
+anim: bad && shook ? (shook % 2 ? 'tp-shake-a' : 'tp-shake-b') + ' 420ms ease-out' : 'none',
+hint: isT && !caught && st.wrong.length >= 2,
+pick: () => {
+const now = this.state;
+if (!w || now.finished || now.caught || now.r !== r || now.wrong.indexOf(z) >= 0) return;
+if (isT) this.catchIt(r);
+else this.miss(r, z);
+}
+};
+});
+/* word data can end in its own ? ! or …: no second stop after it */
+const stop = (t) => (/[.!?…]$/.test(t) ? t : t + '.');
+const say = caught
+? { gn: 'Iporãite!', es: '«' + target.gn + '»: ' + stop(target.es), ink: '#B8F0E0' }
+: st.wrong.length
+? { gn: "Eha'ã jey", es: 'Probá otra vez.', ink: '#FFB98A' }
+: { gn: listen ? 'Ehendu' : "Emoñe'ẽ", es: listen ? '¿Cuál dice? Atrapala.' : '¿Qué dice? Atrapala.', ink: '#FFF7EC' };
+const playingWord = !!(st.said && st.voiced);
+const len = C.chars(target.gn).length;
+/* stars in the jar: one per round done, and this round's once it has landed */
+const got = finished ? n : Math.min(n, r + (st.landed ? 1 : 0));
+/* what the close button does, which the phone's Back does too (a game that is over keeps its star) */
+this.leave = () => { if (finished) act.finish('catch'); else act.go('Tonight'); };
+return {
+field: C.starfield('catch', 390, 40, 760, 46),
 titleGn: G.gn, titleEs: G.es,
-finished: true, stars: [],
+dots: P.rounds.map((x, k) => {
+const full = finished || k < r || (k === r && !!st.landed);
+const just = finished ? k === n - 1 : k === r && !!st.landed;
+return { bg: full ? '#FFD34E' : k === r ? '#FFF7EC' : 'transparent', anim: full && just ? 'tp-dot 300ms cubic-bezier(.2,.8,.2,1)' : 'none' };
+}),
+dotsAria: 'Ronda ' + Math.min(r + 1, n) + ' de ' + n,
+playing, finished,
+stars,
+starD: C.puffyD(66, 70, 62, 0.7),
+say,
+ear: { on: listen && !caught, wave: playingWord, still: !playingWord },
+canAsk: playing && listen,
+ask: () => { this.askN++; this.listenNow(); },
+bubble: {
+on: playing && !caught && (!listen || st.shown === r || (!!st.said && !st.voiced)),
+text: target.gn,
+size: listen ? '18px' : len > 12 ? '22px' : '28px',
+anim: listen ? 'tp-pop 300ms ease-out' : enter + '0ms both'
+},
+pose: finished || st.full ? 'cheer' : caught ? 'happy' : st.oops ? 'oops' : st.said ? 'listen' : 'stand',
+talk: playingWord,
+slots: P.rounds.map((x, k) => ({
+x: SLOTS[k % 6][0] - 10 + 'px', y: SLOTS[k % 6][1] - 10 + 'px',
+o: k < got ? 1 : 0,
+anim: !finished && k === r && st.landed ? 'tp-land 300ms cubic-bezier(.2,.8,.2,1)' : 'none'
+})),
+smallStar: C.puffyD(10, 10.8, 9, 0.62),
+lidStar: C.starD(39, 8.5, 4.2, 0.5),
+jarAnim: st.full || finished ? 'tp-yes 520ms cubic-bezier(.2,.8,.2,1) 250ms' : 'none',
+jarAria: "El frasco de Mborevi'i: " + got + (got === 1 ? ' estrella' : ' estrellas'),
+scoreLine: '¡Muy bien! ' + st.first + ' de ' + n + ' a la primera.',
+fresh: !again,
+announce: finished && n ? 'Iporãite! ' + (again ? '' : 'Rehupyty peteĩ mbyja. ') + '¡Muy bien! ' + st.first + ' de ' + n + ' a la primera.' : '',
 doneRef: this.doneRef,
+bigStar: C.puffyD(32, 33.5, 28),
 close: (e) => { if (act) { e.preventDefault(); this.leave(); } },
 done: (e) => { if (act) { e.preventDefault(); act.finish('catch'); } }
 };
