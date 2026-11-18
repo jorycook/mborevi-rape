@@ -131,7 +131,11 @@ super(props);
 this.state = { i: 0, step: 'ready', said: false, finished: false };
 this.timers = [];
 }
-componentWillUnmount() { this.timers.forEach((t) => clearTimeout(t)); }
+componentWillUnmount() { this.timers.forEach((t) => clearTimeout(t)); this.offBack(); }
+/* the phone's Back on the site (App) asks this screen what its close button would do */
+componentDidMount() { this.onBack(); }
+onBack() { const act = this.props.act; if (!act) return; const f = () => this.leave(); f.board = this; act.leave = f; }
+offBack() { const act = this.props.act; if (act && act.leave && act.leave.board === this) act.leave = null; }
 componentDidUpdate() {
 const f = !!this.state.finished;
 if (f && !this.wasFinished) window.tpCourse.say(this.endLine);
@@ -182,6 +186,8 @@ const mic = step === 'listening'
 : step === 'heard'
 ? { gn: 'Iporãite!', es: '¡Muy bien dicho! Podés decirlo otra vez o seguir.', bg: '#B8F0E0', live: false, aria: 'Decirlo otra vez' }
 : { gn: 'Ere!', es: 'Tocá el micrófono y decilo en voz alta. Nadie te graba.', bg: '#FFD34E', live: false, aria: 'Empezar a decirlo' };
+/* what the close button does, which the phone's Back does too (a game that is over keeps its star) */
+this.leave = () => { if (finished) act.finish('say'); else act.go('Tonight'); };
 return {
 field: C.starfield('say', 390, 40, 760, 46),
 dots: items.map((x, k) => ({ bg: finished || k < i ? '#FFD34E' : k === i ? '#FFF7EC' : 'transparent' })),
@@ -201,7 +207,7 @@ listen, next,
 bubble: { on: this.state.said && !this.state.voiced && !finished, text: it.gn },
 pose: finished || step === 'heard' ? 'happy' : step === 'listening' || this.state.said ? 'listen' : 'stand',
 bigStar: C.puffyD(32, 33.5, 28),
-close: (e) => { if (act) { e.preventDefault(); if (finished) act.finish('say'); else act.go('Tonight'); } }
+close: (e) => { if (act) { e.preventDefault(); this.leave(); } }
 };
 }
 }

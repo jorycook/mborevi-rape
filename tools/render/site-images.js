@@ -39,7 +39,7 @@ const OG = `<!doctype html>
 <h1>Mborevi Rape</h1>
 <p class="sub">guaraní para chicos</p>
 <p class="lead">Mborevi'i, un tapir bebé, camina por la Vía Láctea de lección en lección, con los grados del MEC del Paraguay.</p>
-<div class="chips"><span>Preescolar</span><span>1.º grado</span><span>2.º grado</span></div>
+<div class="chips"><span>Preescolar</span><span>1.º grado</span><span>Parte de 2.º grado</span></div>
 </div>
 <div class="phone"><div id="welcome"></div></div>
 <script>
@@ -82,11 +82,30 @@ const OG = `<!doctype html>
   });
   await p.waitForTimeout(200);
   await p.screenshot({ path: path.join(OUT, 'icon-square-512.png'), clip: { x: 0, y: 0, width: 400, height: 400 } });
+  // the same drawing for Android's "maskable" icon: a launcher crops it to its own shape and only the middle circle
+  // (80% across) is sure to show, so the big star and Mborevi'i are drawn at 80% towards the middle, over the same
+  // sky (the Milky Way and the dust stay as they are: they run off the edges anyway)
+  await p.evaluate(() => {
+    const sky = document.querySelector('[role="img"][aria-label="Ícono de Mborevi Rape"]').firstElementChild;
+    const svg = sky.querySelector('svg');
+    const star = svg.cloneNode(true);
+    Array.prototype.forEach.call(star.querySelectorAll('path'), (el) => { if (el.getAttribute('fill') !== '#FFD34E') el.remove(); });
+    Array.prototype.forEach.call(svg.querySelectorAll('path'), (el) => { if (el.getAttribute('fill') === '#FFD34E') el.remove(); });
+    svg.parentNode.insertBefore(star, svg.nextSibling);
+    const tapir = Array.prototype.filter.call(sky.children, (el) => el.localName === 'div')[0];
+    [star, tapir].forEach((el) => {
+      const left = parseFloat(el.style.left) || 0, top = parseFloat(el.style.top) || 0;
+      el.style.transformOrigin = (200 - left) + 'px ' + (200 - top) + 'px';
+      el.style.transform = 'scale(0.8)';
+    });
+  });
+  await p.waitForTimeout(200);
+  await p.screenshot({ path: path.join(OUT, 'icon-maskable-512.png'), clip: { x: 0, y: 0, width: 400, height: 400 } });
   // the share image: 1200 x 630, as link previews ask for
   const q = await b.newPage({ viewport: { width: 1200, height: 630 }, deviceScaleFactor: 1, reducedMotion: 'reduce' });
   await q.goto(BASE + 'render/og.html');
   await settle(q);
   await q.screenshot({ path: path.join(OUT, 'og.png') });
   await b.close();
-  console.log('wrote', path.join(OUT, 'icon-square-512.png'), 'and', path.join(OUT, 'og.png'));
+  console.log('wrote', path.join(OUT, 'icon-square-512.png'), path.join(OUT, 'icon-maskable-512.png'), 'and', path.join(OUT, 'og.png'));
 })().catch((e) => { console.error(e); process.exit(1); });

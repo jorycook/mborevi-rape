@@ -135,7 +135,11 @@ this.state = { r: 0, wrong: [], right: false, said: false, first: 0, finished: f
 this.timers = [];
 this.doneRef = (el) => { this.doneEl = el; };
 }
-componentWillUnmount() { this.timers.forEach((t) => clearTimeout(t)); }
+componentWillUnmount() { this.timers.forEach((t) => clearTimeout(t)); this.offBack(); }
+/* the phone's Back on the site (App) asks this screen what its close button would do */
+componentDidMount() { this.onBack(); }
+onBack() { const act = this.props.act; if (!act) return; const f = () => this.leave(); f.board = this; act.leave = f; }
+offBack() { const act = this.props.act; if (act && act.leave && act.leave.board === this) act.leave = null; }
 componentDidUpdate() {
 const f = !!this.state.finished;
 if (f && !this.wasFinished) { if (this.doneEl) this.doneEl.focus(); window.tpCourse.say(this.endLine); }
@@ -210,6 +214,8 @@ const say = this.state.right
 ? { gn: "Eha'ã jey", es: 'Probá otra vez.', ink: '#FFB98A' }
 : { gn: mode === 'read' ? "Emoñe'ẽ" : 'Ehendu', es: mode === 'read' ? '¿Qué dice?' : '¿Qué dice Mborevi\'i?', ink: '#FFF7EC' };
 const len = C.chars(target.gn).length;
+/* what the close button does, which the phone's Back does too (a game that is over keeps its star) */
+this.leave = () => { if (finished) act.finish(mode); else act.go('Tonight'); };
 return {
 field: C.starfield('pick', 390, 40, 760, 46),
 titleGn: G.gn, titleEs: G.es,
@@ -226,7 +232,7 @@ fresh: !again,
 announce: finished && n ? 'Iporãite! ' + (again ? '' : 'Rehupyty peteĩ mbyja. ') + '¡Muy bien! ' + this.state.first + ' de ' + n + ' a la primera.' : '',
 doneRef: this.doneRef,
 bigStar: C.puffyD(32, 33.5, 28),
-close: (e) => { if (act) { e.preventDefault(); if (finished) act.finish(mode); else act.go('Tonight'); } },
+close: (e) => { if (act) { e.preventDefault(); this.leave(); } },
 done: (e) => { if (act) { e.preventDefault(); act.finish(mode); } }
 };
 }

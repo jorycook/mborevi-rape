@@ -147,7 +147,11 @@ this.state = { r: 0, wrong: [], right: false, said: false, first: 0, finished: f
 this.timers = [];
 this.doneRef = (el) => { this.doneEl = el; };
 }
-componentWillUnmount() { this.timers.forEach((t) => clearTimeout(t)); }
+componentWillUnmount() { this.timers.forEach((t) => clearTimeout(t)); this.offBack(); }
+/* the phone's Back on the site (App) asks this screen what its close button would do */
+componentDidMount() { this.onBack(); }
+onBack() { const act = this.props.act; if (!act) return; const f = () => this.leave(); f.board = this; act.leave = f; }
+offBack() { const act = this.props.act; if (act && act.leave && act.leave.board === this) act.leave = null; }
 componentDidUpdate() {
 const f = !!this.state.finished;
 if (f && !this.wasFinished) { if (this.doneEl) this.doneEl.focus(); window.tpCourse.say(this.endLine); }
@@ -219,6 +223,8 @@ const meta = C.meta(g);
 const fig = C.figure(meta.sky, 0);
 let rays = '';
 for (let k = 0; k < 12; k++) { const a = (k * Math.PI) / 6; rays += 'M95 95L' + (95 + Math.cos(a - 0.12) * 95).toFixed(1) + ' ' + (95 + Math.sin(a - 0.12) * 95).toFixed(1) + 'L' + (95 + Math.cos(a + 0.12) * 95).toFixed(1) + ' ' + (95 + Math.sin(a + 0.12) * 95).toFixed(1) + 'Z'; }
+/* what the close button does, which the phone's Back does too (a big star that is over stays lit) */
+this.leave = () => { if (finished) act.checked(first, n); else act.go('Main'); };
 return {
 field: C.starfield('check', 390, 40, 760, 60),
 unitLine: (unit.gn ? C.norm(unit.gn) : 'Unidad ' + unitN) + ' · ' + fig.gn,
@@ -240,7 +246,7 @@ earned: [0, 1, 2].map((k) => ({ d: C.puffyD(22, 23, 19), fill: k < stars ? '#FFD
 earnedAria: stars + ' de 3 estrellas',
 announce: finished && n ? "Mbyja guasu omimbi! ¡La estrella grande brilla! " + first + ' de ' + n + ' a la primera: ' + stars + ' de 3 estrellas.' : '',
 doneRef: this.doneRef,
-close: (e) => { if (act) { e.preventDefault(); if (finished) act.checked(first, n); else act.go('Main'); } },
+close: (e) => { if (act) { e.preventDefault(); this.leave(); } },
 done: (e) => { if (act) { e.preventDefault(); act.checked(first, n); } }
 };
 }

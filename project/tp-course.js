@@ -439,50 +439,124 @@
     Story: 'Tonight' };
   /* The child's progress kept on this device, when the page asks for it (the site sets window.__tpSite.key; the canvas
      does not): the grade, the language of home, the nights and big stars done, the voice switch. Never the screen in
-     play: a child who comes back starts on the path. Nothing leaves the device. */
+     play: a child who comes back starts on the path. Nothing leaves the device.
+     Each step is kept with what it is (its unit's name, and the night's), so that a unit put in between later does
+     not move the stars onto other lessons: a step whose name is now somewhere else in the grade goes there (a step
+     whose name is nowhere, a lesson renamed, stays in its place). Progress is only ever added: what another copy of
+     the app kept in the meantime (another tab, the app on the home screen) is kept too. */
   var KEEP = 1, kept = '';
   function keyOf() { var site = window.__tpSite; return site && typeof site.key === 'string' && site.key ? site.key : ''; }
+  /* does this page keep the progress? (the grown-ups' screen says where and how) */
+  C.keeps = function () { return !!keyOf(); };
+  function plain(x) { return !!x && typeof x === 'object' && !Array.isArray(x); }
+  /* what a step is, in words that stay when the steps are numbered again */
+  function what(s) {
+    if (!s) return '';
+    var u = C.unit(s.grade, s.unit);
+    var un = u && u.gn ? u.gn : '';
+    if (!un) return '';
+    return s.kind === 'check' ? un : s.gn ? un + ' / ' + s.gn : '';
+  }
+  /* the step a kept id stands for now: the same id while it is still the same lesson, else the step of its grade that
+     has its name, else the same id */
+  function placeOf(id, name, kind) {
+    var s = C.session(id);
+    if (s && s.kind === kind && (!name || what(s) === name)) return id;
+    if (name) {
+      var list = C.sessions(C.gradeOf(id));
+      for (var i = 0; i < list.length; i++) if (list[i].kind === kind && what(list[i]) === name) return list[i].id;
+    }
+    return s && s.kind === kind ? id : null;
+  }
+  function better(a, b) { return !a ? b : !b ? a : b.stars > a.stars || (b.stars === a.stars && b.score > a.score) ? b : a; }
+  /* the kept progress, checked against the lessons as they are now; null when nothing usable is kept */
+  function read(key) {
+    var o;
+    try { o = JSON.parse(window.localStorage.getItem(key) || 'null'); } catch (e) { return null; }
+    if (!plain(o) || o.v !== KEEP) return null;
+    load();
+    var names = plain(o.what) ? o.what : {};
+    var nameOf = function (id) { return typeof names[id] === 'string' ? names[id] : ''; };
+    var out = { started: !!o.started, grade: null, track: null, done: {}, checks: {}, voice: o.voice !== false };
+    if (typeof o.grade === 'string' && ORDER.indexOf(o.grade) >= 0) out.grade = o.grade;
+    if (o.track === 'L1' || o.track === 'L2' || o.track === 'BI') out.track = o.track;
+    if (plain(o.done)) Object.keys(o.done).forEach(function (id) {
+      var had = o.done[id], to = placeOf(id, nameOf(id), 'night');
+      if (!to || !plain(had)) return;
+      var flags = out.done[to] || {};
+      Object.keys(had).forEach(function (k) { if (had[k] && (k === 'ok' || GAMES[k])) flags[k] = 1; });
+      if (Object.keys(flags).length) out.done[to] = flags;
+    });
+    if (plain(o.checks)) Object.keys(o.checks).forEach(function (id) {
+      var c = o.checks[id], to = placeOf(id, nameOf(id), 'check');
+      if (!to || !plain(c)) return;
+      var n = function (x) { return typeof x === 'number' && isFinite(x) && x >= 0 ? x : 0; };
+      out.checks[to] = better(out.checks[to], { score: n(c.score), of: n(c.of), stars: Math.min(3, Math.max(1, Math.round(n(c.stars)) || 1)) });
+    });
+    return out;
+  }
+  /* two records of progress as one: every night and game of both, the better result of each big star */
+  function union(a, b) {
+    var done = {}, checks = {};
+    [a.done || {}, b.done || {}].forEach(function (d) {
+      Object.keys(d).forEach(function (id) { done[id] = Object.assign({}, done[id] || {}, d[id]); });
+    });
+    [a.checks || {}, b.checks || {}].forEach(function (c) {
+      Object.keys(c).forEach(function (id) { checks[id] = better(checks[id], c[id]); });
+    });
+    return { done: done, checks: checks };
+  }
   C.store = function (state) {
     var key = keyOf();
     if (!key || !state) return;
-    var o = { v: KEEP, started: !!state.started, grade: state.grade || null, track: state.track || null,
-      done: state.done || {}, checks: state.checks || {} };
-    if (state.voice === false) o.voice = false;
+    var own = { started: !!state.started, grade: state.grade || null, track: state.track || null,
+      done: state.done || {}, checks: state.checks || {}, voice: state.voice !== false };
     try {
-      var text = JSON.stringify(o);
-      if (text !== kept) { window.localStorage.setItem(key, text); kept = text; }
+      var text = JSON.stringify(own);
+      if (text === kept) return;
+      var there = read(key);
+      var both = there ? union(there, own) : own;
+      var o = { v: KEEP, started: own.started || !!(there && there.started), grade: own.grade, track: own.track,
+        done: both.done, checks: both.checks, what: {} };
+      if (!own.voice) o.voice = false;
+      Object.keys(o.done).concat(Object.keys(o.checks)).forEach(function (id) { var nm = what(C.session(id)); if (nm) o.what[id] = nm; });
+      var out = JSON.stringify(o);
+      if (out !== window.localStorage.getItem(key)) window.localStorage.setItem(key, out);
+      kept = text;
     } catch (e) { /* storage full, blocked or private: the game goes on, unkept */ }
   };
-  /* what was kept, checked against the lessons as they are now (a step that no longer exists is dropped); null when
-     nothing usable was kept */
+  /* what was kept, as the state to start from (on the path); null when nothing usable was kept */
   C.restore = function () {
     var key = keyOf();
     if (!key) return null;
-    var o;
-    try { o = JSON.parse(window.localStorage.getItem(key) || 'null'); } catch (e) { return null; }
-    if (!o || typeof o !== 'object' || o.v !== KEEP) return null;
-    load();
+    var o = read(key);
+    if (!o) return null;
     var st = C.fresh();
-    var plain = function (x) { return x && typeof x === 'object' && !Array.isArray(x); };
-    if (typeof o.grade === 'string' && ORDER.indexOf(o.grade) >= 0) st.grade = o.grade;
-    if (o.track === 'L1' || o.track === 'L2' || o.track === 'BI') st.track = o.track;
-    if (plain(o.done)) Object.keys(o.done).forEach(function (id) {
-      var s = C.session(id), had = o.done[id], out = {};
-      if (!s || s.kind !== 'night' || !plain(had)) return;
-      Object.keys(had).forEach(function (k) { if (had[k] && (k === 'ok' || GAMES[k])) out[k] = 1; });
-      if (Object.keys(out).length) st.done[id] = out;
-    });
-    if (plain(o.checks)) Object.keys(o.checks).forEach(function (id) {
-      var s = C.session(id), c = o.checks[id];
-      if (!s || s.kind !== 'check' || !plain(c)) return;
-      var n = function (x) { return typeof x === 'number' && isFinite(x) && x >= 0 ? x : 0; };
-      st.checks[id] = { score: n(c.score), of: n(c.of), stars: Math.min(3, Math.max(1, Math.round(n(c.stars)) || 1)) };
-    });
-    if (o.voice === false) st.voice = false;
-    st.started = !!o.started || !!st.grade;
+    st.grade = o.grade;
+    st.track = o.track;
+    st.done = o.done;
+    st.checks = o.checks;
+    if (!o.voice) st.voice = false;
+    st.started = o.started || !!st.grade;
     st.screen = st.grade && st.track ? 'Main' : 'Welcome';
     kept = '';
     return st;
+  };
+  /* what another copy of the app has kept since (a 'storage' event), added to this one's progress: the change to make,
+     or null when there is nothing new */
+  C.withKept = function (state) {
+    var key = keyOf();
+    var o = key ? read(key) : null;
+    if (!o || !state) return null;
+    var both = union(state, o);
+    var same = JSON.stringify(both.done) === JSON.stringify(state.done || {}) && JSON.stringify(both.checks) === JSON.stringify(state.checks || {});
+    return same ? null : { done: both.done, checks: both.checks };
+  };
+  /* the kept progress is wiped (the page offers it when a screen keeps breaking on what was kept) */
+  C.forget = function () {
+    var key = keyOf();
+    kept = '';
+    try { if (key) window.localStorage.removeItem(key); } catch (e) {}
   };
   /* what every screen reads: the grade, the step in play, its games, the stars */
   /* Mborevi'i's own lines, spoken as well as written: the clips are in the shared sound file (tp-sound-ui.js, keyed
@@ -504,8 +578,8 @@
     if (!S.has(k)) return false;
     return S.play(k);
   };
-  /* Mborevi'i's lines are asked for as soon as this file runs, not when the first screen draws: on a slow phone they
-     are then there for the first tap */
+  /* Mborevi'i's lines are asked for as soon as this file and the sound have both run (whichever runs second asks: the
+     sound does the same), not when the first screen draws: on a slow phone they are then there for the first tap */
   if (window.tpSound && typeof window.tpSound.need === 'function') window.tpSound.need('ui');
   C.view = function (state) {
     load();
@@ -535,22 +609,32 @@
   C.handlers = function (get, set) {
     /* a second tap within a moment of a screen change is the same tap: the next screen keeps its button in the same
        place, and a double tap would otherwise answer it too */
-    var last = 0;
-    function guard() { var t = Date.now(); if (t - last < 400) return false; last = t; return true; }
+    var last = 0, free = false;
+    function guard() { if (free) return true; var t = Date.now(); if (t - last < 400) return false; last = t; return true; }
     function moveTo(st, to) {
       var out = { screen: to, started: st.started || to !== 'Welcome' };
       if (to === 'Main') { out.cur = null; out.game = null; } else out.walk = null;
       return out;
     }
-    return {
+    var api = {
       /* to the path: the step opened there is put down (a night played again is not tonight's); a walk only lives on
          the path */
       go: function (to) {
         if (!guard()) return;
         set(function (st) { return moveTo(st, to); });
       },
-      /* the phone's Back: one screen back, where the screen's own back button goes; nothing on the path */
+      /* the phone's Back (on the site): what the screen's own close button does, when the screen says so (act.leave,
+         set by a game or the big star while it is open: one that is over keeps its star), else one screen back, where
+         the screen's own back button goes; nothing on the path. It always moves: the double-tap guard does not apply */
+      leave: null,
       back: function () {
+        var own = api.leave;
+        api.leave = null;
+        if (typeof own === 'function') {
+          free = true;
+          try { own(); } finally { free = false; }
+          return;
+        }
         set(function (st) { var to = C.UP[st.screen]; return to ? moveTo(st, to) : null; });
       },
       save: function (patch) { set(function () { return patch; }); },
@@ -604,5 +688,6 @@
       },
       walked: function () { set(function () { return { walk: null }; }); }
     };
+    return api;
   };
 })();

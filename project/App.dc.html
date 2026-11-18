@@ -68,51 +68,93 @@ a{color:#2A1B3D;text-decoration:none}a:hover{color:#2A1B3D}
    only brand moments (the mascot sheet, the component, the icon, the sky poster, the rules) are not played here.
    When the screen changes, the focus moves to the new screen's heading (or the screen itself), so a keyboard or a
    screen reader starts there and is not left on a button that is gone.
-   On the public site (window.__tpSite), the progress is kept on the device and comes back at the next visit, on the
-   path, and the phone's Back moves one screen back, as the screen's own back button does (tpCourse.UP); on the path
-   and the first screen it leaves the site. On the canvas neither happens. */
+   On the public site (window.__tpSite):
+   - the progress is kept on the device as it is made (tpCourse.store, from every change the screens ask for) and comes
+     back at the next visit, on the path; what another copy of the app keeps meanwhile (another tab) is added in;
+   - the phone's Back does what the screen's own back or close button does (tpCourse.UP; a game or the big star that
+     is over keeps its star), and on the path and the first screen it leaves the site. The page keeps one history
+     entry for each step back the screen has (Main 0, Tonight 1, a game 2…), added by the tap that goes a step deeper:
+     nothing is ever added while Back is handled, because Chrome jumps over an entry a page adds without a tap, and
+     the next Back would leave the site;
+   - each new screen starts at its top, so that a window too short for the whole screen shows its heading first.
+   On the canvas none of this happens. */
 const SCREENS = ['Welcome', 'Grade', 'Home', 'Ready', 'Main', 'Tonight', 'Sky', 'Grownups', 'Meet', 'Pick', 'Pairs', 'Build', 'Say', 'Letters', 'Story', 'Check', 'Shine'];
+/* how many steps back a screen has before the path or the first screen */
+function depthOf(screen) {
+const up = window.tpCourse.UP;
+let n = 0;
+for (let s = screen; up[s] && n < 9; s = up[s]) n++;
+return n;
+}
+/* which of those steps the page's history is on: the page's own entry is 0 */
+function depthNow() {
+const s = window.history.state;
+return s && typeof s.tpDepth === 'number' ? s.tpDepth : 0;
+}
+let travel = 0; /* when this board last asked the history to go back, until the browser has done it */
 class Component extends DCLogic {
 constructor(props) {
 super(props);
 this.state = window.tpCourse.restore() || window.tpCourse.fresh();
-this.act = window.tpCourse.handlers(() => this.state, (fn) => this.setState(fn));
+/* each change is kept at once, before it is drawn: a screen that then fails to draw does not lose the star */
+this.act = window.tpCourse.handlers(() => this.state, (fn) => { this.setState(fn); window.tpCourse.store(this.state); });
 this.screenRef = (el) => { if (el) this.screenEl = el; };
 }
 /* the first screen is the one shown: from the first change on, the focus follows the screen */
 componentDidMount() {
 this.shown = this.state.screen;
-if (window.__tpSite && window.history && typeof window.history.pushState === 'function') {
+if (!window.__tpSite) return;
+if (window.history && typeof window.history.pushState === 'function') {
 this.onPop = () => {
-if (this.skip) { this.skip = false; this.sync(); return; }
-if (!this.ours()) this.act.back();
+/* the history went back by itself (the phone's Back, one step or more): so do the screens, without adding anything
+   to the history; when it went back because the app asked, the screen is already there */
+const asked = travel && Date.now() - travel < 1500;
+travel = 0;
+const want = depthNow();
+for (let k = 0; !asked && k < 9 && depthOf(this.state.screen) > want; k++) {
+const was = this.state.screen;
+this.act.back();
+if (this.state.screen === was) break;
+}
 this.sync();
 };
 window.addEventListener('popstate', this.onPop);
 this.sync();
 }
+this.onKept = (e) => {
+if (e && e.key && e.key !== window.__tpSite.key) return;
+const more = window.tpCourse.withKept(this.state);
+if (more) this.setState(more);
+};
+window.addEventListener('storage', this.onKept);
 }
 componentWillUnmount() {
-if (this.onPop) window.removeEventListener('popstate', this.onPop);
+if (this.onKept) window.removeEventListener('storage', this.onKept);
+if (!this.onPop) return;
+window.removeEventListener('popstate', this.onPop);
+/* the page is giving up this board (a screen failed to draw): the steps back it added go, so that Back is not
+   swallowed by an entry nobody answers */
+const have = depthNow();
+if (have > 0) { try { travel = Date.now(); window.history.go(-have); } catch (e) { travel = 0; } }
 }
-/* is the page on the history entry this board added? Only then is there a step back that stays on the site */
-ours() {
-const s = window.history.state;
-return !!(s && s.tpBack);
-}
-/* a screen with a way back has one history entry above the page's own, so Back comes here; a screen without one
-   (the path, the first screen) has none, so Back leaves */
+/* the history in step with the screen, after a change: an entry for each step deeper (the change comes from a tap,
+   which lets the page add one), and back as many entries as the screen went back in the app, so that Back from
+   there does not return to it */
 sync() {
 if (!this.onPop) return;
-const up = !!window.tpCourse.UP[this.state.screen];
+if (travel && Date.now() - travel < 1500) return; /* the browser is still going back: the popstate will sync */
+travel = 0;
+const want = depthOf(this.state.screen), have = depthNow();
 try {
-if (up && !this.ours()) window.history.pushState({ tpBack: 1 }, '');
-else if (!up && this.ours() && !this.skip) { this.skip = true; window.history.back(); }
-} catch (e) { this.skip = false; }
+if (want > have) for (let d = have + 1; d <= want; d++) window.history.pushState({ tpDepth: d }, '');
+else if (want < have) { travel = Date.now(); window.history.go(want - have); }
+} catch (e) { travel = 0; }
 }
 componentDidUpdate() {
 const now = this.state.screen;
 if (this.shown && now !== this.shown && this.screenEl) {
+/* on the site the page may scroll (a short window): the new screen starts at its top */
+if (window.__tpSite) { try { window.scrollTo(0, 0); } catch (e) {} }
 const el = this.screenEl;
 const h = el.querySelector ? el.querySelector('h1') : null;
 const to = h || el;

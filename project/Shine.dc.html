@@ -77,7 +77,8 @@ a{color:#2A1B3D;text-decoration:none}a:hover{color:#2A1B3D}
    one lights, the figure's drawing appears around its stars and the whole figure shines: the grade is done, and the
    sky of grades shows where Mborevi'i walks next. On its own: 1.º grado, unit 1 just finished: Eichu's first star. */
 class Component extends DCLogic {
-componentDidMount() { window.tpCourse.say(window.tpCourse.VOICE.joy); }
+/* the cheer is said in the app only (it comes from the tap that lit the star); a board on its own makes no sound */
+componentDidMount() { if (this.props.act) window.tpCourse.say(window.tpCourse.VOICE.joy); }
 view() {
 const C = window.tpCourse;
 if (this.props.app) return this.props.app;

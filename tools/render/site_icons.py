@@ -1,6 +1,6 @@
 # Sizes the site's icons from the square drawing site-images.js shot (render/site/icon-square-512.png) and copies the
 # share image: rounded icons for browser tabs and Android ("any"), full squares where the system rounds them itself
-# (the iPhone's home screen, Android's "maskable" icon).
+# (the iPhone's home screen; Android's "maskable" icon, shot with the drawing at 80% so the launcher's crop keeps it).
 # Usage: python3 tools/render/site_icons.py
 import os
 import shutil
@@ -31,7 +31,9 @@ def main():
     rounded(square, 192).save(os.path.join(OUT, 'icon-192.png'), optimize=True)
     rounded(square, 512).save(os.path.join(OUT, 'icon-512.png'), optimize=True)
     square.resize((180, 180), Image.LANCZOS).save(os.path.join(OUT, 'icon-180.png'), optimize=True)
-    square.save(os.path.join(OUT, 'icon-maskable-512.png'), optimize=True)
+    maskable = Image.open(os.path.join(SRC, 'icon-maskable-512.png')).convert('RGB')
+    assert maskable.size == (512, 512), maskable.size
+    maskable.save(os.path.join(OUT, 'icon-maskable-512.png'), optimize=True)
     og = Image.open(os.path.join(SRC, 'og.png')).convert('RGB')
     assert og.size == (1200, 630), og.size
     og.save(os.path.join(OUT, 'og.png'), optimize=True)

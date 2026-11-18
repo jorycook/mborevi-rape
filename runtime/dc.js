@@ -365,21 +365,41 @@
 
   /* ---------- a board that fails ---------- */
   /* Whatever throws while a board draws, in it or in a board it imports, reaches this guard around the page's board,
-     which says so and offers to start again (the site keeps the child's progress, so starting again goes back to the
-     path). A board inside another is not guarded on its own: a screen with a hole in it would leave a child with no
+     which says so and offers to start again: the board is drawn anew from what is already loaded (no request, so it
+     works offline too), and the site keeps the child's progress, so starting again goes back to the path. When the
+     board fails again while it is being drawn anew, before anyone could tap anything, what the page keeps may be what
+     breaks it: then, if the page can wipe it (DC.configure({ startOver })), a second button offers to start from
+     scratch. A board inside another is not guarded on its own: a screen with a hole in it would leave a child with no
      way on. */
   class Guard extends React.Component {
-    constructor(props) { super(props); this.state = { failed: false }; }
+    constructor(props) { super(props); this.state = { failed: false, n: 0, again: false }; this.anew = false; }
     static getDerivedStateFromError() { return { failed: true }; }
-    componentDidCatch(error, info) { console.error('dc runtime: ' + this.props.name + ' failed:', error, info && info.componentStack || ''); }
+    componentDidCatch(error, info) {
+      console.error('dc runtime: ' + this.props.name + ' failed:', error, info && info.componentStack || '');
+      if (this.anew) { this.anew = false; this.setState({ again: true }); }
+    }
+    componentDidUpdate() { if (!this.state.failed) this.anew = false; }
+    restart(wipe) {
+      if (wipe && typeof options.startOver === 'function') { try { options.startOver(); } catch (e) {} }
+      this.anew = true;
+      this.setState({ failed: false, n: this.state.n + 1, again: false });
+    }
     render() {
-      if (!this.state.failed) return this.props.children;
+      if (!this.state.failed) return h(React.Fragment, { key: this.state.n }, this.props.children);
+      var self = this;
+      var button = function (text, wipe, main) {
+        return h('button', { type: 'button', onClick: function () { self.restart(wipe); }, style: { display: 'block',
+          margin: '18px auto 0', padding: '14px 26px', borderRadius: '999px', border: '3px solid #3B2418',
+          background: main ? '#FFD34E' : '#FFF7EC', color: '#3B2418', font: '800 17px system-ui, sans-serif', cursor: 'pointer' } }, text);
+      };
+      var offer = this.state.again && typeof options.startOver === 'function';
       return h('div', { role: 'alert', style: { padding: '120px 28px', textAlign: 'center', color: '#FFF7EC',
           font: '700 17px/1.45 system-ui, sans-serif' } },
-        h('p', null, 'Algo no salió bien.'),
-        h('button', { type: 'button', onClick: function () { location.reload(); }, style: { marginTop: '18px',
-          padding: '14px 26px', borderRadius: '999px', border: '3px solid #3B2418', background: '#FFD34E', color: '#3B2418',
-          font: '800 17px system-ui, sans-serif', cursor: 'pointer' } }, 'Volver a empezar'));
+        h('p', { style: { margin: 0 } }, 'Algo no salió bien.'),
+        offer ? h('p', { style: { margin: '12px 0 0', fontWeight: 600 } },
+          'Volvió a pasar. Podés empezar de cero: se borra lo jugado en este aparato.') : null,
+        button('Volver a empezar', false, true),
+        offer ? button('Empezar de cero', true, false) : null);
     }
   }
 
@@ -416,7 +436,7 @@
       el.src = src;
       el.async = false;
       el.onload = function () { window.removeEventListener('error', onerr); if (err) fail(err); else ok(); };
-      el.onerror = function () { window.removeEventListener('error', onerr); fail(new Error('could not load ' + src)); };
+      el.onerror = function () { window.removeEventListener('error', onerr); var e = new Error('could not load ' + src); e.network = true; fail(e); };
       document.head.appendChild(el);
     }).catch(function (e) { delete scripts[src]; throw e; });
     return (scripts[src] = p);
@@ -431,18 +451,37 @@
     });
     return Promise.all(fresh).then(function () { return Promise.all(list.map(runScript)); });
   }
-  /* one quiet retry: a phone on a weak connection drops a request now and then */
+  /* one quiet retry: a phone on a weak connection drops a request now and then. A request is given up after 15 s in
+     which nothing arrives (before the answer, or in the middle of it); one that keeps coming, however slowly, is
+     waited for: on a slow link all the boards come at once and each takes long */
   function fetchText(url, tries) {
     var ctl = typeof AbortController === 'function' ? new AbortController() : null;
-    var timer = ctl ? setTimeout(function () { ctl.abort(); }, 15000) : 0;
+    var timer = 0;
+    var arm = function () { if (!ctl) return; clearTimeout(timer); timer = setTimeout(function () { ctl.abort(); }, 15000); };
+    arm();
     return fetch(url, { cache: 'no-cache', signal: ctl ? ctl.signal : undefined }).then(function (r) {
       if (!r.ok) throw new Error(url + ' answered ' + r.status);
-      return r.text(); /* the time limit covers the whole download: a body that stalls is cut off too */
+      if (!ctl || !r.body || typeof r.body.getReader !== 'function' || typeof TextDecoder !== 'function') {
+        clearTimeout(timer);
+        return r.text();
+      }
+      var reader = r.body.getReader(), dec = new TextDecoder('utf-8'), parts = [];
+      var pump = function () {
+        arm();
+        return reader.read().then(function (got) {
+          if (got.done) { parts.push(dec.decode()); return parts.join(''); }
+          parts.push(dec.decode(got.value, { stream: true }));
+          return pump();
+        });
+      };
+      return pump();
     }).then(function (text) {
       clearTimeout(timer);
       return text;
     }).catch(function (e) {
       clearTimeout(timer);
+      /* a request that did not come through (not one the site answered with an error): the connection */
+      if (e && (e.name === 'TypeError' || e.name === 'AbortError')) e.network = true;
       if ((tries || 0) >= 1) throw e;
       return new Promise(function (ok) { setTimeout(ok, 800); }).then(function () { return fetchText(url, 1); });
     });
@@ -510,7 +549,9 @@
       return board;
     }).catch(function (e) {
       delete boards[url]; /* not kept, so that trying again can work */
-      throw e instanceof Error && e.message.indexOf(url) >= 0 ? e : new Error('dc runtime: ' + url + ': ' + (e && e.message || e));
+      var out = e instanceof Error && e.message.indexOf(url) >= 0 ? e : new Error('dc runtime: ' + url + ': ' + (e && e.message || e));
+      if (e && e.network) out.network = true;
+      throw out;
     });
     return board.ready;
   }

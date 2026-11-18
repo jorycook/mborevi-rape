@@ -20,8 +20,9 @@ Every claim the app makes about the MEC, with the document and page behind it, i
 **https://jorycook.github.io/mborevi-rape/** opens the whole app, on a phone or a computer. GitHub Pages serves the
 repository's `main` branch as it is, with no build step:
 
-- `index.html` starts the App board and scales it to fit the screen. A window too short to show it at a size that can
-  still be read (a phone held sideways, say) scrolls instead.
+- `index.html` starts the App board and scales it to fit the screen. A phone held sideways still shows the whole screen;
+  any other window too short to show it at a size that can still be read (a split screen, a big zoom) scrolls instead,
+  and each new screen starts at its top. The browser's zoom (Ctrl +) enlarges the app.
 - `runtime/dc.js` is this project's own runtime for the `.dc.html` boards, written from the format's specification.
 - React 18.3.1 runs it (`runtime/vendor/`, MIT licence in `LICENSE-react.txt`). The fonts are served by the site too
   (`runtime/fonts/`), so a visit asks nothing of any other server.
@@ -29,13 +30,28 @@ repository's `main` branch as it is, with no build step:
 What the site adds to the boards:
 
 - **Progress is kept on the device.** The grade, the language of home, the nights and big stars done and the voice switch
-  are saved in the browser (`localStorage`, under `mborevi-rape`); a child who comes back starts on their path. Nothing is
-  sent anywhere. Clearing the site's data in the browser starts again from the Moon.
-- **The phone's Back moves one screen back**, as each screen's own back button does (a game → tonight's games → the
-  path). On the path and the first screen it leaves the site.
-- **When something fails**, the page says so in Spanish and offers to try again: a screen that cannot load stops the
-  start with «No se pudo abrir la app», and a screen that breaks while playing shows «Algo no salió bien» with a button
-  back to the path. A slow connection is told apart from a failure.
+  are saved in the browser (`localStorage`, under `mborevi-rape`) as they happen; a child who comes back starts on their
+  path. Nothing is sent anywhere. Clearing the site's data in the browser starts again from the Moon.
+  - Each step is saved with the name of its lesson, so when a unit is put in the middle of a grade later, the stars stay
+    on their lessons. A step whose lesson was renamed stays in its place.
+  - Progress is only ever added: two copies of the app open at once (an old tab, the app on the home screen) do not wipe
+    what the other saved.
+  - On iPhone and iPad, Safari erases a site's saved data after about 7 days of Safari use without opening it, and an app
+    added to the home screen keeps its own data apart from Safari's. The grown-ups' screen tells parents to add the app
+    to the home screen before the child starts, and to open it from there.
+- **The phone's Back does what the screen's own back or close button does**: a game → tonight's games → the path, and a
+  game or big star that is over keeps its star. On the path and the first screen it leaves the site. The page keeps one
+  browser history entry per step back, added only by a tap, because Chrome's Back skips entries a page adds without one.
+- **When something fails**, the page says so in Spanish and offers to try again.
+  - A screen that cannot load stops the start with «No se pudo abrir la app»: «Revisá la conexión a internet» when a
+    request did not come through, «Probá de nuevo en un rato» when the fault is the app's own.
+  - A screen that breaks while playing shows «Algo no salió bien»; «Volver a empezar» draws the app again from what is
+    already loaded (offline too) and goes back to the path. If it breaks again at once, «Empezar de cero» is offered,
+    which erases the saved progress.
+  - A slow connection is told apart from a failure: a download is only given up after 15 s in which nothing arrives,
+    and after 25 s the page says it is still loading.
+- **On iPhones the silent switch does not mute the voice**: the page says it plays media (`navigator.audioSession`, or a
+  silent `<audio>` on older iPhones), only once a clip can actually be heard, since media playback stops other music.
 - **Sharing the link** shows a picture of the app (`site/og.png`), and the browser tab and the home screen get its icon
   (`site/icon-*.png`, `manifest.webmanifest`). Both are made from the boards: `node tools/render/site-images.js`, then
   `python3 tools/render/site_icons.py`. The share tags name the address above; change them in `index.html` if the site
@@ -131,8 +147,10 @@ The screenshot tools in `tools/render/` use Playwright, open the boards with thi
 - `node tools/render/overflow.js` reports anything a board clips.
 - `node tools/render/walk-app.js` plays a night of the App board like a child would. `SITE=1 node
   tools/render/walk-site.js` does the same through the site's start page.
-- `node tools/render/site-checks.js` checks what the site adds: progress kept, the phone's Back, short windows, a screen
-  that fails to load or breaks, a slow connection, no JavaScript, the iPhone's silent switch (simulated), the share tags.
+- `node tools/render/site-checks.js` checks what the site adds: progress kept (also across renumbered lessons and two
+  copies of the app), the phone's Back (also with Chrome's own Back button, through a small test extension), short
+  windows and phones held sideways, a screen that fails to load or breaks, a slow connection, no JavaScript, the
+  iPhone's silent switch (simulated), the share tags. It takes about four minutes.
 
 The tools expect the server on port 8766; `BASE=http://127.0.0.1:8768/` points them at another.
 

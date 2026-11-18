@@ -122,7 +122,11 @@ this.state = { r: 0, got: [], used: [], bad: null, done: false, finished: false 
 this.timers = [];
 this.doneRef = (el) => { this.doneEl = el; };
 }
-componentWillUnmount() { this.timers.forEach((t) => clearTimeout(t)); }
+componentWillUnmount() { this.timers.forEach((t) => clearTimeout(t)); this.offBack(); }
+/* the phone's Back on the site (App) asks this screen what its close button would do */
+componentDidMount() { this.onBack(); }
+onBack() { const act = this.props.act; if (!act) return; const f = () => this.leave(); f.board = this; act.leave = f; }
+offBack() { const act = this.props.act; if (act && act.leave && act.leave.board === this) act.leave = null; }
 componentDidUpdate() {
 const f = !!this.state.finished;
 if (f && !this.wasFinished) { if (this.doneEl) this.doneEl.focus(); window.tpCourse.say(this.endLine); }
@@ -195,6 +199,8 @@ border: i < got.length ? '3px solid #3B2418' : i === got.length ? '3px dashed #6
 bg: this.state.done ? '#B8F0E0' : i < got.length ? '#FFE7A3' : i === got.length ? '#EDE6FF' : '#FFFFFF',
 anim: i === got.length - 1 ? 'tp-pop 260ms ease-out' : 'none'
 }));
+/* what the close button does, which the phone's Back does too (a game that is over keeps its star) */
+this.leave = () => { if (finished) act.finish('build'); else act.go('Tonight'); };
 return {
 field: C.starfield('build', 390, 40, 760, 46),
 dots: words.map((x, k) => ({ bg: finished || k < r ? '#FFD34E' : k === r ? '#FFF7EC' : 'transparent' })),
@@ -209,7 +215,7 @@ fresh: !again,
 announce: finished && n ? 'Iporãite! ' + (again ? '' : 'Rehupyty peteĩ mbyja. ') + 'Armaste ' + n + (n === 1 ? ' palabra' : ' palabras') + ' en guaraní.' : '',
 doneRef: this.doneRef,
 bigStar: C.puffyD(32, 33.5, 28),
-close: (e) => { if (act) { e.preventDefault(); if (finished) act.finish('build'); else act.go('Tonight'); } },
+close: (e) => { if (act) { e.preventDefault(); this.leave(); } },
 done: (e) => { if (act) { e.preventDefault(); act.finish('build'); } }
 };
 }

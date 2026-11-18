@@ -125,7 +125,11 @@ this.state = { open: [], matched: [], tries: 0, busy: false, last: null };
 this.timers = [];
 this.doneRef = (el) => { this.doneEl = el; };
 }
-componentWillUnmount() { this.timers.forEach((t) => clearTimeout(t)); }
+componentWillUnmount() { this.timers.forEach((t) => clearTimeout(t)); this.offBack(); }
+/* the phone's Back on the site (App) asks this screen what its close button would do */
+componentDidMount() { this.onBack(); }
+onBack() { const act = this.props.act; if (!act) return; const f = () => this.leave(); f.board = this; act.leave = f; }
+offBack() { const act = this.props.act; if (act && act.leave && act.leave.board === this) act.leave = null; }
 componentDidUpdate() {
 const f = !!this.finished;
 if (f && !this.wasFinished) { if (this.doneEl) this.doneEl.focus(); window.tpCourse.say(this.endLine); }
@@ -190,6 +194,8 @@ const last = this.state.last;
 const miss = open.length === 2;
 const shown = open.map((k) => (deck[k].kind === 'word' ? 'palabra «' + deck[k].w.gn + '»' : 'dibujo «' + deck[k].w.es + '»'));
 const bang = (t) => (/[!?…]$/.test(t) ? t : t + '!');
+/* what the close button does, which the phone's Back does too (a game that is over keeps its star) */
+this.leave = () => { if (finished) act.finish('pairs'); else act.go('Tonight'); };
 return {
 field: C.starfield('pairs', 390, 40, 760, 46),
 hint: oral ? 'Tocá dos estrellas: buscá dos dibujos iguales.' : 'Tocá dos estrellas: juntá cada dibujo con su palabra.',
@@ -206,7 +212,7 @@ fresh: !again,
 announce: finished ? 'Iporãite! ' + (again ? '' : 'Rehupyty peteĩ mbyja. ') + 'Los encontraste en ' + this.state.tries + ' vueltas.' : '',
 doneRef: this.doneRef,
 bigStar: C.puffyD(32, 33.5, 28),
-close: (e) => { if (act) { e.preventDefault(); if (finished) act.finish('pairs'); else act.go('Tonight'); } },
+close: (e) => { if (act) { e.preventDefault(); this.leave(); } },
 done: (e) => { if (act) { e.preventDefault(); act.finish('pairs'); } }
 };
 }
