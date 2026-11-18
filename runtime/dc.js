@@ -163,6 +163,15 @@
   }
   var canCheck = typeof CSS !== 'undefined' && typeof CSS.supports === 'function';
   /* { style, important }: later declarations win where the browser accepts them, as in a style attribute */
+  /* a relative url() in a board's CSS points next to the board, as on the canvas, not next to the page */
+  function cssURLs(text, base) {
+    if (!text || !base || text.indexOf('url(') < 0) return text;
+    return text.replace(/url\(\s*(['"]?)([^'")]*)\1\s*\)/g, function (m, q, u) {
+      u = u.trim();
+      if (!u || /^(?:[a-z][a-z0-9+.-]*:|\/\/|#)/i.test(u)) return m;
+      try { return 'url(' + q + new URL(u, base).href + q + ')'; } catch (e) { return m; }
+    });
+  }
   function styleObject(css) {
     if (styleCache[css]) return styleCache[css];
     if (++styleCount > 4000) { styleCache = {}; styleCount = 0; } /* styles that animate make many strings */
@@ -211,7 +220,7 @@
     }
     return out;
   }
-  var INPUTS = { input: 1, textarea: 1, select: 1, option: 1 };
+  var INPUTS = { input: 1, textarea: 1, select: 1 }; /* not option: React keeps an option's value only as value */
   function compileNode(node, board) {
     if (node.nodeType === 3) {
       var t = node.nodeValue;
@@ -303,7 +312,7 @@
       if (a.flag) v = v ? '' : null;
       if (v == null) continue;
       if (a.prop === 'style') {
-        if (typeof v === 'string') { var st = styleObject(v); v = st.style; important = st.important; }
+        if (typeof v === 'string') { var st = styleObject(cssURLs(v, ctx.url)); v = st.style; important = st.important; }
         else if (typeof v !== 'object') continue;
       } else if (a.url && typeof v === 'string' && a.parts.length === 1 && typeof a.parts[0] !== 'string') {
         v = boardURL(v, ctx.board);
@@ -331,7 +340,7 @@
     if (shared && heads[key]) return null;
     var n = document.createElement(tag);
     for (var i = 0; i < el.attributes.length; i++) n.setAttribute(el.attributes[i].name, el.attributes[i].value);
-    if (tag === 'style') n.textContent = el.textContent;
+    if (tag === 'style') n.textContent = cssURLs(el.textContent, baseUrl);
     if (tag === 'link' && el.getAttribute('href')) n.href = fontURL(new URL(el.getAttribute('href'), baseUrl).href);
     if (shared) heads[key] = 1;
     document.head.appendChild(n);
@@ -412,9 +421,14 @@
     }).catch(function (e) { delete scripts[src]; throw e; });
     return (scripts[src] = p);
   }
+  /* one revalidation per script for the page's life, shared by every board that lists it (twenty boards list the
+     engine: one request each would queue up one after another on a slow phone) */
+  var freshness = {};
   function loadScripts(list) {
-    var todo = list.filter(function (src) { return !scripts[src]; });
-    var fresh = todo.map(function (src) { return fetch(src, { cache: 'no-cache' }).catch(function () {}); });
+    var fresh = list.map(function (src) {
+      if (scripts[src]) return null;
+      return freshness[src] || (freshness[src] = fetch(src, { cache: 'no-cache' }).catch(function () {}));
+    });
     return Promise.all(fresh).then(function () { return Promise.all(list.map(runScript)); });
   }
   /* one quiet retry: a phone on a weak connection drops a request now and then */
@@ -422,9 +436,11 @@
     var ctl = typeof AbortController === 'function' ? new AbortController() : null;
     var timer = ctl ? setTimeout(function () { ctl.abort(); }, 15000) : 0;
     return fetch(url, { cache: 'no-cache', signal: ctl ? ctl.signal : undefined }).then(function (r) {
-      clearTimeout(timer);
       if (!r.ok) throw new Error(url + ' answered ' + r.status);
-      return r.text();
+      return r.text(); /* the time limit covers the whole download: a body that stalls is cut off too */
+    }).then(function (text) {
+      clearTimeout(timer);
+      return text;
     }).catch(function (e) {
       clearTimeout(timer);
       if ((tries || 0) >= 1) throw e;

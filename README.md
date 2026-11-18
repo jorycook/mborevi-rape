@@ -203,5 +203,9 @@ node -e "require('./tools/art/pics.js').exportJs('project/tp-pics.js')"
   (Pratap et al., 2023). It is licensed **CC BY-NC 4.0**, so the clips are for **non-commercial use only**.
 - **React** 18.3.1 by Meta is included in `runtime/vendor/` under the MIT licence, which is in `LICENSE-react.txt` next to it.
   The runtime that plays the boards (`runtime/dc.js`) is this project's own code.
+- **Fonts** (`runtime/fonts/`), all under the SIL Open Font License 1.1, whose texts are next to them: Andika by SIL
+  International (its licence reserves the names "Andika" and "SIL", so its files are Google's, unmodified), Baloo 2 by
+  Ek Type, and Nunito by The Nunito Project Authors (cut to the characters the app needs, by
+  `tools/fonts/subset-nunito.sh`).
 - **MEC documents:** they are not included. MEC.md cites them by title and page.
 - **App code and content:** no licence file has been chosen yet. Add one if others should be allowed to reuse it.

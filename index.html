@@ -42,7 +42,6 @@
 <noscript><style>#loading { display: none; }</style></noscript>
 <script defer src="runtime/vendor/react.production.min.js"></script>
 <script defer src="runtime/vendor/react-dom.production.min.js"></script>
-<script defer src="runtime/dc.js"></script>
 </head>
 <body>
 <div id="box"><div id="frame">
@@ -90,13 +89,26 @@
   var slow = setTimeout(function () {
     if (!started) say('La conexión anda lenta: la app sigue cargando. Si no aparece, podés probar de nuevo.', 'status');
   }, 25000);
+  /* the runtime is revalidated before it runs, as the boards and their scripts are, so after a deploy a returning
+     visitor gets the new one and not a copy the browser may keep for ten minutes (React's version never changes) */
+  var runtime = fetch('runtime/dc.js', { cache: 'no-cache' }).catch(function () {});
   document.addEventListener('DOMContentLoaded', function () {
-    if (!window.DC) { fail(new Error('runtime/dc.js or React did not load')); return; }
-    /* a link between boards opens the app again; the fonts come from this site, not from Google */
-    DC.configure({ boardLinks: 'app', fonts: { 'https://fonts.googleapis.com/css2': 'runtime/fonts/fonts.css' } });
-    /* the child's progress is kept in this browser under this name (see tpCourse.store): nothing is sent anywhere */
-    window.__tpSite = { key: 'mborevi-rape' };
-    DC.mount('project/App.dc.html', frame).then(function () {
+    runtime.then(function () {
+      return new Promise(function (ok, no) {
+        var s = document.createElement('script');
+        s.src = 'runtime/dc.js';
+        s.onload = ok;
+        s.onerror = function () { no(new Error('runtime/dc.js did not load')); };
+        document.head.appendChild(s);
+      });
+    }).then(function () {
+      if (!window.DC || !window.React || !window.ReactDOM) throw new Error('runtime/dc.js or React did not load');
+      /* a link between boards opens the app again; the fonts come from this site, not from Google */
+      DC.configure({ boardLinks: 'app', fonts: { 'https://fonts.googleapis.com/css2': 'runtime/fonts/fonts.css' } });
+      /* the child's progress is kept in this browser under this name (see tpCourse.store): nothing is sent anywhere */
+      window.__tpSite = { key: 'mborevi-rape' };
+      return DC.mount('project/App.dc.html', frame);
+    }).then(function () {
       started = true;
       clearTimeout(slow);
     }, fail);

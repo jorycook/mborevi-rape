@@ -209,6 +209,40 @@ const screenText = (p) => p.evaluate(() => document.getElementById('frame').inne
     await ctx.close();
   }
 
+  // 10. loading: the runtime is revalidated before it runs; each engine script is revalidated once, however many
+  //     boards list it
+  {
+    const ctx = await b.newContext(phone); const p = await ctx.newPage();
+    const seen = [];
+    p.on('request', (r) => { const u = r.url(); if (/runtime\/dc\.js|project\/tp-course\.js/.test(u)) seen.push(r.resourceType() + ' ' + u.replace(BASE, '')); });
+    await p.goto(SITE, { waitUntil: 'networkidle' }); await p.waitForSelector('text=Epáy');
+    const dc = seen.filter((x) => /dc\.js/.test(x)), course = seen.filter((x) => /tp-course/.test(x) && /^fetch/.test(x));
+    check('the runtime is revalidated, then run', dc.length === 2 && /^fetch/.test(dc[0]) && /^script/.test(dc[1]), dc.join(', '));
+    check('the engine is revalidated once for all the boards that list it', course.length === 1, seen.join(', '));
+    await ctx.close();
+  }
+
+  // 11. runtime details on a test board: inert follows its hole, an option keeps its value, a relative url() in a
+  //     board's style points next to the board
+  {
+    const ctx = await b.newContext(); const p = await ctx.newPage();
+    const board = `<!doctype html><html><head><meta charset="utf-8"><style>.bg{background-image:url(pics/a.png)}</style></head><body><x-dc>
+<div id="off" inert="{{ no }}"><button>a</button></div><div id="on" inert="{{ yes }}"><button>b</button></div><div id="bare" inert><button>c</button></div>
+<select id="sel"><option value="1">one</option><option value="2" selected>two</option></select>
+<div id="inl" style="background-image: url(pics/b.png); width: 4px; height: 4px"></div><div id="cls" class="bg"></div>
+</x-dc><script type="text/x-dc" data-dc-script>class Component extends DCLogic { renderVals() { return { no: false, yes: true }; } }</script></body></html>`;
+    await p.route('**/project/ZzTest.dc.html*', (route) => route.fulfill({ status: 200, contentType: 'text/html', body: board }));
+    await p.goto(BASE + 'runtime/board.html?b=ZzTest.dc.html'); await p.waitForSelector('body[data-ready], body[data-error]');
+    const m = await p.evaluate(() => ({
+      off: document.getElementById('off').hasAttribute('inert'), on: document.getElementById('on').hasAttribute('inert'), bare: document.getElementById('bare').hasAttribute('inert'),
+      sel: document.getElementById('sel').value,
+      inl: getComputedStyle(document.getElementById('inl')).backgroundImage, cls: getComputedStyle(document.getElementById('cls')).backgroundImage }));
+    check('inert="{{ false }}" is not inert, "{{ true }}" and a bare inert are', !m.off && m.on && m.bare, JSON.stringify(m));
+    check('an option keeps its value', m.sel === '2', m.sel);
+    check('a relative url() in a board\'s style points next to the board', /\/project\/pics\/b\.png/.test(m.inl) && /\/project\/pics\/a\.png/.test(m.cls), m.inl + ' | ' + m.cls);
+    await ctx.close();
+  }
+
   await b.close();
   const bad = results.filter((r) => !r.ok);
   console.log(`\n${results.length - bad.length} of ${results.length} checks passed`);
