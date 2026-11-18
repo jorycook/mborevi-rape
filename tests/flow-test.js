@@ -32,8 +32,10 @@ for (const k of Object.keys(app.act)) { const f = app.act[k]; app.act[k] = (...a
 const render = (name) => {
   const { Cls, src } = load(name);
   const c = new Cls({ app: C.view(app.state), act: app.act });
+  /* as React does: drawn first, then mounted (a board schedules what plays by itself from what it drew) */
+  let v = c.renderVals();
   if (c.componentDidMount) c.componentDidMount();
-  const v = c.renderVals();
+  v = c.renderVals();
   const miss = holes(src, v);
   if (miss.length) problems.push(name + ' missing ' + miss.join(','));
   if (name !== app.state.screen) problems.push('rendered ' + name + ' while screen is ' + app.state.screen);
