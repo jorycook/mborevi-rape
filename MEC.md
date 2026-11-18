@@ -171,6 +171,8 @@ haiha?» (¿Puedo usar tu lápiz?). It is the attested form, and it repeats nigh
 
 - «Héẽ» («sí»): the usual school spelling, but «hẽe» and «heẽ» are also seen.
 - «Héẽ, ejapyhy.» («Sí, tomá»): «eipyhy» and «Héẽ, eiporu.» («Sí, usalo») are also used.
+- «aiporu» or «aipuru» («uso»): both are correct and the MEC writes both; the Tatoeba sentence has «Ikatúpa aipuru nde
+  haiha?».
 - «Ikatúpa ahecha?» is the least common of the four permission cards.
 - The synthetic voice: 17 of the unit's 18 clips passed the speech-recognition check and are on the listening page for a
   person to confirm. «irũ» has had no clip since the first review.
