@@ -21,7 +21,7 @@
     "Say.dc.html": { "x": 1880, "y": 2568, "w": 390, "h": 844, "radius": 44, "title": "13 · Ere Mborevi'i ndive: decilo con Mborevi'i", "is_interactive": true },
     "Letters.dc.html": { "x": 2350, "y": 2568, "w": 390, "h": 844, "radius": 44, "title": "14 · Achegety: vocales, nasales y puso", "is_interactive": true },
     "Story.dc.html": { "x": 2820, "y": 2568, "w": 390, "h": 844, "radius": 44, "title": "15 · Mombe'u: por qué la Vía Láctea es el camino del tapir", "is_interactive": true },
-    "YesNo.dc.html": {"x": 3290, "y": 2568, "w": 390, "h": 844, "radius": 44, "title": "23 · Ehendu porã: ¿sí o no?", "is_interactive": true},
+    "YesNo.dc.html": {"x": 3290, "y": 2568, "w": 390, "h": 844, "radius": 44, "title": "23 · Ehendu porã: escuchá bien, ¿sí o no?", "is_interactive": true},
     "Catch.dc.html": {"x": 3760, "y": 2568, "w": 390, "h": 844, "radius": 44, "title": "24 · Ejapyhy mbyja: atrapá la estrella", "is_interactive": true},
     "Check.dc.html": { "x": 0, "y": 3852, "w": 390, "h": 844, "radius": 44, "title": "16 · Mbyja guasu: la estrella grande de la unidad", "is_interactive": true },
     "Shine.dc.html": { "x": 470, "y": 3852, "w": 390, "h": 844, "radius": 44, "title": "17 · Se enciende una estrella de la figura", "is_interactive": true },

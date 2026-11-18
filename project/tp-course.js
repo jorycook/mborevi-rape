@@ -226,7 +226,7 @@
     say: { gn: "Ere Mborevi'i ndive", es: "Decilo con Mborevi'i", screen: 'Say', skill: "añe'ẽ" },
     letters: { gn: 'Achegety', es: 'Las letras', screen: 'Letters', skill: 'ahai' },
     story: { gn: "Yvága mombe'u", es: 'Cuento del cielo', screen: 'Story', skill: "amoñe'ẽ" },
-    yesno: { gn: 'Ehendu porã', es: '¿Sí o no?', screen: 'YesNo', skill: 'ahendu' },
+    yesno: { gn: 'Ehendu porã', es: 'Escuchá bien: ¿sí o no?', screen: 'YesNo', skill: 'ahendu' },
     catch: { gn: 'Ejapyhy mbyja', es: 'Atrapá la estrella', screen: 'Catch', skill: 'ahendu' }
   };
   /* the four abilities of the MEC programs, said the way a child says them */
