@@ -15,6 +15,46 @@ constellation of the Guarani sky.
 
 Every claim the app makes about the MEC, with the document and page behind it, is in [MEC.md](MEC.md).
 
+## The games
+
+Each night has three games: first «Ehecha ha ehendu» to meet the night's words, then two that change from night to
+night. Each unit ends with its big star, a quiz.
+
+| Game | What the child does | Ability |
+| --- | --- | --- |
+| Ehecha ha ehendu · *Mirá y escuchá* | meets the night's words, each heard as its card opens | Ahendu |
+| Ehendu ha eiporavo · *Escuchá y elegí* | hears a word and taps its picture | Ahendu |
+| Emoñe'ẽ ha eiporavo · *Leé y elegí* | reads a word and taps its picture | Amoñe'ẽ |
+| Ejapyhy mbyja · *Atrapá la estrella* | catches the floating star whose picture Mborevi'i names (on reading nights he writes it) | Ahendu, Amoñe'ẽ |
+| Ehendu porã · *Escuchá bien: ¿sí o no?* | hears Mborevi'i name a picture, sometimes wrongly on purpose, and answers Héẽ or Nahániri | Ahendu |
+| Mbyja joja · *Estrellas iguales* | turns cards over to match each sound (or written word) with its picture | Ahendu, Amoñe'ẽ |
+| Emopu'ã ñe'ẽ · *Armá la palabra* | builds the word from its syllables | Ahai |
+| Achegety · *Las letras* | the vowels, the nasal vowels and the puso (1.º grado's alphabet unit) | Ahai |
+| Ere Mborevi'i ndive · *Decilo con Mborevi'i* | says the night's lines aloud, in a dialogue with Mborevi'i, the teacher or a friend | Añe'ẽ |
+| Yvága mombe'u · *Cuento del cielo* | listens to the sky story, read aloud page by page | Ahendu, Amoñe'ẽ |
+| Mbyja guasu · *La estrella grande* | answers five questions drawn from the whole unit | Ahendu, Amoñe'ẽ |
+
+- **A night's three games** (`gamesFor` in `project/tp-course.js`) change with the night's place in its unit, so no
+  two nights in a row are alike, and every track trains the four abilities: the L1 track says the dialogues too. A
+  listening game is given only when the night has two words with a voice, and a building game only when it has two
+  words to build. A game already played keeps its place, so a night half played under an earlier rotation
+  (`tests/games-v1.json`) finishes with one more game.
+- **Every word is heard.** Each card, round, line and story page plays its word by itself, and every game has a
+  listen button. A word with no voice clip yet is never asked by ear: the listening games choose among the words that
+  have one (`window.__tpVoiced`, written from the clip files by `tools/audio/voiced.js`). `tests/unvoiced.json` lists
+  the words of nights played by ear that still have none (held clips that a Guarani speaker has to approve).
+- **Mistakes are gentle.** After a miss the word plays again; after two, the right answer glows; nothing is lost.
+  The other pictures are words the child has met (tonight's first), and never two drawings that look alike.
+- **A new game at every play.** Rounds, options, cards and the big star's questions change each time a game is
+  played, and stay put while it is played.
+- **Motion.** One vocabulary of animations (`tests/keyframes.css`; `tests/test-keyframes.js` checks every board uses
+  it). Mborevi'i hops at a right answer, flinches at a miss, perks up to listen, moves his mouth while a word plays and
+  blinks. The star just earned lands on tonight's list, the big star's stars are counted out, a new star flies into its
+  place in the grade's figure, and screens enter from the side the child is going. With reduced motion (the system
+  setting) all of it is off, and nothing a child needs waits for an animation.
+- **Small sounds** that are not a voice answer each tap (right, wrong, a pair, a star), also with the synthetic voice
+  turned off.
+
 ## Play it online
 
 **https://jorycook.github.io/mborevi-rape/** opens the whole app, on a phone or a computer. GitHub Pages serves the
@@ -149,6 +189,15 @@ node tests/test-names.js
 written in `window.__tpRenamed`, since the progress a device keeps is filed under those names. After adding lessons,
 `node tests/test-names.js --write` adds their names to the list (it never takes any away).
 
+```bash
+node tests/test-keyframes.js
+```
+
+`test-keyframes.js` checks that every animation a board uses is defined in its own helmet (and App's), as in
+`tests/keyframes.css`. `test-engine.js` also checks the voice index against the clip files, the words of oral nights
+still without a voice (`tests/unvoiced.json`; `--write` updates it once clips are approved), the rotation of games, and
+that no round puts look-alike pictures side by side.
+
 ## Previewing locally
 
 Serve the repository and open it in a browser:
@@ -205,6 +254,10 @@ python3 tools/audio/install.py tools/audio/out
 `make_sound.py` reads the models from `tools/hf/` and does not download them: fetch `facebook/mms-tts-grn` and
 `facebook/mms-1b-all` (with `adapter.grn.safetensors`) into that folder first, for example with `huggingface_hub`'s
 `snapshot_download(..., cache_dir='tools/hf')`. If a download stalls behind a proxy, set `HF_HUB_DISABLE_XET=1`.
+
+`install.py` and `merge_clips.py` then run `node tools/audio/voiced.js`, which writes the index of the clips the
+screens can count on (`window.__tpVoiced` in `project/tp-sound.js`). After approving held clips, run
+`node tests/test-engine.js --write` so that `tests/unvoiced.json` no longer lists them.
 
 `build_review.py` makes the listening page's `voces/clips.json` from a run's `report.json` and the inventory with its
 Spanish glosses.
