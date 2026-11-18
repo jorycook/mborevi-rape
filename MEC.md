@@ -177,12 +177,50 @@ haiha?» (¿Puedo usar tu lápiz?). It is the attested form, and it repeats nigh
 - The synthetic voice: 17 of the unit's 18 clips passed the speech-recognition check and are on the listening page for a
   person to confirm. «irũ» has had no clip since the first review.
 
+## Added: basic needs in 2.º grado
+
+Unit 3 of 2.º grado, «Aikotevẽ» (Pedir lo que necesito), teaches the 2.º grado capacity of the Priorización's
+Guarani program, item 16 (p. 28): «Expresa necesidades básicas como: ir al baño, tomar agua, pedir alimentos,
+solicitar permiso y prestar algo.» The planning guide puts it in week 4 of 2.º grado, «Necesidades básicas» (p. 59).
+It comes right after «Tembi'u» (food), whose words it uses, and it builds on 1.º grado's «Ikatúpa?».
+
+| Night | Cards | Dialogue (Say) |
+| --- | --- | --- |
+| Hay'use, akaruse · Pedir agua y comida | Hay'use · Akaruse · Eme'ẽmína chéve mbujape | Mbo'ehára, akaruse. — Ejapyhy ko mbujape. — Aguyje! |
+| Ikatúpa asẽ? · Ir al baño y pedir permiso | Ikatúpa asẽ sapy'aite? · Ikatúpa hay'u? · Ikatúpa akaru? | Ikatúpa asẽ sapy'aite? — Héẽ, ikatu. — Aguyje, mbo'ehára. |
+| Ejapyhy · Prestar algo | mbogueha · Ejapyhy · Eiporu che haiha | Aikotevẽ mbogueha. — Ejapyhy che mbogueha. — Aguyjevete, che irũ! |
+
+Ñandu Pysã, the grade's constellation, has a sixth star for it: a faint star of the Southern Cross beside Mimosa.
+
+**The bathroom.** School Guarani asks to leave the room, «Ikatúpa asẽ sapy'aite?» («¿Puedo salir un ratito?»); the
+picture (a toilet) and the gloss say where. The room itself is called by the Spanish loanword «baño», even in written
+Guarani, and Guarani spelling has no b.
+
+**How the Guarani was checked.** The same way as 1.º grado's unit:
+
+- two drafts, a merge;
+- three independent checks of every string: spelling and syllables, meaning and grammar, and usage with a search for
+  published uses.
+
+All three passed every string unchanged; the record is `docs/g2-unit3-check.json`. Found in published sources:
+
+- «Ikatúpa asẽ sapy'aite.», word for word, in Common Voice's Guarani sentences
+- «Aikotevẽ» + a noun («Aikotevẽ terere»)
+- «Ejapyhy kuatia»
+- the paradigm hay'u, rey'u, hoy'u of «y'u» (tomar agua)
+
+**Still open, for a Guarani teacher:**
+
+- «mbogueha» (borrador): a regular school word, made like «haiha», but children often say «borrador» or «goma».
+- «hay'u» / «Hay'use»: the first person of «y'u»; «ay'u» is also heard.
+- «Héẽ», as in 1.º grado.
+- The voice: the unit's 17 lines all have a synthetic voice that passed the speech-recognition check; they are on the
+  listening page for a person to confirm.
+
 ## In the program, not in the app yet
 
-- **Asking for things, 2.º and 3.º grado.** 1.º grado now has its own unit (see «Added»). Still missing:
-  - 2.º grado, item 16 (p. 28): «Expresa necesidades básicas como: ir al baño, tomar agua, pedir alimentos, solicitar
-    permiso y prestar algo».
-  - 3.º grado, planning guide week 16 (p. 68): «Comunica sus deseos y necesidades en situaciones sociales cotidianas».
+- **Asking for things, 3.º grado.** 1.º and 2.º grado now have their own units (see «Added»). Still missing: 3.º
+  grado, planning guide week 16 (p. 68): «Comunica sus deseos y necesidades en situaciones sociales cotidianas».
 - **Following short instructions** (item 3, p. 26): «manipular objetos y electrodomésticos, ubicarlos en un lugar
   determinado y trasladarse de un lugar a otro». Planned for 2.º and 3.º grado; not in 1.º grado.
 - **Short texts heard in 1.º grado** (item 7, p. 27): rhymes, tongue twisters, poems, songs, stories. 1.º grado has one

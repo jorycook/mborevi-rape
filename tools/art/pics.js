@@ -647,6 +647,39 @@ function turn(d, cx, cy, deg) {
   const small = turn(hand(30, 72, 0.7), 30, 72, 42);
   pic('pytyvõ', [['#E8AE84', big], ['#7CC46A', sleeve], ['#F2C08F', small]], { line: 'M40 36l-4 -6M48 32l-1 -7M30 46l-6 -3' });
 }
+/* ---------- basic needs (2.º grado, unit 3) ---------- */
+{
+  // baño: a friendly toilet, seen from the side: tank, seat, bowl and foot
+  const f = face(48, 60, 0.7);
+  pic('baño', [['#BFE6FF', RR(58, 12, 26, 34, 5)], ['#FFFFFF', 'M18 44h70c0 20-14 32-34 32h-6c-17 0-30-12-30-32Z'], ['#FFFFFF', 'M38 74h26l-4 16H42Z'], ['#9AD3FF', RR(14, 38, 76, 8, 4)]],
+    { ...f, ink: f.ink + RR(64, 18, 9, 4, 2), white: f.white + E(30, 52, 4, 2.5) });
+}
+{
+  // ejapyhy: «tomá»: a hand from the right holds out a blue notebook to an open hand waiting below
+  const give = turn(hand(80, 36, 0.72), 80, 36, 268);
+  const take = turn(hand(34, 78, 0.7), 34, 78, 10);
+  const pages = 'M20 20L62 20L62 52L20 52Z', cover = 'M16 18L58 18L58 50L16 50Z', label = 'M24 26L48 26L48 34L24 34Z';
+  pic('ejapyhy', [['#F2C08F', take], ['#FFFFFF', pages], ['#6EC6FF', cover], ['#FFFFFF', label], ['#E8AE84', give]],
+    { line: 'M18 56l-3 6M27 58l-1 6M36 57l1 6' });
+}
+{
+  // karu: «comer»: the child of mitã, with a bowl and a spoon, licking its lips
+  const head = C(50, 36, 18);
+  const body = 'M24 92C24 74 35 66 50 66C65 66 76 74 76 92Z';
+  const hairD = 'M32 34C30 20 41 13 50 15C57 11 68 18 68 34C64 26 57 23 50 26C45 23 36 26 32 34Z';
+  const bowl = 'M24 68L76 68C76 82 66 90 50 90C34 90 24 82 24 68Z';
+  const f = face(50, 38, 0.78);
+  pic('karu', [['#FFD34E', body], ['#E0A47A', head], ['#3B2A4A', hairD], ['#FF8FAB', bowl], ['#D9D6E8', E(80, 44, 5, 7)]],
+    { ink: f.ink, white: f.white + E(36, 74, 5, 2.5), pink: f.pink + E(55, 46.5, 3.2, 2.2), line: 'M43 44q7 6 14 0M74 66L79 51' });
+}
+{
+  // mbogueha: an eraser, a little worn at one corner, with crumbs
+  const er = turn(P([[24, 40], [76, 40], [80, 46], [80, 62], [28, 62], [24, 56]]), 52, 51, -16);
+  const band = turn(P([[24, 40], [42, 40], [42, 62], [28, 62], [24, 56]]), 52, 51, -16);
+  const f = face(62, 50, 0.6);
+  pic('mbogueha', [['#FF8FAB', er], ['#6EC6FF', band]],
+    { ...f, white: f.white + E(52, 42, 5, 2), pink: E(80, 76, 2.6, 1.7) + E(87, 71, 2, 1.4) + E(73, 80, 1.8, 1.2) });
+}
 module.exports = { PICS, INK, C, E, RR, P, STAR };
 function exportJs(file) {
   const out = {};

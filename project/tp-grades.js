@@ -1,7 +1,7 @@
 /* Mborevi Rape: the grades and their lessons.
  * The levels are the grades of Paraguayan schooling in which the MEC teaches Guarani: Preescolar (Educación Inicial)
  * and the nine grades of the Educación Escolar Básica in three cycles. Each grade is a figure of the Guarani sky and
- * has as many units as the figure has stars. Preescolar and 1.º grado are written, and two units of 2.º grado; the
+ * has as many units as the figure has stars. Preescolar and 1.º grado are written, and three units of 2.º grado; the
  * other units show their titles while their nights are being written (as Epu'ã shows A2 to C2).
  * What the MEC asks for, checked against the MEC's own documents (Ley 1264/98; Programa de estudio 2.º grado;
  * Priorización curricular 2021; Guía para la planificación de clases, 1.er ciclo, 2021):
@@ -29,7 +29,7 @@ window.__tpMeta = [
     can: 'Saluda, dice su nombre y su edad, nombra su cuerpo, su familia, su casa y su escuela, pide ayuda y permiso, cuenta hasta 10 y conoce las vocales. Si el guaraní es su lengua materna, empieza a leer y escribir.',
     mec: '1.er ciclo. Como lengua materna, el guaraní se empieza a leer y escribir. Como segunda lengua, sobre todo se escucha y se habla, y se empiezan a escribir textos cortos; para pasar de grado cuenta lo oral. Temas: saludos, datos personales (nombre, edad, grado), su cuerpo, su familia, su casa, su escuela y su país, las actividades del día, las vocales, pedir ayuda o permiso.' },
   { code: 'g2', label: '2.º grado', gn: "Mokõiha mbo'esyry", cycle: '1.er ciclo', cycleShort: '1.er ciclo', age: '7 años', sky: 'nandupysa',
-    can: 'Lee y escribe palabras y frases cortas de animales y comida, aprende las consonantes, sigue instrucciones para ubicar cosas e ir a un lugar, y aprende canciones, rimas y trabalenguas.',
+    can: 'Lee y escribe palabras y frases cortas de animales y comida, pide lo que necesita, aprende las consonantes, sigue instrucciones para ubicar cosas e ir a un lugar, y aprende canciones, rimas y trabalenguas.',
     mec: '1.er ciclo. Como segunda lengua, el guaraní ya se usa en forma oral y escrita: se leen y se escriben textos cortos, como tarjetas, adivinanzas y poemas. Como lengua materna, se sigue desarrollando la lectoescritura. Temas: presentarse y presentar a otros, pedir lo que necesita (ir al baño, tomar agua, comida, permiso), seguir instrucciones, el abecedario.' },
   { code: 'g3', label: '3.º grado', gn: "Mbohapyha mbo'esyry", cycle: '1.er ciclo', cycleShort: '1.er ciclo', age: '8 años', sky: 'nanduguasu',
     can: 'Sigue instrucciones, lee cuentos, fábulas y leyendas, y escribe adivinanzas y descripciones.',
@@ -157,7 +157,7 @@ window.__tpMeta = [
       ] }
     ] },
 
-    /* ---------- 2.º grado · Ñandu Pysã: animals and food are written; for L2, reading and writing count from here ---------- */
+    /* ---------- 2.º grado · Ñandu Pysã: animals, food and needs are written; for L2, reading and writing count from here ---------- */
     g2: { units: [
       { n: 1, gn: 'Mymbakuéra', es: 'Los animales', nights: [
         { gn: 'Mymba ógape', es: 'Animales de la casa', words: [w('jagua', 'perro', 'jagua', ['ja', 'gua']), w('mbarakaja', 'gato', 'mbarakaja', ['mba', 'ra', 'ka', 'ja']), w('ryguasu', 'gallina', 'ryguasu', ['ry', 'gua', 'su']), w('ype', 'pato', 'ype', ['y', 'pe'])] },
@@ -169,9 +169,17 @@ window.__tpMeta = [
         { gn: 'Y ha kamby', es: 'Agua y leche', words: [w('y', 'agua', 'y'), w('kamby', 'leche', 'kamby', ['ka', 'mby']), w('mbujape', 'pan', 'mbujape', ['mbu', 'ja', 'pe'])] },
         { gn: 'Yva ha mbeju', es: 'Frutas y mbeju', words: [w('narã', 'naranja', 'narã', ['na', 'rã']), w('pakova', 'banana', 'pakova', ['pa', 'ko', 'va']), w('mbeju', 'mbejú', 'mbeju', ['mbe', 'ju'])] }
       ] },
-      soon(3, 'Pundie', 'Las consonantes: ch, mb, nd, ng, nt, rr, g̃'),
-      soon(4, 'Moõpa?', 'Instrucciones: ubicar cosas e ir a un lugar'),
-      soon(5, 'Purahéi ha kũjererã', 'Canciones, rimas y trabalenguas')
+      { n: 3, gn: 'Aikotevẽ', es: 'Pedir lo que necesito', nights: [
+        { gn: "Hay'use, akaruse", es: 'Pedir agua y comida', words: [w("Hay'use", 'Quiero tomar agua', 'y', ['Ha', 'y', "'u", 'se']), w('Akaruse', 'Quiero comer', 'karu', ['A', 'ka', 'ru', 'se']), w("Eme'ẽmína chéve mbujape", 'Dame pan, por favor', 'mbujape')],
+          say: [{ gn: "Mbo'ehára, akaruse.", es: 'Maestra, quiero comer.' }, { gn: 'Ejapyhy ko mbujape.', es: 'Tomá este pan.' }, { gn: 'Aguyje!', es: '¡Gracias!' }] },
+        { gn: 'Ikatúpa asẽ?', es: 'Ir al baño y pedir permiso', words: [w("Ikatúpa asẽ sapy'aite?", '¿Puedo salir un ratito? (al baño)', 'baño'), w("Ikatúpa hay'u?", '¿Puedo tomar agua?', 'y'), w('Ikatúpa akaru?', '¿Puedo comer?', 'karu')],
+          say: [{ gn: "Ikatúpa asẽ sapy'aite?", es: '¿Puedo salir un ratito? (al baño)' }, { gn: 'Héẽ, ikatu.', es: 'Sí, podés.' }, { gn: "Aguyje, mbo'ehára.", es: 'Gracias, maestra.' }] },
+        { gn: 'Ejapyhy', es: 'Prestar algo', words: [w('mbogueha', 'borrador', 'mbogueha', ['mbo', 'gue', 'ha']), w('Ejapyhy', 'Tomá', 'ejapyhy', ['E', 'ja', 'py', 'hy']), w('Eiporu che haiha', 'Usá mi lápiz', 'haiha')],
+          say: [{ gn: 'Aikotevẽ mbogueha.', es: 'Necesito un borrador.' }, { gn: 'Ejapyhy che mbogueha.', es: 'Tomá mi borrador.' }, { gn: 'Aguyjevete, che irũ!', es: '¡Muchas gracias, amiga!' }] }
+      ] },
+      soon(4, 'Pundie', 'Las consonantes: ch, mb, nd, ng, nt, rr, g̃'),
+      soon(5, 'Moõpa?', 'Instrucciones: ubicar cosas e ir a un lugar'),
+      soon(6, 'Purahéi ha kũjererã', 'Canciones, rimas y trabalenguas')
     ] },
 
     /* ---------- 3.º to 9.º grado: their units, nights in preparation ---------- */

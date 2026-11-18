@@ -1,0 +1,1394 @@
+{
+ "about": "How the Guarani of 2.º grado, unit 3 («Aikotevẽ») was written: two independent drafts (MEC fidelity; how a child says it), a merge, and three independent checks of every string (spelling and syllables; meaning and grammar; usage, register and attestation). All three passed every string, so «final» is the merge unchanged and is the unit as it is in project/tp-grades.js.",
+ "drafts": [
+  {
+   "unit": {
+    "gn": "Aikotevẽ",
+    "es": "Pedir lo que necesito"
+   },
+   "nights": [
+    {
+     "gn": "Chevare'a",
+     "es": "Pedir agua y comida",
+     "words": [
+      {
+       "gn": "Chey'uhéi",
+       "es": "Tengo sed",
+       "pic": "y",
+       "syl": [
+        "Che",
+        "y",
+        "'u",
+        "héi"
+       ],
+       "note": "che- plus y'uhéi 'sed' (from y 'agua'; Montoya has «y uhéi»). It is written joined, like Tatoeba's «Ndevare'a piko?». The acute marks the stress on é of the final diphthong, as in ramói. The picture is unit 2's water drop, and the y of 'agua' is inside the word. Glosbe has «Cheyuhéi, aháta aheka y potĩ» (tengo sed, voy a buscar agua limpia)."
+      },
+      {
+       "gn": "Chevare'a",
+       "es": "Tengo hambre",
+       "pic": "new:vare'a",
+       "newPic": "A child holding a round tummy with both hands, eyebrows raised and mouth a small open circle, with three short curved lines beside the tummy to show it rumbling.",
+       "syl": [
+        "Che",
+        "va",
+        "re",
+        "'a"
+       ],
+       "note": "che- plus vare'a 'hambre'. Tatoeba has «Ndevare'a piko?» (Hungry?), and La Nación (14-06-2025) quotes «che vare'a» (tengo hambre) as an everyday phrase."
+      },
+      {
+       "gn": "Eme'ẽmína chéve mbujape",
+       "es": "Dame pan, por favor",
+       "pic": "mbujape",
+       "syl": [],
+       "note": "This is 1.º grado unit 5's frame «Eme'ẽmína chéve kuatia» with unit 2's mbujape (pan), so it is the MEC's «pedir alimentos». Tatoeba uses the same frame for a drink: «Eme'ẽmíkena chéve che hay'urã»."
+      }
+     ],
+     "say": [
+      {
+       "gn": "Mbo'ehára, chevare'a.",
+       "es": "Maestra, tengo hambre."
+      },
+      {
+       "gn": "Ejapyhy ko mbujape.",
+       "es": "Tomá este pan."
+      },
+      {
+       "gn": "Aguyje!",
+       "es": "¡Gracias!"
+      }
+     ]
+    },
+    {
+     "gn": "Ikatúpa asẽ?",
+     "es": "Ir al baño y pedir permiso",
+     "words": [
+      {
+       "gn": "Ikatúpa asẽ sapy'aite?",
+       "es": "¿Puedo salir un ratito? (para ir al baño)",
+       "pic": "new:baño",
+       "newPic": "A cute white toilet with its lid up and a roll of toilet paper beside it, on a light-blue floor.",
+       "syl": [],
+       "note": "Unit 5's frame Ikatúpa + a-verb?, with asẽ 'salgo' and sapy'aite 'un ratito'. It is attested as a permission request in the Paraguayan civil-service course «Guaraní Comunicativo en la Función Pública» (found by 1.º grado unit 5's usage lens). It is the polite way to leave the room for the bathroom. The toilet picture and the gloss name the need (see notes). The first say line shares this card's clip."
+      },
+      {
+       "gn": "Ikatúpa hay'u?",
+       "es": "¿Puedo tomar agua?",
+       "pic": "y",
+       "syl": [],
+       "note": "hay'u 'tomo agua' is the irregular h- form of y'u, like ha'u. Sources: USC Guarani Corpus hay'ú (1Sg.drink) and hoy'u; Tatoeba «Hey'u.» (Drink water). The y of 'agua' is in it again. It uses the same water drop as Chey'uhéi, but in another night."
+      },
+      {
+       "gn": "Ikatúpa ha'u che chipa?",
+       "es": "¿Puedo comer mi chipá?",
+       "pic": "chipa",
+       "syl": [],
+       "note": "ha'u 'como' (Tatoeba «Ha'use…») plus che chipa, with unit 2's chipa (chipá). Asking to eat one's snack covers the MEC's «alimentos» and «permiso» together."
+      }
+     ],
+     "say": [
+      {
+       "gn": "Ikatúpa asẽ sapy'aite?",
+       "es": "¿Puedo salir un ratito? (para ir al baño)"
+      },
+      {
+       "gn": "Héẽ, ikatu.",
+       "es": "Sí, podés."
+      },
+      {
+       "gn": "Aguyje, mbo'ehára.",
+       "es": "Gracias, maestra."
+      }
+     ]
+    },
+    {
+     "gn": "Ejapyhy",
+     "es": "Prestar algo",
+     "words": [
+      {
+       "gn": "mbogueha",
+       "es": "borrador",
+       "pic": "new:mbogueha",
+       "newPic": "A pink rectangular eraser with one rounded, worn corner, a few tiny crumbs and a short faded pencil smudge beside it.",
+       "syl": [
+        "mbo",
+        "gue",
+        "ha"
+       ],
+       "note": "mbogue 'borrar' plus -ha (the thing for it), like haiha (hai 'escribir' plus -ha). It is a dictionary and school word: Avañe'ẽ dictionary «borrador. m. Mbogueha, mboje'oha», Glosbe, Paraguayología. It is what the child lends in the say lines."
+      },
+      {
+       "gn": "Ejapyhy",
+       "es": "Tomá",
+       "pic": "new:ejapyhy",
+       "newPic": "One child's hand holding out a small blue notebook toward another child's open hand, with a short curved arrow from the giving hand to the open one.",
+       "syl": [
+        "E",
+        "ja",
+        "py",
+        "hy"
+       ],
+       "note": "e- plus japyhy 'agarrar, tomar'. In 1.º grado unit 5 it was a say line («Héẽ, ejapyhy.», Sí, tomá). Here it is a card, and the child is the one who hands something over."
+      },
+      {
+       "gn": "Eiporu che haiha",
+       "es": "Usá mi lápiz",
+       "pic": "haiha",
+       "syl": [],
+       "note": "e- plus i- plus poru 'usar' (the MEC teacher guides write «Eiporu»). It reverses 1.º grado's «Ikatúpa aiporu nde haiha?»: now the child lends its own pencil."
+      }
+     ],
+     "say": [
+      {
+       "gn": "Aikotevẽ peteĩ mbogueha.",
+       "es": "Necesito un borrador."
+      },
+      {
+       "gn": "Ejapyhy che mbogueha.",
+       "es": "Tomá mi borrador."
+      },
+      {
+       "gn": "Upéi eme'ẽ jey chéve.",
+       "es": "Después me lo devolvés."
+      }
+     ]
+    }
+   ],
+   "notes": "My angle was fidelity to the MEC capacity. I read the capacity in the MEC texts and built every card on the app's words and on frames the child already knows.\n\nTHE CAPACITY\n- Priorización curricular 2021, Comunicación Guaraní (the L2 table), 2.º grado, item 16 (PDF p. 28, in docs/mec-check.json): «Expresa necesidades básicas como: ir al baño, tomar agua, pedir alimentos, solicitar permiso y prestar algo.»\n- The same sentence is in the MEC's Programa de estudio for 2.º grado, Segunda lengua, Expresión oral (scratchpad mec-text/7e820984-Pages_from_4933.txt, l. 3336, p. 57).\n- Guía para la planificación de clases 2021, Comunicación Guaraní, Segundo grado, week 4 (26–29 April), «Necesidades básicas» (mec-text/25531b74-…, l. 2707–2711, p. 59). It asks for picture cards of the needs, example situations, and practice between peers.\n- No MEC text gives Guarani wording for these needs. The corpus has no baño, y'u or vare'a, so the Guarani is mine.\n\nTHE FIVE NEEDS IN THREE SCHOOL MOMENTS\n- Night 1 «Chevare'a», at the merienda, with the teacher: tomar agua (Chey'uhéi, tengo sed) and pedir alimentos (Chevare'a; Eme'ẽmína chéve mbujape).\n  - Say: Mbo'ehára, chevare'a. / Ejapyhy ko mbujape. / Aguyje!\n- Night 2 «Ikatúpa asẽ?», in class, with the teacher: solicitar permiso for the body's needs.\n  - ir al baño: Ikatúpa asẽ sapy'aite?\n  - tomar agua: Ikatúpa hay'u?\n  - eating one's snack: Ikatúpa ha'u che chipa?\n  - Say: Ikatúpa asẽ sapy'aite? / Héẽ, ikatu. / Aguyje, mbo'ehára.\n- Night 3 «Ejapyhy», in class, between classmates: prestar algo.\n  - The classmate needs an eraser: Aikotevẽ peteĩ mbogueha.\n  - The child lends its own: Ejapyhy che mbogueha.\n  - The child asks for it back: Upéi eme'ẽ jey chéve. Asking for it back is what makes it a loan and not a gift.\n  - Cards: mbogueha, Ejapyhy, Eiporu che haiha.\n- How this matches the guide:\n  - Every card is a picture card of a need (the guide's «fichas con imágenes»).\n  - Each say set is a need and its answer.\n  - Night 3 is the «práctica entre pares».\n  - The unit title Aikotevẽ (necesito) is said by the classmate in night 3.\n\nBUILT ON 1.º GRADO UNIT 5 (NO CARD REPEATED) AND 2.º GRADO UNIT 2\n- The frame Ikatúpa + a-verb? gets three new verbs: asẽ, hay'u and ha'u. «Héẽ, ikatu.» answers it the way «Héẽ, eike.» did. Night 2 ends with unit 5's own «Aguyje, mbo'ehára.».\n- Eme'ẽmína chéve… now asks for food (mbujape) instead of paper.\n- ejapyhy moves from unit 5's say line («Héẽ, ejapyhy.») to a card, and now the child is the one who hands something over.\n- aiporu becomes eiporu. In 1.º grado the child asked «Ikatúpa aiporu nde haiha?»; now it lends: «Eiporu che haiha».\n- These words keep the meanings they have in the app:\n  - y 'agua': its water drop is the picture for Chey'uhéi and Ikatúpa hay'u?, and the y is inside both words.\n  - mbujape 'pan', chipa 'chipá', haiha 'lápiz', mbo'ehára, Héẽ, Aguyje.\n  - peteĩ 'uno', here 'un'.\n  - upéi, as on the «Upéi» button, and jey, as in «Eha'ã jey».\n\nTHE BATHROOM QUESTION\nChoice: «Ikatúpa asẽ sapy'aite?» (¿Puedo salir un ratito?), with a toilet picture and the gloss «(para ir al baño)». Reasons:\n1. Guarani has no common noun for the school toilet.\n   - The dictionary forms I found are jahuha (a place to bathe) and koty'i ('cuartito'), in the Avañe'ẽ dictionary of the Argentine MEC, through a search summary. I found neither used for a school bathroom.\n   - Speakers use the Spanish noun. A copy of Wikipedia's Jopara article gives «Mo'o opyta baño?» as its example of a Spanish word inside Guarani. Paraguayología notes that the room is simply called «baño» (jahu is 'bañarse').\n2. The loanword cannot be written in this app as it stands.\n   - b is not one of the 33 letters of the achegety. By a search summary, it is also not among the letters the Academia later admitted for loanwords (d, f, ll).\n   - The app's own audit (docs/guarani-audit.json) rejected the Spanish spelling «Castellano» for that reason. It also rejected «Mba'e vocal-pe oñepyrũ?», because a Spanish word with a hyphen «should not be used as written».\n   - A guaranized «váño» appears in no source I checked.\n   - So «Ikatúpa aha baño-pe?» would fail the app's own check.\n3. The register rule asks for Guarani where a common Guarani form exists, and one exists for the whole request.\n   - «Ikatúpa asẽ sapy'aite» is attested as a permission request in «Guaraní Comunicativo en la Función Pública», the Paraguayan civil-service course. 1.º grado unit 5's usage lens found it (docs/unit5-check.json).\n   - It is unit 5's frame with one new verb.\n   - It is how a child politely leaves the room for the bathroom, just as «¿Puedo salir?» is in Spanish.\n4. The need is still named, as the MEC asks: by the picture (a toilet) and by the gloss «¿Puedo salir un ratito? (para ir al baño)». The parenthesis follows the app's «Me llamo… (decí tu nombre)».\nFallback, if teachers want the room named: «Ikatúpa aha baño-pe?», which is what most families say. It needs a team decision on putting a Spanish noun in a Guarani card, and a new clip.\n\nPICTURES\n- Existing: y, mbujape, chipa, haiha.\n- New, 4 (the maximum): vare'a (hungry child), baño (toilet), mbogueha (eraser), ejapyhy (a hand passing a notebook). The notebook keeps the handing picture apart from night 3's pencil and eraser.\n- Pictures are distinct within each night. y appears in nights 1 and 2 and is also unit 2's y. The engine never shows two cards with the same picture together.\n\nCHECKED IN MEMORY\nI used the real project/tp-course.js, with the unit inserted as 2.º grado unit 3 and the later units renumbered. No file was written.\n- Syllables:\n  - Che·y·'u·héi, Che·va·re·'a, mbo·gue·ha and E·ja·py·hy join back to their words.\n  - Every syllable ends in a vowel, mb and gu stay whole, and the puso begins its syllable.\n  - Phrases have [], and nights 1 and 3 each have 2 items with syl.\n  - All strings are NFC with the ASCII puso.\n- Games:\n  - L1: meet+read+build | meet+read+pairs | meet+read+build.\n  - L2 and BI: meet+pick+say | meet+read+say | meet+pick+say.\n- Distractors: I tested 9 cards with 60 seeds, using both Pick's and Check's seeds (1,080 sets). No set holds two cards with the same picture.\n- Clips: 17 keys, 15 of them new.\n  - «Ikatúpa asẽ sapy'aite?» shares its card's clip.\n  - «Aguyje!» and «Aguyje, mbo'ehára.» already have clips in the 1.º grado pack.\n- Length: the longest cards, «Eme'ẽmína chéve mbujape» and «Ikatúpa ha'u che chipa?», have 23 characters. The app's longest now has 25.\n\nTO SETTLE OUTSIDE THE UNIT\n- Ñandu Pysã has 5 stars in tp-sky.js, and 2.º grado already has 5 units (2 written, 3 announced). A sixth unit gets no star unless the figure gets one more star or two units merge. The same thing happened with Eichu in 1.º grado.\n- The g2 «can» text in tp-grades.js does not mention needs (its «mec» text does).\n\nEVIDENCE OUTSIDE THE APP\n- Tatoeba copy (dl-biling/grn.csv):\n  - «Ndevare'a piko?» (l. 694), «Hey'u.» (l. 667), «Eme'ẽmíkena chéve che hay'urã» (l. 887), «Ha'use peteĩ mba'e he'ẽva» (l. 882).\n  - «Ko jagua imorotĩ» (l. 200), «reju jey» (l. 81), oikotevẽ (l. 94, 299), «Ikatu apoko?» (l. 439).\n- USC Guarani Corpus: hay'ú (1Sg.drink) and hoy'u (3Pl). Wikipedia: 'I drink water' is pronounced hay'u.\n- Glosbe: «Cheyuhéi, aháta aheka y potĩ». La Nación (14-06-2025): «che vare'a» (tengo hambre).\n- mbogueha: Avañe'ẽ dictionary, Glosbe, Paraguayología.\n- Limits: WebFetch could not reach dokumen.pub or www.mec.gob.ar, which are outside this session's network. I saw those sources, and the other web items above, only through search summaries. Reading them directly needs those hosts allowed in the session's network settings.",
+   "doubts": [
+    {
+     "gn": "Ikatúpa asẽ sapy'aite?",
+     "doubt": "The bathroom card does not name the bathroom; the toilet picture and the gloss «(para ir al baño)» do. Most Guarani-speaking families use the Spanish noun («Ikatúpa aha baño-pe?»), and a reviewer may prefer it. That needs a team decision first: b is not in the achegety, the app's audit rejected a Spanish word with a hyphen, and «váño» appears in no source I checked. The attestation of «Ikatúpa asẽ sapy'aite» comes from 1.º grado unit 5's usage lens, from the Función Pública course on dokumen.pub. I could not open it to check (the host is outside this session's network). sapy'a alone can mean 'de repente' (the USC corpus glosses it 'suddenly'); in this request, with -ite, it is 'un ratito'. The synthetic voice has garbled short nasal words, so check «asẽ» in the clip."
+    },
+    {
+     "gn": "Ikatúpa hay'u?",
+     "doubt": "I wrote hay'u, not ay'u: the 1sg of y'u is irregular, like ha'u. Evidence: USC Guarani Corpus hay'ú and hoy'u; Wikipedia gives 'I drink water' as pronounced hay'u; Tatoeba has «Hey'u.». Some teachers write «ay'u», so please confirm the Academia's form. In the same night it sounds close to «Ikatúpa ha'u che chipa?» (hay'u / ha'u). In night 2, L2 and BI read rather than listen, and «che chipa» tells the two apart, but the big star's listening game could put them side by side."
+    },
+    {
+     "gn": "Chey'uhéi",
+     "doubt": "I wrote it joined, as the person marker of a stative predicate (Tatoeba «Ndevare'a piko?»). Others write «Che y'uhéi» or «cheyuhéi». The split Che·y·'u·héi keeps y as its own syllable, as the app's y·pe does; a teacher who reads «ey» as a diphthong would split it differently. Many children would rather say «Hay'use» (quiero tomar agua). It reuses unit 2's water drop, so a child may at first take the card for «y»."
+    },
+    {
+     "gn": "Chevare'a",
+     "doubt": "Joined, as in Tatoeba («Ndevare'a piko?»), but La Nación writes «che vare'a». In this one unit, L1 readers meet the possessive che written apart (che haiha, che mbogueha, che chipa) and this che- written joined, as in the app's Chepytyvõ. The new picture must read as hungry, not as a tummy ache."
+    },
+    {
+     "gn": "mbogueha",
+     "doubt": "It is in the Avañe'ẽ dictionary of the Argentine MEC («borrador. m. Mbogueha, mboje'oha»), in Glosbe and in Paraguayología. I saw all three only through search summaries (www.mec.gob.ar is outside this session's network). Many children just say «borrador» or «goma» in Spanish. As far as I know, the gloss «borrador» is the Paraguayan word; «goma (de borrar)» is the alternative."
+    },
+    {
+     "gn": "Ejapyhy",
+     "doubt": "Night 3 lends with everyday verbs, Ejapyhy (tomá) and Eiporu (usá), and marks the loan with «Upéi eme'ẽ jey chéve». It avoids poruka, the dictionary verb for 'prestar': 1.º grado unit 5's check found poruka in no Paraguayan sentence and replaced it. If the team wants the MEC's verb itself, use «Aiporuka ndéve che mbogueha» (Te presto mi borrador). It takes ndéve for the receiver, not ro-, because the object is the thing lent, as chéve was in «Reiporukápa chéve nde haiha?». The new handing picture is somewhat abstract; check that children read it as 'tomá'."
+    },
+    {
+     "gn": "Upéi eme'ẽ jey chéve.",
+     "doubt": "The whole line is unattested. It is built from app words: upéi (the «Upéi» button), jey («Eha'ã jey»), eme'ẽ and chéve (1.º grado). jey means 'back' as in Tatoeba's «reju jey». «Embojevy chéve» (devolvémelo) is the other form; I could not confirm which one teachers prefer."
+    },
+    {
+     "gn": "Ikatúpa ha'u che chipa?",
+     "doubt": "The whole sentence is unattested, though its parts are attested (ha'u, as in Tatoeba «Ha'use…»; unit 2's chipa). Children ask to eat their snack in class at merienda time, but less often than they ask for the bathroom or water. If the team prefers a permission that is not about food, «Ikatúpa aipe'a ovetã?» (¿Puedo abrir la ventana?, picture ovetã) fits the same slot. The 1.º grado usage lens suggested it."
+    },
+    {
+     "gn": "Ejapyhy ko mbujape.",
+     "doubt": "«ko mbujape» (este pan) follows Tatoeba's «Ko jagua imorotĩ»; «Ejapyhy peteĩ mbujape» (tomá un pan) is just as natural. The say set has the child state the need (Chevare'a) rather than say the card's «Eme'ẽmína chéve mbujape», to keep each line under ten syllables."
+    },
+    {
+     "gn": "Aikotevẽ peteĩ mbogueha.",
+     "doubt": "In Tatoeba, aikotevẽ takes its object directly («Opavave oikotevẽ pirapire») and also with -re («oikotevẽ ikafére»); I used the plain object. The unit title Aikotevẽ is said only here. «Ndaguerekói mbogueha» (No tengo borrador), from the app's aguereko, is another way for the classmate to state the need. The voice has trouble with final nasals (Aikotevẽ, asẽ, Héẽ), so check those clips first."
+    },
+    {
+     "gn": "Héẽ, ikatu.",
+     "doubt": "This is the plain answer to Ikatúpa…?. A teacher may add «Tereho ha ejevy pya'e» (andá y volvé rápido); I left it out to keep the line short. tereho is the standard imperative of ho (Tatoeba «Tereho ko'ãga»), though «eho» is also heard. Héẽ keeps 1.º grado unit 5's spelling, which is still to be confirmed with the Academia."
+    },
+    {
+     "gn": "Eiporu che haiha",
+     "doubt": "«Usá mi lápiz» lends by letting someone use the pencil, which is how children lend, but the verb is 'usar', not 'prestar' (see Ejapyhy). Eiporu is in the MEC teacher guides; the Priorización also writes puru (Oipuru), so some children will hear «Eipuru»."
+    },
+    {
+     "gn": "Mbo'ehára, chevare'a.",
+     "doubt": "«Maestra» follows the app's gloss of mbo'ehára, as in 1.º grado unit 5; children often say «Profe»."
+    }
+   ]
+  },
+  {
+   "unit": {
+    "gn": "Aikotevẽ",
+    "es": "Pedir lo que necesito"
+   },
+   "nights": [
+    {
+     "gn": "Ahy'use, akaruse",
+     "es": "Pedir agua y comida",
+     "words": [
+      {
+       "gn": "Ahy'use",
+       "es": "Quiero tomar agua",
+       "pic": "y",
+       "syl": [
+        "A",
+        "hy",
+        "'u",
+        "se"
+       ],
+       "note": "y'u 'tomar agua' (y + 'u) + -se 'querer'. The 1st person ahy'u follows the school paradigm the app already uses for hoy'u in the Mborevi Rape story (ahy'u, rehy'u, hoy'u). Same picture as unit 2's y."
+      },
+      {
+       "gn": "Akaruse",
+       "es": "Quiero comer",
+       "pic": "mbujape",
+       "syl": [
+        "A",
+        "ka",
+        "ru",
+        "se"
+       ],
+       "note": "karu 'comer' + -se; Tatoeba has the negative Ndakaruséi. Ahy'use and Akaruse share -se = «quiero», so in L1 the child builds two words with the same ending. Unit 2's bread stands for food to eat."
+      },
+      {
+       "gn": "Eme'ẽmína chéve kamby",
+       "es": "Dame leche, por favor",
+       "pic": "kamby",
+       "syl": [],
+       "note": "1.º grado's frame («Eme'ẽmína chéve kuatia») with unit 2's kamby: asking for food at the merienda escolar, which in Paraguay is milk."
+      }
+     ],
+     "say": [
+      {
+       "gn": "Mbo'ehára, akaruse.",
+       "es": "Maestra, quiero comer."
+      },
+      {
+       "gn": "Ejapyhy ko mbujape.",
+       "es": "Tomá este pan."
+      },
+      {
+       "gn": "Aguyje!",
+       "es": "¡Gracias!"
+      }
+     ]
+    },
+    {
+     "gn": "Ikatúpa asẽ?",
+     "es": "Ir al baño y pedir permiso",
+     "words": [
+      {
+       "gn": "Ikatúpa asẽ sapy'aite?",
+       "es": "¿Puedo salir un ratito? (al baño)",
+       "pic": "new:baño",
+       "newPic": "A simple white toilet seen from the side, with a light-blue lid and seat and a small roll of toilet paper beside it.",
+       "syl": [],
+       "note": "The bathroom request (see notes): Ikatúpa + asẽ 'salgo', the opposite of 1.º grado's aike, + sapy'aite 'un ratito' (sapy'a + the tonic -ite, so no accent). Attested as a polite permission request. The picture says where the child is going."
+      },
+      {
+       "gn": "Ikatúpa ahy'u?",
+       "es": "¿Puedo tomar agua?",
+       "pic": "y",
+       "syl": [],
+       "note": "Night 1's verb in the permission frame."
+      },
+      {
+       "gn": "Ikatúpa akaru?",
+       "es": "¿Puedo comer?",
+       "pic": "mbujape",
+       "syl": [],
+       "note": "Night 1's verb in the permission frame: in class, the merienda waits for the teacher's yes."
+      }
+     ],
+     "say": [
+      {
+       "gn": "Ikatúpa asẽ sapy'aite?",
+       "es": "¿Puedo salir un ratito? (al baño)"
+      },
+      {
+       "gn": "Héẽ, tereho.",
+       "es": "Sí, andá."
+      }
+     ]
+    },
+    {
+     "gn": "Ejapyhy",
+     "es": "Prestar algo",
+     "words": [
+      {
+       "gn": "Aikotevẽ haiha",
+       "es": "Necesito un lápiz",
+       "pic": "haiha",
+       "syl": [],
+       "note": "kotevẽ 'necesitar' is an i-verb (aikotevẽ; Tatoeba has oikotevẽ and ñaikotevẽ) and is the unit's title verb. This is the classmate's need; haiha is as in 1.º grado."
+      },
+      {
+       "gn": "Ejapyhy",
+       "es": "Tomá",
+       "pic": "new:ejapyhy",
+       "newPic": "Two hands meeting in the middle: one child's hand holds out a yellow pencil and the other child's open hand reaches up to take it, with two small motion lines; the two hands fill most of the picture.",
+       "syl": [
+        "E",
+        "ja",
+        "py",
+        "hy"
+       ],
+       "note": "japyhy 'agarrar, tomar' (ajapyhy) → ejapyhy, what you say as you hand something over. 1.º grado used it in a dialogue («Héẽ, ejapyhy.»). Now it is a card, and the child is the one who lends."
+      },
+      {
+       "gn": "Eiporu",
+       "es": "Usalo",
+       "pic": "new:eiporu",
+       "newPic": "A smiling child at a little desk writing a wavy line on a white sheet with a yellow pencil.",
+       "syl": [
+        "Ei",
+        "po",
+        "ru"
+       ],
+       "note": "poru 'usar' is an i-verb (aiporu, as in 1.º grado's «Ikatúpa aiporu nde haiha?») → eiporu 'usalo'. The MEC's 5.º grado teacher guide writes «Eiporu»."
+      }
+     ],
+     "say": [
+      {
+       "gn": "Che irũ, aikotevẽ haiha.",
+       "es": "Amiga, necesito un lápiz."
+      },
+      {
+       "gn": "Ejapyhy che haiha.",
+       "es": "Tomá mi lápiz."
+      },
+      {
+       "gn": "Aguyjevete!",
+       "es": "¡Muchas gracias!"
+      }
+     ]
+    }
+   ],
+   "notes": "ANGLE: how a Paraguayan child really says it. Each card is the shortest everyday form a Guarani-speaking teacher or family uses with a 7-year-old. Each night ends in a need-and-answer dialogue, and the child says both roles. This was a read-only task: no project file was touched (git status is clean). Scratch files: g2u3/draft.js (the unit) and g2u3/check.js (the engine check).\n\nMEC FIT\nSources:\n- Priorización curricular 2021, Comunicación Guaraní, 2.º grado, item 16 (p. 28): «Expresa necesidades básicas como: ir al baño, tomar agua, pedir alimentos, solicitar permiso y prestar algo.»\n- Guía para la planificación 2021, 1.er ciclo, Comunicación Guaraní, Segundo grado, week 4 «Necesidades básicas» (p. 59).\n\nThe three nights:\n- Night 1, the merienda, with the teacher. Tomar agua (Ahy'use) and pedir alimentos (Akaruse; Eme'ẽmína chéve kamby, the milk of the merienda escolar). Dialogue: Mbo'ehára, akaruse. → Ejapyhy ko mbujape. → Aguyje!\n- Night 2, in class, with the teacher. Ir al baño and solicitar permiso, all in 1.º grado's frame Ikatúpa + a-verb?: asẽ sapy'aite (bathroom), ahy'u (water), akaru (eating). Dialogue: Ikatúpa asẽ sapy'aite? → Héẽ, tereho.\n- Night 3, in class, with a classmate. Prestar algo, with the child as the lender: the classmate states the need (Aikotevẽ haiha), and the child answers Ejapyhy (tomá) and Eiporu (usalo). Dialogue: Che irũ, aikotevẽ haiha. → Ejapyhy che haiha. → Aguyjevete!\n\nThe guide's three activities:\n- «Fichas con imágenes» are the picture cards (Meet, Pick/Read).\n- «Situaciones» are the three scenes.\n- «Práctica entre pares» is Say, where the child plays both roles; night 3 happens between classmates.\n\nTHE BATHROOM QUESTION\nDecision: the Guarani paraphrase «Ikatúpa asẽ sapy'aite?» (¿Puedo salir un ratito?), on a new toilet picture, glossed «¿Puedo salir un ratito? (al baño)». Evidence:\n1. Everyday speech uses the Spanish loan. English Wikipedia's Jopara article gives «Mo'o opyta baño?» ('Where is the bathroom?') as its example of mixed speech. So baño is jopara, not school Guarani.\n2. I found no Guarani noun for the toilet room anywhere I looked:\n   - the MEC texts (baño appears only in Spanish)\n   - the 987 Tatoeba pairs\n   - docs/unit5-check.json and docs/guarani-audit.json\n   - web searches for jahuha and tekotevẽha\n   Jahuha would mean 'place to bathe', not the toilet. Either word would be a purist coinage, which the brief rules out.\n3. The paraphrase is attested as a polite permission request in «Guaraní Comunicativo en la Función Pública», found by the previous check (docs/unit5-check.json, usage lens). Every part is everyday Guarani:\n   - asẽ: Tatoeba «Asẽkuri javete»; the MEC 5.º grado guide «osẽ hag̃ua»\n   - sapy'a + the tonic -ite\n   - the frame Ikatúpa\n   It mirrors 1.º grado's «Ikatúpa aike?»: aike 'entro', asẽ 'salgo'.\n4. In Paraguayan classrooms, «¿Puedo salir?» is the usual polite way to ask for the bathroom, in Spanish too. The picture and the gloss name the place.\n5. In 2.º grado the child reads and builds the card, right before the consonants unit. The loan would bring in b, which is not a Guarani letter (it only appears in mb). How Guarani writes an unadapted loan with a suffix (baño-pe or bañope) is also unsettled.\nThe loan stays in doubts as the fallback.\n\nWATER\nThe app already writes the 3rd person hoy'u (tp-sky.js), from the audit's school paradigm (Guasch & Ortiz: ahy'u, rehy'u, hoy'u). So the 1st person is ahy'u (Ahy'use, Ikatúpa ahy'u?). Speech also has ay'u (see doubts).\n\nBUILT ON 1.º GRADO, UNIT 5 (no card repeated)\n- The frame Ikatúpa + a-verb gets three new verbs: asẽ, ahy'u, akaru.\n- «Eme'ẽmína chéve kuatia» becomes «Eme'ẽmína chéve kamby».\n- 1.º grado's «Héẽ, ejapyhy.» (the line where a classmate lent the pencil) becomes the card Ejapyhy and the child's own «Ejapyhy che haiha.».\n- «Ikatúpa aiporu nde haiha?» becomes Eiporu.\n- Héẽ, Aguyje and Aguyjevete close the dialogues.\nNew grammar is small:\n- the desiderative -se, shared by Ahy'use and Akaruse (the two words night 1 builds)\n- the imperative tereho\n- aikotevẽ, the unit's title verb\n\nREUSE AND PICTURES\nReused words keep their meanings in the app:\n- from unit 2: y 'agua', kamby 'leche', mbujape 'pan'\n- from 1.º grado: haiha 'lápiz', irũ, mbo'ehára, Aguyje, Aguyjevete\nExisting pictures: y, mbujape, kamby, haiha. New pictures: 3 (baño, ejapyhy, eiporu), all on free keys.\n\nENGINE CHECK\nI ran the unit in memory through the real tp-course.js, inserted as 2.º grado unit 3, with Pundie, Moõpa? and Purahéi ha kũjererã moved to units 4–6.\n- Every string is NFC, with the ASCII puso and no ¿.\n- The four syl lists join exactly: A·hy·'u·se, A·ka·ru·se, E·ja·py·hy, Ei·po·ru.\n- Games per night:\n  - Night 1: L1 meet+read+build (builds Ahy'use and Akaruse); L2 and BI meet+pick+say.\n  - Night 2: L1 meet+read+pairs (the three Ikatúpa cards); L2 and BI meet+read+say.\n  - Night 3: L1 meet+read+build (Ejapyhy, Eiporu); L2 and BI meet+pick+say.\n- Pictures differ within each night. y and mbujape each serve one card in night 1 and one in night 2 (the need, then the permission). The engine never shows two cards with the same picture together, so these never meet each other or unit 2's y, mbujape and kamby cards.\n- The longest card is «Ikatúpa asẽ sapy'aite?» (22 characters). The app's current longest is «Ikatúpa aiporu nde haiha?» (25).\n\nTO SETTLE BEFORE THE UNIT GOES IN\n- Stars: in tp-sky.js, Ñandu Pysã has 5 stars and 2.º grado has 5 units, so this unit makes 6. (1.º grado's Eichu was given 8 stars for its 8 units.)\n- Texts to update: the header of tp-grades.js («two units of 2.º grado») and the «can» line of g2.\n- Web evidence: WebFetch reached no page. abc.com.py, omniglot.com, bible.com, premioseikon.com, the kiwix Wiktionary mirror and discovery.ucl.ac.uk all failed to resolve, so the web evidence above comes from search-result snippets only.",
+   "doubts": [
+    {
+     "gn": "Ikatúpa asẽ sapy'aite?",
+     "doubt": "The bathroom is said through a euphemism, «¿puedo salir un ratito?»; the picture and the gloss carry the place. The phrase is attested in an adult civil-service course, not in a children's text. Many children and teachers would say the jopara «Ikatúpa aha baño-pe?» instead. That is the fallback, written with a hyphen as Tatoeba writes «Tom-pe», but it brings b into a Guarani reading card, and its spelling needs the Academia. Two other forms are also natural: the shorter «Ikatúpa asẽ?» (5 syllables, an exact mirror of «Ikatúpa aike?») and the variant «sapy'ami» ('un ratito'). A Guarani teacher should confirm which form 2.º grado classrooms use."
+    },
+    {
+     "gn": "Ahy'use",
+     "doubt": "The 1st person of y'u 'tomar agua' varies. ahy'u is the school paradigm the app already follows for hoy'u. One audit reviewer gave ay'u, rey'u, hoy'u, and ay'u is also heard in speech. Tatoeba's «che hay'urã» points to a third form, hay'u. If the Academia's dictionary gives ay'u, change Ahy'use → Ay'use (syl A·y·'u·se) and «Ikatúpa ahy'u?» → «Ikatúpa ay'u?». The story's hoy'u is the same in both paradigms."
+    },
+    {
+     "gn": "Akaruse",
+     "doubt": "Its picture is unit 2's bread, standing for food to eat. That works in Pick, because night 1's other pictures are drinks, but a child may take akaruse to mean 'pan'. A new picture of a plate of food (tembi'u) would show 'comer' better. It would be the unit's 4th new picture and would also go on «Ikatúpa akaru?». Other ways to say 'tengo hambre' are «Che ñembyahýi» (the school form) and «Che vare'a» (colloquial)."
+    },
+    {
+     "gn": "Héẽ, tereho.",
+     "doubt": "tereho is the everyday imperative of ho 'ir' (Tatoeba «Tereho ko'ãga.»; Biblia GPC, Éx 4:12, «Tereho katu»), but school materials also use eho. Héẽ is spelled as in 1.º grado; Tatoeba has both Héẽ and Hẽe. The synthetic voice has garbled short nasal words before, so check this clip."
+    },
+    {
+     "gn": "Aikotevẽ haiha",
+     "doubt": "«Ndaguerekói haiha» ('no tengo lápiz') is at least as common from a child. I chose aikotevẽ for three reasons: it names the need, it is the unit's title verb, and it avoids the negation circumfix nda-…-i, which is harder for an L2 child. Some speakers add peteĩ ('un lápiz'). The gloss adds «un» because Guarani has no article."
+    },
+    {
+     "gn": "Eiporu",
+     "doubt": "poru or puru: Tatoeba writes aipuru, while the MEC guides write Eiporu and the app writes aiporu, so I kept poru. Its picture (a child writing with a pencil) is the weakest in the unit: it could be read as 'escribir', and its meaning only comes through after Meet."
+    },
+    {
+     "gn": "Ejapyhy",
+     "doubt": "eipyhy (from pyhy) is also heard. Its picture shows a pencil being handed over, in the same night as haiha's pencil, so the two hands must fill the drawing."
+    },
+    {
+     "gn": "Ejapyhy che haiha.",
+     "doubt": "Lending is said as 'tomá' and 'usalo', with no verb for 'prestar'. poruka is a dictionary form children rarely use, and families often say the jopara «ambopresta». Adding «Upéi eme'ẽ jey chéve» ('después devolvémelo') would make the loan explicit, at the cost of a longer line. The app already uses jey in «Eha'ã jey»."
+    },
+    {
+     "gn": "Eme'ẽmína chéve kamby",
+     "doubt": "This assumes the child asks the teacher for the milk of the merienda escolar. With a classmate, a child would more often say «Eme'ẽmi chéve…» or the jopara «convidame». -mína is spelled as in 1.º grado."
+    },
+    {
+     "gn": "Aikotevẽ",
+     "doubt": "Other possible unit titles: «Mba'épa reikotevẽ?» (¿Qué necesitás?, the teacher's question), or the MEC's own noun tembikotevẽ (the Priorización's Guarani text writes hemikotevẽ)."
+    },
+    {
+     "gn": "Ikatúpa akaru?",
+     "doubt": "It repeats night 1's karu on purpose, the need and then the permission, just as «Ikatúpa ahy'u?» repeats y'u. If the team wants more variety, a general permission could replace it, such as «Ikatúpa aipe'a ovetã?», which the previous check suggested."
+    }
+   ]
+  }
+ ],
+ "merged": {
+  "unit": {
+   "gn": "Aikotevẽ",
+   "es": "Pedir lo que necesito"
+  },
+  "nights": [
+   {
+    "gn": "Hay'use, akaruse",
+    "es": "Pedir agua y comida",
+    "words": [
+     {
+      "gn": "Hay'use",
+      "es": "Quiero tomar agua",
+      "pic": "y",
+      "syl": [
+       "Ha",
+       "y",
+       "'u",
+       "se"
+      ],
+      "note": "y'u 'tomar agua' (y 'agua' + 'u) with -se 'quiero'. -se is tonic, so there is no accent (Tatoeba «Ha'use…», «Ahasékuri»). The first person is hay'u, from the h-forms of 'u (ha'u, he'u, ho'u): Tatoeba has «Hey'u.», and the app has hoy'u (see notes and doubts). Ha·y·'u·se: y is its own vowel, as in y·pe. The picture is unit 2's water drop, and the y of 'agua' is inside the word."
+     },
+     {
+      "gn": "Akaruse",
+      "es": "Quiero comer",
+      "pic": "new:karu",
+      "newPic": "A smiling child holding a spoon in one hand and an empty bowl in the other, licking its lips.",
+      "syl": [
+       "A",
+       "ka",
+       "ru",
+       "se"
+      ],
+      "note": "karu 'comer' (akaru, rekaru, okaru) + -se. Tatoeba has the negative «Ndakaruséi ko'ãgaitépe» and «jakaru oñondive». It shares -se with Hay'use, so L1's Build makes two words with the same ending. Its new picture shows wanting to eat, not bread, and it comes back on «Ikatúpa akaru?»."
+     },
+     {
+      "gn": "Eme'ẽmína chéve mbujape",
+      "es": "Dame pan, por favor",
+      "pic": "mbujape",
+      "syl": [],
+      "note": "1.º grado's «Eme'ẽmína chéve kuatia» with unit 2's mbujape (pan): this is the MEC's «pedir alimentos». Tatoeba uses the same frame for a drink: «Eme'ẽmíkena chéve che hay'urã». The say set hands over the bread."
+     }
+    ],
+    "say": [
+     {
+      "gn": "Mbo'ehára, akaruse.",
+      "es": "Maestra, quiero comer."
+     },
+     {
+      "gn": "Ejapyhy ko mbujape.",
+      "es": "Tomá este pan."
+     },
+     {
+      "gn": "Aguyje!",
+      "es": "¡Gracias!"
+     }
+    ]
+   },
+   {
+    "gn": "Ikatúpa asẽ?",
+    "es": "Ir al baño y pedir permiso",
+    "words": [
+     {
+      "gn": "Ikatúpa asẽ sapy'aite?",
+      "es": "¿Puedo salir un ratito? (al baño)",
+      "pic": "new:baño",
+      "newPic": "A friendly white toilet seen from the side, with a light-blue tank and seat and a small smiling face on the bowl.",
+      "syl": [],
+      "note": "The bathroom request (see notes). It is 1.º grado's frame Ikatúpa + a-verb? with asẽ 'salgo' (the opposite of aike; Tatoeba «Asẽkuri javete») and sapy'aite 'un ratito' (sapy'a + the tonic -ite, so no accent, as in porãite). It is attested as a polite permission request in the Función Pública Guarani course (docs/unit5-check.json). The toilet picture and the gloss name the place. The first say line shares this card's clip."
+     },
+     {
+      "gn": "Ikatúpa hay'u?",
+      "es": "¿Puedo tomar agua?",
+      "pic": "y",
+      "syl": [],
+      "note": "Night 1's verb in the permission frame: the child asks before going to drink water. It uses the same water drop as Hay'use, but in another night."
+     },
+     {
+      "gn": "Ikatúpa akaru?",
+      "es": "¿Puedo comer?",
+      "pic": "new:karu",
+      "newPic": "The same new picture as Akaruse in night 1: a smiling child with a spoon and an empty bowl, licking its lips.",
+      "syl": [],
+      "note": "Night 1's karu in the permission frame: in class, the merienda waits for the teacher's yes. It uses the same new picture as Akaruse, but in another night."
+     }
+    ],
+    "say": [
+     {
+      "gn": "Ikatúpa asẽ sapy'aite?",
+      "es": "¿Puedo salir un ratito? (al baño)"
+     },
+     {
+      "gn": "Héẽ, ikatu.",
+      "es": "Sí, podés."
+     },
+     {
+      "gn": "Aguyje, mbo'ehára.",
+      "es": "Gracias, maestra."
+     }
+    ]
+   },
+   {
+    "gn": "Ejapyhy",
+    "es": "Prestar algo",
+    "words": [
+     {
+      "gn": "mbogueha",
+      "es": "borrador",
+      "pic": "new:mbogueha",
+      "newPic": "A pink rectangular eraser with one rounded, worn corner and a few tiny crumbs beside it.",
+      "syl": [
+       "mbo",
+       "gue",
+       "ha"
+      ],
+      "note": "mbogue 'borrar' + -ha (the thing for it), like haiha (hai 'escribir' + -ha). It is a dictionary and school word: draft 1 found «borrador. m. Mbogueha, mboje'oha» in the Avañe'ẽ dictionary, and the word in Glosbe and Paraguayología, all through search summaries. It is what the child lends in the say lines. mbo·gue·ha: mb is one letter, and gu + e is one syllable, as in A·guy·je."
+     },
+     {
+      "gn": "Ejapyhy",
+      "es": "Tomá",
+      "pic": "new:ejapyhy",
+      "newPic": "A hand from the right holding out a small blue notebook to another child's open hand waiting below.",
+      "syl": [
+       "E",
+       "ja",
+       "py",
+       "hy"
+      ],
+      "note": "e- + japyhy 'agarrar, tomar': what you say as you hand something over. In 1.º grado it was a say line («Héẽ, ejapyhy.»). Here it is a card, and the child is the one who lends. The hands pass a notebook, so the picture stays apart from the night's eraser and pencil."
+     },
+     {
+      "gn": "Eiporu che haiha",
+      "es": "Usá mi lápiz",
+      "pic": "haiha",
+      "syl": [],
+      "note": "e- + i- + poru 'usar' (1.º grado's aiporu; the MEC guides write «Eiporu») + che haiha 'mi lápiz'. It turns 1.º grado's «Ikatúpa aiporu nde haiha?» around: now the child lends its own pencil, and «usá» keeps it a loan, not a gift."
+     }
+    ],
+    "say": [
+     {
+      "gn": "Aikotevẽ mbogueha.",
+      "es": "Necesito un borrador."
+     },
+     {
+      "gn": "Ejapyhy che mbogueha.",
+      "es": "Tomá mi borrador."
+     },
+     {
+      "gn": "Aguyjevete, che irũ!",
+      "es": "¡Muchas gracias, amiga!"
+     }
+    ]
+   }
+  ],
+  "notes": "THE MERGE\nMost of the unit is kept as both drafts wrote it:\n- the title Aikotevẽ and the three night titles;\n- the bathroom card «Ikatúpa asẽ sapy'aite?» on a new toilet picture;\n- the Ikatúpa frame for water and food;\n- the food request «Eme'ẽmína chéve…»;\n- the card Ejapyhy on a new handing picture;\n- eiporu and aikotevẽ in night 3;\n- the say lines «Ejapyhy ko mbujape.» and «Aguyje!».\nWhere the drafts differed:\n- Night 1's needs come from draft 2: the pair Hay'use / Akaruse. Each is one word, both can be built, and both end in -se 'quiero'.\n  - Draft 1's Chey'uhéi / Chevare'a were not kept. Their joined che is less certain: school texts usually write the stative che apart, and written apart they cannot be built. vare'a is also colloquial.\n  - The first person comes from draft 1: hay'u, not draft 2's ahy'u (see THE WATER VERB).\n- Akaruse gets a new picture: a child with a spoon and an empty bowl.\n  - Draft 2 used bread, which made 'comer' look like 'pan'.\n  - The new picture also replaces draft 1's hungry child (vare'a), which risked reading as a tummy ache.\n- The food request asks for mbujape (draft 1): both drafts use the word, and the say set hands over bread.\n- Night 2's third card is «Ikatúpa akaru?» (draft 2), not «Ikatúpa ha'u che chipa?» (draft 1). It is shorter, and it does not sound like «Ikatúpa hay'u?».\n- Night 2's say set is draft 1's need, answer and thanks.\n  - «Héẽ, ikatu.» answers all three Ikatúpa cards.\n  - «Aguyje, mbo'ehára.» closes it, as in 1.º grado.\n- Night 3's cards come from draft 1: mbogueha, Ejapyhy and Eiporu che haiha. They show three different objects, so the pictures stay apart. Draft 2's Eiporu card (a child writing) was its weakest picture.\n- Night 3's dialogue lends the eraser and ends with thanks: Aikotevẽ mbogueha. / Ejapyhy che mbogueha. / Aguyjevete, che irũ!\n  - The first line takes draft 2's plain object (no peteĩ).\n  - The last line is 1.º grado's own, with draft 2's Aguyjevete and che irũ. It names the classmate, and every line stays at 21 graphemes or fewer. Mborevi'i's speech bubble in Say does not wrap (white-space: nowrap), and the app's longest say line now is 25.\n\nTHE UNIT\n- Night 1 «Hay'use, akaruse»: the merienda, with the teacher.\n  - Needs: tomar agua (Hay'use) and pedir alimentos (Akaruse; Eme'ẽmína chéve mbujape).\n  - Say: Mbo'ehára, akaruse. / Ejapyhy ko mbujape. / Aguyje!\n- Night 2 «Ikatúpa asẽ?»: in class, with the teacher.\n  - Needs: ir al baño and solicitar permiso, all in 1.º grado's frame Ikatúpa + a-verb?: asẽ sapy'aite (bathroom), hay'u (water), akaru (eating).\n  - Say: Ikatúpa asẽ sapy'aite? / Héẽ, ikatu. / Aguyje, mbo'ehára.\n- Night 3 «Ejapyhy»: in class, between classmates.\n  - Need: prestar algo, with the child as the lender.\n  - Cards: mbogueha, Ejapyhy, Eiporu che haiha.\n  - Say: Aikotevẽ mbogueha. / Ejapyhy che mbogueha. / Aguyjevete, che irũ!\n\nTHE MEC\n- Priorización curricular 2021, Comunicación Guaraní, 2.º grado, item 16 (p. 28, docs/mec-check.json): «Expresa necesidades básicas como: ir al baño, tomar agua, pedir alimentos, solicitar permiso y prestar algo.»\n  - The same sentence is in the Programa de estudio, 2.º grado, Segunda lengua (mec-text/7e820984…, p. 57).\n- Guía para la planificación 2021, 2.º grado, week 4 «Necesidades básicas» (mec-text/25531b74…, l. 2707–2711). It asks for picture cards of the needs, example situations and practice between peers.\n- No MEC text gives Guarani wording for these needs. The Priorización's own Guarani text calls needs hemikotevẽ, the noun of the title's verb.\n- All five needs are on cards, not only in say lines, because L1 children play no Say in 2.º grado (tp-course.js, gamesFor):\n  - ir al baño: «Ikatúpa asẽ sapy'aite?»\n  - tomar agua: Hay'use, «Ikatúpa hay'u?»\n  - pedir alimentos: Akaruse, «Eme'ẽmína chéve mbujape»\n  - solicitar permiso: the three Ikatúpa cards\n  - prestar algo: Ejapyhy, «Eiporu che haiha»\n- How the guide's activities appear:\n  - Picture cards: the Meet, Pick and Read games.\n  - Situations: the three scenes.\n  - Practice between peers: night 3, and Say, where the child says both roles.\n\nBUILT ON 1.º GRADO UNIT 5 AND 2.º GRADO UNIT 2 (no card repeated)\n- Ikatúpa + a-verb? gets three new verbs: asẽ (the opposite of aike), hay'u and akaru.\n- Eme'ẽmína chéve… now asks for food: mbujape instead of kuatia.\n- ejapyhy moves from a say line («Héẽ, ejapyhy.») to a card, and now the child is the one who hands over.\n- «Ikatúpa aiporu nde haiha?» becomes «Eiporu che haiha»: the child lends its own pencil.\n- Two say lines are 1.º grado's own, «Aguyje, mbo'ehára.» and «Aguyjevete, che irũ!»; «Aguyje!» is also a 1.º grado say line.\n- Reused words keep their app meanings: y 'agua' (the water drop, and inside hay'u), mbujape 'pan', haiha 'lápiz', mbo'ehára, irũ, Héẽ, Aguyje, Aguyjevete.\n- New grammar is small: the desiderative -se (Hay'use, Akaruse) and aikotevẽ, the title verb.\n\nTHE BATHROOM QUESTION\nChoice: the Guarani paraphrase «Ikatúpa asẽ sapy'aite?» (¿Puedo salir un ratito?), on a new toilet picture, glossed «¿Puedo salir un ratito? (al baño)». Both drafts chose it independently. Reasons:\n1. The everyday noun is the Spanish loan.\n   - Wikipedia's Jopara article gives «Mo'o opyta baño?» as its example of mixed speech (both drafts, search summaries).\n   - In the MEC texts, baño appears only in Spanish. It is in neither the Tatoeba copy nor docs/unit5-check.json.\n2. No common Guarani noun for the school toilet turned up.\n   - Dictionary forms such as jahuha ('place to bathe') or koty'i ('cuartito') are not used for it, and putting one on a card would be the purist coinage the brief rules out.\n   - My searches in this step also found none: bilingual signage, the Secretaría de Políticas Lingüísticas, school phrase lists.\n3. The loan cannot be written in the app as it stands.\n   - b is not a letter of the achegety; it appears only inside mb.\n   - The app's audit (docs/guarani-audit.json) rejected a Spanish spelling and a Spanish word written with a hyphen.\n   - No guaranized form (váño) turned up. Tatoeba's hyphen («Tom-pe», «Boston-gui») is for foreign names.\n4. The paraphrase is attested as a polite permission request.\n   - «Ikatúpa asẽ sapy'aite» is in «Guaraní Comunicativo en la Función Pública», the Paraguayan civil-service course. 1.º grado unit 5's usage lens found it through a search summary (docs/unit5-check.json).\n   - Its parts are everyday Guarani: asẽ (Tatoeba «Asẽkuri javete»), sapy'a with the tonic -ite, and the frame Ikatúpa.\n   - It mirrors 1.º grado's «Ikatúpa aike?».\n5. «¿Puedo salir?» is how Paraguayan children politely ask for the bathroom in Spanish too. The picture and the gloss name the place, which is what the guide's picture cards ask for.\n6. Guarani's own verb for the need, kuaru 'orinar' (akuaruse), names a body function rather than asking politely, and my search found it in no school or phrase source. It is not used.\nFallback, if teachers want the room named: «Ikatúpa aha baño-pe?», which is what most families say. It needs a team decision on a Spanish noun in a Guarani card, a spelling (baño-pe or bañope) and a new clip.\n\nTHE WATER VERB\ny'u 'tomar agua' takes h- forms, like 'u (ha'u, he'u, ho'u). The first person is written hay'u here. Evidence:\n- Wikipedia's Guarani article says 'I drink water', 'a'y'u, is pronounced hay'u (search summary).\n- The USC Guarani Corpus has hay'ú (1Sg.drink) (draft 1).\n- Tatoeba's imperative «Hey'u.» (Drink water) follows the same pattern.\nAgainst it, the app's audit gave ahy'u, rehy'u, hoy'u from Guasch & Ortiz, and draft 2 followed it. I could not open that dictionary. The app itself writes only the third person hoy'u (tp-sky.js), which is the same in every paradigm. See doubts.\n\nPICTURES\n- Existing: y (Hay'use, «Ikatúpa hay'u?»), mbujape, haiha.\n- New, 4 (the maximum): karu (Akaruse and «Ikatúpa akaru?»), baño, mbogueha, ejapyhy.\n- The scratch worktree (scratchpad/wt) already draws baño and ejapyhy. Its ejapyhy hands over a yellow pencil, which next to «Eiporu che haiha» would look like the pencil card. So the merged picture hands over a blue notebook; the drawn hands can stay.\n- y and karu each appear in two nights (the need, then the permission), never twice in one night. The engine never puts two options with the same picture side by side.\n\nCHECKED IN MEMORY\nRun with the real project/tp-course.js, tp-grades.js and tp-pics.js. The unit was inserted as 2.º grado unit 3, and the later units were renumbered 4 to 6. No project file was touched, and git status is clean. The scratch files are g2u3-merge/merged.js and g2u3-merge/check.js.\n- Strings: every string is NFC, with the ASCII puso and no ¿ or ¡. Questions end in ?.\n- Syllables:\n  - The four syl lists join back to their words: Ha·y·'u·se, A·ka·ru·se, mbo·gue·ha, E·ja·py·hy.\n  - Every syllable ends in a vowel, mb and gu stay whole, and the puso begins its syllable. Phrases have [].\n  - Nights 1 and 3 each have 2 built words.\n- Games:\n  - L1: meet+read+build | meet+read+pairs | meet+read+build. Build uses Hay'use and Akaruse, then mbogueha and Ejapyhy; Pairs uses the three Ikatúpa cards.\n  - L2 and BI: meet+pick+say | meet+read+say | meet+pick+say.\n- Distractors: 9 cards × 84 seeds (Pick's and Check's own seeds, plus 60 more) = 756 option sets. No set holds two cards with the same picture, or a card held inside another.\n- Repeats: no card repeats an app card. «Aguyje!», «Aguyje, mbo'ehára.» and «Aguyjevete, che irũ!» repeat 1.º grado text.\n- Clips: 17 keys for the 2.º grado pack (clips load per grade). The card and the say line «Ikatúpa asẽ sapy'aite?» share one key. 14 texts are new; the 3 repeated lines already have checked clips in the 1.º grado pack.\n- Length:\n  - Longest card: «Eme'ẽmína chéve mbujape» (23). The app's longest is 25.\n  - Longest say line: «Ejapyhy che mbogueha.» (21).\n  - The gloss «¿Puedo salir un ratito? (al baño)» (33) is longer than any card gloss now (29).\n\nTO SETTLE OUTSIDE THE UNIT\n- The scratch worktree already does three things: a sixth star for Ñandu Pysã, «pide lo que necesita» in the g2 «can» text, and «three units» in the header.\n- Its placeholder title is «Aikotevẽ» / «Lo que necesito». Both drafts and this merge say «Pedir lo que necesito».\n- Check the bathroom card's gloss in the Meet card and the Tonight tile with tools/render/overflow.js.\n- Check the clips with short nasal words first: asẽ, Héẽ, aikotevẽ, irũ. Check Hay'use too.\n- Confirm with the Academia: hay'u (or ahy'u), Héẽ, -mína, poru or puru, and mbogueha.\n\nEVIDENCE AND LIMITS\n- Checked in this step:\n  - the 2021 guide and the Programa (mec-text), docs/mec-check.json, docs/unit5-check.json and docs/guarani-audit.json;\n  - the Tatoeba copy: «Hey'u.», «Ndevare'a piko?», «Ndakaruséi», «Ha'use…», «Asẽkuri javete», «Opavave oikotevẽ pirapire», «Y, ikatumírõ.», «Ikatu reme'ẽ chéve…?», «Okañy chehegui che haiha».\n- Web: search summaries only. WebFetch and curl could not reach three hosts: www.lanacion.com.py, discovery.ucl.ac.uk (Estigarribia's grammar, whose §4.5 covers irregular verbs) and library.oapen.org. They are outside this session's network and would have to be allowed in its settings.\n- No search found «mbogueha», «hay'use», «ahy'u» or a Guarani noun for the toilet.",
+  "doubts": [
+   {
+    "gn": "Ikatúpa asẽ sapy'aite?",
+    "doubt": "The card asks «¿puedo salir un ratito?». Only the toilet picture and the gloss «(al baño)» name the bathroom. Most families, and many teachers, say the jopara «Ikatúpa aha baño-pe?». That fallback needs a team decision first: b is not a letter of the achegety, the app's audit rejected a Spanish word written with a hyphen, and no guaranized spelling (váño) turned up, so baño-pe or bañope would need the Academia. The phrase is attested only through a search summary of an adult civil-service course (dokumen.pub, outside this session's network), not in a children's text. The shorter «Ikatúpa asẽ?» (an exact mirror of «Ikatúpa aike?») and the variant «sapy'ami» are also natural. sapy'a alone can mean 'de repente'. A Guarani teacher should confirm which form 2.º grado classrooms use. The voice has garbled short nasal words, so check «asẽ» in the clip. The gloss (33 characters) is longer than any card gloss now (29)."
+   },
+   {
+    "gn": "Hay'use",
+    "doubt": "The first person of y'u varies. I wrote hay'u, here and in «Ikatúpa hay'u?», because it has the most evidence: Wikipedia's Guarani article ('a'y'u is pronounced hay'u, by a search summary), the USC Guarani Corpus (hay'ú, 1Sg.drink, found by draft 1), and Tatoeba's imperative «Hey'u.», which follows the h-forms of 'u (ha'u, he'u, ho'u). The app's own audit (docs/guarani-audit.json, item g290) gave ahy'u, rehy'u, hoy'u from Guasch & Ortiz, and draft 2 followed it; ay'u is also heard. I could open none of the dictionaries. All three forms keep the story's hoy'u. If the Academia gives ahy'u, change Hay'use → Ahy'use (A·hy·'u·se), «Ikatúpa hay'u?» → «Ikatúpa ahy'u?» and the night-1 title together; for ay'u, Ay'use (A·y·'u·se). «Y, ikatumírõ.» (Agua, por favor; Tatoeba) asks for water with no verb at all."
+   },
+   {
+    "gn": "Akaruse",
+    "doubt": "For the needs themselves, «Che y'uhéi» (tengo sed) and «Che ñembyahýi» or «Che vare'a» (tengo hambre) are at least as common as Hay'use and Akaruse. Draft 1 wrote «Chey'uhéi» and «Chevare'a» joined so they could be built. But school texts usually write the stative che apart, La Nación writes «che vare'a», and Tatoeba has «Ndevare'a piko?». Written apart, they are phrases, and night 1 needs two built words. vare'a is also colloquial; ñembyahýi is the school form. If the team prefers the stative forms, change the cards and the first say line together. Akaruse's new picture must read as 'quiero comer' next to the bread of «Eme'ẽmína chéve mbujape». If it cannot, draft 2's choice needs no new picture: unit 2's bread for Akaruse, and «Eme'ẽmína chéve kamby» for the request."
+   },
+   {
+    "gn": "Eme'ẽmína chéve mbujape",
+    "doubt": "-mína is spelled as in 1.º grado (Tatoeba writes -míkena), and the Academia's spelling is still to be confirmed. Draft 2 asked for kamby, the milk of the merienda escolar. mbujape is kept because both drafts use it and the say set hands over bread. With a classmate, children more often say «Eme'ẽmi chéve…» or the jopara «convidame». Guarani has no article, so the gloss says «pan»."
+   },
+   {
+    "gn": "Ikatúpa hay'u?",
+    "doubt": "When the water is outside the room, a child asks to go: «Ikatúpa aha hay'u?» (¿Puedo ir a tomar agua?). The card keeps the frame's shorter form. Its spelling follows Hay'use (see that doubt)."
+   },
+   {
+    "gn": "Ikatúpa akaru?",
+    "doubt": "It repeats night 1's karu on purpose (the need, then the permission), as «Ikatúpa hay'u?» repeats y'u. Draft 1's «Ikatúpa ha'u che chipa?» (¿Puedo comer mi chipá?) reuses unit 2's chipa, but it is longer (23), and next to «Ikatúpa hay'u?» it sounds close (ha'u / hay'u). Children also ask to eat less often than they ask for the bathroom or water. If the team wants a permission that is not about the body, «Ikatúpa aipe'a ovetã?» (¿Puedo abrir la ventana?, picture ovetã) fits the slot."
+   },
+   {
+    "gn": "Héẽ, ikatu.",
+    "doubt": "It is the plain answer to Ikatúpa…?, and it fits all three cards of the night. A teacher letting a child out often says «Héẽ, tereho.» (Sí, andá). Draft 2 used it; Tatoeba has «Tereho ko'ãga.» and the Biblia GPC «Tereho katu». School materials also have «eho». Draft 1 suggested «Tereho ha ejevy pya'e» (andá y volvé rápido), left out to keep the line short. Héẽ keeps 1.º grado's spelling; Tatoeba has both «Héẽ.» and «Hẽe.». Check the clip: the voice has garbled short nasal words."
+   },
+   {
+    "gn": "mbogueha",
+    "doubt": "Draft 1 found it through search summaries in three places: the Avañe'ẽ dictionary of the Argentine MEC («borrador. m. Mbogueha, mboje'oha»), Glosbe and Paraguayología. My searches in this step found no page with it, and none of those sites could be opened. Many children just say «borrador» or «goma». It is a regular word, like haiha, not one made up for this unit, but please confirm it is the school word. mboje'oha is the dictionary's other form."
+   },
+   {
+    "gn": "Ejapyhy",
+    "doubt": "eipyhy (from pyhy) is also heard. The scratch worktree's ejapyhy picture hands over a yellow pencil, which next to «Eiporu che haiha» would look like the pencil card, so swap the pencil for a notebook. A handing picture is somewhat abstract: check that children read it as 'tomá'. Lending is said with everyday verbs (tomá, usá), not with poruka, which 1.º grado's check found only in dictionaries; families also say the jopara «ambopresta». If the team wants the verb 'prestar' itself: «Aiporuka ndéve che mbogueha» (Te presto mi borrador), with ndéve for the receiver."
+   },
+   {
+    "gn": "Eiporu che haiha",
+    "doubt": "«Usá mi lápiz» lends by letting someone use the pencil, which is how children lend, but the verb is 'usar', not 'prestar' (see Ejapyhy). poru or puru: Tatoeba writes aipuru, the MEC guides Eiporu and the app aiporu, so I kept poru; some children will say «Eipuru». L1 children play no Say in 2.º grado, so they meet aikotevẽ only in the unit title. Draft 2's card «Aikotevẽ haiha» (Necesito un lápiz) could take this slot if the team wants the title verb on a card."
+   },
+   {
+    "gn": "Aikotevẽ mbogueha.",
+    "doubt": "In Tatoeba, aikotevẽ takes a plain object («Opavave oikotevẽ pirapire») and also -re («oikotevẽ ikafére»). Draft 1 said «Aikotevẽ peteĩ mbogueha.» (un borrador), which is just as natural but longer. A child may as well say «Ndaguerekói mbogueha» (No tengo borrador) or «Okañy chehegui che mbogueha» (Perdí mi borrador; Tatoeba has it with haiha). The voice has trouble with final nasals (aikotevẽ): check the clip."
+   },
+   {
+    "gn": "Aguyjevete, che irũ!",
+    "doubt": "Draft 1 ended the dialogue with «Upéi eme'ẽ jey chéve.» (Después me lo devolvés), which makes it a loan rather than a gift. That line is unattested as a whole (built from upéi, jey as in «Eha'ã jey», eme'ẽ and chéve), and «Embojevy chéve» is the other form. The merge keeps the thank-you, as every dialogue of 1.º grado unit 5 ends, and lets «Eiporu che haiha» carry the loan. This line is 1.º grado's own, so it repeats a say line, not a card."
+   },
+   {
+    "gn": "Mbo'ehára, akaruse.",
+    "doubt": "«Maestra» follows the app's gloss of mbo'ehára; children often say «Profe». mbo'ehára and irũ have no gender, so «maestra» and «amiga» could just as well be «maestro» and «amigo»."
+   },
+   {
+    "gn": "Aikotevẽ",
+    "doubt": "Other possible unit titles: «Mba'épa reikotevẽ?» (¿Qué necesitás?, the teacher's question) or the MEC's own noun: the Priorización's Guarani text writes hemikotevẽ. As a word, Aikotevẽ is said only in night 3's first say line."
+   }
+  ]
+ },
+ "verdicts": [
+  {
+   "lens": "SPELLING AND SYLLABLES",
+   "items": [
+    {
+     "where": "unit title",
+     "gn": "Aikotevẽ",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "a- (1sg) + ikotevẽ 'necesitar'. The verb keeps its i in every person (oikotevẽ, reikotevẽ). The 1sg a- has no nasal form; only 1pl ja- becomes ña- (ñaikotevẽ). The stress is on the last syllable vẽ, a nasal vowel, so it takes the tilde and no acute. ẽ is U+1EBD (NFC). One word with a capital A and no punctuation, like the app's other unit titles (Maitei, Mymbakuéra).",
+     "evidence": "Tatoeba copy: «Opavave oikotevẽ pirapire», «Kóva mante reikotevẽva», «Opavave ñaikotevẽ mborayhu». The Priorización's own Guarani text writes hemikotevẽ, with the same root and tilde (docs/mec-check.json)."
+    },
+    {
+     "where": "night 1 title",
+     "gn": "Hay'use, akaruse",
+     "verdict": "ok",
+     "confidence": "medium",
+     "reason": "Two one-word sentences joined by a comma, the second in lower case, with no final punctuation. The app's «Pyhareve, ka'aru, pyhare» is written the same way. Each word is spelled as its card below. -se is tonic, so neither word takes an acute. A style note, not an error: every two-item night title in the app joins its items with ha (Chipa ha mandi'o, Y ha kamby, Okẽ ha ovetã). Those are pairs of nouns, while these are two wishes, so the comma works. If the team wants the app's two-item pattern, the title would be «Hay'use ha akaruse». Confidence is medium only because the title depends on the hay'u decision (see Hay'use).",
+     "evidence": "tp-grades.js g1 u8 n2 «Pyhareve, ka'aru, pyhare»; the ha-joined two-item titles in g1 and g2 u2."
+    },
+    {
+     "where": "night 1 word",
+     "gn": "Hay'use",
+     "verdict": "ok",
+     "confidence": "medium",
+     "reason": "hay'u (1sg of y'u 'tomar agua') + -se. y'u follows the h- pattern of 'u: ha'u, re'u, ho'u, imperative he'u gives hay'u, rey'u, hoy'u, imperative hey'u. -se is tonic, so the stress falls on se and no accent is written. The puso is ASCII and comes before 'u, as in y'u. SYL: Ha·y·'u·se joins exactly to the word. Every syllable ends in a vowel, and the puso begins its syllable. a + y is not a diphthong (Guarani diphthongs end in i: ai, ei, oi, ui), so y is a syllable of its own, as in the app's y·pe. Confidence is medium because the first person varies between sources. The app's audit (g290) attributed ahy'u to Guasch & Ortiz without a quote, and another of its reviewers gave ay'u. No search found ahy'u, while several sources give hay'u. Reading note: an L2 child may read «Hay» as the Spanish «hay». The keys Ha·y show the Guarani vowel y.",
+     "evidence": "From search summaries: Celso Ávalos' dictionary (es.scribd.com/document/516132261) has «Beber: Y'u Vgr. Che hay'u, nde rey'u, ha'e hoy'u». The GuaraniAyvuWeb dictionary (guaraniayvu.org) lists hay'u and hoy'u under y'u. A Corrientes verb list (solocorrientes.blogspot.com) has «y'u (hay'u/rey'u/hoy)». English Wikipedia's Guarani article says 'a'y'u «is pronounced hay'u». Tatoeba copy: «Hey'u.» beside «He'u!»; «Eme'ẽ chéve che hay'urã» beside «… che ha'umirã»; tonic -se in «Ahasékuri», «Ndahaséi», «Ndakaruséi», «ja'eséva». Diphthongs: es.wikipedia «Fonología del guaraní». App: g2 u1 ype ['y','pe']; tp-sky.js hoy'u."
+    },
+    {
+     "where": "night 1 word",
+     "gn": "Akaruse",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "a- + karu 'comer' (an oral root: akaru, rekaru, okaru) + tonic -se. The stress is on se, so there is no accent. SYL: A·ka·ru·se joins exactly, and every syllable ends in a vowel. The capital A matches the app's other one-word sentence cards (Aguyje, Chepytyvõ).",
+     "evidence": "Tatoeba copy: «Ndakaruséi ko'ãgaitépe» (the acute on sé shows -se is tonic), «jakaru oñondive». My mechanical join and vowel check passed."
+    },
+    {
+     "where": "night 1 word",
+     "gn": "Eme'ẽmína chéve mbujape",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "It matches the frame of 1.º grado's «Eme'ẽmína chéve kuatia» code point for code point. e- + me'ẽ takes no i; the tonic -mi + atonic -na give mína; ẽ keeps its tilde. chéve is che + the atonic dative -ve: one word with the acute. mbujape is spelled as in unit 2. Capital E, no final period, and syl [] for a phrase. The app-wide -mína caveat from 1.º grado still applies: if -mi is ever ruled atonic, every -mína string changes together.",
+     "evidence": "tp-grades.js g1 u5 n3 «Eme'ẽmína chéve kuatia»; g2 u2 n2 mbujape; docs/unit5-check.json (spelling lens)."
+    },
+    {
+     "where": "night 1 say",
+     "gn": "Mbo'ehára, akaruse.",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "The vocative comes first, then a comma, akaruse in lower case and a final period, as in the app's «Aguyje, mbo'ehára.» and «Mbo'ehára, chepytyvõmína.». mbo'ehára matches the app: the agentive -hára is stressed on há, hence the acute.",
+     "evidence": "tp-grades.js g1 u4 n1 word; g1 u5 n1 and n2 say lines."
+    },
+    {
+     "where": "night 1 say",
+     "gn": "Ejapyhy ko mbujape.",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "ejapyhy is spelled as in the app's «Héẽ, ejapyhy.» (e- + japyhy, stressed on the last hy, no accent). ko 'este' is a separate word before the noun and does not change before a nasal-initial word. mbujape is spelled as in unit 2. Capital E and a final period.",
+     "evidence": "tp-grades.js g1 u5 n3 say «Héẽ, ejapyhy.». Tatoeba: «Ko tesapeha…», «Ko kyse puku…»."
+    },
+    {
+     "where": "night 1 say",
+     "gn": "Aguyje!",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Identical to the 1.º grado say line: «!» only, no «¡». It folds to the same clip key as the card Aguyje.",
+     "evidence": "tp-grades.js g1 u5 n1 say «Aguyje!»; tp-course.js C.fold strips trailing punctuation."
+    },
+    {
+     "where": "night 2 title",
+     "gn": "Ikatúpa asẽ?",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Ikatúpa is exactly as in the app: i- + katu + atonic -pa, so the acute goes on tú. asẽ is a- + sẽ 'salir', with the stress on the last syllable, a nasal vowel, so it takes the tilde only. The 1sg a- has no nasal form (only 1pl ñasẽ). Two words, a capital I, and «?» only.",
+     "evidence": "tp-grades.js g1 u5 title «Ikatúpa?». Tatoeba: «Asẽkuri javete», «osẽ»."
+    },
+    {
+     "where": "night 2 word",
+     "gn": "Ikatúpa asẽ sapy'aite?",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "sapy'a 'un momento' is stressed on its last syllable 'a. -ite is tonic, so the stress moves to te, the last syllable, and no accent is written. Tatoeba's «ko'ãgaitépe» shows -ite is tonic: the acute falls on té before the atonic -pe. The puso is inside sapy'a. Three words, «?» only, and syl [] for a phrase. This lens checks only the spelling; whether this is the right way to ask for the bathroom belongs to the other lenses.",
+     "evidence": "Tatoeba copy: «Ndakaruséi ko'ãgaitépe», «Epytu'úna sapy'ami». App: porãite with no accent."
+    },
+    {
+     "where": "night 2 word",
+     "gn": "Ikatúpa hay'u?",
+     "verdict": "ok",
+     "confidence": "medium",
+     "reason": "Ikatúpa as in the app, and hay'u as in Hay'use: stressed on 'u, so no accent. Two words, «?» only, syl []. Confidence is medium for the same first-person question as Hay'use. If that ever changes to ahy'u, change this card, Hay'use and the night 1 title together.",
+     "evidence": "See Hay'use (Ávalos «Che hay'u», GuaraniAyvuWeb, Wikipedia, Tatoeba «che hay'urã» and «Hey'u.»)."
+    },
+    {
+     "where": "night 2 word",
+     "gn": "Ikatúpa akaru?",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "akaru is a- + karu, stressed on ru with no accent, the same root as Akaruse. Ikatúpa is as in the app. Two words, «?» only, syl [].",
+     "evidence": "Tatoeba copy: «jakaru», «okaru»."
+    },
+    {
+     "where": "night 2 say",
+     "gn": "Ikatúpa asẽ sapy'aite?",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Same string as the card, correctly spelled. It folds to the same clip key.",
+     "evidence": "tp-course.js C.fold."
+    },
+    {
+     "where": "night 2 say",
+     "gn": "Héẽ, ikatu.",
+     "verdict": "ok",
+     "confidence": "medium",
+     "reason": "Héẽ matches the app's three 1.º grado answers code point for code point (é U+00E9 + ẽ U+1EBD). ikatu is i- + katu, stressed on tu with no accent, in lower case after the comma, and the line ends with a period. Confidence is medium only because of the standing app-wide Héẽ caveat: Tatoeba has both «Héẽ.» and «Hẽe.», and the Academia's entry is still to be confirmed. Any change must apply to all Héẽ lines together.",
+     "evidence": "tp-grades.js g1 u5 «Héẽ, roipytyvõta.», «Héẽ, eike. Eguapy.», «Héẽ, ejapyhy.». Tatoeba copy: «Héẽ.», «Hẽe.»."
+    },
+    {
+     "where": "night 2 say",
+     "gn": "Aguyje, mbo'ehára.",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Identical to the 1.º grado say line, which already has a checked clip.",
+     "evidence": "tp-grades.js g1 u5 n2 say."
+    },
+    {
+     "where": "night 3 title",
+     "gn": "Ejapyhy",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "e- + japyhy (ajapyhy, not an aireal verb, so no i), stressed on the last hy with no accent. One word, a capital E and no punctuation, as the app's one-word night titles are written (Aguyjevete, Maitei).",
+     "evidence": "tp-grades.js g1 u5 n3 say «Héẽ, ejapyhy.»."
+    },
+    {
+     "where": "night 3 word",
+     "gn": "mbogueha",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "mbogue 'apagar, borrar' + the nominaliser -ha. The causative is mbo-, not mo-, because the root gue is oral. -ha is tonic, as in haiha, so the stress is on ha and no accent is written. Lower case, like the app's other noun cards (haiha, kuatia). SYL: mbo·gue·ha joins exactly, and every syllable ends in a vowel. mb is one letter. gu + e is one syllable (Guarani has no silent u, so gue is /gwe/), as in the app's ja·gua and A·guy·je.",
+     "evidence": "From search summaries (pages not opened): David Galeano Olivera, «Clase de idioma guaraní para niños (lección 8)» (dgaleanolivera.wordpress.com, 2020-04-20): «Borrador es mbogueha». A Paraguayan school plan (Escuela Básica N° 1.102 «San Roque González», collegesidekick.com/study-docs/7703267): «Mbogueha (Borrador) - Mbojaha (Plasticola)»."
+    },
+    {
+     "where": "night 3 word",
+     "gn": "Ejapyhy",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Spelled as the night title. SYL: E·ja·py·hy joins exactly, and every syllable ends in a vowel. A capital first key is already used in the app's Build (A·guy·je, Ei·chu).",
+     "evidence": "My mechanical join and vowel check passed."
+    },
+    {
+     "where": "night 3 word",
+     "gn": "Eiporu che haiha",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "e- + the i of the aireal verb (aiporu, as the app writes it) + poru. The possessive che is written apart before haiha, as the app writes nde haiha; che has no nasal form. Capital E, no period, and syl [] for a phrase. poru is the dictionary spelling. puru (Tatoeba aipuru; MEC «Jaipuru guarani ñe'ẽ») is a variant, not a spelling fix.",
+     "evidence": "tp-grades.js g1 u5 n3 «Ikatúpa aiporu nde haiha?». The MEC guide texts (mec-text) have «Eiporuporã ko'ã mbo'epy…». Tatoeba: «Okañy chehegui che haiha»."
+    },
+    {
+     "where": "night 3 say",
+     "gn": "Aikotevẽ mbogueha.",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Both words are spelled as above: the verb ends in the stressed nasal vẽ, and the noun is in lower case. A capital A and a final period.",
+     "evidence": "See the unit title and mbogueha."
+    },
+    {
+     "where": "night 3 say",
+     "gn": "Ejapyhy che mbogueha.",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "The possessive che is written apart and does not change before mb. The other words are spelled as their cards. A final period.",
+     "evidence": "tp-grades.js «Che sy», «che irũ» (possessive written apart)."
+    },
+    {
+     "where": "night 3 say",
+     "gn": "Aguyjevete, che irũ!",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Identical to the 1.º grado say line, «!» only. Its clip already exists and has been checked.",
+     "evidence": "tp-grades.js g1 u5 n3 say."
+    }
+   ],
+   "general": "RESULT\n- All 22 Guarani strings pass the spelling and syllable check: no fix and no drop.\n- Nothing in the project was touched. My check script is g2u3-spell/spell.js, run on the merge's merged.js.\n\nMECHANICAL CHECKS\n- Every string is NFC, uses the ASCII puso (U+0027), and has no ¿ or ¡.\n- Questions end in «?». Cards have no final period; say lines do.\n- Syllables: the four syl lists (Ha·y·'u·se, A·ka·ru·se, mbo·gue·ha, E·ja·py·hy) join exactly to their words.\n  - Every syllable ends in a vowel, mb and gu stay whole, and the puso begins its syllable.\n  - All phrases have [].\n- Shared words match tp-grades.js code point for code point: Eme'ẽmína, chéve, mbujape, mbo'ehára, Aguyje, Aguyjevete, Ikatúpa, Héẽ, ejapyhy, che, haiha, irũ.\n\nACCENTS\n- Atonic suffixes in this unit: the question -pa (Ikatúpa), the dative -ve (chéve) and the request -na (in -mína).\n- Tonic suffixes:\n  - the desiderative -se (Hay'use, Akaruse). Tatoeba shows it with the acute on sé before an atonic suffix: Ahasékuri, Ndahaséi, Ndakaruséi, ja'eséva.\n  - the intensifier -ite (sapy'aite). Tatoeba has ko'ãgaitépe.\n  - -mi, -vete, the nominaliser -ha (mbogueha, like haiha) and -hára (stressed on há).\n- So the only acutes in the unit are Ikatúpa, chéve, -mína, mbo'ehára and Héẽ, all written as the app already writes them.\n\nWORD BOUNDARIES AND NASAL HARMONY\n- Suffixes are joined to their word. The possessive che and the demonstrative ko are separate words; chéve is one word.\n- No prefix in the unit has a nasal form that would apply: a-, e-, i- and che never change. The nasal forms would be ña-, ñe- or ne- (as in ñaikotevẽ, ñasẽ).\n- The causative in mbogueha is mbo- because gue is oral.\n\nTHE WATER VERB\nThe evidence now clearly favours hay'u. From search summaries:\n- Celso Ávalos' dictionary: «Che hay'u, nde rey'u, ha'e hoy'u».\n- The GuaraniAyvuWeb dictionary lists hay'u and hoy'u.\n- A Corrientes verb list gives hay'u/rey'u.\n- English Wikipedia says 'a'y'u is pronounced hay'u.\n- A grammar note gives jay'u.\nTatoeba fits the same paradigm: «Hey'u.» beside «He'u!», and «che hay'urã» beside «che ha'umirã».\nNo search found ahy'u. The app's audit (g290) cited it from Guasch & Ortiz without a quote, and its three reviewers disagreed with each other (one gave ay'u).\n- A correction for the notes: «the h-forms of 'u (ha'u, he'u, ho'u)» should read ha'u, re'u, ho'u, with he'u as the imperative (Tatoeba «re'uete», «He'u!»). Likewise y'u is hay'u, rey'u, hoy'u, imperative hey'u.\n- If the Academia ever gives ahy'u, the swap in the doubts is right: Ahy'use (A·hy·'u·se), with «Ikatúpa ahy'u?» and the night 1 title changed together.\n\nSYLLABLES OF Hay'use\n- a + y is not a diphthong: Guarani diphthongs end in i (es.wikipedia, «Fonología del guaraní»). So Ha·y is right, and the app already uses y as a syllable (y·pe).\n\nMBOGUEHA\n- This time I found it in Paraguayan sources (search summaries only):\n  - David Galeano Olivera's children's lesson: «Borrador es mbogueha».\n  - A Paraguayan school plan: «Mbogueha (Borrador)».\n- Draft 1's «Avañe'ẽ» dictionary is the Corrientes (Argentina) one, so these two sources are better evidence.\n\nBATHROOM FALLBACK SPELLING (not used in the unit)\n- b is not a letter of the achegety. If the team chose the loan, its Guarani spelling would be «váño»:\n  - v for b, as in Tatoeba's adapted «Víno» and «voleadóra»;\n  - an acute because the stress is not on the last syllable;\n  - -pe joined to it, like «mbo'ehaópe»: «Ikatúpa aha váñope?».\n- Tatoeba uses a hyphen before -pe only after foreign proper names (Boston-pe, Tom-pe, Marruéko-pe).\n- I found no source that writes «váño», so this only says how the word would be spelled.\n\nSTANDING CAVEATS (app-wide, unchanged)\n- Héẽ (Tatoeba also has Hẽe) and the acute of -mína. If either changes, every string that uses it changes together.\n\nLIMITS\n- The web evidence is from search summaries only.\n- Two hosts are outside this session's allowed network: kaweah.freedombox.rocks (a Wiktionary mirror with the y'u table) and guaranicorpus.usc.edu (the USC Guarani corpus). They would have to be allowed in the session's network settings before I could read them."
+  },
+  {
+   "lens": "MEANING AND GRAMMAR",
+   "items": [
+    {
+     "where": "unit title",
+     "gn": "Aikotevẽ",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "a- (1sg) + i- + kotevẽ 'necesitar' = «Necesito». kotevẽ is an i-verb (aikotevẽ, reikotevẽ, oikotevẽ, ñaikotevẽ), so the i- is right. The stress falls on the final nasal syllable vẽ, so no acute is needed. As a title it stands without an object, as Ikatúpa? does. The Spanish «Pedir lo que necesito» names the topic rather than translating it, which is the app's pattern for unit titles. The MEC's own Guarani text names needs with this verb's noun, hemikotevẽ (temi- before a nasal root, h- form), so the title points at the right word family. kotevẽ appears nowhere else in the app.",
+     "evidence": "Tatoeba copy: «Opavave oikotevẽ pirapire», «Kóva mante reikotevẽva», «Opavave ñaikotevẽ mborayhu». docs/mec-check.json, the Priorización's Guarani text: «ikatúta omombe'u … hemikotevẽ». tp-grades.js:130 (Ikatúpa? / «Pedir con cortesía y agradecer»)."
+    },
+    {
+     "where": "night 1 title",
+     "gn": "Hay'use, akaruse",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Two 1sg desideratives side by side: hay'u 'tomo agua' + -se and akaru 'como' + -se, «Quiero tomar agua, quiero comer». The second word is correctly lower-case after the comma, as in «Iporã, ha nde?». «Pedir agua y comida» names the topic. The two forms are checked under their cards.",
+     "evidence": "tp-grades.js:109 («Iporã, ha nde?»)."
+    },
+    {
+     "where": "night 1 word",
+     "gn": "Hay'use",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "y'u 'beber agua' (y 'agua' + 'u 'ingerir') is one of the irregular verbs whose person prefixes take h-, like 'u → ha'u. Its 1sg is hay'u, and -se 'querer' makes «Quiero tomar agua», which is exact. The water is inside the verb, so no object is needed, and the water drop (y) keeps unit 2's meaning of y. -se is tonic: Tatoeba writes it accented before atonic suffixes (Ndakaruséi, Nda'uséi, Ahasékuri, rohendusékuri). So the stress is on se and no accent is written, and the parallel Ha'use is attested. The 1sg form has more support now than when the merge was written. Two more sources give exactly hay'u / rey'u / hoy'u, both by search summary: a university Guarani course page on irregular verbs (UNLP), and Ávalos's dictionary. A UNA article lists y'u among the six verbs that are irregular in their person markers rather than the root. I found no modern source with ahy'u. The audit's Guasch & Ortiz citation was from memory, and ahy'o is a different word ('garganta'), close in sound to the ahy'u fallback. Keep hay'u. A minor reading note: «Hay» is also a Spanish word with a silent h, so L2 readers may start it as [ai]; the clip models the [h]. That is no reason to change it.",
+     "evidence": "UNLP, cátedra de Guaraní (Periodismo), «Ñe'ẽtéva moingoepy (Verbos irregulares)», 2020: «Che hay'u (yo tomo agua), Nde rey'u, Ha'e hoy'u» (https://perio.unlp.edu.ar/catedras/guarani/2020/05/20/neeteva-moingoepy-verbos-irregulares/, by search summary; the host is outside this session's network). Ávalos, Diccionario Guaraní (https://es.scribd.com/document/516132261/): «Y'u: beber agua, che hay'u, nde rey'u, ha'e hoy'u» (by search summary). UNA, Ñemitỹrã 4(1) (https://revistascientificas.una.py/index.php/nemityra/article/download/2559/2359/4225): y'u is among the six irregular verbs (by search summary). Wikipedia, Guarani language: 'a'y'u is pronounced hay'u. USC Guarani Corpus, Story 5: hay'u '1Sg.drink', hoy'u '3Pl.drink' (by search summary). Tatoeba copy: «Hey'u.», «Eme'ẽ chéve che hay'urã.», «Ha'use peteĩ mba'e he'ẽva.», «Ndakaruséi», «Nda'uséi», «Ahasékuri». tp-sky.js: the story's hoy'u, with the same meaning."
+    },
+    {
+     "where": "night 1 word",
+     "gn": "Akaruse",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "a- + karu 'comer' (akaru, rekaru, okaru) + tonic -se = «Quiero comer», exactly. karu is intransitive ('comer, hacer una comida'), so it takes no object, just like the Spanish. Tatoeba has the same word in the negative, «Ndakaruséi ko'ãgaitépe», whose accent on sé shows that -se is tonic, so Akaruse needs no accent. karu is also an adjective, 'glotón' (mitã karu), but with a- and -se only the verb reading is possible. karu appears nowhere else in the app.",
+     "evidence": "Tatoeba copy: «Ndakaruséi ko'ãgaitépe.» (I don't want to eat right now), «jakaru oñondive», «ndaikatuveiha okaru»."
+    },
+    {
+     "where": "night 1 word",
+     "gn": "Eme'ẽmína chéve mbujape",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "e- + me'ẽ 'dar' + -mína 'por favor' + chéve 'a mí' (the receiver) + mbujape = «Dame pan, por favor», exactly. me'ẽ is not an i-verb (ame'ẽ, ome'ẽ), so the imperative is eme'ẽ. This is 1.º grado's frame «Eme'ẽmína chéve kuatia» with unit 2's mbujape, which keeps its meaning 'pan'. Guarani has no article, so «pan» and «un pan» are both faithful glosses.",
+     "evidence": "tp-grades.js:135 and :169. Tatoeba copy: «Eme'ẽmíkena chéve che hay'urã.», «Eme'ẽ chéve che ha'umirã.», «Ikatu reme'ẽ chéve peteĩ éuro?»."
+    },
+    {
+     "where": "night 1 say",
+     "gn": "Mbo'ehára, akaruse.",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "A vocative plus the card: «Maestra, quiero comer.», which is exact. The lower case after the comma is right. The next line is the teacher's fitting answer (she hands over bread), and «Aguyje!» closes the exchange. «Maestra» follows the app's gloss of mbo'ehára, which has no gender in Guarani.",
+     "evidence": "tp-grades.js:126, :132."
+    },
+    {
+     "where": "night 1 say",
+     "gn": "Ejapyhy ko mbujape.",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "e- + japyhy 'agarrar, tomar' + ko 'este' + mbujape = «Tomá este pan.», exact and in voseo. japyhy is not an i-verb (ajapyhy, ojapyhy), so the imperative is ejapyhy. ko before a noun is the near demonstrative. The line answers «Mbo'ehára, akaruse.» directly. ejapyhy keeps its 1.º grado meaning («Héẽ, ejapyhy.» = «Sí, tomá.»).",
+     "evidence": "tp-grades.js:136."
+    },
+    {
+     "where": "night 1 say",
+     "gn": "Aguyje!",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "«¡Gracias!»: the same word and meaning as in Preescolar and 1.º grado. It closes the need–answer–thanks sequence, with ! only, as the app writes it.",
+     "evidence": "tp-grades.js:68, :132."
+    },
+    {
+     "where": "night 2 title",
+     "gn": "Ikatúpa asẽ?",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "i- + katu 'poder, ser posible' + atonic -pa + asẽ (1sg of sẽ 'salir') = «¿Puedo salir?». It is the night's key phrase. The Spanish «Ir al baño y pedir permiso» names the topic, as «Ikatúpa aike?» / «Pedir permiso» does in 1.º grado. On its own, asẽ could also mean leaving for good, which is why the card adds sapy'aite.",
+     "evidence": "tp-grades.js:133. Tatoeba copy: «Asẽkuri javete.», «Tom osẽkuri…»."
+    },
+    {
+     "where": "night 2 word",
+     "gn": "Ikatúpa asẽ sapy'aite?",
+     "verdict": "ok",
+     "confidence": "medium",
+     "reason": "The Guarani means «¿Puedo salir un ratito?» exactly: ikatu-pa + asẽ 'salgo' + sapy'a 'momento' + the tonic intensifier -ite (so no accent, as in porãite). The gloss's «(al baño)» is context, not translation. The Guarani does not name the bathroom; the parenthesis and the toilet picture do. That is consistent with the app's other parenthetical glosses («¡Hola! (un saludo)», «Me llamo… (decí tu nombre)»), so I do not ask for a change. Still, an L2 child may map asẽ to 'baño', so the Meet card must show the gloss. Confidence is medium for two reasons. First, sapy'aite as 'un ratito' rests on a search summary of the Función Pública course («¿puedo salir un momento?») and one code-mixed corpus line. Second, sapy'a alone can also mean 'de repente', although in a permission request only the duration reading makes sense. Tatoeba attests the same meaning with the diminutive, sapy'ami («Epytu'úna sapy'ami.» 'Relax for a second'), whose -mi maps exactly to «-ito». It is an equally good alternative if the team prefers a Tatoeba-attested form. asẽ 'salgo' is not hasẽ 'llora' (Tatoeba «nahasẽi»), and neither verb appears elsewhere in the app.",
+     "evidence": "docs/unit5-check.json (usage lens): «Ikatúpa asẽ sapy'aite» = «¿puedo salir un momento?», Guaraní Comunicativo en la Función Pública (dokumen.pub, by search summary). Tatoeba copy: «Epytu'úna sapy'ami.», «Asẽkuri javete.», «nahasẽi». Code-mixed corpus line «peha´arônteke sapy´aitemi» (my reading: 'esperen nomás un momentito'; huggingface.co/datasets/Tanushreeeeee/CodeMixBench, lid_guaspa.csv, search snippet). tp-grades.js:108, :110 (parenthetical glosses)."
+    },
+    {
+     "where": "night 2 word",
+     "gn": "Ikatúpa hay'u?",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "The frame plus hay'u = «¿Puedo tomar agua?», exact. The water is inside the verb, so the card is right without an object («…hay'u y?» would say it twice). The spelling follows Hay'use (see that item). It cannot be confused with ha'u 'como', because the unit has no ha'u card.",
+     "evidence": "See night 1 word Hay'use."
+    },
+    {
+     "where": "night 2 word",
+     "gn": "Ikatúpa akaru?",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "The frame plus akaru = «¿Puedo comer?», exact. It repeats night 1's karu on purpose (the need, then the permission), and the repetition keeps the same meaning.",
+     "evidence": "See night 1 word Akaruse."
+    },
+    {
+     "where": "night 2 say",
+     "gn": "Ikatúpa asẽ sapy'aite?",
+     "verdict": "ok",
+     "confidence": "medium",
+     "reason": "The same string and clip as the card; see the card. It opens a dialogue that «Héẽ, ikatu.» answers properly, and «Aguyje, mbo'ehára.» closes it."
+    },
+    {
+     "where": "night 2 say",
+     "gn": "Héẽ, ikatu.",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Héẽ 'sí' + ikatu (3rd-person stative i- + katu) means literally «Sí, se puede». «Sí, podés.» is the natural voseo answer to «¿Puedo…?» and means the same. It is the right answer to all three Ikatúpa cards, so it works as the night's shared answer, and it also gives «Ikatúpa hay'u?» its answer. «Héẽ, tereho.» (Sí, andá) would fit only the bathroom card.",
+     "evidence": "Tatoeba copy uses bare ikatu for permission: «Ikatu apoko?» (Can I touch it?), «Ikatu piko ahecha?» (Can I see?)."
+    },
+    {
+     "where": "night 2 say",
+     "gn": "Aguyje, mbo'ehára.",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Thanks plus a vocative, 1.º grado's own say line: «Gracias, maestra.», exact.",
+     "evidence": "tp-grades.js:134."
+    },
+    {
+     "where": "night 3 title",
+     "gn": "Ejapyhy",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "«Tomá», what the lender says. The Spanish «Prestar algo» names the topic, as 1.º grado's Aguyjevete / «Pedir prestado y dar las gracias» does. A child may take Ejapyhy to mean 'prestar', but the card's gloss «Tomá» sets it right in the same night.",
+     "evidence": "tp-grades.js:135."
+    },
+    {
+     "where": "night 3 word",
+     "gn": "mbogueha",
+     "verdict": "ok",
+     "confidence": "medium",
+     "reason": "mbogue 'borrar, apagar' + -ha 'the thing for it' = 'lo que sirve para borrar', «borrador», the Paraguayan word for the eraser. It is the same productive pattern as haiha (hai + -ha) and Tatoeba's ra'anga'oha (camera), ama mo'ãha (umbrella) and aravopapaha (watch), so it is a regular word, not a coinage. Because mbogue also means 'apagar', mbogueha can name other 'apagadores' (a UNESCO remedy booklet has «pohã tasy mbogueha»), but the eraser picture fixes the meaning, and mbogue appears nowhere else in the app. Two reasons keep confidence at medium. (1) That it is the school word rests on dictionary search summaries only (Avañe'ẽ dictionary, «borrador. m. Mbogueha, mboje'oha»). (2) It sounds close to mbo'ehára, which this unit says twice, and to mbo'ehao (mbo·gue·ha vs mbo·'e·há·ra), so check the clip. Neither is a reason to change it.",
+     "evidence": "Draft 1's search summary of the Avañe'ẽ dictionary (Argentine MEC). Tatoeba copy: «Okañy chehegui che ra'anga'oha», «…che ama mo'ãha», «…che aravopapaha». UNESCO remedy booklet «Pohã tasy mbogueha…» (webarchive.unesco.org, 156204m.pdf, search snippet). tp-grades.js:127 (haiha)."
+    },
+    {
+     "where": "night 3 word",
+     "gn": "Ejapyhy",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "e- + japyhy = «Tomá» (agarrá), said when handing something over. It is 2sg, for one listener. The stress is on the final hy, so no acute is needed. It has the same meaning as in 1.º grado. eipyhy (from pyhy) is a correct variant; no change is needed.",
+     "evidence": "tp-grades.js:136 («Héẽ, ejapyhy.» = «Sí, tomá.»)."
+    },
+    {
+     "where": "night 3 word",
+     "gn": "Eiporu che haiha",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "e- + i- + poru 'usar' + che haiha 'mi lápiz' = «Usá mi lápiz», exact and in voseo. poru is an i-verb (aiporu, oiporu), so the imperative is eiporu, and the possessive che is written apart. A bare imperative in an offer is not rude in Guarani, because the action benefits the listener; «Eiporúke…» (usá nomás) would add warmth but is not needed. haiha keeps 'lápiz'. The verb is 'usar', not 'prestar', and the gloss says exactly that; the lending lies in the situation.",
+     "evidence": "tp-grades.js:135 (aiporu). MEC MAGUA guides: «Eiporu», «Eiporuporã» (mec-text 88065dde, a112ae25). Tatoeba copy: «Che aiporu va'erã…», «Ikatúpa aipuru nde haiha?»."
+    },
+    {
+     "where": "night 3 say",
+     "gn": "Aikotevẽ mbogueha.",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "aikotevẽ + a bare object = «Necesito un borrador.», exact (Guarani has no article). In Tatoeba, kotevẽ takes either a plain object or -re. The classmate who borrows says it, and it is the need that the next line answers.",
+     "evidence": "Tatoeba copy: «Ko tesapeha oikotevẽ mokõi píla.», «Opavave oikotevẽ pirapire.», «Sami oikotevẽ ikafére.»."
+    },
+    {
+     "where": "night 3 say",
+     "gn": "Ejapyhy che mbogueha.",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "«Tomá mi borrador.», exact. It is the lender's answer to the need and uses two of the night's cards. che is the possessive, written apart."
+    },
+    {
+     "where": "night 3 say",
+     "gn": "Aguyjevete, che irũ!",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "1.º grado's own say line: «¡Muchas gracias, amiga!», exact; a Spanish vocative drops «mi». It closes the loan dialogue, and irũ keeps its meaning 'amiga, amigo'.",
+     "evidence": "tp-grades.js:136."
+    }
+   ],
+   "general": "Result: all 22 Guarani strings are grammatical, and each one means what its Spanish says. Nothing needs a fix or a drop under this lens. Two items stay at medium confidence, for reasons of attestation, not grammar:\n- The bathroom card, in its card and say lines. Its Guarani says only «¿Puedo salir un ratito?»; the bathroom is in the gloss's parenthesis and in the picture.\n- mbogueha.\nNo file in the repository was changed.\n\nWhat I checked:\n- Person and mood:\n  - Every request is a 1sg form: a- after the Ikatúpa frame (asẽ, hay'u, akaru), or 1sg + tonic -se (Hay'use, Akaruse).\n  - Every answer or offer is a 2sg e- imperative for one listener (ejapyhy, eme'ẽ, eiporu).\n  - i-verbs keep their i- (aikotevẽ, eiporu). japyhy and me'ẽ are not i-verbs, so they give ejapyhy and eme'ẽ.\n  - The possessive che is written apart (che haiha, che mbogueha, che irũ). chéve marks the receiver of eme'ẽ, and ko + noun is the near demonstrative.\n  - The unit uses no negation and no relational r-/h- noun.\n- The water verb: hay'u has more support now than when the merge was written.\n  - Earlier sources: Wikipedia, the USC corpus, and Tatoeba («Hey'u.», «che hay'urã»).\n  - New, by search summary: a UNLP Guarani course page on irregular verbs and Ávalos's dictionary, both «che hay'u, nde rey'u, ha'e hoy'u».\n  - A UNA article lists y'u among the six verbs that are irregular in their person markers.\n  - I found no modern source with ahy'u. Keep hay'u; THE WATER VERB note and the Hay'use doubt can cite these sources.\n- -se is tonic. Tatoeba writes it accented before atonic suffixes (Ndakaruséi, Nda'uséi, Ahasékuri, rohendusékuri), so Hay'use and Akaruse are right without an accent.\n- Needs and their answers:\n  - Food: Mbo'ehára, akaruse. → Ejapyhy ko mbujape. → Aguyje!\n  - Bathroom and permission: Ikatúpa asẽ sapy'aite? → Héẽ, ikatu. → Aguyje, mbo'ehára.\n  - Lending: Aikotevẽ mbogueha. → Ejapyhy che mbogueha. → Aguyjevete, che irũ!\n  - Water has no say line of its own. «Héẽ, ikatu.» also answers «Ikatúpa hay'u?», which is enough.\n- Meanings already in the app:\n  - y, mbujape, haiha, mbo'ehára, irũ, Héẽ, ejapyhy, Aguyje and Aguyjevete keep their meanings.\n  - kotevẽ, karu, sẽ, sapy'a and mbogue appear nowhere else in the app's data or screens. y'u appears only as the story's hoy'u, with the same meaning.\n  - There are no false friends in meaning. Three sound or look-alikes are worth a check of the clips:\n    - mbogueha against mbo'ehára (said twice in this unit) and mbo'ehao.\n    - asẽ 'salgo' against hasẽ 'llora' (not in the app).\n    - Hay-, which L2 readers may read as Spanish «hay», with a silent h.\n- Spanish glosses: they are short, use voseo where a verb addresses someone (Tomá, Usá, podés), and are exact. «(al baño)» is context, as the app's other parentheses are.\n- Pictures: the karu, mbogueha and ejapyhy pictures show their meanings. The toilet carries 'baño' for a phrase that does not name it, so Meet should keep the gloss visible.\n- The Guarani alternatives in doubts are all grammatical and mean what they say: Ikatúpa aha hay'u?, Héẽ, tereho., Tereho ha ejevy pya'e, Aiporuka ndéve che mbogueha, Ndaguerekói mbogueha, Okañy chehegui che mbogueha, Upéi eme'ẽ jey chéve., Embojevy chéve, Mba'épa reikotevẽ?, Ikatúpa aipe'a ovetã?, Eme'ẽmína chéve kamby, Ikatúpa ha'u che chipa?. hemikotevẽ is the correct h-form (temi- before a nasal root).\n- Optional, not needed: sapy'ami (attested in Tatoeba, «Epytu'úna sapy'ami.») says 'un ratito' just as exactly as sapy'aite.\n\nOne point in the notes to correct (it is not a unit string): the merge says school texts usually write the stative che apart. Tatoeba writes the stative prefixes joined: Chekane'õ, nderesarái, Ndevare'a, nekane'õrõ, nemandu'arõ. So Chey'uhéi or Cheñembyahýi could be written joined and built. That claim needs a source or should be removed. The other reasons for preferring the -se pair still hold: vare'a is colloquial, and the two words match.\n\nI re-checked every Tatoeba line the notes cite against the local copy, and all are there: «Hey'u.», «Ndevare'a piko?», «Ndakaruséi», «Ha'use…», «Asẽkuri javete», «Opavave oikotevẽ pirapire», «Y, ikatumírõ.», «Ikatu reme'ẽ chéve…?», «Okañy chehegui che haiha», «Ahasékuri».\n\nLimits:\n- All web evidence comes from search summaries. WebFetch could not reach kaweah.freedombox.rocks (a Wiktionary mirror), guaranicorpus.usc.edu or perio.unlp.edu.ar. They would have to be allowed in this session's network settings to quote them directly.\n- No search found «mbogueha» as a school word, or «sapy'aite» glossed by a dictionary."
+  },
+  {
+   "lens": "USAGE, REGISTER AND ATTESTATION",
+   "items": [
+    {
+     "where": "unit title",
+     "gn": "Aikotevẽ",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Attested. aikotevẽ is the regular first person of ikotevẽ 'necesitar'. It is everyday Guarani, short, easy to say, and neither jopara nor purist. It names the unit's function the way 1.º grado titles do (Ikatúpa?, Maitei), and it echoes the MEC's own Guarani noun for these needs, hemikotevẽ.",
+     "evidence": "Common Voice Guarani v16 (huggingface.co/datasets/fsicoli/common_voice_16_0, transcript/gn): «Aikotevẽ terere.» (clip common_voice_gn_34115689), «Che akakuaapáma ha aikotevẽ pirapire.», «Rohenói ningo aikotevẽ rupi ne pytyvõ.». Jojajovai (huggingface.co/datasets/mmaguero/jojajovai) [anlp]: «Aikotevẽmi nderehe.» = «Necesito que hagas algo por mí». Tatoeba copy grn.csv l.299 «Opavave oikotevẽ pirapire», l.262 «Kóva mante reikotevẽva». Priorización 2021, Guarani text: «hemikotevẽ» (docs/mec-check.json, p45)."
+    },
+    {
+     "where": "night 1 title",
+     "gn": "Hay'use, akaruse",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Both words are natural desideratives that a child says (see the two cards), and the lowercase after the comma is right. The title should change only together with the cards, and only if the Academia requires ahy'u. None of the corpora supports ahy'u (see Hay'use).",
+     "evidence": "See the Hay'use and Akaruse items."
+    },
+    {
+     "where": "night 1 word",
+     "gn": "Hay'use",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "The word itself is unattested, but its exact pattern is attested, and the corpora settle the merge's main doubt in favour of hay'u. Four independent corpora conjugate y'u like 'u: hay'u, rey'u, hoy'u, jay'u, roy'u, and the imperative hey'u. They attach the desiderative -se exactly as this card does: Hoy'use, Roy'use. The four corpora are Common Voice (5,893 sentences), Jojajovai (30,855 gn–es pairs), Guarani Wikipedia and the Tatoeba copy. None of them has ahy'u, rehy'u or jahy'u (zero hits for hy'u in all four). Even Wikipedia, the most purist register, writes jay'u, not jahy'u. The app audit's ahy'u comes from a dictionary citation I could not verify, so it is at most a prescriptive variant for the Academia check. The word is current, neutral and easy for a child. Other everyday ways to say it are «Chey'uhéi» (Common Voice, written joined) and «Ha'use y». Outside this lens: if the syllable lens counts ay as a falling diphthong, as the app counts ai in Mai·tei and hai·ha, the tiles would be Hay·'u·se, not Ha·y·'u·se.",
+     "evidence": "Common Voice: «hay'u ha aguapy peteĩ nangiriju ári.» (common_voice_gn_34394258), «Rey'u hag̃ua.» (…_33893581), «Roy'usemínteko ikatumírõ.» (…_28376569), «Hoy'usetereíningo.» (…_26587006), «Ha hey'u heta porã» (…_26519642), «Aréma niko ndoroy'uvéi…», «Chey'uhéi.» (…_33893568), «Ha'use y ho'ysã porãva.». Guarani Wikipedia (huggingface.co/datasets/ffatty/plaintext-wikipedia-full-guarani): «Aníke jakaru ha jay'u heta tapicha apytépe…», «…ýre ojáva hoy'u hag̃ua». Tatoeba grn.csv l.667 «Hey'u.», l.887 and l.889 «…che hay'urã». Against it: docs/guarani-audit.json g290 (ahy'u, rehy'u, hoy'u, attributed to Guasch & Ortiz, not verified)."
+    },
+    {
+     "where": "night 1 word",
+     "gn": "Akaruse",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "The word is unattested as a card, but karuse itself is attested in ABC Color's Guarani edition. -se on a first-person verb is everyday child speech (Ahase, Ha'use), and karu is the plain intransitive 'comer' that children hear at every meal (Eju jakaru). It is natural, not jopara, and easy to say. The commonest everyday way to say 'tengo hambre' is the colloquial stative «Chevare'a» (Common Voice writes it joined). Akaruse is the neutral form a teacher can model.",
+     "evidence": "Jojajovai [abc]: «Oñembyaty vare'a ha karuseterei» = «Se juntaron el hambre y las ganas de comer». Tatoeba grn.csv l.258 «Ndakaruséi ko'ãgaitépe.», l.643 «jakaru oñondive», l.825 «Ahase.», l.882 «Ha'use peteĩ mba'e he'ẽva.». Common Voice: «Eju jakaru.», «Upéi akarupa sapy'a…», «Che ha'use chipa héva.», «Chevare'a.» (common_voice_gn_34152365)."
+    },
+    {
+     "where": "night 1 word",
+     "gn": "Eme'ẽmína chéve mbujape",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "The whole sentence is unattested, but its frame is attested for exactly this need, asking for something to eat or drink. The courtesy -mína is attested many times, and mbujape is unit 2's word with the same meaning. It is natural and polite, and it has no loanword. A bare noun is normal in Guarani, which has no article.",
+     "evidence": "Tatoeba grn.csv l.886–889: «Eme'ẽmíkena chéve che hay'urã» and «Eme'ẽ chéve che hay'urã» (Give me something to drink). Common Voice has 24 lines with -mína, among them «Eguerumína chéve che vosa rejukuévo.» and «Ejapomína la terere.», and also «Aike ñemuhãme, ajogua kamby ha mbujape.». tp-grades.js 1.º grado: «Eme'ẽmína chéve kuatia»."
+    },
+    {
+     "where": "night 1 say",
+     "gn": "Mbo'ehára, akaruse.",
+     "verdict": "ok",
+     "confidence": "medium",
+     "reason": "Plausible but unattested. A natural vocative plus a need: what a 7-year-old says at merienda, and the next two lines answer it. A teacher who models politeness might prefer the permission form, «Mbo'ehára, ikatúpa akaru?» (night 2). But stating the need is exactly what MEC item 16 asks for. Easy to say.",
+     "evidence": "Common Voice vocative: «Aju voive, mbo'ehára». For karuse, see the Akaruse item."
+    },
+    {
+     "where": "night 1 say",
+     "gn": "Ejapyhy ko mbujape.",
+     "verdict": "ok",
+     "confidence": "medium",
+     "reason": "Plausible but unattested exactly. It is a natural hand-over line ('Tomá este pan'). japyhy 'agarrar, tomar' is everyday Guarani, and ko + noun is the plain demonstrative. 1.º grado already has «Héẽ, ejapyhy.» as a say line. eipyhy, from pyhy, is a variant some speakers use.",
+     "evidence": "Jojajovai [libro_gn, a Guarani software glossary]: «Ejapyhy kuatia» (imperative). Common Voice: «Ojapyhy ha ogueraha hendive.», and the variant «Eipyhy pe ajaka ha tereho…». tp-grades.js, 1.º grado unit 5: «Héẽ, ejapyhy.»."
+    },
+    {
+     "where": "night 1 say",
+     "gn": "Aguyje!",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Attested. It is the app's word and a 1.º grado say line, the basic thank-you.",
+     "evidence": "Common Voice: «Aguyje.», «Aguyje mama». Tatoeba: «Aguyje reime haguére ko'ápe.»."
+    },
+    {
+     "where": "night 2 title",
+     "gn": "Ikatúpa asẽ?",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Attested frame and verb. It is the exact mirror of 1.º grado's «Ikatúpa aike?», and it is short and current.",
+     "evidence": "Common Voice: «Ikatúpa asẽ sapy'aite.», «Ikatúpa aike.», «Ikatúpa ahasami», «Ikatúpa aporandumi ndéve peteĩ mba'e.»."
+    },
+    {
+     "where": "night 2 word",
+     "gn": "Ikatúpa asẽ sapy'aite?",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Attested word for word, now first-hand. Under the app's rules it is the best way for school Guarani to say «ir al baño». sapy'aite 'un ratito' is common. The phrase is polite and current, and about as long as 1.º grado's «Ikatúpa aiporu nde haiha?», so a 7-year-old can say it. It builds on «Ikatúpa aike?». It is neither jopara nor purist. The corpora show why naming the room does not work for children. The everyday noun is the loan baño, even in written Guarani: ABC Color's Guarani edition writes «peteĩ baño clausurado», and Guarani Wikipedia writes «Oporandu baño-re». The Guarani nouns are learned or purist and not child vocabulary: kotyjahuha, jahuha and ñaimeha. koty'i 'cuartito' («Aha koty'ípe.») may be the folk euphemism, but it is ambiguous. The paraphrase avoids both a Spanish noun and a purist one. Its one weakness is meaning: the Guarani says 'salir', so the toilet picture and «(al baño)» carry the bathroom, and the Meet card has to teach that link. One correction to the notes: Guarani texts hyphenate Spanish common nouns before postpositions too, not only names («potrero-pe», «plazoleta-pe», «baño-re»). So the fallback «Ikatúpa aha baño-pe?» would follow written practice, though it remains a team decision. The more child-like «sapy'ami» is just as natural, but keep the attested sapy'aite.",
+     "evidence": "Common Voice: «Ikatúpa asẽ sapy'aite.» (common_voice_gn_26492854, train split, and clips 34152902, 37997761, 38211606), «Asẽta sapy'aite.», «Chera'ãrõmína aháta ajeporeka sapy'aite», «Aha koty'ípe.» (…_32311530), «Aike kotyjahuhápe ha ajovahéi.» (…_26356539), «Apoíma lecherakuéra okaru hag̃ua potrero-pe.». Jojajovai: [blogs] «Eha'arõmína sapy'aite, karai mbói»; [abc] «…peteĩ baño clausurado…», «…baño moderno ha lavadero», «…plazoleta-pe»; [blogs] «…ndorekóiva kotyjahuha, ñaĩha térã ytykuára» = «no cuentan con baño, letrina o un pozo séptico». Guarani Wikipedia: «Oporandu baño-re ha peteĩ heꞌi chupe: Al fondo y a la derecha», «tataypy, ñaimeha térã jahuha, kotykeha…». English Wikipedia, Jopara article (search summary): «Mo'o opyta baño?». docs/unit5-check.json: Función Pública course (dokumen.pub). MEC guide 25531b74 l.2707–2711 (fichas con imágenes)."
+    },
+    {
+     "where": "night 2 word",
+     "gn": "Ikatúpa hay'u?",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Plausible but unattested as a sentence; both parts are attested: the frame, and hay'u as the usual first person (see Hay'use). It is natural and short. When the water is outside the room, a child would ask «Ikatúpa aha hay'u?»; with a bottle on the desk, this card is the natural form. Keep it in step with Hay'use.",
+     "evidence": "Common Voice: «Ikatúpa aike.», «hay'u ha aguapy peteĩ nangiriju ári.». See the Hay'use item."
+    },
+    {
+     "where": "night 2 word",
+     "gn": "Ikatúpa akaru?",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Plausible but unattested as a sentence; the frame and akaru are both attested. It is a natural classroom request at merienda, it is short, and it does not sound like «Ikatúpa hay'u?».",
+     "evidence": "Common Voice: «Upéi akarupa sapy'a ha aguapy…», «Pehasána peguapy akarupamíta sapy'ami…», «Ikatúpa ahasami»."
+    },
+    {
+     "where": "night 2 say",
+     "gn": "Ikatúpa asẽ sapy'aite?",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "The same attested sentence as the card, whose clip it shares. It works as the opener of the need, answer and thanks dialogue.",
+     "evidence": "See the night 2 card «Ikatúpa asẽ sapy'aite?»."
+    },
+    {
+     "where": "night 2 say",
+     "gn": "Héẽ, ikatu.",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "A natural, current reply to any «Ikatúpa…?», so it answers all three cards. Héẽ is by far the dominant written spelling. For the bathroom request, a teacher may also say «Héẽ, tereho.» (Sí, andá), but this line is fine and more general.",
+     "evidence": "Héẽ appears 13 times in Common Voice and Hẽe never; Jojajovai has Héẽ 46 times and Hẽe once; Tatoeba grn.csv l.192–194 has both. The string «Héẽ, ikatu» occurs in Jojajovai [anlp], though there ikatu means 'quizás'. Tatoeba l.312 «Tereho ko'ãga.»."
+    },
+    {
+     "where": "night 2 say",
+     "gn": "Aguyje, mbo'ehára.",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "It is 1.º grado's own line: a natural thank-you with a vocative, built from two app words.",
+     "evidence": "tp-grades.js, 1.º grado unit 5, night 2. Common Voice: «Aguyje mama»."
+    },
+    {
+     "where": "night 3 title",
+     "gn": "Ejapyhy",
+     "verdict": "ok",
+     "confidence": "medium",
+     "reason": "It is the natural 'Tomá' a lender says, and the app already uses it («Héẽ, ejapyhy.»). This exact hand-over use is not in my corpora, which have japyhy in other senses, and some children say eipyhy instead, so confidence is medium.",
+     "evidence": "Jojajovai [libro_gn]: «Ejapyhy kuatia». Common Voice: «Ojapyhy ha ogueraha hendive.», «Eipyhy pe ajaka…». tp-grades.js, 1.º grado unit 5: «Héẽ, ejapyhy.»."
+    },
+    {
+     "where": "night 3 word",
+     "gn": "mbogueha",
+     "verdict": "ok",
+     "confidence": "medium",
+     "reason": "The weakest word of the unit, though not doubtful enough to change. As 'borrador' it appears in none of the four corpora. It is also missing from a seminar text's list of school coinages that «han logrado sanción de uso» (haiha, kuatiahai, aranduka, apykahai…), and children mostly say «borrador» or «goma». But it is a regular, transparent school word of the same kind as haiha. mbogue is the standard 'borrar': a Guarani software glossary renders Borrar, Eliminar and Apagar as «Embogue». mbogue + -ha makes instrument nouns, as in Wikipedia's tatambogueha 'extintor'. The drafts found it glossed 'borrador' in the Avañe'ẽ dictionary, but only through search summaries. It is easy to say (mbo·gue·ha), and there is no better non-Spanish option. A Guarani teacher should confirm it.",
+     "evidence": "Jojajovai [libro_gn]: «Embogue» = Borrar / Eliminar / Delete / Apagar; [seminario]: «…mbo'ehao, mbo'ehára, temimbo'e, mbo'ehakoty, tekombo'e, apykahai, haiha, kuatiahai, aranduka…» = «términos propios del ámbito educativo creados y que han logrado sanción de uso». Guarani Wikipedia: «Peteĩ tatambogueha ha'e peteĩ tembiporu ojeipurúva oñembogue hag̃ua tata». Common Voice: «Embogue che ipod.», «Tatamboguehára oipytyvõ…». UNESCO medicinal-plants PDF (search summary): «Pohã tasy mbogueha». No hit for mbogueha in Common Voice, Jojajovai, Tatoeba or web search."
+    },
+    {
+     "where": "night 3 word",
+     "gn": "Ejapyhy",
+     "verdict": "ok",
+     "confidence": "medium",
+     "reason": "The same word as the night title. It is natural when handing something over, but this exact use is unattested in my corpora. The handing picture has to read as 'tomá'.",
+     "evidence": "See the night 3 title."
+    },
+    {
+     "where": "night 3 word",
+     "gn": "Eiporu che haiha",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "Plausible but unattested as a whole; the imperative Eiporu with a possessed object is attested, and so is «reiporu che + noun». It is the natural way to lend something. Both poru (the MEC and school spelling) and puru (common speech, Tatoeba) are fine; keep poru as in 1.º grado.",
+     "evidence": "Jojajovai [libro_gn]: «Eiporu nde jehaiha ruguáramo». Common Voice: «Nde ikatu reiporu che mandi'o.», «Aníke reiporu che sapatu.». MEC: «Eiporu…» (88065dde l.4109), «Eiporuporã» and «Jaipuru guarani ñe'ẽ» (MAGUA guides). Tatoeba grn.csv l.75 «Ikatúpa aipuru nde haiha?», l.523 «Che aiporu va'erã…»."
+    },
+    {
+     "where": "night 3 say",
+     "gn": "Aikotevẽ mbogueha.",
+     "verdict": "ok",
+     "confidence": "medium",
+     "reason": "The frame with a plain object is attested and natural; no peteĩ is needed. The only doubt is the word mbogueha (see its item).",
+     "evidence": "Common Voice: «Aikotevẽ terere.», «aikotevẽ pirapire». Tatoeba grn.csv l.299 «Opavave oikotevẽ pirapire»."
+    },
+    {
+     "where": "night 3 say",
+     "gn": "Ejapyhy che mbogueha.",
+     "verdict": "ok",
+     "confidence": "medium",
+     "reason": "A natural hand-over line between classmates. Its doubts are those of Ejapyhy and mbogueha.",
+     "evidence": "See the Ejapyhy and mbogueha items."
+    },
+    {
+     "where": "night 3 say",
+     "gn": "Aguyjevete, che irũ!",
+     "verdict": "ok",
+     "confidence": "high",
+     "reason": "It is 1.º grado's own line, the natural thank-you between classmates.",
+     "evidence": "Common Voice: «Aguyjetaite che irũ.», «Aguyjevete.». tp-grades.js, 1.º grado unit 5, night 3."
+    }
+   ],
+   "general": "Result: all 22 Guarani strings pass this lens, with no fix and no drop. Nothing in the repository was changed (git status is clean).\n\nNEW EVIDENCE. Besides the Tatoeba copy and the MEC texts, I searched three larger corpora, downloaded read-only to my scratchpad:\n- Common Voice Guarani v16 prompts, 5,893 sentences (huggingface.co/datasets/fsicoli/common_voice_16_0): dl-cv-gn/norm.txt\n- Jojajovai, a Guarani–Spanish corpus of 30,855 pairs (huggingface.co/datasets/mmaguero/jojajovai). Its sources include ABC Color's Guarani edition, blogs, a seminar text, a Guarani software glossary and AmericasNLP: dl-jojajovai/allnorm.tsv\n- Guarani Wikipedia plain text (huggingface.co/datasets/ffatty/plaintext-wikipedia-full-guarani): dl-gnwiki/gnwiki.norm.txt\n\nWHAT THEY SETTLE\n1. The bathroom card is attested word for word, first-hand: «Ikatúpa asẽ sapy'aite.» is a Common Voice sentence (clip 26492854 and three more). Keep the paraphrase.\n   - Naming the room in Guarani does not work for children. The everyday noun is the loan baño, even in written Guarani (ABC Color Guarani «peteĩ baño clausurado»; Guarani Wikipedia «Oporandu baño-re»).\n   - The Guarani nouns are learned or purist: kotyjahuha, jahuha, ñaimeha. koty'i 'cuartito' («Aha koty'ípe.») is ambiguous.\n   - One correction to the notes: Guarani texts hyphenate Spanish common nouns before postpositions too, not only names («potrero-pe», «plazoleta-pe», «baño-re»). The fallback «Ikatúpa aha baño-pe?» would therefore follow written practice, but it is still a team decision. The earlier audit's rejection of «vocal-pe» concerned a word that has a Guarani equivalent (pu'ae); baño has none in common use.\n2. The water verb: usage says hay'u. The corpora have hay'u, rey'u, hoy'u, jay'u, roy'u and hey'u, and the desiderative is formed exactly as on the card (Hoy'use, Roy'use). All four corpora have zero hits for hy'u (no ahy'u, rehy'u or jahy'u). Keep Hay'use and «Ikatúpa hay'u?». The audit's ahy'u, from an unverified Guasch & Ortiz citation, is at most a prescriptive variant for the Academia check.\n3. karuse is attested in ABC Color Guarani («vare'a ha karuseterei»).\n4. Héẽ is the dominant spelling: Common Voice has it 13 times and Hẽe never; Jojajovai has it 46 times and Hẽe once.\n5. -mína is attested in 24 Common Voice lines.\n6. Eiporu with a possessed object is attested: «Eiporu nde jehaiha…» in the software glossary, and «Nde ikatu reiporu che mandi'o» in Common Voice.\n\nATTESTATION BY STRING\n- Attested whole, or nearly:\n  - Aikotevẽ (as a word);\n  - Ikatúpa asẽ sapy'aite? (card and say line);\n  - Aguyje!;\n  - Aguyje, mbo'ehára. (1.º grado);\n  - Aguyjevete, che irũ! (1.º grado; Common Voice has «Aguyjetaite che irũ.»).\n- Plausible, with the pattern attested:\n  - night 1: Hay'use, Akaruse, the title Hay'use, akaruse, Eme'ẽmína chéve mbujape, Mbo'ehára, akaruse. and Ejapyhy ko mbujape.;\n  - night 2: Ikatúpa asẽ?, Ikatúpa hay'u?, Ikatúpa akaru? and Héẽ, ikatu.;\n  - night 3: Ejapyhy (title and card), Eiporu che haiha, Aikotevẽ mbogueha. and Ejapyhy che mbogueha.\n- Weakest, but not doubtful enough to change: mbogueha. It is a regular school word like haiha:\n  - mbogue means borrar in a Guarani software glossary;\n  - mbogue + -ha also gives Wikipedia's tatambogueha 'extintor'.\n  - But no corpus has it as 'borrador'.\n  - It is also missing from a seminar text's list of school coinages in use (haiha, kuatiahai, aranduka, apykahai…).\n  - Children mostly say borrador or goma.\n  - A teacher should confirm it.\n\nREGISTER: no needless jopara anywhere, and no purist word made up for this unit (mbogueha is a dictionary word). Every line is short, polite and sayable by a 7-year-old. Some forms teachers also use, worth noting but not changing:\n- «Chevare'a» and «Chey'uhéi» for hunger and thirst. Common Voice writes both joined, but they are colloquial and are not buildable single words in the app's terms.\n- «Héẽ, tereho» to let a child out.\n- «sapy'ami» for 'un ratito'.\n\nOUTSIDE THIS LENS (for the syllable lens): if ay counts as a falling diphthong, as the app counts ai in Mai·tei and hai·ha, Hay'use builds as Hay·'u·se, not Ha·y·'u·se.\n\nMEC: no MEC text gives Guarani wording for these needs. The guide (25531b74 l.2707–2711) asks only for picture cards, example situations and practice between peers. The only related Guarani in the MEC texts is Eiporu, Eiporuporã, Jaipuru, ikatu and osẽ (88065dde l.4109 and l.1401; MAGUA guides).\n\nLIMITS\n- Common Voice prompts are sentences written by adult contributors. None of my sources is a 2.º grado Guarani textbook.\n- WebFetch could not reach kaweah.freedombox.rocks (the Wiktionary mirror) or omniglot.com. Both are outside this session's network and would have to be allowed in its settings.\n- GitHub access to pln-fing-udelar/jojajovai is not enabled for this session, so I used the Hugging Face copy.\n- guaran-ia/gntweets and guaran-ia/kuatia on Hugging Face are gated.\n- Web searches found no page with mbogueha as 'borrador', with akaruse or hay'use, or with «aha baño-pe»."
+  }
+ ],
+ "final": {
+  "unit": {
+   "gn": "Aikotevẽ",
+   "es": "Pedir lo que necesito"
+  },
+  "nights": [
+   {
+    "gn": "Hay'use, akaruse",
+    "es": "Pedir agua y comida",
+    "words": [
+     {
+      "gn": "Hay'use",
+      "es": "Quiero tomar agua",
+      "pic": "y",
+      "syl": [
+       "Ha",
+       "y",
+       "'u",
+       "se"
+      ],
+      "note": "y'u 'tomar agua' (y 'agua' + 'u) with -se 'quiero'. -se is tonic, so there is no accent (Tatoeba «Ha'use…», «Ndakaruséi», «Ahasékuri»). y'u conjugates like 'u (ha'u, re'u, ho'u; imperative he'u): hay'u, rey'u, hoy'u, imperative hey'u. The corpora have these forms, with -se as here (Common Voice «hay'u ha aguapy…», «Rey'u hag̃ua.», «Roy'usemínteko ikatumírõ.», «Hoy'usetereíningo.»; Tatoeba «Hey'u.», «che hay'urã»), and none has ahy'u (see THE WATER VERB). The app's story has hoy'u. Ha·y·'u·se: y is its own syllable, as in y·pe. Guarani Wikipedia's article on vowel groups lists no vowel + y diphthong and splits Pa·ra·gua·y (see SYLLABLES OF HAY'USE and doubts). The picture is unit 2's water drop, and the y of 'agua' is inside the word."
+     },
+     {
+      "gn": "Akaruse",
+      "es": "Quiero comer",
+      "pic": "new:karu",
+      "newPic": "A smiling child holding a spoon in one hand and an empty bowl in the other, licking its lips.",
+      "syl": [
+       "A",
+       "ka",
+       "ru",
+       "se"
+      ],
+      "note": "karu 'comer' (akaru, rekaru, okaru) + -se. Tatoeba has the negative «Ndakaruséi ko'ãgaitépe» and «jakaru oñondive». ABC Color's Guarani edition has karuse («vare'a ha karuseterei», in Jojajovai). It shares -se with Hay'use, so L1's Build makes two words with the same ending. Its new picture shows wanting to eat, not bread, and it comes back on «Ikatúpa akaru?»."
+     },
+     {
+      "gn": "Eme'ẽmína chéve mbujape",
+      "es": "Dame pan, por favor",
+      "pic": "mbujape",
+      "syl": [],
+      "note": "1.º grado's «Eme'ẽmína chéve kuatia» with unit 2's mbujape (pan): this is the MEC's «pedir alimentos». Tatoeba uses the same frame for a drink: «Eme'ẽmíkena chéve che hay'urã». The say set hands over the bread."
+     }
+    ],
+    "say": [
+     {
+      "gn": "Mbo'ehára, akaruse.",
+      "es": "Maestra, quiero comer."
+     },
+     {
+      "gn": "Ejapyhy ko mbujape.",
+      "es": "Tomá este pan."
+     },
+     {
+      "gn": "Aguyje!",
+      "es": "¡Gracias!"
+     }
+    ]
+   },
+   {
+    "gn": "Ikatúpa asẽ?",
+    "es": "Ir al baño y pedir permiso",
+    "words": [
+     {
+      "gn": "Ikatúpa asẽ sapy'aite?",
+      "es": "¿Puedo salir un ratito? (al baño)",
+      "pic": "new:baño",
+      "newPic": "A friendly white toilet seen from the side, with a light-blue tank and seat and a small smiling face on the bowl.",
+      "syl": [],
+      "note": "The bathroom request (see notes). It is 1.º grado's frame Ikatúpa + a-verb? with asẽ 'salgo' (the opposite of aike; Tatoeba «Asẽkuri javete») and sapy'aite 'un ratito' (sapy'a + the tonic -ite, so no accent, as in porãite). The sentence is attested word for word. «Ikatúpa asẽ sapy'aite.» is a validated Common Voice Guarani sentence (clip common_voice_gn_26492854, and three more recordings), and the Función Pública Guarani course has it as a polite permission request (docs/unit5-check.json). The Guarani says only 'salir'. The toilet picture and the gloss name the place, so Meet must show the gloss. The first say line shares this card's clip."
+     },
+     {
+      "gn": "Ikatúpa hay'u?",
+      "es": "¿Puedo tomar agua?",
+      "pic": "y",
+      "syl": [],
+      "note": "Night 1's verb in the permission frame: the child asks before going to drink water. The water is inside the verb, so it needs no object. It uses the same water drop as Hay'use, but in another night, and its spelling follows Hay'use."
+     },
+     {
+      "gn": "Ikatúpa akaru?",
+      "es": "¿Puedo comer?",
+      "pic": "new:karu",
+      "newPic": "The same new picture as Akaruse in night 1: a smiling child with a spoon and an empty bowl, licking its lips.",
+      "syl": [],
+      "note": "Night 1's karu in the permission frame: in class, the merienda waits for the teacher's yes. It uses the same new picture as Akaruse, but in another night."
+     }
+    ],
+    "say": [
+     {
+      "gn": "Ikatúpa asẽ sapy'aite?",
+      "es": "¿Puedo salir un ratito? (al baño)"
+     },
+     {
+      "gn": "Héẽ, ikatu.",
+      "es": "Sí, podés."
+     },
+     {
+      "gn": "Aguyje, mbo'ehára.",
+      "es": "Gracias, maestra."
+     }
+    ]
+   },
+   {
+    "gn": "Ejapyhy",
+    "es": "Prestar algo",
+    "words": [
+     {
+      "gn": "mbogueha",
+      "es": "borrador",
+      "pic": "new:mbogueha",
+      "newPic": "A pink rectangular eraser with one rounded, worn corner and a few tiny crumbs beside it.",
+      "syl": [
+       "mbo",
+       "gue",
+       "ha"
+      ],
+      "note": "mbogue 'borrar' + -ha (the thing for it), like haiha (hai 'escribir' + -ha). mbogue is the usual verb for 'borrar': a Guarani software glossary in Jojajovai renders Borrar, Eliminar and Apagar as «Embogue». mbogue + -ha also makes Guarani Wikipedia's tatambogueha 'extintor'. As 'borrador' it was found only through search summaries: the Argentine Avañe'ẽ dictionary («borrador. m. Mbogueha, mboje'oha»), David Galeano Olivera's Guarani lesson for children («Borrador es mbogueha») and a Paraguayan school plan («Mbogueha (Borrador)»). It is what the child lends in the say lines. mbo·gue·ha: mb is one letter, and gu + e is one syllable, as in A·guy·je."
+     },
+     {
+      "gn": "Ejapyhy",
+      "es": "Tomá",
+      "pic": "new:ejapyhy",
+      "newPic": "A hand from the right holding out a small blue notebook to another child's open hand waiting below.",
+      "syl": [
+       "E",
+       "ja",
+       "py",
+       "hy"
+      ],
+      "note": "e- + japyhy 'agarrar, tomar': what you say as you hand something over. In 1.º grado it was a say line («Héẽ, ejapyhy.»). Here it is a card, and the child is the one who lends. The hands pass a notebook, so the picture stays apart from the night's eraser and pencil."
+     },
+     {
+      "gn": "Eiporu che haiha",
+      "es": "Usá mi lápiz",
+      "pic": "haiha",
+      "syl": [],
+      "note": "e- + i- + poru 'usar' (1.º grado's aiporu; the MEC guides write «Eiporu») + che haiha 'mi lápiz'. It turns 1.º grado's «Ikatúpa aiporu nde haiha?» around: now the child lends its own pencil, and «usá» keeps it a loan, not a gift. The pattern is attested: «Eiporu nde jehaiha…» (a Guarani software glossary in Jojajovai) and «Nde ikatu reiporu che mandi'o.» (Common Voice)."
+     }
+    ],
+    "say": [
+     {
+      "gn": "Aikotevẽ mbogueha.",
+      "es": "Necesito un borrador."
+     },
+     {
+      "gn": "Ejapyhy che mbogueha.",
+      "es": "Tomá mi borrador."
+     },
+     {
+      "gn": "Aguyjevete, che irũ!",
+      "es": "¡Muchas gracias, amiga!"
+     }
+    ]
+   }
+  ],
+  "notes": "THE VERIFICATION (this step)\n- Three lenses checked all 22 Guarani strings: spelling and syllables; meaning and grammar; and usage, register and attestation. Every string passed every lens. No string needed a fix or a drop.\n  - The unit's Guarani, glosses, pictures and syllables are the merge's, unchanged, so «changes» is empty.\n- The lenses differed on one point, the syllables of Hay'use.\n  - The spelling lens gives Ha·y·'u·se. The usage lens asked about Hay·'u·se, in case ay is a diphthong.\n  - Ha·y·'u·se has the stronger evidence and is kept (see SYLLABLES OF HAY'USE and doubts).\n- The lenses corrected four points in the merge's notes. The corrections are applied below:\n  1. 'u conjugates ha'u, re'u, ho'u, with he'u as the imperative; the merge had written «ha'u, he'u, ho'u». So y'u is hay'u, rey'u, hoy'u, imperative hey'u.\n  2. The stative che is not usually written apart. The corpora mostly write it joined:\n     - Common Voice: «Chevare'a.», «Chey'uhéi.», «Chekane'õ», «Cherasy»;\n     - Tatoeba: «Ndevare'a piko?», «Chekane'õ.».\n     - Only a few lines write it apart (Common Voice «Che vare'aitereíkuri.»).\n     - The merge's claim is removed; its other reasons for the -se pair stand.\n  3. Guarani texts hyphenate Spanish common nouns before a postposition, not only foreign names: «potrero-pe» (Common Voice), «plazoleta-pe» (ABC Color's Guarani edition), «Oporandu baño-re» (Guarani Wikipedia).\n  4. The bathroom sentence is now attested first-hand, word for word, in Common Voice.\n- The water verb is settled by usage: hay'u (see THE WATER VERB).\n- I read every corpus line cited in these notes in the local copies (see EVIDENCE AND LIMITS).\n\nTHE MERGE\nMost of the unit is kept as both drafts wrote it:\n- the title Aikotevẽ and the three night titles;\n- the bathroom card «Ikatúpa asẽ sapy'aite?» on a new toilet picture;\n- the Ikatúpa frame for water and food;\n- the food request «Eme'ẽmína chéve…»;\n- the card Ejapyhy on a new handing picture;\n- eiporu and aikotevẽ in night 3;\n- the say lines «Ejapyhy ko mbujape.» and «Aguyje!».\nWhere the drafts differed:\n- Night 1's needs come from draft 2: the pair Hay'use / Akaruse.\n  - Each is one word, both can be built, and both end in -se 'quiero'.\n  - Their verbs come back in night 2's «Ikatúpa hay'u?» and «Ikatúpa akaru?».\n  - Draft 1's Chey'uhéi / Chevare'a were not kept. vare'a is colloquial (ñembyahýi is the school word), and they do not link to night 2.\n  - The first person comes from draft 1: hay'u, not draft 2's ahy'u (see THE WATER VERB).\n- Akaruse gets a new picture: a child with a spoon and an empty bowl.\n  - Draft 2 used bread, which made 'comer' look like 'pan'.\n  - The new picture also replaces draft 1's hungry child (vare'a), which risked reading as a tummy ache.\n- The food request asks for mbujape (draft 1): both drafts use the word, and the say set hands over bread.\n- Night 2's third card is «Ikatúpa akaru?» (draft 2), not «Ikatúpa ha'u che chipa?» (draft 1). It is shorter, and it does not sound like «Ikatúpa hay'u?».\n- Night 2's say set is draft 1's need, answer and thanks.\n  - «Héẽ, ikatu.» answers all three Ikatúpa cards.\n  - «Aguyje, mbo'ehára.» closes it, as in 1.º grado.\n- Night 3's cards come from draft 1: mbogueha, Ejapyhy and Eiporu che haiha.\n  - They show three different objects, so the pictures stay apart.\n  - Draft 2's Eiporu card (a child writing) was its weakest picture.\n- Night 3's dialogue lends the eraser and ends with thanks: Aikotevẽ mbogueha. / Ejapyhy che mbogueha. / Aguyjevete, che irũ!\n  - The first line takes draft 2's plain object (no peteĩ).\n  - The last line is 1.º grado's own, with draft 2's Aguyjevete and che irũ. It names the classmate.\n  - Every say line is 21 graphemes or fewer. Mborevi'i's speech bubble in Say does not wrap (white-space: nowrap), and the app's longest say line now is 25.\n\nTHE UNIT\n- Night 1 «Hay'use, akaruse»: the merienda, with the teacher.\n  - Needs: tomar agua (Hay'use) and pedir alimentos (Akaruse; Eme'ẽmína chéve mbujape).\n  - Say: Mbo'ehára, akaruse. / Ejapyhy ko mbujape. / Aguyje!\n- Night 2 «Ikatúpa asẽ?»: in class, with the teacher.\n  - Needs: ir al baño and solicitar permiso, all in 1.º grado's frame Ikatúpa + a-verb?: asẽ sapy'aite (bathroom), hay'u (water), akaru (eating).\n  - Say: Ikatúpa asẽ sapy'aite? / Héẽ, ikatu. / Aguyje, mbo'ehára.\n- Night 3 «Ejapyhy»: in class, between classmates.\n  - Need: prestar algo, with the child as the lender.\n  - Cards: mbogueha, Ejapyhy, Eiporu che haiha.\n  - Say: Aikotevẽ mbogueha. / Ejapyhy che mbogueha. / Aguyjevete, che irũ!\n\nTHE MEC\n- Priorización curricular 2021, Comunicación Guaraní, 2.º grado, item 16 (p. 28, docs/mec-check.json): «Expresa necesidades básicas como: ir al baño, tomar agua, pedir alimentos, solicitar permiso y prestar algo.»\n  - The same sentence is in the Programa de estudio, 2.º grado, Segunda lengua (mec-text/7e820984…, p. 57).\n- Guía para la planificación 2021, 2.º grado, week 4 «Necesidades básicas» (mec-text/25531b74…, l. 2707–2711). It asks for picture cards of the needs, example situations and practice between peers.\n- No MEC text gives Guarani wording for these needs. The Priorización's own Guarani text calls needs hemikotevẽ, the noun of the title's verb.\n- All five needs are on cards, not only in say lines, because L1 children play no Say in 2.º grado (tp-course.js, gamesFor):\n  - ir al baño: «Ikatúpa asẽ sapy'aite?»\n  - tomar agua: Hay'use, «Ikatúpa hay'u?»\n  - pedir alimentos: Akaruse, «Eme'ẽmína chéve mbujape»\n  - solicitar permiso: the three Ikatúpa cards\n  - prestar algo: Ejapyhy, «Eiporu che haiha»\n- How the guide's activities appear:\n  - Picture cards: the Meet, Pick and Read games.\n  - Situations: the three scenes.\n  - Practice between peers: night 3, and Say, where the child says both roles.\n\nBUILT ON 1.º GRADO UNIT 5 AND 2.º GRADO UNIT 2 (no card repeated)\n- Ikatúpa + a-verb? gets three new verbs: asẽ (the opposite of aike), hay'u and akaru.\n- Eme'ẽmína chéve… now asks for food: mbujape instead of kuatia.\n- ejapyhy moves from a say line («Héẽ, ejapyhy.») to a card, and now the child is the one who hands over.\n- «Ikatúpa aiporu nde haiha?» becomes «Eiporu che haiha»: the child lends its own pencil.\n- Three say lines are 1.º grado's own: «Aguyje!», «Aguyje, mbo'ehára.» and «Aguyjevete, che irũ!».\n- Reused words keep their app meanings: y 'agua' (the water drop, and inside hay'u), mbujape 'pan', haiha 'lápiz', mbo'ehára, irũ, Héẽ, Aguyje, Aguyjevete.\n- New grammar is small: the desiderative -se (Hay'use, Akaruse) and aikotevẽ, the title verb.\n\nTHE BATHROOM QUESTION\nChoice: the Guarani paraphrase «Ikatúpa asẽ sapy'aite?» (¿Puedo salir un ratito?), on a new toilet picture, glossed «¿Puedo salir un ratito? (al baño)». Both drafts chose it independently, and all three lenses kept it. Reasons:\n1. The sentence is attested word for word.\n   - «Ikatúpa asẽ sapy'aite.» is a validated sentence of Common Voice Guarani v16 (clip common_voice_gn_26492854, and three more recordings in its «other» set), read in the local copy.\n   - The Paraguayan civil-service course «Guaraní Comunicativo en la Función Pública» has it as a polite permission request (search summary, docs/unit5-check.json).\n   - Its parts are everyday Guarani:\n     - asẽ: Tatoeba «Asẽkuri javete»;\n     - sapy'aite: Common Voice «Asẽta sapy'aite.», and a blog in Jojajovai «Eha'arõmína sapy'aite»;\n     - the frame Ikatúpa, which mirrors 1.º grado's «Ikatúpa aike?».\n2. The everyday noun is the Spanish loan, even in written Guarani.\n   - ABC Color's Guarani edition writes «peteĩ baño clausurado» (Jojajovai), and Guarani Wikipedia «Oporandu baño-re».\n   - Wikipedia's Jopara article gives «Mo'o opyta baño?» as its example of mixed speech (search summary).\n   - In the MEC texts, baño appears only in Spanish.\n3. The Guarani nouns are learned compounds, not child vocabulary.\n   - kotyjahuha occurs (Common Voice «Aike kotyjahuhápe ha ajovahéi.»; a blog in Jojajovai, for 'baño' in a sanitation text).\n   - jahuha and ñaimeha appear in a list of house rooms in Guarani Wikipedia.\n   - koty'i 'cuartito' («Aha koty'ípe.», Common Voice) is ambiguous.\n   - Putting one on a card for 7-year-olds would be the purist choice the brief rules out.\n4. The loan needs a team decision before it goes on a card.\n   - b is not a letter of the achegety; it appears only inside mb.\n   - The app's audit (docs/guarani-audit.json, g313) advised against «Mba'e vocal-pe oñepyrũ?», which mixes in a Spanish word. vocal has a Guarani equivalent (pu'ae), while baño has none in common use, so that ruling does not settle this case either way.\n5. «¿Puedo salir?» is how Paraguayan children politely ask for the bathroom in Spanish too. The picture and the gloss name the place, which is what the guide's picture cards ask for.\n6. Guarani's own verb for the need, kuaru 'orinar' (akuaruse), names a body function rather than asking politely, and no school or phrase source used it. It is not used.\nFallback, if teachers want the room named: «Ikatúpa aha baño-pe?», which is what most families say. The lenses differ on how to write it:\n- The usage lens writes baño-pe, as written Guarani does with Spanish nouns before a postposition (baño-re, plazoleta-pe, potrero-pe).\n- The spelling lens would guaranize it as váñope: v for b as in Tatoeba's «Víno», an acute for the stress, and -pe joined. But no source writes váño.\n- Written practice has the stronger evidence, so baño-pe would be the form. Either way, putting a Spanish noun on a Guarani card needs a team decision, and the line needs a new clip.\n\nTHE WATER VERB\ny'u 'tomar agua' conjugates like 'u (ha'u, re'u, ho'u; imperative he'u): hay'u, rey'u, hoy'u, jay'u, roy'u, pey'u; imperative hey'u. All three lenses keep hay'u. Evidence:\n- Corpora, read locally:\n  - Common Voice: «hay'u ha aguapy peteĩ nangiriju ári.», «Rey'u hag̃ua.», «Roy'usemínteko ikatumírõ.», «Hoy'usetereíningo.» (the last two with -se, as on the card);\n  - Guarani Wikipedia: «Aníke jakaru ha jay'u heta tapicha apytépe…»;\n  - Tatoeba: «Hey'u.» beside «He'u!», and «Eme'ẽ chéve che hay'urã.».\n  - None of the four corpora (Common Voice, Jojajovai, Guarani Wikipedia, Tatoeba) has a form with hy'u: no ahy'u, rehy'u or jahy'u.\n- By search summary:\n  - Ávalos' dictionary and a UNLP Guarani course page: «Che hay'u, nde rey'u, ha'e hoy'u»;\n  - the GuaraniAyvuWeb dictionary and a Corrientes verb list;\n  - English Wikipedia ('a'y'u is pronounced hay'u) and the USC Guarani Corpus (hay'ú, 1Sg.drink);\n  - a UNA article that lists y'u among the six verbs irregular in their person markers.\n- Against it:\n  - The app's audit (docs/guarani-audit.json, g290) gave ahy'u, rehy'u, hoy'u from Guasch & Ortiz, without a quote, and one of its reviewers gave ay'u.\n  - No one in this work could open that dictionary.\n  - The app itself writes only the third person hoy'u (tp-sky.js), which every paradigm shares.\n\nSYLLABLES OF HAY'USE\n- Kept: Ha·y·'u·se (spelling lens).\n  - a + y is not counted as a diphthong, so y is a syllable of its own, as in the app's y·pe.\n  - The tiles also show L2 readers that y is the Guarani vowel, not part of the Spanish «hay».\n- Evidence: Guarani Wikipedia's article on vowel groups, «Pu'ae aty guaraníme» by David Galeano Olivera.\n  - It counts y among the weak vowels, but its list of diphthongs has no vowel + y. The list is ai, ei, oi, ui, au, eu, ua, ue, ia, ie, ya, yi and their nasal forms.\n  - It gives ay in Pa·ra·gua·y and oy in mbo·y as hiatus.\n  - The app's own diphthongs are all of the kinds on that list: Mai·tei, Mba·'éi, hai·ha, Ei·chu, mo·kõi, ta·pỹi, kua·ra·hy.\n- The usage lens asked about Hay·'u·se, in case ay is a falling diphthong like ai. No source treats it so. The question is recorded in doubts.\n\nPICTURES\n- Existing: y (Hay'use, «Ikatúpa hay'u?»), mbujape, haiha.\n- New, 4 (the maximum): karu (Akaruse and «Ikatúpa akaru?»), baño, mbogueha, ejapyhy. None of these keys is in tp-pics.js yet.\n- The scratch worktree (scratchpad/wt) already draws baño and ejapyhy.\n  - Its ejapyhy hands over a yellow pencil, which next to «Eiporu che haiha» would look like the pencil card.\n  - So the new picture hands over a blue notebook; the drawn hands can stay.\n- y and karu each appear in two nights (the need, then the permission), never twice in one night. The engine never puts two options with the same picture side by side.\n\nCHECKED IN MEMORY\nI re-ran the check in this step on the final unit, with the merge's check script and the real project/tp-course.js, tp-grades.js and tp-pics.js. Result: no problems found.\n- The unit was inserted as 2.º grado unit 3, and the later units were renumbered 4 to 6.\n- No project file was touched, and git status is clean.\n- Scratch files:\n  - g2u3-final/final.json (the final unit; its unit data is identical to the merge's merged.js)\n  - g2u3-merge/check.js\n- Strings: every string is NFC, with the ASCII puso and no ¿ or ¡. Questions end in ?.\n- Syllables:\n  - The four syl lists join back to their words: Ha·y·'u·se, A·ka·ru·se, mbo·gue·ha, E·ja·py·hy.\n  - Every syllable ends in a vowel, mb and gu stay whole, and the puso begins its syllable. Phrases have [].\n  - Nights 1 and 3 each have 2 built words.\n- Games:\n  - L1: meet+read+build | meet+read+pairs | meet+read+build. Build uses Hay'use and Akaruse, then mbogueha and Ejapyhy; Pairs uses the three Ikatúpa cards.\n  - L2 and BI: meet+pick+say | meet+read+say | meet+pick+say.\n- Distractors: 9 cards × 84 seeds (Pick's and Check's own seeds, plus 60 more) = 756 option sets. No set holds two cards with the same picture, or a card held inside another.\n- Repeats: no card repeats an app card. «Aguyje!», «Aguyje, mbo'ehára.» and «Aguyjevete, che irũ!» repeat 1.º grado text.\n- Clips: 17 keys for the 2.º grado pack (clips load per grade).\n  - The card and the say line «Ikatúpa asẽ sapy'aite?» share one key.\n  - 14 texts are new. The 3 repeated lines already have checked clips in the 1.º grado pack.\n- Length:\n  - Longest card: «Eme'ẽmína chéve mbujape» (23). The app's longest is 25.\n  - Longest say line: «Ejapyhy che mbogueha.» (21).\n  - The gloss «¿Puedo salir un ratito? (al baño)» (33) is longer than any card gloss now (29).\n\nTO SETTLE OUTSIDE THE UNIT\n- The scratch worktree already does three things: a sixth star for Ñandu Pysã, «pide lo que necesita» in the g2 «can» text, and «three units» in the header.\n- Its placeholder title is «Aikotevẽ» / «Lo que necesito». Both drafts, the merge and this step say «Pedir lo que necesito».\n- Check the bathroom card's gloss in the Meet card and the Tonight tile with tools/render/overflow.js.\n- Check the clips:\n  - short nasal words first: asẽ (it must not sound like hasẽ 'llora'), Héẽ, aikotevẽ, irũ;\n  - Hay'use, for its [h];\n  - mbogueha, which must not sound like mbo'ehára.\n- Confirm with a Guarani teacher or the Academia:\n  - mbogueha as the school word for 'borrador';\n  - how children are taught to split hay'u;\n  - Héẽ and -mína (app-wide);\n  - poru or puru.\n  - hay'u needs a check only if ahy'u is still in question.\n- If the bathroom fallback is ever chosen, settle its spelling first: baño-pe, as written Guarani does, or váñope.\n\nEVIDENCE AND LIMITS\n- Read in this step, in local copies:\n  - Common Voice Guarani v16 prompts (5,893 sentences): dl-cv-gn/\n  - Jojajovai, a Guarani–Spanish corpus (ABC Color's Guarani edition, blogs, a software glossary, a seminar text and more): dl-jojajovai/\n  - Guarani Wikipedia plain text: dl-gnwiki/\n  - the Tatoeba copy: dl-biling/grn.csv\n  - docs/guarani-audit.json (g290, g313), docs/unit5-check.json and project/tp-grades.js.\n- Dictionaries, courses and the mbogueha sources are known only through search summaries. My searches in this step found no page with mbogueha, and none on how Guarani splits ay.\n- These hosts are outside this session's network, so I could not read them:\n  - es.wikipedia.org (this step);\n  - from earlier steps: www.lanacion.com.py, discovery.ucl.ac.uk (Estigarribia's grammar), library.oapen.org, kaweah.freedombox.rocks, guaranicorpus.usc.edu, perio.unlp.edu.ar and omniglot.com.\n  - They would have to be allowed in the session's network settings.\n- Common Voice prompts are sentences written by adult contributors. None of the sources is a 2.º grado Guarani textbook.",
+  "doubts": [
+   {
+    "gn": "Ikatúpa asẽ sapy'aite?",
+    "doubt": "The card asks «¿puedo salir un ratito?». Only the toilet picture and the gloss «(al baño)» name the bathroom, so Meet must show the gloss, and an L2 child may take asẽ itself to mean 'baño'. The sentence is attested word for word: it is a validated Common Voice sentence, and the Función Pública course has it (by search summary). Both are adult sources, not children's texts. Most families, and many teachers, say the jopara «Ikatúpa aha baño-pe?». That fallback needs a team decision, because b is not a letter of the achegety, and the lenses disagree on its spelling. The usage lens would write baño-pe, as written Guarani does with Spanish nouns before a postposition (Guarani Wikipedia «Oporandu baño-re», «plazoleta-pe», «potrero-pe»). The spelling lens would guaranize it as váñope (v for b as in Tatoeba's «Víno», an acute for the stress), but no source writes váño. Written practice has the stronger evidence. The shorter «Ikatúpa asẽ?» (an exact mirror of «Ikatúpa aike?») and «sapy'ami» (Tatoeba «Epytu'úna sapy'ami.») are also natural; the meaning and usage lenses both keep the attested sapy'aite. sapy'a alone can mean 'de repente', though not in a permission request. A Guarani teacher should confirm which form 2.º grado classrooms use. Check the clip: the voice has garbled short nasal words, and asẽ 'salgo' must not sound like hasẽ 'llora'. The gloss (33 characters) is longer than any card gloss now (29)."
+   },
+   {
+    "gn": "Hay'use",
+    "doubt": "All three lenses keep hay'u, and the evidence is now strong. The corpora have hay'u, rey'u, hoy'u, jay'u, roy'u and hey'u, with -se attached as here (Common Voice «Roy'usemínteko», «Hoy'usetereíningo»). None of the four corpora (Common Voice, Jojajovai, Guarani Wikipedia, Tatoeba) has ahy'u, rehy'u or jahy'u. Dictionaries and courses found by search summary agree: Ávalos and a UNLP Guarani course («Che hay'u, nde rey'u, ha'e hoy'u»), GuaraniAyvuWeb, a Corrientes verb list, English Wikipedia and the USC corpus. The only source against it is the app's own audit (docs/guarani-audit.json, g290), which gave ahy'u, rehy'u, hoy'u from Guasch & Ortiz without a quote; one of its reviewers gave ay'u. Nobody could open that dictionary. If the Academia ever prescribes ahy'u, change three things together: Hay'use → Ahy'use (A·hy·'u·se), «Ikatúpa hay'u?» → «Ikatúpa ahy'u?», and the night 1 title. Every form keeps the story's hoy'u. An L2 child may read «Hay» as the Spanish «hay», with a silent h; the clip models the [h]."
+   },
+   {
+    "gn": "Hay'use",
+    "doubt": "Syllables: the spelling lens gives Ha·y·'u·se: a + y is not a diphthong, so y is its own syllable, as in the app's y·pe. The usage lens asked whether it should be Hay·'u·se, if ay counts as a falling diphthong, as ai does in the app's Mai·tei and hai·ha. Ha·y·'u·se is kept. Guarani Wikipedia's article on vowel groups («Pu'ae aty guaraníme», by David Galeano Olivera) counts y among the weak vowels, but its list of diphthongs has no vowel + y, and it gives ay in Pa·ra·gua·y and oy in mbo·y as hiatus. Its two examples have the stress on y, while Hay'use is stressed on se, and I found no source that splits an unstressed ay (as in hay'u or mborayhu). A Guarani teacher should confirm how children are taught to split it. Either split joins back to the word, so a change would touch only syl."
+   },
+   {
+    "gn": "Akaruse",
+    "doubt": "For the needs themselves, the statives «Chey'uhéi» (tengo sed) and «Chevare'a» or «Che ñembyahýi» (tengo hambre) are at least as common as Hay'use and Akaruse. Common Voice writes «Chey'uhéi.» and «Chevare'a.» joined, so they could be built as words. The merge's claim that school texts write the stative che apart did not hold up: only a few lines write it apart, such as «Che vare'aitereíkuri.». The statives are left out for two reasons. vare'a is colloquial (ñembyahýi is the school word). And Hay'use and Akaruse share their verbs with night 2's «Ikatúpa hay'u?» and «Ikatúpa akaru?», which links the need to the permission. If the team prefers the statives, change the cards, the night 1 title and the first say line together, and settle their syllables. Akaruse's new picture must read as 'quiero comer' next to the bread of «Eme'ẽmína chéve mbujape». If it cannot, draft 2's choice needs no new picture: unit 2's bread for Akaruse, and «Eme'ẽmína chéve kamby» for the request."
+   },
+   {
+    "gn": "Hay'use, akaruse",
+    "doubt": "Every two-item night title in the app joins its items with ha («Chipa ha mandi'o», «Y ha kamby», «Okẽ ha ovetã»). Those are pairs of nouns, and this title is two wishes, so the comma works, as in the app's «Pyhareve, ka'aru, pyhare». If the team wants the ha pattern, the title would be «Hay'use ha akaruse». It changes with the cards if hay'u ever does."
+   },
+   {
+    "gn": "Eme'ẽmína chéve mbujape",
+    "doubt": "-mína is spelled as in 1.º grado and is common (24 Common Voice lines; Tatoeba writes -míkena). The Academia's spelling of its accent is still to be confirmed app-wide. Draft 2 asked for kamby, the milk of the merienda escolar. mbujape is kept because both drafts use it and the say set hands over bread. With a classmate, children more often say «Eme'ẽmi chéve…» or the jopara «convidame». Guarani has no article, so the gloss says «pan»."
+   },
+   {
+    "gn": "Ikatúpa hay'u?",
+    "doubt": "When the water is outside the room, a child asks to go: «Ikatúpa aha hay'u?» (¿Puedo ir a tomar agua?). The card keeps the frame's shorter form, which is natural with a bottle on the desk. Its spelling follows Hay'use (see that doubt). Water has no say line of its own; «Héẽ, ikatu.» answers it too."
+   },
+   {
+    "gn": "Ikatúpa akaru?",
+    "doubt": "It repeats night 1's karu on purpose (the need, then the permission), as «Ikatúpa hay'u?» repeats y'u. Draft 1's «Ikatúpa ha'u che chipa?» (¿Puedo comer mi chipá?) reuses unit 2's chipa, but it is longer (23), and next to «Ikatúpa hay'u?» it sounds close (ha'u / hay'u). Children also ask to eat less often than they ask for the bathroom or water. If the team wants a permission that is not about the body, «Ikatúpa aipe'a ovetã?» (¿Puedo abrir la ventana?, picture ovetã) fits the slot."
+   },
+   {
+    "gn": "Héẽ, ikatu.",
+    "doubt": "It is the plain answer to Ikatúpa…?, and it fits all three cards of the night. A teacher letting a child out often says «Héẽ, tereho.» (Sí, andá; Tatoeba has «Tereho ko'ãga.»). Draft 1 suggested «Tereho ha ejevy pya'e» (andá y volvé rápido), left out to keep the line short. Héẽ keeps 1.º grado's spelling and is by far the commoner written form: 13 to 0 against Hẽe in Common Voice, and 38 to 1 in Jojajovai's Guarani. But Tatoeba has both, and the Academia's entry is still to be confirmed app-wide. Check the clip: the voice has garbled short nasal words."
+   },
+   {
+    "gn": "mbogueha",
+    "doubt": "It is the weakest word of the unit. It is kept because it is a regular word of the haiha kind, and no better non-Spanish word turned up. Its meaning 'borrador' rests on search summaries only. The spelling lens found David Galeano Olivera's lesson for children («Borrador es mbogueha») and a Paraguayan school plan («Mbogueha (Borrador)»), and draft 1 found the Argentine Avañe'ẽ dictionary. My searches in this step could not find those pages again. None of the four corpora has it as 'borrador'. A seminar text's list of school words in use (haiha, kuatiahai, aranduka, apykahai…) leaves it out, though that list ends «y varios otros». Many children just say «borrador» or «goma». mboje'oha is the dictionary's other form. It sounds a little like mbo'ehára, which this unit says twice, and like mbo'ehao, so check the clip. A Guarani teacher should confirm it is the school word."
+   },
+   {
+    "gn": "Ejapyhy",
+    "doubt": "eipyhy (from pyhy) is also heard (Common Voice «Eipyhy pe ajaka…»). This hand-over use is natural, and 1.º grado already has «Héẽ, ejapyhy.», but the corpora have japyhy only in other senses. The scratch worktree's ejapyhy picture hands over a yellow pencil, which next to «Eiporu che haiha» would look like the pencil card, so swap the pencil for a notebook. A handing picture is somewhat abstract: check that children read it as 'tomá'. Lending is said with everyday verbs (tomá, usá), not with poruka, which 1.º grado's check found only in dictionaries. Families also say the jopara «ambopresta». If the team wants the verb 'prestar' itself: «Aiporuka ndéve che mbogueha» (Te presto mi borrador), with ndéve for the receiver."
+   },
+   {
+    "gn": "Eiporu che haiha",
+    "doubt": "«Usá mi lápiz» lends by letting someone use the pencil, which is how children lend, but the verb is 'usar', not 'prestar' (see Ejapyhy). Tatoeba writes puru (aipuru), while the MEC guides write Eiporu and the app aiporu, so I kept poru; some children will say «Eipuru». L1 children play no Say in 2.º grado, so they meet aikotevẽ only in the unit title. Draft 2's card «Aikotevẽ haiha» (Necesito un lápiz) could take this slot if the team wants the title verb on a card."
+   },
+   {
+    "gn": "Aikotevẽ mbogueha.",
+    "doubt": "In Tatoeba, aikotevẽ takes a plain object («Opavave oikotevẽ pirapire») and also -re («oikotevẽ ikafére»); Common Voice has «Aikotevẽ terere.». Draft 1 said «Aikotevẽ peteĩ mbogueha.» (un borrador), which is just as natural but longer. A child may just as well say «Ndaguerekói mbogueha» (No tengo borrador) or «Okañy chehegui che mbogueha» (Perdí mi borrador; Tatoeba has it with haiha). The voice has trouble with final nasals (aikotevẽ), so check the clip."
+   },
+   {
+    "gn": "Aguyjevete, che irũ!",
+    "doubt": "Draft 1 ended the dialogue with «Upéi eme'ẽ jey chéve.» (Después me lo devolvés), which makes it a loan rather than a gift. That line is unattested as a whole (built from upéi, jey as in «Eha'ã jey», eme'ẽ and chéve), and «Embojevy chéve» is the other form. The merge keeps the thank-you, as every dialogue of 1.º grado unit 5 ends, and lets «Eiporu che haiha» carry the loan. This line is 1.º grado's own, so it repeats a say line, not a card."
+   },
+   {
+    "gn": "Mbo'ehára, akaruse.",
+    "doubt": "«Maestra» follows the app's gloss of mbo'ehára; children often say «Profe». mbo'ehára and irũ have no gender, so «maestra» and «amiga» could just as well be «maestro» and «amigo». A teacher who models politeness may prefer the permission form «Mbo'ehára, ikatúpa akaru?», which night 2 teaches. This line states the need, as item 16 asks."
+   },
+   {
+    "gn": "Aikotevẽ",
+    "doubt": "Other possible unit titles: «Mba'épa reikotevẽ?» (¿Qué necesitás?, the teacher's question) or the MEC's own noun: the Priorización's Guarani text writes hemikotevẽ. As a word, Aikotevẽ is said only in night 3's first say line."
+   }
+  ],
+  "changes": []
+ },
+ "rechecks": []
+}
