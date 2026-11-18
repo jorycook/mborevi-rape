@@ -18,41 +18,383 @@ body{margin:0}
 button{font:inherit;color:inherit;cursor:pointer}
 a{color:#2A1B3D;text-decoration:none}a:hover{color:#2A1B3D}
 button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([aria-disabled='true']),a:active:not([aria-disabled='true']){transform:translateY(2px) scale(.98)}
+@keyframes tp-legA{0%,100%{transform:rotate(14deg)}50%{transform:rotate(-14deg)}}
+@keyframes tp-legB{0%,100%{transform:rotate(-14deg)}50%{transform:rotate(14deg)}}
+@keyframes tp-blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.12)}}
+@keyframes tp-talk-a{0%{opacity:1}50%{opacity:0}100%{opacity:0}}
+@keyframes tp-talk-b{0%{opacity:0}50%{opacity:1}100%{opacity:1}}
+@keyframes tp-hop-a{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}38%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}76%{transform:scale(1.06,.9)}88%{transform:scale(.98,1.03)}100%{transform:none}}
+@keyframes tp-hop-b{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}38%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}76%{transform:scale(1.06,.9)}88%{transform:scale(.98,1.03)}100%{transform:none}}
+@keyframes tp-hop2-a{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}22%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}44%{transform:scale(1.05,.92)}50%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}68%{transform:translateY(-9%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}86%{transform:scale(1.04,.94)}100%{transform:none}}
+@keyframes tp-hop2-b{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}22%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}44%{transform:scale(1.05,.92)}50%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}68%{transform:translateY(-9%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}86%{transform:scale(1.04,.94)}100%{transform:none}}
+@keyframes tp-recoil-a{0%,100%{transform:none}30%{transform:translateX(-4%) rotate(-5deg)}}
+@keyframes tp-recoil-b{0%,100%{transform:none}30%{transform:translateX(-4%) rotate(-5deg)}}
+@keyframes tp-perk-a{0%,100%{transform:none}40%{transform:translateY(-3%)}}
+@keyframes tp-perk-b{0%,100%{transform:none}40%{transform:translateY(-3%)}}
+@keyframes tp-tw{0%,100%{opacity:1}50%{opacity:.35}}
+@keyframes tp-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes tp-pop{0%{transform:scale(.6);opacity:0}60%{transform:scale(1.06);opacity:1}100%{transform:scale(1);opacity:1}}
+@keyframes tp-in-a{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes tp-in-b{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes tp-yes{0%{transform:scale(1)}35%{transform:scale(1.1)}65%{transform:scale(.97)}100%{transform:scale(1)}}
+@keyframes tp-shake-a{0%,100%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
+@keyframes tp-shake-b{0%,100%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
+@keyframes tp-nudge{0%,60%,100%{transform:none}30%{transform:scale(1.08)}}
+@keyframes tp-ring{0%{transform:scale(.7);opacity:.9}100%{transform:scale(1.6);opacity:0}}
+@keyframes tp-wave{0%,100%{transform:scaleY(.4)}50%{transform:scaleY(1)}}
+@keyframes tp-dot{0%{transform:scale(1.7)}100%{transform:none}}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
 </style>
 </helmet>
 <div style="width: 390px; height: 844px; position: relative; overflow: hidden; box-sizing: border-box; padding: 50px 16px 34px; background: linear-gradient(180deg, #1E1460 0%, #33207E 60%, #4A2A8F 100%); color: #FFF7EC; font-family: 'Nunito', 'Avenir Next', sans-serif; display: flex; flex-direction: column">
+
+<svg width="390" height="844" viewBox="0 0 390 844" style="position: absolute; left: 0; top: 0; pointer-events: none" aria-hidden="true">
+<path d="{{ field.dim }}" fill="#FFF6DD" opacity="0.35"/>
+<path d="{{ field.dots }}" fill="#FFF6DD" opacity="0.8" style="animation: tp-tw 3.6s ease-in-out infinite"/>
+</svg>
+
 <div style="position: relative; display: flex; align-items: center; gap: 10px; height: 44px; flex-shrink: 0">
-<a href="Tonight.dc.html" onClick="{{ close }}" aria-label="Cerrar el juego" style="width: 44px; height: 44px; margin-left: -6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFF7EC" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+<a href="Tonight.dc.html" onClick="{{ close }}" aria-label="Cerrar el juego" style="width: 56px; height: 56px; margin: -6px -6px -6px -12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFF7EC" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
 <div style="flex-grow: 1; display: flex; flex-direction: column; min-width: 0">
 <div lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.05">{{ titleGn }}</div>
 <div style="font-size: 12px; font-weight: 700; color: #CFC6FF">{{ titleEs }}</div>
 </div>
+<div role="img" aria-label="{{ dotsAria }}" style="display: flex; gap: 5px; flex-shrink: 0">
+<sc-for list="{{ dots }}" as="d" hint-placeholder-count="6">
+<div style="width: 12px; height: 12px; border-radius: 6px; background: {{ d.bg }}; border: 2px solid #FFF7EC; box-sizing: border-box; animation: {{ d.anim }}"></div>
+</sc-for>
 </div>
+</div>
+
+<sc-if value="{{ playing }}" hint-placeholder-val="{{ true }}">
+<div style="position: relative; margin-top: 14px; box-sizing: border-box; padding: 24px 16px; border-radius: 30px; background: #FFF7EC; color: #2A1B3D; border: 3px solid #3B2418; box-shadow: 0 6px 0 #3B2418; display: flex; flex-direction: column; align-items: center; gap: 14px; flex-shrink: 0">
+<div style="line-height: 0; animation: {{ card.anim }}">
+<svg viewBox="0 0 100 100" width="196" height="196" role="img" aria-label="{{ card.es }}">
+<path d="{{ card.pic.f0.d }}" fill="{{ card.pic.f0.fill }}" stroke="#2A1B3D" stroke-width="2.6" stroke-linejoin="round" fill-rule="{{ card.pic.rule }}"/>
+<path d="{{ card.pic.f1.d }}" fill="{{ card.pic.f1.fill }}" stroke="#2A1B3D" stroke-width="2.6" stroke-linejoin="round"/>
+<path d="{{ card.pic.f2.d }}" fill="{{ card.pic.f2.fill }}" stroke="#2A1B3D" stroke-width="2.6" stroke-linejoin="round"/>
+<path d="{{ card.pic.f3.d }}" fill="{{ card.pic.f3.fill }}" stroke="#2A1B3D" stroke-width="2.6" stroke-linejoin="round"/>
+<path d="{{ card.pic.f4.d }}" fill="{{ card.pic.f4.fill }}" stroke="#2A1B3D" stroke-width="2.6" stroke-linejoin="round"/>
+<path d="{{ card.pic.f5.d }}" fill="{{ card.pic.f5.fill }}" stroke="#2A1B3D" stroke-width="2.6" stroke-linejoin="round"/>
+<path d="{{ card.pic.pink }}" fill="#FF8FAB" opacity="0.75"/>
+<path d="{{ card.pic.white }}" fill="#FFFFFF"/>
+<path d="{{ card.pic.ink }}" fill="#2A1B3D"/>
+<path d="{{ card.pic.line }}" fill="none" stroke="#2A1B3D" stroke-width="{{ card.pic.lineW }}" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</div>
+<button type="button" onClick="{{ listen }}" aria-label="Escuchar otra vez" style="width: 64px; height: 64px; padding: 0; border-radius: 32px; background: #8EC5FF; border: 3px solid #3B2418; box-shadow: 0 4px 0 #3B2418; display: flex; align-items: center; justify-content: center; flex-shrink: 0">
+<sc-if value="{{ speaker.still }}" hint-placeholder-val="{{ true }}">
+<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#2A1B3D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7"/><path d="M19 6a8.5 8.5 0 0 1 0 12"/></svg>
+</sc-if>
+<sc-if value="{{ speaker.wave }}" hint-placeholder-val="{{ false }}">
+<svg width="34" height="34" viewBox="0 0 24 24" aria-hidden="true">
+<path d="M4 9v6h4l5 4V5L8 9H4z" fill="none" stroke="#2A1B3D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="15" y="8.5" width="2.2" height="8" rx="1.1" fill="#2A1B3D" style="transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(.7); animation: tp-wave 520ms ease-in-out infinite"/>
+<rect x="18" y="5.5" width="2.2" height="11" rx="1.1" fill="#2A1B3D" style="transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(.7); animation: tp-wave 520ms ease-in-out 130ms infinite"/>
+<rect x="21" y="7.5" width="2.2" height="9" rx="1.1" fill="#2A1B3D" style="transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(.7); animation: tp-wave 520ms ease-in-out 260ms infinite"/>
+</svg>
+</sc-if>
+</button>
+</div>
+
+<div style="position: relative; margin-top: 24px; display: flex; justify-content: center; gap: 12px; flex-shrink: 0">
+<sc-for list="{{ answers }}" as="a" hint-placeholder-count="2">
+<button type="button" onClick="{{ a.pick }}" aria-label="{{ a.aria }}" aria-disabled="{{ a.off }}" style="position: relative; width: 165px; height: 96px; box-sizing: border-box; padding: 4px 6px; border-radius: 24px; border: 3px solid #3B2418; background: {{ a.bg }}; box-shadow: 0 5px 0 #3B2418; color: #2A1B3D; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1px; flex-shrink: 0; animation: {{ a.anim }}; opacity: {{ a.opacity }}">
+<sc-if value="{{ a.hint }}" hint-placeholder-val="{{ false }}"><div aria-hidden="true" style="position: absolute; left: -6px; top: -6px; right: -6px; bottom: -6px; border: 4px solid #FFD34E; border-radius: 28px; pointer-events: none; animation: tp-ring 1.4s ease-out infinite"></div></sc-if>
+<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#2A1B3D" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="{{ a.icon }}"/></svg>
+<span lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: {{ a.size }}; line-height: 1.05">{{ a.gn }}</span>
+<span style="font-size: 13px; font-weight: 800; line-height: 1.1">{{ a.es }}</span>
+</button>
+</sc-for>
+</div>
+</sc-if>
+
+<sc-if value="{{ finished }}" hint-placeholder-val="{{ false }}">
+<div style="position: relative; margin-top: 24px; box-sizing: border-box; padding: 22px 18px; border-radius: 30px; background: #FFF7EC; color: #2A1B3D; border: 3px solid #3B2418; box-shadow: 0 6px 0 #3B2418; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; flex-shrink: 0; animation: tp-pop 420ms ease-out">
+<svg viewBox="0 0 64 64" width="88" height="88" aria-hidden="true"><path d="{{ bigStar }}" fill="#FFD34E" stroke="#3B2418" stroke-width="3" stroke-linejoin="round"/><path d="M22 31q3.6-5 7.2 0M34.8 31q3.6-5 7.2 0M27 38q5 5 10 0" fill="none" stroke="#3B2418" stroke-width="2.8" stroke-linecap="round"/></svg>
+<div lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 30px; line-height: 1">Iporãite!</div>
+<sc-if value="{{ fresh }}" hint-placeholder-val="{{ true }}"><div lang="gn" style="font-family: 'Andika', 'Nunito', sans-serif; font-weight: 700; font-size: 18px">Rehupyty peteĩ mbyja.</div></sc-if>
+<div style="font-size: 14px; font-weight: 700; color: #5C4E86">{{ scoreLine }}</div>
+</div>
+</sc-if>
+
 <div style="flex-grow: 1"></div>
-<a href="Tonight.dc.html" onClick="{{ done }}" ref="{{ doneRef }}" style="height: 60px; border-radius: 30px; background: #FFD34E; border: 3px solid #3B2418; box-shadow: 0 5px 0 #3B2418; display: flex; align-items: center; justify-content: center; color: #2A1B3D; font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 22px" lang="gn">Jaha!</a>
+<div style="position: relative; display: flex; align-items: flex-end; gap: 10px; flex-shrink: 0">
+<div style="position: relative; flex-shrink: 0">
+<div lang="gn" role="status" style="position: absolute; left: 70px; bottom: 98px">
+<sc-if value="{{ bubble.on }}" hint-placeholder-val="{{ false }}">
+<div style="padding: 6px 12px; border-radius: 16px; background: #FFF7EC; color: #2A1B3D; border: 2px solid #3B2418; font-family: 'Andika', 'Nunito', sans-serif; font-weight: 700; font-size: 18px; white-space: nowrap; animation: tp-pop 300ms ease-out">{{ bubble.text }}</div>
+</sc-if>
+</div>
+<div style="animation: tp-bob 2.6s ease-in-out infinite">
+<dc-import name="Mborevi" pose="{{ pose }}" talk="{{ talk }}" size="104" hint-size="104px,84px"></dc-import>
+</div>
+</div>
+<sc-if value="{{ playing }}" hint-placeholder-val="{{ true }}">
+<div role="status" style="flex-grow: 1; min-width: 0; margin-bottom: 14px; display: flex; flex-direction: column; gap: 0">
+<div lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: {{ say.size }}; line-height: 1.1; color: {{ say.ink }}">{{ say.gn }}</div>
+<div style="font-size: 14px; font-weight: 700; color: #CFC6FF">{{ say.es }}</div>
+</div>
+</sc-if>
+<sc-if value="{{ finished }}" hint-placeholder-val="{{ false }}">
+<a href="Tonight.dc.html" onClick="{{ done }}" ref="{{ doneRef }}" style="flex-grow: 1; height: 60px; margin-bottom: 8px; border-radius: 30px; background: #FFD34E; border: 3px solid #3B2418; box-shadow: 0 5px 0 #3B2418; display: flex; align-items: center; justify-content: center; gap: 10px; color: #2A1B3D">
+<span lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 22px">Jaha!</span>
+<span style="font-size: 15px; font-weight: 800; color: #5C4E86">Seguir</span>
+</a>
+</sc-if>
+</div>
+
+<div role="status" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap">{{ announce }}</div>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"app":{"editor":null},"act":{"editor":null},"$preview":{"width":390,"height":844}}'>
-/* A stand-in while the game is being built: it ends at once with its star. Replaced by the game itself. */
+/* Ehendu porã, «¿sí o no?»: a listening game with no reading. Each round shows a picture and Mborevi'i names it, by
+   himself, a moment after the round opens; sometimes he names it wrong on purpose. The child answers «Héẽ» (sí, the
+   mint button with a check mark, always on the left) or «Nahániri» (no, the peach one with a cross, on the right).
+   - Héẽ on a right name: a chime, «Iporãite!», he jumps for joy, and the line gives the word and its meaning.
+   - Nahániri on a wrong name: caught! He is startled ('oops'), says the picture's own word, and is happy again.
+   - Not yet: the button shakes, a soft note, «Eha'ã jey» (try again), and he says the word again; after two misses
+     the right button glows. Nothing is lost, and only first tries count on the end card.
+   The rounds: up to three of tonight's words that can be heard (one per picture), each named once right and once wrong,
+   the wrong name another word that can be heard (tonight's first: never the same picture, a look-alike, or a phrase
+   that holds the word); 4 to 6 rounds, the first one right, never three alike in a row, never one picture twice in a
+   row, new at every play (the salt). «Escuchar otra vez» says the word again; with no clip, or with the voice off, his
+   bubble shows it written. An answer tapped before he has named the picture makes him name it, and counts for nothing.
+   In the first round, a moment after his word, «Héẽ» swells once to show where to tap.
+   At the end, a star (a game played again keeps the one it had); the end is announced and the button to go on takes
+   the focus. On its own (no act): Preescolar, unit 3 (the animals), night 1, silent until a tap. */
+const CHECK = 'M5 12.5l4.5 4.5L19 7.5';
+const CROSS = 'M6.5 6.5l11 11M17.5 6.5l-11 11';
+/* every order of a few rounds (at most six: 720), to pick one that keeps the rules */
+function orders(list) {
+if (list.length < 2) return [list];
+const out = [];
+list.forEach((x, i) => orders(list.slice(0, i).concat(list.slice(i + 1))).forEach((rest) => out.push([x].concat(rest))));
+return out;
+}
+function keeps(seq, pictures) {
+if (!seq.length || !seq[0].right) return false;
+for (let i = 1; i < seq.length; i++) {
+if (pictures && seq[i].k === seq[i - 1].k) return false;
+if (i > 1 && seq[i].right === seq[i - 1].right && seq[i].right === seq[i - 2].right) return false;
+}
+return true;
+}
 class Component extends DCLogic {
 constructor(props) {
 super(props);
+this.state = { r: 0, right: false, picked: -1, fix: false, joy: false, miss: 0, first: 0, finished: false, said: false, voiced: false, heard: false, quiet: false, nudge: false, nudged: false };
+this.timers = [];
+this.salt = window.tpCourse.salt(props);
+this.asked = 0;
 this.doneRef = (el) => { this.doneEl = el; };
 }
-componentDidMount() { this.onBack(); }
-componentWillUnmount() { this.offBack(); }
+componentWillUnmount() { this.timers.forEach((t) => clearTimeout(t)); this.timers = []; this.offBack(); }
+/* the phone's Back on the site (App) asks this screen what its close button would do */
+componentDidMount() { this.onBack(); this.autoplay(); }
 onBack() { const act = this.props.act; if (!act) return; const f = () => this.leave(); f.board = this; act.leave = f; }
 offBack() { const act = this.props.act; if (act && act.leave && act.leave.board === this) act.leave = null; }
+componentDidUpdate() {
+const f = !!this.state.finished;
+if (f && !this.wasFinished) {
+if (this.doneEl) this.doneEl.focus();
+const S = window.tpSound;
+if (S && S.beep) S.beep('star');
+window.tpCourse.say(this.endLine);
+}
+this.wasFinished = f;
+this.autoplay();
+}
+later(fn, ms) { this.timers.push(setTimeout(fn, ms)); }
+view() {
+const C = window.tpCourse;
+if (this.props.app) return this.props.app;
+if (!this.sample) {
+const id = 'preu03n1';
+const st = C.sample('pre', 'L2', Math.max(0, C.sessions('pre').findIndex((x) => x.id === id)));
+st.cur = id; st.done[id] = { meet: 1 }; st.game = 'yesno';
+this.sample = C.view(st);
+}
+return this.sample;
+}
+/* this play's rounds, made once: { word (the picture), said (the name he gives it), right, k (which word) } */
+plan() {
+const C = window.tpCourse;
+const s = this.view().step;
+const id = s ? s.id : '';
+if (this.made && this.made.id === id) return this.made.list;
+let list = [];
+if (s && s.data && s.data.words && s.data.words.length) {
+const salt = this.salt || '';
+const once = (ws) => { const seen = {}; return ws.filter((w) => { const p = w.pic || w.gn; if (seen[p]) return false; seen[p] = 1; return true; }); };
+let pool = once(s.data.words.filter((w) => C.voiced(w)));
+/* a night with no voice at all (it is never given this game): the words as they are, written in his bubble */
+const heard = pool.length > 0;
+if (!heard) pool = once(s.data.words);
+const items = [];
+C.shuffle(pool, s.id + 'yesno' + salt).slice(0, 3).forEach((w0, k) => {
+const w = C.word(w0);
+items.push({ word: w, said: w, right: true, k });
+const other = C.distractors(w, s.grade, s.unit, 1, s.id + 'yesno' + k + salt, s.night, { voiced: heard })[0];
+if (other) items.push({ word: w, said: other, right: false, k });
+});
+const all = orders(items);
+let good = all.filter((q) => keeps(q, true));
+if (!good.length) good = all.filter((q) => keeps(q, false));
+if (!good.length) good = all.filter((q) => q.length);
+list = good.length ? good[Math.floor(C.rng(s.id + 'order' + salt)() * good.length)] : [];
+}
+this.made = { id, list };
+return list;
+}
+/* a round opens: in the app, his word comes by itself a moment later (never on a board shown on its own) */
+autoplay() {
+const s = this.view().step;
+if (!this.props.act || this.state.finished || !s || !this.plan().length) return;
+const r = this.state.r;
+const id = s.id + ':' + r;
+if (this.spoken === id) return;
+this.spoken = id;
+this.later(() => {
+const st = this.state;
+if (st.r !== r || st.right || st.finished || st.heard) return;
+this.speak(r);
+}, 450);
+}
+/* he says the round's name (once he has owned up to a wrong one: the picture's own word); in the first round, if no
+   answer comes a moment after it, «Héẽ» swells once */
+speak(r) {
+const C = window.tpCourse;
+const S = window.tpSound;
+const round = this.plan()[r];
+if (!round) return { played: false, ms: 0 };
+const w = this.state.fix ? round.word : round.said;
+const key = 'w:' + C.fold(w.gn);
+const played = C.listen(this, key);
+this.setState({ heard: true, quiet: !played });
+const ms = played && S && S.ms ? S.ms(key) : 0;
+const mine = ++this.asked;
+if (r === 0 && !this.state.nudged && !this.state.fix) {
+this.later(() => {
+const st = this.state;
+if (mine !== this.asked || st.r !== 0 || st.right || st.miss || st.nudged || st.finished) return;
+this.setState({ nudge: true, nudged: true });
+}, (played ? ms : 1800) + 1200);
+}
+return { played, ms };
+}
+/* k: 0 «Héẽ», 1 «Nahániri». The state is read when the tap comes: a tap after the right one does nothing, and a tap
+   before he has named the picture is not an answer yet: he names it now */
+answer(k) {
+const C = window.tpCourse;
+const S = window.tpSound;
+const st = this.state;
+const r = st.r;
+const round = this.plan()[r];
+if (!round || st.right || st.finished) return;
+if (!st.heard) { this.speak(r); return; }
+if ((k === 0) === round.right) {
+if (S && S.beep) S.beep('right');
+const first = st.first + (st.miss === 0 ? 1 : 0);
+if (round.right) {
+C.say(C.VOICE.good);
+this.setState({ right: true, picked: k, first, nudge: false });
+this.later(() => this.next(r), 1100);
+return;
+}
+/* caught: he stops, is startled, says the picture's own word 400 ms later, and is happy again; the next round comes
+   600 ms after that word (at most 2.2 s after the tap) */
+if (S && S.stop) S.stop();
+this.setState({ right: true, picked: k, fix: true, joy: false, first, nudge: false, said: false });
+this.later(() => {
+if (this.state.r !== r || this.state.finished) return;
+const out = this.speak(r);
+const ms = out.played ? out.ms : 1000;
+this.later(() => { if (this.state.r === r) this.setState({ joy: true }); }, Math.min(ms, 1200));
+this.later(() => this.next(r), Math.min(ms + 600, 1800));
+}, 400);
+return;
+}
+/* not yet: his word again 1.4 s after «Eha'ã jey», if the round is still open and no other miss came since */
+if (S && S.beep) S.beep('wrong');
+C.say(C.VOICE.again);
+const miss = st.miss + 1;
+this.setState({ miss, nudge: false });
+this.later(() => {
+const now = this.state;
+if (now.r !== r || now.right || now.finished || now.miss !== miss) return;
+this.speak(r);
+}, 1400);
+}
+next(r) {
+const st = this.state;
+if (st.r !== r || st.finished) return;
+if (r + 1 < this.plan().length) this.setState({ r: r + 1, right: false, picked: -1, fix: false, joy: false, miss: 0, nudge: false, said: false, heard: false, quiet: false });
+else this.setState({ finished: true, said: false });
+}
 renderVals() {
 const C = window.tpCourse;
 const act = this.props.act;
+const app = this.view();
+const s = app.step;
 const G = C.GAMES.yesno;
-this.leave = () => { if (act) act.finish('yesno'); };
+const rounds = this.plan();
+const n = rounds.length;
+const st = this.state;
+const r = Math.min(st.r, Math.max(0, n - 1));
+const blank = C.word({ gn: '', es: '', pic: '' });
+const round = rounds[r] || { word: blank, said: blank, right: true, k: 0 };
+const word = round.word;
+const finished = st.finished || n === 0;
+const again = !!(s && ((app.done || {})[s.id] || {}).yesno);
+this.endLine = again ? C.VOICE.good : C.VOICE.star;
+/* word data can end in its own ? ! or …: no second stop after it */
+const stop = (t) => (/[.!?…]$/.test(t) ? t : t + '.');
+const say = st.right && st.fix
+? { gn: word.gn, es: '¡Uy! Era «' + word.gn + '»: ' + stop(word.es), ink: '#B8F0E0' }
+: st.right
+? { gn: 'Iporãite!', es: '¡Muy bien! «' + word.gn + '»: ' + stop(word.es), ink: '#B8F0E0' }
+: st.miss
+? { gn: "Eha'ã jey", es: 'Probá otra vez.', ink: '#FFB98A' }
+: { gn: 'Ehendu', es: '¿Lo dijo bien?', ink: '#FFF7EC' };
+say.size = C.chars(say.gn).length > 12 ? '20px' : '24px';
+const rightK = round.right ? 0 : 1;
+const answers = [
+{ gn: 'Héẽ', es: 'Sí', aria: 'Héẽ, sí', size: '24px', icon: CHECK, bg: '#B8F0E0' },
+{ gn: 'Nahániri', es: 'No', aria: 'Nahániri, no', size: '22px', icon: CROSS, bg: '#FFB98A' }
+].map((a, k) => Object.assign(a, {
+anim: st.right && st.picked === k ? 'tp-yes 420ms cubic-bezier(.2,.8,.2,1)'
+: !st.right && st.miss && k !== rightK ? 'tp-shake-' + (st.miss % 2 ? 'a' : 'b') + ' 420ms ease-out'
+: !st.right && st.nudge && k === 0 ? 'tp-nudge 1.6s ease-in-out' : 'none',
+opacity: st.right && st.picked !== k ? 0.55 : 1,
+off: st.right ? 'true' : 'false',
+hint: !st.right && st.miss >= 2 && k === rightK,
+pick: () => this.answer(k)
+}));
+const now = st.fix ? word : round.said;
+/* what the close button does, which the phone's Back does too (a game that is over keeps its star) */
+this.leave = () => { if (finished) act.finish('yesno'); else act.go('Tonight'); };
 return {
+field: C.starfield('yesno', 390, 40, 760, 46),
 titleGn: G.gn, titleEs: G.es,
-finished: true, answers: [],
+dots: rounds.map((x, k) => ({
+bg: finished || k < r ? '#FFD34E' : k === r ? '#FFF7EC' : 'transparent',
+anim: (finished ? k === n - 1 : k === r - 1) ? 'tp-dot 300ms cubic-bezier(.2,.8,.2,1)' : 'none'
+})),
+dotsAria: 'Ronda ' + Math.min(r + 1, n) + ' de ' + n,
+playing: !finished, finished,
+card: { pic: word.pic, es: word.es, anim: 'tp-in-' + (r % 2 ? 'b' : 'a') + ' 320ms cubic-bezier(.2,.8,.2,1)' },
+speaker: { wave: !!(st.said && st.voiced), still: !(st.said && st.voiced) },
+listen: () => this.speak(this.state.r),
+answers, say,
+bubble: { on: !finished && st.quiet && (st.said || (st.heard && !st.right)), text: now.gn },
+pose: finished ? 'happy' : st.right ? (st.fix && !st.joy ? 'oops' : 'happy') : st.miss ? 'listen' : 'stand',
+talk: !!(st.said && st.voiced),
+scoreLine: '¡Muy bien! ' + st.first + ' de ' + n + ' a la primera.',
+fresh: !again,
+announce: finished && n ? 'Iporãite! ' + (again ? '' : 'Rehupyty peteĩ mbyja. ') + '¡Muy bien! ' + st.first + ' de ' + n + ' a la primera.' : '',
 doneRef: this.doneRef,
+bigStar: C.puffyD(32, 33.5, 28),
 close: (e) => { if (act) { e.preventDefault(); this.leave(); } },
 done: (e) => { if (act) { e.preventDefault(); act.finish('yesno'); } }
 };
