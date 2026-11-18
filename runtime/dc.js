@@ -244,7 +244,8 @@
       var prop = propName(a.name), parts = parse(a.value);
       var hole = parts.length === 1 && typeof parts[0] !== 'string';
       if (INPUTS[tag] && !hole && (prop === 'checked' || prop === 'value')) prop = prop === 'checked' ? 'defaultChecked' : 'defaultValue';
-      if (prop === 'inert') { list.push({ prop: 'inert', parts: [''] }); return; }
+      /* inert: written plainly it is on; a whole hole turns it on when its value is true, off when false or empty */
+      if (prop === 'inert') { list.push(hole ? { prop: 'inert', parts: parts, flag: true } : { prop: 'inert', parts: [''] }); return; }
       var url = prop === 'href' || prop === 'src';
       if (url && !hole && parts.length < 2) parts = [boardURL(a.value, board)];
       list.push({ prop: prop, parts: parts, url: url });
@@ -293,12 +294,13 @@
       var props = {};
       n.props.forEach(function (p) { props[p.name] = attrValue({ parts: p.parts }, scope); });
       if (n.kids.length) props.children = renderKids(n.kids, scope, ctx);
-      return h(Guard, { name: n.name }, h(ctx.child(n.name), props));
+      return h(ctx.child(n.name), props);
     }
     var props2 = {}, important = null;
     for (var j = 0; j < n.attrs.length; j++) {
       var a = n.attrs[j];
       var v = attrValue(a, scope);
+      if (a.flag) v = v ? '' : null;
       if (v == null) continue;
       if (a.prop === 'style') {
         if (typeof v === 'string') { var st = styleObject(v); v = st.style; important = st.important; }
@@ -352,14 +354,17 @@
     render() { return null; }
   }
 
-  /* ---------- a board that fails does not take the others with it ---------- */
+  /* ---------- a board that fails ---------- */
+  /* Whatever throws while a board draws, in it or in a board it imports, reaches this guard around the page's board,
+     which says so and offers to start again (the site keeps the child's progress, so starting again goes back to the
+     path). A board inside another is not guarded on its own: a screen with a hole in it would leave a child with no
+     way on. */
   class Guard extends React.Component {
     constructor(props) { super(props); this.state = { failed: false }; }
     static getDerivedStateFromError() { return { failed: true }; }
-    componentDidCatch(error) { console.error('dc runtime: ' + this.props.name + ' failed:', error); }
+    componentDidCatch(error, info) { console.error('dc runtime: ' + this.props.name + ' failed:', error, info && info.componentStack || ''); }
     render() {
       if (!this.state.failed) return this.props.children;
-      if (!this.props.root) return h('span', { 'data-dc-failed': this.props.name, hidden: true });
       return h('div', { role: 'alert', style: { padding: '120px 28px', textAlign: 'center', color: '#FFF7EC',
           font: '700 17px/1.45 system-ui, sans-serif' } },
         h('p', null, 'Algo no salió bien.'),
@@ -463,7 +468,7 @@
         if (!NAME.test(name)) { console.error('dc runtime: ' + url + ' imports a board with a bad name: ' + name); return null; }
         var u = resolve(name + '.dc.html', url);
         board.children[name] = u;
-        return load(u, below).catch(function (e) { console.error(e); return null; }); /* a missing board stays empty */
+        return load(u, below); /* a board that cannot load fails the one that imports it: the page offers to try again */
       });
       return Promise.all([loadScripts(srcs), Promise.all(kids)]);
     }).then(function () {
@@ -504,7 +509,7 @@
         root = ReactDOM.createRoot(el);
         if (roots) roots.set(el, root);
       }
-      root.render(h(Guard, { name: board.Component.displayName, root: true }, h(board.Component, props || {})));
+      root.render(h(Guard, { name: board.Component.displayName }, h(board.Component, props || {})));
       return { board: board, root: root };
     });
   }

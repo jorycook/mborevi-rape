@@ -67,18 +67,48 @@ a{color:#2A1B3D;text-decoration:none}a:hover{color:#2A1B3D}
    grade, then night after night: three games, and Mborevi'i walks the Milky Way to the next star. The boards that are
    only brand moments (the mascot sheet, the component, the icon, the sky poster, the rules) are not played here.
    When the screen changes, the focus moves to the new screen's heading (or the screen itself), so a keyboard or a
-   screen reader starts there and is not left on a button that is gone. */
+   screen reader starts there and is not left on a button that is gone.
+   On the public site (window.__tpSite), the progress is kept on the device and comes back at the next visit, on the
+   path, and the phone's Back moves one screen back, as the screen's own back button does (tpCourse.UP); on the path
+   and the first screen it leaves the site. On the canvas neither happens. */
 const SCREENS = ['Welcome', 'Grade', 'Home', 'Ready', 'Main', 'Tonight', 'Sky', 'Grownups', 'Meet', 'Pick', 'Pairs', 'Build', 'Say', 'Letters', 'Story', 'Check', 'Shine'];
 class Component extends DCLogic {
 constructor(props) {
 super(props);
-this.state = window.tpCourse.fresh();
+this.state = window.tpCourse.restore() || window.tpCourse.fresh();
 this.act = window.tpCourse.handlers(() => this.state, (fn) => this.setState(fn));
 this.screenRef = (el) => { if (el) this.screenEl = el; };
 }
 /* the first screen is the one shown: from the first change on, the focus follows the screen */
 componentDidMount() {
 this.shown = this.state.screen;
+if (window.__tpSite && window.history && typeof window.history.pushState === 'function') {
+this.onPop = () => {
+if (this.skip) { this.skip = false; this.sync(); return; }
+if (!this.ours()) this.act.back();
+this.sync();
+};
+window.addEventListener('popstate', this.onPop);
+this.sync();
+}
+}
+componentWillUnmount() {
+if (this.onPop) window.removeEventListener('popstate', this.onPop);
+}
+/* is the page on the history entry this board added? Only then is there a step back that stays on the site */
+ours() {
+const s = window.history.state;
+return !!(s && s.tpBack);
+}
+/* a screen with a way back has one history entry above the page's own, so Back comes here; a screen without one
+   (the path, the first screen) has none, so Back leaves */
+sync() {
+if (!this.onPop) return;
+const up = !!window.tpCourse.UP[this.state.screen];
+try {
+if (up && !this.ours()) window.history.pushState({ tpBack: 1 }, '');
+else if (!up && this.ours() && !this.skip) { this.skip = true; window.history.back(); }
+} catch (e) { this.skip = false; }
 }
 componentDidUpdate() {
 const now = this.state.screen;
@@ -90,6 +120,8 @@ if (h && !h.hasAttribute('tabindex')) h.setAttribute('tabindex', '-1');
 try { to.focus({ preventScroll: true }); } catch (e) { try { to.focus(); } catch (e2) {} }
 }
 this.shown = now;
+window.tpCourse.store(this.state);
+this.sync();
 }
 renderVals() {
 const s = this.state;

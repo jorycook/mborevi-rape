@@ -432,6 +432,58 @@
   C.fresh = function () {
     return { screen: 'Welcome', started: false, grade: null, track: null, done: {}, checks: {}, cur: null, game: null, walk: null };
   };
+  /* Where each screen's own back button goes; the phone's Back does the same on the site. The path (Main) and the
+     first screen have none: there Back leaves. */
+  C.UP = { Grade: 'Welcome', Home: 'Grade', Ready: 'Home', Tonight: 'Main', Sky: 'Main', Grownups: 'Main', Check: 'Main',
+    Shine: 'Main', Meet: 'Tonight', Pick: 'Tonight', Pairs: 'Tonight', Build: 'Tonight', Say: 'Tonight', Letters: 'Tonight',
+    Story: 'Tonight' };
+  /* The child's progress kept on this device, when the page asks for it (the site sets window.__tpSite.key; the canvas
+     does not): the grade, the language of home, the nights and big stars done, the voice switch. Never the screen in
+     play: a child who comes back starts on the path. Nothing leaves the device. */
+  var KEEP = 1, kept = '';
+  function keyOf() { var site = window.__tpSite; return site && typeof site.key === 'string' && site.key ? site.key : ''; }
+  C.store = function (state) {
+    var key = keyOf();
+    if (!key || !state) return;
+    var o = { v: KEEP, started: !!state.started, grade: state.grade || null, track: state.track || null,
+      done: state.done || {}, checks: state.checks || {} };
+    if (state.voice === false) o.voice = false;
+    try {
+      var text = JSON.stringify(o);
+      if (text !== kept) { window.localStorage.setItem(key, text); kept = text; }
+    } catch (e) { /* storage full, blocked or private: the game goes on, unkept */ }
+  };
+  /* what was kept, checked against the lessons as they are now (a step that no longer exists is dropped); null when
+     nothing usable was kept */
+  C.restore = function () {
+    var key = keyOf();
+    if (!key) return null;
+    var o;
+    try { o = JSON.parse(window.localStorage.getItem(key) || 'null'); } catch (e) { return null; }
+    if (!o || typeof o !== 'object' || o.v !== KEEP) return null;
+    load();
+    var st = C.fresh();
+    var plain = function (x) { return x && typeof x === 'object' && !Array.isArray(x); };
+    if (typeof o.grade === 'string' && ORDER.indexOf(o.grade) >= 0) st.grade = o.grade;
+    if (o.track === 'L1' || o.track === 'L2' || o.track === 'BI') st.track = o.track;
+    if (plain(o.done)) Object.keys(o.done).forEach(function (id) {
+      var s = C.session(id), had = o.done[id], out = {};
+      if (!s || s.kind !== 'night' || !plain(had)) return;
+      Object.keys(had).forEach(function (k) { if (had[k] && (k === 'ok' || GAMES[k])) out[k] = 1; });
+      if (Object.keys(out).length) st.done[id] = out;
+    });
+    if (plain(o.checks)) Object.keys(o.checks).forEach(function (id) {
+      var s = C.session(id), c = o.checks[id];
+      if (!s || s.kind !== 'check' || !plain(c)) return;
+      var n = function (x) { return typeof x === 'number' && isFinite(x) && x >= 0 ? x : 0; };
+      st.checks[id] = { score: n(c.score), of: n(c.of), stars: Math.min(3, Math.max(1, Math.round(n(c.stars)) || 1)) };
+    });
+    if (o.voice === false) st.voice = false;
+    st.started = !!o.started || !!st.grade;
+    st.screen = st.grade && st.track ? 'Main' : 'Welcome';
+    kept = '';
+    return st;
+  };
   /* what every screen reads: the grade, the step in play, its games, the stars */
   /* Mborevi'i's own lines, spoken as well as written: the clips are in the shared sound file (tp-sound-ui.js, keyed
      'u:' + the folded line), and say() plays one when it is there (false when it is not: the written line stays) */
@@ -445,11 +497,16 @@
   };
   C.say = function (line) {
     var S = window.tpSound;
-    var k = 'u:' + C.fold(line || '');
-    if (!S || !S.has(k)) return false;
+    if (!S) return false;
+    /* the tap wakes the sound even when the line's clip has not arrived yet, so the next line can play */
     S.unlock();
+    var k = 'u:' + C.fold(line || '');
+    if (!S.has(k)) return false;
     return S.play(k);
   };
+  /* Mborevi'i's lines are asked for as soon as this file runs, not when the first screen draws: on a slow phone they
+     are then there for the first tap */
+  if (window.tpSound && typeof window.tpSound.need === 'function') window.tpSound.need('ui');
   C.view = function (state) {
     load();
     var g = state.grade || ORDER[0];
@@ -480,16 +537,21 @@
        place, and a double tap would otherwise answer it too */
     var last = 0;
     function guard() { var t = Date.now(); if (t - last < 400) return false; last = t; return true; }
+    function moveTo(st, to) {
+      var out = { screen: to, started: st.started || to !== 'Welcome' };
+      if (to === 'Main') { out.cur = null; out.game = null; } else out.walk = null;
+      return out;
+    }
     return {
       /* to the path: the step opened there is put down (a night played again is not tonight's); a walk only lives on
          the path */
       go: function (to) {
         if (!guard()) return;
-        set(function (st) {
-          var out = { screen: to, started: st.started || to !== 'Welcome' };
-          if (to === 'Main') { out.cur = null; out.game = null; } else out.walk = null;
-          return out;
-        });
+        set(function (st) { return moveTo(st, to); });
+      },
+      /* the phone's Back: one screen back, where the screen's own back button goes; nothing on the path */
+      back: function () {
+        set(function (st) { var to = C.UP[st.screen]; return to ? moveTo(st, to) : null; });
       },
       save: function (patch) { set(function () { return patch; }); },
       /* a grade picked on the sky: its own path comes back, kept per grade */

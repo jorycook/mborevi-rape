@@ -1,5 +1,5 @@
-/* Mborevi Rape sound: the player of the Yaoki suite and of Epu'ã (gn-sound.js), unchanged but for its names, plus
- * the loader of each grade's clips. A grade's clips are one file (tp-sound-g1.js, made by the sound tool from the
+/* Mborevi Rape sound: the player of the Yaoki suite and of Epu'ã (gn-sound.js), unchanged but for its names and for
+ * the iPhone's silent switch (media(), below), plus the loader of each grade's clips. A grade's clips are one file (tp-sound-g1.js, made by the sound tool from the
  * lessons), fetched next to this file the first time the grade is in use (tpCourse.view asks for it); each file
  * registers its clips in window.__tpClips as MP3 in base64, with their length and what made them. Every screen works
  * without them: when a clip or the browser's audio is missing, play() returns false and the screen shows its written
@@ -58,6 +58,41 @@ window.__tpSoundVoices = window.__tpSoundVoices || {"grn": {"name": "MMS-TTS gua
     stale = false;
   }
 
+  /* An iPhone with its ring/silent switch on mutes a page's Web Audio, though play() goes on as if it were heard, so
+     the screens would show neither sound nor their written stand-in. A page that says it plays media is not muted:
+     newer iPhones are told so (navigator.audioSession), older ones are put in that mode by a silent <audio> that plays
+     along (it starts inside a tap, at the output's own rate, and pauses while the page is put aside). Elsewhere this
+     does nothing. */
+  var hush = null;
+  function silence(rate) {
+    var n = 7, b = new Uint8Array(44 + n), v = new DataView(b.buffer);
+    var text = function (at, t) { for (var i = 0; i < t.length; i++) b[at + i] = t.charCodeAt(i); };
+    text(0, 'RIFF'); v.setUint32(4, 36 + n, true); text(8, 'WAVE'); text(12, 'fmt ');
+    v.setUint32(16, 16, true); v.setUint16(20, 1, true); v.setUint16(22, 1, true);
+    v.setUint32(24, rate, true); v.setUint32(28, rate, true); v.setUint16(32, 1, true); v.setUint16(34, 8, true);
+    text(36, 'data'); v.setUint32(40, n, true);
+    for (var k = 0; k < n; k++) b[44 + k] = 128;
+    return 'data:audio/wav;base64,' + btoa(String.fromCharCode.apply(null, b));
+  }
+  function media(c) {
+    try {
+      var session = navigator.audioSession;
+      if (session) { if (session.type !== 'playback') session.type = 'playback'; return; }
+      if (!(window.webkitAudioContext && navigator.maxTouchPoints > 0)) return;
+      if (!hush) {
+        hush = document.createElement('audio');
+        hush.setAttribute('x-webkit-airplay', 'deny');
+        hush.preload = 'auto';
+        hush.loop = true;
+        hush.src = silence(Math.round(c.sampleRate) || 44100);
+      }
+      if (hush.paused) {
+        var going = hush.play();
+        if (going && typeof going.catch === 'function') going.catch(function () {});
+      }
+    } catch (e) {}
+  }
+
   function context() {
     if (!AC) return null;
     try {
@@ -65,6 +100,7 @@ window.__tpSoundVoices = window.__tpSoundVoices || {"grn": {"name": "MMS-TTS gua
         ctx = new AC();
         try { ctx.addEventListener('statechange', seen); } catch (e) {}
       }
+      media(ctx);
       /* besides "suspended", iPhones report "interrupted" after a call or a spell in the background: both need waking */
       if (ctx.state !== 'running' && ctx.state !== 'closed') {
         var woke = ctx.resume();
@@ -226,6 +262,6 @@ window.__tpSoundVoices = window.__tpSoundVoices || {"grn": {"name": "MMS-TTS gua
      so the phone's other sound can go on and nothing of this page keeps running in the background.
      An iPhone can leave an output silent after such a spell anyway. */
   document.addEventListener('visibilitychange', function () {
-    if (document.visibilityState === 'hidden') { api.stop(); drop(); }
+    if (document.visibilityState === 'hidden') { api.stop(); drop(); if (hush) { try { hush.pause(); } catch (e) {} } }
   });
 })();
