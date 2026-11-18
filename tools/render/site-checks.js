@@ -1008,6 +1008,70 @@ async function slowH2(b0, pause) {
     srv.close();
   }
 
+  // 31. the games: a round's word plays by itself (no speaker tap); the two new games played to their end, where the
+  //     phone's Back keeps their star; a night half played under the earlier rotation finishes with one more game
+  {
+    /* progress with tonight's first game played on night `id`, the next one ready to open from tonight's list */
+    const seed = async (p, grade, id, had) => {
+      await p.goto(SITE, { waitUntil: 'networkidle' });
+      await p.evaluate(([grade, id, had]) => {
+        localStorage.clear();
+        const C = window.tpCourse;
+        const st = C.sample(grade, 'L2', C.sessions(grade).findIndex((s) => s.id === id));
+        st.done[id] = had;
+        C.store(st);
+      }, [grade, id, had]);
+      await p.reload({ waitUntil: 'networkidle' }); await p.waitForTimeout(700);
+      await clickName(p, 'link', /¡Vamos!/);
+    };
+    /* every answer of each round, by its label, until the end card's «Jaha!» shows */
+    const playToEnd = async (p, answers) => {
+      for (let i = 0; i < 60 && !(await p.getByRole('link', { name: /Seguir/ }).count()); i++) {
+        const n = await p.locator(answers).count();
+        for (let k = 0; k < n; k++) await p.locator(answers).nth(k).dispatchEvent('click').catch(() => {});
+        await p.waitForTimeout(500);
+      }
+      return (await p.getByRole('link', { name: /Seguir/ }).count()) > 0;
+    };
+    const ctx = await b.newContext(phone); const p = await ctx.newPage();
+    await p.addInitScript(() => {
+      window.__played = [];
+      const wrap = () => { const S = window.tpSound; if (!S || S.__wrapped) return; const play = S.play; S.play = function (k) { window.__played.push([k, Date.now()]); return play.apply(this, arguments); }; S.__wrapped = 1; };
+      document.addEventListener('DOMContentLoaded', () => { const t = setInterval(wrap, 50); setTimeout(() => clearInterval(t), 20000); });
+    });
+    /* Pick, by ear: the word comes without a tap on the speaker */
+    await seed(p, 'pre', 'preu01n1', { meet: 1 });
+    await p.evaluate(() => { window.__played = []; });
+    await clickName(p, 'link', /^Jaha!/);
+    await p.waitForTimeout(1200);
+    const st0 = await p.evaluate(APPSTATE);
+    const heard = await p.evaluate(() => window.__played.map((x) => x[0]));
+    check('a listening round plays its word by itself (Pick, by ear)', st0 && st0.screen === 'Pick' && heard.some((k) => /^w:/.test(k)), (st0 && st0.screen) + ' | played ' + heard.join(', '));
+    /* «Ehendu porã» (¿sí o no?), then Back on its end: the star is kept */
+    await seed(p, 'pre', 'preu01n3', { meet: 1 });
+    await clickName(p, 'link', /^Jaha!/);
+    const st1 = await p.evaluate(APPSTATE);
+    const ended1 = await playToEnd(p, '#frame button[aria-label="Héẽ, sí"], #frame button[aria-label="Nahániri, no"]');
+    await p.goBack(); await p.waitForTimeout(800);
+    const k1 = await kept(p);
+    check('«Ehendu porã» played to its end; Back there keeps its star', st1 && st1.screen === 'YesNo' && ended1 && k1 && k1.done.pre && Object.values(k1.done.pre).some((d) => d.yesno), (st1 && st1.screen) + ' ended ' + ended1 + ' | ' + JSON.stringify(k1 && k1.done.pre).slice(0, 120));
+    /* «Ejapyhy mbyja» (atrapá la estrella), the same */
+    await seed(p, 'pre', 'preu01n2', { meet: 1 });
+    await clickName(p, 'link', /^Jaha!/);
+    const st2 = await p.evaluate(APPSTATE);
+    const ended2 = await playToEnd(p, '#frame button[aria-label^="Dibujo:"]');
+    await p.goBack(); await p.waitForTimeout(800);
+    const k2 = await kept(p);
+    check('«Ejapyhy mbyja» played to its end; Back there keeps its star', st2 && st2.screen === 'Catch' && ended2 && k2 && k2.done.pre && Object.values(k2.done.pre).some((d) => d.catch), (st2 && st2.screen) + ' ended ' + ended2 + ' | ' + JSON.stringify(k2 && k2.done.pre).slice(0, 120));
+    /* a night half played under the earlier rotation (meet and pick, where the rotation now gives the catch game):
+       the game played keeps its place, and one game is left, the one still to play */
+    await seed(p, 'pre', 'preu01n2', { meet: 1, pick: 1 });
+    await clickName(p, 'link', /^Jaha!/);
+    const st3 = await p.evaluate(APPSTATE);
+    check('a night half played under the earlier rotation finishes with the one game left', st3 && st3.screen === 'Say', st3 && st3.screen);
+    await ctx.close();
+  }
+
   await b.close();
   const bad = results.filter((r) => !r.ok);
   console.log(`\n${results.length - bad.length} of ${results.length} checks passed`);
