@@ -39,15 +39,15 @@
   .msg p { margin: 0; }
   .msg button { margin-top: 18px; padding: 14px 26px; border-radius: 999px; border: 3px solid #3B2418;
     background: #FFD34E; color: #3B2418; font: 800 17px system-ui, sans-serif; cursor: pointer; }
-  #turn { position: fixed; right: 16px; top: 50%; transform: translateY(-50%); color: #FFF7EC; text-align: center;
+  #turn { position: fixed; right: max(16px, env(safe-area-inset-right)); top: 50%; transform: translateY(-50%); color: #FFF7EC; text-align: center;
     font: 700 15px/1.35 system-ui, sans-serif; }
   #turn[hidden] { display: none; }
   #turn svg { display: block; margin: 0 auto 8px; }
   #turn p { margin: 0; }
 </style>
 <noscript><style>#loading { display: none; }</style></noscript>
-<script defer src="runtime/vendor/react.production.min.js"></script>
-<script defer src="runtime/vendor/react-dom.production.min.js"></script>
+<script defer src="runtime/vendor/react.production.min.js" onerror="window.__tpShellCut = 1"></script>
+<script defer src="runtime/vendor/react-dom.production.min.js" onerror="window.__tpShellCut = 1"></script>
 </head>
 <body>
 <div id="box"><div id="frame">
@@ -75,10 +75,20 @@
   /* The scale that fits the window, but never so small that the text cannot be read (then the page scrolls), nor
      more than one and a half times the drawing. A phone held sideways (Chrome's bars leave it a window as short as
      260 px) shows the whole screen, however small, with a note beside it to turn the phone, rather than hide its
-     buttons below the fold. The browser's own zoom (Ctrl +) made while the page is open is kept: the window keeps its
-     size while the page's pixels grow, and the app grows with them (the page scrolls) instead of being fitted back
-     to the size it had. */
+     buttons below the fold. A phone is told by its touch screen's size, and «sideways» by the screen, not the window:
+     a phone in split screen has a short, wide window while upright, and turning it would not help (it scrolls
+     instead, as any short window does). The browser's own zoom (Ctrl +) made while the page is open is kept: the
+     window keeps its size while the page's pixels grow, and the app grows with them (the page scrolls) instead of
+     being fitted back to the size it had. */
   var zoom = 1, last = null;
+  function phoneSideways() {
+    var sc = window.screen || {};
+    if (!media('(pointer: coarse)') || !(Math.min(sc.width || 0, sc.height || 0) < 600)) return false;
+    var o = sc.orientation && sc.orientation.type;
+    if (typeof o === 'string') return o.indexOf('landscape') === 0;
+    if (typeof window.orientation === 'number') return Math.abs(window.orientation) === 90;
+    return media('(orientation: landscape)');
+  }
   function measure() {
     return { w: window.innerWidth, h: window.innerHeight, ow: window.outerWidth, oh: window.outerHeight, r: window.devicePixelRatio || 1 };
   }
@@ -88,7 +98,7 @@
         media('(pointer: fine)')) zoom = Math.max(1, zoom * now.r / last.r);
     last = now;
     var s = Math.min(w * zoom / 390, h * zoom / 844, 1.5);
-    var sideways = media('(pointer: coarse) and (orientation: landscape)');
+    var sideways = phoneSideways();
     var least = sideways ? 0.2 : 0.6;
     if (!(s > least)) s = least;
     box.style.width = 390 * s + 'px';
@@ -99,6 +109,7 @@
     if (!turn.hidden) turn.style.width = Math.min(220, side - 32) + 'px';
   }
   window.addEventListener('resize', fit);
+  try { if (window.screen && screen.orientation && screen.orientation.addEventListener) screen.orientation.addEventListener('change', fit); } catch (e) {}
   fit();
   /* while the page is still being read the window's outer size can read 0: it is measured again once it is known,
      so that the first zoom made is not missed */
@@ -143,15 +154,34 @@
   }, 25000);
   /* the runtime is revalidated before it runs, as the boards and their scripts are, so after a deploy a returning
      visitor gets the new one and not a copy the browser may keep for ten minutes (React's version never changes). A
-     runtime the site answers with an error is the site's fault, not the connection's; its text goes into the app's
-     version mark (DC.build) */
+     runtime the site answers with an error is the site's fault, not the connection's; a download that does not come
+     through is left to the <script>, which asks again. Its text goes into the app's version mark (DC.build): read
+     again from the browser's cache when this download did not come through */
   var runtimeText = '';
   var runtime = fetch('runtime/dc.js', { cache: 'no-cache' }).then(function (r) {
-    if (!r.ok) throw new Error('runtime/dc.js answered ' + r.status);
+    if (!r.ok) { var e = new Error('runtime/dc.js answered ' + r.status); e.answered = true; throw e; }
     return r.text().then(function (t) { runtimeText = t; });
-  }, function () {});
+  }).catch(function (e) { if (e && e.answered) throw e; });
+  /* React's two files: one that did not come through is asked for once more (a drop on a weak line); one that still
+     does not come is the connection */
+  function vendor() {
+    var want = [];
+    if (!window.React) want.push('runtime/vendor/react.production.min.js');
+    if (!window.ReactDOM) want.push('runtime/vendor/react-dom.production.min.js');
+    return want.reduce(function (p, src) {
+      return p.then(function () {
+        return new Promise(function (ok, no) {
+          var s = document.createElement('script');
+          s.src = src;
+          s.onload = ok;
+          s.onerror = function () { var e = new Error(src + ' did not load'); e.network = true; no(e); };
+          document.head.appendChild(s);
+        });
+      });
+    }, Promise.resolve());
+  }
   document.addEventListener('DOMContentLoaded', function () {
-    runtime.then(function () {
+    runtime.then(vendor).then(function () {
       return new Promise(function (ok, no) {
         var s = document.createElement('script');
         s.src = 'runtime/dc.js';
@@ -160,7 +190,16 @@
         document.head.appendChild(s);
       });
     }).then(function () {
-      if (!window.DC || !window.React || !window.ReactDOM) throw new Error('runtime/dc.js or React did not load');
+      if (!window.DC || !window.React || !window.ReactDOM) {
+        var e = new Error('runtime/dc.js or React did not load');
+        if (window.__tpShellCut) e.network = true;
+        throw e;
+      }
+      if (!runtimeText) {
+        fetch('runtime/dc.js', { cache: 'force-cache' }).then(function (r) { return r.ok ? r.text() : ''; }).then(function (t) {
+          if (t) { runtimeText = t; DC.configure({ also: [t] }); }
+        }, function () {});
+      }
       /* a link between boards opens the app again; the fonts come from this site, not from Google; a screen that keeps
          failing at once may be broken by what is kept: the page can then offer to start from scratch, which sets it
          aside until the app has changed */

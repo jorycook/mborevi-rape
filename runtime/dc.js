@@ -449,7 +449,10 @@
       if (scripts[src]) return null;
       return freshness[src] || (freshness[src] = revalidate(src));
     });
-    return Promise.all(fresh).then(function () { return Promise.all(list.map(runScript)); });
+    return Promise.all(fresh).then(function () { return Promise.all(list.map(runScript)); }).then(function (out) {
+      list.forEach(reread);
+      return out;
+    });
   }
   /* The revalidation reads the script as it comes (its bytes count for the clock below, its text for the version mark).
      A script the site answers with an error (a deploy that left it out) fails the board, which is the site's fault,
@@ -464,12 +467,26 @@
     }).then(stop, function (e) {
       stop();
       if (e && e.answered) { delete freshness[src]; throw e; }
+      unread[src] = true;
     });
   }
-  /* A download is given up when nothing has arrived for 15 s, counted for all of the page's downloads together (and at
-     least 15 s from its own start): on a slow line the boards come one after another (HTTP/2 sends them in turn), and
+  /* a script whose revalidation did not come through ran all the same (its <script> asked again): its text is read
+     once more, from the browser's cache, for the version mark, which is unknown meanwhile */
+  function reread(src) {
+    if (unread[src] !== true) return;
+    unread[src] = 'asking';
+    fetch(src, { cache: 'force-cache' }).then(function (r) {
+      if (!r.ok) throw new Error(src + ' answered ' + r.status);
+      return r.text();
+    }).then(function (text) { marks[src] = hash(text); delete unread[src]; }, function () { unread[src] = true; });
+  }
+  /* A download is given up when nothing has arrived for 45 s, counted for all of the page's downloads together (and at
+     least 45 s from its own start): on a slow line the boards come one after another (HTTP/2 sends them in turn), and
      one at the back of the queue gets nothing for a long while though the line is busy with the others. One that keeps
-     coming, however slowly, is waited for. */
+     coming, however slowly, is waited for, and so is a line that pauses for a while (a weak signal fading): on HTTP/2
+     giving up frees nothing on the line (what was sent for the downloads given up still has to cross it), so a quick
+     retry would only queue behind it and be given up too. The page says it is still loading after 25 s, and offers to
+     try again. */
   var lastByte = 0, waiting = [], dog = 0;
   function heard() { lastByte = Date.now(); }
   function watch(ctl) {
@@ -477,7 +494,7 @@
     waiting.push(d);
     if (!dog) dog = setInterval(function () {
       var now = Date.now();
-      waiting.slice().forEach(function (x) { if (now - Math.max(lastByte, x.at) >= 15000) x.ctl.abort(); });
+      waiting.slice().forEach(function (x) { if (now - Math.max(lastByte, x.at) >= 45000) x.ctl.abort(); });
     }, 1000);
     return function () {
       var i = waiting.indexOf(d);
@@ -523,17 +540,20 @@
   }
   /* Which version of the app this is: a short mark made from the text of every board and script the page has loaded,
      and of any text the page hands over (DC.configure({ also: [text] }), the runtime's own). The same files give the
-     same mark; a deploy that changed any of them gives another. */
-  var marks = {};
+     same mark, however their downloads went; a deploy that changed any of them gives another. '' while a text is
+     missing (a script still being read again, the runtime's text not handed over): the page cannot tell then. */
+  var marks = {}, unread = {};
   function hash(text) {
     var h = 2166136261;
     for (var i = 0; i < text.length; i++) { h ^= text.charCodeAt(i); h = Math.imul(h, 16777619); }
     return h >>> 0;
   }
   function build() {
-    var sum = 0;
+    if (Object.keys(unread).length) return '';
+    var also = options.also || [], sum = 0;
+    for (var i = 0; i < also.length; i++) if (!also[i]) return '';
     Object.keys(marks).forEach(function (u) { sum = (sum + marks[u]) >>> 0; });
-    (options.also || []).forEach(function (t) { sum = (sum + hash(String(t))) >>> 0; });
+    also.forEach(function (t) { sum = (sum + hash(String(t))) >>> 0; });
     return sum ? sum.toString(16) : '';
   }
   function Missing() { return null; }

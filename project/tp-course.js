@@ -642,13 +642,19 @@
     try { return site && typeof site.build === 'function' ? String(site.build() || '') : ''; } catch (e) { return ''; }
   }
   /* a record set aside by «Empezar de cero» comes back once the app has changed since; with the same app it stays
-     aside, so that it does not break the path again */
+     aside, so that it does not break the path again. When the page cannot tell which version it is (a download that
+     did not come through), nothing moves; a record set aside on such a visit takes the version of the next visit
+     that can tell, and stays aside */
   function bringBack(key) {
     var text = get(key + '-aside');
     if (text == null) return;
-    var made = build(), at = '';
-    try { at = String(JSON.parse(text).made || ''); } catch (e) {}
+    var made = build(), at = '', o = null;
+    try { o = JSON.parse(text); at = String((o && o.made) || ''); } catch (e) {}
     if (!made || made === at) return;
+    if (!at) {
+      if (plain(o) && !(typeof o.v === 'number' && o.v > KEEP)) { o.made = made; window.localStorage.setItem(key + '-aside', JSON.stringify(o)); }
+      return;
+    }
     var aside = recordOf(text), now = recordOf(get(key));
     if (aside === 'newer' || now === 'newer') return;
     if (aside) window.localStorage.setItem(key, textOf(merge(now || { v: KEEP, done: {}, checks: {} }, aside)));
@@ -736,22 +742,29 @@
     var key = keyOf();
     kept = '';
     if (!key) return;
+    var count = wipes + 1;
     try {
       var now = recordOf(get(key)), aside = recordOf(get(key + '-aside'));
       if (now === 'newer') now = null;
+      count = Math.max(wipes, (now && now.wipes) || 0) + 1;
       if (now && (Object.keys(now.done).length || Object.keys(now.checks).length || now.grade)) {
         var keep = aside && aside !== 'newer' ? merge(now, aside) : now;
         keep.made = build();
         window.localStorage.setItem(key + '-aside', textOf(keep));
       }
-      wipes = Math.max(wipes, (now && now.wipes) || 0) + 1;
+      wipes = count;
       var mark = { v: KEEP, done: {}, checks: {}, wipes: wipes };
       if (now && now.voice === false) mark.voice = false;
       window.localStorage.setItem(key, textOf(mark));
       base = { grade: null, track: null, voice: mark.voice !== false };
     } catch (e) {
-      /* the device's storage is full: the record goes all the same (set aside first, if there was room for that) */
-      try { window.localStorage.removeItem(key); } catch (e2) {}
+      /* the device's storage is full: the record goes all the same (set aside first, if there was room for that), and
+         the mark that starts the other copies over is written in the room it leaves */
+      try {
+        window.localStorage.removeItem(key);
+        wipes = count;
+        window.localStorage.setItem(key, textOf({ v: KEEP, done: {}, checks: {}, wipes: wipes }));
+      } catch (e2) {}
     }
   };
   /* what every screen reads: the grade, the step in play, its games, the stars */

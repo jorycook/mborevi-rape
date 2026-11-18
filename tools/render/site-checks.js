@@ -81,8 +81,9 @@ async function playMeet(p) {
 
 /* A first visit over HTTP/2 on a slow line: our own server over TLS (gzip, ETag, max-age=600, as GitHub Pages serves),
    behind a relay below TLS that paces it at KBPS with 400 ms there and back, so the server's own HTTP/2 stack decides
-   whose bytes go first. The certificate is made here (openssl) and trusted by its key alone. */
-async function slowH2(b0) {
+   whose bytes go first. The certificate is made here (openssl) and trusted by its key alone. With pause = [from, to]
+   (seconds into the visit), nothing crosses the line either way in between (a weak signal fading). */
+async function slowH2(b0, pause) {
   const KBPS = 24, RATE = KBPS * 1000 / 8, HALF_RTT = 200, QUEUE = 32 * 1024;
   let dir;
   try {
@@ -117,14 +118,20 @@ async function slowH2(b0) {
       } catch (e) {}
     });
   });
+  let startAt = 0;
+  const paused = () => !!(pause && startAt && (Date.now() - startAt) / 1000 >= pause[0] && (Date.now() - startAt) / 1000 < pause[1]);
   const relay = net.createServer((phone) => {
     const up = net.connect(server.address().port, '127.0.0.1');
     phone.setNoDelay(true); up.setNoDelay(true);
-    phone.on('data', (d) => setTimeout(() => { if (!up.destroyed) up.write(d); }, HALF_RTT));
+    const ask = [];
+    phone.on('data', (d) => ask.push(d));
     const q = []; let queued = 0, credit = 0, last = Date.now();
     up.on('data', (d) => { q.push(d); queued += d.length; if (queued > QUEUE) up.pause(); });
     const tick = setInterval(() => {
-      const now = Date.now(); credit = Math.min(credit + RATE * (now - last) / 1000, 4096); last = now;
+      const now = Date.now();
+      if (paused()) { last = now; return; }
+      while (ask.length) { const d = ask.shift(); setTimeout(() => { if (!up.destroyed) up.write(d); }, HALF_RTT); }
+      credit = Math.min(credit + RATE * (now - last) / 1000, 4096); last = now;
       while (q.length && credit >= 1) {
         const d = q[0], n = Math.min(d.length, Math.floor(credit)), piece = d.subarray(0, n);
         if (n === d.length) q.shift(); else q[0] = d.subarray(n);
@@ -145,6 +152,7 @@ async function slowH2(b0) {
     let cut = 0;
     p.on('requestfailed', (r) => { if (/\.dc\.html/.test(r.url())) cut++; });
     const t0 = Date.now();
+    startAt = t0;
     await p.goto('https://127.0.0.1:' + relay.address().port + '/index.html', { waitUntil: 'commit', timeout: 120000 });
     let t = '';
     for (let i = 0; i < 360 && !/Epáy|No se pudo/.test(t); i++) {
@@ -152,7 +160,7 @@ async function slowH2(b0) {
       t = await p.evaluate(() => { const f = document.getElementById('frame'); return f ? f.innerText.replace(/\s+/g, ' ').slice(0, 110) : ''; }).catch(() => '');
     }
     const proto = await p.evaluate(() => (performance.getEntriesByType('navigation')[0] || {}).nextHopProtocol).catch(() => '?');
-    check(`a slow line over HTTP/2 (${KBPS} kbit/s, the boards one after another): the app starts`, /Epáy/.test(t) && proto === 'h2',
+    check(`a slow line over HTTP/2 (${KBPS} kbit/s, the boards one after another${pause ? `, the line silent from ${pause[0]} to ${pause[1]} s` : ''}): the app starts`, /Epáy/.test(t) && proto === 'h2',
       `${Math.round((Date.now() - t0) / 1000)} s, ${proto}, ${cut} board downloads cut off: ${t.slice(0, 60)}`);
     await ctx.close();
   } finally {
@@ -581,6 +589,23 @@ async function slowH2(b0) {
     await ctx.close();
   }
   {
+    /* a phone in split screen: its window is short and wide while the phone is upright. It is not taken for a phone held
+       sideways (it scrolls, with no note); a phone held sideways still is. The screen is set apart from the window */
+    const ctx = await b.newContext({ viewport: { width: 412, height: 240 }, isMobile: true, hasTouch: true }); const p = await ctx.newPage();
+    const cdp = await ctx.newCDPSession(p);
+    const shape = async (w, h, sw, sh, type) => {
+      await cdp.send('Emulation.setDeviceMetricsOverride', { width: w, height: h, deviceScaleFactor: 1, mobile: true, screenWidth: sw, screenHeight: sh,
+        screenOrientation: { type, angle: type.indexOf('landscape') === 0 ? 90 : 0 } });
+      await p.goto(SITE, { waitUntil: 'networkidle' }); await p.waitForTimeout(400);
+      return p.evaluate(() => ({ s: parseFloat(/scale\(([\d.]+)\)/.exec(document.getElementById('frame').style.transform)[1]), note: !document.getElementById('turn').hidden }));
+    };
+    const split = await shape(412, 240, 412, 915, 'portraitPrimary');
+    const side = await shape(802, 293, 851, 393, 'landscapePrimary');
+    check('a phone in split screen is not taken for one held sideways: the app scrolls, with no note to turn it', split.s >= 0.6 && !split.note, JSON.stringify(split));
+    check('…while a phone held sideways still shows the whole screen, with the note', side.s < 0.4 && side.note, JSON.stringify(side));
+    await ctx.close();
+  }
+  {
     /* upright, and on a tablet held sideways, no note */
     const notes = [];
     for (const vp of [{ width: 390, height: 844 }, { width: 1024, height: 700 }]) {
@@ -739,6 +764,7 @@ async function slowH2(b0) {
   //      another, so the last ones get nothing for a long while though the line is busy; they are waited for, and the
   //      app starts (a server of our own, over TLS, behind a line paced at 24 kbit/s with 400 ms there and back)
   await slowH2(b);
+  await slowH2(b, [30, 42]);
 
   // 23. lessons changed after progress was kept: a unit taken out does not light the one that takes its place; a unit
   //     renamed is dark until window.__tpRenamed says so, then lit (its stars were kept meanwhile); two copies with
@@ -826,6 +852,15 @@ async function slowH2(b0) {
     await same.goto(SITE, { waitUntil: 'networkidle' }); await same.waitForTimeout(800);
     const s1 = await same.evaluate(APPSTATE);
     check('opened again with the same app: the progress stays aside', s1 && s1.screen === 'Welcome' && !Object.keys(s1.done || {}).length && (await kept(same, KEY + '-aside')), s1 && s1.screen);
+    const flaky = await ctx.newPage(); await flaky.route('**/project/Main.dc.html*', broken);
+    let dropped = 0;
+    await flaky.route('**/project/tp-sky.js*', (route) => {
+      if (route.request().resourceType() === 'fetch' && !dropped) { dropped++; return route.abort('connectionreset'); }
+      return route.continue();
+    });
+    await flaky.goto(SITE, { waitUntil: 'networkidle' }); await flaky.waitForTimeout(800);
+    const s3 = await flaky.evaluate(APPSTATE);
+    check('…also on a visit whose download of a script broke off (the same files)', dropped === 1 && s3 && s3.screen === 'Welcome' && (await kept(flaky, KEY + '-aside')), `dropped ${dropped}, ${s3 && s3.screen}`);
     const next = await ctx.newPage(); await next.route('**/project/Main.dc.html*', broken);
     await next.route('**/project/tp-sky.js*', async (route) => { const r = await route.fetch(); route.fulfill({ response: r, body: (await r.text()) + '\n/* a new version */\n' }); });
     await next.goto(SITE, { waitUntil: 'networkidle' }); await next.waitForTimeout(800);
@@ -891,6 +926,86 @@ async function slowH2(b0) {
     for (let i = 0; i < 60 && !/No se pudo|Epáy/.test(t); i++) { await p.waitForTimeout(250); t = await screenText(p).catch(() => ''); }
     check(`${f} missing from the site: not sent to check the connection`, /No se pudo abrir la app/.test(t) && !/conexión/.test(t), t);
     await ctx.close();
+  }
+
+  // 29. a screen that breaks just after the app asked the history to go back: «Algo no salió bien» stays on the site
+  //     (the page is not taken back past its own entry), with two pages before the site; the next Back leaves. With the
+  //     browser's own Back (a test extension), as check 12
+  {
+    const ext = fs.mkdtempSync(path.join(os.tmpdir(), 'tp-back-ext-'));
+    fs.writeFileSync(path.join(ext, 'manifest.json'), JSON.stringify({ manifest_version: 3, name: 'site-checks back', version: '1', background: { service_worker: 'bg.js' }, permissions: ['tabs'] }));
+    fs.writeFileSync(path.join(ext, 'bg.js'), "self.uiBack = async () => { const [t] = await chrome.tabs.query({ active: true }); try { await chrome.tabs.goBack(t.id); return 'ok'; } catch (e) { return 'refused: ' + e.message; } };");
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'tp-back-prof-'));
+    const ctx = await chromium.launchPersistentContext(dir, { channel: 'chromium', headless: true, viewport: { width: 390, height: 844 },
+      args: ['--disable-extensions-except=' + ext, '--load-extension=' + ext] });
+    try {
+      let [sw] = ctx.serviceWorkers();
+      if (!sw) sw = await ctx.waitForEvent('serviceworker', { timeout: 15000 });
+      const p = ctx.pages()[0] || await ctx.newPage();
+      const back = async () => { await sw.evaluate(() => self.uiBack()); await p.waitForTimeout(1000); };
+      const before = async () => { await p.goto(BASE + 'README.md'); await p.goto(BASE + 'MEC.md'); };
+      /* Back on the big star, not finished, as the path breaks */
+      await p.route('**/project/Main.dc.html*', breaking('window.__boom'));
+      await before(); await toPath(p);
+      await p.evaluate(() => { const C = window.tpCourse; C.store(C.sample('g1', 'L2', 3)); });
+      await p.reload({ waitUntil: 'networkidle' }); await p.waitForTimeout(800);
+      await clickName(p, 'link', /¡Vamos!/);
+      const open = await p.evaluate(APPSTATE);
+      await p.evaluate(() => { window.__boom = true; });
+      await back();
+      const t1 = p.url().startsWith(SITE) ? await screenText(p) : 'left for ' + p.url();
+      await back();
+      check('Back on the big star as the path breaks: «Algo no salió bien» on the site, and the next Back leaves', open && open.screen === 'Check' && /Algo no salió bien/.test(t1) && p.url() === BASE + 'MEC.md', (open && open.screen) + ' | ' + t1.slice(0, 40) + ' | then ' + p.url());
+      /* the night's last game ends and the path's walk breaks as it starts */
+      await p.unroute('**/project/Main.dc.html*');
+      await p.route('**/project/Main.dc.html*', breaking('window.__boom && (window.__n = (window.__n || 0) + 1) > 1'));
+      await before(); await p.goto(SITE, { waitUntil: 'networkidle' });
+      /* only the first night's last game left (what the first part kept is cleared: progress is only ever added) */
+      await p.evaluate(() => { localStorage.clear(); const C = window.tpCourse; const st = C.sample('g1', 'L2', 0); st.done = { g1u01n1: { pick: 1, say: 1 } }; C.store(st); });
+      await p.reload({ waitUntil: 'networkidle' }); await p.waitForTimeout(800);
+      await clickName(p, 'link', /¡Vamos!/); await playMeet(p);
+      await p.evaluate(() => { window.__boom = true; window.__n = 0; });
+      await clickName(p, 'link', /Al juego que sigue/); await p.waitForTimeout(800);
+      const t2 = p.url().startsWith(SITE) ? await screenText(p) : 'left for ' + p.url();
+      check('the night\'s last game ends as the path\'s walk breaks: «Algo no salió bien» on the site', /Algo no salió bien/.test(t2), t2.slice(0, 60));
+    } finally { await ctx.close(); fs.rmSync(dir, { recursive: true, force: true }); fs.rmSync(ext, { recursive: true, force: true }); }
+  }
+
+  // 30. a download of the page's own files that breaks off halfway (the runtime, React, an engine script): it is asked
+  //     for again and the app starts, and the version mark is the same as on a visit where nothing broke off
+  {
+    const cut = new Set();
+    const srv = http.createServer(async (req, res) => {
+      try {
+        const r = await fetch(BASE + req.url.slice(1));
+        const buf = Buffer.from(await r.arrayBuffer());
+        res.writeHead(r.status, { 'content-type': r.headers.get('content-type') || 'application/octet-stream', 'content-length': buf.length, 'cache-control': 'max-age=600' });
+        const name = req.url.split('?')[0];
+        if (srv.cutting && /(runtime\/dc\.js|react-dom\.production\.min\.js|tp-sky\.js)$/.test(name) && !cut.has(name)) {
+          cut.add(name);
+          res.write(buf.subarray(0, buf.length >> 1));
+          setTimeout(() => res.socket.destroy(), 50);
+        } else res.end(buf);
+      } catch (e) { try { res.writeHead(502); res.end(); } catch (e2) {} }
+    });
+    await new Promise((ok) => srv.listen(0, '127.0.0.1', ok));
+    const url = 'http://127.0.0.1:' + srv.address().port + '/index.html';
+    const visit = async (cutting) => {
+      srv.cutting = cutting;
+      const ctx = await b.newContext(phone); const p = await ctx.newPage();
+      await p.goto(url);
+      let t = '';
+      for (let i = 0; i < 80 && !/Epáy|No se pudo/.test(t); i++) { await p.waitForTimeout(250); t = await screenText(p).catch(() => ''); }
+      await p.waitForTimeout(1500);
+      const mark = await p.evaluate(() => (window.DC && window.DC.build()) || '').catch(() => '');
+      await ctx.close();
+      return { t, mark };
+    };
+    const plain = await visit(false);
+    const broken = await visit(true);
+    check('downloads that break off halfway (runtime, React, a script) are asked for again: the app starts', /Epáy/.test(broken.t) && cut.size === 3, `${broken.t.slice(0, 40)} | broke off: ${[...cut].join(', ')}`);
+    check('…and its version mark is the one of a visit where nothing broke off', !!plain.mark && broken.mark === plain.mark, `${plain.mark} / ${broken.mark}`);
+    srv.close();
   }
 
   await b.close();

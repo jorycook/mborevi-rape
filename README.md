@@ -56,10 +56,12 @@ What the site adds to the boards:
     already loaded (offline too) and goes back to the path. If it breaks again at once, «Empezar de cero» is offered.
     It does not erase the saved progress: it sets it aside (under `mborevi-rape-aside`) and the app starts from the
     Moon. The progress comes back the first time the app opens after it has been updated, which may have mended what
-    broke; with the same version it stays aside. Any other copy of the app open at the time starts over too.
-  - A slow connection is told apart from a failure: a download is only given up after 15 s in which nothing arrives for
-    any of the page's downloads (on a slow line they come one after another), and after 25 s the page says it is still
-    loading.
+    broke; with the same version it stays aside. (The page tells the version by the text of the files it loaded; a
+    visit that cannot tell, because a download did not come through, leaves the progress where it is.) Any other copy
+    of the app open at the time starts over too.
+  - A slow connection is told apart from a failure: a download is only given up after 45 s in which nothing arrives for
+    any of the page's downloads (on a slow line they come one after another, and a weak signal can pause), and after
+    25 s the page says it is still loading. A download of the page's own files that breaks off is asked for again.
 - **On iPhones the silent switch does not mute the voice**: the page says it plays media (`navigator.audioSession`, or a
   silent `<audio>` on older iPhones), only once a clip can actually be heard, since media playback stops other music.
 - **Sharing the link** shows a picture of the app (`site/og.png`), and the browser tab and the home screen get its icon
@@ -169,7 +171,7 @@ The screenshot tools in `tools/render/` use Playwright, open the boards with thi
   and renamed, and with two copies of the app open), the phone's Back (also with Chrome's own Back button, through a
   small test extension), short windows and phones held sideways, a screen that fails to load or breaks, «Empezar de
   cero», a slow connection (also one that sends the boards one after another, over HTTP/2), no JavaScript, the
-  iPhone's silent switch (simulated), the share tags. It takes about seven minutes.
+  iPhone's silent switch (simulated), the share tags. It takes about fifteen minutes.
 
 The tools expect the server on port 8766; `BASE=http://127.0.0.1:8768/` points them at another.
 

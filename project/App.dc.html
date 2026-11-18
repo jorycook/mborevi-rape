@@ -99,7 +99,9 @@ return s && typeof s.tpDepth === 'number' ? s.tpDepth : 0;
 let travel = null;
 function pending() { return !!travel && Date.now() - travel.at < 1500 && depthNow() !== travel.to; }
 function goTo(to) {
-const have = depthNow();
+/* a go already on its way counts from where it is going: a board given up just after it asked (a screen that broke)
+   must not ask for the same entries again, which would take the page back past its own entry */
+const have = pending() ? travel.to : depthNow();
 if (to >= have) return;
 travel = { at: Date.now(), to };
 try { window.history.go(to - have); } catch (e) { travel = null; }
