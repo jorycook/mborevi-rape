@@ -25,6 +25,8 @@ function play(track, grade, id, game, check) {
     else if (scr === 'Build' || scr === 'Letters') v.keys.forEach((k) => k.tap());
     else if (scr === 'Say') { v.mic.tap(); v = c.renderVals(); v.mic.tap(); v = c.renderVals(); v.forward(E); }
     else if (scr === 'Story') v.forward(E);
+    else if (scr === 'YesNo') v.answers.forEach((o) => o.pick());
+    else if (scr === 'Catch') v.stars.forEach((o) => o.pick());
     else if (scr === 'Pairs') { const n = v.cards.length; for (let a = 0; a < n; a++) for (let b = a + 1; b < n; b++) { v = c.renderVals(); v.cards[a].flip(); v = c.renderVals(); v.cards[b].flip(); flush(); } }
     flush(); v = c.renderVals();
   }
@@ -34,9 +36,10 @@ function play(track, grade, id, game, check) {
 const oralPairs = (v) => { const words = v.cards.filter((c) => c.showWord).length; console.log('   pairs deck: ' + (v.hint.indexOf('iguales') >= 0 ? 'picture + picture (oral)' : 'picture + word (reading)')); };
 play('L1', 'g1', 'g1u01n1', 'read');
 play('L1', 'g1', 'g1u01n1', 'build');
-play('L1', 'g1', 'g1u06n1', 'letters');
-play('L1', 'g1', 'g1u06n2', 'letters');
-play('BI', 'g1', 'g1u06n3', 'letters');
+/* the alphabet unit is unit 7 since «Ikatúpa?» was put in as unit 5 */
+play('L1', 'g1', 'g1u07n1', 'letters');
+play('L1', 'g1', 'g1u07n2', 'letters');
+play('BI', 'g1', 'g1u07n3', 'letters');
 play('L1', 'g1', 'g1u03n3', 'build');
 play('BI', 'g1', 'g1u05n2', 'build');
 play('L2', 'g1', 'g1u01n1', 'say');
@@ -51,3 +54,9 @@ play('L2', 'pre', 'preu06n3', 'story');
 play('L1', 'g1', 'g1u04c', null, (v) => console.log('   big star mode: ' + (v.readMode ? 'read' : 'listen')));
 play('L2', 'g1', 'g1u04c', null, (v) => console.log('   big star mode: ' + (v.readMode ? 'read' : 'listen')));
 play('L2', 'pre', 'preu05c', null);
+/* the new games: by ear and, for the catch, reading */
+play('L2', 'pre', 'preu01n3', 'yesno');
+play('L1', 'pre', 'preu03n3', 'yesno');
+play('L2', 'g1', 'g1u05n3', 'yesno');
+play('L2', 'g1', 'g1u02n2', 'catch');
+play('L1', 'g1', 'g1u02n2', 'catch');
