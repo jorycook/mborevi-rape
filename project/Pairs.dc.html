@@ -20,10 +20,25 @@ a{color:#2A1B3D;text-decoration:none}a:hover{color:#2A1B3D}
 button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([aria-disabled='true']),a:active:not([aria-disabled='true']){transform:translateY(2px) scale(.98)}
 @keyframes tp-legA{0%,100%{transform:rotate(14deg)}50%{transform:rotate(-14deg)}}
 @keyframes tp-legB{0%,100%{transform:rotate(-14deg)}50%{transform:rotate(14deg)}}
+@keyframes tp-blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.12)}}
+@keyframes tp-talk-a{0%{opacity:1}50%{opacity:0}100%{opacity:0}}
+@keyframes tp-talk-b{0%{opacity:0}50%{opacity:1}100%{opacity:1}}
+@keyframes tp-hop-a{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}38%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}76%{transform:scale(1.06,.9)}88%{transform:scale(.98,1.03)}100%{transform:none}}
+@keyframes tp-hop-b{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}38%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}76%{transform:scale(1.06,.9)}88%{transform:scale(.98,1.03)}100%{transform:none}}
+@keyframes tp-hop2-a{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}22%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}44%{transform:scale(1.05,.92)}50%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}68%{transform:translateY(-9%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}86%{transform:scale(1.04,.94)}100%{transform:none}}
+@keyframes tp-hop2-b{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}22%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}44%{transform:scale(1.05,.92)}50%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}68%{transform:translateY(-9%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}86%{transform:scale(1.04,.94)}100%{transform:none}}
+@keyframes tp-recoil-a{0%,100%{transform:none}30%{transform:translateX(-4%) rotate(-5deg)}}
+@keyframes tp-recoil-b{0%,100%{transform:none}30%{transform:translateX(-4%) rotate(-5deg)}}
+@keyframes tp-perk-a{0%,100%{transform:none}40%{transform:translateY(-3%)}}
+@keyframes tp-perk-b{0%,100%{transform:none}40%{transform:translateY(-3%)}}
 @keyframes tp-tw{0%,100%{opacity:1}50%{opacity:.35}}
 @keyframes tp-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
 @keyframes tp-pop{0%{transform:scale(.6);opacity:0}60%{transform:scale(1.06);opacity:1}100%{transform:scale(1);opacity:1}}
-@keyframes tp-flip{0%{transform:scaleX(.1)}100%{transform:scaleX(1)}}
+@keyframes tp-turn-a{0%{transform:scaleX(.08)}100%{transform:scaleX(1)}}
+@keyframes tp-turn-b{0%{transform:scaleX(.08)}100%{transform:scaleX(1)}}
+@keyframes tp-yes{0%{transform:scale(1)}35%{transform:scale(1.1)}65%{transform:scale(.97)}100%{transform:scale(1)}}
+@keyframes tp-dot{0%{transform:scale(1.7)}100%{transform:none}}
+@keyframes tp-wave{0%,100%{transform:scaleY(.4)}50%{transform:scaleY(1)}}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
 </style>
 </helmet>
@@ -35,14 +50,14 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 </svg>
 
 <div style="position: relative; display: flex; align-items: center; gap: 10px; height: 44px; flex-shrink: 0">
-<a href="Tonight.dc.html" onClick="{{ close }}" aria-label="Cerrar el juego" style="width: 44px; height: 44px; margin-left: -6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFF7EC" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+<a href="Tonight.dc.html" onClick="{{ close }}" aria-label="Cerrar el juego" style="width: 56px; height: 56px; margin: -6px -6px -6px -12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFF7EC" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
 <div style="flex-grow: 1; display: flex; flex-direction: column; min-width: 0">
 <div lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.05">Mbyja joja</div>
 <div style="font-size: 12px; font-weight: 700; color: #CFC6FF">Estrellas iguales: encontrá los pares</div>
 </div>
 <div role="img" aria-label="{{ pairsAria }}" style="display: flex; gap: 4px; flex-shrink: 0">
 <sc-for list="{{ marks }}" as="m" hint-placeholder-count="3">
-<svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true"><path d="{{ m.d }}" fill="{{ m.fill }}" stroke="#FFF7EC" stroke-width="1.6" stroke-linejoin="round"/></svg>
+<svg viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" style="animation: {{ m.anim }}"><path d="{{ m.d }}" fill="{{ m.fill }}" stroke="#FFF7EC" stroke-width="1.6" stroke-linejoin="round"/></svg>
 </sc-for>
 </div>
 </div>
@@ -51,7 +66,7 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 
 <div style="position: relative; margin-top: 14px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; flex-shrink: 0">
 <sc-for list="{{ cards }}" as="c" hint-placeholder-count="6">
-<button type="button" onClick="{{ c.flip }}" aria-label="{{ c.aria }}" aria-disabled="{{ c.off }}" style="height: 150px; box-sizing: border-box; padding: 8px 4px; border-radius: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; border: 3px solid #3B2418; background: {{ c.bg }}; box-shadow: {{ c.shadow }}; color: #2A1B3D">
+<button type="button" onClick="{{ c.flip }}" aria-label="{{ c.aria }}" aria-disabled="{{ c.off }}" style="height: 150px; box-sizing: border-box; padding: 8px 4px; border-radius: 24px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; border: 3px solid #3B2418; background: {{ c.bg }}; box-shadow: {{ c.shadow }}; color: #2A1B3D; animation: {{ c.anim }}">
 <sc-if value="{{ c.back }}" hint-placeholder-val="{{ true }}">
 <svg viewBox="0 0 80 80" width="70" height="70" aria-hidden="true">
 <path d="{{ backStar }}" fill="#FFD34E" stroke="#3B2418" stroke-width="3" stroke-linejoin="round"/>
@@ -59,7 +74,6 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 </svg>
 </sc-if>
 <sc-if value="{{ c.showPic }}" hint-placeholder-val="{{ false }}">
-<div style="animation: tp-flip 220ms ease-out; display: flex; flex-direction: column; align-items: center; gap: 2px">
 <svg viewBox="0 0 100 100" width="80" height="80" aria-hidden="true">
 <path d="{{ c.pic.f0.d }}" fill="{{ c.pic.f0.fill }}" stroke="#2A1B3D" stroke-width="3" stroke-linejoin="round" fill-rule="{{ c.pic.rule }}"/>
 <path d="{{ c.pic.f1.d }}" fill="{{ c.pic.f1.fill }}" stroke="#2A1B3D" stroke-width="3" stroke-linejoin="round"/>
@@ -72,10 +86,14 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 <path d="{{ c.pic.ink }}" fill="#2A1B3D"/>
 <path d="{{ c.pic.line }}" fill="none" stroke="#2A1B3D" stroke-width="{{ c.pic.lineW }}" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
-</div>
 </sc-if>
 <sc-if value="{{ c.showWord }}" hint-placeholder-val="{{ false }}">
-<div lang="gn" style="animation: tp-flip 220ms ease-out; font-family: 'Andika', 'Nunito', sans-serif; font-weight: 700; font-size: {{ c.size }}; line-height: 1.1; text-align: center; overflow-wrap: anywhere">{{ c.gn }}</div>
+<div lang="gn" style="font-family: 'Andika', 'Nunito', sans-serif; font-weight: 700; font-size: {{ c.size }}; line-height: 1.1; text-align: center; overflow-wrap: anywhere">{{ c.gn }}</div>
+</sc-if>
+<sc-if value="{{ c.showSound }}" hint-placeholder-val="{{ false }}">
+<div aria-hidden="true" style="width: 76px; height: 76px; box-sizing: border-box; border-radius: 38px; background: #8EC5FF; border: 3px solid #3B2418; display: flex; align-items: center; justify-content: center">
+<svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#2A1B3D" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7" opacity="{{ c.wave.arcs }}"/><path d="M19 6a8.5 8.5 0 0 1 0 12" opacity="{{ c.wave.arcs }}"/><path d="M16.2 11v6" opacity="{{ c.wave.bars }}" style="transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(.7); animation: {{ c.wave.a0 }}"/><path d="M19.2 7v10" opacity="{{ c.wave.bars }}" style="transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(.7); animation: {{ c.wave.a1 }}"/><path d="M22.2 10v7" opacity="{{ c.wave.bars }}" style="transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(.7); animation: {{ c.wave.a2 }}"/></svg>
+</div>
 </sc-if>
 </button>
 </sc-for>
@@ -94,8 +112,13 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 
 <div style="flex-grow: 1"></div>
 <div style="position: relative; display: flex; align-items: flex-end; gap: 10px; flex-shrink: 0">
+<div lang="gn" role="status" style="position: absolute; left: 70px; bottom: 100%; margin-bottom: 2px">
+<sc-if value="{{ bubble.on }}" hint-placeholder-val="{{ false }}">
+<div style="padding: 6px 12px; border-radius: 16px; background: #FFF7EC; color: #2A1B3D; border: 2px solid #3B2418; font-family: 'Andika', 'Nunito', sans-serif; font-weight: 700; font-size: 18px; white-space: nowrap; animation: tp-pop 300ms ease-out">{{ bubble.text }}</div>
+</sc-if>
+</div>
 <div style="flex-shrink: 0; animation: tp-bob 2.6s ease-in-out infinite">
-<dc-import name="Mborevi" pose="{{ pose }}" size="104" hint-size="104px,84px"></dc-import>
+<dc-import name="Mborevi" pose="{{ pose }}" talk="{{ talk }}" size="104" hint-size="104px,84px"></dc-import>
 </div>
 <sc-if value="{{ playing }}" hint-placeholder-val="{{ true }}">
 <div role="status" style="flex-grow: 1; margin-bottom: 14px; display: flex; flex-direction: column">
@@ -115,15 +138,23 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"app":{"editor":null},"act":{"editor":null},"$preview":{"width":390,"height":844}}'>
-/* Memory with three pairs of tonight's words, face down as stars. A child who reads Guarani matches a picture with
-   its written word; while the grade is oral (Preescolar, and 1.º grado with Guarani as the second language) a pair is
-   the same picture twice, and Mborevi'i says the word when the pair is found (the clip, once recorded). The line
-   under the cards names what each card shows, for a screen reader too. On its own: 1.º grado, unit 6 (the numbers), night 2. */
+/* Memory with pairs of tonight's words, face down as stars. Each card turns over like a card, and turns back the same
+   way after a miss. By ear (Preescolar, and 1.º grado with Guarani as the second language), when two or more of
+   tonight's words can be heard, a pair is a sound star and its picture: a sound star says its word as it turns (a
+   picture is silent), and a found pair says it once more with its picture. With fewer words that can be heard, a pair
+   is the same picture twice; a child who reads Guarani matches a picture with its written word. A new game at every
+   play (which three words, where they lie), the same during it. A found pair bounces and chimes and its mark in the
+   header fills; the end card comes once the last pair's word has been said. The line under the cards names what
+   each card shows, for a screen reader too. Where a clip is missing or the voice is off, Mborevi'i shows a sound
+   star's word in his bubble. On its own (silent, the same game every time): 1.º grado, unit 6 (the numbers), night 2,
+   by ear. */
 class Component extends DCLogic {
 constructor(props) {
 super(props);
-this.state = { open: [], matched: [], tries: 0, busy: false, last: null };
+this.state = { open: [], matched: [], tries: 0, busy: false, last: null, over: false, turns: {}, heard: -1, said: false, voiced: false };
 this.timers = [];
+/* mixed into every seed: a new game at every play, '' on its own and in the tests */
+this.salt = window.tpCourse.salt(props);
 this.doneRef = (el) => { this.doneEl = el; };
 }
 componentWillUnmount() { this.timers.forEach((t) => clearTimeout(t)); this.offBack(); }
@@ -133,14 +164,37 @@ onBack() { const act = this.props.act; if (!act) return; const f = () => this.le
 offBack() { const act = this.props.act; if (act && act.leave && act.leave.board === this) act.leave = null; }
 componentDidUpdate() {
 const f = !!this.finished;
-if (f && !this.wasFinished) { if (this.doneEl) this.doneEl.focus(); window.tpCourse.say(this.endLine); }
+if (f && !this.wasFinished) { if (this.doneEl) this.doneEl.focus(); this.beep('star'); window.tpCourse.say(this.endLine); }
 this.wasFinished = f;
 }
+/* a little sound that is not a voice (it answers with the voice off too), in the app only */
+beep(kind) { const S = window.tpSound; if (this.props.act && S && S.beep) S.beep(kind); }
 view() {
 const C = window.tpCourse;
 if (this.props.app) return this.props.app;
 if (!this.sample) { const st = C.sample('g1', 'L2', 21); st.cur = 'g1u06n2'; st.done.g1u06n2 = { meet: 1, pick: 1 }; st.game = 'pairs'; this.sample = C.view(st); }
 return this.sample;
+}
+/* This play's cards. mode: 'sound' (by ear, two or more words that can be heard: a sound star and a picture),
+   'pic' (by ear otherwise: the picture twice) or 'word' (a reader: the picture and its word). Three words of the
+   night (two when only two can be heard), each a different picture, chosen anew at every play; then where the cards
+   lie. Made once per play, so the cards never move during it. */
+deckOf(s, oral) {
+const C = window.tpCourse;
+const salt = this.salt || '';
+const id = s ? s.id : '';
+const key = id + '|' + oral + '|' + salt;
+if (this.deckKey === key) return this.deckVal;
+const raw = s && s.data && s.data.words ? s.data.words : [];
+const mode = !oral ? 'word' : C.heard(raw) >= 2 ? 'sound' : 'pic';
+const seen = {};
+const words = C.shuffle(raw.map((w) => C.word(w)).filter((w) => mode !== 'sound' || C.voiced(w)), id + 'w' + salt)
+.filter((w) => { if (seen['p:' + w.picKey] || seen['w:' + w.gn]) return false; seen['p:' + w.picKey] = 1; seen['w:' + w.gn] = 1; return true; })
+.slice(0, 3);
+const cards = C.shuffle([].concat.apply([], words.map((w, i) => [{ w, i, kind: 'pic' }, { w, i, kind: mode }])), id + 'pairs' + salt);
+this.deckKey = key;
+this.deckVal = { mode, words, cards };
+return this.deckVal;
 }
 renderVals() {
 const C = window.tpCourse;
@@ -148,69 +202,123 @@ const S = window.tpSound;
 const act = this.props.act;
 const app = this.view();
 const s = app.step;
+const st = this.state;
 const oral = !s || C.isOral(s, app.track || 'L2');
-const seen = {};
-const words = (s && s.data && s.data.words ? s.data.words : []).map((w) => C.word(w)).filter((w) => { const k = w.pic.has ? (w.pic.f0.d + w.gn) : w.gn; if (seen[w.gn]) return false; seen[w.gn] = 1; return true; }).slice(0, 3);
-const deck = C.shuffle([].concat.apply([], words.map((w, i) => [{ w, i, kind: 'pic' }, { w, i, kind: oral ? 'pic' : 'word' }])), (s ? s.id : '') + 'pairs');
-const open = this.state.open, matched = this.state.matched;
-const finished = words.length > 0 && matched.length === deck.length;
+const D = this.deckOf(s, oral);
+const mode = D.mode, words = D.words, deck = D.cards;
+const open = st.open, matched = st.matched;
+const finished = st.over || words.length === 0;
 this.finished = finished;
 const again = !!(s && ((app.done || {})[s.id] || {}).pairs);
 this.endLine = again ? C.VOICE.good : C.VOICE.star;
+/* a word heard now, by the card k: Mborevi'i talks while it plays (C.listen) */
+const hear = (k) => { this.setState({ heard: k }); C.listen(this, 'w:' + C.fold(deck[k].w.gn)); };
+/* a tap reads the game as it is when it comes */
 const flip = (k) => () => {
-if (this.state.busy || open.indexOf(k) >= 0 || matched.indexOf(k) >= 0) return;
-if (open.length === 0) { this.setState({ open: [k], last: null }); return; }
-const a = open[0];
-const tries = this.state.tries + 1;
-if (deck[a].i === deck[k].i) {
-const w = deck[k].w;
-const key = 'w:' + C.fold(w.gn);
-if (S && S.has(key)) { S.unlock(); S.play(key); }
-this.setState({ open: [], matched: matched.concat([a, k]), tries, last: w });
+const now = this.state;
+if (now.over || now.busy || now.open.indexOf(k) >= 0 || now.matched.indexOf(k) >= 0) return;
+const c = deck[k];
+const turns = Object.assign({}, now.turns);
+turns[k] = (turns[k] || 0) + 1;
+/* a sound star says its word as it turns; a picture or a word is silent */
+if (c.kind === 'sound') hear(k);
+if (!now.open.length) { this.setState({ open: [k], last: null, turns }); return; }
+const a = now.open[0];
+const tries = now.tries + 1;
+if (deck[a].i === c.i) {
+const got = now.matched.concat([a, k]);
+this.beep('pair');
+/* the word once more, with its picture; not when the card just turned is its sound star, which is saying it now */
+if (c.kind !== 'sound') hear(k);
+this.setState({ open: [], matched: got, tries, last: c.w, turns });
+if (got.length === deck.length) {
+/* the end card once the last pair's word has been said */
+const key = 'w:' + C.fold(c.w.gn);
+const ms = S && S.has && S.has(key) && S.ms ? S.ms(key) : 0;
+this.timers.push(setTimeout(() => this.setState({ over: true, said: false }), Math.max(1300, ms + 300)));
+}
 } else {
-this.setState({ open: [a, k], busy: true, tries, last: null });
-this.timers.push(setTimeout(() => this.setState({ open: [], busy: false }), 1000));
+this.setState({ open: [a, k], busy: true, tries, last: null, turns });
+/* a moment to look, then both turn back (a turn too) */
+this.timers.push(setTimeout(() => {
+const t2 = Object.assign({}, this.state.turns);
+t2[a] = (t2[a] || 0) + 1;
+t2[k] = (t2[k] || 0) + 1;
+this.setState({ open: [], busy: false, turns: t2 });
+}, 1000));
 }
 };
+/* the word playing (said and voiced): its sound star's arcs give way to three moving bars, and Mborevi'i talks */
+const talk = !!(st.said && st.voiced) && !finished;
+const playingI = talk && st.heard >= 0 && deck[st.heard] ? deck[st.heard].i : -1;
 const cards = deck.map((c, k) => {
-const up = open.indexOf(k) >= 0 || matched.indexOf(k) >= 0;
 const got = matched.indexOf(k) >= 0;
+const up = got || open.indexOf(k) >= 0;
 /* sized by its longest word, so a word never breaks inside */
 const lw = Math.max.apply(null, c.w.gn.split(' ').map((t) => C.chars(t).length));
+/* the card turns (a and b take turns, so that each turn starts again; none before its first); a found pair bounces
+   once it is face up */
+const t = st.turns[k] || 0;
+const turn = t ? 'tp-turn-' + (t % 2 ? 'a' : 'b') + ' 240ms cubic-bezier(.2,.8,.2,1)' : '';
+const wave = c.kind === 'sound' && c.i === playingI;
+const bar = (ms) => (wave ? 'tp-wave 520ms ease-in-out ' + ms + 'ms infinite' : 'none');
 return {
+kind: c.kind,
 back: !up,
 showPic: up && c.kind === 'pic',
 showWord: up && c.kind === 'word',
+showSound: up && c.kind === 'sound',
 pic: c.w.pic, gn: c.w.gn,
 size: Math.min(26, Math.floor(96 / (0.6 * lw))) + 'px',
 bg: got ? '#B8F0E0' : up ? '#FFF7EC' : '#2E2272',
 shadow: got ? '0 4px 0 #3B2418' : up ? '0 3px 0 #3B2418' : '0 3px 0 #120B3B',
+anim: got ? (turn ? turn + ', ' : '') + 'tp-yes 420ms cubic-bezier(.2,.8,.2,1) 240ms' : turn || 'none',
+wave: { arcs: wave ? 0 : 1, bars: wave ? 1 : 0, a0: bar(0), a1: bar(130), a2: bar(260) },
 off: got ? 'true' : 'false',
-aria: got ? 'Par encontrado: ' + c.w.gn : up ? (c.kind === 'word' ? 'Palabra: ' + c.w.gn : 'Dibujo: ' + c.w.es) : 'Carta ' + (k + 1) + ', boca abajo',
+aria: got ? 'Par encontrado: ' + c.w.gn : up ? (c.kind === 'word' ? 'Palabra: ' + c.w.gn : c.kind === 'sound' ? 'Sonido, carta ' + (k + 1) : 'Dibujo: ' + c.w.es) : 'Carta ' + (k + 1) + ', boca abajo',
 flip: flip(k)
 };
 });
 const pairs = matched.length / 2;
-const last = this.state.last;
+const last = st.last;
 const miss = open.length === 2;
-const shown = open.map((k) => (deck[k].kind === 'word' ? 'palabra «' + deck[k].w.gn + '»' : 'dibujo «' + deck[k].w.es + '»'));
+const sound = mode === 'sound';
+const shown = open.map((k) => (deck[k].kind === 'word' ? 'palabra «' + deck[k].w.gn + '»' : deck[k].kind === 'sound' ? 'un sonido' : 'dibujo «' + deck[k].w.es + '»'));
 const bang = (t) => (/[!?…]$/.test(t) ? t : t + '!');
+/* by ear, what the two cards were: a sound and a picture that do not go together, or two of a kind */
+const missLine = () => {
+if (!sound) return 'Probá otra vez. No son iguales: ' + shown.join(' y ') + '.';
+const pic = open.filter((k) => deck[k].kind === 'pic');
+return pic.length === 1 ? 'Probá otra vez. Ese sonido no es del dibujo «' + deck[pic[0]].w.es + '».' : 'Probá otra vez. Un par es un sonido y un dibujo.';
+};
+const one = open.length === 1 ? deck[open[0]] : null;
+const say = last ? { gn: bang(last.gn), es: last.es }
+: miss ? { gn: "Eha'ã jey", es: missLine() }
+: one && one.kind === 'sound' ? { gn: 'Ehendu', es: 'Abriste un sonido: ¿de qué dibujo es?' }
+: one ? { gn: 'Ehecha porã', es: 'Mirá bien. Abriste: ' + shown[0] + '.' }
+: sound ? { gn: 'Ehendu', es: 'Escuchá bien y acordate.' }
+: { gn: 'Ehecha porã', es: 'Mirá bien y acordate.' };
+const heardCard = st.heard >= 0 ? deck[st.heard] : null;
 /* what the close button does, which the phone's Back does too (a game that is over keeps its star) */
 this.leave = () => { if (finished) act.finish('pairs'); else act.go('Tonight'); };
 return {
 field: C.starfield('pairs', 390, 40, 760, 46),
-hint: oral ? 'Tocá dos estrellas: buscá dos dibujos iguales.' : 'Tocá dos estrellas: juntá cada dibujo con su palabra.',
-marks: words.map((w, i) => ({ d: C.puffyD(10, 10.5, 8.6), fill: i < pairs ? '#FFD34E' : 'transparent' })),
+hint: sound ? 'Tocá dos estrellas: juntá cada sonido con su dibujo.' : oral ? 'Tocá dos estrellas: buscá dos dibujos iguales.' : 'Tocá dos estrellas: juntá cada dibujo con su palabra.',
+/* the mark that has just filled pops */
+marks: words.map((w, i) => ({ d: C.puffyD(10, 10.5, 8.6), fill: i < pairs ? '#FFD34E' : 'transparent', anim: i === pairs - 1 ? 'tp-dot 300ms cubic-bezier(.2,.8,.2,1)' : 'none' })),
 pairsAria: pairs + ' de ' + words.length + ' pares',
 cards,
 backStar: C.puffyD(40, 42, 26),
 backSpark: C.sparkleD(16, 18, 6) + C.sparkleD(64, 62, 5) + C.sparkleD(66, 16, 4),
 playing: !finished, finished,
-say: last ? { gn: bang(last.gn), es: last.es } : miss ? { gn: "Eha'ã jey", es: 'Probá otra vez. No son iguales: ' + shown.join(' y ') + '.' } : open.length === 1 ? { gn: 'Ehecha porã', es: 'Mirá bien. Abriste: ' + shown[0] + '.' } : { gn: 'Ehecha porã', es: 'Mirá bien y acordate.' },
-pose: finished || last ? 'happy' : miss ? 'oops' : 'stand',
-triesLine: 'Los encontraste en ' + this.state.tries + ' vueltas.',
+say,
+talk,
+/* a sound star's word, written, when it cannot be heard: in his bubble, above the line (which can take two rows) */
+bubble: { on: !!(st.said && !st.voiced && !finished && heardCard && heardCard.kind === 'sound'), text: heardCard ? heardCard.w.gn : '' },
+pose: finished || last ? 'happy' : miss ? 'oops' : st.said ? 'listen' : 'stand',
+triesLine: 'Los encontraste en ' + st.tries + ' vueltas.',
 fresh: !again,
-announce: finished ? 'Iporãite! ' + (again ? '' : 'Rehupyty peteĩ mbyja. ') + 'Los encontraste en ' + this.state.tries + ' vueltas.' : '',
+announce: finished && words.length ? 'Iporãite! ' + (again ? '' : 'Rehupyty peteĩ mbyja. ') + 'Los encontraste en ' + st.tries + ' vueltas.' : '',
 doneRef: this.doneRef,
 bigStar: C.puffyD(32, 33.5, 28),
 close: (e) => { if (act) { e.preventDefault(); this.leave(); } },
