@@ -34,7 +34,10 @@ function play(track, grade, id, game, check) {
   (v.done || v.forward)(E);
   console.log(track, id, scr, '->', finished[finished.length - 1], v.finished === undefined ? '' : (v.finished ? 'finished' : (v.last ? 'last page' : 'NOT FINISHED')), v.announce ? '| ' + v.announce : '');
 }
-const oralPairs = (v) => { const words = v.cards.filter((c) => c.showWord).length; console.log('   pairs deck: ' + (v.hint.indexOf('iguales') >= 0 ? 'picture + picture (oral)' : 'picture + word (reading)')); };
+const oralPairs = (v) => {
+  const kinds = [...new Set(v.cards.map((c) => c.kind || (c.showWord ? 'word' : 'pic')))].sort().join(' + ');
+  console.log('   pairs deck: ' + ({ 'pic + sound': 'sound + picture (by ear)', pic: 'picture + picture', 'pic + word': 'picture + word (reading)' }[kinds] || kinds));
+};
 play('L1', 'g1', 'g1u01n1', 'read');
 play('L1', 'g1', 'g1u01n1', 'build');
 /* the alphabet unit is unit 7 since «Ikatúpa?» was put in as unit 5 */
