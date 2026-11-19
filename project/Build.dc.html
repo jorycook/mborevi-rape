@@ -20,10 +20,28 @@ a{color:#2A1B3D;text-decoration:none}a:hover{color:#2A1B3D}
 button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([aria-disabled='true']),a:active:not([aria-disabled='true']){transform:translateY(2px) scale(.98)}
 @keyframes tp-legA{0%,100%{transform:rotate(14deg)}50%{transform:rotate(-14deg)}}
 @keyframes tp-legB{0%,100%{transform:rotate(-14deg)}50%{transform:rotate(14deg)}}
+@keyframes tp-blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.12)}}
+@keyframes tp-talk-a{0%{opacity:1}50%{opacity:0}100%{opacity:0}}
+@keyframes tp-talk-b{0%{opacity:0}50%{opacity:1}100%{opacity:1}}
+@keyframes tp-hop-a{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}38%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}76%{transform:scale(1.06,.9)}88%{transform:scale(.98,1.03)}100%{transform:none}}
+@keyframes tp-hop-b{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}38%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}76%{transform:scale(1.06,.9)}88%{transform:scale(.98,1.03)}100%{transform:none}}
+@keyframes tp-hop2-a{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}22%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}44%{transform:scale(1.05,.92)}50%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}68%{transform:translateY(-9%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}86%{transform:scale(1.04,.94)}100%{transform:none}}
+@keyframes tp-hop2-b{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}22%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}44%{transform:scale(1.05,.92)}50%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}68%{transform:translateY(-9%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}86%{transform:scale(1.04,.94)}100%{transform:none}}
+@keyframes tp-recoil-a{0%,100%{transform:none}30%{transform:translateX(-4%) rotate(-5deg)}}
+@keyframes tp-recoil-b{0%,100%{transform:none}30%{transform:translateX(-4%) rotate(-5deg)}}
+@keyframes tp-perk-a{0%,100%{transform:none}40%{transform:translateY(-3%)}}
+@keyframes tp-perk-b{0%,100%{transform:none}40%{transform:translateY(-3%)}}
 @keyframes tp-tw{0%,100%{opacity:1}50%{opacity:.35}}
 @keyframes tp-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
 @keyframes tp-pop{0%{transform:scale(.6);opacity:0}60%{transform:scale(1.06);opacity:1}100%{transform:scale(1);opacity:1}}
-@keyframes tp-shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
+@keyframes tp-in-a{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes tp-in-b{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes tp-shake-a{0%,100%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
+@keyframes tp-shake-b{0%,100%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
+@keyframes tp-land{0%{transform:translateY(-14px) scale(1.15);opacity:.3}60%{transform:translateY(2px) scale(.97);opacity:1}100%{transform:none;opacity:1}}
+@keyframes tp-read{0%,100%{transform:none}50%{transform:translateY(-8px)}}
+@keyframes tp-dot{0%{transform:scale(1.7)}100%{transform:none}}
+@keyframes tp-wave{0%,100%{transform:scaleY(.4)}50%{transform:scaleY(1)}}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
 </style>
 </helmet>
@@ -35,21 +53,21 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 </svg>
 
 <div style="position: relative; display: flex; align-items: center; gap: 10px; height: 44px; flex-shrink: 0">
-<a href="Tonight.dc.html" onClick="{{ close }}" aria-label="Cerrar el juego" style="width: 44px; height: 44px; margin-left: -6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFF7EC" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+<a href="Tonight.dc.html" onClick="{{ close }}" aria-label="Cerrar el juego" style="width: 56px; height: 56px; margin: -6px -6px -6px -12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFF7EC" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
 <div style="flex-grow: 1; display: flex; flex-direction: column; min-width: 0">
 <div lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.05">Emopu'ã ñe'ẽ</div>
 <div style="font-size: 12px; font-weight: 700; color: #CFC6FF">Armá la palabra, sílaba por sílaba</div>
 </div>
 <div role="img" aria-label="{{ dotsAria }}" style="display: flex; gap: 5px; flex-shrink: 0">
 <sc-for list="{{ dots }}" as="d" hint-placeholder-count="3">
-<div style="width: 12px; height: 12px; border-radius: 6px; background: {{ d.bg }}; border: 2px solid #FFF7EC; box-sizing: border-box"></div>
+<div style="width: 12px; height: 12px; border-radius: 6px; background: {{ d.bg }}; border: 2px solid #FFF7EC; box-sizing: border-box; animation: {{ d.anim }}"></div>
 </sc-for>
 </div>
 </div>
 
 <sc-if value="{{ playing }}" hint-placeholder-val="{{ true }}">
 <div style="position: relative; margin-top: 14px; box-sizing: border-box; padding: 16px; border-radius: 30px; background: #FFF7EC; color: #2A1B3D; border: 3px solid #3B2418; box-shadow: 0 6px 0 #3B2418; display: flex; flex-direction: column; align-items: center; gap: 10px; flex-shrink: 0">
-<svg viewBox="0 0 100 100" width="132" height="132" role="img" aria-label="{{ word.es }}">
+<svg viewBox="0 0 100 100" width="132" height="132" role="img" aria-label="{{ word.es }}" style="animation: {{ picAnim }}">
 <path d="{{ word.pic.f0.d }}" fill="{{ word.pic.f0.fill }}" stroke="#2A1B3D" stroke-width="2.8" stroke-linejoin="round" fill-rule="{{ word.pic.rule }}"/>
 <path d="{{ word.pic.f1.d }}" fill="{{ word.pic.f1.fill }}" stroke="#2A1B3D" stroke-width="2.8" stroke-linejoin="round"/>
 <path d="{{ word.pic.f2.d }}" fill="{{ word.pic.f2.fill }}" stroke="#2A1B3D" stroke-width="2.8" stroke-linejoin="round"/>
@@ -62,18 +80,25 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 <path d="{{ word.pic.line }}" fill="none" stroke="#2A1B3D" stroke-width="{{ word.pic.lineW }}" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 <div style="font-size: 15px; font-weight: 800; color: #5C4E86">{{ word.es }}</div>
+<button type="button" onClick="{{ listen }}" aria-label="{{ listenAria }}" style="height: 56px; box-sizing: border-box; padding: 0 20px; border-radius: 28px; background: #8EC5FF; border: 3px solid #3B2418; display: flex; align-items: center; gap: 8px; color: #2A1B3D; flex-shrink: 0">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2A1B3D" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7" opacity="{{ wave.arcs }}"/><path d="M19 6a8.5 8.5 0 0 1 0 12" opacity="{{ wave.arcs }}"/><path d="M16.2 11v6" opacity="{{ wave.bars }}" style="transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(.7); animation: {{ wave.a0 }}"/><path d="M19.2 7v10" opacity="{{ wave.bars }}" style="transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(.7); animation: {{ wave.a1 }}"/><path d="M22.2 10v7" opacity="{{ wave.bars }}" style="transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(.7); animation: {{ wave.a2 }}"/></svg>
+<span lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 18px">Ehendu</span>
+<span style="font-size: 13px; font-weight: 800; color: #2A1B3D">Escuchá</span>
+</button>
 <div role="img" aria-label="{{ slotsAria }}" style="display: flex; gap: 6px; flex-wrap: wrap; justify-content: center">
 <sc-for list="{{ slots }}" as="sl" hint-placeholder-count="3">
-<div lang="gn" style="min-width: 52px; height: 52px; box-sizing: border-box; padding: 0 8px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-family: 'Andika', 'Nunito', sans-serif; font-weight: 700; font-size: 24px; border: {{ sl.border }}; background: {{ sl.bg }}; animation: {{ sl.anim }}">{{ sl.t }}</div>
+<div lang="gn" style="min-width: 52px; height: 52px; box-sizing: border-box; padding: 0 8px; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-family: 'Andika', 'Nunito', sans-serif; font-weight: 700; font-size: 24px; border: {{ sl.border }}; background: {{ sl.bg }}"><span style="display: inline-block; animation: {{ sl.read }}"><span style="display: inline-block; animation: {{ sl.land }}">{{ sl.t }}</span></span></div>
 </sc-for>
 </div>
 </div>
 
 <div style="position: relative; margin-top: 18px; display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; flex-shrink: 0">
 <sc-for list="{{ keys }}" as="k" hint-placeholder-count="4">
-<button type="button" onClick="{{ k.tap }}" aria-label="{{ k.aria }}" aria-disabled="{{ k.off }}" style="position: relative; width: 78px; height: 78px; padding: 0; border: 0; background: none; opacity: {{ k.opacity }}; animation: {{ k.anim }}">
+<button type="button" onClick="{{ k.tap }}" aria-label="{{ k.aria }}" aria-disabled="{{ k.off }}" style="position: relative; width: 78px; height: 78px; padding: 0; border: 0; background: none; animation: {{ k.anim }}">
+<span style="position: absolute; left: 0; top: 0; width: 78px; height: 78px; display: block; transform: {{ k.tf }}; opacity: {{ k.opacity }}; transition: transform 160ms ease-out, opacity 160ms ease-out">
 <svg viewBox="0 0 78 78" width="78" height="78" aria-hidden="true" style="position: absolute; left: 0; top: 0"><path d="{{ k.star }}" fill="#FFD34E" stroke="#3B2418" stroke-width="3" stroke-linejoin="round"/></svg>
-<span lang="gn" style="position: relative; font-family: 'Andika', 'Nunito', sans-serif; font-weight: 700; font-size: 19px; color: #2A1B3D; line-height: 78px">{{ k.t }}</span>
+<span lang="gn" style="position: relative; display: block; text-align: center; font-family: 'Andika', 'Nunito', sans-serif; font-weight: 700; font-size: 19px; color: #2A1B3D; line-height: 78px">{{ k.t }}</span>
+</span>
 </button>
 </sc-for>
 </div>
@@ -90,8 +115,13 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 
 <div style="flex-grow: 1"></div>
 <div style="position: relative; display: flex; align-items: flex-end; gap: 10px; flex-shrink: 0">
+<div lang="gn" role="status" style="position: absolute; left: 70px; bottom: 100%; margin-bottom: 2px">
+<sc-if value="{{ bubble.on }}" hint-placeholder-val="{{ false }}">
+<div style="padding: 6px 12px; border-radius: 16px; background: #FFF7EC; color: #2A1B3D; border: 2px solid #3B2418; font-family: 'Andika', 'Nunito', sans-serif; font-weight: 700; font-size: 18px; white-space: nowrap; animation: tp-pop 300ms ease-out">{{ bubble.text }}</div>
+</sc-if>
+</div>
 <div style="flex-shrink: 0; animation: tp-bob 2.6s ease-in-out infinite">
-<dc-import name="Mborevi" pose="{{ pose }}" size="104" hint-size="104px,84px"></dc-import>
+<dc-import name="Mborevi" pose="{{ pose }}" talk="{{ talk }}" size="104" hint-size="104px,84px"></dc-import>
 </div>
 <sc-if value="{{ playing }}" hint-placeholder-val="{{ true }}">
 <div role="status" style="flex-grow: 1; margin-bottom: 14px; display: flex; flex-direction: column">
@@ -111,27 +141,62 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"app":{"editor":null},"act":{"editor":null},"$preview":{"width":390,"height":844}}'>
-/* Build tonight's words from their syllables: the picture and its meaning, the empty boxes, and star keys with the
-   syllables plus one that does not belong. Guarani syllables end in a vowel, and the digraphs (mb, nd, ch…) and the
-   puso stay inside them as one letter: mba·ra·ka·ja, ma·ndi·'o. A wrong key shakes and nothing is lost. The extra
-   keys are never a syllable of the word itself, whatever its capital letter. At the end, a star (a game played again
-   keeps the one it had). On its own: 1.º grado, a child with Guarani at home (L1), unit 6 (the numbers), night 1. */
+/* Hear tonight's words, then build them from their syllables. In the app each word plays by itself as its round
+   opens, «Ehendu» plays it again (its bars move while it plays, and Mborevi'i talks), and after a wrong key it comes
+   back once «Eha'ã jey» has been said; where a clip is missing or the voice is off, Mborevi'i shows the word in his
+   bubble instead. The picture and its meaning, the empty boxes, and star keys in lowercase with the syllables plus one
+   or two that do not belong (a capital would give the first one away); each box takes the syllable as the word writes
+   it, capital included. Guarani syllables end in a vowel, and the digraphs (mb, nd, ch…) and the puso stay inside
+   them as one letter: mba·ra·ka·ja, ma·ndi·'o. A syllable lands in its box and its key sinks; a wrong key shakes and
+   nothing is lost; the finished word is read out syllable by syllable while it plays. Three of the night's words to
+   build, chosen anew at every play with the order of the keys and the extra ones, the same during it. At the end, a
+   star (a game played again keeps the one it had). On its own (silent, the same game every time): 1.º grado, a child
+   with Guarani at home (L1), unit 6 (the numbers), night 1. */
 class Component extends DCLogic {
 constructor(props) {
 super(props);
-this.state = { r: 0, got: [], used: [], bad: null, done: false, finished: false };
+this.state = { r: 0, got: [], used: [], bad: null, miss: 0, done: false, finished: false, said: false, voiced: false };
 this.timers = [];
+/* mixed into every seed: a new game at every play, '' on its own and in the tests */
+this.salt = window.tpCourse.salt(props);
 this.doneRef = (el) => { this.doneEl = el; };
 }
 componentWillUnmount() { this.timers.forEach((t) => clearTimeout(t)); this.offBack(); }
 /* the phone's Back on the site (App) asks this screen what its close button would do */
-componentDidMount() { this.onBack(); }
+componentDidMount() { this.onBack(); this.autoPlay(); }
 onBack() { const act = this.props.act; if (!act) return; const f = () => this.leave(); f.board = this; act.leave = f; }
 offBack() { const act = this.props.act; if (act && act.leave && act.leave.board === this) act.leave = null; }
 componentDidUpdate() {
 const f = !!this.state.finished;
-if (f && !this.wasFinished) { if (this.doneEl) this.doneEl.focus(); window.tpCourse.say(this.endLine); }
+if (f && !this.wasFinished) { if (this.doneEl) this.doneEl.focus(); this.beep('star'); window.tpCourse.say(this.endLine); }
 this.wasFinished = f;
+this.autoPlay();
+}
+/* a little sound that is not a voice (it answers with the voice off too), in the app only */
+beep(kind) { const S = window.tpSound; if (this.props.act && S && S.beep) S.beep(kind); }
+/* A round's word plays by itself a moment after the round opens, in the app only (on its own the board stays
+   silent), unless the child was quicker on «Ehendu», or a wrong key is being answered (the word comes after it). */
+autoPlay() {
+const id = this.roundId;
+if (!this.props.act || id === undefined || id === this.spoken) return;
+this.spoken = id;
+if (!id || !this.listenNow) return;
+const listen = this.listenNow;
+this.timers.push(setTimeout(() => {
+const st = this.state;
+if (this.spoken === id && this.roundId === id && this.heardIn !== id && !st.done && !st.finished && st.bad === null) listen();
+}, 450));
+}
+/* the words of this play: three of the night's words of two syllables or more, chosen anew at every play */
+wordsOf(s) {
+const C = window.tpCourse;
+const salt = this.salt || '';
+const key = (s ? s.id : '') + '|' + salt;
+if (this.wordsKey === key) return this.wordsList;
+const all = (s && s.data && s.data.words ? s.data.words : []).filter((w) => w.syl && w.syl.length > 1).map((w) => C.word(w));
+this.wordsKey = key;
+this.wordsList = C.shuffle(all, (s ? s.id : '') + 'w' + salt).slice(0, 3);
+return this.wordsList;
 }
 view() {
 const C = window.tpCourse;
@@ -145,72 +210,112 @@ const S = window.tpSound;
 const act = this.props.act;
 const app = this.view();
 const s = app.step;
-const words = (s && s.data && s.data.words ? s.data.words : []).filter((w) => w.syl && w.syl.length > 1).slice(0, 3).map((w) => C.word(w));
+const st = this.state;
+const salt = this.salt || '';
+const sid = s ? s.id : '';
+const words = this.wordsOf(s);
 const n = words.length;
-const r = Math.min(this.state.r, Math.max(0, n - 1));
+const r = Math.min(st.r, Math.max(0, n - 1));
 const w = words[r] || C.word({ gn: '', es: '', pic: '', syl: [] });
-const low = (t) => t.toLowerCase();
+/* the keys are lowercase; a box shows the syllable as the word writes it */
+const low = (t) => String(t || '').toLowerCase();
 const mine = w.syl.map(low);
-const others = [].concat.apply([], C.unitWords(s ? s.grade : 'g1', s ? s.unit : 1).map((x) => x.syl || []))
-.filter((t, j, all) => mine.indexOf(low(t)) < 0 && all.findIndex((u) => low(u) === low(t)) === j);
-const extra = C.shuffle(others, (s ? s.id : '') + 'x' + r).slice(0, w.syl.length > 3 ? 1 : 2);
-const pool = C.shuffle(w.syl.map((t, i) => ({ t, i, real: true })).concat(extra.map((t, i) => ({ t, i: 100 + i, real: false }))), (s ? s.id : '') + 'k' + r);
-const got = this.state.got;
-const finished = this.state.finished || n === 0;
+const others = [].concat.apply([], C.unitWords(s ? s.grade : 'g1', s ? s.unit : 1).map((x) => (x.syl || []).map(low)))
+.filter((t, j, all) => mine.indexOf(t) < 0 && all.indexOf(t) === j);
+const extra = C.shuffle(others, sid + 'x' + r + salt).slice(0, w.syl.length > 3 ? 1 : 2);
+const pool = C.shuffle(mine.map((t, i) => ({ t, i, real: true })).concat(extra.map((t, i) => ({ t, i: 100 + i, real: false }))), sid + 'k' + r + salt);
+const got = st.got;
+const finished = st.finished || n === 0;
 const again = !!(s && ((app.done || {})[s.id] || {}).build);
 this.endLine = again ? C.VOICE.good : C.VOICE.star;
 const stop = (t) => (/[.!?…]$/.test(t) ? t : t + '.');
 const bang = (t) => (/[!?…]$/.test(t) ? t : t + '!');
+/* the round's word, now: by itself as the round opens, on «Ehendu», after a wrong key, and once it is built */
+const id = finished ? '' : sid + ':' + r;
+const key = 'w:' + C.fold(w.gn);
+const listen = () => { this.heardIn = id; C.listen(this, key); };
+this.roundId = id;
+this.listenNow = listen;
 const keys = pool.map((k, j) => {
-const used = this.state.used.indexOf(j) >= 0;
-const bad = this.state.bad === j;
+const used = st.used.indexOf(j) >= 0;
+const bad = st.bad === j;
 return {
 t: k.t,
 star: C.puffyD(39, 41, 36, 0.62),
 aria: 'Sílaba ' + k.t,
-off: used || this.state.done ? 'true' : 'false',
+off: used || st.done ? 'true' : 'false',
+/* a key used sinks and fades (its button keeps the press and the shake) */
+tf: used ? 'scale(.86)' : 'none',
 opacity: used ? 0.25 : 1,
-anim: bad ? 'tp-shake 420ms ease-out' : 'none',
+/* a and b take turns, so that a second wrong tap shakes again */
+anim: bad ? 'tp-shake-' + (st.miss % 2 ? 'a' : 'b') + ' 420ms ease-out' : 'none',
+/* a tap reads the round as it is when it comes: one after the word is built, or on a key used, does nothing */
 tap: () => {
-if (used || this.state.done) return;
-const want = w.syl[got.length];
-if (k.t === want) {
-const g2 = got.concat([k.t]);
+const now = this.state;
+if (now.finished || now.done || now.r !== r || now.used.indexOf(j) >= 0) return;
+if (k.t === low(w.syl[now.got.length])) {
+const g2 = now.got.concat([w.syl[now.got.length]]);
 const complete = g2.length === w.syl.length;
-this.setState({ got: g2, used: this.state.used.concat([j]), bad: null, done: complete });
+this.beep('right');
+this.setState({ got: g2, used: now.used.concat([j]), bad: null, done: complete });
 if (complete) {
-const key = 'w:' + C.fold(w.gn);
-if (S && S.has(key)) { S.unlock(); S.play(key); }
+/* the word built: Mborevi'i says it while its syllables are read out */
+if (S && S.has && S.has(key)) listen();
 this.timers.push(setTimeout(() => {
-if (r + 1 < n) this.setState({ r: r + 1, got: [], used: [], bad: null, done: false });
-else this.setState({ finished: true });
+const later = this.state;
+if (later.r !== r || later.finished) return;
+if (r + 1 < n) this.setState({ r: r + 1, got: [], used: [], bad: null, done: false, said: false, voiced: false });
+else this.setState({ finished: true, said: false, voiced: false });
 }, 1300));
 }
 } else {
+this.beep('wrong');
 C.say(C.VOICE.again);
-this.setState({ bad: j });
-this.timers.push(setTimeout(() => { if (this.state.bad === j) this.setState({ bad: null }); }, 700));
+const m = now.miss + 1;
+this.setState({ bad: j, miss: m });
+this.timers.push(setTimeout(() => { if (this.state.miss === m) this.setState({ bad: null }); }, 700));
+/* the word again once «Eha'ã jey» has been said, if the round is still open */
+this.timers.push(setTimeout(() => {
+const later = this.state;
+if (later.miss === m && later.r === r && !later.done && !later.finished) listen();
+}, 1400));
 }
 }
 };
 });
+/* a syllable lands in its box (the box stays); the word built is read out, one syllable after another */
+const step = Math.max(140, (S && S.has && S.has(key) && S.ms ? S.ms(key) : 0) / Math.max(1, w.syl.length));
 const slots = w.syl.map((t, i) => ({
 t: i < got.length ? got[i] : '',
 border: i < got.length ? '3px solid #3B2418' : i === got.length ? '3px dashed #6B4FD8' : '3px dashed #8C7CC8',
-bg: this.state.done ? '#B8F0E0' : i < got.length ? '#FFE7A3' : i === got.length ? '#EDE6FF' : '#FFFFFF',
-anim: i === got.length - 1 ? 'tp-pop 260ms ease-out' : 'none'
+bg: st.done ? '#B8F0E0' : i < got.length ? '#FFE7A3' : i === got.length ? '#EDE6FF' : '#FFFFFF',
+land: i === got.length - 1 ? 'tp-land 300ms cubic-bezier(.2,.8,.2,1)' : 'none',
+read: st.done ? 'tp-read 360ms ease-in-out ' + Math.round(i * step) + 'ms' : 'none'
 }));
+/* the word playing: the speaker's bars move (still under reduced motion) and Mborevi'i talks */
+const talk = !!(st.said && st.voiced) && !finished;
+const bar = (ms) => (talk ? 'tp-wave 520ms ease-in-out ' + ms + 'ms infinite' : 'none');
+/* the dot that has just filled */
+const filled = finished ? n - 1 : r - 1;
 /* what the close button does, which the phone's Back does too (a game that is over keeps its star) */
 this.leave = () => { if (finished) act.finish('build'); else act.go('Tonight'); };
 return {
 field: C.starfield('build', 390, 40, 760, 46),
-dots: words.map((x, k) => ({ bg: finished || k < r ? '#FFD34E' : k === r ? '#FFF7EC' : 'transparent' })),
+dots: words.map((x, k) => ({ bg: finished || k < r ? '#FFD34E' : k === r ? '#FFF7EC' : 'transparent', anim: k === filled ? 'tp-dot 300ms cubic-bezier(.2,.8,.2,1)' : 'none' })),
 dotsAria: 'Palabra ' + Math.min(r + 1, n) + ' de ' + n,
 playing: !finished, finished,
 word: w, slots, keys,
+/* each word's picture comes in (a and b take turns, so that it does again at the next word) */
+picAnim: 'tp-in-' + (r % 2 ? 'b' : 'a') + ' 320ms cubic-bezier(.2,.8,.2,1)',
+listen,
+listenAria: 'Ehendu, escuchá: ' + w.gn,
+wave: { arcs: talk ? 0 : 1, bars: talk ? 1 : 0, a0: bar(0), a1: bar(130), a2: bar(260) },
+talk,
+/* the word, written, when it cannot be heard: in his bubble, above the line (which can take two rows) */
+bubble: { on: !!(st.said && !st.voiced && !finished), text: w.gn },
 slotsAria: (got.length ? 'Armaste: ' + got.join(' ') + '. ' : '') + (w.syl.length - got.length ? 'Cajas vacías: ' + (w.syl.length - got.length) + ' de ' + w.syl.length : 'Palabra completa'),
-say: this.state.done ? { gn: bang(w.gn), es: '¡Muy bien! ' + stop(w.es) } : this.state.bad != null ? { gn: "Eha'ã jey", es: 'Probá otra vez: esa sílaba no va ahí.' } : { gn: got.length ? 'Upéi?' : 'Mba\'éichapa oñepyrũ?', es: got.length ? '¿Y después?' : '¿Cómo empieza?' },
-pose: finished || this.state.done ? 'happy' : this.state.bad != null ? 'oops' : 'stand',
+say: st.done ? { gn: bang(w.gn), es: '¡Muy bien! ' + stop(w.es) } : st.bad != null ? { gn: "Eha'ã jey", es: 'Probá otra vez: esa sílaba no va ahí.' } : { gn: got.length ? 'Upéi?' : 'Mba\'éichapa oñepyrũ?', es: got.length ? '¿Y después?' : '¿Cómo empieza?' },
+pose: finished || st.done ? 'happy' : st.bad != null ? 'oops' : st.said ? 'listen' : 'stand',
 builtLine: 'Armaste ' + n + (n === 1 ? ' palabra' : ' palabras') + ' en guaraní.',
 fresh: !again,
 announce: finished && n ? 'Iporãite! ' + (again ? '' : 'Rehupyty peteĩ mbyja. ') + 'Armaste ' + n + (n === 1 ? ' palabra' : ' palabras') + ' en guaraní.' : '',

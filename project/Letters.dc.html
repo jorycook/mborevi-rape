@@ -20,10 +20,28 @@ a{color:#2A1B3D;text-decoration:none}a:hover{color:#2A1B3D}
 button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([aria-disabled='true']),a:active:not([aria-disabled='true']){transform:translateY(2px) scale(.98)}
 @keyframes tp-legA{0%,100%{transform:rotate(14deg)}50%{transform:rotate(-14deg)}}
 @keyframes tp-legB{0%,100%{transform:rotate(-14deg)}50%{transform:rotate(14deg)}}
+@keyframes tp-blink{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.12)}}
+@keyframes tp-talk-a{0%{opacity:1}50%{opacity:0}100%{opacity:0}}
+@keyframes tp-talk-b{0%{opacity:0}50%{opacity:1}100%{opacity:1}}
+@keyframes tp-hop-a{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}38%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}76%{transform:scale(1.06,.9)}88%{transform:scale(.98,1.03)}100%{transform:none}}
+@keyframes tp-hop-b{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}38%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}76%{transform:scale(1.06,.9)}88%{transform:scale(.98,1.03)}100%{transform:none}}
+@keyframes tp-hop2-a{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}22%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}44%{transform:scale(1.05,.92)}50%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}68%{transform:translateY(-9%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}86%{transform:scale(1.04,.94)}100%{transform:none}}
+@keyframes tp-hop2-b{0%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}22%{transform:translateY(-18%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}44%{transform:scale(1.05,.92)}50%{transform:none;animation-timing-function:cubic-bezier(.2,.7,.4,1)}68%{transform:translateY(-9%);animation-timing-function:cubic-bezier(.6,0,.8,.4)}86%{transform:scale(1.04,.94)}100%{transform:none}}
+@keyframes tp-recoil-a{0%,100%{transform:none}30%{transform:translateX(-4%) rotate(-5deg)}}
+@keyframes tp-recoil-b{0%,100%{transform:none}30%{transform:translateX(-4%) rotate(-5deg)}}
+@keyframes tp-perk-a{0%,100%{transform:none}40%{transform:translateY(-3%)}}
+@keyframes tp-perk-b{0%,100%{transform:none}40%{transform:translateY(-3%)}}
 @keyframes tp-tw{0%,100%{opacity:1}50%{opacity:.35}}
 @keyframes tp-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
 @keyframes tp-pop{0%{transform:scale(.6);opacity:0}60%{transform:scale(1.06);opacity:1}100%{transform:scale(1);opacity:1}}
-@keyframes tp-shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
+@keyframes tp-in-a{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes tp-in-b{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes tp-shake-a{0%,100%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
+@keyframes tp-shake-b{0%,100%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
+@keyframes tp-yes{0%{transform:scale(1)}35%{transform:scale(1.1)}65%{transform:scale(.97)}100%{transform:scale(1)}}
+@keyframes tp-land{0%{transform:translateY(-14px) scale(1.15);opacity:.3}60%{transform:translateY(2px) scale(.97);opacity:1}100%{transform:none;opacity:1}}
+@keyframes tp-dot{0%{transform:scale(1.7)}100%{transform:none}}
+@keyframes tp-wave{0%,100%{transform:scaleY(.4)}50%{transform:scaleY(1)}}
 @media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
 </style>
 </helmet>
@@ -35,14 +53,14 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 </svg>
 
 <div style="position: relative; display: flex; align-items: center; gap: 10px; height: 44px; flex-shrink: 0">
-<a href="Tonight.dc.html" onClick="{{ close }}" aria-label="Cerrar el juego" style="width: 44px; height: 44px; margin-left: -6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFF7EC" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
+<a href="Tonight.dc.html" onClick="{{ close }}" aria-label="Cerrar el juego" style="width: 56px; height: 56px; margin: -6px -6px -6px -12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFF7EC" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></a>
 <div style="flex-grow: 1; display: flex; flex-direction: column; min-width: 0">
 <div lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 19px; line-height: 1.05">Achegety</div>
 <div style="font-size: 12px; font-weight: 700; color: #CFC6FF">{{ subtitle }}</div>
 </div>
 <div role="img" aria-label="{{ dotsAria }}" style="display: flex; gap: 4px; flex-shrink: 0">
 <sc-for list="{{ dots }}" as="d" hint-placeholder-count="6">
-<div style="width: 10px; height: 10px; border-radius: 5px; background: {{ d.bg }}; border: 2px solid #FFF7EC; box-sizing: border-box"></div>
+<div style="width: 10px; height: 10px; border-radius: 5px; background: {{ d.bg }}; border: 2px solid #FFF7EC; box-sizing: border-box; animation: {{ d.anim }}"></div>
 </sc-for>
 </div>
 </div>
@@ -53,12 +71,12 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 <div lang="gn" style="min-width: 34px; height: 34px; box-sizing: border-box; padding: 0 6px; border-radius: 10px; background: {{ l.bg }}; color: #2A1B3D; display: flex; align-items: center; justify-content: center; font-family: 'Andika', 'Nunito', sans-serif; font-weight: 700; font-size: 19px">{{ l.t }}</div>
 </sc-for>
 </div>
-<div style="font-size: 13px; font-weight: 700; color: #E4DDFF; line-height: 1.4">{{ rule }}</div>
+<div style="font-size: 13px; font-weight: 700; color: #E4DDFF; line-height: 1.4">{{ rule.a }}<span lang="gn">{{ rule.gn }}</span>{{ rule.b }}</div>
 </div>
 
 <sc-if value="{{ playing }}" hint-placeholder-val="{{ true }}">
 <div style="position: relative; margin-top: 12px; box-sizing: border-box; padding: 14px 16px 16px; border-radius: 30px; background: #FFF7EC; color: #2A1B3D; border: 3px solid #3B2418; box-shadow: 0 6px 0 #3B2418; display: flex; flex-direction: column; align-items: center; gap: 10px; flex-shrink: 0">
-<svg viewBox="0 0 100 100" width="110" height="110" aria-hidden="true">
+<svg viewBox="0 0 100 100" width="110" height="110" aria-hidden="true" style="animation: {{ picAnim }}">
 <path d="{{ word.pic.f0.d }}" fill="{{ word.pic.f0.fill }}" stroke="#2A1B3D" stroke-width="2.8" stroke-linejoin="round" fill-rule="{{ word.pic.rule }}"/>
 <path d="{{ word.pic.f1.d }}" fill="{{ word.pic.f1.fill }}" stroke="#2A1B3D" stroke-width="2.8" stroke-linejoin="round"/>
 <path d="{{ word.pic.f2.d }}" fill="{{ word.pic.f2.fill }}" stroke="#2A1B3D" stroke-width="2.8" stroke-linejoin="round"/>
@@ -71,10 +89,20 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 <path d="{{ word.pic.line }}" fill="none" stroke="#2A1B3D" stroke-width="{{ word.pic.lineW }}" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 <div style="font-size: 15px; font-weight: 800; color: #5C4E86">{{ word.es }}</div>
+<sc-if value="{{ canHear }}" hint-placeholder-val="{{ true }}">
+<button type="button" onClick="{{ listen }}" aria-label="{{ listenAria }}" style="height: 56px; box-sizing: border-box; padding: 0 20px; border-radius: 28px; background: #8EC5FF; border: 3px solid #3B2418; display: flex; align-items: center; gap: 8px; color: #2A1B3D; flex-shrink: 0">
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2A1B3D" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7" opacity="{{ wave.arcs }}"/><path d="M19 6a8.5 8.5 0 0 1 0 12" opacity="{{ wave.arcs }}"/><path d="M16.2 11v6" opacity="{{ wave.bars }}" style="transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(.7); animation: {{ wave.a0 }}"/><path d="M19.2 7v10" opacity="{{ wave.bars }}" style="transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(.7); animation: {{ wave.a1 }}"/><path d="M22.2 10v7" opacity="{{ wave.bars }}" style="transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(.7); animation: {{ wave.a2 }}"/></svg>
+<span lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 18px">Ehendu</span>
+<span style="font-size: 13px; font-weight: 800; color: #2A1B3D">Escuchá</span>
+</button>
+</sc-if>
+<sc-if value="{{ noHear }}" hint-placeholder-val="{{ false }}">
+<div aria-hidden="true" style="height: 56px; flex-shrink: 0"></div>
+</sc-if>
 <sc-if value="{{ tilesMode }}" hint-placeholder-val="{{ true }}">
 <div role="img" aria-label="{{ tilesAria }}" style="display: flex; gap: 4px; flex-wrap: nowrap; justify-content: center">
 <sc-for list="{{ tiles }}" as="t" hint-placeholder-count="4">
-<div lang="gn" style="min-width: {{ t.w }}; height: 52px; box-sizing: border-box; padding: 0 6px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-family: 'Andika', 'Nunito', sans-serif; font-weight: 700; font-size: {{ t.size }}; border: {{ t.border }}; background: {{ t.bg }}; animation: {{ t.anim }}">{{ t.t }}</div>
+<div lang="gn" style="min-width: {{ t.w }}; height: 52px; box-sizing: border-box; padding: 0 6px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-family: 'Andika', 'Nunito', sans-serif; font-weight: 700; font-size: {{ t.size }}; border: {{ t.border }}; background: {{ t.bg }}"><span style="display: inline-block; animation: {{ t.anim }}">{{ t.t }}</span></div>
 </sc-for>
 </div>
 </sc-if>
@@ -102,7 +130,7 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 <div style="flex-grow: 1"></div>
 <div style="position: relative; display: flex; align-items: flex-end; gap: 10px; flex-shrink: 0">
 <div style="flex-shrink: 0; animation: tp-bob 2.6s ease-in-out infinite">
-<dc-import name="Mborevi" pose="{{ pose }}" size="96" hint-size="96px,78px"></dc-import>
+<dc-import name="Mborevi" pose="{{ pose }}" talk="{{ talk }}" size="96" hint-size="96px,78px"></dc-import>
 </div>
 <sc-if value="{{ playing }}" hint-placeholder-val="{{ true }}">
 <div role="status" style="flex-grow: 1; margin-bottom: 12px; display: flex; flex-direction: column">
@@ -124,34 +152,80 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 <script type="text/x-dc" data-dc-script data-props='{"app":{"editor":null},"act":{"editor":null},"$preview":{"width":390,"height":844}}'>
 /* The achegety (the Guarani alphabet of the Academia) in three nights: the six oral vowels, y included («¿con qué
    vocal empieza?»), the six nasal vowels with their tilde («¿qué vocal falta?»), and the puso, the little catch in the
-   voice («¿cuál está bien escrita?»). Letters are counted as a reader sees them: mb, nd, ch and the puso are one
-   letter each. A screen reader hears the word spelled, with the empty space, and the keys say «con tilde» or «con
-   puso» out loud. On its own: 1.º grado, unit 7, night 2 (the nasal vowels), Guarani at home. */
+   voice («¿cuál está bien escrita?»). They are questions about sound: in the app each word plays by itself as its
+   round opens, «Ehendu» plays it again (its bars move while it plays, and Mborevi'i talks), and after a wrong key it
+   comes back once «Eha'ã jey» has been said. By ear (1.º grado with Guarani as a second language) only the words
+   that can be heard are asked. For a child who reads, a word with no voice yet has no «Ehendu» (a written stand-in
+   would give the answer away), and its place stays empty so that the keys do not move. The rounds come in a new order
+   at every play (the vowel keys stay in the alphabet's order), and the rule above them never shows a word of the
+   night. Letters are counted as a reader sees them: mb, nd, ch and the puso are one letter each. A screen reader
+   hears the word spelled, with the empty space, and the keys say «con tilde» or «con puso» out loud. The right key
+   bounces and its letter lands in the space; a wrong key shakes and nothing is lost. On its own (silent, the same game
+   every time): 1.º grado, unit 7, night 1 (the vowels), Guarani at home. */
 const ORAL = ['a', 'e', 'i', 'o', 'u', 'y'];
 const NASAL = ['ã', 'ẽ', 'ĩ', 'õ', 'ũ', 'ỹ'];
 const BASE = { 'á': 'a', 'é': 'e', 'í': 'i', 'ó': 'o', 'ú': 'u', 'ý': 'y' };
 const PAIR = { 'ã': 'a', 'ẽ': 'e', 'ĩ': 'i', 'õ': 'o', 'ũ': 'u', 'ỹ': 'y' };
+/* the rule of each night; its examples are words of other nights of the app, never one asked tonight */
+const RULES = {
+first: { sub: 'Las vocales', strip: ORAL, rule: { a: 'El guaraní tiene seis vocales. La y también es vocal: no se dice como la i del castellano.', gn: '', b: '' }, ask: '¿Con qué vocal empieza?' },
+nasal: { sub: 'Las vocales nasales', strip: NASAL, rule: { a: 'Con la tilde (~) la vocal suena por la nariz, como en ', gn: 'akã', b: ', «cabeza».' }, ask: '¿Qué vocal falta?' },
+puso: { sub: "El puso ( ' )", strip: ["'"], rule: { a: 'El puso es un cortecito en la voz, y se escribe con un apóstrofo, como en ', gn: "urukure'a", b: ', «lechuza».' }, ask: '¿Cuál está bien escrita?' }
+};
 class Component extends DCLogic {
 constructor(props) {
 super(props);
-this.state = { r: 0, bad: null, right: false, finished: false, first: 0, missed: false };
+this.state = { r: 0, bad: null, miss: 0, right: false, finished: false, first: 0, missed: false, said: false, voiced: false };
 this.timers = [];
+/* mixed into every seed: a new game at every play, '' on its own and in the tests */
+this.salt = window.tpCourse.salt(props);
 this.doneRef = (el) => { this.doneEl = el; };
 }
 componentWillUnmount() { this.timers.forEach((t) => clearTimeout(t)); this.offBack(); }
 /* the phone's Back on the site (App) asks this screen what its close button would do */
-componentDidMount() { this.onBack(); }
+componentDidMount() { this.onBack(); this.autoPlay(); }
 onBack() { const act = this.props.act; if (!act) return; const f = () => this.leave(); f.board = this; act.leave = f; }
 offBack() { const act = this.props.act; if (act && act.leave && act.leave.board === this) act.leave = null; }
 componentDidUpdate() {
 const f = !!this.state.finished;
-if (f && !this.wasFinished) { if (this.doneEl) this.doneEl.focus(); window.tpCourse.say(this.endLine); }
+if (f && !this.wasFinished) { if (this.doneEl) this.doneEl.focus(); this.beep('star'); window.tpCourse.say(this.endLine); }
 this.wasFinished = f;
+this.autoPlay();
+}
+/* a little sound that is not a voice (it answers with the voice off too), in the app only */
+beep(kind) { const S = window.tpSound; if (this.props.act && S && S.beep) S.beep(kind); }
+/* A round's word plays by itself a moment after the round opens, in the app only (on its own the board stays
+   silent), unless the child was quicker on «Ehendu», or a wrong key is being answered (the word comes after it). */
+autoPlay() {
+const id = this.roundId;
+if (!this.props.act || id === undefined || id === this.spoken) return;
+this.spoken = id;
+if (!id || !this.listenNow) return;
+const listen = this.listenNow;
+this.timers.push(setTimeout(() => {
+const st = this.state;
+if (this.spoken === id && this.roundId === id && this.heardIn !== id && !st.right && !st.finished && st.bad === null) listen();
+}, 450));
+}
+/* the rounds of this play: the night's words in a new order (only those the question fits: «¿con qué vocal
+   empieza?» asks words that start with a vowel). By ear (1.º grado with Guarani as a second language) only the words
+   that can be heard, as long as there are two: a word with no voice yet would be a guess there */
+wordsOf(s, mode, oral) {
+const C = window.tpCourse;
+const salt = this.salt || '';
+const key = (s ? s.id : '') + '|' + mode + '|' + !!oral + '|' + salt;
+if (this.wordsKey === key) return this.wordsList;
+let list = (s && s.data && s.data.words ? s.data.words : []).map((w) => C.word(w));
+if (mode === 'first') list = list.filter((w) => { const l = (C.letters(w.gn)[0] || '').toLowerCase(); return ORAL.indexOf(BASE[l] || l) >= 0; });
+if (oral) { const heard = list.filter((w) => C.voiced(w)); if (heard.length >= 2) list = heard; }
+this.wordsKey = key;
+this.wordsList = C.shuffle(list, (s ? s.id : '') + 'letters' + salt);
+return this.wordsList;
 }
 view() {
 const C = window.tpCourse;
 if (this.props.app) return this.props.app;
-if (!this.sample) { const st = C.sample('g1', 'L1', 25); st.cur = 'g1u07n2'; st.done.g1u07n2 = { meet: 1 }; st.game = 'letters'; this.sample = C.view(st); }
+if (!this.sample) { const st = C.sample('g1', 'L1', 24); st.cur = 'g1u07n1'; st.done.g1u07n1 = { meet: 1 }; st.game = 'letters'; this.sample = C.view(st); }
 return this.sample;
 }
 renderVals() {
@@ -160,13 +234,15 @@ const S = window.tpSound;
 const act = this.props.act;
 const app = this.view();
 const s = app.step;
+const st = this.state;
+const salt = this.salt || '';
 const mode = (s && s.data && s.data.letters) || 'first';
-const words = (s && s.data && s.data.words ? s.data.words : []).map((w) => C.word(w));
+const words = this.wordsOf(s, mode, !!s && C.isOral(s, app.track || 'L2'));
 const n = words.length;
-const r = Math.min(this.state.r, Math.max(0, n - 1));
+const r = Math.min(st.r, Math.max(0, n - 1));
 const w = words[r] || C.word({ gn: '', es: '', pic: '' });
 const letters = C.letters(w.gn);
-const finished = this.state.finished || n === 0;
+const finished = st.finished || n === 0;
 const again = !!(s && ((app.done || {})[s.id] || {}).letters);
 this.endLine = again ? C.VOICE.good : C.VOICE.star;
 const stop = (t) => (/[.!?…]$/.test(t) ? t : t + '.');
@@ -177,43 +253,64 @@ const want = (letters[gap] || '').toLowerCase();
 const wantKey = mode === 'first' ? (BASE[want] || want) : want;
 let options;
 if (mode === 'first') options = ORAL.slice();
-else if (mode === 'nasal') options = C.shuffle([want, PAIR[want] || 'a', NASAL[(NASAL.indexOf(want) + 3) % 6]], w.gn);
-else options = C.shuffle([w.gn, w.gn.replace(/'/g, '')], w.gn);
-const right = this.state.right;
+else if (mode === 'nasal') options = C.shuffle([want, PAIR[want] || 'a', NASAL[(NASAL.indexOf(want) + 3) % 6]], w.gn + salt);
+else options = C.shuffle([w.gn, w.gn.replace(/'/g, '')], w.gn + salt);
+const right = st.right;
+/* the round's word, now: by itself as the round opens, on «Ehendu», after a wrong key (when it can be heard), and
+   once it is answered */
+const id = finished ? '' : (s ? s.id : '') + ':' + r;
+const key = 'w:' + C.fold(w.gn);
+const voiced = !!w.gn && C.voiced(w);
+const listen = () => { this.heardIn = id; C.listen(this, key); };
+const replay = () => { if (voiced && S && S.has && S.has(key)) listen(); };
+this.roundId = id;
+this.listenNow = replay;
 const advance = () => {
 this.timers.push(setTimeout(() => {
-if (r + 1 < n) this.setState({ r: r + 1, bad: null, right: false, missed: false });
-else this.setState({ finished: true, right: false });
+const later = this.state;
+if (later.r !== r || later.finished) return;
+if (r + 1 < n) this.setState({ r: r + 1, bad: null, right: false, missed: false, said: false, voiced: false });
+else this.setState({ finished: true, right: false, said: false, voiced: false });
 }, 1200));
 };
 const keys = options.map((o, j) => {
 const isRight = mode === 'puso' ? o === w.gn : o === wantKey;
-const bad = this.state.bad === j;
+const bad = st.bad === j;
 return {
 t: o,
-w: mode === 'puso' ? '140px' : mode === 'first' ? '52px' : '64px',
+w: mode === 'puso' ? '140px' : mode === 'first' ? '96px' : '64px',
 size: mode === 'puso' ? '26px' : '30px',
 bg: right && isRight ? '#B8F0E0' : bad ? '#FFB98A' : '#FFD34E',
-anim: bad ? 'tp-shake 420ms ease-out' : right && isRight ? 'tp-pop 300ms ease-out' : 'none',
+/* a and b take turns, so that a second wrong tap shakes again; the right key bounces */
+anim: bad ? 'tp-shake-' + (st.miss % 2 ? 'a' : 'b') + ' 420ms ease-out' : right && isRight ? 'tp-yes 420ms cubic-bezier(.2,.8,.2,1)' : 'none',
 opacity: right && !isRight ? 0.4 : 1,
 off: right ? 'true' : 'false',
 aria: mode === 'puso' ? 'Se escribe ' + o + (o.indexOf("'") >= 0 ? ', con puso' : ', sin puso') : 'Letra ' + (PAIR[o] ? PAIR[o] + ' con tilde' : o),
+/* a tap reads the round as it is when it comes: one after the right answer does nothing */
 tap: () => {
-if (this.state.right) return;
+const now = this.state;
+if (now.finished || now.right || now.r !== r) return;
 if (isRight) {
-const key = 'w:' + C.fold(w.gn);
-if (S && S.has(key)) { S.unlock(); S.play(key); }
-this.setState({ right: true, bad: null, first: this.state.first + (this.state.missed ? 0 : 1) });
+this.beep('right');
+replay();
+this.setState({ right: true, bad: null, first: now.first + (now.missed ? 0 : 1) });
 advance();
 } else {
+this.beep('wrong');
 C.say(C.VOICE.again);
-this.setState({ bad: j, missed: true });
-this.timers.push(setTimeout(() => { if (this.state.bad === j) this.setState({ bad: null }); }, 700));
+const m = now.miss + 1;
+this.setState({ bad: j, missed: true, miss: m });
+this.timers.push(setTimeout(() => { if (this.state.miss === m) this.setState({ bad: null }); }, 700));
+/* the word again once «Eha'ã jey» has been said, if the round is still open */
+this.timers.push(setTimeout(() => {
+const later = this.state;
+if (later.miss === m && later.r === r && !later.right && !later.finished) replay();
+}, 1400));
 }
 }
 };
 });
-/* a long word keeps to one row with narrower tiles */
+/* a long word keeps to one row with narrower tiles; the right letter lands in the space (the box stays) */
 const long = letters.length > 7;
 const tiles = letters.map((l, k) => ({
 t: k === gap && !right ? '' : l,
@@ -221,14 +318,14 @@ w: long ? '30px' : '40px',
 size: long ? '24px' : '28px',
 border: k === gap ? (right ? '3px solid #3B2418' : '3px dashed #6B4FD8') : '2px solid #E4DCF2',
 bg: k === gap ? (right ? '#B8F0E0' : '#FFFFFF') : '#FFF7EC',
-anim: k === gap && right ? 'tp-pop 300ms ease-out' : 'none'
+anim: k === gap && right ? 'tp-land 300ms cubic-bezier(.2,.8,.2,1)' : 'none'
 }));
-const RULES = {
-first: { sub: 'Las vocales', strip: ORAL, rule: 'El guaraní tiene seis vocales. La y también es vocal: no se dice como la i del castellano.', ask: '¿Con qué vocal empieza?' },
-nasal: { sub: 'Las vocales nasales', strip: NASAL, rule: 'Con la tilde (~) la vocal suena por la nariz: pyta es «talón», pytã es «rojo».', ask: '¿Qué vocal falta?' },
-puso: { sub: "El puso ( ' )", strip: ["'", "ka'i", "so'o"], rule: "El puso es un cortecito en la voz, y se escribe con un apóstrofo: ka'i, «mono».", ask: '¿Cuál está bien escrita?' }
-};
 const R = RULES[mode] || RULES.first;
+/* the word playing: the speaker's bars move (still under reduced motion) and Mborevi'i talks */
+const talk = !!(st.said && st.voiced) && !finished;
+const bar = (ms) => (talk ? 'tp-wave 520ms ease-in-out ' + ms + 'ms infinite' : 'none');
+/* the dot that has just filled */
+const filled = finished ? n - 1 : r - 1;
 /* what the close button does, which the phone's Back does too (a game that is over keeps its star) */
 this.leave = () => { if (finished) act.finish('letters'); else act.go('Tonight'); };
 return {
@@ -236,20 +333,28 @@ field: C.starfield('letters', 390, 40, 760, 46),
 subtitle: R.sub,
 strip: R.strip.map((t) => ({ t, bg: mode !== 'puso' && t === wantKey && right ? '#B8F0E0' : '#FFE7A3' })),
 rule: R.rule,
-dots: words.map((x, k) => ({ bg: finished || k < r ? '#FFD34E' : k === r ? '#FFF7EC' : 'transparent' })),
+dots: words.map((x, k) => ({ bg: finished || k < r ? '#FFD34E' : k === r ? '#FFF7EC' : 'transparent', anim: k === filled ? 'tp-dot 300ms cubic-bezier(.2,.8,.2,1)' : 'none' })),
 dotsAria: 'Palabra ' + Math.min(r + 1, n) + ' de ' + n,
 playing: !finished, finished,
 word: w,
+/* each word's picture comes in (a and b take turns, so that it does again at the next word) */
+picAnim: 'tp-in-' + (r % 2 ? 'b' : 'a') + ' 320ms cubic-bezier(.2,.8,.2,1)',
+listen,
+listenAria: 'Ehendu, escuchá: ' + w.gn,
+/* a word with no voice yet has no «Ehendu», and keeps its place: the keys stay where the child found them */
+canHear: voiced, noHear: !voiced,
+wave: { arcs: talk ? 0 : 1, bars: talk ? 1 : 0, a0: bar(0), a1: bar(130), a2: bar(260) },
+talk,
 tilesMode: mode !== 'puso',
 tiles,
 tilesAria: right ? w.gn : 'La palabra, letra por letra: ' + letters.map((l, k) => (k === gap ? 'espacio vacío' : l === "'" ? 'puso' : l)).join(', '),
 ask: R.ask,
 keys,
-say: right ? { gn: bang(w.gn), es: '¡Muy bien! ' + stop(w.es) } : this.state.bad != null ? { gn: "Eha'ã jey", es: 'Probá otra vez: mirá bien la palabra.' } : { gn: "Ehecha porã", es: 'Mirá bien. ' + R.ask },
-pose: finished || right ? 'happy' : this.state.bad != null ? 'oops' : 'stand',
-doneLine: this.state.first + ' de ' + n + ' a la primera.',
+say: right ? { gn: bang(w.gn), es: '¡Muy bien! ' + stop(w.es) } : st.bad != null ? { gn: "Eha'ã jey", es: 'Probá otra vez: mirá bien la palabra.' } : { gn: "Ehecha porã", es: 'Mirá bien. ' + R.ask },
+pose: finished || right ? 'happy' : st.bad != null ? 'oops' : st.said ? 'listen' : 'stand',
+doneLine: st.first + ' de ' + n + ' a la primera.',
 fresh: !again,
-announce: finished && n ? 'Iporãite! ' + (again ? '' : 'Rehupyty peteĩ mbyja. ') + this.state.first + ' de ' + n + ' a la primera.' : '',
+announce: finished && n ? 'Iporãite! ' + (again ? '' : 'Rehupyty peteĩ mbyja. ') + st.first + ' de ' + n + ' a la primera.' : '',
 doneRef: this.doneRef,
 bigStar: C.puffyD(32, 33.5, 28),
 close: (e) => { if (act) { e.preventDefault(); this.leave(); } },
