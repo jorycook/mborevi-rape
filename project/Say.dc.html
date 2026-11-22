@@ -199,10 +199,10 @@ if (!this.props.act || id === undefined || id === this.spoken) return;
 this.spoken = id;
 if (!id || !this.listenNow) return;
 const listen = this.listenNow;
-this.timers.push(setTimeout(() => {
+this.timers.push(setTimeout(() => window.tpCourse.shown(this, () => {
 const st = this.state;
 if (this.spoken === id && this.lineId === id && this.heardIn !== id && st.step === 'ready' && !st.finished) listen();
-}, 450));
+}), 450));
 }
 view() {
 const C = window.tpCourse;

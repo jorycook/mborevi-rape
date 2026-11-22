@@ -292,6 +292,19 @@
     (board.timers = board.timers || []).push(board.saidT);
     return played;
   };
+  /* A word a board plays by itself (as a round opens, or again after a miss) comes due: now, or, while the page is
+     hidden (a call, the lock screen, another app), a moment after it is back, so that a word nobody heard is not
+     counted as heard. fn checks again, when it runs, that its round is still open. */
+  C.shown = function (board, fn) {
+    if (typeof document === 'undefined' || !document.addEventListener || document.visibilityState !== 'hidden') return fn();
+    var back = function () {
+      if (document.visibilityState === 'hidden') return;
+      document.removeEventListener('visibilitychange', back);
+      if (board.gone) return;
+      (board.timers = board.timers || []).push(setTimeout(fn, 450));
+    };
+    document.addEventListener('visibilitychange', back);
+  };
   /* A night's three games: meet the words, then two that change with the night's place in its unit (k), so that no
      two nights in a row are alike and every track trains the four abilities (L1 speaks on the nights with dialogues).
      A listening game needs two words that can be heard (else pairs, or read on readers' nights); build needs two words

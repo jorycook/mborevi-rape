@@ -32,7 +32,7 @@ night. Each unit ends with its big star, a quiz.
 | Achegety · *Las letras* | the vowels, the nasal vowels and the puso (1.º grado's alphabet unit) | Ahai |
 | Ere Mborevi'i ndive · *Decilo con Mborevi'i* | says the night's lines aloud, in a dialogue with Mborevi'i, the teacher or a friend | Añe'ẽ |
 | Yvága mombe'u · *Cuento del cielo* | listens to the sky story, read aloud page by page | Ahendu, Amoñe'ẽ |
-| Mbyja guasu · *La estrella grande* | answers five questions drawn from the whole unit | Ahendu, Amoñe'ẽ |
+| Mbyja guasu · *La estrella grande* | answers up to five questions drawn from the whole unit | Ahendu, Amoñe'ẽ |
 
 - **A night's three games** (`gamesFor` in `project/tp-course.js`) change with the night's place in its unit, so no
   two nights in a row are alike, and every track trains the four abilities: the L1 track says the dialogues too. A
@@ -40,9 +40,12 @@ night. Each unit ends with its big star, a quiz.
   words to build. A game already played keeps its place, so a night half played under an earlier rotation
   (`tests/games-v1.json`) finishes with one more game.
 - **Every word is heard.** Each card, round, line and story page plays its word by itself, and every game has a
-  listen button. A word with no voice clip yet is never asked by ear: the listening games choose among the words that
-  have one (`window.__tpVoiced`, written from the clip files by `tools/audio/voiced.js`). `tests/unvoiced.json` lists
-  the words of nights played by ear that still have none (held clips that a Guarani speaker has to approve).
+  listen button. A quick tap does not skip it: a right answer tapped before its word was heard says the word first,
+  and a word that comes due while the phone is put away waits until it is back. A word with no voice clip yet is never
+  asked by ear: the listening games choose among the words that have one (`window.__tpVoiced`, written from the clip
+  files by `tools/audio/voiced.js`), and the building game never writes a word before it is built.
+  `tests/unvoiced.json` lists the words of nights played by ear that still have none (held clips that a Guarani
+  speaker has to approve).
 - **Mistakes are gentle.** After a miss the word plays again; after two, the right answer glows; nothing is lost.
   The other pictures are words the child has met (tonight's first), and never two drawings that look alike.
 - **A new game at every play.** Rounds, options, cards and the big star's questions change each time a game is
@@ -196,7 +199,16 @@ node tests/test-keyframes.js
 `test-keyframes.js` checks that every animation a board uses is defined in its own helmet (and App's), as in
 `tests/keyframes.css`. `test-engine.js` also checks the voice index against the clip files, the words of oral nights
 still without a voice (`tests/unvoiced.json`; `--write` updates it once clips are approved), the rotation of games, and
-that no round puts look-alike pictures side by side.
+that no round puts look-alike pictures side by side (against a list of its own, so a group taken out of
+`C.LOOKALIKE` is caught).
+
+```bash
+node tests/test-ear.js
+```
+
+`test-ear.js` plays Pick, the big star, YesNo and Catch as the boards deal them, on every night heard by ear and over a
+few plays, and checks that every round asked by ear has a clip, and that a child who does not read yet is never given a
+round to read while a word of the night can be heard.
 
 ## Previewing locally
 

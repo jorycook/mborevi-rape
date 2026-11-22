@@ -134,12 +134,12 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 <script type="text/x-dc" data-dc-script data-props='{"app":{"editor":null},"act":{"editor":null},"$preview":{"width":390,"height":844}}'>
 /* Meet tonight's words, one card at a time: the picture, the word in Guarani, its meaning, its syllables (once the
    child reads Guarani: from 1.º grado with Guarani at home, from 2.º grado as a second language) and «Ehendu» to
-   hear it again. In the app each card says its word by itself a moment after it comes in, and once that word has
-   been heard «Upéi» bounces once to say what comes next; while a word plays the speaker's bars move and Mborevi'i
-   talks. The sound is a recorded clip, keyed «w:» + the word (tp-sound.js, one file per grade); where a clip is
-   missing or the voice is off, Mborevi'i says the word in a bubble instead. After the last card, a star (a game
-   played again keeps the one it had), and the button to go on takes the focus. On its own (silent): 1.º grado,
-   unit 5 (asking for help, permission and to borrow), night 1. */
+   hear it again. In the app each card says its word by itself a moment after it comes in (a tap on «Upéi» that
+   comes sooner says it first), and once that word has been heard «Upéi» bounces once to say what comes next; while
+   a word plays the speaker's bars move and Mborevi'i talks. The sound is a recorded clip, keyed «w:» + the word
+   (tp-sound.js, one file per grade); where a clip is missing or the voice is off, Mborevi'i says the word in a
+   bubble instead. After the last card, a star (a game played again keeps the one it had), and the button to go on
+   takes the focus. On its own (silent): 1.º grado, unit 5 (asking for help, permission and to borrow), night 1. */
 class Component extends DCLogic {
 constructor(props) {
 super(props);
@@ -170,9 +170,9 @@ if (!this.props.act || id === undefined || id === this.spoken) return;
 this.spoken = id;
 if (!id || !this.listenNow) return;
 const listen = this.listenNow;
-this.timers.push(setTimeout(() => {
+this.timers.push(setTimeout(() => window.tpCourse.shown(this, () => {
 if (this.spoken === id && this.cardId === id && this.heardIn !== id && !this.state.finished) listen();
-}, 450));
+}), 450));
 }
 view() {
 const C = window.tpCourse;
@@ -211,6 +211,9 @@ this.listenNow = () => hear(true);
 const next = () => {
 if (Date.now() < this.calm) return;
 this.calm = Date.now() + 400;
+/* a tap that comes before the card has said its word says it first (a quick tapper hears every word); the next tap
+   goes on */
+if (act && this.heardIn !== id && S && S.has && S.has(key)) { hear(true); return; }
 this.timers.forEach((t) => clearTimeout(t));
 this.timers = [];
 if (this.state.said && this.state.voiced && S && S.stop) S.stop();

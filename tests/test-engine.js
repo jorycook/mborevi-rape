@@ -100,13 +100,24 @@ if (C.salt({}) !== '') problems.push('a board on its own (no act) gets a salt');
 if (C.salt({ act: {} }) === C.salt({ act: {} })) problems.push('two plays get the same salt');
 window.__tpSalt = saltWas;
 
-/* the other pictures of a round: never two that look alike; tonight's words first */
+/* the other pictures of a round: never two that look alike; tonight's words first. The pictures that look alike are
+   written here too, so that a group taken out of C.LOOKALIKE (project/tp-course.js) is caught: a group may be added
+   there (and then here), never dropped */
+const ALIKE = [['maitei', 'jajotopáta'], ['jasy', 'pyhare'], ['pyhare', 'pytũ', 'eichu', 'nandupysa', 'mborevirape'],
+  ['kuarahy', "ko'ẽ", "ka'aru"], ['sy', "mbo'ehára"], ['ru', 'ramói']];
+ALIKE.forEach((grp) => grp.forEach((a) => grp.forEach((b) => {
+  if (a < b && !C.LOOKALIKE.some((g) => g.indexOf(a) >= 0 && g.indexOf(b) >= 0)) problems.push('C.LOOKALIKE no longer keeps «' + a + '» and «' + b + '» apart');
+})));
+const GROUPS = ALIKE.concat(C.LOOKALIKE);
 nights.forEach((s) => {
   const words = (s.data.words || []).map(C.word);
   words.forEach((w, r) => {
+    ['', 'a', 'b', 'c'].forEach((salt) => {
+      const keys = [w].concat(C.distractors(w, s.grade, s.unit, 3, s.id + r + salt, s.night)).map((o) => o.picKey);
+      GROUPS.forEach((grp) => { if (keys.filter((k) => grp.indexOf(k) >= 0).length > 1) problems.push(s.id + ' round ' + (r + 1) + ': look-alike pictures together: ' + keys.join(', ')); });
+    });
     const opts = [w].concat(C.distractors(w, s.grade, s.unit, 2, s.id + r, s.night));
     const keys = opts.map((o) => o.picKey);
-    C.LOOKALIKE.forEach((grp) => { if (keys.filter((k) => grp.indexOf(k) >= 0).length > 1) problems.push(s.id + ' round ' + (r + 1) + ': look-alike pictures together: ' + keys.join(', ')); });
     /* every word tonight that could stand next to it comes before any other: the two taken hold as many of tonight's
        as the whole ordered list does among its first two */
     const tonight = words.map((x) => x.picKey);

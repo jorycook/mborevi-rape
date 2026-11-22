@@ -225,6 +225,8 @@ this.autoplay();
 /* the phone's Back on the site (App) asks this screen what its close button would do */
 onBack() { const act = this.props.act; if (!act) return; const f = () => this.leave(); f.board = this; act.leave = f; }
 offBack() { const act = this.props.act; if (act && act.leave && act.leave.board === this) act.leave = null; }
+/* the phone asks for less motion */
+still() { try { return !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches); } catch (e) { return false; } }
 later(fn, ms) { const t = setTimeout(() => { if (!this.gone) fn(); }, ms); this.timers.push(t); return t; }
 view() {
 const C = window.tpCourse;
@@ -293,7 +295,7 @@ const r = this.state.r;
 const id = P.id + ':' + r;
 if (id === this.spoken) return;
 this.spoken = id;
-this.later(() => { if (this.state.r === r && !this.state.caught && !this.state.finished) this.listenNow(); }, 450);
+this.later(() => window.tpCourse.shown(this, () => { if (this.state.r === r && !this.state.caught && !this.state.finished && !this.state.wrong.length) this.listenNow(); }), 450);
 }
 /* the right star: it flies into the jar while its word plays; the next round comes when the word has ended */
 catchIt(r) {
@@ -314,7 +316,7 @@ this.later(() => {
 if (this.state.r !== r || !this.state.caught || this.state.finished) return;
 if (last) this.setState({ finished: true, said: false });
 else this.setState({ r: r + 1, caught: false, landed: false, wrong: [], shook: {}, oops: false, said: false });
-}, last ? Math.max(1500, next) : next);
+}, last ? Math.max(1500, played ? ms + 300 : 0) : next);
 }
 /* not the one: it shakes and dims for the round, Mborevi'i is surprised for a moment, and the word comes again */
 miss(r, z) {
@@ -330,7 +332,7 @@ const oops = ++this.oopsN;
 const ask = ++this.askN;
 this.setState({ wrong: st.wrong.concat([z]), shook, misses: st.misses + 1, oops: true });
 this.later(() => { if (this.oopsN === oops) this.setState({ oops: false }); }, 900);
-if (P.listen) this.later(() => { if (this.askN === ask && this.state.r === r && !this.state.caught && !this.state.finished) this.listenNow(); }, 1400);
+if (P.listen) this.later(() => window.tpCourse.shown(this, () => { if (this.askN === ask && this.state.r === r && !this.state.caught && !this.state.finished) this.listenNow(); }), 1400);
 }
 renderVals() {
 const C = window.tpCourse;
@@ -351,6 +353,7 @@ const listen = P.listen;
 const again = !!(s && ((app.done || {})[s.id] || {}).catch);
 this.endLine = again ? C.VOICE.good : C.VOICE.star;
 const enter = (r % 2 ? 'tp-in-b' : 'tp-in-a') + ' 320ms cubic-bezier(.2,.8,.2,1) ';
+const still = this.still();
 const stars = ZONES[P.many].map((c, z) => {
 const w = R.stars[z] || null;
 const isT = z === R.tz;
@@ -360,9 +363,11 @@ const shook = st.shook[z] || 0;
 return {
 x: c[0] - 66 + 'px', y: c[1] - 66 + 'px',
 z: flying ? 3 : 2,
-fly: flying ? 'translate(' + (JAR[0] - c[0]) + 'px, ' + (JAR[1] - c[1]) + 'px) scale(.3)' : 'none',
+/* the star caught flies into the jar and fades on the way; with reduced motion it stays where it was, mint, until its
+   little star is in the jar */
+fly: flying && !still ? 'translate(' + (JAR[0] - c[0]) + 'px, ' + (JAR[1] - c[1]) + 'px) scale(.3)' : 'none',
 flyT: flying ? 'transform 600ms cubic-bezier(.5,0,.7,1), opacity 200ms linear 450ms' : 'none',
-flyO: flying ? 0 : 1,
+flyO: flying && (st.landed || !still) ? 0 : 1,
 enter: enter + z * 70 + 'ms both',
 float: FLOAT[z][0] + ' ' + FLOAT[z][1] + 's ease-in-out ' + FLOAT[z][2] + 's infinite',
 pic: w ? w.pic : C.pic(''),
@@ -394,8 +399,9 @@ const playingWord = !!(st.said && st.voiced);
 const len = C.chars(target.gn).length;
 /* stars in the jar: one per round done, and this round's once it has landed */
 const got = finished ? n : Math.min(n, r + (st.landed ? 1 : 0));
-/* what the close button does, which the phone's Back does too (a game that is over keeps its star) */
-this.leave = () => { if (finished) act.finish('catch'); else act.go('Tonight'); };
+/* what the close button does, which the phone's Back does too (a game that is over keeps its star, and so does one
+   whose last answer is in while its end card is still to come) */
+this.leave = () => { if (finished || (caught && r + 1 >= n)) act.finish('catch'); else act.go('Tonight'); };
 return {
 field: C.starfield('catch', 390, 40, 760, 46),
 titleGn: G.gn, titleEs: G.es,

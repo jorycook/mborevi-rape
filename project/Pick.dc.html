@@ -151,7 +151,8 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
    shakes, Mborevi'i is surprised for a moment, «Eha'ã jey» (try again), then the word again; after two misses the
    right card glows. The round goes on: nothing is lost. The other pictures are tonight's words first, never two
    that look alike. A new game at every play (the order of the rounds, the other pictures), the same during it.
-   Where a clip is missing or the voice is off, Mborevi'i shows the word in his bubble instead. At the end, a star
+   A right picture tapped before its word was heard says the word first, and the next round comes after it. Where a
+   clip is missing or the voice is off, Mborevi'i shows the word in his bubble instead. At the end, a star
    (a game played again keeps the one it had); the end is announced and the button to go on takes the focus.
    On its own (silent, the same game every time): listening, 1.º grado, unit 6 (the numbers), night 1. */
 class Component extends DCLogic {
@@ -185,10 +186,10 @@ if (!this.props.act || id === undefined || id === this.spoken) return;
 this.spoken = id;
 if (!id || !this.roundHeard || !this.listenNow) return;
 const listen = this.listenNow;
-this.timers.push(setTimeout(() => {
+this.timers.push(setTimeout(() => window.tpCourse.shown(this, () => {
 const st = this.state;
 if (this.spoken === id && this.roundId === id && this.heardIn !== id && !st.right && !st.wrong.length && !st.finished) listen();
-}, 450));
+}), 450));
 }
 /* the rounds of this play: the night's words in a new order; by ear only those that can be heard, one per picture */
 wordsOf(s, mode, oral) {
@@ -198,8 +199,11 @@ const key = (s ? s.id : '') + '|' + mode + '|' + oral + '|' + salt;
 if (this.wordsKey === key) return this.wordsList;
 let list = s && s.data && s.data.words ? C.shuffle(s.data.words.map((w) => C.word(w)), s.id + mode + salt) : [];
 if (mode !== 'read' && oral) {
-const seen = {};
-list = list.filter((w) => { if (!C.voiced(w) || seen[w.picKey]) return false; seen[w.picKey] = 1; return true; });
+/* by ear: the words that can be heard, one per picture; on a night where none can (a game kept from before the
+   rotation gave this night another), its words are read instead, so the game is never empty */
+const seen = {}, once = {};
+const heard = list.filter((w) => { if (!C.voiced(w) || seen[w.picKey]) return false; seen[w.picKey] = 1; return true; });
+list = heard.length ? heard : list.filter((w) => { if (once[w.picKey]) return false; once[w.picKey] = 1; return true; });
 }
 this.wordsKey = key;
 this.wordsList = list;
@@ -263,13 +267,17 @@ const now = this.state;
 if (now.finished || now.right || now.r !== r || now.wrong.indexOf(k) >= 0) return;
 if (isT) {
 this.beep('right');
-C.say(C.VOICE.good);
+/* answered before its word was heard (a quick tap): the word now, after the chime, and the next round once it has
+   been said; otherwise «Iporãite!» */
+const unheard = !read && this.heardIn !== id && !!(S && S.has && S.has(key));
+if (unheard) listen(); else C.say(C.VOICE.good);
+const wait = unheard && S.ms ? Math.max(1100, S.ms(key) + 400) : 1100;
 this.setState({ right: true, oops: false, first: now.first + (now.wrong.length ? 0 : 1) });
 /* the next round once «Iporãite!» is over: its word then plays by itself */
 this.timers.push(setTimeout(() => {
 if (r + 1 < n) this.setState({ r: r + 1, wrong: [], right: false, said: false, oops: false });
 else this.setState({ finished: true, right: false, said: false, oops: false });
-}, 1100));
+}, wait));
 } else {
 this.beep('wrong');
 C.say(C.VOICE.again);
@@ -299,8 +307,9 @@ const wave = talk && !read;
 const bar = (ms) => (wave ? 'tp-wave 520ms ease-in-out ' + ms + 'ms infinite' : 'none');
 /* the dot that has just filled */
 const filled = finished ? n - 1 : r - 1;
-/* what the close button does, which the phone's Back does too (a game that is over keeps its star) */
-this.leave = () => { if (finished) act.finish(mode); else act.go('Tonight'); };
+/* what the close button does, which the phone's Back does too (a game that is over keeps its star, and so does one
+   whose last answer is in while its end card is still to come) */
+this.leave = () => { if (finished || (st.right && r + 1 >= n)) act.finish(mode); else act.go('Tonight'); };
 return {
 field: C.starfield('pick', 390, 40, 760, 46),
 titleGn: G.gn, titleEs: G.es,

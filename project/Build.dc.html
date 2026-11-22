@@ -80,7 +80,7 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 <path d="{{ word.pic.line }}" fill="none" stroke="#2A1B3D" stroke-width="{{ word.pic.lineW }}" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 <div style="font-size: 15px; font-weight: 800; color: #5C4E86">{{ word.es }}</div>
-<button type="button" onClick="{{ listen }}" aria-label="{{ listenAria }}" style="height: 56px; box-sizing: border-box; padding: 0 20px; border-radius: 28px; background: #8EC5FF; border: 3px solid #3B2418; display: flex; align-items: center; gap: 8px; color: #2A1B3D; flex-shrink: 0">
+<button type="button" onClick="{{ listen }}" aria-label="{{ listenAria }}" aria-hidden="{{ earHidden }}" tabindex="{{ earTab }}" style="visibility: {{ earVis }}; height: 56px; box-sizing: border-box; padding: 0 20px; border-radius: 28px; background: #8EC5FF; border: 3px solid #3B2418; display: flex; align-items: center; gap: 8px; color: #2A1B3D; flex-shrink: 0">
 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2A1B3D" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16.5 8.5a5 5 0 0 1 0 7" opacity="{{ wave.arcs }}"/><path d="M19 6a8.5 8.5 0 0 1 0 12" opacity="{{ wave.arcs }}"/><path d="M16.2 11v6" opacity="{{ wave.bars }}" style="transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(.7); animation: {{ wave.a0 }}"/><path d="M19.2 7v10" opacity="{{ wave.bars }}" style="transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(.7); animation: {{ wave.a1 }}"/><path d="M22.2 10v7" opacity="{{ wave.bars }}" style="transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(.7); animation: {{ wave.a2 }}"/></svg>
 <span lang="gn" style="font-family: 'Baloo 2', 'Nunito', sans-serif; font-weight: 800; font-size: 18px">Ehendu</span>
 <span style="font-size: 13px; font-weight: 800; color: #2A1B3D">Escuchá</span>
@@ -143,10 +143,10 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 <script type="text/x-dc" data-dc-script data-props='{"app":{"editor":null},"act":{"editor":null},"$preview":{"width":390,"height":844}}'>
 /* Hear tonight's words, then build them from their syllables. In the app each word plays by itself as its round
    opens, «Ehendu» plays it again (its bars move while it plays, and Mborevi'i talks), and after a wrong key it comes
-   back once «Eha'ã jey» has been said; where a clip is missing or the voice is off, Mborevi'i shows the word in his
-   bubble instead. The picture and its meaning, the empty boxes, and star keys in lowercase with the syllables plus one
-   or two that do not belong (a capital would give the first one away); each box takes the syllable as the word writes
-   it, capital included. Guarani syllables end in a vowel, and the digraphs (mb, nd, ch…) and the puso stay inside
+   back once «Eha'ã jey» has been said; where a clip is missing or the voice is off, «Ehendu» is not there (its place
+   stays) and the word is only seen once it is built: written sooner, it would give the answer away. The picture and
+   its meaning, the empty boxes, and star keys in lowercase with the syllables plus one or two that do not belong (a
+   capital would give the first one away); each box takes the syllable as the word writes it, capital included. Guarani syllables end in a vowel, and the digraphs (mb, nd, ch…) and the puso stay inside
    them as one letter: mba·ra·ka·ja, ma·ndi·'o. A syllable lands in its box and its key sinks; a wrong key shakes and
    nothing is lost; the finished word is read out syllable by syllable while it plays. Three of the night's words to
    build, chosen anew at every play with the order of the keys and the extra ones, the same during it. At the end, a
@@ -182,10 +182,10 @@ if (!this.props.act || id === undefined || id === this.spoken) return;
 this.spoken = id;
 if (!id || !this.listenNow) return;
 const listen = this.listenNow;
-this.timers.push(setTimeout(() => {
+this.timers.push(setTimeout(() => window.tpCourse.shown(this, () => {
 const st = this.state;
 if (this.spoken === id && this.roundId === id && this.heardIn !== id && !st.done && !st.finished && st.bad === null) listen();
-}, 450));
+}), 450));
 }
 /* the words of this play: three of the night's words of two syllables or more, chosen anew at every play */
 wordsOf(s) {
@@ -233,7 +233,8 @@ const bang = (t) => (/[!?…]$/.test(t) ? t : t + '!');
 /* the round's word, now: by itself as the round opens, on «Ehendu», after a wrong key, and once it is built */
 const id = finished ? '' : sid + ':' + r;
 const key = 'w:' + C.fold(w.gn);
-const listen = () => { this.heardIn = id; C.listen(this, key); };
+const canHear = !!w.gn && C.voiced(w) && app.voice !== false;
+const listen = () => { this.heardIn = id; if (S && S.has && S.has(key)) C.listen(this, key); };
 this.roundId = id;
 this.listenNow = listen;
 const keys = pool.map((k, j) => {
@@ -297,8 +298,9 @@ const talk = !!(st.said && st.voiced) && !finished;
 const bar = (ms) => (talk ? 'tp-wave 520ms ease-in-out ' + ms + 'ms infinite' : 'none');
 /* the dot that has just filled */
 const filled = finished ? n - 1 : r - 1;
-/* what the close button does, which the phone's Back does too (a game that is over keeps its star) */
-this.leave = () => { if (finished) act.finish('build'); else act.go('Tonight'); };
+/* what the close button does, which the phone's Back does too (a game that is over keeps its star, and so does one
+   whose last answer is in while its end card is still to come) */
+this.leave = () => { if (finished || (st.done && r + 1 >= n)) act.finish('build'); else act.go('Tonight'); };
 return {
 field: C.starfield('build', 390, 40, 760, 46),
 dots: words.map((x, k) => ({ bg: finished || k < r ? '#FFD34E' : k === r ? '#FFF7EC' : 'transparent', anim: k === filled ? 'tp-dot 300ms cubic-bezier(.2,.8,.2,1)' : 'none' })),
@@ -311,8 +313,10 @@ listen,
 listenAria: 'Ehendu, escuchá: ' + w.gn,
 wave: { arcs: talk ? 0 : 1, bars: talk ? 1 : 0, a0: bar(0), a1: bar(130), a2: bar(260) },
 talk,
-/* the word, written, when it cannot be heard: in his bubble, above the line (which can take two rows) */
-bubble: { on: !!(st.said && !st.voiced && !finished), text: w.gn },
+/* the word built, written, when its clip could not play: in his bubble, above the line (which can take two rows);
+   never before it is built */
+bubble: { on: !!(st.said && !st.voiced && st.done && !finished), text: w.gn },
+earVis: canHear ? 'visible' : 'hidden', earHidden: canHear ? 'false' : 'true', earTab: canHear ? 0 : -1,
 slotsAria: (got.length ? 'Armaste: ' + got.join(' ') + '. ' : '') + (w.syl.length - got.length ? 'Cajas vacías: ' + (w.syl.length - got.length) + ' de ' + w.syl.length : 'Palabra completa'),
 say: st.done ? { gn: bang(w.gn), es: '¡Muy bien! ' + stop(w.es) } : st.bad != null ? { gn: "Eha'ã jey", es: 'Probá otra vez: esa sílaba no va ahí.' } : { gn: got.length ? 'Upéi?' : 'Mba\'éichapa oñepyrũ?', es: got.length ? '¿Y después?' : '¿Cómo empieza?' },
 pose: finished || st.done ? 'happy' : st.bad != null ? 'oops' : st.said ? 'listen' : 'stand',

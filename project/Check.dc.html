@@ -163,12 +163,13 @@ button,a{transition:transform 90ms cubic-bezier(.2,.8,.2,1)}button:active:not([a
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"app":{"editor":null},"act":{"editor":null},"$preview":{"width":390,"height":844}}'>
-/* The big star at the end of a unit: five questions on the unit's words, heard or read as the child's track says
-   (while the grade is oral, Preescolar and 1.º grado with Guarani as a second language, they are all heard, and only
-   words that can be heard are asked; a child with Guarani at home reads them; otherwise heard and read take turns,
-   and a word with no voice yet is read). Each attempt asks a new set: one word per picture, one from each night in
-   turn, in a new order. In the app a question to hear plays its word by itself as it opens; after a miss the word
-   comes back, and after two the right card glows. It is a celebration, not an exam: the star always lights, and one
+/* The big star at the end of a unit: five questions on the unit's words (fewer where fewer pictures can be heard),
+   heard or read as the child's track says (while the grade is oral, Preescolar and 1.º grado with Guarani as a
+   second language, they are all heard, and only words that can be heard are asked; a child with Guarani at home
+   reads them; otherwise heard and read take turns, and a word with no voice yet is read). Each attempt asks a new
+   set: one word per picture, one from each night in turn, in a new order. In the app a question to hear plays its
+   word by itself as it opens (a right card tapped before it was heard says it first); after a miss the word comes
+   back, and after two the right card glows. It is a celebration, not an exam: the star always lights, and one
    to three small stars, counted out one by one, say how it went at the first try. At the end the result is
    announced and the button to light the star takes the focus (it works at once, while the stars still come).
    On its own (silent, the same questions every time): 1.º grado, unit 1 (Maitei), Spanish at home. */
@@ -204,10 +205,10 @@ if (!this.props.act || id === undefined || id === this.spoken) return;
 this.spoken = id;
 if (!id || !this.roundHeard || !this.listenNow) return;
 const listen = this.listenNow;
-this.timers.push(setTimeout(() => {
+this.timers.push(setTimeout(() => window.tpCourse.shown(this, () => {
 const st = this.state;
 if (this.spoken === id && this.roundId === id && this.heardIn !== id && !st.right && !st.wrong.length && !st.finished) listen();
-}, 450));
+}), 450));
 }
 /* The questions of this attempt: each night's words in a new order (by ear only those that can be heard), then
    one word from each night in turn (the first night a new one too) up to five, never a picture or a word already
@@ -301,14 +302,18 @@ const now = this.state;
 if (now.finished || now.right || now.r !== r || now.wrong.indexOf(k) >= 0) return;
 if (isT) {
 this.beep('right');
-C.say(C.VOICE.good);
+/* answered before its word was heard (a quick tap): the word now, after the chime, and the next round once it has
+   been said; otherwise «Iporãite!» */
+const unheard = !read && this.heardIn !== id && !!(S && S.has && S.has(key));
+if (unheard) listen(); else C.say(C.VOICE.good);
+const wait = unheard && S.ms ? Math.max(1000, S.ms(key) + 400) : 1000;
 this.setState({ right: true, oops: false, first: now.first + (now.wrong.length ? 0 : 1) });
 /* the next question once «Iporãite!» is over: its word then plays by itself */
 this.timers.push(setTimeout(() => {
 clearTimeout(this.saidT);
 if (r + 1 < n) this.setState({ r: r + 1, wrong: [], right: false, said: false, oops: false });
 else this.setState({ finished: true, right: false, said: false, oops: false });
-}, 1000));
+}, wait));
 } else {
 this.beep('wrong');
 C.say(C.VOICE.again);
@@ -343,8 +348,9 @@ const wave = talk && !read;
 const bar = (ms) => (wave ? 'tp-wave 520ms ease-in-out ' + ms + 'ms infinite' : 'none');
 /* the star that has just filled */
 const filled = finished ? n - 1 : r - 1;
-/* what the close button does, which the phone's Back does too (a big star that is over stays lit) */
-this.leave = () => { if (finished) act.checked(first, n); else act.go('Main'); };
+/* what the close button does, which the phone's Back does too (a big star that is over stays lit, and so does one
+   whose last answer is in while its end card is still to come) */
+this.leave = () => { if (finished || (st.right && r + 1 >= n)) act.checked(first, n); else act.go('Main'); };
 return {
 field: C.starfield('check', 390, 40, 760, 60),
 unitLine: (unit.gn ? C.norm(unit.gn) : 'Unidad ' + unitN) + ' · ' + fig.gn,

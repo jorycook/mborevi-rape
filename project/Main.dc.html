@@ -321,7 +321,7 @@ href: 'Tonight.dc.html', go: (e) => { if (act) { e.preventDefault(); act.open(cu
 card = {
 kicker: 'MBYJA GUASU · LA ESTRELLA GRANDE', kickerInk: '#B4235C',
 title: C.norm(unit.gn || unit.es), lang: unit.gn ? 'gn' : 'es',
-sub: 'Cinco preguntas para encender una estrella de ' + sky.gn + '.',
+sub: 'Preguntas de toda la unidad para encender una estrella de ' + sky.gn + '.',
 hasGames: false, games: [], gamesLabel: '', gamesAria: '',
 btn: 'Jaha!', btnLang: 'gn', btnEs: '¡Vamos!',
 href: 'Check.dc.html', go: (e) => { if (act) { e.preventDefault(); act.open(cur.id); } }
@@ -356,8 +356,8 @@ unitKicker: 'UNIDAD ' + unit.n + ' DE ' + units + ' · ' + sky.gn.toUpperCase(),
 hasUnitGn: !!unit.gn, unitGn: C.norm(unit.gn || ''), unitEs: unit.es || '',
 toSky: nav('Sky'), toGrownups: nav('Grownups'),
 talk: !!(this.state.said && this.state.voiced),
-/* the card comes in when the path opens, and again when the tapir gets to the next star */
-cardIn: this.walkAt != null && !moving ? 'tp-in-' + (this.walkAt % 2 ? 'a' : 'b') + ' 320ms cubic-bezier(.2,.8,.2,1)' : 'tp-in 260ms ease-out'
+/* the card comes in when the path opens, and stays while the tapir walks: it already shows the night he walks to */
+cardIn: 'tp-in 260ms ease-out'
 };
 }
 }

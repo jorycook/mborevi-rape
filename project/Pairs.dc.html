@@ -299,8 +299,9 @@ const say = last ? { gn: bang(last.gn), es: last.es }
 : sound ? { gn: 'Ehendu', es: 'Escuchá bien y acordate.' }
 : { gn: 'Ehecha porã', es: 'Mirá bien y acordate.' };
 const heardCard = st.heard >= 0 ? deck[st.heard] : null;
-/* what the close button does, which the phone's Back does too (a game that is over keeps its star) */
-this.leave = () => { if (finished) act.finish('pairs'); else act.go('Tonight'); };
+/* what the close button does, which the phone's Back does too (a game that is over keeps its star, and so does one
+   whose last answer is in while its end card is still to come) */
+this.leave = () => { if (finished || (words.length > 0 && matched.length === deck.length)) act.finish('pairs'); else act.go('Tonight'); };
 return {
 field: C.starfield('pairs', 390, 40, 760, 46),
 hint: sound ? 'Tocá dos estrellas: juntá cada sonido con su dibujo.' : oral ? 'Tocá dos estrellas: buscá dos dibujos iguales.' : 'Tocá dos estrellas: juntá cada dibujo con su palabra.',

@@ -230,6 +230,8 @@ this.enterFor = to;
 const ease = ' 260ms cubic-bezier(.2,.8,.2,1)';
 if (!from) this.enterAnim = 'tp-screen 220ms ease-out';
 else if (to === 'Shine' || (from === 'Main' && (to === 'Tonight' || to === 'Check'))) this.enterAnim = 'tp-enter-zoom' + ease;
+/* the last step of the setup goes on to the path: forward, though the path is the first screen of the history */
+else if (from === 'Ready' && to === 'Main') this.enterAnim = 'tp-enter-fwd' + ease;
 else if (depthOf(to) > depthOf(from)) this.enterAnim = 'tp-enter-fwd' + ease;
 else if (depthOf(to) < depthOf(from)) this.enterAnim = 'tp-enter-back' + ease;
 else this.enterAnim = 'tp-screen 220ms ease-out';

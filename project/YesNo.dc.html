@@ -194,12 +194,13 @@ componentWillUnmount() { this.timers.forEach((t) => clearTimeout(t)); this.timer
 componentDidMount() { this.onBack(); this.autoplay(); }
 onBack() { const act = this.props.act; if (!act) return; const f = () => this.leave(); f.board = this; act.leave = f; }
 offBack() { const act = this.props.act; if (act && act.leave && act.leave.board === this) act.leave = null; }
+/* a little sound that is not a voice (it answers with the voice off too), in the app only */
+beep(kind) { const S = window.tpSound; if (this.props.act && S && S.beep) S.beep(kind); }
 componentDidUpdate() {
 const f = !!this.state.finished;
 if (f && !this.wasFinished) {
 if (this.doneEl) this.doneEl.focus();
-const S = window.tpSound;
-if (S && S.beep) S.beep('star');
+this.beep('star');
 window.tpCourse.say(this.endLine);
 }
 this.wasFinished = f;
@@ -255,11 +256,11 @@ const r = this.state.r;
 const id = s.id + ':' + r;
 if (this.spoken === id) return;
 this.spoken = id;
-this.later(() => {
+this.later(() => window.tpCourse.shown(this, () => {
 const st = this.state;
 if (st.r !== r || st.right || st.finished || st.heard) return;
 this.speak(r);
-}, 450);
+}), 450);
 }
 /* he says the round's name (once he has owned up to a wrong one: the picture's own word); in the first round, if no
    answer comes a moment after it, «Héẽ» swells once */
@@ -294,7 +295,7 @@ const round = this.plan()[r];
 if (!round || st.right || st.finished) return;
 if (!st.heard) { this.speak(r); return; }
 if ((k === 0) === round.right) {
-if (S && S.beep) S.beep('right');
+this.beep('right');
 const first = st.first + (st.miss === 0 ? 1 : 0);
 if (round.right) {
 C.say(C.VOICE.good);
@@ -316,7 +317,7 @@ this.later(() => this.next(r), Math.min(ms + 600, 1800));
 return;
 }
 /* not yet: his word again 1.4 s after «Eha'ã jey», if the round is still open and no other miss came since */
-if (S && S.beep) S.beep('wrong');
+this.beep('wrong');
 C.say(C.VOICE.again);
 const miss = st.miss + 1;
 this.setState({ miss, nudge: false });
@@ -372,8 +373,9 @@ hint: !st.right && st.miss >= 2 && k === rightK,
 pick: () => this.answer(k)
 }));
 const now = st.fix ? word : round.said;
-/* what the close button does, which the phone's Back does too (a game that is over keeps its star) */
-this.leave = () => { if (finished) act.finish('yesno'); else act.go('Tonight'); };
+/* what the close button does, which the phone's Back does too (a game that is over keeps its star, and so does one
+   whose last answer is in while its end card is still to come) */
+this.leave = () => { if (finished || (st.right && r + 1 >= n)) act.finish('yesno'); else act.go('Tonight'); };
 return {
 field: C.starfield('yesno', 390, 40, 760, 46),
 titleGn: G.gn, titleEs: G.es,
