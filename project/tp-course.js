@@ -967,13 +967,15 @@
           var was = C.complete(st, s);
           var done = Object.assign({}, st.done || {});
           var had = Object.assign({}, done[id] || {});
+          var fresh = !had[kind];
           had[kind] = 1;
           var gs = C.gamesFor(s, st.track || 'L2', had);
           var rest = gs.filter(function (k) { return !had[k]; });
           if (!rest.length || was) had.ok = 1;
           done[id] = had;
-          /* the star just earned lands on tonight's list (earned: never kept on the device) */
-          var earned = { kind: kind, at: C.now() };
+          /* the star just earned lands on tonight's list (earned: never kept on the device); a game played again had
+             its star already, and nothing lands */
+          var earned = fresh ? { kind: kind, at: C.now() } : null;
           /* a night played again: back to its games; there is nowhere new to walk */
           if (was) return { done: done, game: null, screen: 'Tonight', earned: earned };
           if (rest.length) return { done: done, game: rest[0], screen: 'Tonight', earned: earned };
