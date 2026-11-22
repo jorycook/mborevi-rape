@@ -546,7 +546,15 @@ pic('po', [['#E8AE84', hand(50, 52, 1.3)]], { line: 'M38 62q12 8 24 0' });
     9: [[24, 24, 11], [50, 24, 11], [76, 24, 11], [24, 50, 11], [50, 50, 11], [76, 50, 11], [24, 76, 11], [50, 76, 11], [76, 76, 11]],
     10: [[14, 34, 9.5], [32, 34, 9.5], [50, 34, 9.5], [68, 34, 9.5], [86, 34, 9.5], [14, 66, 9.5], [32, 66, 9.5], [50, 66, 9.5], [68, 66, 9.5], [86, 66, 9.5]],
   };
-  Object.keys(LAY).forEach((k) => pic('n' + k, [['#FFD34E', LAY[k].map(([x, y, r]) => STAR(x, y, r, 0.52)).join('')]], {}));
+  Object.keys(LAY).forEach((k) => { if (+k <= 5) pic('n' + k, [['#FFD34E', LAY[k].map(([x, y, r]) => STAR(x, y, r, 0.52)).join('')]], {}); });
+  /* six to ten as ten-frames: a full top row of five gold stars, and the rest from the left on the row below, in
+     Mborevi'i's pink, so that eight (five and three) and ten (five and five) cannot be taken for each other */
+  const ROW = [14, 32, 50, 68, 86];
+  for (let k = 6; k <= 10; k++) {
+    const top = ROW.map((x) => STAR(x, 34, 9.5, 0.52)).join('');
+    const rest = ROW.slice(0, k - 5).map((x) => STAR(x, 66, 9.5, 0.52)).join('');
+    pic('n' + k, [['#FFD34E', top], ['#FFC2D4', rest]], {});
+  }
 }
 
 /* ---------- school ---------- */
