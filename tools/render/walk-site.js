@@ -34,6 +34,10 @@ const OUT = require('path').resolve(__dirname, '..', '..') + (process.env.SITE ?
     await opts.nth(0).click(); await wait(250);
     await shot('05-pick-first-try');
     for (let round = 0; round < 12 && !(await visible('link', /Seguir/)); round++) {
+      /* a round answered right (the first try may have been) gives way to the next one, or to the end card, after
+         «Iporãite!» or the word itself: wait for a picture that can be tapped again */
+      await p.waitForFunction(() => [...document.querySelectorAll('button')].some((x) => /^Dibujo:/.test(x.getAttribute('aria-label') || '') && x.getAttribute('aria-disabled') !== 'true')
+        || [...document.querySelectorAll('a')].some((x) => /Seguir/.test(x.textContent)), null, { timeout: 8000 }).catch(() => {});
       const n = await opts.count();
       for (let k = 0; k < n; k++) {
         if (await visible('link', /Seguir/)) break;
